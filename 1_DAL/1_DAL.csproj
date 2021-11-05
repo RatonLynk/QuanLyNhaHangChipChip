@@ -5,4 +5,9 @@
     <RootNamespace>_1_DAL</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="DALServices\" />
+    <Folder Include="iDALServices\" />
+  </ItemGroup>
+
 </Project>
