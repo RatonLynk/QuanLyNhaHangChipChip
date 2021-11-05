@@ -5,9 +5,4 @@
     <RootNamespace>_2_BUS</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="BUSServices\" />
-    <Folder Include="iBUSServices\" />
-  </ItemGroup>
-
 </Project>
