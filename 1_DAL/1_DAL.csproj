@@ -14,4 +14,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="iDALServices\" />
+    <Folder Include="DALServices\" />
+  </ItemGroup>
+
 </Project>
