@@ -27,7 +27,7 @@ namespace _3_GUI
         private void timer_Tick(object sender, EventArgs e)
         {   
             labGio.Text = DateTime.Now.ToString("HH:mm");
-            //test
+            //test đ
         }
 
 
