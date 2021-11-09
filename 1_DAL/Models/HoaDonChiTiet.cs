@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("HoaDonChiTiet")]
+    [Index(nameof(Idbill), Name = "IX_HoaDonChiTiet_IDBill")]
     public partial class HoaDonChiTiet
     {
         public HoaDonChiTiet()

@@ -2,7 +2,7 @@
 
 namespace _1_DAL.Migrations
 {
-    public partial class RTNLNK01 : Migration
+    public partial class QLNHchipchip : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
