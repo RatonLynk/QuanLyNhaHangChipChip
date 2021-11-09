@@ -16,7 +16,7 @@ namespace _1_DAL.DALServices
 
         public NhanVienService()
         {
-            _dbContext = new DatabaseContext();
+            _dbContext = new DatabaseContext(); 
             _GetLstNV = new List<NhanVien>();
 
         }
