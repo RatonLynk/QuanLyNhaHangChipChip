@@ -27,7 +27,7 @@ namespace _1_DAL.Models
         public string Busy { get; set; }
         [Required]
         [StringLength(50)]
-        public string Status { get; set; }
+        public bool? Status { get; set; }
 
         [ForeignKey(nameof(Floor))]
         [InverseProperty("BanAns")]
