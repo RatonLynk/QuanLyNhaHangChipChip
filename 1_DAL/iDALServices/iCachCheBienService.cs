@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace _1_DAL.iDALServices
 {
-    public interface iCachCheBienService
+    public interface iCachChebienService
     {
-        public string AddCachCheBien(CachCheBien CachCheBien);
-        public string UpdateCachCheBien(CachCheBien CachCheBien);
-        public string DeleteCachCheBien(CachCheBien CachCheBien);
+        public string AddCachCheBien(CachChebien CachChebien);
+        public string UpdateCachCheBien(CachChebien CachChebien);
+        public string DeleteCachCheBien(CachChebien CachChebien);
         public string SaveCachCheBien();
-        public List<CachCheBien> GetMethodsFromDB();
+        public List<CachChebien> GetMethodsFromDB();
     }
 }

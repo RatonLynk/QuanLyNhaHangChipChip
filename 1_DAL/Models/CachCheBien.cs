@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.Models
 {
-    [Table("CachCheBien")]
-    public partial class CachCheBien
+    [Table("CachChebien")]
+    public partial class CachChebien
     {
-        public CachCheBien()
+        public CachChebien()
         {
             MonAnChiTiets = new HashSet<MonAnChiTiet>();
         }
@@ -24,7 +24,7 @@ namespace _1_DAL.Models
         public string Name { get; set; }
         public bool? Status { get; set; }
 
-        [InverseProperty(nameof(MonAnChiTiet.Idmethod))]
+        [InverseProperty(nameof(MonAnChiTiet.IdmethodNavigation))]
         public virtual ICollection<MonAnChiTiet> MonAnChiTiets { get; set; }
     }
 }

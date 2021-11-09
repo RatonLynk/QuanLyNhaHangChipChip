@@ -33,6 +33,9 @@ namespace _1_DAL.Models
         [ForeignKey(nameof(Idcategory))]
         [InverseProperty(nameof(DanhMucFood.MonAnChiTiets))]
         public virtual DanhMucFood IdcategoryNavigation { get; set; }
+        [ForeignKey(nameof(Idmethod))]
+        [InverseProperty(nameof(CachChebien.MonAnChiTiets))]
+        public virtual CachChebien IdmethodNavigation { get; set; }
         [ForeignKey(nameof(Idunit))]
         [InverseProperty(nameof(HoaDonChiTiet.MonAnChiTiets))]
         public virtual HoaDonChiTiet Idunit1 { get; set; }

@@ -19,6 +19,7 @@ namespace _1_DAL.Context
         }
 
         public virtual DbSet<BanAn> BanAns { get; set; }
+        public virtual DbSet<CachChebien> CachChebiens { get; set; }
         public virtual DbSet<DanhMucFood> DanhMucFoods { get; set; }
         public virtual DbSet<DonVi> DonVis { get; set; }
         public virtual DbSet<Floor> Floors { get; set; }
@@ -51,6 +52,11 @@ namespace _1_DAL.Context
                     .WithMany(p => p.BanAns)
                     .HasForeignKey(d => d.Floor)
                     .HasConstraintName("FK_BanAn_Floor");
+            });
+
+            modelBuilder.Entity<CachChebien>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
             modelBuilder.Entity<DanhMucFood>(entity =>
@@ -113,6 +119,12 @@ namespace _1_DAL.Context
                     .HasForeignKey(d => d.Idcategory)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_MonAnChiTiet_DanhMucFood");
+
+                entity.HasOne(d => d.IdmethodNavigation)
+                    .WithMany(p => p.MonAnChiTiets)
+                    .HasForeignKey(d => d.Idmethod)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_MonAnChiTiet_CachChebien");
 
                 entity.HasOne(d => d.IdunitNavigation)
                     .WithMany(p => p.MonAnChiTiets)
