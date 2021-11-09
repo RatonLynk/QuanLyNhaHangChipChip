@@ -12,12 +12,12 @@ namespace _1_DAL.DALServices
     public class NhanVienService : INhanVienService
     {
         private DatabaseContext _dbContext;
-        private List<NhanVien> _GetLstNV;
+        private List<NhanVien> _lstNV;
 
         public NhanVienService()
         {
-            _dbContext = new DatabaseContext(); 
-            _GetLstNV = new List<NhanVien>();
+            _dbContext = new DatabaseContext();
+            _lstNV = new List<NhanVien>();
 
         }
         public string AddNV(NhanVien nhanVien)
@@ -42,7 +42,7 @@ namespace _1_DAL.DALServices
         }
         public List<NhanVien> GetLstNVfromDB()
         {
-            return _GetLstNV = _dbContext.NhanViens.ToList();
+            return _lstNV = _dbContext.NhanViens.ToList();
         }
         public string Save()
         {
