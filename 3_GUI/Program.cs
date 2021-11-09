@@ -18,6 +18,7 @@ namespace _3_GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmHome());
+
         }
     }
 }
