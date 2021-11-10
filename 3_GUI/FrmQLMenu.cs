@@ -17,5 +17,24 @@ namespace _3_GUI
             InitializeComponent();
         }
 
+        private void tbx_Search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdo_khongHoatDong_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdo_hoatDong_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
