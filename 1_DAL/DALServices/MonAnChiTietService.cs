@@ -9,7 +9,7 @@ using _1_DAL.Models;
 
 namespace _1_DAL.DALServices
 {
-    class MonAnChiTietService : iMonAnChiTietService
+   public class MonAnChiTietService : iMonAnChiTietService
     {
         DatabaseContext _dbContext;
         List<MonAnChiTiet> _lstTables;

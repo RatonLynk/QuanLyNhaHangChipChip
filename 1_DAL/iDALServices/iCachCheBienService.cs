@@ -9,10 +9,10 @@ namespace _1_DAL.iDALServices
 {
     public interface iCachChebienService
     {
-        public string AddCachCheBien(CachChebien CachChebien);
-        public string UpdateCachCheBien(CachChebien CachChebien);
-        public string DeleteCachCheBien(CachChebien CachChebien);
+        public string AddCachCheBien(CachCheBien CachChebien);
+        public string UpdateCachCheBien(CachCheBien CachChebien);
+        public string DeleteCachCheBien(CachCheBien CachChebien);
         public string SaveCachCheBien();
-        public List<CachChebien> GetMethodsFromDB();
+        public List<CachCheBien> GetMethodsFromDB();
     }
 }

@@ -11,7 +11,7 @@ namespace _2_BUS.Models
     {
         public HoaDonChiTiet details { get; set; }
         public DonVi unit { get; set; }
-        public CachChebien method { get; set; }
+        public CachCheBien method { get; set; }
         public DanhMucFood cat { get; set; }
     }
 }
