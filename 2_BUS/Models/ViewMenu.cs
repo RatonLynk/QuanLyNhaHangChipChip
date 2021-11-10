@@ -9,7 +9,7 @@ namespace _2_BUS.Models
 {
     public class ViewMenu
     {
-        public HoaDonChiTiet details { get; set; }
+        public MonAnChiTiet details { get; set; }
         public DonVi unit { get; set; }
         public CachCheBien method { get; set; }
         public DanhMucFood cat { get; set; }
