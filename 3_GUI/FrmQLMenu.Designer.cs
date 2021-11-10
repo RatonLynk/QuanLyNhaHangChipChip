@@ -53,10 +53,10 @@ namespace _3_GUI
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -101,71 +101,41 @@ namespace _3_GUI
             // 
             // rdo_khongHoatDong
             // 
-            this.btn_Add.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Add.Location = new System.Drawing.Point(6, 173);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(105, 34);
-            this.btn_Add.TabIndex = 0;
-            this.btn_Add.Text = "Thêm món ăn";
-            this.btn_Add.UseVisualStyleBackColor = true;
+            this.rdo_khongHoatDong.AutoSize = true;
+            this.rdo_khongHoatDong.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rdo_khongHoatDong.Location = new System.Drawing.Point(117, 136);
+            this.rdo_khongHoatDong.Name = "rdo_khongHoatDong";
+            this.rdo_khongHoatDong.Size = new System.Drawing.Size(142, 21);
+            this.rdo_khongHoatDong.TabIndex = 11;
+            this.rdo_khongHoatDong.TabStop = true;
+            this.rdo_khongHoatDong.Text = "Không Hoạt động";
+            this.rdo_khongHoatDong.UseVisualStyleBackColor = true;
             // 
             // rdo_hoatDong
             // 
-            this.btn_Update.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Update.Location = new System.Drawing.Point(117, 173);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(105, 34);
-            this.btn_Update.TabIndex = 1;
-            this.btn_Update.Text = "Sửa món ăn";
-            this.btn_Update.UseVisualStyleBackColor = true;
+            this.rdo_hoatDong.AutoSize = true;
+            this.rdo_hoatDong.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.rdo_hoatDong.Location = new System.Drawing.Point(117, 109);
+            this.rdo_hoatDong.Name = "rdo_hoatDong";
+            this.rdo_hoatDong.Size = new System.Drawing.Size(94, 21);
+            this.rdo_hoatDong.TabIndex = 10;
+            this.rdo_hoatDong.TabStop = true;
+            this.rdo_hoatDong.Text = "Hoạt động";
+            this.rdo_hoatDong.UseVisualStyleBackColor = true;
             // 
-            // btn_Delete
+            // lbl_TrangThai
             // 
-            this.btn_Delete.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Delete.Location = new System.Drawing.Point(228, 173);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(105, 32);
-            this.btn_Delete.TabIndex = 2;
-            this.btn_Delete.Text = "Xóa món ăn";
-            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.lbl_TrangThai.Location = new System.Drawing.Point(0, 0);
+            this.lbl_TrangThai.Name = "lbl_TrangThai";
+            this.lbl_TrangThai.Size = new System.Drawing.Size(100, 23);
+            this.lbl_TrangThai.TabIndex = 12;
             // 
-            // tbx_Search
+            // textBox2
             // 
-            this.tbx_Search.Location = new System.Drawing.Point(142, 221);
-            this.tbx_Search.Name = "tbx_Search";
-            this.tbx_Search.Size = new System.Drawing.Size(191, 29);
-            this.tbx_Search.TabIndex = 3;
-            // 
-            // lbl_Search
-            // 
-            this.lbl_Search.AutoSize = true;
-            this.lbl_Search.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Search.Location = new System.Drawing.Point(6, 227);
-            this.lbl_Search.Name = "lbl_Search";
-            this.lbl_Search.Size = new System.Drawing.Size(131, 17);
-            this.lbl_Search.TabIndex = 4;
-            this.lbl_Search.Text = "Tìm kiếm món ăn :";
-            // 
-            // lbl_TenMon
-            // 
-            this.lbl_TenMon.AutoSize = true;
-            this.lbl_TenMon.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_TenMon.Location = new System.Drawing.Point(17, 36);
-            this.lbl_TenMon.Name = "lbl_TenMon";
-            this.lbl_TenMon.Size = new System.Drawing.Size(85, 17);
-            this.lbl_TenMon.TabIndex = 5;
-            this.lbl_TenMon.Text = "Tên món ăn";
-            // 
-            // comboBox1
-            // 
-            
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(117, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 29);
-            this.textBox1.TabIndex = 6;
+            this.textBox2.Location = new System.Drawing.Point(117, 66);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(216, 29);
+            this.textBox2.TabIndex = 8;
             // 
             // lbl_Gia
             // 
@@ -177,14 +147,61 @@ namespace _3_GUI
             this.lbl_Gia.TabIndex = 7;
             this.lbl_Gia.Text = "Giá";
             // 
-            // textBox2
+            // textBox1
             // 
-            this.textBox2.Location = new System.Drawing.Point(117, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 29);
-            this.textBox2.TabIndex = 8;
+            this.textBox1.Location = new System.Drawing.Point(117, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(216, 29);
+            this.textBox1.TabIndex = 6;
             // 
-            // lbl_TrangThai
+            // lbl_TenMon
+            // 
+            this.lbl_TenMon.AutoSize = true;
+            this.lbl_TenMon.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_TenMon.Location = new System.Drawing.Point(17, 36);
+            this.lbl_TenMon.Name = "lbl_TenMon";
+            this.lbl_TenMon.Size = new System.Drawing.Size(85, 17);
+            this.lbl_TenMon.TabIndex = 5;
+            this.lbl_TenMon.Text = "Tên món ăn";
+            // 
+            // lbl_Search
+            // 
+            this.lbl_Search.AutoSize = true;
+            this.lbl_Search.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Search.Location = new System.Drawing.Point(6, 227);
+            this.lbl_Search.Name = "lbl_Search";
+            this.lbl_Search.Size = new System.Drawing.Size(131, 17);
+            this.lbl_Search.TabIndex = 4;
+            this.lbl_Search.Text = "Tìm kiếm món ăn :";
+            // 
+            // tbx_Search
+            // 
+            this.tbx_Search.Location = new System.Drawing.Point(142, 221);
+            this.tbx_Search.Name = "tbx_Search";
+            this.tbx_Search.Size = new System.Drawing.Size(191, 29);
+            this.tbx_Search.TabIndex = 3;
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Delete.Location = new System.Drawing.Point(228, 173);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(105, 32);
+            this.btn_Delete.TabIndex = 2;
+            this.btn_Delete.Text = "Xóa món ăn";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Update.Location = new System.Drawing.Point(117, 173);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(105, 34);
+            this.btn_Update.TabIndex = 1;
+            this.btn_Update.Text = "Sửa món ăn";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            // 
+            // btn_Add
             // 
             this.btn_Add.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Add.Location = new System.Drawing.Point(6, 149);
@@ -225,19 +242,19 @@ namespace _3_GUI
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.toolStripMenuItem1.Text = "Đồ hải sản";
             // 
             // đồTrênBờToolStripMenuItem
             // 
             this.đồTrênBờToolStripMenuItem.Name = "đồTrênBờToolStripMenuItem";
-            this.đồTrênBờToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đồTrênBờToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.đồTrênBờToolStripMenuItem.Text = "Đồ trên bờ";
             // 
             // đồTrênTrờiToolStripMenuItem
             // 
             this.đồTrênTrờiToolStripMenuItem.Name = "đồTrênTrờiToolStripMenuItem";
-            this.đồTrênTrờiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đồTrênTrờiToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.đồTrênTrờiToolStripMenuItem.Text = "Đồ trên trời";
             // 
             // dataGridView2
@@ -280,15 +297,19 @@ namespace _3_GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh mục món ăn";
             // 
-            // pictureBox1
+            // button3
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(170, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 183);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
             // 
             // button1
             // 
@@ -300,35 +321,21 @@ namespace _3_GUI
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // rdo_hoatDong
+            // pictureBox1
             // 
-            this.rdo_hoatDong.AutoSize = true;
-            this.rdo_hoatDong.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rdo_hoatDong.Location = new System.Drawing.Point(117, 109);
-            this.rdo_hoatDong.Name = "rdo_hoatDong";
-            this.rdo_hoatDong.Size = new System.Drawing.Size(94, 21);
-            this.rdo_hoatDong.TabIndex = 10;
-            this.rdo_hoatDong.TabStop = true;
-            this.rdo_hoatDong.Text = "Hoạt động";
-            this.rdo_hoatDong.UseVisualStyleBackColor = true;
-            // 
-            // rdo_khongHoatDong
-            // 
-            this.rdo_khongHoatDong.AutoSize = true;
-            this.rdo_khongHoatDong.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rdo_khongHoatDong.Location = new System.Drawing.Point(117, 136);
-            this.rdo_khongHoatDong.Name = "rdo_khongHoatDong";
-            this.rdo_khongHoatDong.Size = new System.Drawing.Size(142, 21);
-            this.rdo_khongHoatDong.TabIndex = 11;
-            this.rdo_khongHoatDong.TabStop = true;
-            this.rdo_khongHoatDong.Text = "Không Hoạt động";
-            this.rdo_khongHoatDong.UseVisualStyleBackColor = true;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Location = new System.Drawing.Point(170, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(189, 183);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmQLMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1141, 551);
+            this.ClientSize = new System.Drawing.Size(1141, 569);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.dataGridView3);
