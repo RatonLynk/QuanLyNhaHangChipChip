@@ -186,13 +186,119 @@ namespace _3_GUI
             // 
             // lbl_TrangThai
             // 
-            this.lbl_TrangThai.AutoSize = true;
-            this.lbl_TrangThai.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_TrangThai.Location = new System.Drawing.Point(17, 122);
-            this.lbl_TrangThai.Name = "lbl_TrangThai";
-            this.lbl_TrangThai.Size = new System.Drawing.Size(79, 17);
-            this.lbl_TrangThai.TabIndex = 9;
-            this.lbl_TrangThai.Text = "Trạng Thái";
+            this.btn_Add.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Add.Location = new System.Drawing.Point(6, 149);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(105, 34);
+            this.btn_Add.TabIndex = 0;
+            this.btn_Add.Text = "Thêm món ăn";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            // 
+            // danhMụcMónĂnToolStripMenuItem
+            // 
+            this.danhMụcMónĂnToolStripMenuItem.Name = "danhMụcMónĂnToolStripMenuItem";
+            this.danhMụcMónĂnToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.danhMụcMónĂnToolStripMenuItem.Text = "Danh mục món ăn";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.danhMụcMónĂnToolStripMenuItem1});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1141, 25);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // danhMụcMónĂnToolStripMenuItem1
+            // 
+            this.danhMụcMónĂnToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.đồTrênBờToolStripMenuItem,
+            this.đồTrênTrờiToolStripMenuItem});
+            this.danhMụcMónĂnToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.danhMụcMónĂnToolStripMenuItem1.ForeColor = System.Drawing.Color.Goldenrod;
+            this.danhMụcMónĂnToolStripMenuItem1.Name = "danhMụcMónĂnToolStripMenuItem1";
+            this.danhMụcMónĂnToolStripMenuItem1.Size = new System.Drawing.Size(134, 21);
+            this.danhMụcMónĂnToolStripMenuItem1.Text = "Danh mục món ăn";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Đồ hải sản";
+            // 
+            // đồTrênBờToolStripMenuItem
+            // 
+            this.đồTrênBờToolStripMenuItem.Name = "đồTrênBờToolStripMenuItem";
+            this.đồTrênBờToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đồTrênBờToolStripMenuItem.Text = "Đồ trên bờ";
+            // 
+            // đồTrênTrờiToolStripMenuItem
+            // 
+            this.đồTrênTrờiToolStripMenuItem.Name = "đồTrênTrờiToolStripMenuItem";
+            this.đồTrênTrờiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đồTrênTrờiToolStripMenuItem.Text = "Đồ trên trời";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(390, 55);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(240, 209);
+            this.dataGridView2.TabIndex = 4;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(636, 55);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowTemplate.Height = 25;
+            this.dataGridView3.Size = new System.Drawing.Size(240, 209);
+            this.dataGridView3.TabIndex = 5;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(882, 55);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowTemplate.Height = 25;
+            this.dataGridView4.Size = new System.Drawing.Size(240, 209);
+            this.dataGridView4.TabIndex = 6;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Location = new System.Drawing.Point(12, 285);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(359, 266);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Danh mục món ăn";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Location = new System.Drawing.Point(170, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(189, 183);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(17, 220);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 34);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // rdo_hoatDong
             // 
