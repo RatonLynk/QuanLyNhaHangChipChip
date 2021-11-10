@@ -9,7 +9,7 @@ using _1_DAL.Context;
 
 namespace _1_DAL.DALServices
 {
-    class ThucDonService : IThucDonService
+   public class ThucDonService : IThucDonService
     {
         DatabaseContext _dbContext;
         List<ThucDon> _lstThucDon;

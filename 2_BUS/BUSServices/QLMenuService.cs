@@ -16,6 +16,9 @@ namespace _2_BUS.BUSServices
         private iMonAnChiTietService _iMonAnChiTietService;
         private iDonViService _iDonViService;
         private iCachChebienService _iCachChebienService;
+        IThucDonService _IThucDon;
+        iDonViService _Donvi;
+        iDMFoodService _DMF;
         private List<MonAnChiTiet> _lstMonAnCT;
         private List<ThucDon> _lstMenu;
         private List<DonVi> _lstDonVi;
@@ -25,10 +28,15 @@ namespace _2_BUS.BUSServices
         public QLMenuService()
         {
             _iMonAnChiTietService = new MonAnChiTietService();
+            _iDonViService = new DonViService();
+            _IThucDon = new ThucDonService();
+            _iCachChebienService = new CachCheBienService();
+            _DMF = new DMFoodService();
         }
         public bool AddCategory(DanhMucFood cat)
         {
-            throw new NotImplementedException();
+            _DMF.AddDMFood(cat);
+            return true;
         }
 
         public bool AddDetail(MonAnChiTiet food)
@@ -39,59 +47,67 @@ namespace _2_BUS.BUSServices
 
         public bool AddItem(ThucDon food)
         {
-            throw new NotImplementedException();
+            _IThucDon.AddThucDon(food);
+            return true;
         }
 
         public bool AddMethod(CachCheBien method)
         {
-            throw new NotImplementedException();
+            _iCachChebienService.AddCachCheBien(method);
+            return true;
         }
 
 
         public bool AddUnit(DonVi unit)
         {
-            throw new NotImplementedException();
+            _Donvi.AddDonVi(unit);
+            return true;
         }
 
         public bool DeleteCategory(DanhMucFood cat)
         {
-            throw new NotImplementedException();
+            _DMF.DeleteDMFood(cat);
+            return true;
         }
 
         public bool DeleteDetail(MonAnChiTiet food)
         {
-            throw new NotImplementedException();
+            _iMonAnChiTietService.DeleteMonAnChiTiet(food);
+            return true;
         }
 
         public bool DeleteItem(ThucDon food)
         {
-            throw new NotImplementedException();
+            _IThucDon.DeleteThucDon(food);
+            return true;
         }
 
         public bool DeleteMethod(CachCheBien method)
         {
-            throw new NotImplementedException();
+            _iCachChebienService.DeleteCachCheBien(method);
+            return true;
         }
 
 
         public bool DeleteUnit(DonVi unit)
         {
-            throw new NotImplementedException();
+            _Donvi.DeleteDonVi(unit);
+            return true;
         }
 
         public List<CachCheBien> GetCachChebiens()
         {
-            throw new NotImplementedException();
+            return _iCachChebienService.GetMethodsFromDB();
         }
 
         public List<DanhMucFood> GetDanhMucFoods()
         {
-            throw new NotImplementedException();
+            return _DMF.GetCategoriesFromDB();
         }
 
         public List<DonVi> GetDonVis()
         {
-            throw new NotImplementedException();
+            return _Donvi.GetUnitsFromDB();
         }
 
         public List<MonAnChiTiet> GetMonAnChiTiets()

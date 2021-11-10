@@ -7,7 +7,7 @@ using _1_DAL.Models;
 
 namespace _1_DAL.iDALServices
 {
-    interface IThucDonService
+   public interface IThucDonService
     {
         public string AddThucDon(ThucDon thucDon);
         public string UpdateThucDon(ThucDon thucDon);
