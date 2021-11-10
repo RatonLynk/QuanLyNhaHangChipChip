@@ -28,8 +28,8 @@ namespace _2_BUS.iBUSServices
         public List<MonAnChiTiet> GetMonAnChiTiets();
         public List<DonVi> GetDonVis();
         public List<DanhMucFood> GetDanhMucFoods();
-        public List<CachCheBien> GetCachChebiens();
         public List<ViewMenu> GetViewMenus();
         public List<ViewMenu> TimKiem();
+        public List<CachCheBien> GetCachCheBiens();
     }
 }

@@ -13,14 +13,18 @@ namespace _2_BUS.BUSServices
 {
     public class QLMenuService : iQLMenuService
     {
-        iMonAnChiTietService _MonCT;
-        iDMFoodService _DMF;
-        IThucDonService _ThucDon;
+        private iMonAnChiTietService _iMonAnChiTietService;
+        private iDonViService _iDonViService;
+        private iCachChebienService _iCachChebienService;
+        private List<MonAnChiTiet> _lstMonAnCT;
+        private List<ThucDon> _lstMenu;
+        private List<DonVi> _lstDonVi;
+        private List<CachCheBien> _lstCachCheBien;
+        
+
         public QLMenuService()
         {            
             _MonCT = new MonAnChiTietService();
-            _DMF = new DMFoodService();
-            _ThucDon = new Thuc
         }
         public bool AddCategory(DanhMucFood cat)
         {
@@ -29,8 +33,7 @@ namespace _2_BUS.BUSServices
 
         public bool AddDetail(MonAnChiTiet food)
         {
-            _MonCT.AddMonAnChiTiet(food);
-            return true;
+            return _MonCT.AddMonAnChiTiet(food);
         }
 
         public bool AddItem(ThucDon food)
@@ -42,6 +45,7 @@ namespace _2_BUS.BUSServices
         {
             throw new NotImplementedException();
         }
+
 
         public bool AddUnit(DonVi unit)
         {
@@ -68,12 +72,13 @@ namespace _2_BUS.BUSServices
             throw new NotImplementedException();
         }
 
+
         public bool DeleteUnit(DonVi unit)
         {
             throw new NotImplementedException();
         }
 
-        public List<CachCheBien> GetCachChebiens()
+        public List<CachChebien> GetCachChebiens()
         {
             throw new NotImplementedException();
         }
@@ -123,7 +128,13 @@ namespace _2_BUS.BUSServices
             throw new NotImplementedException();
         }
 
+
         public bool UpdateUnit(DonVi unit)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<CachCheBien> iQLMenuService.GetCachCheBiens()
         {
             throw new NotImplementedException();
         }
