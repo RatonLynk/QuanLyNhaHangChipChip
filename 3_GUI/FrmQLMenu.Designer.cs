@@ -29,7 +29,7 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgrid_MonCT = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdo_khongHoatDong = new System.Windows.Forms.RadioButton();
             this.rdo_hoatDong = new System.Windows.Forms.RadioButton();
@@ -55,22 +55,22 @@ namespace _3_GUI
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_MonCT)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgrid_MonCT
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(446, 73);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(858, 661);
-            this.dataGridView1.TabIndex = 0;
+            this.dgrid_MonCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_MonCT.Location = new System.Drawing.Point(446, 73);
+            this.dgrid_MonCT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgrid_MonCT.Name = "dgrid_MonCT";
+            this.dgrid_MonCT.RowHeadersWidth = 51;
+            this.dgrid_MonCT.RowTemplate.Height = 25;
+            this.dgrid_MonCT.Size = new System.Drawing.Size(858, 661);
+            this.dgrid_MonCT.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -337,12 +337,12 @@ namespace _3_GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 735);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgrid_MonCT);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmQLMenu";
             this.Text = "FrmQLMenu";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_MonCT)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -355,7 +355,7 @@ namespace _3_GUI
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrid_MonCT;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_Search;
         private System.Windows.Forms.TextBox tbx_Search;

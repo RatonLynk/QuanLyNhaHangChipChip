@@ -20,6 +20,7 @@ namespace _1_DAL.DALServices
             _lstNV = new List<NhanVien>();
 
         }
+        //
         public string AddNV(NhanVien nhanVien)
         {
             _dbContext.NhanViens.Add(nhanVien);
