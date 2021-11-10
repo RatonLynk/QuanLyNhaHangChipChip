@@ -92,7 +92,7 @@
             this.panel1.Controls.Add(this.labNgayGio);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(22, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(185, 172);
             this.panel1.TabIndex = 2;
@@ -107,7 +107,7 @@
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(230, 408);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(390, 196);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -118,7 +118,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(234, 194);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(389, 196);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -135,7 +135,7 @@
             this.btnQuanLyNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyNhanVien.Image")));
             this.btnQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyNhanVien.Location = new System.Drawing.Point(989, 343);
-            this.btnQuanLyNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuanLyNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
             this.btnQuanLyNhanVien.Size = new System.Drawing.Size(342, 141);
             this.btnQuanLyNhanVien.TabIndex = 0;
@@ -153,7 +153,7 @@
             this.btnQuanLyThucDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyThucDon.Image")));
             this.btnQuanLyThucDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyThucDon.Location = new System.Drawing.Point(988, 194);
-            this.btnQuanLyThucDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuanLyThucDon.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLyThucDon.Name = "btnQuanLyThucDon";
             this.btnQuanLyThucDon.Size = new System.Drawing.Size(342, 141);
             this.btnQuanLyThucDon.TabIndex = 0;
@@ -171,7 +171,7 @@
             this.btnQuanLyHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyHoaDon.Image")));
             this.btnQuanLyHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanLyHoaDon.Location = new System.Drawing.Point(640, 343);
-            this.btnQuanLyHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuanLyHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuanLyHoaDon.Name = "btnQuanLyHoaDon";
             this.btnQuanLyHoaDon.Size = new System.Drawing.Size(342, 141);
             this.btnQuanLyHoaDon.TabIndex = 0;
@@ -199,7 +199,7 @@
             this.btnPhucVuKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucVuKhachHang.Image")));
             this.btnPhucVuKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPhucVuKhachHang.Location = new System.Drawing.Point(640, 194);
-            this.btnPhucVuKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPhucVuKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnPhucVuKhachHang.Name = "btnPhucVuKhachHang";
             this.btnPhucVuKhachHang.Size = new System.Drawing.Size(342, 141);
             this.btnPhucVuKhachHang.TabIndex = 0;
@@ -236,7 +236,7 @@
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangXuat.Location = new System.Drawing.Point(1390, 57);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(85, 28);
             this.btnDangXuat.TabIndex = 0;
@@ -249,7 +249,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1199, 562);
+            this.ClientSize = new System.Drawing.Size(1370, 628);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -263,7 +263,7 @@
             this.Controls.Add(this.btnPhucVuKhachHang);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
