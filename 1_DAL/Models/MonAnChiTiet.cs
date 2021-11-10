@@ -9,8 +9,6 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("MonAnChiTiet")]
-    [Index(nameof(Idcategory), Name = "IX_MonAnChiTiet_IDCategory")]
-    [Index(nameof(Idunit), Name = "IX_MonAnChiTiet_IDUnit")]
     public partial class MonAnChiTiet
     {
         [Key]
@@ -34,8 +32,8 @@ namespace _1_DAL.Models
         [InverseProperty(nameof(DanhMucFood.MonAnChiTiets))]
         public virtual DanhMucFood IdcategoryNavigation { get; set; }
         [ForeignKey(nameof(Idmethod))]
-        [InverseProperty(nameof(CachChebien.MonAnChiTiets))]
-        public virtual CachChebien IdmethodNavigation { get; set; }
+        [InverseProperty(nameof(CachCheBien.MonAnChiTiets))]
+        public virtual CachCheBien IdmethodNavigation { get; set; }
         [ForeignKey(nameof(Idunit))]
         [InverseProperty(nameof(HoaDonChiTiet.MonAnChiTiets))]
         public virtual HoaDonChiTiet Idunit1 { get; set; }
