@@ -16,10 +16,13 @@ namespace _2_BUS.BUSServices
         private iMonAnChiTietService _iMonAnChiTietService;
         private iDonViService _iDonViService;
         private iCachChebienService _iCachChebienService;
+        private IThucDonService _ithucDonService;
+        private iDMFoodService _iDMFoodService;
         private List<MonAnChiTiet> _lstMonAnCT;
         private List<ThucDon> _lstMenu;
         private List<DonVi> _lstDonVi;
         private List<CachCheBien> _lstCachCheBien;
+        private List<DanhMucFood> _lstDMFood;
         
 
         public QLMenuService()
@@ -111,33 +114,78 @@ namespace _2_BUS.BUSServices
 
         public bool UpdateCategory(DanhMucFood cat)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _iDMFoodService.UpdateDMFood(cat);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
         public bool UpdateDetail(MonAnChiTiet food)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _iMonAnChiTietService.UpdateMonAnChiTiet(food);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
         public bool UpdateItem(ThucDon food)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _ithucDonService.UpdateThucDon(food);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
         public bool UpdateMethod(CachCheBien method)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _iCachChebienService.UpdateCachCheBien(method);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
 
         public bool UpdateUnit(DonVi unit)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _iDonViService.UpdateDonVi(unit);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
         List<CachCheBien> iQLMenuService.GetCachCheBiens()
         {
-            throw new NotImplementedException();
+            return _lstCachCheBien;
         }
     }
 }
