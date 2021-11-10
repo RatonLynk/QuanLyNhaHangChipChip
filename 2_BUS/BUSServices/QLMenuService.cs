@@ -14,9 +14,13 @@ namespace _2_BUS.BUSServices
     public class QLMenuService : iQLMenuService
     {
         iMonAnChiTietService _MonCT;
+        iDMFoodService _DMF;
+        IThucDonService _ThucDon;
         public QLMenuService()
         {            
             _MonCT = new MonAnChiTietService();
+            _DMF = new DMFoodService();
+            _ThucDon = new Thuc
         }
         public bool AddCategory(DanhMucFood cat)
         {
@@ -25,7 +29,8 @@ namespace _2_BUS.BUSServices
 
         public bool AddDetail(MonAnChiTiet food)
         {
-            return _MonCT.AddMonAnChiTiet(food);
+            _MonCT.AddMonAnChiTiet(food);
+            return true;
         }
 
         public bool AddItem(ThucDon food)
@@ -33,7 +38,7 @@ namespace _2_BUS.BUSServices
             throw new NotImplementedException();
         }
 
-        public bool AddMethod(CachChebien method)
+        public bool AddMethod(CachCheBien method)
         {
             throw new NotImplementedException();
         }
@@ -58,7 +63,7 @@ namespace _2_BUS.BUSServices
             throw new NotImplementedException();
         }
 
-        public bool DeleteMethod(CachChebien method)
+        public bool DeleteMethod(CachCheBien method)
         {
             throw new NotImplementedException();
         }
@@ -68,7 +73,7 @@ namespace _2_BUS.BUSServices
             throw new NotImplementedException();
         }
 
-        public List<CachChebien> GetCachChebiens()
+        public List<CachCheBien> GetCachChebiens()
         {
             throw new NotImplementedException();
         }
@@ -113,7 +118,7 @@ namespace _2_BUS.BUSServices
             throw new NotImplementedException();
         }
 
-        public bool UpdateMethod(CachChebien method)
+        public bool UpdateMethod(CachCheBien method)
         {
             throw new NotImplementedException();
         }
