@@ -31,5 +31,6 @@ namespace _2_BUS.iBUSServices
         public List<ViewMenu> GetViewMenus();
         public List<ViewMenu> TimKiem(string str);
         public List<CachCheBien> GetCachCheBiens();
+        public List<ThucDon> GetThucDons();
     }
 }

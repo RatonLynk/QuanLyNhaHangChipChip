@@ -115,6 +115,11 @@ namespace _2_BUS.BUSServices
             return _iMonAnChiTietService.GetDetailsFromDB();
         }
 
+        public List<ThucDon> GetThucDons()
+        {
+            return _iThucDonService.GetThucDonFromDB();
+        }
+
         public List<ViewMenu> GetViewMenus()
         {
             return _viewMenus = (from a in _iMonAnChiTietService.GetDetailsFromDB()
