@@ -14,22 +14,22 @@ namespace _2_BUS.iBUSServices
         public bool AddDetail(MonAnChiTiet food);
         public bool AddUnit(DonVi unit);
         public bool AddCategory(DanhMucFood cat);
-        public bool AddMethod(CachChebien method);
+        public bool AddMethod(CachCheBien method);
         public bool UpdateItem(ThucDon food);
         public bool UpdateDetail(MonAnChiTiet food);
         public bool UpdateUnit(DonVi unit);
         public bool UpdateCategory(DanhMucFood cat);
-        public bool UpdateMethod(CachChebien method);
+        public bool UpdateMethod(CachCheBien method);
         public bool DeleteItem(ThucDon food);
         public bool DeleteDetail(MonAnChiTiet food);
         public bool DeleteUnit(DonVi unit);
         public bool DeleteCategory(DanhMucFood cat);
-        public bool DeleteMethod(CachChebien method);
+        public bool DeleteMethod(CachCheBien method);
         public List<MonAnChiTiet> GetMonAnChiTiets();
         public List<DonVi> GetDonVis();
         public List<DanhMucFood> GetDanhMucFoods();
-        public List<CachChebien> GetCachChebiens();
         public List<ViewMenu> GetViewMenus();
         public List<ViewMenu> TimKiem();
+        public List<CachCheBien> GetCachCheBiens();
     }
 }

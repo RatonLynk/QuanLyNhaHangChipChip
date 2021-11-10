@@ -13,10 +13,19 @@ namespace _2_BUS.BUSServices
 {
     public class QLMenuService : iQLMenuService
     {
-        iMonAnChiTietService _MonCT;
+        private iMonAnChiTietService _iMonAnChiTietService;
+        private iDonViService _iDonViService;
+        private iCachChebienService _iCachChebienService;
+        private List<MonAnChiTiet> _lstMonAnCT;
+        private List<ThucDon> _lstMenu;
+        private List<DonVi> _lstDonVi;
+        private List<CachCheBien> _lstCachCheBien;
+        
+
         public QLMenuService()
-        {            
-            _MonCT = new MonAnChiTietService();
+        {
+            _iMonAnChiTietService = new MonAnChiTietService();
+
         }
         public bool AddCategory(DanhMucFood cat)
         {
@@ -25,7 +34,16 @@ namespace _2_BUS.BUSServices
 
         public bool AddDetail(MonAnChiTiet food)
         {
-            return _MonCT.AddMonAnChiTiet(food);
+            try
+            {
+                _iMonAnChiTietService.AddMonAnChiTiet(food);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
         public bool AddItem(ThucDon food)
@@ -33,10 +51,11 @@ namespace _2_BUS.BUSServices
             throw new NotImplementedException();
         }
 
-        public bool AddMethod(CachChebien method)
+        public bool AddMethod(CachCheBien method)
         {
             throw new NotImplementedException();
         }
+
 
         public bool AddUnit(DonVi unit)
         {
@@ -58,17 +77,18 @@ namespace _2_BUS.BUSServices
             throw new NotImplementedException();
         }
 
-        public bool DeleteMethod(CachChebien method)
+        public bool DeleteMethod(CachCheBien method)
         {
             throw new NotImplementedException();
         }
+
 
         public bool DeleteUnit(DonVi unit)
         {
             throw new NotImplementedException();
         }
 
-        public List<CachChebien> GetCachChebiens()
+        public List<CachCheBien> GetCachCheBiens()
         {
             throw new NotImplementedException();
         }
@@ -113,12 +133,18 @@ namespace _2_BUS.BUSServices
             throw new NotImplementedException();
         }
 
-        public bool UpdateMethod(CachChebien method)
+        public bool UpdateMethod(CachCheBien method)
         {
             throw new NotImplementedException();
         }
 
+
         public bool UpdateUnit(DonVi unit)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<CachCheBien> iQLMenuService.GetCachCheBiens()
         {
             throw new NotImplementedException();
         }
