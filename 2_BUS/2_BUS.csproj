@@ -5,8 +5,4 @@
     <RootNamespace>_2_BUS</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\1_DAL\1_DAL.csproj" />
-  </ItemGroup>
-
 </Project>
