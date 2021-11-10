@@ -16,26 +16,26 @@ namespace _2_BUS.BUSServices
         private iMonAnChiTietService _iMonAnChiTietService;
         private iDonViService _iDonViService;
         private iCachChebienService _iCachChebienService;
-        private IThucDonService _ithucDonService;
+        private IThucDonService _iThucDonService;
         private iDMFoodService _iDMFoodService;
         private List<MonAnChiTiet> _lstMonAnCT;
         private List<ThucDon> _lstMenu;
         private List<DonVi> _lstDonVi;
         private List<CachCheBien> _lstCachCheBien;
         private List<DanhMucFood> _lstDMFood;
-        
+        private List<ViewMenu> _viewMenus;
 
         public QLMenuService()
         {
             _iMonAnChiTietService = new MonAnChiTietService();
             _iDonViService = new DonViService();
-            _IThucDon = new ThucDonService();
+            _iThucDonService = new ThucDonService();
             _iCachChebienService = new CachCheBienService();
-            _DMF = new DMFoodService();
+            _iDMFoodService = new DMFoodService();
         }
         public bool AddCategory(DanhMucFood cat)
         {
-            _DMF.AddDMFood(cat);
+            _iDMFoodService.AddDMFood(cat);
             return true;
         }
 
@@ -47,7 +47,7 @@ namespace _2_BUS.BUSServices
 
         public bool AddItem(ThucDon food)
         {
-            _IThucDon.AddThucDon(food);
+            _iThucDonService.AddThucDon(food);
             return true;
         }
 
@@ -60,13 +60,13 @@ namespace _2_BUS.BUSServices
 
         public bool AddUnit(DonVi unit)
         {
-            _Donvi.AddDonVi(unit);
+            _iDonViService.AddDonVi(unit);
             return true;
         }
 
         public bool DeleteCategory(DanhMucFood cat)
         {
-            _DMF.DeleteDMFood(cat);
+            _iDMFoodService.DeleteDMFood(cat);
             return true;
         }
 
@@ -78,7 +78,7 @@ namespace _2_BUS.BUSServices
 
         public bool DeleteItem(ThucDon food)
         {
-            _IThucDon.DeleteThucDon(food);
+            _iThucDonService.DeleteThucDon(food);
             return true;
         }
 
@@ -91,7 +91,7 @@ namespace _2_BUS.BUSServices
 
         public bool DeleteUnit(DonVi unit)
         {
-            _Donvi.DeleteDonVi(unit);
+            _iDonViService.DeleteDonVi(unit);
             return true;
         }
 
@@ -102,27 +102,48 @@ namespace _2_BUS.BUSServices
 
         public List<DanhMucFood> GetDanhMucFoods()
         {
-            return _DMF.GetCategoriesFromDB();
+            return _iDMFoodService.GetCategoriesFromDB();
         }
 
         public List<DonVi> GetDonVis()
         {
-            return _Donvi.GetUnitsFromDB();
+            return _iDonViService.GetUnitsFromDB();
         }
 
         public List<MonAnChiTiet> GetMonAnChiTiets()
         {
-            throw new NotImplementedException();
+            return _iMonAnChiTietService.GetDetailsFromDB();
         }
 
         public List<ViewMenu> GetViewMenus()
         {
-            throw new NotImplementedException();
+            return _viewMenus = (from a in _iMonAnChiTietService.GetDetailsFromDB()
+                                 join b in _iDonViService.GetUnitsFromDB() on a.Idunit equals b.Id
+                                 join c in _iDMFoodService.GetCategoriesFromDB() on a.Idcategory equals c.Id
+                                 join d in _iCachChebienService.GetMethodsFromDB() on a.Idmethod equals d.Id
+                                 select new ViewMenu()
+                                 {
+                                     details = a,
+                                     unit = b,
+                                     cat = c,
+                                     method = d
+                                 }).ToList();
         }
 
-        public List<ViewMenu> TimKiem()
+        public List<ViewMenu> TimKiem(string str)
         {
-            throw new NotImplementedException();
+            return _viewMenus = (from a in _iMonAnChiTietService.GetDetailsFromDB()
+                                 join b in _iDonViService.GetUnitsFromDB() on a.Idunit equals b.Id
+                                 join c in _iDMFoodService.GetCategoriesFromDB() on a.Idcategory equals c.Id
+                                 join d in _iCachChebienService.GetMethodsFromDB() on a.Idmethod equals d.Id
+                                 where a.Name.Contains(str) || a.Price.ToString().Contains(str) || b.Name.Contains(str) || c.Name.Contains(str) || d.Name.Contains(str)
+                                 select new ViewMenu()
+                                 {
+                                     details = a,
+                                     unit = b,
+                                     cat = c,
+                                     method = d
+                                 }).ToList();
         }
 
         public bool UpdateCategory(DanhMucFood cat)
@@ -157,7 +178,7 @@ namespace _2_BUS.BUSServices
         {
             try
             {
-                _ithucDonService.UpdateThucDon(food);
+                _iThucDonService.UpdateThucDon(food);
                 return true;
             }
             catch (Exception)
