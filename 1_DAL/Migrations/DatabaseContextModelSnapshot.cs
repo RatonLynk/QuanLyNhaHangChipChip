@@ -48,6 +48,25 @@ namespace _1_DAL.Migrations
                     b.ToTable("BanAn");
                 });
 
+            modelBuilder.Entity("_1_DAL.Models.CachChebien", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int")
+                        .HasColumnName("ID");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool?>("Status")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CachChebien");
+                });
+
             modelBuilder.Entity("_1_DAL.Models.DanhMucFood", b =>
                 {
                     b.Property<int>("Id")
@@ -204,6 +223,8 @@ namespace _1_DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("MaMon");
+
+                    b.HasIndex("Idmethod");
 
                     b.HasIndex(new[] { "Idcategory" }, "IX_MonAnChiTiet_IDCategory");
 
@@ -416,6 +437,12 @@ namespace _1_DAL.Migrations
                         .HasConstraintName("FK_MonAnChiTiet_DanhMucFood")
                         .IsRequired();
 
+                    b.HasOne("_1_DAL.Models.CachChebien", "IdmethodNavigation")
+                        .WithMany("MonAnChiTiets")
+                        .HasForeignKey("Idmethod")
+                        .HasConstraintName("FK_MonAnChiTiet_CachChebien")
+                        .IsRequired();
+
                     b.HasOne("_1_DAL.Models.DonVi", "IdunitNavigation")
                         .WithMany("MonAnChiTiets")
                         .HasForeignKey("Idunit")
@@ -435,6 +462,8 @@ namespace _1_DAL.Migrations
                         .IsRequired();
 
                     b.Navigation("IdcategoryNavigation");
+
+                    b.Navigation("IdmethodNavigation");
 
                     b.Navigation("Idunit1");
 
@@ -468,6 +497,11 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.BanAn", b =>
                 {
                     b.Navigation("HoaDons");
+                });
+
+            modelBuilder.Entity("_1_DAL.Models.CachChebien", b =>
+                {
+                    b.Navigation("MonAnChiTiets");
                 });
 
             modelBuilder.Entity("_1_DAL.Models.DanhMucFood", b =>
