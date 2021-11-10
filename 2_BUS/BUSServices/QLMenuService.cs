@@ -23,8 +23,8 @@ namespace _2_BUS.BUSServices
         
 
         public QLMenuService()
-        {            
-            _MonCT = new MonAnChiTietService();
+        {
+            _iMonAnChiTietService = new MonAnChiTietService();
         }
         public bool AddCategory(DanhMucFood cat)
         {
@@ -33,7 +33,8 @@ namespace _2_BUS.BUSServices
 
         public bool AddDetail(MonAnChiTiet food)
         {
-            return _MonCT.AddMonAnChiTiet(food);
+            _iMonAnChiTietService.AddMonAnChiTiet(food);
+            return true;
         }
 
         public bool AddItem(ThucDon food)
@@ -78,7 +79,7 @@ namespace _2_BUS.BUSServices
             throw new NotImplementedException();
         }
 
-        public List<CachChebien> GetCachChebiens()
+        public List<CachCheBien> GetCachChebiens()
         {
             throw new NotImplementedException();
         }
