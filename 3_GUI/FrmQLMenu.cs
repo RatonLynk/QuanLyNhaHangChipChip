@@ -16,5 +16,6 @@ namespace _3_GUI
         {
             InitializeComponent();
         }
+
     }
 }
