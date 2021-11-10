@@ -30,6 +30,10 @@ namespace _3_GUI
             //test đ
         }
 
-
+        private void btnQuanLyThucDon_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyThucDon frm = new FrmQuanLyThucDon();
+            frm.ShowDialog();
+        }
     }
 }
