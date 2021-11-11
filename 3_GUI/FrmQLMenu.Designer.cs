@@ -107,8 +107,7 @@ namespace _3_GUI
             // 
             this.rdo_khongHoatDong.AutoSize = true;
             this.rdo_khongHoatDong.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rdo_khongHoatDong.Location = new System.Drawing.Point(249, 378);
-            this.rdo_khongHoatDong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rdo_khongHoatDong.Location = new System.Drawing.Point(211, 109);
             this.rdo_khongHoatDong.Name = "rdo_khongHoatDong";
             this.rdo_khongHoatDong.Size = new System.Drawing.Size(175, 26);
             this.rdo_khongHoatDong.TabIndex = 11;
@@ -121,8 +120,7 @@ namespace _3_GUI
             // 
             this.rdo_hoatDong.AutoSize = true;
             this.rdo_hoatDong.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.rdo_hoatDong.Location = new System.Drawing.Point(128, 378);
-            this.rdo_hoatDong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rdo_hoatDong.Location = new System.Drawing.Point(108, 109);
             this.rdo_hoatDong.Name = "rdo_hoatDong";
             this.rdo_hoatDong.Size = new System.Drawing.Size(116, 26);
             this.rdo_hoatDong.TabIndex = 10;
@@ -135,11 +133,14 @@ namespace _3_GUI
             // 
             this.lbl_TrangThai.AutoSize = true;
             this.lbl_TrangThai.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_TrangThai.Location = new System.Drawing.Point(11, 380);
+            this.lbl_TrangThai.Location = new System.Drawing.Point(17, 111);
             this.lbl_TrangThai.Name = "lbl_TrangThai";
-            this.lbl_TrangThai.Size = new System.Drawing.Size(103, 22);
+            this.lbl_TrangThai.Size = new System.Drawing.Size(79, 17);
             this.lbl_TrangThai.TabIndex = 9;
             this.lbl_TrangThai.Text = "Trạng Thái";
+            // 
+            // textBox2
+            // 
             // 
             // lbl_Gia
             // 
@@ -153,10 +154,9 @@ namespace _3_GUI
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(127, 87);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Location = new System.Drawing.Point(108, 30);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 35);
+            this.textBox1.Size = new System.Drawing.Size(225, 29);
             this.textBox1.TabIndex = 6;
             // 
             // lbl_TenMon
@@ -169,11 +169,27 @@ namespace _3_GUI
             this.lbl_TenMon.TabIndex = 5;
             this.lbl_TenMon.Text = "Tên món ăn";
             // 
+            // lbl_Search
+            // 
+            this.lbl_Search.AutoSize = true;
+            this.lbl_Search.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Search.Location = new System.Drawing.Point(7, 200);
+            this.lbl_Search.Name = "lbl_Search";
+            this.lbl_Search.Size = new System.Drawing.Size(131, 17);
+            this.lbl_Search.TabIndex = 4;
+            this.lbl_Search.Text = "Tìm kiếm món ăn :";
+            // 
+            // tbx_Search
+            // 
+            this.tbx_Search.Location = new System.Drawing.Point(144, 194);
+            this.tbx_Search.Name = "tbx_Search";
+            this.tbx_Search.Size = new System.Drawing.Size(209, 29);
+            this.tbx_Search.TabIndex = 3;
+            // 
             // btn_Delete
             // 
             this.btn_Delete.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Delete.Location = new System.Drawing.Point(300, 444);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Delete.Location = new System.Drawing.Point(248, 149);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(120, 43);
             this.btn_Delete.TabIndex = 2;
@@ -183,8 +199,7 @@ namespace _3_GUI
             // btn_Update
             // 
             this.btn_Update.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Update.Location = new System.Drawing.Point(154, 444);
-            this.btn_Update.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Update.Location = new System.Drawing.Point(128, 149);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(120, 45);
             this.btn_Update.TabIndex = 1;
@@ -254,21 +269,29 @@ namespace _3_GUI
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 28);
-            this.toolStripMenuItem1.Text = "Danh mục";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Đồ hải sản";
             // 
             // đồTrênBờToolStripMenuItem
             // 
             this.đồTrênBờToolStripMenuItem.Name = "đồTrênBờToolStripMenuItem";
-            this.đồTrênBờToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
-            this.đồTrênBờToolStripMenuItem.Text = "Cách chế biến";
+            this.đồTrênBờToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đồTrênBờToolStripMenuItem.Text = "Đồ trên bờ";
             // 
             // đồTrênTrờiToolStripMenuItem
             // 
             this.đồTrênTrờiToolStripMenuItem.Name = "đồTrênTrờiToolStripMenuItem";
-            this.đồTrênTrờiToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
-            this.đồTrênTrờiToolStripMenuItem.Text = "Đơn vị tính";
+            this.đồTrênTrờiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đồTrênTrờiToolStripMenuItem.Text = "Đồ trên trời";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(390, 55);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(240, 209);
+            this.dataGridView2.TabIndex = 4;
             // 
             // numericUpDown1
             // 
@@ -295,17 +318,17 @@ namespace _3_GUI
             this.comboBox1.Size = new System.Drawing.Size(256, 34);
             this.comboBox1.TabIndex = 13;
             // 
-            // label2
+            // pictureBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(18, 254);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 22);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Cách nấu";
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Location = new System.Drawing.Point(170, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(189, 183);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // comboBox2
+            // button1
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(127, 247);
@@ -313,29 +336,35 @@ namespace _3_GUI
             this.comboBox2.Size = new System.Drawing.Size(256, 34);
             this.comboBox2.TabIndex = 13;
             // 
-            // label3
+            // button2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(30, 315);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 22);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Đơn vị";
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(108, 220);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(60, 34);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Sửa";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // button3
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(127, 308);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(256, 34);
-            this.comboBox3.TabIndex = 13;
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.Location = new System.Drawing.Point(201, 220);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(60, 34);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Xóa";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // FrmQLMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1304, 735);
+            this.ClientSize = new System.Drawing.Size(1141, 551);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgrid_MonCT);
             this.Controls.Add(this.menuStrip1);
