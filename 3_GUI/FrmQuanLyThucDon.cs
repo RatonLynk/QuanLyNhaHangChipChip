@@ -40,10 +40,15 @@ namespace _3_GUI
             //this.dgvDanhMuc.ClearSelection();
             //this.dgvMonAn.ClearSelection();
         }
-        
-        
-       
-    
-     
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
