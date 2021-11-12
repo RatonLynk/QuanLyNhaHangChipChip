@@ -281,11 +281,8 @@ namespace _3_GUI
             // đồTrênTrờiToolStripMenuItem
             // 
             this.đồTrênTrờiToolStripMenuItem.Name = "đồTrênTrờiToolStripMenuItem";
-            this.đồTrênTrờiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.đồTrênTrờiToolStripMenuItem.Text = "Đồ trên trời";
-            // 
-            // dataGridView2
-            // 
+            this.đồTrênTrờiToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.đồTrênTrờiToolStripMenuItem.Text = "Đơn vị tính";
             // 
             // numericUpDown1
             // 
@@ -314,6 +311,13 @@ namespace _3_GUI
             // 
             // pictureBox1
             // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(18, 254);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 22);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Cách nấu";
             // 
             // button1
             // 
@@ -325,15 +329,27 @@ namespace _3_GUI
             // 
             // button2
             // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(30, 315);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 22);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Đơn vị";
             // 
             // button3
             // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(127, 308);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(256, 34);
+            this.comboBox3.TabIndex = 13;
             // 
             // FrmQLMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1141, 551);
+            this.ClientSize = new System.Drawing.Size(1304, 735);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgrid_MonCT);
             this.Controls.Add(this.menuStrip1);

@@ -8,16 +8,16 @@ namespace _1_DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CachChebien",
+                name: "CachCheBien",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CachChebien", x => x.ID);
+                    table.PrimaryKey("PK_CachCheBien", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -94,7 +94,7 @@ namespace _1_DAL.Migrations
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Floor = table.Column<int>(type: "int", nullable: true),
                     Busy = table.Column<string>(type: "nchar(10)", fixedLength: true, maxLength: 10, nullable: true),
-                    Status = table.Column<bool>(type: "bit", nullable: false)
+                    Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -233,9 +233,9 @@ namespace _1_DAL.Migrations
                 {
                     table.PrimaryKey("PK_MonAnChiTiet", x => x.MaMon);
                     table.ForeignKey(
-                        name: "FK_MonAnChiTiet_CachChebien",
+                        name: "FK_MonAnChiTiet_CachCheBien",
                         column: x => x.IDMethod,
-                        principalTable: "CachChebien",
+                        principalTable: "CachCheBien",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
@@ -316,7 +316,7 @@ namespace _1_DAL.Migrations
                 name: "MonAnChiTiet");
 
             migrationBuilder.DropTable(
-                name: "CachChebien");
+                name: "CachCheBien");
 
             migrationBuilder.DropTable(
                 name: "DanhMucFood");
