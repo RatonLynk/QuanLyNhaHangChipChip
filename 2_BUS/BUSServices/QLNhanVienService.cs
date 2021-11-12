@@ -45,22 +45,10 @@ namespace _2_BUS.BUSServices
             return _getLstNhanViens;
         }
 
-        //public string Save()
-        //{
-        //    foreach (var x in _getLstNhanViens.Where(c => c.startsSave == 0))
-        //    {
-
-        //        x.startsSave = 1;
-        //        _iNhanVienService.AddNV(x);
-
-        //    }
-        //    startsSave = true;
-        //    return _iNhanVienService.Save();
-        //}
 
         public List<NhanVien> searchNhanViens(string nv)
         {
-            return _getLstNhanViens.Where(c => c.Name.StartsWith(nv)).ToList();
+            return _getLstNhanViens.Where(c => c.Name.Equals(nv)).ToList();
         }
 
         public string Update(NhanVien nhanVien)
