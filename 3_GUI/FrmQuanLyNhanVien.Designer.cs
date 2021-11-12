@@ -101,7 +101,7 @@ namespace _3_GUI
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.ForeColor = System.Drawing.SystemColors.MenuText;
             this.txtEmail.Location = new System.Drawing.Point(160, 139);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(224, 22);
             this.txtEmail.TabIndex = 36;
@@ -112,7 +112,7 @@ namespace _3_GUI
             this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaNV.ForeColor = System.Drawing.SystemColors.MenuText;
             this.txtMaNV.Location = new System.Drawing.Point(160, 56);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.ReadOnly = true;
             this.txtMaNV.Size = new System.Drawing.Size(224, 22);
@@ -169,7 +169,7 @@ namespace _3_GUI
             this.dgrid_NhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgrid_NhanVien.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dgrid_NhanVien.Location = new System.Drawing.Point(25, 274);
-            this.dgrid_NhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgrid_NhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.dgrid_NhanVien.MultiSelect = false;
             this.dgrid_NhanVien.Name = "dgrid_NhanVien";
             this.dgrid_NhanVien.ReadOnly = true;
@@ -179,6 +179,7 @@ namespace _3_GUI
             this.dgrid_NhanVien.Size = new System.Drawing.Size(891, 373);
             this.dgrid_NhanVien.TabIndex = 43;
             this.dgrid_NhanVien.TabStop = false;
+            this.dgrid_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_NhanVien_CellClick);
             // 
             // txtMatKhau
             // 
@@ -186,7 +187,7 @@ namespace _3_GUI
             this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMatKhau.ForeColor = System.Drawing.SystemColors.MenuText;
             this.txtMatKhau.Location = new System.Drawing.Point(160, 177);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(224, 22);
             this.txtMatKhau.TabIndex = 36;
@@ -274,6 +275,7 @@ namespace _3_GUI
             this.rbtn_QuanTri.TabStop = true;
             this.rbtn_QuanTri.Text = "Quản Trị";
             this.rbtn_QuanTri.UseVisualStyleBackColor = true;
+            this.rbtn_QuanTri.CheckedChanged += new System.EventHandler(this.rbtn_QuanTri_CheckedChanged);
             // 
             // rbtn_NhanVien
             // 
@@ -286,6 +288,7 @@ namespace _3_GUI
             this.rbtn_NhanVien.TabIndex = 113;
             this.rbtn_NhanVien.Text = "Nhân Viên";
             this.rbtn_NhanVien.UseVisualStyleBackColor = true;
+            this.rbtn_NhanVien.CheckedChanged += new System.EventHandler(this.rbtn_NhanVien_CheckedChanged);
             // 
             // txt_SDT
             // 
@@ -351,13 +354,14 @@ namespace _3_GUI
             this.btnXoaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnXoaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNV.Image")));
             this.btnXoaNV.Location = new System.Drawing.Point(575, 664);
-            this.btnXoaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Size = new System.Drawing.Size(109, 37);
             this.btnXoaNV.TabIndex = 127;
             this.btnXoaNV.Text = "Xóa";
             this.btnXoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaNV.UseVisualStyleBackColor = true;
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
             // 
             // btnSuaNV
             // 
@@ -367,13 +371,14 @@ namespace _3_GUI
             this.btnSuaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaNV.Image")));
             this.btnSuaNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSuaNV.Location = new System.Drawing.Point(413, 664);
-            this.btnSuaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSuaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaNV.Name = "btnSuaNV";
             this.btnSuaNV.Size = new System.Drawing.Size(109, 37);
             this.btnSuaNV.TabIndex = 126;
             this.btnSuaNV.Text = "Sửa ";
             this.btnSuaNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaNV.UseVisualStyleBackColor = true;
+            this.btnSuaNV.Click += new System.EventHandler(this.btnSuaNV_Click);
             // 
             // btnThemNV
             // 
@@ -383,12 +388,13 @@ namespace _3_GUI
             this.btnThemNV.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNV.Image")));
             this.btnThemNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemNV.Location = new System.Drawing.Point(253, 664);
-            this.btnThemNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemNV.Name = "btnThemNV";
             this.btnThemNV.Size = new System.Drawing.Size(109, 37);
             this.btnThemNV.TabIndex = 125;
             this.btnThemNV.Text = "Thêm";
             this.btnThemNV.UseVisualStyleBackColor = true;
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
             // FrmQuanLyNhanVien
             // 
