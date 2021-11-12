@@ -11,7 +11,7 @@ namespace _1_DAL.DALServices
 {
     public class HoaDonService : iHoaDonService
     {
-        DatabaseContext _dbContext;
+        DatabaseContext _dbContext = new DatabaseContext();
         List<HoaDon> _lstTables;
         public string AddHoaDon(HoaDon HoaDon)
         {

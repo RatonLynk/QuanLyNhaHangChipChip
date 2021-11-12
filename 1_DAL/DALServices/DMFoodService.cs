@@ -11,7 +11,7 @@ namespace _1_DAL.DALServices
 {
     public class DMFoodService : iDMFoodService
     {
-        DatabaseContext _dbContext;
+        DatabaseContext _dbContext = new DatabaseContext();
         List<DanhMucFood> _lstTables;
         public string AddDMFood(DanhMucFood DMFood)
         {

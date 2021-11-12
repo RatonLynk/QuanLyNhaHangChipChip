@@ -31,7 +31,7 @@ namespace _1_DAL.DALServices
 
         public List<ThucDon> GetThucDonFromDB()
         {
-            return _dbContext.ThucDons.ToList();
+            return _lstThucDon = _dbContext.ThucDons.ToList();
         }
 
         public string SaveThucDon()

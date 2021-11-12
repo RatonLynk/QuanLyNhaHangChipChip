@@ -11,7 +11,7 @@ namespace _1_DAL.DALServices
 {
    public class MonAnChiTietService : iMonAnChiTietService
     {
-        DatabaseContext _dbContext;
+        DatabaseContext _dbContext = new DatabaseContext();
         List<MonAnChiTiet> _lstTables;
         public string AddMonAnChiTiet(MonAnChiTiet MonAnChiTiet)
         {

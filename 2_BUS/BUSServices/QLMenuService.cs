@@ -36,24 +36,29 @@ namespace _2_BUS.BUSServices
         public bool AddCategory(DanhMucFood cat)
         {
             _iDMFoodService.AddDMFood(cat);
+            _iDMFoodService.SaveDMFood();
             return true;
         }
 
         public bool AddDetail(MonAnChiTiet food)
         {
             _iMonAnChiTietService.AddMonAnChiTiet(food);
+            _iMonAnChiTietService.SaveMonAnChiTiet();
+
             return true;
         }
 
         public bool AddItem(ThucDon food)
         {
             _iThucDonService.AddThucDon(food);
+            _iThucDonService.SaveThucDon();
             return true;
         }
 
         public bool AddMethod(CachCheBien method)
         {
             _iCachChebienService.AddCachCheBien(method);
+            _iCachChebienService.SaveCachCheBien();
             return true;
         }
 
@@ -61,30 +66,36 @@ namespace _2_BUS.BUSServices
         public bool AddUnit(DonVi unit)
         {
             _iDonViService.AddDonVi(unit);
+            _iDonViService.SaveDonVi();
             return true;
         }
 
         public bool DeleteCategory(DanhMucFood cat)
         {
             _iDMFoodService.DeleteDMFood(cat);
+            _iDMFoodService.SaveDMFood();
             return true;
         }
 
         public bool DeleteDetail(MonAnChiTiet food)
         {
             _iMonAnChiTietService.DeleteMonAnChiTiet(food);
+            _iMonAnChiTietService.SaveMonAnChiTiet();
+
             return true;
         }
 
         public bool DeleteItem(ThucDon food)
         {
             _iThucDonService.DeleteThucDon(food);
+            _iThucDonService.SaveThucDon();
             return true;
         }
 
         public bool DeleteMethod(CachCheBien method)
         {
             _iCachChebienService.DeleteCachCheBien(method);
+            _iCachChebienService.SaveCachCheBien();
             return true;
         }
 
@@ -92,6 +103,7 @@ namespace _2_BUS.BUSServices
         public bool DeleteUnit(DonVi unit)
         {
             _iDonViService.DeleteDonVi(unit);
+            _iDonViService.SaveDonVi();
             return true;
         }
 
@@ -156,6 +168,7 @@ namespace _2_BUS.BUSServices
             try
             {
                 _iDMFoodService.UpdateDMFood(cat);
+                _iDMFoodService.SaveDMFood();
                 return true;
             }
             catch (Exception)
@@ -170,11 +183,11 @@ namespace _2_BUS.BUSServices
             try
             {
                 _iMonAnChiTietService.UpdateMonAnChiTiet(food);
+                _iMonAnChiTietService.SaveMonAnChiTiet();
                 return true;
             }
             catch (Exception)
             {
-
                 return false;
             }
         }
@@ -184,6 +197,7 @@ namespace _2_BUS.BUSServices
             try
             {
                 _iThucDonService.UpdateThucDon(food);
+                _iThucDonService.SaveThucDon();
                 return true;
             }
             catch (Exception)
@@ -198,6 +212,7 @@ namespace _2_BUS.BUSServices
             try
             {
                 _iCachChebienService.UpdateCachCheBien(method);
+                _iCachChebienService.SaveCachCheBien();
                 return true;
             }
             catch (Exception)
@@ -213,6 +228,7 @@ namespace _2_BUS.BUSServices
             try
             {
                 _iDonViService.UpdateDonVi(unit);
+                _iDonViService.SaveDonVi();
                 return true;
             }
             catch (Exception)
@@ -224,7 +240,7 @@ namespace _2_BUS.BUSServices
 
         List<CachCheBien> iQLMenuService.GetCachCheBiens()
         {
-            return _lstCachCheBien;
+            return _iCachChebienService.GetMethodsFromDB();
         }
     }
 }

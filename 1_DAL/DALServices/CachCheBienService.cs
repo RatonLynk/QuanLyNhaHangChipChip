@@ -11,7 +11,7 @@ namespace _1_DAL.DALServices
 {
     public class CachCheBienService : iCachChebienService
     {
-        DatabaseContext _dbContext;
+        DatabaseContext _dbContext = new DatabaseContext();
         List<CachCheBien> _lstTables;
         public string AddCachCheBien(CachCheBien CachCheBien)
         {

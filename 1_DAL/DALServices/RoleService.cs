@@ -11,7 +11,7 @@ namespace _1_DAL.DALServices
 {
     public class RoleService : iRoleService
     {
-        private DatabaseContext _dbConText;
+        private DatabaseContext _dbConText = new DatabaseContext();
         private List<Role> _lstRoles;
 
         public string AddRole(Role role)

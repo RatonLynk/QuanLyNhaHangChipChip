@@ -11,7 +11,7 @@ namespace _1_DAL.DALServices
 {
     public class BillDetailService : iBillDetailService
     {
-        DatabaseContext _dbContext;
+        DatabaseContext _dbContext = new DatabaseContext();
         List<HoaDonChiTiet> _lstTables;
         public string AddHoaDonChiTiet(HoaDonChiTiet HoaDonChiTiet)
         {

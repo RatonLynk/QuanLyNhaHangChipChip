@@ -9,13 +9,9 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("HoaDonChiTiet")]
+    [Index(nameof(Idbill), Name = "IX_HoaDonChiTiet_IDBill")]
     public partial class HoaDonChiTiet
     {
-        public HoaDonChiTiet()
-        {
-            MonAnChiTiets = new HashSet<MonAnChiTiet>();
-        }
-
         [Key]
         [Column("ID")]
         public int Id { get; set; }
@@ -31,7 +27,8 @@ namespace _1_DAL.Models
         [ForeignKey(nameof(Idbill))]
         [InverseProperty(nameof(HoaDon.HoaDonChiTiets))]
         public virtual HoaDon IdbillNavigation { get; set; }
-        [InverseProperty(nameof(MonAnChiTiet.Idunit1))]
-        public virtual ICollection<MonAnChiTiet> MonAnChiTiets { get; set; }
+        [ForeignKey(nameof(Idfood))]
+        [InverseProperty(nameof(MonAnChiTiet.HoaDonChiTiets))]
+        public virtual MonAnChiTiet IdfoodNavigation { get; set; }
     }
 }

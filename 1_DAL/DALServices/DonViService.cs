@@ -11,7 +11,7 @@ namespace _1_DAL.DALServices
 {
     public class DonViService : iDonViService
     {
-        DatabaseContext _dbContext;
+        DatabaseContext _dbContext = new DatabaseContext();
         List<DonVi> _lstTables;
         public string AddDonVi(DonVi DonVi)
         {

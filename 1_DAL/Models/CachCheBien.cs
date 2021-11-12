@@ -20,7 +20,7 @@ namespace _1_DAL.Models
         [Column("ID")]
         public int Id { get; set; }
         [Required]
-        [StringLength(100)]
+        [StringLength(50)]
         public string Name { get; set; }
         public bool? Status { get; set; }
 

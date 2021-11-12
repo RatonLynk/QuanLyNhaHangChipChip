@@ -11,7 +11,7 @@ namespace _1_DAL.DALServices
 {
     public class FloorService : iFloorService
     {
-        DatabaseContext _dbContext;
+        DatabaseContext _dbContext = new DatabaseContext();
         List<Floor> _lstTables;
         public string AddFloor(Floor Floor)
         {
