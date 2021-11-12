@@ -10,12 +10,12 @@ namespace _2_BUS.BUSServices
 {
     public interface IQLNhanVienService
     {
-        List<NhanVien> lstNhanViens();
+        List<NhanVien> getlstNhanViens();
         List<NhanVien> searchNhanViens(string nv);
         public string Add(NhanVien nhanVien);
         public string Update(NhanVien nhanVien);
         public string Delete(NhanVien nhanVien);
         public string Save();
-        public void getLstNhanViens();
+        public void getLst();
     }
 }

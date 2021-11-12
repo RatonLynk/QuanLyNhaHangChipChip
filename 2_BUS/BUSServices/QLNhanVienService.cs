@@ -18,7 +18,7 @@ namespace _2_BUS.BUSServices
         public QLNhanVienService()
         {
             _iNhanVienService = new NhanVienService();
-            getLstNhanViens();
+            getLst();
         }
         public string Add(NhanVien nhanVien)
         {
@@ -34,17 +34,6 @@ namespace _2_BUS.BUSServices
             _getLstNhanViens[index] = nhanVien;
             return _iNhanVienService.EditNV(nhanVien);
         }
-
-        public void getLstNhanViens()
-        {
-            _getLstNhanViens = _iNhanVienService.GetLstNVfromDB();
-        }
-
-        public List<NhanVien> lstNhanViens()
-        {
-            return _getLstNhanViens;
-        }
-
 
         public List<NhanVien> searchNhanViens(string nv)
         {
@@ -62,6 +51,16 @@ namespace _2_BUS.BUSServices
         public string Save()
         {
             throw new NotImplementedException();
+        }
+
+        public List<NhanVien> getlstNhanViens()
+        {
+            return _getLstNhanViens;
+        }
+
+        public void getLst()
+        {
+            _getLstNhanViens = _iNhanVienService.GetLstNVfromDB();
         }
     }
 }
