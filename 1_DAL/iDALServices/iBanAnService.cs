@@ -12,7 +12,6 @@ namespace _1_DAL.iDALServices
         public string AddBanAn(BanAn BanAn);
         public string UpdateBanAn(BanAn BanAn);
         public string DeleteBanAn(BanAn BanAn);
-        public string SaveBanAn();
         public List<BanAn> GetTablesFromDB();
     }
 }

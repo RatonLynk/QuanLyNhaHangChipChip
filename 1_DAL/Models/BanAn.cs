@@ -26,6 +26,7 @@ namespace _1_DAL.Models
         public int? Floor { get; set; }
         [StringLength(10)]
         public string Busy { get; set; }
+        public int TinhTrang { get; set;}
         public bool Status { get; set; }
 
         [ForeignKey(nameof(Floor))]
