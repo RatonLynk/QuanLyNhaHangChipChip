@@ -10,7 +10,7 @@ using _1_DAL.Context;
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211110012645_xa")]
+    [Migration("20211110024117_xa")]
     partial class xa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,17 +40,19 @@ namespace _1_DAL.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Floor" }, "IX_BanAn_Floor");
+                    b.HasIndex("Floor");
 
                     b.ToTable("BanAn");
                 });
 
-            modelBuilder.Entity("_1_DAL.Models.CachChebien", b =>
+            modelBuilder.Entity("_1_DAL.Models.CachCheBien", b =>
                 {
                     b.Property<int>("Id")
                         .HasColumnType("int")
@@ -58,15 +60,15 @@ namespace _1_DAL.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<bool?>("Status")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.ToTable("CachChebien");
+                    b.ToTable("CachCheBien");
                 });
 
             modelBuilder.Entity("_1_DAL.Models.DanhMucFood", b =>
@@ -154,9 +156,9 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "IdnhanVien" }, "IX_HoaDon_IDNhanVien");
+                    b.HasIndex("IdnhanVien");
 
-                    b.HasIndex(new[] { "Idtable" }, "IX_HoaDon_IDtable");
+                    b.HasIndex("Idtable");
 
                     b.ToTable("HoaDon");
                 });
@@ -186,7 +188,7 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Idbill" }, "IX_HoaDonChiTiet_IDBill");
+                    b.HasIndex("Idbill");
 
                     b.ToTable("HoaDonChiTiet");
                 });
@@ -226,11 +228,11 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("MaMon");
 
+                    b.HasIndex("Idcategory");
+
                     b.HasIndex("Idmethod");
 
-                    b.HasIndex(new[] { "Idcategory" }, "IX_MonAnChiTiet_IDCategory");
-
-                    b.HasIndex(new[] { "Idunit" }, "IX_MonAnChiTiet_IDUnit");
+                    b.HasIndex("Idunit");
 
                     b.ToTable("MonAnChiTiet");
                 });
@@ -282,7 +284,7 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("MaNv");
 
-                    b.HasIndex(new[] { "Role" }, "IX_NhanVien_Role");
+                    b.HasIndex("Role");
 
                     b.ToTable("NhanVien");
                 });
@@ -337,7 +339,7 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("MaNv");
 
-                    b.HasIndex(new[] { "Role" }, "IX_NhanVienNH_Role");
+                    b.HasIndex("Role");
 
                     b.ToTable("NhanVienNH");
                 });
@@ -439,10 +441,10 @@ namespace _1_DAL.Migrations
                         .HasConstraintName("FK_MonAnChiTiet_DanhMucFood")
                         .IsRequired();
 
-                    b.HasOne("_1_DAL.Models.CachChebien", "IdmethodNavigation")
+                    b.HasOne("_1_DAL.Models.CachCheBien", "IdmethodNavigation")
                         .WithMany("MonAnChiTiets")
                         .HasForeignKey("Idmethod")
-                        .HasConstraintName("FK_MonAnChiTiet_CachChebien")
+                        .HasConstraintName("FK_MonAnChiTiet_CachCheBien")
                         .IsRequired();
 
                     b.HasOne("_1_DAL.Models.DonVi", "IdunitNavigation")
@@ -501,7 +503,7 @@ namespace _1_DAL.Migrations
                     b.Navigation("HoaDons");
                 });
 
-            modelBuilder.Entity("_1_DAL.Models.CachChebien", b =>
+            modelBuilder.Entity("_1_DAL.Models.CachCheBien", b =>
                 {
                     b.Navigation("MonAnChiTiets");
                 });
