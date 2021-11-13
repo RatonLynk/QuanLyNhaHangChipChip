@@ -69,7 +69,7 @@ namespace _3_GUI
             this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(250, 102);
+            this.textBox1.Location = new System.Drawing.Point(250, 99);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(256, 26);
@@ -80,7 +80,7 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(40, 102);
+            this.label1.Location = new System.Drawing.Point(40, 101);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 20);
@@ -92,7 +92,7 @@ namespace _3_GUI
             this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(250, 144);
+            this.textBox2.Location = new System.Drawing.Point(250, 145);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(256, 26);
@@ -103,7 +103,7 @@ namespace _3_GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(40, 144);
+            this.label2.Location = new System.Drawing.Point(40, 149);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 20);
@@ -142,7 +142,7 @@ namespace _3_GUI
             this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLuu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(122, 258);
+            this.btnLuu.Location = new System.Drawing.Point(106, 258);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(102, 49);
@@ -159,7 +159,7 @@ namespace _3_GUI
             this.btnDong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDong.Location = new System.Drawing.Point(371, 258);
+            this.btnDong.Location = new System.Drawing.Point(367, 258);
             this.btnDong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(102, 49);
