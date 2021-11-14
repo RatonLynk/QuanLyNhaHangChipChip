@@ -61,7 +61,7 @@
   <data name="btnDangNhap.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
-        UwAAAVMBVlwD6QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGvSURBVFhHxdbP
+        VQAAAVUB1l9HcgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGvSURBVFhHxdbP
         KwRxGMfx3bZwlR8H5bc4i/gDuOAkDs6uHDioPTn5B9zc/AcKpZQSKbnKaQ9+JA64SCmK8X627+gxnp2d
         abfvfOpVO88832dnd3ZmJxcEQabMok9m0Sez6JNZTIrkMYlN7OMKl9jGEsbRZK0NmcVqSAFruIUU4rxj
         BXlzllWMQ/pxDv0mSZyg99+8aCEOGcYr9GD5yuUTjqIFbZjCOo6ge9+w8Gem3ohDuvCIcNgL5q1eTXrw
@@ -547,7 +547,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
-        HQAAAR0BDfQKfgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIMSURBVFhH5de/
+        HgAAAR4BoE0rEwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIMSURBVFhH5de/
         K4VhHAXwx6BuCYNSfgx3Mcj/4RrcUgz+AWWwmYgyWA3KYMJmcZXJqEw2GQ3KgsFdZEFxnVPPczvezvu6
         9C7y1Keuc8/3+7z5mdBqtTqG0wWTsAYncBfxNTO+1+Vm89jQwanCGfCDIuxU3Q7Hhlk4C/AMelERdhfc
         riwbKpy5uFTdwxGsRHzNLNubczuVDROcQXiMy+gdtqBiupX4Hjupz9nBbFfZMME5jouSWddT7Eifjl0v
@@ -562,7 +562,7 @@
   <data name="btnThoat.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
-        UAAAAVAB++UihAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAG8SURBVFhHxda7
+        UQAAAVEBKaLAYAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAG8SURBVFhHxda7
         SgNBFIDhhAjaijcQvIuNxAuKPoA2amvhO9hooaSyygvY2fkCYqGVIIgi2IuVgpdCCy+FCII263/Cjhzj
         2XFjkt0DH2TPzJzZzWQnkwmCIFVmMklmMklmMklmMi4ii1lsYh8XOMc2ljGNJmusYyb/QuSwhltIwucd
         K8iataykDzGAM+hJ4jhG36965QkfYhyv0IXlK5cnnEQL2jCHDRxC933D0o+a+sKH6MYDXLFnLFp9NemD
