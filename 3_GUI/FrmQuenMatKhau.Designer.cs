@@ -1,7 +1,7 @@
 ﻿
 namespace _3_GUI
 {
-    partial class Frm_QuenMatKhau
+    partial class FrmQuenMatKhau
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_QuenMatKhau));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuenMatKhau));
             this.lbFrmKhachHang = new System.Windows.Forms.Label();
             this.btn_XacNhan = new System.Windows.Forms.Button();
             this.btn_SendtoEmail = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@ namespace _3_GUI
             this.lbFrmKhachHang.AutoSize = true;
             this.lbFrmKhachHang.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbFrmKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lbFrmKhachHang.Location = new System.Drawing.Point(153, 37);
+            this.lbFrmKhachHang.Location = new System.Drawing.Point(128, 23);
             this.lbFrmKhachHang.Name = "lbFrmKhachHang";
             this.lbFrmKhachHang.Size = new System.Drawing.Size(220, 38);
             this.lbFrmKhachHang.TabIndex = 101;
@@ -68,7 +68,7 @@ namespace _3_GUI
             this.btn_SendtoEmail.Name = "btn_SendtoEmail";
             this.btn_SendtoEmail.Size = new System.Drawing.Size(94, 29);
             this.btn_SendtoEmail.TabIndex = 106;
-            this.btn_SendtoEmail.Text = "Send";
+            this.btn_SendtoEmail.Text = "Gửi";
             this.btn_SendtoEmail.UseVisualStyleBackColor = true;
             this.btn_SendtoEmail.Click += new System.EventHandler(this.btn_SendtoEmail_Click);
             // 
@@ -108,7 +108,7 @@ namespace _3_GUI
             this.txt_Email.Size = new System.Drawing.Size(195, 27);
             this.txt_Email.TabIndex = 102;
             // 
-            // Frm_QuenMatKhau
+            // FrmQuenMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,7 +122,7 @@ namespace _3_GUI
             this.Controls.Add(this.lbFrmKhachHang);
             this.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Frm_QuenMatKhau";
+            this.Name = "FrmQuenMatKhau";
             this.Text = "Quên Mật Khẩu";
             this.ResumeLayout(false);
             this.PerformLayout();

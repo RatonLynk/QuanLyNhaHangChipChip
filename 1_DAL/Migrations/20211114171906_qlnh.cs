@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1_DAL.Migrations
 {
-    public partial class Initial : Migration
+    public partial class qlnh : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -138,7 +138,9 @@ namespace _1_DAL.Migrations
                     Floor = table.Column<int>(type: "int", nullable: true),
                     Busy = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
                     TinhTrang = table.Column<int>(type: "int", nullable: false),
-                    Status = table.Column<bool>(type: "bit", nullable: false)
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    Rong = table.Column<int>(type: "int", nullable: false),
+                    Cao = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

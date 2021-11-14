@@ -42,5 +42,25 @@ namespace _3_GUI
             mnv = MaNv;
 
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult dlr = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                this.Hide();
+                FrmLogin frmLogin = new FrmLogin();
+                frmLogin.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmQuanLyNhanVien frmQuanLyNhanVien = new FrmQuanLyNhanVien();
+            frmQuanLyNhanVien.ShowDialog();
+            this.Close();
+        }
     }
 }
