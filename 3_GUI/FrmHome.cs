@@ -14,6 +14,7 @@ namespace _3_GUI
 {
     public partial class FrmHome : Form
     {
+        string mnv;
         public FrmHome()
         {
             InitializeComponent();
@@ -32,8 +33,14 @@ namespace _3_GUI
 
         private void btnQuanLyThucDon_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FrmQuanLyThucDon frm = new FrmQuanLyThucDon();
-            frm.ShowDialog();
+            frm.Show();
+        }
+        public void manv(string MaNv)//khi cần hiện mã nv đang đăng nhập gọi nó ra(xem nhân viên nào xuất hoá đơn)
+        {
+            mnv = MaNv;
+
         }
     }
 }

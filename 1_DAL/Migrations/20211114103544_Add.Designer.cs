@@ -3,15 +3,22 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1_DAL.Context;
 
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+<<<<<<< HEAD:1_DAL/Migrations/20211114103544_Add.Designer.cs
+    [Migration("20211114103544_Add")]
+    partial class Add
+=======
+    [Migration("20211114055519_chi1267")]
+    partial class chi1267
+>>>>>>> 8f3f07b9958243886402450aa245cb495d9ed919:1_DAL/Migrations/20211114055519_chi1267.Designer.cs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,6 +47,9 @@ namespace _1_DAL.Migrations
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
+
+                    b.Property<int>("TinhTrang")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -76,6 +86,7 @@ namespace _1_DAL.Migrations
                         .UseIdentityColumn();
 
                     b.Property<int>("IdMon")
+                        .HasMaxLength(255)
                         .HasColumnType("int");
 
                     b.Property<int>("IdNguyenLieu")
@@ -86,9 +97,9 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "IdMon" }, "IX_CongThuc_IdMon");
+                    b.HasIndex("IdMon");
 
-                    b.HasIndex(new[] { "IdNguyenLieu" }, "IX_CongThuc_IdNguyenLieu");
+                    b.HasIndex("IdNguyenLieu");
 
                     b.ToTable("CongThuc");
                 });

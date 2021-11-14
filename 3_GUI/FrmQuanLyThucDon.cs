@@ -49,8 +49,14 @@ namespace _3_GUI
             {
                 dgvMonAn.Rows.Add(x.details.Id,x.details.Name, x.details.Price, x.cat.Name, x.method.Name, x.unit.Name, x.details.Status == 1 ? "Đang bán" : "Dừng bán");
             }
-           
-
+            dgvCongThuc.ColumnCount = 2;
+            dgvCongThuc.Columns[0].Name = "Tên món ăn";
+            dgvCongThuc.Columns[1].Name = "Tên nguyên liệu";
+            foreach(var x in _iQLMenuService.GetViewMenus())
+            {
+                dgvCongThuc.Rows.Add(x.details.Name, x.ingre.Name);
+            }
+            this.dgvCongThuc.ClearSelection();
             this.dgvMonAn.ClearSelection();
             LoadCBox();
         }
@@ -232,11 +238,6 @@ namespace _3_GUI
             }
         }
 
-        
-
-        
-
-        
     }
 
 }
