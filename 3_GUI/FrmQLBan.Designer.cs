@@ -57,6 +57,7 @@ namespace _3_GUI
             this.button20 = new System.Windows.Forms.Button();
             this.Tp_Tang2 = new System.Windows.Forms.TabPage();
             this.button21 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -301,6 +302,7 @@ namespace _3_GUI
             // 
             // Tp_Tang1
             // 
+            this.Tp_Tang1.Controls.Add(this.button2);
             this.Tp_Tang1.Controls.Add(this.button20);
             this.Tp_Tang1.Location = new System.Drawing.Point(4, 24);
             this.Tp_Tang1.Name = "Tp_Tang1";
@@ -317,7 +319,7 @@ namespace _3_GUI
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(75, 23);
             this.button20.TabIndex = 27;
-            this.button20.Text = "Thêm bàn";
+            this.button20.Text = "Xóa bàn";
             this.button20.UseVisualStyleBackColor = false;
             this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
@@ -342,11 +344,21 @@ namespace _3_GUI
             this.button21.Text = "Thêm bàn";
             this.button21.UseVisualStyleBackColor = false;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(51, 371);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "Thêm bàn";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // FrmQLBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 529);
+            this.ClientSize = new System.Drawing.Size(998, 529);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -400,5 +412,6 @@ namespace _3_GUI
         private System.Windows.Forms.TabPage Tp_Tang2;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button2;
     }
 }

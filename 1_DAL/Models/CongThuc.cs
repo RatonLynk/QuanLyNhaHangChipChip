@@ -9,24 +9,22 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("CongThuc")]
+    [Index(nameof(IdMon), Name = "IX_CongThuc_IdMon")]
+    [Index(nameof(IdNguyenLieu), Name = "IX_CongThuc_IdNguyenLieu")]
     public partial class CongThuc
     {
-        public CongThuc()
-        {
-        }
         [Key]
         [Column("ID")]
         public int Id { get; set; }
-        [Required]
-        [StringLength(255)]
         public int IdMon { get; set; }
         public int IdNguyenLieu { get; set; }
         public bool? Status { get; set; }
-        [ForeignKey(nameof(IdNguyenLieu))]
-        [InverseProperty(nameof(NguyenLieu.CongThucs))]
-        public virtual NguyenLieu IdNguyenLieuNavigation { get; set; }
+
         [ForeignKey(nameof(IdMon))]
         [InverseProperty(nameof(MonAnChiTiet.CongThucs))]
         public virtual MonAnChiTiet IdMonNavigation { get; set; }
+        [ForeignKey(nameof(IdNguyenLieu))]
+        [InverseProperty(nameof(NguyenLieu.CongThucs))]
+        public virtual NguyenLieu IdNguyenLieuNavigation { get; set; }
     }
 }

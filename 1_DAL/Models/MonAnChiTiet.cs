@@ -15,13 +15,12 @@ namespace _1_DAL.Models
     {
         public MonAnChiTiet()
         {
+            CongThucs = new HashSet<CongThuc>();
             HoaDonChiTiets = new HashSet<HoaDonChiTiet>();
             ThucDons = new HashSet<ThucDon>();
-            CongThucs = new HashSet<CongThuc>();
         }
 
         [Key]
-        [Column("Id")]
         public int Id { get; set; }
         [Required]
         [StringLength(50)]
@@ -47,11 +46,11 @@ namespace _1_DAL.Models
         [ForeignKey(nameof(Idunit))]
         [InverseProperty(nameof(DonVi.MonAnChiTiets))]
         public virtual DonVi IdunitNavigation { get; set; }
+        [InverseProperty(nameof(CongThuc.IdMonNavigation))]
+        public virtual ICollection<CongThuc> CongThucs { get; set; }
         [InverseProperty(nameof(HoaDonChiTiet.IdfoodNavigation))]
         public virtual ICollection<HoaDonChiTiet> HoaDonChiTiets { get; set; }
         [InverseProperty(nameof(ThucDon.IdchiTietNavigation))]
         public virtual ICollection<ThucDon> ThucDons { get; set; }
-        [InverseProperty(nameof(CongThuc.IdMonNavigation))]
-        public virtual ICollection<CongThuc> CongThucs { get; set; }
     }
 }
