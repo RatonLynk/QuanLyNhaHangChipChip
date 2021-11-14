@@ -15,6 +15,7 @@ namespace _1_DAL.Models
         {
             CongThucs = new HashSet<CongThuc>();
         }
+
         [Key]
         [Column("ID")]
         public int Id { get; set; }
@@ -22,7 +23,7 @@ namespace _1_DAL.Models
         [StringLength(255)]
         public string Name { get; set; }
         public bool? Status { get; set; }
-        
+
         [InverseProperty(nameof(CongThuc.IdNguyenLieuNavigation))]
         public virtual ICollection<CongThuc> CongThucs { get; set; }
     }

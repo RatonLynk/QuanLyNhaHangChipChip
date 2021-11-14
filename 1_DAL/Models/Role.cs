@@ -23,7 +23,6 @@ namespace _1_DAL.Models
         public string Name { get; set; }
         public bool? Status { get; set; }
 
-
         [InverseProperty(nameof(NhanVien.RoleNavigation))]
         public virtual ICollection<NhanVien> NhanViens { get; set; }
     }

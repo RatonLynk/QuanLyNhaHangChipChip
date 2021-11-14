@@ -20,12 +20,14 @@ namespace _1_DAL.Context
 
         public virtual DbSet<BanAn> BanAns { get; set; }
         public virtual DbSet<CachCheBien> CachCheBiens { get; set; }
+        public virtual DbSet<CongThuc> CongThucs { get; set; }
         public virtual DbSet<DanhMucFood> DanhMucFoods { get; set; }
         public virtual DbSet<DonVi> DonVis { get; set; }
         public virtual DbSet<Floor> Floors { get; set; }
         public virtual DbSet<HoaDon> HoaDons { get; set; }
         public virtual DbSet<HoaDonChiTiet> HoaDonChiTiets { get; set; }
         public virtual DbSet<MonAnChiTiet> MonAnChiTiets { get; set; }
+        public virtual DbSet<NguyenLieu> NguyenLieus { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<ThucDon> ThucDons { get; set; }
@@ -63,7 +65,6 @@ namespace _1_DAL.Context
                 entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
-
             modelBuilder.Entity<DonVi>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -83,7 +84,6 @@ namespace _1_DAL.Context
                     .HasForeignKey(d => d.IdnhanVien)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_HoaDon_NhanVien");
-
 
                 entity.HasOne(d => d.IdtableNavigation)
                     .WithMany(p => p.HoaDons)
@@ -134,7 +134,6 @@ namespace _1_DAL.Context
                     .HasConstraintName("FK_MonAnChiTiet_DonVi");
             });
 
-
             modelBuilder.Entity<NhanVien>(entity =>
             {
                 entity.Property(e => e.MaNv).ValueGeneratedNever();
@@ -151,7 +150,6 @@ namespace _1_DAL.Context
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_NhanVien_Roles");
             });
-
 
             modelBuilder.Entity<Role>(entity =>
             {

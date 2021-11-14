@@ -36,7 +36,6 @@ namespace _1_DAL.Models
         public int IdnhanVien { get; set; }
 
         [ForeignKey(nameof(IdnhanVien))]
-
         [InverseProperty(nameof(NhanVien.HoaDons))]
         public virtual NhanVien IdnhanVienNavigation { get; set; }
         [ForeignKey(nameof(Idtable))]
