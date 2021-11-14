@@ -93,11 +93,11 @@ namespace _3_GUI
             var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToInt32(txtMaNV) ).FirstOrDefault();
             if (nv.Role == 1)
             {
-                chk_quanLi.Checked = true;
+                chk_quanLi.Checked = false;
             }
             else
             {
-                chk_nhanVien.Checked = false;
+                chk_nhanVien.Checked = true;
             }
 
             if (nv.Status == true)
@@ -163,7 +163,8 @@ namespace _3_GUI
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            
+            DatabaseContext _databaseContext = new DatabaseContext();
+            _databaseContext.SaveChanges();
         }
     }
 }

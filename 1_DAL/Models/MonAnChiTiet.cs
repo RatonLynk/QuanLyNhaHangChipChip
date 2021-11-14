@@ -42,9 +42,6 @@ namespace _1_DAL.Models
         [InverseProperty(nameof(CachCheBien.MonAnChiTiets))]
         public virtual CachCheBien IdmethodNavigation { get; set; }
         [ForeignKey(nameof(Idunit))]
-        [InverseProperty(nameof(HoaDonChiTiet.MonAnChiTiets))]
-        public virtual HoaDonChiTiet Idunit1 { get; set; }
-        [ForeignKey(nameof(Idunit))]
         [InverseProperty(nameof(DonVi.MonAnChiTiets))]
         public virtual DonVi IdunitNavigation { get; set; }
         [InverseProperty(nameof(CongThuc.IdMonNavigation))]

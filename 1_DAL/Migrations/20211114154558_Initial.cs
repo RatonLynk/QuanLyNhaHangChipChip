@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1_DAL.Migrations
 {
-    public partial class Reset : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,8 +11,9 @@ namespace _1_DAL.Migrations
                 name: "CachCheBien",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>
@@ -24,7 +25,8 @@ namespace _1_DAL.Migrations
                 name: "DanhMucFood",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: true)
                 },
@@ -37,7 +39,8 @@ namespace _1_DAL.Migrations
                 name: "DonVi",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: true)
                 },
@@ -50,7 +53,8 @@ namespace _1_DAL.Migrations
                 name: "Floor",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     FloorNumber = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: true)
                 },
@@ -77,7 +81,8 @@ namespace _1_DAL.Migrations
                 name: "Roles",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: true)
                 },
@@ -90,53 +95,56 @@ namespace _1_DAL.Migrations
                 name: "MonAnChiTiet",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     IDUnit = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "money", nullable: false),
                     IDCategory = table.Column<int>(type: "int", nullable: false),
                     IDMethod = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: true),
-                    Anh = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true)
+                    Anh = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MonAnChiTiet", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_MonAnChiTiet_CachChebien",
+                        name: "FK_MonAnChiTiet_CachCheBien_IDMethod",
                         column: x => x.IDMethod,
                         principalTable: "CachCheBien",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MonAnChiTiet_DanhMucFood",
+                        name: "FK_MonAnChiTiet_DanhMucFood_IDCategory",
                         column: x => x.IDCategory,
                         principalTable: "DanhMucFood",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MonAnChiTiet_DonVi",
+                        name: "FK_MonAnChiTiet_DonVi_IDUnit",
                         column: x => x.IDUnit,
                         principalTable: "DonVi",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "BanAn",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Floor = table.Column<int>(type: "int", nullable: true),
-                    Busy = table.Column<string>(type: "nchar(10)", fixedLength: true, maxLength: 10, nullable: true),
+                    Busy = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    TinhTrang = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BanAn", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_BanAn_Floor",
+                        name: "FK_BanAn_Floor_Floor",
                         column: x => x.Floor,
                         principalTable: "Floor",
                         principalColumn: "ID",
@@ -147,26 +155,27 @@ namespace _1_DAL.Migrations
                 name: "NhanVien",
                 columns: table => new
                 {
-                    MaNV = table.Column<int>(type: "int", nullable: false),
+                    MaNV = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     ID = table.Column<int>(type: "int", nullable: false),
-                    Email = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
-                    Password = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     Role = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: true),
-                    Name = table.Column<float>(type: "real", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sex = table.Column<bool>(type: "bit", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    PhoneNo = table.Column<string>(type: "varchar(12)", unicode: false, maxLength: 12, nullable: false)
+                    PhoneNo = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_NhanVien", x => x.MaNV);
                     table.ForeignKey(
-                        name: "FK_NhanVien_Roles",
+                        name: "FK_NhanVien_Roles_Role",
                         column: x => x.Role,
                         principalTable: "Roles",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -200,7 +209,8 @@ namespace _1_DAL.Migrations
                 name: "ThucDon",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     IDChiTiet = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Price = table.Column<decimal>(type: "money", nullable: false),
@@ -210,18 +220,19 @@ namespace _1_DAL.Migrations
                 {
                     table.PrimaryKey("PK_ThucDon", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_ThucDon_MonAnChiTiet",
+                        name: "FK_ThucDon_MonAnChiTiet_IDChiTiet",
                         column: x => x.IDChiTiet,
                         principalTable: "MonAnChiTiet",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "HoaDon",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     DateCheckIn = table.Column<DateTime>(type: "date", nullable: false),
                     DateCheckOut = table.Column<DateTime>(type: "date", nullable: false),
                     IDtable = table.Column<int>(type: "int", nullable: false),
@@ -233,24 +244,25 @@ namespace _1_DAL.Migrations
                 {
                     table.PrimaryKey("PK_HoaDon", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_HoaDon_BanAn",
+                        name: "FK_HoaDon_BanAn_IDtable",
                         column: x => x.IDtable,
                         principalTable: "BanAn",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_HoaDon_NhanVien",
+                        name: "FK_HoaDon_NhanVien_IDNhanVien",
                         column: x => x.IDNhanVien,
                         principalTable: "NhanVien",
                         principalColumn: "MaNV",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
                 name: "HoaDonChiTiet",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     IDBill = table.Column<int>(type: "int", nullable: false),
                     IDFood = table.Column<int>(type: "int", nullable: false),
                     Count = table.Column<int>(type: "int", nullable: false),
@@ -261,17 +273,17 @@ namespace _1_DAL.Migrations
                 {
                     table.PrimaryKey("PK_HoaDonChiTiet", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_HoaDonChiTiet_HoaDon",
+                        name: "FK_HoaDonChiTiet_HoaDon_IDBill",
                         column: x => x.IDBill,
                         principalTable: "HoaDon",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_HoaDonChiTiet_MonAnChiTiet",
+                        name: "FK_HoaDonChiTiet_MonAnChiTiet_IDFood",
                         column: x => x.IDFood,
                         principalTable: "MonAnChiTiet",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
