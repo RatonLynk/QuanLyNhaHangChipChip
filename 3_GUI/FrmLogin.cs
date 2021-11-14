@@ -8,17 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using _2_BUS.BUSServices;
 
 namespace _3_GUI
 {
+    
 
     public partial class FrmLogin : Form
     {
+        private IQLNhanVienService _qlnv;
+
         string userName = "";
         string passWord = "";
         public FrmLogin()
         {
+            _qlnv = new QLNhanVienService();
             InitializeComponent();
         }
 
@@ -154,6 +158,45 @@ namespace _3_GUI
                 else
                     lblCapsLock.Text = "";
             }
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            
+            if (_qlnv.getlstNhanViens().Any(c =>  c.Status == true))
+            {
+                MessageBox.Show("Tài khoản hiện ngưng hoạt động, vui lòng đăng nhập bằng tài khoản khác ", "thông báo");
+
+            }
+            else if (_qlnv.getlstNhanViens().Any(c => c.Email != txtUsername.Text ))
+            {
+                MessageBox.Show("tài khoản đăng nhập không chính xác ", "thông báo");
+
+            }
+            else if (_qlnv.getlstNhanViens().Any(c =>  c.Password != txtPassWord.Text))
+            {
+                MessageBox.Show("Mật khẩu không chính xác ", "thông báo");
+
+            }
+            else if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password==txtPassWord.Text && c.Status==false))
+            {
+                var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text && c.Status == false);
+
+                MessageBox.Show("Đăng nhập thành công ", "thông báo");
+                this.Hide();
+                FrmHome home = new FrmHome();
+                home.manv(Convert.ToString(nv1.MaNv));//truy xuất được mã nv khi đăng nhập
+                home.Show();
+                
+            }
+        }
+
+        private void linkQMK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Frm_QuenMatKhau qmk = new Frm_QuenMatKhau();
+            qmk.Show();
+           
         }
         //sdfg
     }

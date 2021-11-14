@@ -49,11 +49,11 @@
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtUsername.Location = new System.Drawing.Point(106, 116);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUsername.Location = new System.Drawing.Point(93, 87);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(277, 37);
+            this.txtUsername.Size = new System.Drawing.Size(243, 28);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
@@ -64,11 +64,11 @@
             this.txtPassWord.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPassWord.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPassWord.Location = new System.Drawing.Point(106, 176);
-            this.txtPassWord.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPassWord.Location = new System.Drawing.Point(93, 132);
+            this.txtPassWord.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassWord.Multiline = true;
             this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(277, 37);
+            this.txtPassWord.Size = new System.Drawing.Size(243, 28);
             this.txtPassWord.TabIndex = 3;
             this.txtPassWord.Enter += new System.EventHandler(this.txtPassWord_Enter);
             this.txtPassWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassWord_KeyDown);
@@ -84,22 +84,23 @@
             this.btnDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.Image")));
             this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangNhap.Location = new System.Drawing.Point(65, 293);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDangNhap.Location = new System.Drawing.Point(57, 220);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(128, 54);
+            this.btnDangNhap.Size = new System.Drawing.Size(112, 40);
             this.btnDangNhap.TabIndex = 4;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDangNhap.UseVisualStyleBackColor = false;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(55, 116);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(48, 87);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(44, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(38, 28);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -107,10 +108,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(55, 176);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(48, 132);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 37);
+            this.pictureBox2.Size = new System.Drawing.Size(38, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
@@ -126,10 +127,10 @@
             this.btnThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(249, 293);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThoat.Location = new System.Drawing.Point(218, 220);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(134, 54);
+            this.btnThoat.Size = new System.Drawing.Size(117, 40);
             this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -141,10 +142,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Footlight MT Light", 29.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(147, 29);
+            this.label1.Location = new System.Drawing.Point(129, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 52);
+            this.label1.Size = new System.Drawing.Size(108, 41);
             this.label1.TabIndex = 8;
             this.label1.Text = "Login";
             // 
@@ -162,30 +163,31 @@
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(13, 14);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(11, 10);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(421, 426);
+            this.panel2.Size = new System.Drawing.Size(368, 320);
             this.panel2.TabIndex = 10;
             // 
             // linkQMK
             // 
             this.linkQMK.AutoSize = true;
-            this.linkQMK.Location = new System.Drawing.Point(263, 232);
+            this.linkQMK.Location = new System.Drawing.Point(230, 174);
             this.linkQMK.Name = "linkQMK";
-            this.linkQMK.Size = new System.Drawing.Size(120, 20);
+            this.linkQMK.Size = new System.Drawing.Size(97, 15);
             this.linkQMK.TabIndex = 9;
             this.linkQMK.TabStop = true;
             this.linkQMK.Text = "Quên mật khẩu ?";
+            this.linkQMK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkQMK_LinkClicked);
             // 
             // lblCapsLock
             // 
             this.lblCapsLock.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCapsLock.ForeColor = System.Drawing.Color.White;
-            this.lblCapsLock.Location = new System.Drawing.Point(4, 460);
+            this.lblCapsLock.Location = new System.Drawing.Point(4, 345);
             this.lblCapsLock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapsLock.Name = "lblCapsLock";
-            this.lblCapsLock.Size = new System.Drawing.Size(443, 31);
+            this.lblCapsLock.Size = new System.Drawing.Size(388, 23);
             this.lblCapsLock.TabIndex = 11;
             this.lblCapsLock.Text = "capslock";
             this.lblCapsLock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,17 +195,17 @@
             // FrmLogin
             // 
             this.AcceptButton = this.btnDangNhap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.CancelButton = this.btnThoat;
-            this.ClientSize = new System.Drawing.Size(447, 500);
+            this.ClientSize = new System.Drawing.Size(391, 375);
             this.Controls.Add(this.lblCapsLock);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
