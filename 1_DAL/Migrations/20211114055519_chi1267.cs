@@ -2,7 +2,7 @@
 
 namespace _1_DAL.Migrations
 {
-    public partial class xa4123 : Migration
+    public partial class chi1267 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

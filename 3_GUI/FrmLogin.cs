@@ -155,6 +155,7 @@ namespace _3_GUI
                     lblCapsLock.Text = "";
             }
         }
+        //sdfg
     }
 
 }

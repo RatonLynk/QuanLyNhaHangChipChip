@@ -202,7 +202,7 @@ namespace _1_DAL.Migrations
 
             modelBuilder.Entity("_1_DAL.Models.MonAnChiTiet", b =>
                 {
-                    b.Property<int>("MaMon")
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Anh")
@@ -233,7 +233,7 @@ namespace _1_DAL.Migrations
                     b.Property<int?>("Status")
                         .HasColumnType("int");
 
-                    b.HasKey("MaMon");
+                    b.HasKey("Id");
 
                     b.HasIndex("Idmethod");
 
@@ -299,8 +299,10 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.NhanVienNh", b =>
                 {
                     b.Property<int>("MaNv")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("MaNV");
+                        .HasColumnName("MaNV")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -310,8 +312,7 @@ namespace _1_DAL.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("Id")
                         .HasColumnType("int")
@@ -320,20 +321,17 @@ namespace _1_DAL.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PhoneNo")
                         .IsRequired()
                         .HasMaxLength(12)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(12)");
+                        .HasColumnType("nvarchar(12)");
 
                     b.Property<int>("Role")
                         .HasColumnType("int");
@@ -497,7 +495,7 @@ namespace _1_DAL.Migrations
                     b.HasOne("_1_DAL.Models.Role", "RoleNavigation")
                         .WithMany("NhanVienNhs")
                         .HasForeignKey("Role")
-                        .HasConstraintName("FK_NhanVienNH_Roles")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("RoleNavigation");
