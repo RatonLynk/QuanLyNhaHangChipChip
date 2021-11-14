@@ -28,6 +28,8 @@ namespace _1_DAL.Models
         public string Busy { get; set; }
         public int TinhTrang { get; set;}
         public bool Status { get; set; }
+        public int Rong { get; set; }
+        public int Cao { get; set; }
 
         [ForeignKey(nameof(Floor))]
         [InverseProperty("BanAns")]
