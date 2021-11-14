@@ -133,11 +133,11 @@ namespace _1_DAL.Context
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_MonAnChiTiet_HoaDonChiTiet");
 
-                entity.HasOne(d => d.MaMonNavigation)
-                    .WithOne(p => p.MonAnChiTiet)
-                    .HasForeignKey<MonAnChiTiet>(d => d.MaMon)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_MonAnChiTiet_ThucDon");
+                //entity.HasOne(d => d.MaMonNavigation)
+                //    .WithOne(p => p.MonAnChiTiet)
+                //    .HasForeignKey<MonAnChiTiet>(d => d.MaMon)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("FK_MonAnChiTiet_ThucDon");
             });
 
             modelBuilder.Entity<NhanVien>(entity =>
