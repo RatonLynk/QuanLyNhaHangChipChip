@@ -33,7 +33,7 @@ namespace _1_DAL.DALServices
         }        
         public List<BanAn> GetTablesFromDB()
         {
-            return _lstTables = _dbContext.BanAns.ToList();
+            return _dbContext.BanAns.ToList();
         }
     }
 }

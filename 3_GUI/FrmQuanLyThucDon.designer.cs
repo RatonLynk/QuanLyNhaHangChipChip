@@ -51,8 +51,17 @@
             this.cbx_Cat = new System.Windows.Forms.ComboBox();
             this.cbx_Unit = new System.Windows.Forms.ComboBox();
             this.txt_Price = new System.Windows.Forms.NumericUpDown();
+            this.dgvCongThuc = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnXoaCP = new System.Windows.Forms.Button();
+            this.btnThemCP = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbx_IngreName = new System.Windows.Forms.ComboBox();
+            this.cbx_RecipeName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCongThuc)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -331,12 +340,124 @@
             this.txt_Price.Size = new System.Drawing.Size(150, 27);
             this.txt_Price.TabIndex = 37;
             // 
+            // dgvCongThuc
+            // 
+            this.dgvCongThuc.AllowUserToResizeRows = false;
+            this.dgvCongThuc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCongThuc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dgvCongThuc.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvCongThuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCongThuc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dgvCongThuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCongThuc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvCongThuc.Location = new System.Drawing.Point(850, 381);
+            this.dgvCongThuc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvCongThuc.MultiSelect = false;
+            this.dgvCongThuc.Name = "dgvCongThuc";
+            this.dgvCongThuc.ReadOnly = true;
+            this.dgvCongThuc.RowHeadersVisible = false;
+            this.dgvCongThuc.RowHeadersWidth = 51;
+            this.dgvCongThuc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCongThuc.Size = new System.Drawing.Size(471, 574);
+            this.dgvCongThuc.TabIndex = 55;
+            this.dgvCongThuc.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(875, 191);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 20);
+            this.label5.TabIndex = 59;
+            this.label5.Text = "Tên Nguyên Liệu";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(905, 128);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 20);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "Tên Món";
+            // 
+            // btnXoaCP
+            // 
+            this.btnXoaCP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnXoaCP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoaCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnXoaCP.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaCP.Image")));
+            this.btnXoaCP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaCP.Location = new System.Drawing.Point(1149, 265);
+            this.btnXoaCP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXoaCP.Name = "btnXoaCP";
+            this.btnXoaCP.Size = new System.Drawing.Size(125, 49);
+            this.btnXoaCP.TabIndex = 56;
+            this.btnXoaCP.Text = "Xóa";
+            this.btnXoaCP.UseVisualStyleBackColor = true;
+            // 
+            // btnThemCP
+            // 
+            this.btnThemCP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnThemCP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnThemCP.Image = ((System.Drawing.Image)(resources.GetObject("btnThemCP.Image")));
+            this.btnThemCP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemCP.Location = new System.Drawing.Point(895, 265);
+            this.btnThemCP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThemCP.Name = "btnThemCP";
+            this.btnThemCP.Size = new System.Drawing.Size(125, 49);
+            this.btnThemCP.TabIndex = 53;
+            this.btnThemCP.Text = "Thêm";
+            this.btnThemCP.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(850, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 25);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "CÔNG THỨC";
+            // 
+            // cbx_IngreName
+            // 
+            this.cbx_IngreName.FormattingEnabled = true;
+            this.cbx_IngreName.Location = new System.Drawing.Point(1017, 188);
+            this.cbx_IngreName.Name = "cbx_IngreName";
+            this.cbx_IngreName.Size = new System.Drawing.Size(257, 28);
+            this.cbx_IngreName.TabIndex = 62;
+            // 
+            // cbx_RecipeName
+            // 
+            this.cbx_RecipeName.FormattingEnabled = true;
+            this.cbx_RecipeName.Location = new System.Drawing.Point(1017, 125);
+            this.cbx_RecipeName.Name = "cbx_RecipeName";
+            this.cbx_RecipeName.Size = new System.Drawing.Size(257, 28);
+            this.cbx_RecipeName.TabIndex = 63;
+            // 
             // FrmQuanLyThucDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1380, 983);
+            this.Controls.Add(this.cbx_RecipeName);
+            this.Controls.Add(this.cbx_IngreName);
+            this.Controls.Add(this.dgvCongThuc);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnXoaCP);
+            this.Controls.Add(this.btnThemCP);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Price);
             this.Controls.Add(this.cbx_Unit);
             this.Controls.Add(this.cbx_Cat);
@@ -368,6 +489,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCongThuc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +518,13 @@
         private System.Windows.Forms.ComboBox cbx_Cat;
         private System.Windows.Forms.ComboBox cbx_Unit;
         private System.Windows.Forms.NumericUpDown txt_Price;
+        private System.Windows.Forms.DataGridView dgvCongThuc;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnXoaCP;
+        private System.Windows.Forms.Button btnThemCP;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbx_IngreName;
+        private System.Windows.Forms.ComboBox cbx_RecipeName;
     }
 }

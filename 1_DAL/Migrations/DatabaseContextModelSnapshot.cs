@@ -30,6 +30,9 @@ namespace _1_DAL.Migrations
                         .HasColumnType("nchar(10)")
                         .IsFixedLength(true);
 
+                    b.Property<int>("Cao")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Floor")
                         .HasColumnType("int");
 
@@ -37,6 +40,9 @@ namespace _1_DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("Rong")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
