@@ -30,6 +30,7 @@ namespace _1_DAL.Models
         public bool Status { get; set; }
         public int Rong { get; set; }
         public int Cao { get; set; }
+        //alo
 
         [ForeignKey(nameof(Floor))]
         [InverseProperty("BanAns")]
