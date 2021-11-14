@@ -63,6 +63,7 @@ namespace _1_DAL.Context
                 entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
+
             modelBuilder.Entity<DonVi>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -83,11 +84,6 @@ namespace _1_DAL.Context
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_HoaDon_NhanVien");
 
-                entity.HasOne(d => d.IdnhanVien1)
-                    .WithMany(p => p.HoaDons)
-                    .HasForeignKey(d => d.IdnhanVien)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_HoaDon_NhanVienNH");
 
                 entity.HasOne(d => d.IdtableNavigation)
                     .WithMany(p => p.HoaDons)
@@ -137,6 +133,7 @@ namespace _1_DAL.Context
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_MonAnChiTiet_DonVi");
             });
+
 
             modelBuilder.Entity<NhanVien>(entity =>
             {

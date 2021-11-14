@@ -17,9 +17,11 @@ namespace _1_DAL.Models
         {
             HoaDonChiTiets = new HashSet<HoaDonChiTiet>();
             ThucDons = new HashSet<ThucDon>();
+            CongThucs = new HashSet<CongThuc>();
         }
 
         [Key]
+        [Column("Id")]
         public int Id { get; set; }
         [Required]
         [StringLength(50)]
@@ -49,5 +51,7 @@ namespace _1_DAL.Models
         public virtual ICollection<HoaDonChiTiet> HoaDonChiTiets { get; set; }
         [InverseProperty(nameof(ThucDon.IdchiTietNavigation))]
         public virtual ICollection<ThucDon> ThucDons { get; set; }
+        [InverseProperty(nameof(CongThuc.IdMonNavigation))]
+        public virtual ICollection<CongThuc> CongThucs { get; set; }
     }
 }
