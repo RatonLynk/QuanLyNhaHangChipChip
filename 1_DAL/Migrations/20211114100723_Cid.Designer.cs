@@ -3,15 +3,22 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1_DAL.Context;
 
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+<<<<<<< HEAD:1_DAL/Migrations/20211114100723_Cid.Designer.cs
+    [Migration("20211114100723_Cid")]
+    partial class Cid
+=======
+    [Migration("20211113164408_ca123")]
+    partial class ca123
+>>>>>>> 8f3f07b9958243886402450aa245cb495d9ed919:1_DAL/Migrations/20211113164408_ca123.Designer.cs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,6 +37,9 @@ namespace _1_DAL.Migrations
                         .HasColumnType("nchar(10)")
                         .IsFixedLength(true);
 
+                    b.Property<int>("Cao")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Floor")
                         .HasColumnType("int");
 
@@ -38,8 +48,14 @@ namespace _1_DAL.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("Rong")
+                        .HasColumnType("int");
+
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
+
+                    b.Property<int>("TinhTrang")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -65,32 +81,6 @@ namespace _1_DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CachCheBien");
-                });
-
-            modelBuilder.Entity("_1_DAL.Models.CongThuc", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
-
-                    b.Property<int>("IdMon")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdNguyenLieu")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex(new[] { "IdMon" }, "IX_CongThuc_IdMon");
-
-                    b.HasIndex(new[] { "IdNguyenLieu" }, "IX_CongThuc_IdNguyenLieu");
-
-                    b.ToTable("CongThuc");
                 });
 
             modelBuilder.Entity("_1_DAL.Models.DanhMucFood", b =>
@@ -261,27 +251,6 @@ namespace _1_DAL.Migrations
                     b.ToTable("MonAnChiTiet");
                 });
 
-            modelBuilder.Entity("_1_DAL.Models.NguyenLieu", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<bool?>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("NguyenLieu");
-                });
-
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
                     b.Property<int>("MaNv")
@@ -389,25 +358,6 @@ namespace _1_DAL.Migrations
                         .HasConstraintName("FK_BanAn_Floor");
 
                     b.Navigation("FloorNavigation");
-                });
-
-            modelBuilder.Entity("_1_DAL.Models.CongThuc", b =>
-                {
-                    b.HasOne("_1_DAL.Models.MonAnChiTiet", "IdMonNavigation")
-                        .WithMany("CongThucs")
-                        .HasForeignKey("IdMon")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("_1_DAL.Models.NguyenLieu", "IdNguyenLieuNavigation")
-                        .WithMany("CongThucs")
-                        .HasForeignKey("IdNguyenLieu")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("IdMonNavigation");
-
-                    b.Navigation("IdNguyenLieuNavigation");
                 });
 
             modelBuilder.Entity("_1_DAL.Models.HoaDon", b =>
@@ -529,16 +479,9 @@ namespace _1_DAL.Migrations
 
             modelBuilder.Entity("_1_DAL.Models.MonAnChiTiet", b =>
                 {
-                    b.Navigation("CongThucs");
-
                     b.Navigation("HoaDonChiTiets");
 
                     b.Navigation("ThucDons");
-                });
-
-            modelBuilder.Entity("_1_DAL.Models.NguyenLieu", b =>
-                {
-                    b.Navigation("CongThucs");
                 });
 
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
