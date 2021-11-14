@@ -1,4 +1,5 @@
 ﻿using _2_BUS.BUSServices;
+using _2_BUS.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,11 @@ namespace _3_GUI
 {
     public partial class FrmDoiMatKhau : Form
     {
+        private Utilities uti;
         private IQLNhanVienService _qlnv;
         public FrmDoiMatKhau()
         {
+            uti = new Utilities();
             _qlnv = new QLNhanVienService();
             InitializeComponent();
         }
@@ -24,7 +27,7 @@ namespace _3_GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtEmail.Text && c.Password==txtPass.Text ))
+            if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtEmail.Text && c.Password == uti.GetHash(txtPass.Text)))
             {
                 if (txtNewPass.Text != txtNewPass2.Text)
                 {
@@ -34,7 +37,7 @@ namespace _3_GUI
                 {
                     var nhanv = _qlnv.getlstNhanViens().Where(c => c.Email == txtEmail.Text)
                         .FirstOrDefault();
-                    nhanv.Password = txtNewPass.Text;
+                    nhanv.Password = uti.GetHash(txtNewPass.Text);
 
                 }
             }

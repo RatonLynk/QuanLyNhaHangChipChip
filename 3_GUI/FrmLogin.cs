@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using _2_BUS.BUSServices;
+using _2_BUS.Utilities;
 
 namespace _3_GUI
 {
@@ -16,6 +17,7 @@ namespace _3_GUI
 
     public partial class FrmLogin : Form
     {
+        private Utilities uti;
         private IQLNhanVienService _qlnv;
 
         string userName = "";
@@ -23,6 +25,7 @@ namespace _3_GUI
         public FrmLogin()
         {
             _qlnv = new QLNhanVienService();
+            uti = new Utilities();
             InitializeComponent();
         }
 
@@ -173,14 +176,14 @@ namespace _3_GUI
                 MessageBox.Show("tài khoản đăng nhập không chính xác ", "thông báo");
 
             }
-            else if (_qlnv.getlstNhanViens().Any(c =>  c.Password != txtPassWord.Text))
+            else if (_qlnv.getlstNhanViens().Any(c =>  c.Password != uti.GetHash(txtPassWord.Text)))
             {
                 MessageBox.Show("Mật khẩu không chính xác ", "thông báo");
 
             }
-            else if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password==txtPassWord.Text && c.Status==false))
+            else if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password== uti.GetHash(txtPassWord.Text) && c.Status==false))
             {
-                var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text && c.Status == false);
+                var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == uti.GetHash(txtPassWord.Text) && c.Status == false);
 
                 MessageBox.Show("Đăng nhập thành công ", "thông báo");
                 this.Hide();
