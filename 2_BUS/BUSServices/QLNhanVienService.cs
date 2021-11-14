@@ -50,7 +50,7 @@ namespace _2_BUS.BUSServices
 
         public string Save()
         {
-            throw new NotImplementedException();
+          return  _iNhanVienService.Save();
         }
 
         public List<NhanVien> getlstNhanViens()

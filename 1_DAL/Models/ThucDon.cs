@@ -14,8 +14,6 @@ namespace _1_DAL.Models
         [Key]
         [Column("ID")]
         public int Id { get; set; }
-        [Column("IDChiTiet")]
-        public int IdchiTiet { get; set; }
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
@@ -23,8 +21,7 @@ namespace _1_DAL.Models
         public decimal Price { get; set; }
         public bool? Status { get; set; }
 
-        [ForeignKey(nameof(IdchiTiet))]
-        [InverseProperty(nameof(MonAnChiTiet.ThucDons))]
-        public virtual MonAnChiTiet IdchiTietNavigation { get; set; }
+        [InverseProperty("MaMonNavigation")]
+        public virtual MonAnChiTiet MonAnChiTiet { get; set; }
     }
 }

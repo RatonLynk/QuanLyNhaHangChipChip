@@ -46,8 +46,6 @@ namespace _3_GUI
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblMaHang = new System.Windows.Forms.Label();
-            this.rbtn_QuanTri = new System.Windows.Forms.RadioButton();
-            this.rbtn_NhanVien = new System.Windows.Forms.RadioButton();
             this.txt_SDT = new System.Windows.Forms.TextBox();
             this.txt_DiaChiNV = new System.Windows.Forms.TextBox();
             this.txt_TenNV = new System.Windows.Forms.TextBox();
@@ -56,6 +54,9 @@ namespace _3_GUI
             this.btnXoaNV = new System.Windows.Forms.Button();
             this.btnSuaNV = new System.Windows.Forms.Button();
             this.btnThemNV = new System.Windows.Forms.Button();
+            this.chk_quanLi = new System.Windows.Forms.CheckBox();
+            this.chk_nhanVien = new System.Windows.Forms.CheckBox();
+            this.btn_Luu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_NhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,33 +264,6 @@ namespace _3_GUI
             this.lblMaHang.TabIndex = 122;
             this.lblMaHang.Text = "Tên nhân viên :";
             // 
-            // rbtn_QuanTri
-            // 
-            this.rbtn_QuanTri.AutoSize = true;
-            this.rbtn_QuanTri.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.rbtn_QuanTri.Location = new System.Drawing.Point(619, 138);
-            this.rbtn_QuanTri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbtn_QuanTri.Name = "rbtn_QuanTri";
-            this.rbtn_QuanTri.Size = new System.Drawing.Size(69, 19);
-            this.rbtn_QuanTri.TabIndex = 114;
-            this.rbtn_QuanTri.TabStop = true;
-            this.rbtn_QuanTri.Text = "Quản Trị";
-            this.rbtn_QuanTri.UseVisualStyleBackColor = true;
-            this.rbtn_QuanTri.CheckedChanged += new System.EventHandler(this.rbtn_QuanTri_CheckedChanged);
-            // 
-            // rbtn_NhanVien
-            // 
-            this.rbtn_NhanVien.AutoSize = true;
-            this.rbtn_NhanVien.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.rbtn_NhanVien.Location = new System.Drawing.Point(746, 138);
-            this.rbtn_NhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbtn_NhanVien.Name = "rbtn_NhanVien";
-            this.rbtn_NhanVien.Size = new System.Drawing.Size(80, 19);
-            this.rbtn_NhanVien.TabIndex = 113;
-            this.rbtn_NhanVien.Text = "Nhân Viên";
-            this.rbtn_NhanVien.UseVisualStyleBackColor = true;
-            this.rbtn_NhanVien.CheckedChanged += new System.EventHandler(this.rbtn_NhanVien_CheckedChanged);
-            // 
             // txt_SDT
             // 
             this.txt_SDT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -353,7 +327,7 @@ namespace _3_GUI
             this.btnXoaNV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnXoaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNV.Image")));
-            this.btnXoaNV.Location = new System.Drawing.Point(575, 664);
+            this.btnXoaNV.Location = new System.Drawing.Point(723, 664);
             this.btnXoaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Size = new System.Drawing.Size(109, 37);
@@ -370,7 +344,7 @@ namespace _3_GUI
             this.btnSuaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSuaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaNV.Image")));
             this.btnSuaNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaNV.Location = new System.Drawing.Point(413, 664);
+            this.btnSuaNV.Location = new System.Drawing.Point(352, 664);
             this.btnSuaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaNV.Name = "btnSuaNV";
             this.btnSuaNV.Size = new System.Drawing.Size(109, 37);
@@ -387,7 +361,7 @@ namespace _3_GUI
             this.btnThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemNV.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNV.Image")));
             this.btnThemNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemNV.Location = new System.Drawing.Point(253, 664);
+            this.btnThemNV.Location = new System.Drawing.Point(174, 664);
             this.btnThemNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemNV.Name = "btnThemNV";
             this.btnThemNV.Size = new System.Drawing.Size(109, 37);
@@ -396,11 +370,53 @@ namespace _3_GUI
             this.btnThemNV.UseVisualStyleBackColor = true;
             this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
+            // chk_quanLi
+            // 
+            this.chk_quanLi.AutoSize = true;
+            this.chk_quanLi.Location = new System.Drawing.Point(619, 136);
+            this.chk_quanLi.Name = "chk_quanLi";
+            this.chk_quanLi.Size = new System.Drawing.Size(67, 19);
+            this.chk_quanLi.TabIndex = 128;
+            this.chk_quanLi.Text = "Quản Lí";
+            this.chk_quanLi.UseVisualStyleBackColor = true;
+            this.chk_quanLi.CheckedChanged += new System.EventHandler(this.chk_quanLi_CheckedChanged_1);
+            // 
+            // chk_nhanVien
+            // 
+            this.chk_nhanVien.AutoSize = true;
+            this.chk_nhanVien.Location = new System.Drawing.Point(749, 136);
+            this.chk_nhanVien.Name = "chk_nhanVien";
+            this.chk_nhanVien.Size = new System.Drawing.Size(81, 19);
+            this.chk_nhanVien.TabIndex = 129;
+            this.chk_nhanVien.Text = "Nhân Viên";
+            this.chk_nhanVien.UseVisualStyleBackColor = true;
+            this.chk_nhanVien.CheckedChanged += new System.EventHandler(this.chk_nhanVien_CheckedChanged);
+            // 
+            // btn_Luu
+            // 
+            this.btn_Luu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Luu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Luu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Luu.Image")));
+            this.btn_Luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Luu.Location = new System.Drawing.Point(537, 664);
+            this.btn_Luu.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Luu.Name = "btn_Luu";
+            this.btn_Luu.Size = new System.Drawing.Size(109, 37);
+            this.btn_Luu.TabIndex = 130;
+            this.btn_Luu.Text = "Lưu";
+            this.btn_Luu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Luu.UseVisualStyleBackColor = true;
+            this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
+            // 
             // FrmQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 749);
+            this.Controls.Add(this.btn_Luu);
+            this.Controls.Add(this.chk_nhanVien);
+            this.Controls.Add(this.chk_quanLi);
             this.Controls.Add(this.btnXoaNV);
             this.Controls.Add(this.btnSuaNV);
             this.Controls.Add(this.btnThemNV);
@@ -410,8 +426,6 @@ namespace _3_GUI
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lblMaHang);
-            this.Controls.Add(this.rbtn_QuanTri);
-            this.Controls.Add(this.rbtn_NhanVien);
             this.Controls.Add(this.txt_SDT);
             this.Controls.Add(this.txt_DiaChiNV);
             this.Controls.Add(this.txt_TenNV);
@@ -457,8 +471,6 @@ namespace _3_GUI
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblMaHang;
-        private System.Windows.Forms.RadioButton rbtn_QuanTri;
-        private System.Windows.Forms.RadioButton rbtn_NhanVien;
         private System.Windows.Forms.TextBox txt_SDT;
         private System.Windows.Forms.TextBox txt_DiaChiNV;
         private System.Windows.Forms.TextBox txt_TenNV;
@@ -467,5 +479,8 @@ namespace _3_GUI
         private System.Windows.Forms.Button btnXoaNV;
         private System.Windows.Forms.Button btnSuaNV;
         private System.Windows.Forms.Button btnThemNV;
+        private System.Windows.Forms.CheckBox chk_quanLi;
+        private System.Windows.Forms.CheckBox chk_nhanVien;
+        private System.Windows.Forms.Button btn_Luu;
     }
 }

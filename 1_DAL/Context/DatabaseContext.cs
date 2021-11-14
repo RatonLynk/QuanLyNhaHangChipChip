@@ -36,7 +36,7 @@ namespace _1_DAL.Context
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=RATONLYNK\\SQLEXPRESS;Initial Catalog=QLNH;Persist Security Info=True;User ID=ratonlynkz;Password=123");
+                optionsBuilder.UseSqlServer("Data Source=CHEMMS;Initial Catalog=QLNH;Persist Security Info=True;User ID=vudomc1012;Password=123");
             }
         }
 
@@ -106,12 +106,6 @@ namespace _1_DAL.Context
                     .HasForeignKey(d => d.Idbill)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_HoaDonChiTiet_HoaDon");
-
-                entity.HasOne(d => d.IdfoodNavigation)
-                    .WithMany(p => p.HoaDonChiTiets)
-                    .HasForeignKey(d => d.Idfood)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_HoaDonChiTiet_MonAnChiTiet");
             });
 
             modelBuilder.Entity<MonAnChiTiet>(entity =>
@@ -130,13 +124,25 @@ namespace _1_DAL.Context
                     .WithMany(p => p.MonAnChiTiets)
                     .HasForeignKey(d => d.Idmethod)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_MonAnChiTiet_CachChebien");
+                    .HasConstraintName("FK_MonAnChiTiet_CachCheBien");
 
                 entity.HasOne(d => d.IdunitNavigation)
                     .WithMany(p => p.MonAnChiTiets)
                     .HasForeignKey(d => d.Idunit)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_MonAnChiTiet_DonVi");
+
+                entity.HasOne(d => d.Idunit1)
+                    .WithMany(p => p.MonAnChiTiets)
+                    .HasForeignKey(d => d.Idunit)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_MonAnChiTiet_HoaDonChiTiet");
+
+                entity.HasOne(d => d.MaMonNavigation)
+                    .WithOne(p => p.MonAnChiTiet)
+                    .HasForeignKey<MonAnChiTiet>(d => d.MaMon)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_MonAnChiTiet_ThucDon");
             });
 
             modelBuilder.Entity<NhanVien>(entity =>
@@ -183,12 +189,6 @@ namespace _1_DAL.Context
             modelBuilder.Entity<ThucDon>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
-
-                entity.HasOne(d => d.IdchiTietNavigation)
-                    .WithMany(p => p.ThucDons)
-                    .HasForeignKey(d => d.IdchiTiet)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ThucDon_MonAnChiTiet");
             });
 
             OnModelCreatingPartial(modelBuilder);

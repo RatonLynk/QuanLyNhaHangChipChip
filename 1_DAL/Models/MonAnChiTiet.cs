@@ -9,16 +9,8 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("MonAnChiTiet")]
-    [Index(nameof(Idcategory), Name = "IX_MonAnChiTiet_IDCategory")]
-    [Index(nameof(Idunit), Name = "IX_MonAnChiTiet_IDUnit")]
     public partial class MonAnChiTiet
     {
-        public MonAnChiTiet()
-        {
-            HoaDonChiTiets = new HashSet<HoaDonChiTiet>();
-            ThucDons = new HashSet<ThucDon>();
-        }
-
         [Key]
         public int MaMon { get; set; }
         [Required]
@@ -43,11 +35,13 @@ namespace _1_DAL.Models
         [InverseProperty(nameof(CachCheBien.MonAnChiTiets))]
         public virtual CachCheBien IdmethodNavigation { get; set; }
         [ForeignKey(nameof(Idunit))]
+        [InverseProperty(nameof(HoaDonChiTiet.MonAnChiTiets))]
+        public virtual HoaDonChiTiet Idunit1 { get; set; }
+        [ForeignKey(nameof(Idunit))]
         [InverseProperty(nameof(DonVi.MonAnChiTiets))]
         public virtual DonVi IdunitNavigation { get; set; }
-        [InverseProperty(nameof(HoaDonChiTiet.IdfoodNavigation))]
-        public virtual ICollection<HoaDonChiTiet> HoaDonChiTiets { get; set; }
-        [InverseProperty(nameof(ThucDon.IdchiTietNavigation))]
-        public virtual ICollection<ThucDon> ThucDons { get; set; }
+        [ForeignKey(nameof(MaMon))]
+        [InverseProperty(nameof(ThucDon.MonAnChiTiet))]
+        public virtual ThucDon MaMonNavigation { get; set; }
     }
 }

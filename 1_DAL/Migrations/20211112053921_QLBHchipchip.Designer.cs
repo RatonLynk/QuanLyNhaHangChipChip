@@ -10,8 +10,8 @@ using _1_DAL.Context;
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211110024117_xa")]
-    partial class xa
+    [Migration("20211112053921_QLBHchipchip")]
+    partial class QLBHchipchip
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
