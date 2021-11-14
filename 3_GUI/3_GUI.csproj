@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="frmCachCheBien.cs" />
-    <Compile Remove="frmCachCheBien.Designer.cs" />
-    <Compile Remove="FrmDanhMuc.cs" />
-    <Compile Remove="FrmDanhMuc.Designer.cs" />
     <Compile Remove="FrmDonVi.cs" />
     <Compile Remove="FrmDonVi.Designer.cs" />
     <Compile Remove="FrmQLMenu.cs" />
@@ -19,8 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="frmCachCheBien.resx" />
-    <EmbeddedResource Remove="FrmDanhMuc.resx" />
     <EmbeddedResource Remove="FrmDonVi.resx" />
     <EmbeddedResource Remove="FrmQLMenu.resx" />
   </ItemGroup>
@@ -31,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FrmNguyenLieu.cs" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -8,22 +8,23 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.Models
 {
-    public partial class Role
+    [Table("NguyenLieu")]
+    public partial class NguyenLieu
     {
-        public Role()
+        public NguyenLieu()
         {
-            NhanViens = new HashSet<NhanVien>();
+            CongThucs = new HashSet<CongThuc>();
         }
 
         [Key]
         [Column("ID")]
         public int Id { get; set; }
         [Required]
-        [StringLength(50)]
+        [StringLength(255)]
         public string Name { get; set; }
         public bool? Status { get; set; }
 
-        [InverseProperty(nameof(NhanVien.RoleNavigation))]
-        public virtual ICollection<NhanVien> NhanViens { get; set; }
+        [InverseProperty(nameof(CongThuc.IdNguyenLieuNavigation))]
+        public virtual ICollection<CongThuc> CongThucs { get; set; }
     }
 }

@@ -16,26 +16,24 @@ namespace _1_DAL.DALServices
         public string AddBanAn(BanAn BanAn)
         {
             _dbContext.BanAns.Add(BanAn);
+            _dbContext.SaveChanges();
             return "Thêm thành công";
         }
         public string UpdateBanAn(BanAn BanAn)
         {
             _dbContext.BanAns.Update(BanAn);
+            _dbContext.SaveChanges();
             return "Sửa thành công";
         }
         public string DeleteBanAn(BanAn BanAn)
         {
             _dbContext.BanAns.Remove(BanAn);
-            return "Xóa thành công";
-        }
-        public string SaveBanAn()
-        {
             _dbContext.SaveChanges();
-            return "Lưu thành công";
-        }
+            return "Xóa thành công";
+        }        
         public List<BanAn> GetTablesFromDB()
         {
-            return _lstTables = _dbContext.BanAns.ToList();
+            return _dbContext.BanAns.ToList();
         }
     }
 }

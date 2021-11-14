@@ -16,23 +16,21 @@ namespace _1_DAL.DALServices
         public string AddFloor(Floor Floor)
         {
             _dbContext.Floors.Add(Floor);
+            _dbContext.SaveChanges();
             return "Thêm thành công";
         }
         public string UpdateFloor(Floor Floor)
         {
             _dbContext.Floors.Update(Floor);
+            _dbContext.SaveChanges();
             return "Sửa thành công";
         }
         public string DeleteFloor(Floor Floor)
         {
             _dbContext.Floors.Remove(Floor);
-            return "Xóa thành công";
-        }
-        public string SaveFloor()
-        {
             _dbContext.SaveChanges();
-            return "Lưu thành công";
-        }
+            return "Xóa thành công";
+        }        
         public List<Floor> GetFloorsFromDB()
         {
             return _lstTables = _dbContext.Floors.ToList();
