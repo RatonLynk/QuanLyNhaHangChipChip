@@ -5,13 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1_DAL.iDALServices
+namespace _2_BUS.iBUSServices
 {
-    public interface iFloorService
+    public interface IQLBanAnService
     {
+        public string AddBanAn(BanAn BanAn);
+        public string UpdateBanAn(BanAn BanAn);
+        public string DeleteBanAn(BanAn BanAn);
+        public List<BanAn> GetTablesFromDB();
         public string AddFloor(Floor Floor);
         public string UpdateFloor(Floor Floor);
         public string DeleteFloor(Floor Floor);
         public List<Floor> GetFloorsFromDB();
+        public List<BanAn> LoadBanlist();
     }
 }
