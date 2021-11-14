@@ -27,7 +27,6 @@ namespace _1_DAL.Context
         public virtual DbSet<HoaDonChiTiet> HoaDonChiTiets { get; set; }
         public virtual DbSet<MonAnChiTiet> MonAnChiTiets { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
-        public virtual DbSet<NhanVienNh> NhanVienNhs { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<ThucDon> ThucDons { get; set; }
 
@@ -116,7 +115,7 @@ namespace _1_DAL.Context
 
             modelBuilder.Entity<MonAnChiTiet>(entity =>
             {
-                entity.Property(e => e.MaMon).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Anh).IsUnicode(false);
 
@@ -156,24 +155,6 @@ namespace _1_DAL.Context
                     .HasConstraintName("FK_NhanVien_Roles");
             });
 
-            modelBuilder.Entity<NhanVienNh>(entity =>
-            {
-                entity.Property(e => e.MaNv).ValueGeneratedNever();
-
-                entity.Property(e => e.Email).IsUnicode(false);
-
-                entity.Property(e => e.Name).IsUnicode(false);
-
-                entity.Property(e => e.Password).IsUnicode(false);
-
-                entity.Property(e => e.PhoneNo).IsUnicode(false);
-
-                entity.HasOne(d => d.RoleNavigation)
-                    .WithMany(p => p.NhanVienNhs)
-                    .HasForeignKey(d => d.Role)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_NhanVienNH_Roles");
-            });
 
             modelBuilder.Entity<Role>(entity =>
             {
