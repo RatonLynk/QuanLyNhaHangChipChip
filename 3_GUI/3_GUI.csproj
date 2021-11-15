@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\1_DAL\1_DAL.csproj" />
     <ProjectReference Include="..\2_BUS\2_BUS.csproj" />
   </ItemGroup>
 
