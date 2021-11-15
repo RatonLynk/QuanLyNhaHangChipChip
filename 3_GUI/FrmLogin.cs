@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using _2_BUS.BUSServices;
 using _1_DAL.Models;
 using _2_BUS.iBUSServices;
+using _2_BUS.Utilities;
 
 namespace _3_GUI
 {
@@ -181,16 +182,14 @@ namespace _3_GUI
                 MessageBox.Show("Tài khoản đăng nhập không chính xác ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
             }
-            else if (_qlnv.getlstNhanViens().Any(c =>  c.Password != uti.GetHash(txtPassWord.Text)))
+            else if (_qlnv.getlstNhanViens().Any(c =>  c.Password != /*uti.GetHash*/txtPassWord.Text))
             {
                 MessageBox.Show("Mật khẩu không chính xác ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
             }
-            else if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password==txtPassWord.Text && c.Status==false))
+            else if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password== /*uti.GetHash(*/txtPassWord.Text && c.Status==true))
             {
-                var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text && c.Status == false);
-
-                var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text && c.Status == true);
+                //var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text && c.Status == false);
                 MessageBox.Show("Đăng nhập thành công ", "Thông báo");
                 FrmHome.mail = txtUsername.Text;
                 FrmDoiMatKhau.passcu = txtPassWord.Text;
@@ -198,7 +197,7 @@ namespace _3_GUI
                 //vaitro = role.Status;
                 this.Hide();
                 FrmHome frmHome = new FrmHome();
-                frmHome.manv(Convert.ToString(nv1.MaNv));//truy xuất được mã nv khi đăng nhập
+                /*frmHome.manv(Convert.ToString(nv1.MaNv));*///truy xuất được mã nv khi đăng nhập
                 frmHome.ShowDialog();
                 this.Close();
 
