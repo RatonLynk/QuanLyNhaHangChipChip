@@ -19,7 +19,7 @@ namespace _1_DAL.Models
         [Key]
         [Column("ID")]
         public int Id { get; set; }
-        public int FloorNumber { get; set; }
+        public string FloorNumber { get; set; }
         public bool? Status { get; set; }
 
         [InverseProperty(nameof(BanAn.FloorNavigation))]
