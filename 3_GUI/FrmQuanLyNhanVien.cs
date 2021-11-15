@@ -40,8 +40,9 @@ namespace _3_GUI
             dgrid_NhanVien.Columns[3].Name = "Mật khẩu";
             dgrid_NhanVien.Columns[4].Name = "Vai trò";
             dgrid_NhanVien.Columns[5].Name = "Số điện thoại";
-            dgrid_NhanVien.Columns[6].Name = "Địa chỉ";
-            dgrid_NhanVien.Columns[7].Name = "Trạng thái";
+            dgrid_NhanVien.Columns[6].Name = "Số điện thoại";
+            dgrid_NhanVien.Columns[7].Name = "Địa chỉ";
+            dgrid_NhanVien.Columns[8].Name = "Trạng thái";
             dgrid_NhanVien.Columns[8].Name = "MANV";
             //DataGridViewComboBoxColumn dgvCmb = new DataGridViewComboBoxColumn();
             //dgvCmb.HeaderText = "Chức năng";
@@ -56,7 +57,7 @@ namespace _3_GUI
             dgrid_NhanVien.Rows.Clear();
             foreach (var x in _iQlNhanVienService.getlstNhanViens())
             {
-                dgrid_NhanVien.Rows.Add(x.Id, x.Name, x.Email, x.Password, x.Role == 0 ? "Nhân viên" : "Quản lí",
+                dgrid_NhanVien.Rows.Add(x.Id, x.Name, x.Email, x.Password, x.Role == 1 ? "Nhân viên" : "Quản lí",
                     x.PhoneNo, x.Address, x.Status == true ? "Hoạt động" : "Không hoạt động", x.MaNv);
             }
         }
@@ -69,12 +70,11 @@ namespace _3_GUI
             NhanVien.MaNv = 1 + NhanVien.Id;
             NhanVien.Name =  txt_TenNV.Text;
             NhanVien.Email = txtEmail.Text;
-            NhanVien.Role = (byte)(chk_nhanVien.Checked ? 1 : 0);
+            NhanVien.Role = (int)(chk_nhanVien.Checked ? 1 : 0);
             NhanVien.Address = txt_DiaChiNV.Text;
             NhanVien.PhoneNo = txt_SDT.Text;
-            NhanVien.Status = Convert.ToBoolean(rbtnHDnhanvien.Checked ? true : false);
-            NhanVien.Password = _utilities.GetHash(txtMatKhau.Text);
-            NhanVien.Role = 0;
+            NhanVien.Status = (bool)(rbtnHDnhanvien.Checked ? true : false);
+            NhanVien.Password = _utilities.GetHash(txtMatKhau.Text); 
             if ((MessageBox.Show("Bạn muốn thêm một nhân viên ?",
                 "Thông báo",
                 MessageBoxButtons.YesNo) == DialogResult.Yes))
@@ -90,17 +90,17 @@ namespace _3_GUI
             txtMaNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[8].Value.ToString();
             txt_TenNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[1].Value.ToString();
             txtEmail.Text = dgrid_NhanVien.Rows[rowindex].Cells[2].Value.ToString();
-            txtMatKhau.Text = dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString();
+            txtMatKhau.Text = _utilities.GetHash(dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString());
             txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
             txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[6].Value.ToString();
             var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToInt32(txtMaNV.Text) ).FirstOrDefault();
-            if (Convert.ToBoolean(nv.Role == 1) )
+            if (nv.Role == 0)
             {
-                chk_quanLi.Checked = false;
+                chk_quanLi.Checked = true;
             }
             else
             {
-                chk_nhanVien.Checked = true;
+                chk_nhanVien.Checked = false;
             }
 
             if (nv.Status == true)
@@ -112,8 +112,6 @@ namespace _3_GUI
                 rbtnHDnhanvien.Checked = false;
             }
         }
-
-
 
         private void btnXoaNV_Click(object sender, EventArgs e)
         {
@@ -131,11 +129,11 @@ namespace _3_GUI
 
         private void btnSuaNV_Click(object sender, EventArgs e)
         {
-            var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToByte(txtMaNV)).FirstOrDefault();
+            var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToByte(txtMaNV.Text)).FirstOrDefault();
             nhanVien.Name = txt_TenNV.Text;
             nhanVien.Email = txtEmail.Text;
             nhanVien.Password = _utilities.GetHash(txtMatKhau.Text);
-            nhanVien.Role = (byte)(chk_nhanVien.Checked ? 1 : 0);
+            nhanVien.Role = (int)(chk_nhanVien.Checked ? 1 : 0);
             nhanVien.Address = txt_DiaChiNV.Text;
             nhanVien.PhoneNo = txt_SDT.Text;
             nhanVien.PhoneNo = txt_SDT.Text;
@@ -151,17 +149,17 @@ namespace _3_GUI
 
         private void chk_quanLi_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (chk_quanLi.Checked)
+            if (chk_quanLi.Checked == true)
             {
-                chk_quanLi.Checked = false;
+                
             }
         }
 
         private void chk_nhanVien_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk_nhanVien.Checked)
+            if (chk_nhanVien.Checked == false)
             {
-                chk_quanLi.Checked = false;
+            
             }
         }
 
