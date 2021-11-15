@@ -39,8 +39,9 @@ namespace _3_GUI
             dgrid_NhanVien.Columns[3].Name = "Mật khẩu";
             dgrid_NhanVien.Columns[4].Name = "Vai trò";
             dgrid_NhanVien.Columns[5].Name = "Số điện thoại";
-            dgrid_NhanVien.Columns[6].Name = "Địa chỉ";
-            dgrid_NhanVien.Columns[7].Name = "Trạng thái";
+            dgrid_NhanVien.Columns[6].Name = "Số điện thoại";
+            dgrid_NhanVien.Columns[7].Name = "Địa chỉ";
+            dgrid_NhanVien.Columns[8].Name = "Trạng thái";
             dgrid_NhanVien.Columns[8].Name = "MANV";
             //DataGridViewComboBoxColumn dgvCmb = new DataGridViewComboBoxColumn();
             //dgvCmb.HeaderText = "Chức năng";
@@ -55,7 +56,7 @@ namespace _3_GUI
             dgrid_NhanVien.Rows.Clear();
             foreach (var x in _iQlNhanVienService.getlstNhanViens())
             {
-                dgrid_NhanVien.Rows.Add(x.Id, x.Name, x.Email, x.Password, x.Role == 0 ? "Nhân viên" : "Quản lí",
+                dgrid_NhanVien.Rows.Add(x.Id, x.Name, x.Email, x.Password, x.Role == 1 ? "Nhân viên" : "Quản lí",
                     x.PhoneNo, x.Address, x.Status == true ? "Hoạt động" : "Không hoạt động", x.MaNv);
             }
         }
@@ -89,7 +90,7 @@ namespace _3_GUI
             txtMaNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[8].Value.ToString();
             txt_TenNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[1].Value.ToString();
             txtEmail.Text = dgrid_NhanVien.Rows[rowindex].Cells[2].Value.ToString();
-            txtMatKhau.Text = dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString();
+            txtMatKhau.Text = _utilities.GetHash(dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString());
             txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
             txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[6].Value.ToString();
             var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToInt32(txtMaNV.Text) ).FirstOrDefault();
@@ -99,7 +100,7 @@ namespace _3_GUI
             }
             else
             {
-                chk_nhanVien.Checked = true;
+                chk_nhanVien.Checked = false;
             }
 
             if (nv.Status == true)
@@ -111,8 +112,6 @@ namespace _3_GUI
                 rbtnKHDnhanvien.Checked = true;
             }
         }
-
-
 
         private void btnXoaNV_Click(object sender, EventArgs e)
         {
@@ -134,7 +133,7 @@ namespace _3_GUI
             nhanVien.Name = txt_TenNV.Text;
             nhanVien.Email = txtEmail.Text;
             nhanVien.Password = _utilities.GetHash(txtMatKhau.Text);
-            nhanVien.Role = (byte)(chk_nhanVien.Checked ? 1 : 0);
+            nhanVien.Role = (int)(chk_nhanVien.Checked ? 1 : 0);
             nhanVien.Address = txt_DiaChiNV.Text;
             nhanVien.PhoneNo = txt_SDT.Text;
             nhanVien.PhoneNo = txt_SDT.Text;
@@ -160,7 +159,7 @@ namespace _3_GUI
         {
             if (chk_quanLi.Checked)
             {
-                chk_quanLi.Checked = false;
+            
             }
         }
 
