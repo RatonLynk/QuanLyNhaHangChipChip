@@ -49,7 +49,7 @@ namespace _3_GUI
                 }
                 FLPenal.Controls.Add(btn);
             }
-            
+            //â
         }
         void LoadMeniu()
         {
