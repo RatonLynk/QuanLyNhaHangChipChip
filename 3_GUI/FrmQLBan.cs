@@ -10,55 +10,72 @@ using System.Windows.Forms;
 using _2_BUS.BUSServices;
 using _2_BUS.iBUSServices;
 using _1_DAL.Models;
+using _2_BUS.Models;
 
 namespace _3_GUI
 {
     public partial class FrmQLBan : Form
     {
         IQLBanAnService _qlBanAn;
+        IQLHoaDon _qlHoaDon;
+        iQLMenuService _qlMeniu;
         List<BanAn> _lstBanAn;
         public FrmQLBan()
         {
             InitializeComponent();
             _qlBanAn = new QLBanAnService();
             _lstBanAn = new List<BanAn>();
-            //_lstBanAn = _qlBanAn.GetTablesFromDB().Where(c => c.Status == true && c.Floor == 1);
-            LoadTable();            
+            _qlHoaDon = new QLHoaDon();
+            _qlMeniu = new QLMenuService();
+            _lstBanAn = _qlBanAn.GetTablesFromDB();
+            LoadTable();
+            //LoadHoaDon();
+            //LoadMeniu();
         }
         void LoadTable()
         {
-            //List<BanAn> Bananlst = new List<BanAn>();
-            //   Bananlst = (List<BanAn>)_qlBanAn.GetTablesFromDB().Where(c => c.Status == true && c.Floor == 1);
-            //foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Status == true && c.Floor == 1))
-            //{               
-            //    Button btn = new Button() { Width = x.Rong, Height = x.Cao };
-            //    btn.Text = x.Name + Environment.NewLine + x.TinhTrang;
-            //    switch (x.TinhTrang)
-            //    {
-            //        case 1:
-            //            btn.BackColor = Color.Aqua;
-            //            break;
-            //        default:
-            //            btn.BackColor = Color.LightPink;
-            //            break;
-            //    }
-            //    Tp_Tang1.Controls.Add(btn);
-            //}
-            //for (int i = 1; i < _qlBanAn.GetTablesFromDB().Where(c => c.Status == true && c.Floor == 1).Count(); i++)
-            //{
-            //    Button btn = new Button() { Width = 50, Height = 50 };
-            //    btn.Text = _qlBanAn.GetTablesFromDB().Where(c => c.Status == true && c.Floor == 1)[i].Name + Environment.NewLine + _lstBanAn[i].TinhTrang;
-            //    switch (_lstBanAn[i].TinhTrang)
-            //    {
-            //        case 1:
-            //            btn.BackColor = Color.Aqua;
-            //            break;
-            //        default:
-            //            btn.BackColor = Color.LightPink;
-            //            break;
-            //    }
-            //    Tp_Tang1.Controls.Add(btn);
-            //}
+            foreach (BanAn x in _lstBanAn.Where(c => c.Floor == 1))
+            {
+                Button btn = new Button() { Width = x.Rong, Height = x.Cao };
+                btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
+                switch (x.TinhTrang)
+                {
+                    case 1:
+                        btn.BackColor = Color.Aqua;
+                        break;
+                    default:
+                        btn.BackColor = Color.LightPink;
+                        break;
+                }
+                FLPenal.Controls.Add(btn);
+            }
+            
+        }
+        void LoadMeniu()
+        {
+            DataGridViewButtonColumn Them = new DataGridViewButtonColumn();
+            Them.Name = "Them";
+            Them.HeaderText = "Thêm món";
+            Them.UseColumnTextForButtonValue = true;
+            Them.Text = "Thêm";
+
+            Dgid_Meniu.ColumnCount = 6;
+            Dgid_Meniu.Columns[0].Name = "Tên món";
+            Dgid_Meniu.Columns[1].Name = "ád";
+            Dgid_Meniu.Columns[2].Name = "ádfd";
+            Dgid_Meniu.Columns[3].Name = "sgdgh";
+            Dgid_Meniu.Columns[4].Name = "dhjfg";
+            Dgid_Meniu.Columns[5].Name = "dhjfg";
+            Dgid_Meniu.Columns.Add(Them);
+            foreach (var x in _qlMeniu.GetViewMenus())
+            {
+                Dgid_Meniu.Rows.Add();
+            }
+
+        }
+        void LoadHoaDon()
+        {
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -69,6 +86,12 @@ namespace _3_GUI
         private void button20_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmThemBan frmThemBan = new FrmThemBan();
+            frmThemBan.Show();
         }
     }
 }

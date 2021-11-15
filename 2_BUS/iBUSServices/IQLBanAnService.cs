@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _2_BUS.Models;
 
 namespace _2_BUS.iBUSServices
 {
@@ -17,6 +18,7 @@ namespace _2_BUS.iBUSServices
         public string UpdateFloor(Floor Floor);
         public string DeleteFloor(Floor Floor);
         public List<Floor> GetFloorsFromDB();
-        public List<BanAn> LoadBanlist();
+        //public List<BanAn> LoadBanlist();
+        public List<ViewBanAn> GetlistBanAn();
     }
 }

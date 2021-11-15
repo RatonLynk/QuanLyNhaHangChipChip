@@ -29,44 +29,66 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Btn_XacNhan = new System.Windows.Forms.Button();
+            this.Txt_TenBan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Cbx_Tang = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // button1
+            // Btn_XacNhan
             // 
-            this.button1.Location = new System.Drawing.Point(178, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_XacNhan.Location = new System.Drawing.Point(107, 133);
+            this.Btn_XacNhan.Name = "Btn_XacNhan";
+            this.Btn_XacNhan.Size = new System.Drawing.Size(75, 23);
+            this.Btn_XacNhan.TabIndex = 0;
+            this.Btn_XacNhan.Text = "Xác nhận";
+            this.Btn_XacNhan.UseVisualStyleBackColor = true;
+            this.Btn_XacNhan.Click += new System.EventHandler(this.Btn_XacNhan_Click);
             // 
-            // textBox1
+            // Txt_TenBan
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 23);
-            this.textBox1.TabIndex = 1;
+            this.Txt_TenBan.Location = new System.Drawing.Point(88, 27);
+            this.Txt_TenBan.Name = "Txt_TenBan";
+            this.Txt_TenBan.Size = new System.Drawing.Size(150, 23);
+            this.Txt_TenBan.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 63);
+            this.label1.Location = new System.Drawing.Point(31, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tên bàn:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Tầng:";
+            // 
+            // Cbx_Tang
+            // 
+            this.Cbx_Tang.FormattingEnabled = true;
+            this.Cbx_Tang.Location = new System.Drawing.Point(88, 72);
+            this.Cbx_Tang.Name = "Cbx_Tang";
+            this.Cbx_Tang.Size = new System.Drawing.Size(150, 23);
+            this.Cbx_Tang.TabIndex = 4;
+            // 
             // FrmThemBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 186);
+            this.ClientSize = new System.Drawing.Size(320, 186);
+            this.Controls.Add(this.Cbx_Tang);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Txt_TenBan);
+            this.Controls.Add(this.Btn_XacNhan);
             this.Name = "FrmThemBan";
             this.Text = "FrmThemBan";
             this.ResumeLayout(false);
@@ -76,8 +98,10 @@ namespace _3_GUI
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button Btn_XacNhan;
+        private System.Windows.Forms.TextBox Txt_TenBan;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox Cbx_Tang;
     }
 }
