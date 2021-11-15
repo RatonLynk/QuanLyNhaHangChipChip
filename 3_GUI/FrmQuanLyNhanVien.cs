@@ -53,7 +53,7 @@ namespace _3_GUI
             foreach (var x in _iQlNhanVienService.getlstNhanViens())
             {
                 dgrid_NhanVien.Rows.Add(x.Id, x.Name, x.Email, x.Password, x.Role == 0 ? "Nhân viên" : "Quản lí",
-                    x.PhoneNo, x.Address, x.Status == false ? "Hoạt động" : "Không hoạt động", x.MaNv);
+                    x.PhoneNo, x.Address, x.Status == true ? "Hoạt động" : "Không hoạt động", x.MaNv);
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1_DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace _2_BUS.iBUSServices
 {
-    interface IQLlogin
+    public interface IQLlogin
     {
+        public List<Role> GetlistRoleBUS();
     }
 }
