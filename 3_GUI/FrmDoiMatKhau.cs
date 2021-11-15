@@ -15,12 +15,14 @@ namespace _3_GUI
 {
     public partial class FrmDoiMatKhau : Form
     {
+        private Utilities uti;
         private IQLNhanVienService _qlnv;
         private IQuenMatKhau QMK = new QuenMatKhau();
         private NhanVien _nv;
         public static string passcu;
         public FrmDoiMatKhau()
         {
+            uti = new Utilities();
             _qlnv = new QLNhanVienService();
             InitializeComponent();
             _nv = new NhanVien();

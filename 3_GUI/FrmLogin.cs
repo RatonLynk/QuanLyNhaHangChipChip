@@ -18,6 +18,7 @@ namespace _3_GUI
 
     public partial class FrmLogin : Form
     {
+        private Utilities uti;
         private IQLNhanVienService _qlnv;
         //public bool vaitro { get; set; }
         //public Role role;
@@ -26,6 +27,7 @@ namespace _3_GUI
         public FrmLogin()
         {
             _qlnv = new QLNhanVienService();
+            uti = new Utilities();
             InitializeComponent();
             //role = new Role();
         }
@@ -179,13 +181,14 @@ namespace _3_GUI
                 MessageBox.Show("Tài khoản đăng nhập không chính xác ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
             }
-            else if (_qlnv.getlstNhanViens().Any(c =>  c.Password != txtPassWord.Text))
+            else if (_qlnv.getlstNhanViens().Any(c =>  c.Password != uti.GetHash(txtPassWord.Text)))
             {
                 MessageBox.Show("Mật khẩu không chính xác ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
             }
-            else if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password==txtPassWord.Text && c.Status==true))
+            else if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password==txtPassWord.Text && c.Status==false))
             {
+                var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text && c.Status == false);
 
                 var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text && c.Status == true);
                 MessageBox.Show("Đăng nhập thành công ", "Thông báo");

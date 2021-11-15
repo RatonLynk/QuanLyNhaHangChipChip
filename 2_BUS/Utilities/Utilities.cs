@@ -46,7 +46,7 @@ namespace _2_BUS.Utilities
             _donVi = _iDonViService.GetUnitsFromDB().Where(c => c.Name == Name).FirstOrDefault();
             return _donVi.Id;
         }
-        public static string GetHash(string plainText)
+        public  string GetHash(string plainText)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
             md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(plainText));
