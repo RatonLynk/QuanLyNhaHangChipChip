@@ -10,13 +10,15 @@ using System.Windows.Forms;
 using _1_DAL.Context;
 using _1_DAL.Models;
 using _2_BUS.BUSServices;
+using _2_BUS.Utilities;
 
 namespace _3_GUI
 {
     public partial class FrmQuanLyNhanVien : Form
     {
         private IQLNhanVienService _iQlNhanVienService = new QLNhanVienService();
-        private DatabaseContext _dbconContext;
+        private DatabaseContext _dbconContext = new DatabaseContext();
+        private Utilities _utilities = new Utilities();
         public FrmQuanLyNhanVien()
         {
             InitializeComponent();
@@ -65,12 +67,12 @@ namespace _3_GUI
             NhanVien.MaNv = 1 + NhanVien.Id;
             NhanVien.Name =  txt_TenNV.Text;
             NhanVien.Email = txtEmail.Text;
-            NhanVien.Role = (byte)(chk_nhanVien.Checked ? 1 : 0);
+            NhanVien.Role = (byte)(chk_quanLi.Checked ? 1 : 0);
             NhanVien.Address = txt_DiaChiNV.Text;
             NhanVien.PhoneNo = txt_SDT.Text;
-            NhanVien.Status = Convert.ToBoolean(rbtnHDnhanvien.Checked ? false : true);
-            NhanVien.Password = txtMatKhau.Text;
-            NhanVien.Role = 0;
+            NhanVien.Status = Convert.ToBoolean(rbtnHDnhanvien.Checked ? true : false);
+            NhanVien.Password = _utilities.GetHash("123");
+            NhanVien.Role = chk_quanLi.Checked?1:0;
             if ((MessageBox.Show("Bạn muốn thêm một nhân viên ?",
                 "Thông báo",
                 MessageBoxButtons.YesNo) == DialogResult.Yes))
@@ -90,10 +92,10 @@ namespace _3_GUI
             txtMatKhau.Text = dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString();
             txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
             txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[6].Value.ToString();
-            var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToInt32(txtMaNV) ).FirstOrDefault();
+            var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToInt32(txtMaNV.Text) ).FirstOrDefault();
             if (nv.Role == 1)
             {
-                chk_quanLi.Checked = false;
+                chk_quanLi.Checked = true;
             }
             else
             {
@@ -102,11 +104,11 @@ namespace _3_GUI
 
             if (nv.Status == true)
             {
-                rbtnKHDnhanvien.Checked = true;
+                rbtnHDnhanvien.Checked = true;
             }
             else
             {
-                rbtnHDnhanvien.Checked = false;
+                rbtnKHDnhanvien.Checked = true;
             }
         }
 
@@ -128,7 +130,7 @@ namespace _3_GUI
 
         private void btnSuaNV_Click(object sender, EventArgs e)
         {
-            var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToByte(txtMaNV)).FirstOrDefault();
+            var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToByte(txtMaNV.Text)).FirstOrDefault();
             nhanVien.Name = txt_TenNV.Text;
             nhanVien.Email = txtEmail.Text;
             nhanVien.Password = txtMatKhau.Text;
@@ -147,15 +149,15 @@ namespace _3_GUI
 
         private void chk_quanLi_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (chk_quanLi.Checked)
+            if (chk_nhanVien.Checked)
             {
-                chk_quanLi.Checked = false;
+                chk_nhanVien.Checked = false;
             }
         }
 
         private void chk_nhanVien_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk_nhanVien.Checked)
+            if (chk_quanLi.Checked)
             {
                 chk_quanLi.Checked = false;
             }

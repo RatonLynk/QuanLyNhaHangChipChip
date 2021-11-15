@@ -15,13 +15,14 @@ namespace _3_GUI
     public partial class FrmHome : Form
     {
         string mnv;
+        string ten;
         public static int session = 0;
         public static string mail;
         //FrmLogin dn;
         public FrmHome()
         {
             InitializeComponent();
-            lblChao.Text = null;
+            lblChao.Text = ten;
            
         }     
         //private void Resetvalue()
@@ -58,10 +59,11 @@ namespace _3_GUI
             FrmQuanLyThucDon frm = new FrmQuanLyThucDon();
             frm.Show();
         }
-        public void manv(string MaNv)//khi cần hiện mã nv đang đăng nhập gọi nó ra(xem nhân viên nào xuất hoá đơn)
+        public string manv(string MaNv,string Ten)//khi cần hiện mã nv đang đăng nhập gọi nó ra(xem nhân viên nào xuất hoá đơn)
         {
             mnv = MaNv;
-
+            ten = Ten;
+            return Ten;
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)

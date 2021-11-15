@@ -39,9 +39,6 @@ namespace _3_GUI
             this.rbtnHDnhanvien = new System.Windows.Forms.RadioButton();
             this.rbtnKHDnhanvien = new System.Windows.Forms.RadioButton();
             this.dgrid_NhanVien = new System.Windows.Forms.DataGridView();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,6 +54,9 @@ namespace _3_GUI
             this.chk_quanLi = new System.Windows.Forms.CheckBox();
             this.chk_nhanVien = new System.Windows.Forms.CheckBox();
             this.btn_Luu = new System.Windows.Forms.Button();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_NhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,40 +179,6 @@ namespace _3_GUI
             this.dgrid_NhanVien.TabIndex = 43;
             this.dgrid_NhanVien.TabStop = false;
             this.dgrid_NhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_NhanVien_CellClick);
-            // 
-            // txtMatKhau
-            // 
-            this.txtMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMatKhau.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.txtMatKhau.Location = new System.Drawing.Point(183, 236);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(5);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(255, 26);
-            this.txtMatKhau.TabIndex = 36;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label4.Location = new System.Drawing.Point(55, 236);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 20);
-            this.label4.TabIndex = 38;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label6.Location = new System.Drawing.Point(51, 240);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 20);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Mật Khẩu :";
             // 
             // label10
             // 
@@ -405,6 +371,41 @@ namespace _3_GUI
             this.btn_Luu.UseVisualStyleBackColor = true;
             this.btn_Luu.Click += new System.EventHandler(this.btn_Luu_Click);
             // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMatKhau.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.txtMatKhau.Location = new System.Drawing.Point(183, 236);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(5);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.ReadOnly = true;
+            this.txtMatKhau.Size = new System.Drawing.Size(255, 26);
+            this.txtMatKhau.TabIndex = 36;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.label6.Location = new System.Drawing.Point(51, 240);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 20);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Mật Khẩu :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.MenuText;
+            this.label4.Location = new System.Drawing.Point(55, 236);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.TabIndex = 38;
+            // 
             // FrmQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -458,9 +459,6 @@ namespace _3_GUI
         private System.Windows.Forms.RadioButton rbtnHDnhanvien;
         private System.Windows.Forms.RadioButton rbtnKHDnhanvien;
         private System.Windows.Forms.DataGridView dgrid_NhanVien;
-        private System.Windows.Forms.TextBox txtMatKhau;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -476,5 +474,8 @@ namespace _3_GUI
         private System.Windows.Forms.CheckBox chk_quanLi;
         private System.Windows.Forms.CheckBox chk_nhanVien;
         private System.Windows.Forms.Button btn_Luu;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
     }
 }

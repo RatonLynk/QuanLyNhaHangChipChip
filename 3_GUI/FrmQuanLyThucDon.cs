@@ -54,6 +54,7 @@ namespace _3_GUI
             dgvCongThuc.Columns[0].Name = "ID";
             dgvCongThuc.Columns[1].Name = "Tên món ăn";
             dgvCongThuc.Columns[2].Name = "Tên nguyên liệu";
+            dgvCongThuc.Rows.Clear();
             foreach(var x in _iQLMenuService.GetViewCongThuc())
             {
                 dgvCongThuc.Rows.Add(x.recipe.Id,x.details.Name, x.ingre.Name);
@@ -65,29 +66,34 @@ namespace _3_GUI
 
         private void LoadCBox()
         {
+            cbx_Meth.Items.Clear();
             foreach(var x in _iQLMenuService.GetCachCheBiens())
             {
                 if(x.Status == true)
                 cbx_Meth.Items.Add(x.Name);
             }
+            cbx_Cat.Items.Clear();
             foreach (var x in _iQLMenuService.GetDanhMucFoods())
             {
                 if(x.Status == true)
                 cbx_Cat.Items.Add(x.Name);
             }
+            cbx_Unit.Items.Clear();
             foreach (var x in _iQLMenuService.GetDonVis())
             {
                 if (x.Status == true)
                     cbx_Unit.Items.Add(x.Name);
             }
-            foreach(var x in _iQLMenuService.GetMonAnChiTiets())
+            cbx_RecipeName.Items.Clear();
+            foreach (var x in _iQLMenuService.GetMonAnChiTiets())
             {
                 if(x.Status == 1)
                 {
                     cbx_RecipeName.Items.Add(x.Name);
                 }
             }
-            foreach(var x in _iQLMenuService.GetNguyenLieus())
+            cbx_IngreName.Items.Clear();
+            foreach (var x in _iQLMenuService.GetNguyenLieus())
             {
                 if (x.Status == true)
                 {
