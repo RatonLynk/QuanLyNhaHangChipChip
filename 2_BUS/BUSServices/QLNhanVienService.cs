@@ -49,8 +49,10 @@ namespace _2_BUS.BUSServices
         }
 
         public string Save()
-        { 
-          return  _iNhanVienService.Save();
+        {
+            _startSave = true;
+            return  _iNhanVienService.Save();
+           
         }
 
         public List<NhanVien> getlstNhanViens()

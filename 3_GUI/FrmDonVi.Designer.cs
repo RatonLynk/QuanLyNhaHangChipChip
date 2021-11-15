@@ -1,7 +1,7 @@
 ﻿
 namespace _3_GUI
 {
-    partial class FrmCachCheBien
+    partial class FrmDonVi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCachCheBien));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDonVi));
             this.rbtn_KHDCachchebien = new System.Windows.Forms.RadioButton();
             this.rbtn_HDCachchebien = new System.Windows.Forms.RadioButton();
             this.btnXoaCongThuc = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@ namespace _3_GUI
             this.rbtn_KHDCachchebien.Location = new System.Drawing.Point(445, 213);
             this.rbtn_KHDCachchebien.Name = "rbtn_KHDCachchebien";
             this.rbtn_KHDCachchebien.Size = new System.Drawing.Size(146, 24);
-            this.rbtn_KHDCachchebien.TabIndex = 48;
+            this.rbtn_KHDCachchebien.TabIndex = 62;
             this.rbtn_KHDCachchebien.TabStop = true;
             this.rbtn_KHDCachchebien.Text = "Không hoạt động";
             this.rbtn_KHDCachchebien.UseVisualStyleBackColor = true;
@@ -64,7 +64,7 @@ namespace _3_GUI
             this.rbtn_HDCachchebien.Location = new System.Drawing.Point(321, 213);
             this.rbtn_HDCachchebien.Name = "rbtn_HDCachchebien";
             this.rbtn_HDCachchebien.Size = new System.Drawing.Size(102, 24);
-            this.rbtn_HDCachchebien.TabIndex = 49;
+            this.rbtn_HDCachchebien.TabIndex = 63;
             this.rbtn_HDCachchebien.TabStop = true;
             this.rbtn_HDCachchebien.Text = "Hoạt động";
             this.rbtn_HDCachchebien.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@ namespace _3_GUI
             this.btnXoaCongThuc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXoaCongThuc.Name = "btnXoaCongThuc";
             this.btnXoaCongThuc.Size = new System.Drawing.Size(125, 49);
-            this.btnXoaCongThuc.TabIndex = 46;
+            this.btnXoaCongThuc.TabIndex = 60;
             this.btnXoaCongThuc.Text = "Xóa";
             this.btnXoaCongThuc.UseVisualStyleBackColor = true;
             this.btnXoaCongThuc.Click += new System.EventHandler(this.btnXoaCongThuc_Click);
@@ -104,7 +104,7 @@ namespace _3_GUI
             this.dgvCachNau.RowHeadersWidth = 40;
             this.dgvCachNau.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCachNau.Size = new System.Drawing.Size(423, 574);
-            this.dgvCachNau.TabIndex = 47;
+            this.dgvCachNau.TabIndex = 61;
             this.dgvCachNau.TabStop = false;
             this.dgvCachNau.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCachNau_CellClick);
             // 
@@ -118,7 +118,7 @@ namespace _3_GUI
             this.btnThemCongThuc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThemCongThuc.Name = "btnThemCongThuc";
             this.btnThemCongThuc.Size = new System.Drawing.Size(125, 49);
-            this.btnThemCongThuc.TabIndex = 45;
+            this.btnThemCongThuc.TabIndex = 59;
             this.btnThemCongThuc.Text = "Thêm";
             this.btnThemCongThuc.UseVisualStyleBackColor = true;
             this.btnThemCongThuc.Click += new System.EventHandler(this.btnThemCongThuc_Click);
@@ -132,7 +132,7 @@ namespace _3_GUI
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(94, 20);
-            this.label16.TabIndex = 40;
+            this.label16.TabIndex = 54;
             this.label16.Text = "Trạng thái :";
             // 
             // label20
@@ -144,7 +144,7 @@ namespace _3_GUI
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(87, 20);
-            this.label20.TabIndex = 41;
+            this.label20.TabIndex = 55;
             this.label20.Text = "Tìm kiếm :";
             // 
             // label13
@@ -155,9 +155,9 @@ namespace _3_GUI
             this.label13.Location = new System.Drawing.Point(184, 163);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 20);
-            this.label13.TabIndex = 42;
-            this.label13.Text = "Cách Nấu";
+            this.label13.Size = new System.Drawing.Size(92, 20);
+            this.label13.TabIndex = 56;
+            this.label13.Text = "Tên Đơn Vị";
             // 
             // txtTimKiemCongthucCB
             // 
@@ -168,7 +168,7 @@ namespace _3_GUI
             this.txtTimKiemCongthucCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimKiemCongthucCB.Name = "txtTimKiemCongthucCB";
             this.txtTimKiemCongthucCB.Size = new System.Drawing.Size(201, 26);
-            this.txtTimKiemCongthucCB.TabIndex = 36;
+            this.txtTimKiemCongthucCB.TabIndex = 50;
             this.txtTimKiemCongthucCB.TextChanged += new System.EventHandler(this.txtTimKiemCongthucCB_TextChanged);
             // 
             // label11
@@ -179,9 +179,9 @@ namespace _3_GUI
             this.label11.Location = new System.Drawing.Point(184, 119);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 20);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Mã Cách Nấu";
+            this.label11.Size = new System.Drawing.Size(87, 20);
+            this.label11.TabIndex = 58;
+            this.label11.Text = "Mã Đơn Vị";
             // 
             // txt_MethName
             // 
@@ -192,7 +192,7 @@ namespace _3_GUI
             this.txt_MethName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_MethName.Name = "txt_MethName";
             this.txt_MethName.Size = new System.Drawing.Size(256, 26);
-            this.txt_MethName.TabIndex = 37;
+            this.txt_MethName.TabIndex = 51;
             // 
             // txt_MethID
             // 
@@ -204,7 +204,7 @@ namespace _3_GUI
             this.txt_MethID.Name = "txt_MethID";
             this.txt_MethID.ReadOnly = true;
             this.txt_MethID.Size = new System.Drawing.Size(256, 26);
-            this.txt_MethID.TabIndex = 43;
+            this.txt_MethID.TabIndex = 57;
             this.txt_MethID.TabStop = false;
             // 
             // button1
@@ -218,7 +218,7 @@ namespace _3_GUI
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 49);
-            this.button1.TabIndex = 38;
+            this.button1.TabIndex = 52;
             this.button1.Text = "Sửa";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -231,11 +231,11 @@ namespace _3_GUI
             this.label3.Location = new System.Drawing.Point(184, 62);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 25);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "CÁCH CHẾ BIÊN";
+            this.label3.Size = new System.Drawing.Size(86, 25);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "ĐƠN VỊ";
             // 
-            // FrmCachCheBien
+            // FrmDonVi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -254,8 +254,8 @@ namespace _3_GUI
             this.Controls.Add(this.txt_MethID);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Name = "FrmCachCheBien";
-            this.Text = "FrmCachCheBien";
+            this.Name = "FrmDonVi";
+            this.Text = "FrmDonVi";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCachNau)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

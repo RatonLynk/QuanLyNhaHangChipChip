@@ -35,7 +35,7 @@ namespace _1_DAL.DALServices
         }
         public List<NguyenLieu> GetIngredientsFromDB()
         {
-            return _lstTables = _dbContext.NguyenLieus.ToList();
+            return _dbContext.NguyenLieus.ToList();
         }
     }
 }

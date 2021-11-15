@@ -19,7 +19,6 @@ namespace _3_GUI
         private IQLNhanVienService _iQlNhanVienService = new QLNhanVienService();
         private DatabaseContext _dbconContext;
         private Utilities _utilities;
-        
         public FrmQuanLyNhanVien()
         {
             InitializeComponent();
@@ -70,16 +69,17 @@ namespace _3_GUI
             NhanVien.MaNv = 1 + NhanVien.Id;
             NhanVien.Name =  txt_TenNV.Text;
             NhanVien.Email = txtEmail.Text;
-            NhanVien.Role = (int)(chk_nhanVien.Checked ? 1 : 0);
+            NhanVien.Role = (byte)(chk_quanLi.Checked ? 1 : 0);
             NhanVien.Address = txt_DiaChiNV.Text;
             NhanVien.PhoneNo = txt_SDT.Text;
-            NhanVien.Status = (bool)(rbtnHDnhanvien.Checked ? true : false);
-            NhanVien.Password = _utilities.GetHash(txtMatKhau.Text); 
+            NhanVien.Status = Convert.ToBoolean(rbtnHDnhanvien.Checked ? true : false);
+            NhanVien.Password = _utilities.GetHash("123");
+            NhanVien.Role = chk_quanLi.Checked?1:0;
             if ((MessageBox.Show("Bạn muốn thêm một nhân viên ?",
                 "Thông báo",
                 MessageBoxButtons.YesNo) == DialogResult.Yes))
             {
-                MessageBox.Show(_iQlNhanVienService.Add(NhanVien));
+                _iQlNhanVienService.Add(NhanVien);
                 loadData();
             }
         }
@@ -94,7 +94,7 @@ namespace _3_GUI
             txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
             txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[6].Value.ToString();
             var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToInt32(txtMaNV.Text) ).FirstOrDefault();
-            if (nv.Role == 0)
+            if (nv.Role == 1)
             {
                 chk_quanLi.Checked = true;
             }
@@ -105,11 +105,11 @@ namespace _3_GUI
 
             if (nv.Status == true)
             {
-                rbtnKHDnhanvien.Checked = true;
+                rbtnHDnhanvien.Checked = true;
             }
             else
             {
-                rbtnHDnhanvien.Checked = false;
+                rbtnKHDnhanvien.Checked = true;
             }
         }
 
@@ -122,7 +122,7 @@ namespace _3_GUI
                 "Thông báo !!!!!!!!!!!!!!!",
                 MessageBoxButtons.YesNo) == DialogResult.Yes))
             {
-                MessageBox.Show(_iQlNhanVienService.Delete(nhanVien));
+                _iQlNhanVienService.Delete(nhanVien);
                 loadData();
             }
         }
@@ -149,15 +149,15 @@ namespace _3_GUI
 
         private void chk_quanLi_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (chk_quanLi.Checked == true)
+            if (chk_nhanVien.Checked)
             {
-                
+                chk_nhanVien.Checked = false;
             }
         }
 
         private void chk_nhanVien_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk_nhanVien.Checked == false)
+            if (chk_quanLi.Checked)
             {
             
             }

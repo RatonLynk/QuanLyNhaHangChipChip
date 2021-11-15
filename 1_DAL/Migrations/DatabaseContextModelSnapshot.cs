@@ -22,14 +22,13 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.BanAn", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<string>("Busy")
                         .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasColumnType("nchar(10)")
+                        .IsFixedLength(true);
 
                     b.Property<int>("Cao")
                         .HasColumnType("int");
@@ -48,9 +47,6 @@ namespace _1_DAL.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<int>("TinhTrang")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("Floor");
@@ -61,10 +57,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.CachCheBien", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -108,10 +102,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.DanhMucFood", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -129,10 +121,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.DonVi", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -150,10 +140,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.Floor", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<int>("FloorNumber")
                         .HasColumnType("int");
@@ -169,10 +157,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.HoaDon", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<DateTime>("DateCheckIn")
                         .HasColumnType("date");
@@ -208,10 +194,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.HoaDonChiTiet", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<int>("Count")
                         .HasColumnType("int");
@@ -242,13 +226,12 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.MonAnChiTiet", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("int");
 
                     b.Property<string>("Anh")
                         .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(500)");
 
                     b.Property<int>("Idcategory")
                         .HasColumnType("int")
@@ -308,10 +291,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
                     b.Property<int>("MaNv")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("MaNV")
-                        .UseIdentityColumn();
+                        .HasColumnName("MaNV");
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -321,7 +302,8 @@ namespace _1_DAL.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("Id")
                         .HasColumnType("int")
@@ -333,12 +315,14 @@ namespace _1_DAL.Migrations
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(500)");
 
                     b.Property<string>("PhoneNo")
                         .IsRequired()
                         .HasMaxLength(12)
-                        .HasColumnType("nvarchar(12)");
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(12)");
 
                     b.Property<int>("Role")
                         .HasColumnType("int");
@@ -351,39 +335,14 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("MaNv");
 
-                    b.HasIndex("Role");
-
                     b.ToTable("NhanVien");
-                });
-
-            modelBuilder.Entity("_1_DAL.Models.Role", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<bool?>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("_1_DAL.Models.ThucDon", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<int>("IdchiTiet")
                         .HasColumnType("int")
@@ -411,7 +370,8 @@ namespace _1_DAL.Migrations
                 {
                     b.HasOne("_1_DAL.Models.Floor", "FloorNavigation")
                         .WithMany("BanAns")
-                        .HasForeignKey("Floor");
+                        .HasForeignKey("Floor")
+                        .HasConstraintName("FK_BanAn_Floor");
 
                     b.Navigation("FloorNavigation");
                 });
@@ -440,13 +400,13 @@ namespace _1_DAL.Migrations
                     b.HasOne("_1_DAL.Models.NhanVien", "IdnhanVienNavigation")
                         .WithMany("HoaDons")
                         .HasForeignKey("IdnhanVien")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_HoaDon_NhanVien")
                         .IsRequired();
 
                     b.HasOne("_1_DAL.Models.BanAn", "IdtableNavigation")
                         .WithMany("HoaDons")
                         .HasForeignKey("Idtable")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_HoaDon_BanAn")
                         .IsRequired();
 
                     b.Navigation("IdnhanVienNavigation");
@@ -459,13 +419,13 @@ namespace _1_DAL.Migrations
                     b.HasOne("_1_DAL.Models.HoaDon", "IdbillNavigation")
                         .WithMany("HoaDonChiTiets")
                         .HasForeignKey("Idbill")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_HoaDonChiTiet_HoaDon")
                         .IsRequired();
 
                     b.HasOne("_1_DAL.Models.MonAnChiTiet", "IdfoodNavigation")
                         .WithMany("HoaDonChiTiets")
                         .HasForeignKey("Idfood")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_HoaDonChiTiet_MonAnChiTiet")
                         .IsRequired();
 
                     b.Navigation("IdbillNavigation");
@@ -478,19 +438,19 @@ namespace _1_DAL.Migrations
                     b.HasOne("_1_DAL.Models.DanhMucFood", "IdcategoryNavigation")
                         .WithMany("MonAnChiTiets")
                         .HasForeignKey("Idcategory")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_MonAnChiTiet_DanhMucFood")
                         .IsRequired();
 
                     b.HasOne("_1_DAL.Models.CachCheBien", "IdmethodNavigation")
                         .WithMany("MonAnChiTiets")
                         .HasForeignKey("Idmethod")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_MonAnChiTiet_CachChebien")
                         .IsRequired();
 
                     b.HasOne("_1_DAL.Models.DonVi", "IdunitNavigation")
                         .WithMany("MonAnChiTiets")
                         .HasForeignKey("Idunit")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_MonAnChiTiet_DonVi")
                         .IsRequired();
 
                     b.Navigation("IdcategoryNavigation");
@@ -500,23 +460,12 @@ namespace _1_DAL.Migrations
                     b.Navigation("IdunitNavigation");
                 });
 
-            modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
-                {
-                    b.HasOne("_1_DAL.Models.Role", "RoleNavigation")
-                        .WithMany("NhanViens")
-                        .HasForeignKey("Role")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("RoleNavigation");
-                });
-
             modelBuilder.Entity("_1_DAL.Models.ThucDon", b =>
                 {
                     b.HasOne("_1_DAL.Models.MonAnChiTiet", "IdchiTietNavigation")
                         .WithMany("ThucDons")
                         .HasForeignKey("IdchiTiet")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_ThucDon_MonAnChiTiet")
                         .IsRequired();
 
                     b.Navigation("IdchiTietNavigation");
@@ -569,11 +518,6 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
                     b.Navigation("HoaDons");
-                });
-
-            modelBuilder.Entity("_1_DAL.Models.Role", b =>
-                {
-                    b.Navigation("NhanViens");
                 });
 #pragma warning restore 612, 618
         }
