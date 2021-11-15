@@ -36,6 +36,10 @@ namespace _1_DAL.DALServices
         {
             return _lstRoles = _dbConText.Roles.ToList();
         }
+        public List<Role> GetlistRole()
+        {
+            return _lstRoles;
+        }
         public string SaveRole()
         {
             _dbConText.SaveChanges();

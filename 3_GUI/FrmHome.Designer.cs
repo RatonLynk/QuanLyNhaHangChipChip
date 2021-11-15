@@ -40,7 +40,7 @@
             this.btnQuanLyNhanVien = new System.Windows.Forms.Button();
             this.btnQuanLyThucDon = new System.Windows.Forms.Button();
             this.btnQuanLyHoaDon = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblChao = new System.Windows.Forms.Label();
             this.btnPhucVuKhachHang = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -181,16 +181,17 @@
             this.btnQuanLyHoaDon.Text = "Quản lý hóa đơn";
             this.btnQuanLyHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuanLyHoaDon.UseVisualStyleBackColor = false;
+            this.btnQuanLyHoaDon.Click += new System.EventHandler(this.btnQuanLyHoaDon_Click);
             // 
-            // label2
+            // lblChao
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(1061, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 19);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Chào bạn:";
+            this.lblChao.AutoSize = true;
+            this.lblChao.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblChao.Location = new System.Drawing.Point(1007, 19);
+            this.lblChao.Name = "lblChao";
+            this.lblChao.Size = new System.Drawing.Size(82, 20);
+            this.lblChao.TabIndex = 6;
+            this.lblChao.Text = "Chào bạn:";
             // 
             // btnPhucVuKhachHang
             // 
@@ -236,13 +237,13 @@
             this.btnDangXuat.BackColor = System.Drawing.Color.Maroon;
             this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDangXuat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(1190, 87);
+            this.btnDangXuat.Location = new System.Drawing.Point(1194, 91);
             this.btnDangXuat.Margin = new System.Windows.Forms.Padding(5);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(100, 37);
+            this.btnDangXuat.Size = new System.Drawing.Size(96, 32);
             this.btnDangXuat.TabIndex = 0;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -254,17 +255,18 @@
             this.btnDoiMatKhau.BackColor = System.Drawing.Color.Maroon;
             this.btnDoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDoiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDoiMatKhau.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDoiMatKhau.ForeColor = System.Drawing.Color.White;
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(1170, 134);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(1168, 146);
             this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(5);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(120, 44);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(122, 41);
             this.btnDoiMatKhau.TabIndex = 0;
-            this.btnDoiMatKhau.Text = "Đổi Mật Khẩu";
+            this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDoiMatKhau.UseVisualStyleBackColor = false;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // FrmHome
             // 
@@ -274,7 +276,7 @@
             this.ClientSize = new System.Drawing.Size(1344, 907);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblChao);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
@@ -291,7 +293,7 @@
             this.Name = "FrmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FrmHome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -312,7 +314,7 @@
         private System.Windows.Forms.Label labGio;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblChao;
         private System.Windows.Forms.Button btnPhucVuKhachHang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

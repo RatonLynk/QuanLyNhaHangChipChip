@@ -50,12 +50,12 @@
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtUsername.Location = new System.Drawing.Point(106, 116);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(5);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(277, 37);
             this.txtUsername.TabIndex = 1;
-            this.txtUsername.Text = "1da";
+            this.txtUsername.Text = "phonglvph16158@fpt.edu.vn";
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
@@ -66,7 +66,7 @@
             this.txtPassWord.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassWord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPassWord.Location = new System.Drawing.Point(106, 176);
-            this.txtPassWord.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtPassWord.Margin = new System.Windows.Forms.Padding(5);
             this.txtPassWord.Multiline = true;
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(277, 37);
@@ -85,8 +85,8 @@
             this.btnDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.Image")));
             this.btnDangNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangNhap.Location = new System.Drawing.Point(65, 293);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnDangNhap.Location = new System.Drawing.Point(55, 293);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(5);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(128, 53);
             this.btnDangNhap.TabIndex = 4;
@@ -99,7 +99,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(55, 116);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(43, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -110,7 +110,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(55, 176);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(43, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,7 +129,7 @@
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(249, 293);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(5);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(134, 53);
             this.btnThoat.TabIndex = 7;
@@ -165,7 +165,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(13, 13);
-            this.panel2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(421, 427);
             this.panel2.TabIndex = 10;
@@ -206,7 +206,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

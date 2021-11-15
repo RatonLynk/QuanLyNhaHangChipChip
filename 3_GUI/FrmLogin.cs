@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using _2_BUS.BUSServices;
+using _1_DAL.Models;
+using _2_BUS.iBUSServices;
 
 namespace _3_GUI
 {
@@ -17,19 +19,22 @@ namespace _3_GUI
     public partial class FrmLogin : Form
     {
         private IQLNhanVienService _qlnv;
-
+        //public bool vaitro { get; set; }
+        //public Role role;
         string userName = "";
         string passWord = "";
         public FrmLogin()
         {
             _qlnv = new QLNhanVienService();
             InitializeComponent();
+            //role = new Role();
         }
 
         
       
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+            FrmHome.session = 0;
             txtUsername.Text = "User Name";
             txtUsername.ForeColor = Color.Gray;
 
@@ -162,33 +167,38 @@ namespace _3_GUI
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            
+           
+
             if (_qlnv.getlstNhanViens().Any(c =>c.Status == false))
             {
-                MessageBox.Show("Tài khoản hiện ngưng hoạt động, vui lòng đăng nhập bằng tài khoản khác ", "Thông báo");
+                MessageBox.Show("Tài khoản hiện ngưng hoạt động, vui lòng đăng nhập bằng tài khoản khác ", "Thông báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
 
             }
             else if (_qlnv.getlstNhanViens().Any(c => c.Email != txtUsername.Text ))
             {
-                MessageBox.Show("tài khoản đăng nhập không chính xác ", "thông báo");
+                MessageBox.Show("Tài khoản đăng nhập không chính xác ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
             }
             else if (_qlnv.getlstNhanViens().Any(c =>  c.Password != txtPassWord.Text))
             {
-                MessageBox.Show("Mật khẩu không chính xác ", "thông báo");
+                MessageBox.Show("Mật khẩu không chính xác ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
             }
             else if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password==txtPassWord.Text && c.Status==true))
             {
+
                 var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text && c.Status == true);
+                MessageBox.Show("Đăng nhập thành công ", "Thông báo");
+                FrmHome.mail = txtUsername.Text;
+                FrmDoiMatKhau.passcu = txtPassWord.Text;
+                //FrmHome.session = 1;
+                //vaitro = role.Status;
                 this.Hide();
                 FrmHome frmHome = new FrmHome();
+                frmHome.manv(Convert.ToString(nv1.MaNv));//truy xuất được mã nv khi đăng nhập
                 frmHome.ShowDialog();
                 this.Close();
-                MessageBox.Show("Đăng nhập thành công ", "thông báo");
-                frmHome.manv(Convert.ToString(nv1.MaNv));//truy xuất được mã nv khi đăng nhập
-          
-                
+
             }
         }
 
@@ -197,9 +207,12 @@ namespace _3_GUI
             this.Hide();
             FrmQuenMatKhau qmk = new FrmQuenMatKhau();
             qmk.ShowDialog();
+            this.Close();
+            
+           
            
         }
-        //sdfg
+       
     }
 
 }

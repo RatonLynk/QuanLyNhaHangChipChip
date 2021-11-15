@@ -441,7 +441,6 @@ namespace _3_GUI
             this.Name = "FrmQuanLyNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân Viên";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_NhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

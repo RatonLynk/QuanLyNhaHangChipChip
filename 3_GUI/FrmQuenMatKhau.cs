@@ -64,6 +64,8 @@ namespace _3_GUI
                 MessageBox.Show(nv.Update(_NhanVien), mess);
                 nv.Save();
                 this.Close();
+                FrmLogin frm_DangNhap = new FrmLogin();
+                frm_DangNhap.ShowDialog();
             }
             else
             {
@@ -129,7 +131,8 @@ namespace _3_GUI
                     _NhanVien.Password = _pass;
                     _NhanVien.Status = false;
                     MessageBox.Show(QMK.UpdatePass(_NhanVien), mess);
-                    this.Hide();
+                    this.Close();
+                 
                 }
                 else
                 {
@@ -138,6 +141,15 @@ namespace _3_GUI
                 }
             }
         }
+
+        private void btnQuaylai_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.ShowDialog();
+            this.Close();
+        }
+
         bool vadidatefrom()
         {
             if (string.IsNullOrEmpty(txt_Email.Text))
