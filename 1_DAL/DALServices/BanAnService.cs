@@ -12,7 +12,7 @@ namespace _1_DAL.DALServices
     public class BanAnService : iBanAnService
     {
         DatabaseContext _dbContext = new DatabaseContext();
-        List<BanAn> _lstTables;
+        
         public string AddBanAn(BanAn BanAn)
         {
             _dbContext.BanAns.Add(BanAn);

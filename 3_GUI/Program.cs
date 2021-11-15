@@ -19,8 +19,6 @@ namespace _3_GUI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmQuanLyNhanVien());
 
-
-
         }
     }
 }

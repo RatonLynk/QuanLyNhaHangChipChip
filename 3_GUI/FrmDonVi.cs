@@ -14,16 +14,16 @@ using _2_BUS.Utilities;
 
 namespace _3_GUI
 {
-    public partial class FrmCachCheBien : Form
+    public partial class FrmDonVi : Form
     {
         private iQLMenuService _iQLMenuService;
         private MonAnChiTiet _monCT;
         private DonVi _donVi;
         private DanhMucFood _dmFood;
-        private CachCheBien _cachCB;
+        private DonVi _cachCB;
         private ThucDon _item;
         private Utilities _utilities;
-        public FrmCachCheBien()
+        public FrmDonVi()
         {
             InitializeComponent();
             _iQLMenuService = new QLMenuService();
@@ -31,26 +31,26 @@ namespace _3_GUI
         }
         private void FrmQuanLyThucDon_Load()
         {
-            
+
 
             dgvCachNau.ColumnCount = 3;
-            dgvCachNau.Columns[0].Name = "Mã danh mục";
-            dgvCachNau.Columns[0].Width = 100;
-            dgvCachNau.Columns[1].Name = "Tên danh mục";
+            dgvCachNau.Columns[0].Name = "Id";
+            dgvCachNau.Columns[1].Name = "Tên đơn vị";
             dgvCachNau.Columns[2].Name = "Trạng thái";
             dgvCachNau.Rows.Clear();
-            foreach (var x in _iQLMenuService.GetCachCheBiens())
+            foreach (var x in _iQLMenuService.GetDonVis())
             {
                 dgvCachNau.Rows.Add(x.Id, x.Name, x.Status == true ? "Hoạt động" : "Không hoạt động");
             }
             this.dgvCachNau.ClearSelection();
-            
+
+
         }
 
         private void dgvCachNau_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var index = e.RowIndex;
-            if (index == _iQLMenuService.GetDanhMucFoods().Count || index == -1)
+            if (index == _iQLMenuService.GetDonVis().Count || index == -1)
             {
                 txt_MethID.Text = null;
                 txt_MethName.Text = null;
@@ -60,7 +60,7 @@ namespace _3_GUI
             else
             {
                 int ID = (int)dgvCachNau.Rows[index].Cells[0].Value;
-                _cachCB = _iQLMenuService.GetCachCheBiens().Where(c => c.Id == ID).FirstOrDefault();
+                _cachCB = _iQLMenuService.GetDonVis().Where(c => c.Id == ID).FirstOrDefault();
                 txt_MethID.Text = _cachCB.Id.ToString();
                 txt_MethName.Text = _cachCB.Name;
                 if (_cachCB.Status == true)
@@ -91,7 +91,7 @@ namespace _3_GUI
             dgvCachNau.Columns[2].Name = "Trạng thái";
             foreach (var x in _iQLMenuService.TimKiem(txtTimKiemCongthucCB.Text))
             {
-                dgvCachNau.Rows.Add(x.method.Id, x.method.Name, x.method.Status == true ? "Hoạt động" : "Không hoạt động");
+                dgvCachNau.Rows.Add(x.unit.Id, x.unit.Name, x.unit.Status == true ? "Hoạt động" : "Không hoạt động");
             }
         }
 
@@ -103,8 +103,8 @@ namespace _3_GUI
             {
                 if (checkNullMeth())
                 {
-                    _cachCB = new CachCheBien();
-                    _cachCB.Id = _iQLMenuService.GetCachCheBiens().Count;
+                    _cachCB = new DonVi();
+                    _cachCB.Id = _iQLMenuService.GetDonVis().Count;
                     _cachCB.Name = txt_MethName.Text;
                     if (rbtn_HDCachchebien.Checked)
                     {
@@ -114,7 +114,7 @@ namespace _3_GUI
                     {
                         _cachCB.Status = false;
                     }
-                    _iQLMenuService.AddMethod(_cachCB);
+                    _iQLMenuService.AddUnit(_cachCB);
                     FrmQuanLyThucDon_Load();
                 }
                 else
@@ -152,7 +152,7 @@ namespace _3_GUI
                     {
                         _cachCB.Status = true;
                     }
-                    _iQLMenuService.UpdateMethod(_cachCB);
+                    _iQLMenuService.UpdateUnit(_cachCB);
                     FrmQuanLyThucDon_Load();
                 }
             }
@@ -165,7 +165,7 @@ namespace _3_GUI
             {
                 if (_cachCB != null)
                 {
-                    _iQLMenuService.DeleteMethod(_cachCB);
+                    _iQLMenuService.DeleteUnit(_cachCB);
                 }
                 else
                 {

@@ -29,8 +29,6 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNewPass = new System.Windows.Forms.TextBox();
@@ -41,38 +39,15 @@ namespace _3_GUI
             this.btnDong = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(35, 40);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Email :";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(219, 40);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(224, 22);
-            this.txtEmail.TabIndex = 6;
-            // 
             // txtPass
             // 
             this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPass.ForeColor = System.Drawing.Color.Black;
-            this.txtPass.Location = new System.Drawing.Point(219, 74);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPass.Location = new System.Drawing.Point(250, 25);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(224, 22);
+            this.txtPass.Size = new System.Drawing.Size(255, 26);
             this.txtPass.TabIndex = 6;
             // 
             // label1
@@ -80,10 +55,10 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(35, 76);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(40, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 16);
+            this.label1.Size = new System.Drawing.Size(110, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Mật khẩu cũ :";
             // 
@@ -92,10 +67,10 @@ namespace _3_GUI
             this.txtNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNewPass.ForeColor = System.Drawing.Color.Black;
-            this.txtNewPass.Location = new System.Drawing.Point(219, 109);
-            this.txtNewPass.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNewPass.Location = new System.Drawing.Point(250, 71);
+            this.txtNewPass.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.Size = new System.Drawing.Size(224, 22);
+            this.txtNewPass.Size = new System.Drawing.Size(255, 26);
             this.txtNewPass.TabIndex = 6;
             // 
             // label2
@@ -103,10 +78,10 @@ namespace _3_GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(35, 112);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(40, 75);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 16);
+            this.label2.Size = new System.Drawing.Size(119, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Mật khẩu mới :";
             // 
@@ -115,10 +90,10 @@ namespace _3_GUI
             this.txtNewPass2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNewPass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNewPass2.ForeColor = System.Drawing.Color.Black;
-            this.txtNewPass2.Location = new System.Drawing.Point(219, 143);
-            this.txtNewPass2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNewPass2.Location = new System.Drawing.Point(250, 117);
+            this.txtNewPass2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtNewPass2.Name = "txtNewPass2";
-            this.txtNewPass2.Size = new System.Drawing.Size(224, 22);
+            this.txtNewPass2.Size = new System.Drawing.Size(255, 26);
             this.txtNewPass2.TabIndex = 6;
             // 
             // label3
@@ -126,10 +101,10 @@ namespace _3_GUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(35, 148);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(40, 123);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 16);
+            this.label3.Size = new System.Drawing.Size(184, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Xác nhận lại mật khẩu :";
             // 
@@ -142,10 +117,10 @@ namespace _3_GUI
             this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLuu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(93, 194);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuu.Location = new System.Drawing.Point(90, 186);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(89, 37);
+            this.btnLuu.Size = new System.Drawing.Size(102, 49);
             this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = false;
@@ -160,10 +135,10 @@ namespace _3_GUI
             this.btnDong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.btnDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDong.Location = new System.Drawing.Point(321, 194);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDong.Location = new System.Drawing.Point(351, 186);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(89, 37);
+            this.btnDong.Size = new System.Drawing.Size(102, 49);
             this.btnDong.TabIndex = 8;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = false;
@@ -171,20 +146,17 @@ namespace _3_GUI
             // 
             // FrmDoiMatKhau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 254);
+            this.ClientSize = new System.Drawing.Size(562, 255);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtNewPass2);
             this.Controls.Add(this.txtNewPass);
             this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtEmail);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmDoiMatKhau";
             this.Text = "Thay đổi mật khẩu";
             this.ResumeLayout(false);
@@ -193,9 +165,6 @@ namespace _3_GUI
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNewPass;

@@ -34,6 +34,8 @@ namespace _2_BUS.BUSServices
             _iThucDonService = new ThucDonService();
             _iCachChebienService = new CachCheBienService();
             _iDMFoodService = new DMFoodService();
+            _iNguyenLieuService = new NguyenLieuService();
+            _iCongThucService = new CongThucService();
         }
         public bool AddCategory(DanhMucFood cat)
         {
@@ -172,22 +174,31 @@ namespace _2_BUS.BUSServices
             return _iThucDonService.GetThucDonFromDB();
         }
 
+        public List<ViewMenu> GetViewCongThuc()
+        {
+            return _viewMenus = (from a in _iMonAnChiTietService.GetDetailsFromDB()
+                                 join e in _iCongThucService.GetRecipesFromDB() on a.Id equals e.IdMon
+                                 join f in _iNguyenLieuService.GetIngredientsFromDB() on e.IdNguyenLieu equals f.Id
+                                 select new ViewMenu()
+                                 {
+                                     details = a,
+                                     recipe = e,
+                                     ingre = f
+                                 }).ToList();
+        }
+
         public List<ViewMenu> GetViewMenus()
         {
             return _viewMenus = (from a in _iMonAnChiTietService.GetDetailsFromDB()
                                  join b in _iDonViService.GetUnitsFromDB() on a.Idunit equals b.Id
                                  join c in _iDMFoodService.GetCategoriesFromDB() on a.Idcategory equals c.Id
                                  join d in _iCachChebienService.GetMethodsFromDB() on a.Idmethod equals d.Id
-                                 join e in _iCongThucService.GetRecipesFromDB() on a.Id equals e.IdMon
-                                 join f in _iNguyenLieuService.GetIngredientsFromDB() on e.IdNguyenLieu equals f.Id
                                  select new ViewMenu()
                                  {
                                      details = a,
                                      unit = b,
                                      cat = c,
-                                     method = d,
-                                     recipe = e,
-                                     ingre = f
+                                     method = d
                                  }).ToList();
         }
 

@@ -26,6 +26,7 @@ namespace _3_GUI
         private CachCheBien _cachCB;
         private ThucDon _item;
         private Utilities _utilities;
+        private CongThuc _recipe;
         public FrmQuanLyThucDon()
         {
             //MaximizeBox = false;
@@ -49,12 +50,14 @@ namespace _3_GUI
             {
                 dgvMonAn.Rows.Add(x.details.Id,x.details.Name, x.details.Price, x.cat.Name, x.method.Name, x.unit.Name, x.details.Status == 1 ? "Đang bán" : "Dừng bán");
             }
-            dgvCongThuc.ColumnCount = 2;
-            dgvCongThuc.Columns[0].Name = "Tên món ăn";
-            dgvCongThuc.Columns[1].Name = "Tên nguyên liệu";
-            foreach(var x in _iQLMenuService.GetViewMenus())
+            dgvCongThuc.ColumnCount = 3;
+            dgvCongThuc.Columns[0].Name = "ID";
+            dgvCongThuc.Columns[1].Name = "Tên món ăn";
+            dgvCongThuc.Columns[2].Name = "Tên nguyên liệu";
+            dgvCongThuc.Rows.Clear();
+            foreach(var x in _iQLMenuService.GetViewCongThuc())
             {
-                dgvCongThuc.Rows.Add(x.details.Name, x.ingre.Name);
+                dgvCongThuc.Rows.Add(x.recipe.Id,x.details.Name, x.ingre.Name);
             }
             this.dgvCongThuc.ClearSelection();
             this.dgvMonAn.ClearSelection();
@@ -63,20 +66,39 @@ namespace _3_GUI
 
         private void LoadCBox()
         {
+            cbx_Meth.Items.Clear();
             foreach(var x in _iQLMenuService.GetCachCheBiens())
             {
                 if(x.Status == true)
                 cbx_Meth.Items.Add(x.Name);
             }
+            cbx_Cat.Items.Clear();
             foreach (var x in _iQLMenuService.GetDanhMucFoods())
             {
                 if(x.Status == true)
                 cbx_Cat.Items.Add(x.Name);
             }
+            cbx_Unit.Items.Clear();
             foreach (var x in _iQLMenuService.GetDonVis())
             {
                 if (x.Status == true)
                     cbx_Unit.Items.Add(x.Name);
+            }
+            cbx_RecipeName.Items.Clear();
+            foreach (var x in _iQLMenuService.GetMonAnChiTiets())
+            {
+                if(x.Status == 1)
+                {
+                    cbx_RecipeName.Items.Add(x.Name);
+                }
+            }
+            cbx_IngreName.Items.Clear();
+            foreach (var x in _iQLMenuService.GetNguyenLieus())
+            {
+                if (x.Status == true)
+                {
+                    cbx_IngreName.Items.Add(x.Name); 
+                }
             }
         }
 
@@ -92,9 +114,9 @@ namespace _3_GUI
                     _item = new ThucDon();
                     _monCT.Id = _iQLMenuService.GetMonAnChiTiets().Count;
                     _monCT.Name = txtTenMonAn.Text;
-                    _monCT.Idunit = cbx_Unit.SelectedIndex;
-                    _monCT.Idcategory = cbx_Cat.SelectedIndex;
-                    _monCT.Idmethod = cbx_Cat.SelectedIndex;
+                    _monCT.Idunit = _utilities.GetDonViID(cbx_Unit.Text);
+                    _monCT.Idcategory = _utilities.GetCategoryID(cbx_Cat.Text);
+                    _monCT.Idmethod = _utilities.GetMethodID(cbx_Meth.Text);
                     _monCT.Price = txt_Price.Value;
                     _item.Id = _monCT.Id;
                     _item.Name = _monCT.Name;
@@ -187,9 +209,9 @@ namespace _3_GUI
                 _monCT = _iQLMenuService.GetMonAnChiTiets().Where(c => c.Id == ID).FirstOrDefault();
                 _item = _iQLMenuService.GetThucDons().Where(c => c.Id == _monCT.Id).FirstOrDefault();
                 txtTenMonAn.Text = _monCT.Name;
-                cbx_Unit.SelectedIndex = _monCT.Idunit;
-                cbx_Cat.SelectedIndex = _monCT.Idcategory;
-                cbx_Meth.SelectedIndex = _monCT.Idmethod;
+                cbx_Unit.Text = _utilities.GetDonViName(_monCT.Idunit);
+                cbx_Cat.Text = _utilities.GetCategoryName(_monCT.Idcategory);
+                cbx_Meth.Text = _utilities.GetMethodName(_monCT.Idmethod);
                 txt_Price.Value = 0;
                 if (_monCT.Status == 1)
                 {
@@ -238,6 +260,95 @@ namespace _3_GUI
             }
         }
 
+        private void btn_ConfigUnit_Click(object sender, EventArgs e)
+        {
+            FrmDonVi frm = new FrmDonVi();
+            frm.ShowDialog();
+        }
+
+        private void btn_ConfigMeth_Click(object sender, EventArgs e)
+        {
+            FrmCachCheBien frm = new FrmCachCheBien();
+            frm.ShowDialog();
+        }
+
+        private void btn_ConfigCat_Click(object sender, EventArgs e)
+        {
+            FrmDanhMuc frm = new FrmDanhMuc();
+            frm.ShowDialog();
+        }
+
+        private void btnThemCP_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Xác nhận thêm?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                if (cbx_IngreName.SelectedIndex > 0 && cbx_RecipeName.SelectedIndex > 0)
+                {
+                    _recipe = new CongThuc();
+                    _recipe.Id = _iQLMenuService.GetCongThucs().Count;
+                    _recipe.IdMon = _utilities.GetMonID(cbx_RecipeName.Text);
+                    _recipe.IdNguyenLieu = _utilities.GetNLID(cbx_IngreName.Text);
+                    _iQLMenuService.AddRecipe(_recipe);
+                    FrmQuanLyThucDon_Load();
+                }
+                else
+                {
+                    MessageBox.Show("Nhập đủ thông tin");
+                }
+            } 
+            else
+            {
+                return;
+            }
+        }
+
+        private void btnXoaCP_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Xác nhận xóa?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                if (_recipe != null)
+                {
+                    _iQLMenuService.DeleteRecipe(_recipe);
+                }
+                else
+                {
+                    MessageBox.Show("Chọn công thức để xóa");
+                }
+            }
+        }
+
+        private void dgvCongThuc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var index = e.RowIndex;
+            if (index == _iQLMenuService.GetMonAnChiTiets().Count || index == -1)
+            {
+                cbx_RecipeName.Text = null;
+                cbx_IngreName.Text = null;
+
+                return;
+            }
+            else
+            {
+                int ID = (int)dgvMonAn.Rows[index].Cells[0].Value;
+                _recipe = _iQLMenuService.GetCongThucs().Where(c => c.Id == ID).FirstOrDefault();
+                cbx_RecipeName.Text = _utilities.GetMonName(_recipe.IdMon);
+                cbx_IngreName.Text = _utilities.GetNLName(_recipe.IdNguyenLieu);
+
+            }
+        }
+
+        private void btn_ConfigIngre_Click(object sender, EventArgs e)
+        {
+            FrmNguyenLieu frm = new FrmNguyenLieu();
+            frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyThucDon_Load();
+        }
     }
 
 }

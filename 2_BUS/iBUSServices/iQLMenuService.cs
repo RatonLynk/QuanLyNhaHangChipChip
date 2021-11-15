@@ -40,5 +40,6 @@ namespace _2_BUS.iBUSServices
         public List<ThucDon> GetThucDons();
         public List<NguyenLieu> GetNguyenLieus();
         public List<CongThuc> GetCongThucs();
+        public List<ViewMenu> GetViewCongThuc();
     }
 }

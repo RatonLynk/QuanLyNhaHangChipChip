@@ -11,13 +11,11 @@ namespace _1_DAL.DALServices
 {
     public class NhanVienService : INhanVienService
     {
-        private DatabaseContext _dbContext;
-        private List<NhanVien> _lstNV;
+        private DatabaseContext _dbContext = new DatabaseContext();
+        private List<NhanVien> _lstNV = new List<NhanVien>();
 
         public NhanVienService()
         {
-            _dbContext = new DatabaseContext();
-            _lstNV = new List<NhanVien>();
 
         }
         //
