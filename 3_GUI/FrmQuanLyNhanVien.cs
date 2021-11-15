@@ -66,6 +66,7 @@ namespace _3_GUI
             NhanVien NhanVien = new NhanVien();
             NhanVien.Id = dgrid_NhanVien.Rows.Cast<DataGridViewRow>()
                 .Max(r => Convert.ToInt32(r.Cells["Id"].Value)) + 1;
+
             NhanVien.MaNv = 1 + NhanVien.Id;
             NhanVien.Name =  txt_TenNV.Text;
             NhanVien.Email = txtEmail.Text;
@@ -80,6 +81,7 @@ namespace _3_GUI
                 MessageBoxButtons.YesNo) == DialogResult.Yes))
             {
                 _iQlNhanVienService.Add(NhanVien);
+                _iQlNhanVienService.Save();
                 loadData();
             }
         }
