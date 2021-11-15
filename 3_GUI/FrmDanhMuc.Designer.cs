@@ -90,6 +90,7 @@ namespace _3_GUI
             this.dgvDanhMuc.Size = new System.Drawing.Size(471, 574);
             this.dgvDanhMuc.TabIndex = 41;
             this.dgvDanhMuc.TabStop = false;
+            this.dgvDanhMuc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhMuc_CellClick);
             // 
             // label18
             // 
@@ -149,6 +150,7 @@ namespace _3_GUI
             this.txtTimkiemDM.Name = "txtTimkiemDM";
             this.txtTimkiemDM.Size = new System.Drawing.Size(225, 26);
             this.txtTimkiemDM.TabIndex = 36;
+            this.txtTimkiemDM.TextChanged += new System.EventHandler(this.txtTimkiemDM_TextChanged);
             // 
             // txtTenDanhMuc
             // 
@@ -188,6 +190,7 @@ namespace _3_GUI
             this.btnXoaNhom.TabIndex = 42;
             this.btnXoaNhom.Text = "Xóa";
             this.btnXoaNhom.UseVisualStyleBackColor = true;
+            this.btnXoaNhom.Click += new System.EventHandler(this.btnXoaNhom_Click);
             // 
             // btnSuaNhom
             // 
@@ -203,6 +206,7 @@ namespace _3_GUI
             this.btnSuaNhom.TabIndex = 40;
             this.btnSuaNhom.Text = "Sửa";
             this.btnSuaNhom.UseVisualStyleBackColor = true;
+            this.btnSuaNhom.Click += new System.EventHandler(this.btnSuaNhom_Click);
             // 
             // btnThemNhom
             // 
@@ -218,6 +222,7 @@ namespace _3_GUI
             this.btnThemNhom.TabIndex = 39;
             this.btnThemNhom.Text = "Thêm";
             this.btnThemNhom.UseVisualStyleBackColor = true;
+            this.btnThemNhom.Click += new System.EventHandler(this.btnThemNhom_Click);
             // 
             // label1
             // 

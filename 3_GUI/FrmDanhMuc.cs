@@ -46,6 +46,7 @@ namespace _3_GUI
             this.dgvDanhMuc.ClearSelection();
             
         }
+
         private void btnThemNhom_Click(object sender, EventArgs e)
         {
             DialogResult dialog = MessageBox.Show("Xác nhận thêm?", "Xác nhận", MessageBoxButtons.YesNo);

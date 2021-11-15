@@ -1,7 +1,7 @@
 ﻿
 namespace _3_GUI
 {
-    partial class FrmCachCheBien
+    partial class FrmNguyenLieu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCachCheBien));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNguyenLieu));
             this.rbtn_KHDCachchebien = new System.Windows.Forms.RadioButton();
             this.rbtn_HDCachchebien = new System.Windows.Forms.RadioButton();
             this.btnXoaCongThuc = new System.Windows.Forms.Button();
@@ -82,7 +82,7 @@ namespace _3_GUI
             this.btnXoaCongThuc.TabIndex = 46;
             this.btnXoaCongThuc.Text = "Xóa";
             this.btnXoaCongThuc.UseVisualStyleBackColor = true;
-            this.btnXoaCongThuc.Click += new System.EventHandler(this.btnXoaCongThuc_Click);
+            this.btnXoaCongThuc.Click += new System.EventHandler(this.btnXoaCongThuc_Click_1);
             // 
             // dgvCachNau
             // 
@@ -121,7 +121,7 @@ namespace _3_GUI
             this.btnThemCongThuc.TabIndex = 45;
             this.btnThemCongThuc.Text = "Thêm";
             this.btnThemCongThuc.UseVisualStyleBackColor = true;
-            this.btnThemCongThuc.Click += new System.EventHandler(this.btnThemCongThuc_Click);
+            this.btnThemCongThuc.Click += new System.EventHandler(this.btnThemCongThuc_Click_1);
             // 
             // label16
             // 
@@ -152,12 +152,12 @@ namespace _3_GUI
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(184, 163);
+            this.label13.Location = new System.Drawing.Point(169, 166);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 20);
+            this.label13.Size = new System.Drawing.Size(135, 20);
             this.label13.TabIndex = 42;
-            this.label13.Text = "Cách Nấu";
+            this.label13.Text = "Tên Nguyên Liệu";
             // 
             // txtTimKiemCongthucCB
             // 
@@ -169,19 +169,19 @@ namespace _3_GUI
             this.txtTimKiemCongthucCB.Name = "txtTimKiemCongthucCB";
             this.txtTimKiemCongthucCB.Size = new System.Drawing.Size(201, 26);
             this.txtTimKiemCongthucCB.TabIndex = 36;
-            this.txtTimKiemCongthucCB.TextChanged += new System.EventHandler(this.txtTimKiemCongthucCB_TextChanged);
+            this.txtTimKiemCongthucCB.TextChanged += new System.EventHandler(this.txtTimKiemCongthucCB_TextChanged_1);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(184, 119);
+            this.label11.Location = new System.Drawing.Point(180, 118);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 20);
+            this.label11.Size = new System.Drawing.Size(124, 20);
             this.label11.TabIndex = 44;
-            this.label11.Text = "Mã Cách Nấu";
+            this.label11.Text = "ID Nguyên Liệu";
             // 
             // txt_MethName
             // 
@@ -221,7 +221,7 @@ namespace _3_GUI
             this.button1.TabIndex = 38;
             this.button1.Text = "Sửa";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label3
             // 
@@ -231,11 +231,11 @@ namespace _3_GUI
             this.label3.Location = new System.Drawing.Point(184, 62);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 25);
+            this.label3.Size = new System.Drawing.Size(154, 25);
             this.label3.TabIndex = 39;
-            this.label3.Text = "CÁCH CHẾ BIÊN";
+            this.label3.Text = "NGUYÊN LIỆU";
             // 
-            // FrmCachCheBien
+            // FrmNguyenLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -254,7 +254,7 @@ namespace _3_GUI
             this.Controls.Add(this.txt_MethID);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Name = "FrmCachCheBien";
+            this.Name = "FrmNguyenLieu";
             this.Text = "FrmCachCheBien";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCachNau)).EndInit();
             this.ResumeLayout(false);
