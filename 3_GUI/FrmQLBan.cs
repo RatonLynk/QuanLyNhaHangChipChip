@@ -39,6 +39,7 @@ namespace _3_GUI
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
                 btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
+                btn.Click += Btn_Click;
                 switch (x.TinhTrang)
                 {
                     case 1:
@@ -52,24 +53,37 @@ namespace _3_GUI
             }
             //â
         }
+
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            LoadMeniu();
+        }
+
         void LoadTableT2()
         {
             foreach (BanAn x in _lstBanAn.Where(c => c.Floor == 2))
             {
-                Button btn = new Button() { Width = x.Rong, Height = x.Cao };
-                btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
+                Button btn1 = new Button() { Width = x.Rong, Height = x.Cao };
+                btn1.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
+                btn1.Click += Btn1_Click;
                 switch (x.TinhTrang)
                 {
                     case 1:
-                        btn.BackColor = Color.Aqua;
+                        btn1.BackColor = Color.Aqua;
                         break;
                     default:
-                        btn.BackColor = Color.LightPink;
+                        btn1.BackColor = Color.LightPink;
                         break;
                 }
-                FlPanel2.Controls.Add(btn);
+                FlPanel2.Controls.Add(btn1);
             }            
         }
+
+        private void Btn1_Click(object sender, EventArgs e)
+        {
+            LoadMeniu();
+        }
+
         void LoadMeniu()
         {
             DataGridViewButtonColumn Them = new DataGridViewButtonColumn();
@@ -109,8 +123,7 @@ namespace _3_GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmThemBan frmThemBan = new FrmThemBan();
-            frmThemBan.Show();
+           
         }
     }
 }
