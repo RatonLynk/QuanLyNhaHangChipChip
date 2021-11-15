@@ -9,8 +9,6 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("MonAnChiTiet")]
-    [Index(nameof(Idcategory), Name = "IX_MonAnChiTiet_IDCategory")]
-    [Index(nameof(Idunit), Name = "IX_MonAnChiTiet_IDUnit")]
     public partial class MonAnChiTiet
     {
         public MonAnChiTiet()

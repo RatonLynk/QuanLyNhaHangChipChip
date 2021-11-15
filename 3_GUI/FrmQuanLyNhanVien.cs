@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _1_DAL.Context;
 using _1_DAL.Models;
 using _2_BUS.BUSServices;
 
@@ -15,13 +16,14 @@ namespace _3_GUI
     public partial class FrmQuanLyNhanVien : Form
     {
         private IQLNhanVienService _iQlNhanVienService = new QLNhanVienService();
+        private DatabaseContext _dbconContext;
         public FrmQuanLyNhanVien()
         {
             InitializeComponent();
             loadData();
             dgrid_NhanVien.Columns["MANV"].Visible = false;
             rbtnHDnhanvien.Checked = true;
-            rbtn_NhanVien.Checked = true;
+            chk_nhanVien.Checked = true;
 
         }
         void loadData()
@@ -37,21 +39,21 @@ namespace _3_GUI
             dgrid_NhanVien.Columns[6].Name = "Địa chỉ";
             dgrid_NhanVien.Columns[7].Name = "Trạng thái";
             dgrid_NhanVien.Columns[8].Name = "MANV";
-            DataGridViewComboBoxColumn dgvCmb = new DataGridViewComboBoxColumn();
-            dgvCmb.HeaderText = "Chức năng";
-            dgvCmb.Items.Add("Thêm");
-            dgvCmb.Items.Add("Sửa");
-            dgvCmb.Items.Add("Xóa");
-            DataGridViewButtonColumn DBtn = new DataGridViewButtonColumn();
-            DBtn.HeaderText = "Xác nhận";
-            DBtn.Name = "Lưu";
-            dgrid_NhanVien.Columns.Add(dgvCmb);
-            dgrid_NhanVien.Columns.Add(DBtn);
+            //DataGridViewComboBoxColumn dgvCmb = new DataGridViewComboBoxColumn();
+            //dgvCmb.HeaderText = "Chức năng";
+            //dgvCmb.Items.Add("Thêm");
+            //dgvCmb.Items.Add("Sửa");
+            //dgvCmb.Items.Add("Xóa");
+            //DataGridViewButtonColumn DBtn = new DataGridViewButtonColumn();
+            //DBtn.HeaderText = "Xác nhận";
+            //DBtn.Name = "Lưu";
+            //dgrid_NhanVien.Columns.Add(dgvCmb);
+            //dgrid_NhanVien.Columns.Add(DBtn);
             dgrid_NhanVien.Rows.Clear();
             foreach (var x in _iQlNhanVienService.getlstNhanViens())
             {
-                dgrid_NhanVien.Rows.Add(x.Id, x.Name, x.Email, x.Password, x.Role == 1 ? "Nhân viên" : "Quản lí",
-                    x.PhoneNo, x.Address, x.Status == false ? "Hoạt động" : "Không hoạt động", x.MaNv);
+                dgrid_NhanVien.Rows.Add(x.Id, x.Name, x.Email, x.Password, x.Role == 0 ? "Nhân viên" : "Quản lí",
+                    x.PhoneNo, x.Address, x.Status == true ? "Hoạt động" : "Không hoạt động", x.MaNv);
             }
         }
 
@@ -61,10 +63,11 @@ namespace _3_GUI
             NhanVien.Id = dgrid_NhanVien.Rows.Cast<DataGridViewRow>()
                 .Max(r => Convert.ToInt32(r.Cells["Id"].Value)) + 1;
             NhanVien.MaNv = 1 + NhanVien.Id;
-            NhanVien.Name =  Convert.ToSingle(txt_TenNV.Text);
+            NhanVien.Name =  txt_TenNV.Text;
             NhanVien.Email = txtEmail.Text;
-            NhanVien.Role = (byte)(rbtn_NhanVien.Checked ? 1 : 0);
+            NhanVien.Role = (byte)(chk_nhanVien.Checked ? 1 : 0);
             NhanVien.Address = txt_DiaChiNV.Text;
+            NhanVien.PhoneNo = txt_SDT.Text;
             NhanVien.Status = Convert.ToBoolean(rbtnHDnhanvien.Checked ? false : true);
             NhanVien.Password = txtMatKhau.Text;
             NhanVien.Role = 0;
@@ -88,13 +91,13 @@ namespace _3_GUI
             txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
             txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[6].Value.ToString();
             var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToInt32(txtMaNV) ).FirstOrDefault();
-            if (nv.Role == 0)
+            if (nv.Role == 1)
             {
-                rbtn_QuanTri.Checked = true;
+                chk_quanLi.Checked = false;
             }
             else
             {
-                rbtn_NhanVien.Checked = true;
+                chk_nhanVien.Checked = true;
             }
 
             if (nv.Status == true)
@@ -103,25 +106,11 @@ namespace _3_GUI
             }
             else
             {
-                rbtnHDnhanvien.Checked = true;
+                rbtnHDnhanvien.Checked = false;
             }
         }
 
-        private void rbtn_NhanVien_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbtn_NhanVien.Checked)
-            {
-                rbtn_QuanTri.Checked = false;
-            }
-        }
 
-        private void rbtn_QuanTri_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbtn_QuanTri.Checked)
-            {
-                rbtn_NhanVien.Checked = false;
-            }
-        }
 
         private void btnXoaNV_Click(object sender, EventArgs e)
         {
@@ -140,10 +129,10 @@ namespace _3_GUI
         private void btnSuaNV_Click(object sender, EventArgs e)
         {
             var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToByte(txtMaNV)).FirstOrDefault();
-            nhanVien.Name = Convert.ToByte(txt_TenNV.Text);
+            nhanVien.Name = txt_TenNV.Text;
             nhanVien.Email = txtEmail.Text;
             nhanVien.Password = txtMatKhau.Text;
-            nhanVien.Role = (byte)(rbtn_NhanVien.Checked ? 1 : 0);
+            nhanVien.Role = (byte)(chk_nhanVien.Checked ? 1 : 0);
             nhanVien.Address = txt_DiaChiNV.Text;
             nhanVien.PhoneNo = txt_SDT.Text;
             nhanVien.Status = (bool)(rbtnHDnhanvien.Checked ? false : true);
@@ -154,6 +143,28 @@ namespace _3_GUI
                 _iQlNhanVienService.Update(nhanVien);
                 loadData();
             }
+        }
+
+        private void chk_quanLi_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chk_quanLi.Checked)
+            {
+                chk_quanLi.Checked = false;
+            }
+        }
+
+        private void chk_nhanVien_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_nhanVien.Checked)
+            {
+                chk_quanLi.Checked = false;
+            }
+        }
+
+        private void btn_Luu_Click(object sender, EventArgs e)
+        {
+            DatabaseContext _databaseContext = new DatabaseContext();
+            _databaseContext.SaveChanges();
         }
     }
 }

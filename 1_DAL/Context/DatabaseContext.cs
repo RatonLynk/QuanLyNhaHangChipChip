@@ -60,11 +60,6 @@ namespace _1_DAL.Context
                 entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
-            modelBuilder.Entity<CongThuc>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-            });
-
             modelBuilder.Entity<DanhMucFood>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
@@ -137,11 +132,6 @@ namespace _1_DAL.Context
                     .HasForeignKey(d => d.Idunit)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_MonAnChiTiet_DonVi");
-            });
-
-            modelBuilder.Entity<NguyenLieu>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
             modelBuilder.Entity<NhanVien>(entity =>

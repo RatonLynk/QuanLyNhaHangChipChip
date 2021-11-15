@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("NhanVien")]
-    [Index(nameof(Role), Name = "IX_NhanVien_Role")]
     public partial class NhanVien
     {
         public NhanVien()
@@ -17,11 +16,11 @@ namespace _1_DAL.Models
             HoaDons = new HashSet<HoaDon>();
         }
 
+        [Column("ID")]
+        public int Id { get; set; }
         [Key]
         [Column("MaNV")]
         public int MaNv { get; set; }
-        [Column("ID")]
-        public int Id { get; set; }
         [Required]
         [StringLength(100)]
         public string Email { get; set; }
@@ -30,7 +29,7 @@ namespace _1_DAL.Models
         public string Password { get; set; }
         public int Role { get; set; }
         public bool? Status { get; set; }
-        public float Name { get; set; }
+        public string Name { get; set; }
         public bool Sex { get; set; }
         [Required]
         [StringLength(500)]

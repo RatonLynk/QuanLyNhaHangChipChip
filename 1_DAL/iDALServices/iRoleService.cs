@@ -14,5 +14,6 @@ namespace _1_DAL.iDALServices
         public string DeleteRole(Role role);
         public string SaveRole();
         public List<Role> GetRolesFromDB();
+        public List<Role> GetlistRole();
     }
 }

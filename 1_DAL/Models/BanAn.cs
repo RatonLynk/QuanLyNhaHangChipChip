@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("BanAn")]
-    [Index(nameof(Floor), Name = "IX_BanAn_Floor")]
     public partial class BanAn
     {
         public BanAn()
@@ -27,6 +26,8 @@ namespace _1_DAL.Models
         [StringLength(10)]
         public string Busy { get; set; }
         public bool Status { get; set; }
+        public int Rong { get; set; }
+        public int Cao { get; set; }
 
         [ForeignKey(nameof(Floor))]
         [InverseProperty("BanAns")]

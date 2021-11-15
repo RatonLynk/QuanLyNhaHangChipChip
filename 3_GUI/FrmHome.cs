@@ -15,19 +15,40 @@ namespace _3_GUI
     public partial class FrmHome : Form
     {
         string mnv;
+        public static int session = 0;
+        public static string mail;
+        //FrmLogin dn;
         public FrmHome()
         {
             InitializeComponent();
-        }
+            lblChao.Text = null;
+           
+        }     
+        //private void Resetvalue()
+        //{
+        //    if (session == 1)
+        //    {
+                
+           
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            labNgayGio.Text = DateTime.Now.ToString("dd/MM/yyyy");
-        }
+        //        btnQuanLyNhanVien.Enabled = true;
+        //        if (dn.vaitro== false)
+        //        {
+        //            btnQuanLyNhanVien.Enabled = false;
+        //        }
 
+
+        //    }
+        //    else
+        //    {
+        //        btnQuanLyNhanVien.Enabled = false;
+          
+        //    }
+        //}
         private void timer_Tick(object sender, EventArgs e)
         {   
             labGio.Text = DateTime.Now.ToString("HH:mm");
+
             //test đ
         }
 
@@ -41,6 +62,43 @@ namespace _3_GUI
         {
             mnv = MaNv;
 
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult dlr = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                this.Hide();
+                FrmLogin frmLogin = new FrmLogin();
+                frmLogin.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyNhanVien a = new FrmQuanLyNhanVien();
+            a.ShowDialog();
+        }
+
+        private void btnQuanLyHoaDon_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyHoaDon a = new FrmQuanLyHoaDon();
+            a.ShowDialog();
+        }
+
+        private void FrmHome_Load(object sender, EventArgs e)
+        {
+            labNgayGio.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            lblChao.Text = " Chào: " + FrmHome.mail;
+            //Resetvalue();
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            FrmDoiMatKhau a = new FrmDoiMatKhau();
+            a.ShowDialog();
         }
     }
 }
