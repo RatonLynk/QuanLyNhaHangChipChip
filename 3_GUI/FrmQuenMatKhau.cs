@@ -61,7 +61,7 @@ namespace _3_GUI
                 _NhanVien = new NhanVien();
                 _NhanVien = nv.getlstNhanViens().FirstOrDefault(c => c.Email == txt_Email.Text);
                 _NhanVien.Password = _pass;
-                MessageBox.Show(nv.Update(_NhanVien), mess);
+                nv.Update(_NhanVien);
                 nv.Save();
                 this.Close();
                 FrmLogin frm_DangNhap = new FrmLogin();

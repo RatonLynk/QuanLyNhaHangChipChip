@@ -18,6 +18,7 @@ namespace _3_GUI
     {
         private IQLNhanVienService _iQlNhanVienService = new QLNhanVienService();
         private DatabaseContext _dbconContext;
+        private Utilities _utilities;
         public FrmQuanLyNhanVien()
         {
             InitializeComponent();
@@ -77,7 +78,7 @@ namespace _3_GUI
                 "Thông báo",
                 MessageBoxButtons.YesNo) == DialogResult.Yes))
             {
-                MessageBox.Show(_iQlNhanVienService.Add(NhanVien));
+                _iQlNhanVienService.Add(NhanVien);
                 loadData();
             }
         }
@@ -122,7 +123,7 @@ namespace _3_GUI
                 "Thông báo !!!!!!!!!!!!!!!",
                 MessageBoxButtons.YesNo) == DialogResult.Yes))
             {
-                MessageBox.Show(_iQlNhanVienService.Delete(nhanVien));
+                _iQlNhanVienService.Delete(nhanVien);
                 loadData();
             }
         }
