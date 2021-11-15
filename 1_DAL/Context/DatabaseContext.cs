@@ -36,13 +36,15 @@ namespace _1_DAL.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=LAPTOP-86760IDM\\SQLEXPRESS;Initial Catalog=QLNH;User ID=Phong99;Password=p01248460961");
+
+#pragma warning disable CS1030 // #warning directive
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https: //go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Data Source=CHEMMS;Initial Catalog=QLNH;Persist Security Info=True;User ID=vudomc1012;Password=123");
+#pragma warning restore CS1030 // #warning directive
+
             }
         }
-
         
-
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
