@@ -55,13 +55,14 @@ namespace _3_GUI
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Tp_Tang1 = new System.Windows.Forms.TabPage();
+            this.FLPenal = new System.Windows.Forms.FlowLayoutPanel();
             this.Btn_ThemBanT1 = new System.Windows.Forms.Button();
             this.Btn_XoaBanT1 = new System.Windows.Forms.Button();
             this.Tp_Tang2 = new System.Windows.Forms.TabPage();
+            this.FlPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.Btn_XoaBanT2 = new System.Windows.Forms.Button();
             this.Btn_ThemBanT2 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.FLPenal = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -317,6 +318,13 @@ namespace _3_GUI
             this.Tp_Tang1.Text = "Tầng 1";
             this.Tp_Tang1.UseVisualStyleBackColor = true;
             // 
+            // FLPenal
+            // 
+            this.FLPenal.Location = new System.Drawing.Point(7, 7);
+            this.FLPenal.Name = "FLPenal";
+            this.FLPenal.Size = new System.Drawing.Size(200, 358);
+            this.FLPenal.TabIndex = 29;
+            // 
             // Btn_ThemBanT1
             // 
             this.Btn_ThemBanT1.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -341,6 +349,7 @@ namespace _3_GUI
             // 
             // Tp_Tang2
             // 
+            this.Tp_Tang2.Controls.Add(this.FlPanel2);
             this.Tp_Tang2.Controls.Add(this.Btn_XoaBanT2);
             this.Tp_Tang2.Controls.Add(this.Btn_ThemBanT2);
             this.Tp_Tang2.Location = new System.Drawing.Point(4, 24);
@@ -351,20 +360,27 @@ namespace _3_GUI
             this.Tp_Tang2.Text = "Tầng 2";
             this.Tp_Tang2.UseVisualStyleBackColor = true;
             // 
+            // FlPanel2
+            // 
+            this.FlPanel2.Location = new System.Drawing.Point(6, 7);
+            this.FlPanel2.Name = "FlPanel2";
+            this.FlPanel2.Size = new System.Drawing.Size(200, 358);
+            this.FlPanel2.TabIndex = 36;
+            // 
             // Btn_XoaBanT2
             // 
             this.Btn_XoaBanT2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btn_XoaBanT2.Location = new System.Drawing.Point(134, 371);
+            this.Btn_XoaBanT2.Location = new System.Drawing.Point(131, 371);
             this.Btn_XoaBanT2.Name = "Btn_XoaBanT2";
             this.Btn_XoaBanT2.Size = new System.Drawing.Size(75, 23);
             this.Btn_XoaBanT2.TabIndex = 35;
-            this.Btn_XoaBanT2.Text = "Xóa Bàn";
+            this.Btn_XoaBanT2.Text = "Xóa bàn";
             this.Btn_XoaBanT2.UseVisualStyleBackColor = false;
             // 
             // Btn_ThemBanT2
             // 
             this.Btn_ThemBanT2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btn_ThemBanT2.Location = new System.Drawing.Point(53, 371);
+            this.Btn_ThemBanT2.Location = new System.Drawing.Point(50, 371);
             this.Btn_ThemBanT2.Name = "Btn_ThemBanT2";
             this.Btn_ThemBanT2.Size = new System.Drawing.Size(75, 23);
             this.Btn_ThemBanT2.TabIndex = 34;
@@ -375,13 +391,6 @@ namespace _3_GUI
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // FLPenal
-            // 
-            this.FLPenal.Location = new System.Drawing.Point(7, 7);
-            this.FLPenal.Name = "FLPenal";
-            this.FLPenal.Size = new System.Drawing.Size(200, 358);
-            this.FLPenal.TabIndex = 29;
             // 
             // FrmQLBan
             // 
@@ -445,5 +454,6 @@ namespace _3_GUI
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button Btn_XoaBanT2;
         private System.Windows.Forms.FlowLayoutPanel FLPenal;
+        private System.Windows.Forms.FlowLayoutPanel FlPanel2;
     }
 }

@@ -28,11 +28,12 @@ namespace _3_GUI
             _qlHoaDon = new QLHoaDon();
             _qlMeniu = new QLMenuService();
             _lstBanAn = _qlBanAn.GetTablesFromDB();
-            LoadTable();
+            LoadTableT1();
+            LoadTableT2();
             //LoadHoaDon();
             //LoadMeniu();
         }
-        void LoadTable()
+        void LoadTableT1()
         {
             foreach (BanAn x in _lstBanAn.Where(c => c.Floor == 1))
             {
@@ -50,6 +51,24 @@ namespace _3_GUI
                 FLPenal.Controls.Add(btn);
             }
             //â
+        }
+        void LoadTableT2()
+        {
+            foreach (BanAn x in _lstBanAn.Where(c => c.Floor == 2))
+            {
+                Button btn = new Button() { Width = x.Rong, Height = x.Cao };
+                btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
+                switch (x.TinhTrang)
+                {
+                    case 1:
+                        btn.BackColor = Color.Aqua;
+                        break;
+                    default:
+                        btn.BackColor = Color.LightPink;
+                        break;
+                }
+                FlPanel2.Controls.Add(btn);
+            }            
         }
         void LoadMeniu()
         {
