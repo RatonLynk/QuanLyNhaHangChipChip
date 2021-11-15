@@ -55,7 +55,7 @@ namespace _3_GUI
 
         private void btnQuanLyThucDon_Click(object sender, EventArgs e)
         {
-            this.Hide();
+     
             FrmQuanLyThucDon frm = new FrmQuanLyThucDon();
             frm.Show();
         }

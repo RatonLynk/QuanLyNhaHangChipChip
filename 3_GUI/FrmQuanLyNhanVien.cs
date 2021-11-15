@@ -17,12 +17,12 @@ namespace _3_GUI
     public partial class FrmQuanLyNhanVien : Form
     {
         private IQLNhanVienService _iQlNhanVienService = new QLNhanVienService();
-        private DatabaseContext _dbconContext = new DatabaseContext();
-        private Utilities _utilities = new Utilities();
+        private DatabaseContext _dbconContext;
         public FrmQuanLyNhanVien()
         {
             InitializeComponent();
             loadData();
+            _utilities = new Utilities();
             dgrid_NhanVien.Columns["MANV"].Visible = false;
             rbtnHDnhanvien.Checked = true;
             chk_nhanVien.Checked = true;
@@ -82,7 +82,6 @@ namespace _3_GUI
             }
         }
 
-
         private void dgrid_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowindex = e.RowIndex;
@@ -133,9 +132,10 @@ namespace _3_GUI
             var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToByte(txtMaNV.Text)).FirstOrDefault();
             nhanVien.Name = txt_TenNV.Text;
             nhanVien.Email = txtEmail.Text;
-            nhanVien.Password = txtMatKhau.Text;
+            nhanVien.Password = _utilities.GetHash(txtMatKhau.Text);
             nhanVien.Role = (byte)(chk_nhanVien.Checked ? 1 : 0);
             nhanVien.Address = txt_DiaChiNV.Text;
+            nhanVien.PhoneNo = txt_SDT.Text;
             nhanVien.PhoneNo = txt_SDT.Text;
             nhanVien.Status = (bool)(rbtnHDnhanvien.Checked ? false : true);
             if ((MessageBox.Show("Bạn có chắc chắc sẽ dùng chức năng trên?",
@@ -165,8 +165,7 @@ namespace _3_GUI
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            DatabaseContext _databaseContext = new DatabaseContext();
-            _databaseContext.SaveChanges();
+            _iQlNhanVienService.Save();
         }
     }
 }
