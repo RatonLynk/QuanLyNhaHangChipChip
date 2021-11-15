@@ -210,6 +210,7 @@
             this.btnPhucVuKhachHang.Text = "Phục vụ khách hàng\r\n";
             this.btnPhucVuKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPhucVuKhachHang.UseVisualStyleBackColor = false;
+            this.btnPhucVuKhachHang.Click += new System.EventHandler(this.btnPhucVuKhachHang_Click);
             // 
             // label3
             // 
