@@ -91,7 +91,7 @@ namespace _3_GUI
             txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
             txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[6].Value.ToString();
             var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToInt32(txtMaNV) ).FirstOrDefault();
-            if (nv.Role == 1)
+            if (Convert.ToBoolean(nv.Role == 1) )
             {
                 chk_quanLi.Checked = false;
             }
@@ -135,6 +135,7 @@ namespace _3_GUI
             nhanVien.Role = (byte)(chk_nhanVien.Checked ? 1 : 0);
             nhanVien.Address = txt_DiaChiNV.Text;
             nhanVien.PhoneNo = txt_SDT.Text;
+            nhanVien.PhoneNo = txt_SDT.Text;
             nhanVien.Status = (bool)(rbtnHDnhanvien.Checked ? false : true);
             if ((MessageBox.Show("Bạn có chắc chắc sẽ dùng chức năng trên?",
                 "Thông báo !",
@@ -163,8 +164,7 @@ namespace _3_GUI
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            DatabaseContext _databaseContext = new DatabaseContext();
-            _databaseContext.SaveChanges();
+            _iQlNhanVienService.Save()
         }
     }
 }
