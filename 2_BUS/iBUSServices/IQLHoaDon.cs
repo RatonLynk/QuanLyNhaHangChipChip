@@ -11,9 +11,9 @@ namespace _2_BUS.iBUSServices
 {
    public interface IQLHoaDon
     {
-        public string AddHoaDon(HoaDon HoaDon);
-        public string UpdateHoaDon(HoaDon HoaDon);
-        public string DeleteHoaDon(HoaDon HoaDon);
+        public void AddHoaDon(HoaDon HoaDon);
+        public void UpdateHoaDon(HoaDon HoaDon);
+        public void DeleteHoaDon(HoaDon HoaDon);
         public string SaveHoaDon();
         public List<HoaDon> GetBillsFromDB();
         public string AddHoaDonCT(HoaDonChiTiet HoaDon);

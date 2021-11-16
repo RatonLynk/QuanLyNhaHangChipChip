@@ -21,9 +21,9 @@ namespace _2_BUS.BUSServices
             _HD = new HoaDonService();
             _HDCT = new HoaDonChiTietService();
         }
-        public string AddHoaDon(HoaDon HoaDon)
+        public void AddHoaDon(HoaDon HoaDon)
         {
-            return _HD.AddHoaDon(HoaDon);
+             _HD.AddHoaDon(HoaDon);
         }        
 
         public string AddHoaDonCT(HoaDonChiTiet HoaDon)
@@ -31,9 +31,9 @@ namespace _2_BUS.BUSServices
             return _HDCT.AddHoaDon(HoaDon);
         }
 
-        public string DeleteHoaDon(HoaDon HoaDon)
+        public void DeleteHoaDon(HoaDon HoaDon)
         {
-            return _HD.DeleteHoaDon(HoaDon);
+             _HD.DeleteHoaDon(HoaDon);
         }        
 
         public string DeleteHoaDonCT(HoaDonChiTiet HoaDon)
@@ -72,9 +72,9 @@ namespace _2_BUS.BUSServices
             return _HDCT.SaveHoaDon();
         }
 
-        public string UpdateHoaDon(HoaDon HoaDon)
+        public void UpdateHoaDon(HoaDon HoaDon)
         {
-            return _HD.UpdateHoaDon(HoaDon);
+             _HD.UpdateHoaDon(HoaDon);
         }        
 
         public string UpdateHoaDonCT(HoaDonChiTiet HoaDon)
