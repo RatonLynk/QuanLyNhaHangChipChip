@@ -256,6 +256,7 @@ namespace _3_GUI
             this.Dgid_Meniu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgid_Meniu.Size = new System.Drawing.Size(418, 376);
             this.Dgid_Meniu.TabIndex = 0;
+            this.Dgid_Meniu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgid_Meniu_CellClick);
             // 
             // groupBox5
             // 
@@ -411,6 +412,7 @@ namespace _3_GUI
             this.Btn_XoaBanT2.TabIndex = 35;
             this.Btn_XoaBanT2.Text = "Xóa bàn";
             this.Btn_XoaBanT2.UseVisualStyleBackColor = false;
+            this.Btn_XoaBanT2.Click += new System.EventHandler(this.Btn_XoaBanT2_Click);
             // 
             // Btn_ThemBanT2
             // 

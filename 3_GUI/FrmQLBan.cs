@@ -21,6 +21,7 @@ namespace _3_GUI
         iQLMenuService _qlMeniu;
         List<BanAn> _lstBanAn;
         int _IdBan;
+        int _soLuong;
         public FrmQLBan()
         {
             InitializeComponent();
@@ -97,37 +98,7 @@ namespace _3_GUI
             BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c=>c.Id==id);
             Lbl_ViTriBan.Text = "Tầng 2 - " + banAn.Name;
         }
-
-
-        void LoadMeniu()
-        {
-            DataGridViewButtonColumn Them = new DataGridViewButtonColumn();
-            Them.Name = "Them";
-            Them.HeaderText = "Thêm món";
-            Them.UseColumnTextForButtonValue = true;
-            Them.Text = "Thêm";
-
-            DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
-            cmb.HeaderText = "số lượng";
-            cmb.Items.Add(1);
-            cmb.Items.Add(2);
-            cmb.Items.Add(3);
-            cmb.Items.Add(4);
-            cmb.Items.Add(5);            
-            cmb.Name = "combobox";            
-
-            Dgid_Meniu.ColumnCount = 4;
-            Dgid_Meniu.Columns[0].Name = "Tên món";
-            Dgid_Meniu.Columns[1].Name = "Giá tiền";         
-            Dgid_Meniu.Columns.Add(cmb);
-            Dgid_Meniu.Columns.Add(Them);
-            Dgid_Meniu.Rows.Clear();
-            foreach (var x in _qlMeniu.GetViewMenus())
-            {
-                Dgid_Meniu.Rows.Add(x.details.Name,x.details.Price);
-            }
-
-        }
+       
         void LoadHoaDon(int bill)
         {
 
@@ -143,7 +114,7 @@ namespace _3_GUI
             Dgid_HoaDon.Columns[0].Name = "";
             Dgid_HoaDon.Columns[0].Name = "";
             Dgid_HoaDon.Rows.Clear();
-            foreach (var item in _qlHoaDon.GetListDSHoaDon().Where(c=>c.hoaDon.Idtable==bill))
+            foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c=>c.hoaDon.Idtable==bill && c.hoaDon.Status==true))
             {
                 Dgid_HoaDon.Rows.Add();
             }
@@ -190,6 +161,72 @@ namespace _3_GUI
             ban.Cao = 60;
             MessageBox.Show(_qlBanAn.AddBanAn(ban), "Thông báo");
             LoadTableT2();
+        }
+
+        private void Btn_XoaBanT2_Click(object sender, EventArgs e)
+        {
+            BanAn ban = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 2).Select(c => c.Id).Max());
+            MessageBox.Show(_qlBanAn.DeleteBanAn(ban), "Thông báo");
+            LoadTableT2();
+        }
+        void LoadMeniu()
+        {
+            DataGridViewButtonColumn Them = new DataGridViewButtonColumn();
+            Them.Name = "Them";
+            Them.HeaderText = "Thêm món";
+            Them.UseColumnTextForButtonValue = true;
+            Them.Text = "Thêm";
+
+            DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
+            cmb.HeaderText = "số lượng";
+            cmb.Items.Add(1);
+            cmb.Items.Add(2);
+            cmb.Items.Add(3);
+            cmb.Items.Add(4);
+            cmb.Items.Add(5);
+            cmb.Name = "combobox";
+
+            Dgid_Meniu.ColumnCount = 4;
+            Dgid_Meniu.Columns[0].Name = "Tên món";
+            Dgid_Meniu.Columns[1].Name = "Giá tiền";
+            Dgid_Meniu.Columns.Add(cmb);
+            Dgid_Meniu.Columns.Add(Them);
+            Dgid_Meniu.Rows.Clear();            
+            foreach (var x in _qlMeniu.GetViewMenus())
+            {
+                Dgid_Meniu.Rows.Add(x.details.Name, x.details.Price);
+            }
+
+        }
+
+        private void Dgid_Meniu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            var columns = e.ColumnIndex;
+            if ((rowIndex == _qlMeniu.GetMonAnChiTiets().Count) || rowIndex == -1) return;
+            int idFood = _qlMeniu.GetMonAnChiTiets().Where(c => c.Name == Dgid_Meniu.Rows[rowIndex].Cells[0].Value.ToString()).Select(c => c.Id).FirstOrDefault();
+            if (e.ColumnIndex == Dgid_Meniu.Columns["Them"].Index)
+            {
+                _soLuong= (int)Dgid_Meniu.Rows[rowIndex].Cells[3].Value;
+
+                HoaDon hoaDon = new HoaDon();
+                hoaDon.Id = (_qlHoaDon.GetBillsFromDB().Count()) + 1;
+                hoaDon.DateCheckIn = DateTime.Now;
+                hoaDon.DateCheckOut = DateTime.Now;
+                hoaDon.Idtable = _IdBan;
+                hoaDon.Status = true;
+                //hoaDon.TotalMoney = null;
+                hoaDon.IdnhanVien = null;
+
+                HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet();
+                hoaDonChiTiet.Id = (_qlHoaDon.GetHoaDonCTFromDB().Count()) + 1;
+                hoaDonChiTiet.Idbill = hoaDon.Id;
+                hoaDonChiTiet.Idfood = idFood;
+                hoaDonChiTiet.Count = _soLuong;
+                hoaDonChiTiet.Price = _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == idFood).Select(c => c.Price).FirstOrDefault());
+                hoaDonChiTiet.Status = null;
+
+            }
         }
     }
 }
