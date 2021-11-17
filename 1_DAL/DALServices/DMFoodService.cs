@@ -13,6 +13,11 @@ namespace _1_DAL.DALServices
     {
         DatabaseContext _dbContext = new DatabaseContext();
         List<DanhMucFood> _lstTables;
+
+        public DMFoodService()
+        {
+        }
+
         public string AddDMFood(DanhMucFood DMFood)
         {
             _dbContext.DanhMucFoods.Add(DMFood);

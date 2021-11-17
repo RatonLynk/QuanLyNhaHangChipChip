@@ -289,9 +289,10 @@ namespace _1_DAL.Migrations
 
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
-                    b.Property<string>("MaNv")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("MaNV");
+                    b.Property<int>("Id")
+                        .IsRequired()
+                        .HasColumnType("int")
+                        .HasColumnName("ID");
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -304,9 +305,9 @@ namespace _1_DAL.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int")
-                        .HasColumnName("ID");
+                    b.Property<string>("MaNv")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("MaNV");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -332,7 +333,7 @@ namespace _1_DAL.Migrations
                     b.Property<bool?>("Status")
                         .HasColumnType("bit");
 
-                    b.HasKey("MaNv");
+                    b.HasKey("Id");
 
                     b.HasIndex("Role");
 

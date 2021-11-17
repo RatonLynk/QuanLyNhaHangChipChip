@@ -23,6 +23,7 @@ namespace _3_GUI
         private CachCheBien _cachCB;
         private ThucDon _item;
         private Utilities _utilities;
+        FrmQuanLyThucDon frm = new FrmQuanLyThucDon();
         public FrmDanhMuc()
         {
             InitializeComponent();
@@ -44,7 +45,8 @@ namespace _3_GUI
             }
             
             this.dgvDanhMuc.ClearSelection();
-            
+            frm.FrmQuanLyThucDon_Load();
+            frm.LoadCBox();
         }
 
         private void btnThemNhom_Click(object sender, EventArgs e)
@@ -158,6 +160,7 @@ namespace _3_GUI
                     MessageBox.Show("Chọn danh mục để xóa");
                 }
             }
+            FrmQuanLyThucDon_Load();
         }
 
         private void txtTimkiemDM_TextChanged(object sender, EventArgs e)

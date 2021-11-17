@@ -13,6 +13,11 @@ namespace _1_DAL.DALServices
     {
         DatabaseContext _dbContext = new DatabaseContext();
         List<Floor> _lstTables;
+
+        public FloorService()
+        {
+        }
+
         public string AddFloor(Floor Floor)
         {
             _dbContext.Floors.Add(Floor);
