@@ -29,23 +29,24 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.Btn_TrangChu = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Dgid_HoaDon = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Btn_TachBan = new System.Windows.Forms.Button();
+            this.Btn_GopBan = new System.Windows.Forms.Button();
+            this.Btn_ChuyenBan = new System.Windows.Forms.Button();
+            this.Btn_HuyBan = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Dgid_Meniu = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
+            this.Btn_XuatBill = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -54,33 +55,37 @@ namespace _3_GUI
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Tp_Tang1 = new System.Windows.Forms.TabPage();
-            this.button20 = new System.Windows.Forms.Button();
+            this.FLPenal = new System.Windows.Forms.FlowLayoutPanel();
+            this.Btn_ThemBanT1 = new System.Windows.Forms.Button();
+            this.Btn_XoaBanT1 = new System.Windows.Forms.Button();
             this.Tp_Tang2 = new System.Windows.Forms.TabPage();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.FlPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Btn_XoaBanT2 = new System.Windows.Forms.Button();
+            this.Btn_ThemBanT2 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgid_Meniu)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Tp_Tang1.SuspendLayout();
             this.Tp_Tang2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // Btn_TrangChu
             // 
-            this.button1.Location = new System.Drawing.Point(18, 477);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Trang chủ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Btn_TrangChu.Location = new System.Drawing.Point(18, 477);
+            this.Btn_TrangChu.Name = "Btn_TrangChu";
+            this.Btn_TrangChu.Size = new System.Drawing.Size(75, 40);
+            this.Btn_TrangChu.TabIndex = 1;
+            this.Btn_TrangChu.Text = "Trang chủ";
+            this.Btn_TrangChu.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.Dgid_HoaDon);
             this.groupBox2.Location = new System.Drawing.Point(240, 173);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(303, 144);
@@ -88,22 +93,22 @@ namespace _3_GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách món đã gọi";
             // 
-            // dataGridView2
+            // Dgid_HoaDon
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(5, 22);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(305, 116);
-            this.dataGridView2.TabIndex = 23;
+            this.Dgid_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgid_HoaDon.Location = new System.Drawing.Point(5, 22);
+            this.Dgid_HoaDon.Name = "Dgid_HoaDon";
+            this.Dgid_HoaDon.RowTemplate.Height = 25;
+            this.Dgid_HoaDon.Size = new System.Drawing.Size(305, 116);
+            this.Dgid_HoaDon.TabIndex = 23;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button12);
-            this.groupBox3.Controls.Add(this.button11);
-            this.groupBox3.Controls.Add(this.button9);
-            this.groupBox3.Controls.Add(this.button8);
-            this.groupBox3.Controls.Add(this.button7);
+            this.groupBox3.Controls.Add(this.Btn_TachBan);
+            this.groupBox3.Controls.Add(this.Btn_GopBan);
+            this.groupBox3.Controls.Add(this.Btn_ChuyenBan);
+            this.groupBox3.Controls.Add(this.Btn_HuyBan);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
@@ -123,45 +128,45 @@ namespace _3_GUI
             this.button12.Text = "Kết thúc";
             this.button12.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // Btn_TachBan
             // 
-            this.button11.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button11.Location = new System.Drawing.Point(223, 111);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(68, 23);
-            this.button11.TabIndex = 25;
-            this.button11.Text = "Tách bàn";
-            this.button11.UseVisualStyleBackColor = false;
+            this.Btn_TachBan.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_TachBan.Location = new System.Drawing.Point(223, 111);
+            this.Btn_TachBan.Name = "Btn_TachBan";
+            this.Btn_TachBan.Size = new System.Drawing.Size(68, 23);
+            this.Btn_TachBan.TabIndex = 25;
+            this.Btn_TachBan.Text = "Tách bàn";
+            this.Btn_TachBan.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // Btn_GopBan
             // 
-            this.button9.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button9.Location = new System.Drawing.Point(130, 111);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(61, 23);
-            this.button9.TabIndex = 24;
-            this.button9.Text = "Gộp bàn";
-            this.button9.UseVisualStyleBackColor = false;
+            this.Btn_GopBan.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_GopBan.Location = new System.Drawing.Point(130, 111);
+            this.Btn_GopBan.Name = "Btn_GopBan";
+            this.Btn_GopBan.Size = new System.Drawing.Size(61, 23);
+            this.Btn_GopBan.TabIndex = 24;
+            this.Btn_GopBan.Text = "Gộp bàn";
+            this.Btn_GopBan.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // Btn_ChuyenBan
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button8.Location = new System.Drawing.Point(7, 111);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(87, 23);
-            this.button8.TabIndex = 23;
-            this.button8.Text = "Chuyển bàn";
-            this.button8.UseVisualStyleBackColor = false;
+            this.Btn_ChuyenBan.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_ChuyenBan.Location = new System.Drawing.Point(7, 111);
+            this.Btn_ChuyenBan.Name = "Btn_ChuyenBan";
+            this.Btn_ChuyenBan.Size = new System.Drawing.Size(87, 23);
+            this.Btn_ChuyenBan.TabIndex = 23;
+            this.Btn_ChuyenBan.Text = "Chuyển bàn";
+            this.Btn_ChuyenBan.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // Btn_HuyBan
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button7.Location = new System.Drawing.Point(236, 22);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(61, 23);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Hủy Bàn";
-            this.button7.UseVisualStyleBackColor = false;
+            this.Btn_HuyBan.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_HuyBan.Location = new System.Drawing.Point(236, 22);
+            this.Btn_HuyBan.Name = "Btn_HuyBan";
+            this.Btn_HuyBan.Size = new System.Drawing.Size(61, 23);
+            this.Btn_HuyBan.TabIndex = 3;
+            this.Btn_HuyBan.Text = "Hủy Bàn";
+            this.Btn_HuyBan.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -193,7 +198,7 @@ namespace _3_GUI
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Controls.Add(this.dataGridView1);
+            this.groupBox4.Controls.Add(this.Dgid_Meniu);
             this.groupBox4.Location = new System.Drawing.Point(549, 27);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(430, 429);
@@ -208,18 +213,18 @@ namespace _3_GUI
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 1;
             // 
-            // dataGridView1
+            // Dgid_Meniu
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(418, 376);
-            this.dataGridView1.TabIndex = 0;
+            this.Dgid_Meniu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgid_Meniu.Location = new System.Drawing.Point(6, 47);
+            this.Dgid_Meniu.Name = "Dgid_Meniu";
+            this.Dgid_Meniu.RowTemplate.Height = 25;
+            this.Dgid_Meniu.Size = new System.Drawing.Size(418, 376);
+            this.Dgid_Meniu.TabIndex = 0;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button13);
+            this.groupBox5.Controls.Add(this.Btn_XuatBill);
             this.groupBox5.Controls.Add(this.textBox4);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.textBox3);
@@ -232,15 +237,15 @@ namespace _3_GUI
             this.groupBox5.TabIndex = 23;
             this.groupBox5.TabStop = false;
             // 
-            // button13
+            // Btn_XuatBill
             // 
-            this.button13.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button13.Location = new System.Drawing.Point(17, 102);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(61, 23);
-            this.button13.TabIndex = 27;
-            this.button13.Text = "Xuất bill";
-            this.button13.UseVisualStyleBackColor = false;
+            this.Btn_XuatBill.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_XuatBill.Location = new System.Drawing.Point(17, 102);
+            this.Btn_XuatBill.Name = "Btn_XuatBill";
+            this.Btn_XuatBill.Size = new System.Drawing.Size(61, 23);
+            this.Btn_XuatBill.TabIndex = 27;
+            this.Btn_XuatBill.Text = "Xuất bill";
+            this.Btn_XuatBill.UseVisualStyleBackColor = false;
             // 
             // textBox4
             // 
@@ -302,8 +307,9 @@ namespace _3_GUI
             // 
             // Tp_Tang1
             // 
-            this.Tp_Tang1.Controls.Add(this.button2);
-            this.Tp_Tang1.Controls.Add(this.button20);
+            this.Tp_Tang1.Controls.Add(this.FLPenal);
+            this.Tp_Tang1.Controls.Add(this.Btn_ThemBanT1);
+            this.Tp_Tang1.Controls.Add(this.Btn_XoaBanT1);
             this.Tp_Tang1.Location = new System.Drawing.Point(4, 24);
             this.Tp_Tang1.Name = "Tp_Tang1";
             this.Tp_Tang1.Padding = new System.Windows.Forms.Padding(3);
@@ -312,20 +318,40 @@ namespace _3_GUI
             this.Tp_Tang1.Text = "Tầng 1";
             this.Tp_Tang1.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // FLPenal
             // 
-            this.button20.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button20.Location = new System.Drawing.Point(132, 371);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
-            this.button20.TabIndex = 27;
-            this.button20.Text = "Xóa bàn";
-            this.button20.UseVisualStyleBackColor = false;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
+            this.FLPenal.Location = new System.Drawing.Point(7, 7);
+            this.FLPenal.Name = "FLPenal";
+            this.FLPenal.Size = new System.Drawing.Size(200, 358);
+            this.FLPenal.TabIndex = 29;
+            // 
+            // Btn_ThemBanT1
+            // 
+            this.Btn_ThemBanT1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_ThemBanT1.Location = new System.Drawing.Point(51, 371);
+            this.Btn_ThemBanT1.Name = "Btn_ThemBanT1";
+            this.Btn_ThemBanT1.Size = new System.Drawing.Size(75, 23);
+            this.Btn_ThemBanT1.TabIndex = 28;
+            this.Btn_ThemBanT1.Text = "Thêm bàn";
+            this.Btn_ThemBanT1.UseVisualStyleBackColor = false;
+            this.Btn_ThemBanT1.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Btn_XoaBanT1
+            // 
+            this.Btn_XoaBanT1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_XoaBanT1.Location = new System.Drawing.Point(132, 371);
+            this.Btn_XoaBanT1.Name = "Btn_XoaBanT1";
+            this.Btn_XoaBanT1.Size = new System.Drawing.Size(75, 23);
+            this.Btn_XoaBanT1.TabIndex = 27;
+            this.Btn_XoaBanT1.Text = "Xóa bàn";
+            this.Btn_XoaBanT1.UseVisualStyleBackColor = false;
+            this.Btn_XoaBanT1.Click += new System.EventHandler(this.button20_Click);
             // 
             // Tp_Tang2
             // 
-            this.Tp_Tang2.Controls.Add(this.button21);
+            this.Tp_Tang2.Controls.Add(this.FlPanel2);
+            this.Tp_Tang2.Controls.Add(this.Btn_XoaBanT2);
+            this.Tp_Tang2.Controls.Add(this.Btn_ThemBanT2);
             this.Tp_Tang2.Location = new System.Drawing.Point(4, 24);
             this.Tp_Tang2.Name = "Tp_Tang2";
             this.Tp_Tang2.Padding = new System.Windows.Forms.Padding(3);
@@ -334,25 +360,37 @@ namespace _3_GUI
             this.Tp_Tang2.Text = "Tầng 2";
             this.Tp_Tang2.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // FlPanel2
             // 
-            this.button21.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button21.Location = new System.Drawing.Point(132, 371);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
-            this.button21.TabIndex = 34;
-            this.button21.Text = "Thêm bàn";
-            this.button21.UseVisualStyleBackColor = false;
+            this.FlPanel2.Location = new System.Drawing.Point(6, 7);
+            this.FlPanel2.Name = "FlPanel2";
+            this.FlPanel2.Size = new System.Drawing.Size(200, 358);
+            this.FlPanel2.TabIndex = 36;
             // 
-            // button2
+            // Btn_XoaBanT2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(51, 371);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Thêm bàn";
-            this.button2.UseVisualStyleBackColor = false;
+            this.Btn_XoaBanT2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_XoaBanT2.Location = new System.Drawing.Point(131, 371);
+            this.Btn_XoaBanT2.Name = "Btn_XoaBanT2";
+            this.Btn_XoaBanT2.Size = new System.Drawing.Size(75, 23);
+            this.Btn_XoaBanT2.TabIndex = 35;
+            this.Btn_XoaBanT2.Text = "Xóa bàn";
+            this.Btn_XoaBanT2.UseVisualStyleBackColor = false;
+            // 
+            // Btn_ThemBanT2
+            // 
+            this.Btn_ThemBanT2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_ThemBanT2.Location = new System.Drawing.Point(50, 371);
+            this.Btn_ThemBanT2.Name = "Btn_ThemBanT2";
+            this.Btn_ThemBanT2.Size = new System.Drawing.Size(75, 23);
+            this.Btn_ThemBanT2.TabIndex = 34;
+            this.Btn_ThemBanT2.Text = "Thêm bàn";
+            this.Btn_ThemBanT2.UseVisualStyleBackColor = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // FrmQLBan
             // 
@@ -364,16 +402,16 @@ namespace _3_GUI
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_TrangChu);
             this.Name = "FrmQLBan";
             this.Text = "Chuyển bàn";
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgid_Meniu)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -384,23 +422,23 @@ namespace _3_GUI
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_TrangChu;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView Dgid_HoaDon;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button Btn_TachBan;
+        private System.Windows.Forms.Button Btn_GopBan;
+        private System.Windows.Forms.Button Btn_ChuyenBan;
+        private System.Windows.Forms.Button Btn_HuyBan;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Dgid_Meniu;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button Btn_XuatBill;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox3;
@@ -410,8 +448,12 @@ namespace _3_GUI
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Tp_Tang1;
         private System.Windows.Forms.TabPage Tp_Tang2;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Btn_XoaBanT1;
+        private System.Windows.Forms.Button Btn_ThemBanT2;
+        private System.Windows.Forms.Button Btn_ThemBanT1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button Btn_XoaBanT2;
+        private System.Windows.Forms.FlowLayoutPanel FLPenal;
+        private System.Windows.Forms.FlowLayoutPanel FlPanel2;
     }
 }
