@@ -109,7 +109,12 @@ namespace _3_GUI
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dlr = MessageBox.Show("Bạn có muốn thoát  không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
         }
 
         private void btnTienIch_Click(object sender, EventArgs e)
