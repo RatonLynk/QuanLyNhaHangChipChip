@@ -9,8 +9,8 @@ namespace _1_DAL.iDALServices
 {
     public interface iHoaDonService
     {
-        public string AddHoaDon(HoaDon HoaDon);
-        public string UpdateHoaDon(HoaDon HoaDon);
+        public void AddHoaDon(HoaDon HoaDon);
+        public void UpdateHoaDon(HoaDon HoaDon);
         public string DeleteHoaDon(HoaDon HoaDon);
         public string SaveHoaDon();
         public List<HoaDon> GetBillsFromDB();

@@ -13,6 +13,11 @@ namespace _1_DAL.DALServices
     {
         DatabaseContext _dbContext = new DatabaseContext();
         List<DonVi> _lstTables;
+
+        public DonViService()
+        {
+        }
+
         public string AddDonVi(DonVi DonVi)
         {
             _dbContext.DonVis.Add(DonVi);

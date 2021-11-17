@@ -27,7 +27,7 @@ namespace _1_DAL.Models
         public int Idtable { get; set; }
         [Required]
         [StringLength(50)]
-        public string Status { get; set; }
+        public bool? Status { get; set; }
         [Column(TypeName = "money")]
         public decimal TotalMoney { get; set; }
         [Column("IDNhanVien")]

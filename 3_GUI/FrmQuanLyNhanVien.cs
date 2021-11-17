@@ -66,8 +66,7 @@ namespace _3_GUI
             NhanVien NhanVien = new NhanVien();
             NhanVien.Id = dgrid_NhanVien.Rows.Cast<DataGridViewRow>()
                 .Max(r => Convert.ToInt32(r.Cells["Id"].Value)) + 1;
-
-            NhanVien.MaNv = 1 + NhanVien.Id;
+            NhanVien.MaNv = "NV" + NhanVien.Id.ToString();
             NhanVien.Name =  txt_TenNV.Text;
             NhanVien.Email = txtEmail.Text;
             NhanVien.Role = (byte)(chk_quanLi.Checked ? 1 : 0);
@@ -95,7 +94,7 @@ namespace _3_GUI
             txtMatKhau.Text = _utilities.GetHash(dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString());
             txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
             txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[6].Value.ToString();
-            var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToInt32(txtMaNV.Text) ).FirstOrDefault();
+            var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == txtMaNV.Text ).FirstOrDefault();
             if (nv.Role == 1)
             {
                 chk_quanLi.Checked = true;
@@ -117,7 +116,7 @@ namespace _3_GUI
 
         private void btnXoaNV_Click(object sender, EventArgs e)
         {
-            var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToByte(txtMaNV) ).FirstOrDefault();
+            var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == txtMaNV.Text ).FirstOrDefault();
             rbtnKHDnhanvien.Checked = true;
             nhanVien.Role = 0;
             if ((MessageBox.Show("Bạn có chắc chắc sẽ dùng chức năng trên?",
@@ -131,7 +130,7 @@ namespace _3_GUI
 
         private void btnSuaNV_Click(object sender, EventArgs e)
         {
-            var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == Convert.ToByte(txtMaNV.Text)).FirstOrDefault();
+            var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == txtMaNV.Text).FirstOrDefault();
             nhanVien.Name = txt_TenNV.Text;
             nhanVien.Email = txtEmail.Text;
             nhanVien.Password = _utilities.GetHash(txtMatKhau.Text);

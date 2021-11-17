@@ -15,12 +15,12 @@ namespace _1_DAL.Models
         {
             HoaDons = new HashSet<HoaDon>();
         }
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
 
         [Column("ID")]
         public int Id { get; set; }
-        [Key]
         [Column("MaNV")]
-        public int MaNv { get; set; }
+        public string MaNv { get; set; }
         [Required]
         [StringLength(100)]
         public string Email { get; set; }

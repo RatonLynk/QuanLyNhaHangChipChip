@@ -13,6 +13,11 @@ namespace _1_DAL.DALServices
     {
         DatabaseContext _dbContext = new DatabaseContext();
         List<MonAnChiTiet> _lstTables;
+
+        public MonAnChiTietService()
+        {
+        }
+
         public string AddMonAnChiTiet(MonAnChiTiet MonAnChiTiet)
         {
             _dbContext.MonAnChiTiets.Add(MonAnChiTiet);

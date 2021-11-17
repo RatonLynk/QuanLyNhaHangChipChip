@@ -13,7 +13,7 @@ namespace _1_DAL.Models
     [Index(nameof(IdNguyenLieu), Name = "IX_CongThuc_IdNguyenLieu")]
     public partial class CongThuc
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("ID")]
         public int Id { get; set; }
         public int IdMon { get; set; }

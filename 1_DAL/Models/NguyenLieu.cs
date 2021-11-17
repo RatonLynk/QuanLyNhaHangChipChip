@@ -16,7 +16,7 @@ namespace _1_DAL.Models
             CongThucs = new HashSet<CongThuc>();
         }
 
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("ID")]
         public int Id { get; set; }
         [Required]

@@ -23,6 +23,7 @@ namespace _3_GUI
         private CachCheBien _cachCB;
         private ThucDon _item;
         private Utilities _utilities;
+        FrmQuanLyThucDon frm = new FrmQuanLyThucDon();
         public FrmCachCheBien()
         {
             InitializeComponent();
@@ -44,7 +45,8 @@ namespace _3_GUI
                 dgvCachNau.Rows.Add(x.Id, x.Name, x.Status == true ? "Hoạt động" : "Không hoạt động");
             }
             this.dgvCachNau.ClearSelection();
-            
+            frm.FrmQuanLyThucDon_Load();
+            frm.LoadCBox();
         }
 
         private void dgvCachNau_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -126,6 +128,8 @@ namespace _3_GUI
             {
                 return;
             }
+            frm.FrmQuanLyThucDon_Load();
+            frm.LoadCBox();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -156,6 +160,7 @@ namespace _3_GUI
                     FrmQuanLyThucDon_Load();
                 }
             }
+            
         }
 
         private void btnXoaCongThuc_Click(object sender, EventArgs e)
@@ -166,12 +171,14 @@ namespace _3_GUI
                 if (_cachCB != null)
                 {
                     _iQLMenuService.DeleteMethod(_cachCB);
+                    FrmQuanLyThucDon_Load();
                 }
                 else
                 {
                     MessageBox.Show("Chọn cách chế biến để xóa");
                 }
             }
+            
         }
     }
 }

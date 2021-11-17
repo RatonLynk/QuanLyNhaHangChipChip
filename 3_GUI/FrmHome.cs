@@ -102,5 +102,11 @@ namespace _3_GUI
             FrmDoiMatKhau a = new FrmDoiMatKhau();
             a.ShowDialog();
         }
+
+        private void btnPhucVuKhachHang_Click(object sender, EventArgs e)
+        {
+            FrmQLBan a = new FrmQLBan();
+            a.ShowDialog();
+        }
     }
 }

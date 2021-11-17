@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1_DAL.Context;
 
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20211116101204_1")]
+    partial class _1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -167,18 +169,18 @@ namespace _1_DAL.Migrations
                     b.Property<DateTime>("DateCheckOut")
                         .HasColumnType("date");
 
-                    b.Property<string>("IdnhanVien")
-                        .HasColumnType("nvarchar(450)")
+                    b.Property<int>("IdnhanVien")
+                        .HasColumnType("int")
                         .HasColumnName("IDNhanVien");
 
                     b.Property<int>("Idtable")
                         .HasColumnType("int")
                         .HasColumnName("IDtable");
 
-                    b.Property<bool?>("Status")
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("bit");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("TotalMoney")
                         .HasColumnType("money");
@@ -290,9 +292,10 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
                     b.Property<int>("Id")
-                        .IsRequired()
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID");
+                        .HasColumnName("ID")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -334,8 +337,6 @@ namespace _1_DAL.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Role");
 
                     b.HasIndex("Role");
 
@@ -423,7 +424,8 @@ namespace _1_DAL.Migrations
                     b.HasOne("_1_DAL.Models.NhanVien", "IdnhanVienNavigation")
                         .WithMany("HoaDons")
                         .HasForeignKey("IdnhanVien")
-                        .HasConstraintName("FK_HoaDon_NhanVien");
+                        .HasConstraintName("FK_HoaDon_NhanVien")
+                        .IsRequired();
 
                     b.HasOne("_1_DAL.Models.BanAn", "IdtableNavigation")
                         .WithMany("HoaDons")

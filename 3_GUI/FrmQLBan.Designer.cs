@@ -34,6 +34,9 @@ namespace _3_GUI
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Dgid_HoaDon = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Lbl_GioRa = new System.Windows.Forms.Label();
+            this.Lbl_GioVao = new System.Windows.Forms.Label();
+            this.Lbl_ViTriBan = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
             this.Btn_TachBan = new System.Windows.Forms.Button();
             this.Btn_GopBan = new System.Windows.Forms.Button();
@@ -99,11 +102,14 @@ namespace _3_GUI
             this.Dgid_HoaDon.Location = new System.Drawing.Point(5, 22);
             this.Dgid_HoaDon.Name = "Dgid_HoaDon";
             this.Dgid_HoaDon.RowTemplate.Height = 25;
-            this.Dgid_HoaDon.Size = new System.Drawing.Size(305, 116);
+            this.Dgid_HoaDon.Size = new System.Drawing.Size(293, 116);
             this.Dgid_HoaDon.TabIndex = 23;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.Lbl_GioRa);
+            this.groupBox3.Controls.Add(this.Lbl_GioVao);
+            this.groupBox3.Controls.Add(this.Lbl_ViTriBan);
             this.groupBox3.Controls.Add(this.button12);
             this.groupBox3.Controls.Add(this.Btn_TachBan);
             this.groupBox3.Controls.Add(this.Btn_GopBan);
@@ -117,6 +123,33 @@ namespace _3_GUI
             this.groupBox3.Size = new System.Drawing.Size(303, 140);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
+            // 
+            // Lbl_GioRa
+            // 
+            this.Lbl_GioRa.AutoSize = true;
+            this.Lbl_GioRa.Location = new System.Drawing.Point(101, 71);
+            this.Lbl_GioRa.Name = "Lbl_GioRa";
+            this.Lbl_GioRa.Size = new System.Drawing.Size(110, 15);
+            this.Lbl_GioRa.TabIndex = 29;
+            this.Lbl_GioRa.Text = "00:00:00 00/00/2021";
+            // 
+            // Lbl_GioVao
+            // 
+            this.Lbl_GioVao.AutoSize = true;
+            this.Lbl_GioVao.Location = new System.Drawing.Point(101, 47);
+            this.Lbl_GioVao.Name = "Lbl_GioVao";
+            this.Lbl_GioVao.Size = new System.Drawing.Size(110, 15);
+            this.Lbl_GioVao.TabIndex = 28;
+            this.Lbl_GioVao.Text = "00:00:00 00/00/2021";
+            // 
+            // Lbl_ViTriBan
+            // 
+            this.Lbl_ViTriBan.AutoSize = true;
+            this.Lbl_ViTriBan.Location = new System.Drawing.Point(119, 22);
+            this.Lbl_ViTriBan.Name = "Lbl_ViTriBan";
+            this.Lbl_ViTriBan.Size = new System.Drawing.Size(27, 15);
+            this.Lbl_ViTriBan.TabIndex = 27;
+            this.Lbl_ViTriBan.Text = "Bàn";
             // 
             // button12
             // 
@@ -215,12 +248,15 @@ namespace _3_GUI
             // 
             // Dgid_Meniu
             // 
+            this.Dgid_Meniu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgid_Meniu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgid_Meniu.Location = new System.Drawing.Point(6, 47);
             this.Dgid_Meniu.Name = "Dgid_Meniu";
             this.Dgid_Meniu.RowTemplate.Height = 25;
+            this.Dgid_Meniu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgid_Meniu.Size = new System.Drawing.Size(418, 376);
             this.Dgid_Meniu.TabIndex = 0;
+            this.Dgid_Meniu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgid_Meniu_CellClick);
             // 
             // groupBox5
             // 
@@ -364,7 +400,7 @@ namespace _3_GUI
             // 
             this.FlPanel2.Location = new System.Drawing.Point(6, 7);
             this.FlPanel2.Name = "FlPanel2";
-            this.FlPanel2.Size = new System.Drawing.Size(200, 358);
+            this.FlPanel2.Size = new System.Drawing.Size(201, 358);
             this.FlPanel2.TabIndex = 36;
             // 
             // Btn_XoaBanT2
@@ -376,6 +412,7 @@ namespace _3_GUI
             this.Btn_XoaBanT2.TabIndex = 35;
             this.Btn_XoaBanT2.Text = "Xóa bàn";
             this.Btn_XoaBanT2.UseVisualStyleBackColor = false;
+            this.Btn_XoaBanT2.Click += new System.EventHandler(this.Btn_XoaBanT2_Click);
             // 
             // Btn_ThemBanT2
             // 
@@ -386,6 +423,7 @@ namespace _3_GUI
             this.Btn_ThemBanT2.TabIndex = 34;
             this.Btn_ThemBanT2.Text = "Thêm bàn";
             this.Btn_ThemBanT2.UseVisualStyleBackColor = false;
+            this.Btn_ThemBanT2.Click += new System.EventHandler(this.Btn_ThemBanT2_Click);
             // 
             // contextMenuStrip1
             // 
@@ -455,5 +493,8 @@ namespace _3_GUI
         private System.Windows.Forms.Button Btn_XoaBanT2;
         private System.Windows.Forms.FlowLayoutPanel FLPenal;
         private System.Windows.Forms.FlowLayoutPanel FlPanel2;
+        private System.Windows.Forms.Label Lbl_GioRa;
+        private System.Windows.Forms.Label Lbl_GioVao;
+        private System.Windows.Forms.Label Lbl_ViTriBan;
     }
 }

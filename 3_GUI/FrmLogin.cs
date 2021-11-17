@@ -182,14 +182,14 @@ namespace _3_GUI
                 MessageBox.Show("Tài khoản đăng nhập không chính xác ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
             }
-            else if (_qlnv.getlstNhanViens().Any(c =>  c.Password != /*uti.GetHash*/txtPassWord.Text))
+            else if (_qlnv.getlstNhanViens().Any(c =>  c.Password != uti.GetHash(txtPassWord.Text)))
             {
                 MessageBox.Show("Mật khẩu không chính xác ", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
             }
             else if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password== uti.GetHash(txtPassWord.Text) && c.Status==true))
             {
-                var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text && c.Status == true);
+                var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text);
                 MessageBox.Show("Đăng nhập thành công ", "Thông báo");
                 FrmHome.mail = txtUsername.Text;
                 FrmDoiMatKhau.passcu = txtPassWord.Text;
@@ -197,7 +197,7 @@ namespace _3_GUI
                 //vaitro = role.Status;
                 this.Hide();
                 FrmHome frmHome = new FrmHome();
-                frmHome.manv(Convert.ToString(nv1.MaNv),nv1.Name);//truy xuất được mã nv khi đăng nhập
+                /*frmHome.manv(Convert.ToString(nv1.MaNv),nv1.Name);*///truy xuất được mã nv khi đăng nhập
                 frmHome.ShowDialog();
                 this.Close();
 
