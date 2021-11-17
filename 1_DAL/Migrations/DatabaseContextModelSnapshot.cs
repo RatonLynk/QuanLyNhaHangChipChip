@@ -337,8 +337,6 @@ namespace _1_DAL.Migrations
 
                     b.HasIndex("Role");
 
-                    b.HasIndex("Role");
-
                     b.ToTable("NhanVien");
                 });
 
