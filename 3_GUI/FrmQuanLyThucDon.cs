@@ -33,9 +33,10 @@ namespace _3_GUI
             InitializeComponent();
             _iQLMenuService = new QLMenuService();
             FrmQuanLyThucDon_Load();
+            _utilities = new Utilities();
         }
 
-        private void FrmQuanLyThucDon_Load()
+        public void FrmQuanLyThucDon_Load()
         {
             dgvMonAn.ColumnCount = 7;
             dgvMonAn.Columns[0].Name = "Mã món ăn";
@@ -64,7 +65,7 @@ namespace _3_GUI
             LoadCBox();
         }
 
-        private void LoadCBox()
+        public void LoadCBox()
         {
             cbx_Meth.Items.Clear();
             foreach(var x in _iQLMenuService.GetCachCheBiens())
@@ -109,14 +110,13 @@ namespace _3_GUI
             {
                 if (checknullMonAn())
                 {
-
                     _monCT = new MonAnChiTiet();
                     _item = new ThucDon();
                     _monCT.Id = _iQLMenuService.GetMonAnChiTiets().Count;
                     _monCT.Name = txtTenMonAn.Text;
-                    _monCT.Idunit = _utilities.GetDonViID(cbx_Unit.Text);
-                    _monCT.Idcategory = _utilities.GetCategoryID(cbx_Cat.Text);
-                    _monCT.Idmethod = _utilities.GetMethodID(cbx_Meth.Text);
+                    _monCT.Idunit = _utilities.GetDonViID(cbx_Unit.SelectedItem.ToString());
+                    _monCT.Idcategory = _utilities.GetCategoryID(cbx_Cat.SelectedItem.ToString());
+                    _monCT.Idmethod = _utilities.GetMethodID(cbx_Meth.SelectedItem.ToString());
                     _monCT.Price = txt_Price.Value;
                     _item.Id = _monCT.Id;
                     _item.Name = _monCT.Name;
@@ -234,7 +234,8 @@ namespace _3_GUI
                 if (_monCT != null)
                 {
                     _iQLMenuService.DeleteItem(_item);
-                    _iQLMenuService.DeleteDetail(_monCT); 
+                    _iQLMenuService.DeleteDetail(_monCT);
+                    FrmQuanLyThucDon_Load();
                 }
                 else
                 {

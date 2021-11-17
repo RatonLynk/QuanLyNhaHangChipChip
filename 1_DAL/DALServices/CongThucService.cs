@@ -13,6 +13,11 @@ namespace _1_DAL.DALServices
     {
         DatabaseContext _dbContext = new DatabaseContext();
         List<CongThuc> _lstTables;
+
+        public CongThucService()
+        {
+        }
+
         public string AddCongThuc(CongThuc CongThuc)
         {
             _dbContext.CongThucs.Add(CongThuc);

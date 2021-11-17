@@ -13,6 +13,11 @@ namespace _1_DAL.DALServices
     {
         DatabaseContext _dbContext = new DatabaseContext();
         List<HoaDon> _lstTables;
+
+        public HoaDonService()
+        {
+        }
+
         public string AddHoaDon(HoaDon HoaDon)
         {
             _dbContext.HoaDons.Add(HoaDon);

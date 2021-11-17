@@ -47,6 +47,9 @@ namespace _1_DAL.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
+                    b.Property<int>("TinhTrang")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Floor");
@@ -76,10 +79,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.CongThuc", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<int>("IdMon")
                         .HasColumnType("int");
@@ -143,8 +144,8 @@ namespace _1_DAL.Migrations
                         .HasColumnType("int")
                         .HasColumnName("ID");
 
-                    b.Property<int>("FloorNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("FloorNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("Status")
                         .HasColumnType("bit");
@@ -270,10 +271,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.NguyenLieu", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -290,9 +289,11 @@ namespace _1_DAL.Migrations
 
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
-                    b.Property<int>("MaNv")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("MaNV");
+                        .HasColumnName("ID")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -305,9 +306,9 @@ namespace _1_DAL.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int")
-                        .HasColumnName("ID");
+                    b.Property<string>("MaNv")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("MaNV");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -333,7 +334,7 @@ namespace _1_DAL.Migrations
                     b.Property<bool?>("Status")
                         .HasColumnType("bit");
 
-                    b.HasKey("MaNv");
+                    b.HasKey("Id");
 
                     b.HasIndex("Role");
 

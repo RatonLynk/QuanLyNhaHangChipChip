@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1_DAL.Migrations
 {
-    public partial class Init : Migration
+    public partial class _1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -51,7 +51,7 @@ namespace _1_DAL.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false),
-                    FloorNumber = table.Column<int>(type: "int", nullable: false),
+                    FloorNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<bool>(type: "bit", nullable: true)
                 },
                 constraints: table =>
@@ -64,7 +64,6 @@ namespace _1_DAL.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false),
-                        
                     Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: true)
                 },
@@ -130,6 +129,7 @@ namespace _1_DAL.Migrations
                     Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Floor = table.Column<int>(type: "int", nullable: true),
                     Busy = table.Column<string>(type: "nchar(10)", fixedLength: true, maxLength: 10, nullable: true),
+                    TinhTrang = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
                     Rong = table.Column<int>(type: "int", nullable: false),
                     Cao = table.Column<int>(type: "int", nullable: false)
@@ -149,8 +149,9 @@ namespace _1_DAL.Migrations
                 name: "NhanVien",
                 columns: table => new
                 {
-                    MaNV = table.Column<int>(type: "int", nullable: false),
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MaNV = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
                     Password = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: false),
                     Role = table.Column<int>(type: "int", nullable: false),
@@ -162,7 +163,7 @@ namespace _1_DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_NhanVien", x => x.MaNV);
+                    table.PrimaryKey("PK_NhanVien", x => x.ID);
                     table.ForeignKey(
                         name: "FK_NhanVien_Roles",
                         column: x => x.Role,
@@ -176,7 +177,6 @@ namespace _1_DAL.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false),
-                        
                     IdMon = table.Column<int>(type: "int", nullable: false),
                     IdNguyenLieu = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: true)
@@ -244,7 +244,7 @@ namespace _1_DAL.Migrations
                         name: "FK_HoaDon_NhanVien",
                         column: x => x.IDNhanVien,
                         principalTable: "NhanVien",
-                        principalColumn: "MaNV",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
 

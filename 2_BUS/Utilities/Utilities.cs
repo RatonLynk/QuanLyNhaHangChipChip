@@ -14,12 +14,12 @@ namespace _2_BUS.Utilities
 {
     public class Utilities
     {
-        private iMonAnChiTietService _iMonAnChiTietService;
-        private iDonViService _iDonViService;
-        private iCachChebienService _iCachChebienService;
-        private IThucDonService _iThucDonService;
-        private iDMFoodService _iDMFoodService;
-        private iNguyenLieuService _iNguyenLieuService;
+        private iMonAnChiTietService _iMonAnChiTietService = new MonAnChiTietService();
+        private iDonViService _iDonViService = new DonViService();
+        private iCachChebienService _iCachChebienService = new CachCheBienService();
+        private IThucDonService _iThucDonService = new ThucDonService();
+        private iDMFoodService _iDMFoodService = new DMFoodService();
+        private iNguyenLieuService _iNguyenLieuService = new NguyenLieuService();
         private DonVi _donVi;
         private DanhMucFood _dmFood;
         private CachCheBien _cachCB;

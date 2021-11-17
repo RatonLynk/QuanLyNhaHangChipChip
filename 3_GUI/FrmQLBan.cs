@@ -109,8 +109,7 @@ namespace _3_GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmThemBan frmThemBan = new FrmThemBan();
-            frmThemBan.Show();
+
         }
     }
 }

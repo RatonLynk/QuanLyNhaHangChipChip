@@ -23,6 +23,7 @@ namespace _3_GUI
         private DonVi _cachCB;
         private ThucDon _item;
         private Utilities _utilities;
+        FrmQuanLyThucDon frm = new FrmQuanLyThucDon();
         public FrmDonVi()
         {
             InitializeComponent();
@@ -43,7 +44,8 @@ namespace _3_GUI
                 dgvCachNau.Rows.Add(x.Id, x.Name, x.Status == true ? "Hoạt động" : "Không hoạt động");
             }
             this.dgvCachNau.ClearSelection();
-
+            frm.FrmQuanLyThucDon_Load();
+            frm.LoadCBox();
 
         }
 
@@ -166,6 +168,7 @@ namespace _3_GUI
                 if (_cachCB != null)
                 {
                     _iQLMenuService.DeleteUnit(_cachCB);
+                    FrmQuanLyThucDon_Load();
                 }
                 else
                 {
