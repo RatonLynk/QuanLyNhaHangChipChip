@@ -27,11 +27,11 @@ namespace _1_DAL.Models
         public int Idtable { get; set; }
         [Required]
         [StringLength(50)]
-        public string Status { get; set; }
+        public bool? Status { get; set; }
         [Column(TypeName = "money")]
         public decimal TotalMoney { get; set; }
         [Column("IDNhanVien")]
-        public int IdnhanVien { get; set; }
+        public string IdnhanVien { get; set; }
 
         [ForeignKey(nameof(IdnhanVien))]
         [InverseProperty(nameof(NhanVien.HoaDons))]

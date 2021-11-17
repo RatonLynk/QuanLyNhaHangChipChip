@@ -167,18 +167,18 @@ namespace _1_DAL.Migrations
                     b.Property<DateTime>("DateCheckOut")
                         .HasColumnType("date");
 
-                    b.Property<int>("IdnhanVien")
-                        .HasColumnType("int")
+                    b.Property<string>("IdnhanVien")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnName("IDNhanVien");
 
                     b.Property<int>("Idtable")
                         .HasColumnType("int")
                         .HasColumnName("IDtable");
 
-                    b.Property<string>("Status")
+                    b.Property<bool?>("Status")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("TotalMoney")
                         .HasColumnType("money");
@@ -290,10 +290,9 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                        .IsRequired()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -422,8 +421,7 @@ namespace _1_DAL.Migrations
                     b.HasOne("_1_DAL.Models.NhanVien", "IdnhanVienNavigation")
                         .WithMany("HoaDons")
                         .HasForeignKey("IdnhanVien")
-                        .HasConstraintName("FK_HoaDon_NhanVien")
-                        .IsRequired();
+                        .HasConstraintName("FK_HoaDon_NhanVien");
 
                     b.HasOne("_1_DAL.Models.BanAn", "IdtableNavigation")
                         .WithMany("HoaDons")

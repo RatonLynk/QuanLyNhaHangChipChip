@@ -13,20 +13,15 @@ namespace _1_DAL.DALServices
     {
         DatabaseContext _dbContext = new DatabaseContext();
         List<HoaDon> _lstTables;
-
-        public HoaDonService()
-        {
-        }
-
-        public string AddHoaDon(HoaDon HoaDon)
+        public void AddHoaDon(HoaDon HoaDon)
         {
             _dbContext.HoaDons.Add(HoaDon);
-            return "Thêm thành công";
+            _dbContext.SaveChanges();
         }
-        public string UpdateHoaDon(HoaDon HoaDon)
+        public void UpdateHoaDon(HoaDon HoaDon)
         {
             _dbContext.HoaDons.Update(HoaDon);
-            return "Sửa thành công";
+            _dbContext.SaveChanges();
         }
         public string DeleteHoaDon(HoaDon HoaDon)
         {
@@ -42,5 +37,7 @@ namespace _1_DAL.DALServices
         {
             return _lstTables = _dbContext.HoaDons.ToList();
         }
+
+       
     }
 }
