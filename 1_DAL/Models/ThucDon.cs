@@ -11,7 +11,7 @@ namespace _1_DAL.Models
     [Table("ThucDon")]
     public partial class ThucDon
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("ID")]
         public int Id { get; set; }
         [Column("IDChiTiet")]

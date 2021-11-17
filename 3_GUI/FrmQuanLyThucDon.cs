@@ -284,7 +284,7 @@ namespace _3_GUI
             DialogResult dialog = MessageBox.Show("Xác nhận thêm?", "Xác nhận", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
             {
-                if (cbx_IngreName.SelectedIndex > 0 && cbx_RecipeName.SelectedIndex > 0)
+                if (cbx_IngreName.SelectedIndex > -1 && cbx_RecipeName.SelectedIndex > -1)
                 {
                     _recipe = new CongThuc();
                     _recipe.Id = _iQLMenuService.GetCongThucs().Count;
