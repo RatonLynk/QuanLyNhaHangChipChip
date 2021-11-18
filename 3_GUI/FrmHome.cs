@@ -27,20 +27,20 @@ namespace _3_GUI
         }
         private void Resetvalue()
         {
-            if (session == 1)
-            {
-                btnQuanLyNhanVien.Enabled = true;
-                if (dn.vaitro == 1)
-                {
-                    btnQuanLyNhanVien.Enabled = false;
-                }
+            //if (session == 1)
+            //{
+            //    btnQuanLyNhanVien.Enabled = true;
+            //    if (dn.vaitro == 1)
+            //    {
+            //        btnQuanLyNhanVien.Enabled = false;
+            //    }
 
-            }
-            else
-            {
-                btnQuanLyNhanVien.Enabled = false;
+            //}
+            //else
+            //{
+            //    btnQuanLyNhanVien.Enabled = false;
 
-            }
+            //}
         }
         private void timer_Tick(object sender, EventArgs e)
         {   
