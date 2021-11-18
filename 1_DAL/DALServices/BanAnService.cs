@@ -19,11 +19,10 @@ namespace _1_DAL.DALServices
             _dbContext.SaveChanges();
             return "Thêm thành công";
         }
-        public string UpdateBanAn(BanAn BanAn)
+        public void UpdateBanAn(BanAn BanAn)
         {
             _dbContext.BanAns.Update(BanAn);
-            _dbContext.SaveChanges();
-            return "Sửa thành công";
+            _dbContext.SaveChanges();            
         }
         public string DeleteBanAn(BanAn BanAn)
         {

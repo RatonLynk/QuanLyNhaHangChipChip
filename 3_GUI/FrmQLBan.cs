@@ -227,6 +227,10 @@ namespace _3_GUI
                     _hoadon.TotalMoney = 0;
                     _hoadon.IdnhanVien = null;
                     _qlHoaDon.AddHoaDon(_hoadon);
+                    BanAn ban = _qlBanAn.GetTablesFromDB().FirstOrDefault(c=>c.Id==_IdBan);
+                    ban.TinhTrang = 0;
+                    _qlBanAn.UpdateBanAn(ban);
+
                 }
                 else if (_qlBanAn.GetTablesFromDB().Where(c => c.Id == _IdBan).Select(c => c.TinhTrang).FirstOrDefault() == 0)
                 {
@@ -243,7 +247,6 @@ namespace _3_GUI
                 _qlHoaDon.AddHoaDonCT(hoaDonChiTiet);
 
                 _hoadon.TotalMoney += hoaDonChiTiet.Price;
-
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDon(_IdBan);
 

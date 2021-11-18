@@ -11,7 +11,7 @@ namespace _2_BUS.iBUSServices
     public interface IQLBanAnService
     {
         public string AddBanAn(BanAn BanAn);
-        public string UpdateBanAn(BanAn BanAn);
+        public void UpdateBanAn(BanAn BanAn);
         public string DeleteBanAn(BanAn BanAn);
         public List<BanAn> GetTablesFromDB();
         public string AddFloor(Floor Floor);
