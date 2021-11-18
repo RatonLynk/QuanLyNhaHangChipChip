@@ -10,8 +10,8 @@ using _1_DAL.Context;
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211116073949_xa")]
-    partial class xa
+    [Migration("20211116101204_1")]
+    partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -169,18 +169,18 @@ namespace _1_DAL.Migrations
                     b.Property<DateTime>("DateCheckOut")
                         .HasColumnType("date");
 
-                    b.Property<string>("IdnhanVien")
-                        .HasColumnType("nvarchar(450)")
+                    b.Property<int>("IdnhanVien")
+                        .HasColumnType("int")
                         .HasColumnName("IDNhanVien");
 
                     b.Property<int>("Idtable")
                         .HasColumnType("int")
                         .HasColumnName("IDtable");
 
-                    b.Property<bool?>("Status")
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("bit");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("TotalMoney")
                         .HasColumnType("money");
@@ -291,9 +291,11 @@ namespace _1_DAL.Migrations
 
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
-                    b.Property<string>("MaNv")
-                        .HasColumnType("nvarchar(450)")
-                        .HasColumnName("MaNV");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("ID")
+                        .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -306,9 +308,9 @@ namespace _1_DAL.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int")
-                        .HasColumnName("ID");
+                    b.Property<string>("MaNv")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("MaNV");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -334,7 +336,7 @@ namespace _1_DAL.Migrations
                     b.Property<bool?>("Status")
                         .HasColumnType("bit");
 
-                    b.HasKey("MaNv");
+                    b.HasKey("Id");
 
                     b.HasIndex("Role");
 
@@ -422,7 +424,8 @@ namespace _1_DAL.Migrations
                     b.HasOne("_1_DAL.Models.NhanVien", "IdnhanVienNavigation")
                         .WithMany("HoaDons")
                         .HasForeignKey("IdnhanVien")
-                        .HasConstraintName("FK_HoaDon_NhanVien");
+                        .HasConstraintName("FK_HoaDon_NhanVien")
+                        .IsRequired();
 
                     b.HasOne("_1_DAL.Models.BanAn", "IdtableNavigation")
                         .WithMany("HoaDons")

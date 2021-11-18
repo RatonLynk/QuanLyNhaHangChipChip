@@ -13,6 +13,11 @@ namespace _1_DAL.DALServices
     {
         DatabaseContext _dbContext = new DatabaseContext();
         List<NguyenLieu> _lstTables;
+
+        public NguyenLieuService()
+        {
+        }
+
         public string AddNguyenLieu(NguyenLieu NguyenLieu)
         {
             _dbContext.NguyenLieus.Add(NguyenLieu);

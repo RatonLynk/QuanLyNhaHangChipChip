@@ -399,7 +399,7 @@
             this.btnXoaCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnXoaCP.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaCP.Image")));
             this.btnXoaCP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaCP.Location = new System.Drawing.Point(1149, 265);
+            this.btnXoaCP.Location = new System.Drawing.Point(1134, 265);
             this.btnXoaCP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXoaCP.Name = "btnXoaCP";
             this.btnXoaCP.Size = new System.Drawing.Size(125, 49);
@@ -415,7 +415,7 @@
             this.btnThemCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemCP.Image = ((System.Drawing.Image)(resources.GetObject("btnThemCP.Image")));
             this.btnThemCP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemCP.Location = new System.Drawing.Point(895, 265);
+            this.btnThemCP.Location = new System.Drawing.Point(930, 265);
             this.btnThemCP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThemCP.Name = "btnThemCP";
             this.btnThemCP.Size = new System.Drawing.Size(125, 49);
@@ -500,10 +500,12 @@
             // 
             this.button1.BackgroundImage = global::_3_GUI.Properties.Resources.download;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(1310, 12);
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(1254, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(49, 49);
+            this.button1.Size = new System.Drawing.Size(67, 49);
             this.button1.TabIndex = 65;
+            this.button1.Text = "Reset";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -512,7 +514,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1380, 983);
+            this.ClientSize = new System.Drawing.Size(1359, 983);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_ConfigCat);
             this.Controls.Add(this.btn_ConfigMeth);

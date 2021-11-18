@@ -12,7 +12,7 @@ namespace _1_DAL.Models
     [Index(nameof(Idbill), Name = "IX_HoaDonChiTiet_IDBill")]
     public partial class HoaDonChiTiet
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("ID")]
         public int Id { get; set; }
         [Column("IDBill")]

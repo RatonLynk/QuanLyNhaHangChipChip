@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1_DAL.Migrations
 {
-    public partial class xa : Migration
+    public partial class _1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -149,8 +149,9 @@ namespace _1_DAL.Migrations
                 name: "NhanVien",
                 columns: table => new
                 {
-                    MaNV = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ID = table.Column<int>(type: "int", nullable: false),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MaNV = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
                     Password = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: false),
                     Role = table.Column<int>(type: "int", nullable: false),
@@ -162,7 +163,7 @@ namespace _1_DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_NhanVien", x => x.MaNV);
+                    table.PrimaryKey("PK_NhanVien", x => x.ID);
                     table.ForeignKey(
                         name: "FK_NhanVien_Roles",
                         column: x => x.Role,
@@ -226,9 +227,9 @@ namespace _1_DAL.Migrations
                     DateCheckIn = table.Column<DateTime>(type: "date", nullable: false),
                     DateCheckOut = table.Column<DateTime>(type: "date", nullable: false),
                     IDtable = table.Column<int>(type: "int", nullable: false),
-                    Status = table.Column<bool>(type: "bit", maxLength: 50, nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     TotalMoney = table.Column<decimal>(type: "money", nullable: false),
-                    IDNhanVien = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    IDNhanVien = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -243,7 +244,7 @@ namespace _1_DAL.Migrations
                         name: "FK_HoaDon_NhanVien",
                         column: x => x.IDNhanVien,
                         principalTable: "NhanVien",
-                        principalColumn: "MaNV",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
 

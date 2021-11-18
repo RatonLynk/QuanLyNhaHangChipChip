@@ -18,7 +18,7 @@ namespace _1_DAL.Models
             ThucDons = new HashSet<ThucDon>();
         }
 
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         [Required]
         [StringLength(50)]

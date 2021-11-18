@@ -225,7 +225,7 @@ namespace _3_GUI
                     _hoadon.Idtable = _IdBan;
                     _hoadon.Status = true;
                     _hoadon.TotalMoney = 0;
-                    _hoadon.IdnhanVien = null;
+                    _hoadon.IdnhanVien = 0;
                     _qlHoaDon.AddHoaDon(_hoadon);
                     BanAn ban = _qlBanAn.GetTablesFromDB().FirstOrDefault(c=>c.Id==_IdBan);
                     ban.TinhTrang = 0;

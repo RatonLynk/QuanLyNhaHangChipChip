@@ -16,7 +16,7 @@ namespace _1_DAL.Models
             BanAns = new HashSet<BanAn>();
         }
 
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Column("ID")]
         public int Id { get; set; }
         public string FloorNumber { get; set; }

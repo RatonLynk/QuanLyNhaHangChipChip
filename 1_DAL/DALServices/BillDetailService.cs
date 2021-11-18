@@ -13,6 +13,11 @@ namespace _1_DAL.DALServices
     {
         DatabaseContext _dbContext = new DatabaseContext();
         List<HoaDonChiTiet> _lstTables;
+
+        public BillDetailService()
+        {
+        }
+
         public string AddHoaDonChiTiet(HoaDonChiTiet HoaDonChiTiet)
         {
             _dbContext.HoaDonChiTiets.Add(HoaDonChiTiet);

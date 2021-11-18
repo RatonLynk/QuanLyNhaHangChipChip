@@ -31,7 +31,7 @@ namespace _1_DAL.Models
         [Column(TypeName = "money")]
         public decimal TotalMoney { get; set; }
         [Column("IDNhanVien")]
-        public string IdnhanVien { get; set; }
+        public int IdnhanVien { get; set; }
 
         [ForeignKey(nameof(IdnhanVien))]
         [InverseProperty(nameof(NhanVien.HoaDons))]

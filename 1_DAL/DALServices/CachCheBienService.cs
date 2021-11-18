@@ -13,6 +13,11 @@ namespace _1_DAL.DALServices
     {
         DatabaseContext _dbContext = new DatabaseContext();
         List<CachCheBien> _lstTables;
+
+        public CachCheBienService()
+        {
+        }
+
         public string AddCachCheBien(CachCheBien CachCheBien)
         {
             _dbContext.CachCheBiens.Add(CachCheBien);

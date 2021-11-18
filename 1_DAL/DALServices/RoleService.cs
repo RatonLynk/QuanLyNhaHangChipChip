@@ -14,6 +14,10 @@ namespace _1_DAL.DALServices
         private DatabaseContext _dbConText = new DatabaseContext();
         private List<Role> _lstRoles;
 
+        public RoleService()
+        {
+        }
+
         public string AddRole(Role role)
         {
             _dbConText.Roles.Add(role);
