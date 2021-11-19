@@ -428,7 +428,7 @@ namespace _3_GUI
             // chk_nam
             // 
             this.chk_nam.AutoSize = true;
-            this.chk_nam.Location = new System.Drawing.Point(618, 53);
+            this.chk_nam.Location = new System.Drawing.Point(619, 53);
             this.chk_nam.Name = "chk_nam";
             this.chk_nam.Size = new System.Drawing.Size(52, 19);
             this.chk_nam.TabIndex = 134;
@@ -438,7 +438,7 @@ namespace _3_GUI
             // chk_nu
             // 
             this.chk_nu.AutoSize = true;
-            this.chk_nu.Location = new System.Drawing.Point(746, 51);
+            this.chk_nu.Location = new System.Drawing.Point(737, 53);
             this.chk_nu.Name = "chk_nu";
             this.chk_nu.Size = new System.Drawing.Size(42, 19);
             this.chk_nu.TabIndex = 135;

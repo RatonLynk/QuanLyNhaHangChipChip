@@ -167,8 +167,8 @@ namespace _1_DAL.Migrations
                     b.Property<DateTime>("DateCheckOut")
                         .HasColumnType("date");
 
-                    b.Property<string>("IdnhanVien")
-                        .HasColumnType("nvarchar(450)")
+                    b.Property<int>("IdnhanVien")
+                        .HasColumnType("int")
                         .HasColumnName("IDNhanVien");
 
                     b.Property<int>("Idtable")
@@ -290,7 +290,6 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
                     b.Property<int>("Id")
-                        .IsRequired()
                         .HasColumnType("int")
                         .HasColumnName("ID");
 
@@ -421,7 +420,8 @@ namespace _1_DAL.Migrations
                     b.HasOne("_1_DAL.Models.NhanVien", "IdnhanVienNavigation")
                         .WithMany("HoaDons")
                         .HasForeignKey("IdnhanVien")
-                        .HasConstraintName("FK_HoaDon_NhanVien");
+                        .HasConstraintName("FK_HoaDon_NhanVien")
+                        .IsRequired();
 
                     b.HasOne("_1_DAL.Models.BanAn", "IdtableNavigation")
                         .WithMany("HoaDons")

@@ -10,8 +10,8 @@ using _1_DAL.Context;
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211116101204_1")]
-    partial class _1
+    [Migration("20211117142620_QLNHCC")]
+    partial class QLNHCC
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -177,10 +177,10 @@ namespace _1_DAL.Migrations
                         .HasColumnType("int")
                         .HasColumnName("IDtable");
 
-                    b.Property<string>("Status")
+                    b.Property<bool?>("Status")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("TotalMoney")
                         .HasColumnType("money");
@@ -292,10 +292,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<string>("Address")
                         .IsRequired()
