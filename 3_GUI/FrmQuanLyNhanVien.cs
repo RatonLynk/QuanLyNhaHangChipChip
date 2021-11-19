@@ -69,7 +69,7 @@ namespace _3_GUI
             NhanVien.MaNv = "NV" + NhanVien.Id.ToString();
             NhanVien.Name =  txt_TenNV.Text;
             NhanVien.Email = txtEmail.Text;
-            NhanVien.Role = (byte)(chk_quanLi.Checked ? 1 : 0);
+            NhanVien.Role = (byte)(chk_quanLi.Checked ? 1 : 2);
             NhanVien.Address = txt_DiaChiNV.Text;
             NhanVien.PhoneNo = txt_SDT.Text;
             NhanVien.Status = Convert.ToBoolean(rbtnHDnhanvien.Checked ? true : false);
@@ -133,7 +133,7 @@ namespace _3_GUI
             nhanVien.Name = txt_TenNV.Text;
             nhanVien.Email = txtEmail.Text;
             nhanVien.Password = _utilities.GetHash(txtMatKhau.Text);
-            nhanVien.Role = (int)(chk_nhanVien.Checked ? 1 : 0);
+            nhanVien.Role = (int)(chk_nhanVien.Checked ? 1 : 2);
             nhanVien.Address = txt_DiaChiNV.Text;
             nhanVien.PhoneNo = txt_SDT.Text;
             nhanVien.PhoneNo = txt_SDT.Text;

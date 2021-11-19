@@ -55,7 +55,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(277, 37);
             this.txtUsername.TabIndex = 1;
-            this.txtUsername.Text = "phonglvph16158@fpt.edu.vn";
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
