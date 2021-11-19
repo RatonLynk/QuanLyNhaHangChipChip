@@ -10,7 +10,7 @@ namespace _1_DAL.iDALServices
     public interface iBanAnService
     {
         public string AddBanAn(BanAn BanAn);
-        public string UpdateBanAn(BanAn BanAn);
+        public void UpdateBanAn(BanAn BanAn);
         public string DeleteBanAn(BanAn BanAn);
         public List<BanAn> GetTablesFromDB();
     }

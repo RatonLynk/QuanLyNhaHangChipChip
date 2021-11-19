@@ -98,10 +98,12 @@ namespace _3_GUI
             // 
             // Dgid_HoaDon
             // 
+            this.Dgid_HoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgid_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgid_HoaDon.Location = new System.Drawing.Point(5, 22);
             this.Dgid_HoaDon.Name = "Dgid_HoaDon";
             this.Dgid_HoaDon.RowTemplate.Height = 25;
+            this.Dgid_HoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgid_HoaDon.Size = new System.Drawing.Size(293, 116);
             this.Dgid_HoaDon.TabIndex = 23;
             // 
