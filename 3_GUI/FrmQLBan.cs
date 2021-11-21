@@ -11,6 +11,8 @@ using _2_BUS.BUSServices;
 using _2_BUS.iBUSServices;
 using _1_DAL.Models;
 using _2_BUS.Models;
+using System.Drawing.Imaging;
+using _3_GUI.Properties;
 
 namespace _3_GUI
 {
@@ -43,6 +45,7 @@ namespace _3_GUI
             foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
+                //btn.Image = Resources.download;
                 btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
                 btn.Click += Btn_Click;
                 btn.Tag = x;
@@ -77,6 +80,7 @@ namespace _3_GUI
             {
                 Button btn1 = new Button() { Width = x.Rong, Height = x.Cao };
                 btn1.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
+                
                 btn1.Click += Btn1_Click;
                 btn1.Tag = x;
                 switch (x.TinhTrang)
@@ -115,7 +119,7 @@ namespace _3_GUI
             Dgid_HoaDon.Columns[1].Name = "Số lượng";
             Dgid_HoaDon.Columns[2].Name = "Đơn giá";
             Dgid_HoaDon.Columns[3].Name = "thành tiền";
-            Dgid_HoaDon.Rows.Add(Xoa);            
+            Dgid_HoaDon.Columns.Add(Xoa); 
             Dgid_HoaDon.Rows.Clear();
             foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == bill && c.hoaDon.Status == true))
             {
@@ -214,7 +218,12 @@ namespace _3_GUI
             if ((rowIndex == _qlMeniu.GetMonAnChiTiets().Count) || rowIndex == -1) return;
             int idFood = _qlMeniu.GetMonAnChiTiets().Where(c => c.Name == Dgid_Meniu.Rows[rowIndex].Cells[0].Value.ToString()).Select(c => c.Id).FirstOrDefault();
             if (e.ColumnIndex == Dgid_Meniu.Columns["Them"].Index)
-            {                
+            {
+                if (Dgid_Meniu.Rows[rowIndex].Cells[2].Value.ToString()==null)
+                {
+                    MessageBox.Show("Bạn không được để số lượng trống", "Thông báo");
+                    return;
+                }
                 _soLuong =Convert.ToInt32(Dgid_Meniu.Rows[rowIndex].Cells[2].Value.ToString());
                 if (_qlBanAn.GetTablesFromDB().Where(c => c.Id == _IdBan).Select(c => c.TinhTrang).FirstOrDefault() == 1)
                 {
@@ -225,11 +234,12 @@ namespace _3_GUI
                     _hoadon.Idtable = _IdBan;
                     _hoadon.Status = true;
                     _hoadon.TotalMoney = 0;
-                    _hoadon.IdnhanVien = 0;
+                    _hoadon.IdnhanVien = 1;
                     _qlHoaDon.AddHoaDon(_hoadon);
                     BanAn ban = _qlBanAn.GetTablesFromDB().FirstOrDefault(c=>c.Id==_IdBan);
                     ban.TinhTrang = 0;
                     _qlBanAn.UpdateBanAn(ban);
+                    LoadHoaDon(_IdBan);
 
                 }
                 else if (_qlBanAn.GetTablesFromDB().Where(c => c.Id == _IdBan).Select(c => c.TinhTrang).FirstOrDefault() == 0)
@@ -252,6 +262,11 @@ namespace _3_GUI
 
 
             }
+        }
+
+        private void Tp_Tang1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

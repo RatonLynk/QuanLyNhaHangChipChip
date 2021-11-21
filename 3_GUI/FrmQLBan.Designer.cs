@@ -355,6 +355,7 @@ namespace _3_GUI
             this.Tp_Tang1.TabIndex = 0;
             this.Tp_Tang1.Text = "Tầng 1";
             this.Tp_Tang1.UseVisualStyleBackColor = true;
+            this.Tp_Tang1.Click += new System.EventHandler(this.Tp_Tang1_Click);
             // 
             // FLPenal
             // 

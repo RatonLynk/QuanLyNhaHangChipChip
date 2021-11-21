@@ -10,8 +10,8 @@ using _1_DAL.Context;
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211116101204_1")]
-    partial class _1
+    [Migration("20211121033927_12")]
+    partial class _12
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -169,18 +169,30 @@ namespace _1_DAL.Migrations
                     b.Property<DateTime>("DateCheckOut")
                         .HasColumnType("date");
 
+                    b.Property<string>("DiaChi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DichVu")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GhiChu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("IdnhanVien")
                         .HasColumnType("int")
                         .HasColumnName("IDNhanVien");
 
-                    b.Property<int>("Idtable")
+                    b.Property<int?>("Idtable")
                         .HasColumnType("int")
                         .HasColumnName("IDtable");
 
-                    b.Property<string>("Status")
+                    b.Property<string>("SoDT")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("Status")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("TotalMoney")
                         .HasColumnType("money");
@@ -292,10 +304,8 @@ namespace _1_DAL.Migrations
             modelBuilder.Entity("_1_DAL.Models.NhanVien", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID")
-                        .UseIdentityColumn();
+                        .HasColumnName("ID");
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -430,8 +440,7 @@ namespace _1_DAL.Migrations
                     b.HasOne("_1_DAL.Models.BanAn", "IdtableNavigation")
                         .WithMany("HoaDons")
                         .HasForeignKey("Idtable")
-                        .HasConstraintName("FK_HoaDon_BanAn")
-                        .IsRequired();
+                        .HasConstraintName("FK_HoaDon_BanAn");
 
                     b.Navigation("IdnhanVienNavigation");
 
