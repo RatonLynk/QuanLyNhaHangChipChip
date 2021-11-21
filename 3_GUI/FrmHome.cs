@@ -18,34 +18,30 @@ namespace _3_GUI
         string ten;
         public static int session = 0;
         public static string mail;
-        //FrmLogin dn;
+        FrmLogin dn;
         public FrmHome()
         {
             InitializeComponent();
             lblChao.Text = ten;
            
-        }     
-        //private void Resetvalue()
-        //{
-        //    if (session == 1)
-        //    {
-                
-           
+        }
+        private void Resetvalue()
+        {
+            if (session == 1)
+            {
+                btnQuanLyNhanVien.Enabled = true;
+                if (dn.vaitro == 2)
+                {
+                    btnQuanLyNhanVien.Enabled = false;
+                }
 
-        //        btnQuanLyNhanVien.Enabled = true;
-        //        if (dn.vaitro== false)
-        //        {
-        //            btnQuanLyNhanVien.Enabled = false;
-        //        }
+            }
+            else
+            {
+                btnQuanLyNhanVien.Enabled = false;
 
-
-        //    }
-        //    else
-        //    {
-        //        btnQuanLyNhanVien.Enabled = false;
-          
-        //    }
-        //}
+            }
+        }
         private void timer_Tick(object sender, EventArgs e)
         {   
             labGio.Text = DateTime.Now.ToString("HH:mm");
@@ -94,7 +90,7 @@ namespace _3_GUI
         {
             labNgayGio.Text = DateTime.Now.ToString("dd/MM/yyyy");
             lblChao.Text = " Chào: " + FrmHome.mail;
-            //Resetvalue();
+            Resetvalue();
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
@@ -107,6 +103,23 @@ namespace _3_GUI
         {
             FrmQLBan a = new FrmQLBan();
             a.ShowDialog();
+        }
+
+        
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult dlr = MessageBox.Show("Bạn có muốn thoát  không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
+        }
+
+        private void btnTienIch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
