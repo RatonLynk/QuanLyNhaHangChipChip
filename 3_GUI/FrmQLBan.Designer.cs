@@ -62,10 +62,14 @@ namespace _3_GUI
             this.Btn_ThemBanT1 = new System.Windows.Forms.Button();
             this.Btn_XoaBanT1 = new System.Windows.Forms.Button();
             this.Tp_Tang2 = new System.Windows.Forms.TabPage();
+            this.Btn_ThemBanT2 = new System.Windows.Forms.Button();
             this.FlPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.Btn_XoaBanT2 = new System.Windows.Forms.Button();
-            this.Btn_ThemBanT2 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Btn_MangVe = new System.Windows.Forms.Button();
+            this.FlPanl_MangVe = new System.Windows.Forms.FlowLayoutPanel();
+            this.Btn_ThanhToan = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -75,11 +79,12 @@ namespace _3_GUI
             this.tabControl1.SuspendLayout();
             this.Tp_Tang1.SuspendLayout();
             this.Tp_Tang2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Btn_TrangChu
             // 
-            this.Btn_TrangChu.Location = new System.Drawing.Point(18, 477);
+            this.Btn_TrangChu.Location = new System.Drawing.Point(18, 683);
             this.Btn_TrangChu.Name = "Btn_TrangChu";
             this.Btn_TrangChu.Size = new System.Drawing.Size(75, 40);
             this.Btn_TrangChu.TabIndex = 1;
@@ -89,9 +94,9 @@ namespace _3_GUI
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.Dgid_HoaDon);
-            this.groupBox2.Location = new System.Drawing.Point(240, 173);
+            this.groupBox2.Location = new System.Drawing.Point(398, 174);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(303, 144);
+            this.groupBox2.Size = new System.Drawing.Size(510, 283);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách món đã gọi";
@@ -104,7 +109,7 @@ namespace _3_GUI
             this.Dgid_HoaDon.Name = "Dgid_HoaDon";
             this.Dgid_HoaDon.RowTemplate.Height = 25;
             this.Dgid_HoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgid_HoaDon.Size = new System.Drawing.Size(293, 116);
+            this.Dgid_HoaDon.Size = new System.Drawing.Size(499, 255);
             this.Dgid_HoaDon.TabIndex = 23;
             // 
             // groupBox3
@@ -120,7 +125,7 @@ namespace _3_GUI
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(240, 27);
+            this.groupBox3.Location = new System.Drawing.Point(502, 28);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(303, 140);
             this.groupBox3.TabIndex = 21;
@@ -186,7 +191,7 @@ namespace _3_GUI
             // Btn_ChuyenBan
             // 
             this.Btn_ChuyenBan.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btn_ChuyenBan.Location = new System.Drawing.Point(7, 111);
+            this.Btn_ChuyenBan.Location = new System.Drawing.Point(20, 111);
             this.Btn_ChuyenBan.Name = "Btn_ChuyenBan";
             this.Btn_ChuyenBan.Size = new System.Drawing.Size(87, 23);
             this.Btn_ChuyenBan.TabIndex = 23;
@@ -234,16 +239,16 @@ namespace _3_GUI
             // 
             this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Controls.Add(this.Dgid_Meniu);
-            this.groupBox4.Location = new System.Drawing.Point(549, 27);
+            this.groupBox4.Location = new System.Drawing.Point(914, 28);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(430, 429);
+            this.groupBox4.Size = new System.Drawing.Size(369, 429);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Menu";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(324, 15);
+            this.textBox1.Location = new System.Drawing.Point(259, 18);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 1;
@@ -256,7 +261,7 @@ namespace _3_GUI
             this.Dgid_Meniu.Name = "Dgid_Meniu";
             this.Dgid_Meniu.RowTemplate.Height = 25;
             this.Dgid_Meniu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgid_Meniu.Size = new System.Drawing.Size(418, 376);
+            this.Dgid_Meniu.Size = new System.Drawing.Size(353, 376);
             this.Dgid_Meniu.TabIndex = 0;
             this.Dgid_Meniu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgid_Meniu_CellClick);
             // 
@@ -269,7 +274,7 @@ namespace _3_GUI
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Location = new System.Drawing.Point(245, 317);
+            this.groupBox5.Location = new System.Drawing.Point(609, 477);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(299, 139);
             this.groupBox5.TabIndex = 23;
@@ -340,7 +345,7 @@ namespace _3_GUI
             this.tabControl1.Location = new System.Drawing.Point(18, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(221, 428);
+            this.tabControl1.Size = new System.Drawing.Size(374, 434);
             this.tabControl1.TabIndex = 24;
             // 
             // Tp_Tang1
@@ -351,7 +356,7 @@ namespace _3_GUI
             this.Tp_Tang1.Location = new System.Drawing.Point(4, 24);
             this.Tp_Tang1.Name = "Tp_Tang1";
             this.Tp_Tang1.Padding = new System.Windows.Forms.Padding(3);
-            this.Tp_Tang1.Size = new System.Drawing.Size(213, 400);
+            this.Tp_Tang1.Size = new System.Drawing.Size(366, 406);
             this.Tp_Tang1.TabIndex = 0;
             this.Tp_Tang1.Text = "Tầng 1";
             this.Tp_Tang1.UseVisualStyleBackColor = true;
@@ -361,13 +366,13 @@ namespace _3_GUI
             // 
             this.FLPenal.Location = new System.Drawing.Point(7, 7);
             this.FLPenal.Name = "FLPenal";
-            this.FLPenal.Size = new System.Drawing.Size(200, 358);
+            this.FLPenal.Size = new System.Drawing.Size(353, 363);
             this.FLPenal.TabIndex = 29;
             // 
             // Btn_ThemBanT1
             // 
             this.Btn_ThemBanT1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btn_ThemBanT1.Location = new System.Drawing.Point(51, 371);
+            this.Btn_ThemBanT1.Location = new System.Drawing.Point(202, 376);
             this.Btn_ThemBanT1.Name = "Btn_ThemBanT1";
             this.Btn_ThemBanT1.Size = new System.Drawing.Size(75, 23);
             this.Btn_ThemBanT1.TabIndex = 28;
@@ -378,7 +383,7 @@ namespace _3_GUI
             // Btn_XoaBanT1
             // 
             this.Btn_XoaBanT1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btn_XoaBanT1.Location = new System.Drawing.Point(132, 371);
+            this.Btn_XoaBanT1.Location = new System.Drawing.Point(285, 376);
             this.Btn_XoaBanT1.Name = "Btn_XoaBanT1";
             this.Btn_XoaBanT1.Size = new System.Drawing.Size(75, 23);
             this.Btn_XoaBanT1.TabIndex = 27;
@@ -388,28 +393,38 @@ namespace _3_GUI
             // 
             // Tp_Tang2
             // 
+            this.Tp_Tang2.Controls.Add(this.Btn_ThemBanT2);
             this.Tp_Tang2.Controls.Add(this.FlPanel2);
             this.Tp_Tang2.Controls.Add(this.Btn_XoaBanT2);
-            this.Tp_Tang2.Controls.Add(this.Btn_ThemBanT2);
             this.Tp_Tang2.Location = new System.Drawing.Point(4, 24);
             this.Tp_Tang2.Name = "Tp_Tang2";
             this.Tp_Tang2.Padding = new System.Windows.Forms.Padding(3);
-            this.Tp_Tang2.Size = new System.Drawing.Size(213, 400);
+            this.Tp_Tang2.Size = new System.Drawing.Size(366, 406);
             this.Tp_Tang2.TabIndex = 1;
             this.Tp_Tang2.Text = "Tầng 2";
             this.Tp_Tang2.UseVisualStyleBackColor = true;
+            // 
+            // Btn_ThemBanT2
+            // 
+            this.Btn_ThemBanT2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_ThemBanT2.Location = new System.Drawing.Point(204, 376);
+            this.Btn_ThemBanT2.Name = "Btn_ThemBanT2";
+            this.Btn_ThemBanT2.Size = new System.Drawing.Size(75, 23);
+            this.Btn_ThemBanT2.TabIndex = 29;
+            this.Btn_ThemBanT2.Text = "Thêm bàn";
+            this.Btn_ThemBanT2.UseVisualStyleBackColor = false;
             // 
             // FlPanel2
             // 
             this.FlPanel2.Location = new System.Drawing.Point(6, 7);
             this.FlPanel2.Name = "FlPanel2";
-            this.FlPanel2.Size = new System.Drawing.Size(201, 358);
+            this.FlPanel2.Size = new System.Drawing.Size(354, 363);
             this.FlPanel2.TabIndex = 36;
             // 
             // Btn_XoaBanT2
             // 
             this.Btn_XoaBanT2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btn_XoaBanT2.Location = new System.Drawing.Point(131, 371);
+            this.Btn_XoaBanT2.Location = new System.Drawing.Point(288, 376);
             this.Btn_XoaBanT2.Name = "Btn_XoaBanT2";
             this.Btn_XoaBanT2.Size = new System.Drawing.Size(75, 23);
             this.Btn_XoaBanT2.TabIndex = 35;
@@ -417,27 +432,55 @@ namespace _3_GUI
             this.Btn_XoaBanT2.UseVisualStyleBackColor = false;
             this.Btn_XoaBanT2.Click += new System.EventHandler(this.Btn_XoaBanT2_Click);
             // 
-            // Btn_ThemBanT2
-            // 
-            this.Btn_ThemBanT2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btn_ThemBanT2.Location = new System.Drawing.Point(50, 371);
-            this.Btn_ThemBanT2.Name = "Btn_ThemBanT2";
-            this.Btn_ThemBanT2.Size = new System.Drawing.Size(75, 23);
-            this.Btn_ThemBanT2.TabIndex = 34;
-            this.Btn_ThemBanT2.Text = "Thêm bàn";
-            this.Btn_ThemBanT2.UseVisualStyleBackColor = false;
-            this.Btn_ThemBanT2.Click += new System.EventHandler(this.Btn_ThemBanT2_Click);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Btn_MangVe);
+            this.groupBox1.Controls.Add(this.FlPanl_MangVe);
+            this.groupBox1.Location = new System.Drawing.Point(18, 468);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(578, 209);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Đơn mang về";
+            // 
+            // Btn_MangVe
+            // 
+            this.Btn_MangVe.Location = new System.Drawing.Point(475, 180);
+            this.Btn_MangVe.Name = "Btn_MangVe";
+            this.Btn_MangVe.Size = new System.Drawing.Size(97, 23);
+            this.Btn_MangVe.TabIndex = 0;
+            this.Btn_MangVe.Text = "Thêm mang về";
+            this.Btn_MangVe.UseVisualStyleBackColor = true;
+            this.Btn_MangVe.Click += new System.EventHandler(this.Btn_MangVe_Click);
+            // 
+            // FlPanl_MangVe
+            // 
+            this.FlPanl_MangVe.Location = new System.Drawing.Point(7, 23);
+            this.FlPanl_MangVe.Name = "FlPanl_MangVe";
+            this.FlPanl_MangVe.Size = new System.Drawing.Size(565, 152);
+            this.FlPanl_MangVe.TabIndex = 0;
+            // 
+            // Btn_ThanhToan
+            // 
+            this.Btn_ThanhToan.Location = new System.Drawing.Point(1154, 658);
+            this.Btn_ThanhToan.Name = "Btn_ThanhToan";
+            this.Btn_ThanhToan.Size = new System.Drawing.Size(119, 65);
+            this.Btn_ThanhToan.TabIndex = 26;
+            this.Btn_ThanhToan.Text = "Thanh Toán";
+            this.Btn_ThanhToan.UseVisualStyleBackColor = true;
+            // 
             // FrmQLBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 529);
+            this.ClientSize = new System.Drawing.Size(1285, 735);
+            this.Controls.Add(this.Btn_ThanhToan);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -446,6 +489,7 @@ namespace _3_GUI
             this.Controls.Add(this.Btn_TrangChu);
             this.Name = "FrmQLBan";
             this.Text = "Chuyển bàn";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -458,6 +502,7 @@ namespace _3_GUI
             this.tabControl1.ResumeLayout(false);
             this.Tp_Tang1.ResumeLayout(false);
             this.Tp_Tang2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -489,15 +534,19 @@ namespace _3_GUI
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Tp_Tang1;
         private System.Windows.Forms.TabPage Tp_Tang2;
-        private System.Windows.Forms.Button Btn_XoaBanT1;
-        private System.Windows.Forms.Button Btn_ThemBanT2;
         private System.Windows.Forms.Button Btn_ThemBanT1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button Btn_XoaBanT2;
         private System.Windows.Forms.FlowLayoutPanel FLPenal;
         private System.Windows.Forms.FlowLayoutPanel FlPanel2;
         private System.Windows.Forms.Label Lbl_GioRa;
         private System.Windows.Forms.Label Lbl_GioVao;
         private System.Windows.Forms.Label Lbl_ViTriBan;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.FlowLayoutPanel FlPanl_MangVe;
+        private System.Windows.Forms.Button Btn_ThanhToan;
+        private System.Windows.Forms.Button Btn_XoaBanT1;
+        private System.Windows.Forms.Button Btn_ThemBanT2;
+        private System.Windows.Forms.Button Btn_XoaBanT2;
+        private System.Windows.Forms.Button Btn_MangVe;
     }
 }
