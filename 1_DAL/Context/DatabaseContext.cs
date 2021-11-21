@@ -20,14 +20,12 @@ namespace _1_DAL.Context
 
         public virtual DbSet<BanAn> BanAns { get; set; }
         public virtual DbSet<CachCheBien> CachCheBiens { get; set; }
-        public virtual DbSet<CongThuc> CongThucs { get; set; }
         public virtual DbSet<DanhMucFood> DanhMucFoods { get; set; }
         public virtual DbSet<DonVi> DonVis { get; set; }
         public virtual DbSet<Floor> Floors { get; set; }
         public virtual DbSet<HoaDon> HoaDons { get; set; }
         public virtual DbSet<HoaDonChiTiet> HoaDonChiTiets { get; set; }
         public virtual DbSet<MonAnChiTiet> MonAnChiTiets { get; set; }
-        public virtual DbSet<NguyenLieu> NguyenLieus { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<ThucDon> ThucDons { get; set; }
@@ -113,7 +111,7 @@ namespace _1_DAL.Context
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
-                entity.Property(e => e.Anh).IsUnicode(false);
+                entity.Property(e => e.GhiChu).IsUnicode(false);
 
                 entity.HasOne(d => d.IdcategoryNavigation)
                     .WithMany(p => p.MonAnChiTiets)
@@ -136,7 +134,7 @@ namespace _1_DAL.Context
 
             modelBuilder.Entity<NhanVien>(entity =>
             {
-                entity.Property(e => e.MaNv).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Email).IsUnicode(false);
 

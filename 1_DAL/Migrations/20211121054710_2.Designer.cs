@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1_DAL.Context;
 
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20211121054710_2")]
+    partial class _2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -143,20 +145,11 @@ namespace _1_DAL.Migrations
                     b.Property<DateTime>("DateCheckOut")
                         .HasColumnType("date");
 
-                    b.Property<string>("DiaChi")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("DichVu")
-                        .HasColumnType("int");
-
-                    b.Property<string>("GhiChu")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IdnhanVien")
                         .HasColumnType("int")
                         .HasColumnName("IDNhanVien");
 
-                    b.Property<int?>("Idtable")
+                    b.Property<int>("Idtable")
                         .HasColumnType("int")
                         .HasColumnName("IDtable");
 
@@ -368,7 +361,8 @@ namespace _1_DAL.Migrations
                     b.HasOne("_1_DAL.Models.BanAn", "IdtableNavigation")
                         .WithMany("HoaDons")
                         .HasForeignKey("Idtable")
-                        .HasConstraintName("FK_HoaDon_BanAn");
+                        .HasConstraintName("FK_HoaDon_BanAn")
+                        .IsRequired();
 
                     b.Navigation("IdnhanVienNavigation");
 

@@ -16,7 +16,7 @@ namespace _1_DAL.Models
             MonAnChiTiets = new HashSet<MonAnChiTiet>();
         }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         [Column("ID")]
         public int Id { get; set; }
         [Required]

@@ -19,12 +19,10 @@ namespace _2_BUS.Utilities
         private iCachChebienService _iCachChebienService = new CachCheBienService();
         private IThucDonService _iThucDonService = new ThucDonService();
         private iDMFoodService _iDMFoodService = new DMFoodService();
-        private iNguyenLieuService _iNguyenLieuService = new NguyenLieuService();
         private DonVi _donVi;
         private DanhMucFood _dmFood;
         private CachCheBien _cachCB;
         private MonAnChiTiet _item;
-        private NguyenLieu _ingre;
         //public static bool CheckListEmpty(List<T> list)
         //{
         //    if (list is null){
@@ -53,11 +51,7 @@ namespace _2_BUS.Utilities
             _item = _iMonAnChiTietService.GetDetailsFromDB().Where(c => c.Name == Name).FirstOrDefault();
             return _item.Id;
         }
-        public int GetNLID(string name)
-        {
-            _ingre = _iNguyenLieuService.GetIngredientsFromDB().Where(c => c.Name == name).FirstOrDefault();
-            return _ingre.Id;
-        }
+
         public string GetMethodName(int Id)
         {
             _cachCB = _iCachChebienService.GetMethodsFromDB().Where(c => c.Id == Id).FirstOrDefault();
@@ -78,11 +72,7 @@ namespace _2_BUS.Utilities
             _item = _iMonAnChiTietService.GetDetailsFromDB().Where(c => c.Id == Id).FirstOrDefault();
             return _item.Name;
         }
-        public string GetNLName(int Id)
-        {
-            _ingre = _iNguyenLieuService.GetIngredientsFromDB().Where(c => c.Id == Id).FirstOrDefault();
-            return _ingre.Name;
-        }
+
 
         public string GetHash(string plainText)
         {

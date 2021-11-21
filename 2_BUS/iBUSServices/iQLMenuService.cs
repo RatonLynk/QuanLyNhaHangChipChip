@@ -15,22 +15,19 @@ namespace _2_BUS.iBUSServices
         public bool AddUnit(DonVi unit);
         public bool AddCategory(DanhMucFood cat);
         public bool AddMethod(CachCheBien method);
-        public bool AddIngre(NguyenLieu ingre);
-        public bool AddRecipe(CongThuc recipe);
+
         public bool UpdateItem(ThucDon food);
         public bool UpdateDetail(MonAnChiTiet food);
         public bool UpdateUnit(DonVi unit);
         public bool UpdateCategory(DanhMucFood cat);
         public bool UpdateMethod(CachCheBien method);
-        public bool UpdateIngre(NguyenLieu ingre);
-        public bool UpdateRecipe(CongThuc recipe);
+
         public bool DeleteItem(ThucDon food);
         public bool DeleteDetail(MonAnChiTiet food);
         public bool DeleteUnit(DonVi unit);
         public bool DeleteCategory(DanhMucFood cat);
         public bool DeleteMethod(CachCheBien method);
-        public bool DeleteIngre(NguyenLieu ingre);
-        public bool DeleteRecipe(CongThuc recipe);
+
         public List<MonAnChiTiet> GetMonAnChiTiets();
         public List<DonVi> GetDonVis();
         public List<DanhMucFood> GetDanhMucFoods();
@@ -38,8 +35,7 @@ namespace _2_BUS.iBUSServices
         public List<ViewMenu> TimKiem(string str);
         public List<CachCheBien> GetCachCheBiens();
         public List<ThucDon> GetThucDons();
-        public List<NguyenLieu> GetNguyenLieus();
-        public List<CongThuc> GetCongThucs();
-        public List<ViewMenu> GetViewCongThuc();
+
+
     }
 }

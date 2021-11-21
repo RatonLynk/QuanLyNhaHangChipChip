@@ -9,9 +9,10 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("ThucDon")]
+    [Index(nameof(IdchiTiet), Name = "IX_ThucDon_IDChiTiet")]
     public partial class ThucDon
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         [Column("ID")]
         public int Id { get; set; }
         [Column("IDChiTiet")]
@@ -20,7 +21,6 @@ namespace _1_DAL.Models
         [StringLength(100)]
         public string Name { get; set; }
         [Column(TypeName = "money")]
-        public decimal Price { get; set; }
         public bool? Status { get; set; }
 
         [ForeignKey(nameof(IdchiTiet))]
