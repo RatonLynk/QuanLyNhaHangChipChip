@@ -341,7 +341,7 @@ namespace _3_GUI
             hoaDon.DateCheckIn = DateTime.Now;
             hoaDon.DateCheckOut = DateTime.Now;
             hoaDon.Id=(_qlHoaDon.GetBillsFromDB().Count())+1;
-            hoaDon.Idtable = null;
+            hoaDon.Idtable = 1;
             hoaDon.IdnhanVien = 1;
             hoaDon.SoDT = null;
             hoaDon.Status = true;
