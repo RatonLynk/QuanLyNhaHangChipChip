@@ -21,8 +21,8 @@ namespace _3_GUI
     {
         private Utilities uti;
         private IQLNhanVienService _qlnv;
-        //public bool vaitro { get; set; }
-        //public Role role;
+        public int vaitro { get; set; }
+        public NhanVien nhanVien;
         string userName = "";
         string passWord = "";
         public FrmLogin()
@@ -30,7 +30,7 @@ namespace _3_GUI
             _qlnv = new QLNhanVienService();
             uti = new Utilities();
             InitializeComponent();
-            //role = new Role();
+            nhanVien = new NhanVien();
         }
 
         
@@ -179,7 +179,7 @@ namespace _3_GUI
                 FrmHome.mail = txtUsername.Text;
                 FrmDoiMatKhau.passcu = txtPassWord.Text;
                 FrmHome.session = 1;
-                //vaitro = role.Status;
+                vaitro = nhanVien.Role;
                 this.Hide();
                 FrmHome frmHome = new FrmHome();
                

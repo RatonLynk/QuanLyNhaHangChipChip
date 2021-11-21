@@ -74,9 +74,9 @@ namespace _2_BUS.BUSServices
         //    return bananlist;
         //}
 
-        public string UpdateBanAn(BanAn BanAn)
+        public void UpdateBanAn(BanAn BanAn)
         {
-            return _Ba.UpdateBanAn(BanAn);
+             _Ba.UpdateBanAn(BanAn);
         }
 
         public string UpdateFloor(Floor Floor)

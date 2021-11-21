@@ -38,6 +38,6 @@ namespace _1_DAL.DALServices
             return _lstTables = _dbContext.HoaDons.ToList();
         }
 
-       
+        
     }
 }
