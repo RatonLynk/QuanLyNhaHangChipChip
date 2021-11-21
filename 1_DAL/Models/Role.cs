@@ -15,7 +15,7 @@ namespace _1_DAL.Models
             NhanViens = new HashSet<NhanVien>();
         }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         [Column("ID")]
         public int Id { get; set; }
         [Required]

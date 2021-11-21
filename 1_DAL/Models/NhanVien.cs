@@ -9,14 +9,15 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("NhanVien")]
+    [Index(nameof(Role), Name = "IX_NhanVien_Role")]
     public partial class NhanVien
     {
         public NhanVien()
         {
             HoaDons = new HashSet<HoaDon>();
         }
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
 
+        [Key]
         [Column("ID")]
         public int Id { get; set; }
         [Column("MaNV")]

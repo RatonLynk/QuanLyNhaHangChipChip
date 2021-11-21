@@ -18,8 +18,6 @@ namespace _2_BUS.BUSServices
         private iCachChebienService _iCachChebienService;
         private IThucDonService _iThucDonService;
         private iDMFoodService _iDMFoodService;
-        private iCongThucService _iCongThucService;
-        private iNguyenLieuService _iNguyenLieuService;
         private List<MonAnChiTiet> _lstMonAnCT;
         private List<ThucDon> _lstMenu;
         private List<DonVi> _lstDonVi;
@@ -34,8 +32,7 @@ namespace _2_BUS.BUSServices
             _iThucDonService = new ThucDonService();
             _iCachChebienService = new CachCheBienService();
             _iDMFoodService = new DMFoodService();
-            _iNguyenLieuService = new NguyenLieuService();
-            _iCongThucService = new CongThucService();
+
         }
         public bool AddCategory(DanhMucFood cat)
         {
@@ -52,12 +49,7 @@ namespace _2_BUS.BUSServices
             return true;
         }
 
-        public bool AddIngre(NguyenLieu ingre)
-        {
-            _iNguyenLieuService.AddNguyenLieu(ingre);
-            _iNguyenLieuService.SaveNguyenLieu();
-            return true;
-        }
+
 
         public bool AddItem(ThucDon food)
         {
@@ -73,12 +65,7 @@ namespace _2_BUS.BUSServices
             return true;
         }
 
-        public bool AddRecipe(CongThuc recipe)
-        {
-            _iCongThucService.AddCongThuc(recipe);
-            _iCongThucService.SaveCongThuc();
-            return true;
-        }
+
 
         public bool AddUnit(DonVi unit)
         {
@@ -104,12 +91,7 @@ namespace _2_BUS.BUSServices
             return true;
         }
 
-        public bool DeleteIngre(NguyenLieu ingre)
-        {
-            _iNguyenLieuService.DeleteNguyenLieu(ingre);
-            _iNguyenLieuService.SaveNguyenLieu();
-            return true;
-        }
+
 
         public bool DeleteItem(ThucDon food)
         {
@@ -125,12 +107,7 @@ namespace _2_BUS.BUSServices
             return true;
         }
 
-        public bool DeleteRecipe(CongThuc recipe)
-        {
-            _iCongThucService.DeleteCongThuc(recipe);
-            _iCongThucService.SaveCongThuc();
-            return true;
-        }
+
 
         public bool DeleteUnit(DonVi unit)
         {
@@ -144,10 +121,7 @@ namespace _2_BUS.BUSServices
             return _iCachChebienService.GetMethodsFromDB();
         }
 
-        public List<CongThuc> GetCongThucs()
-        {
-            return _iCongThucService.GetRecipesFromDB();
-        }
+
 
         public List<DanhMucFood> GetDanhMucFoods()
         {
@@ -164,28 +138,14 @@ namespace _2_BUS.BUSServices
             return _iMonAnChiTietService.GetDetailsFromDB();
         }
 
-        public List<NguyenLieu> GetNguyenLieus()
-        {
-            return _iNguyenLieuService.GetIngredientsFromDB();
-        }
+
 
         public List<ThucDon> GetThucDons()
         {
             return _iThucDonService.GetThucDonFromDB();
         }
 
-        public List<ViewMenu> GetViewCongThuc()
-        {
-            return _viewMenus = (from a in _iMonAnChiTietService.GetDetailsFromDB()
-                                 join e in _iCongThucService.GetRecipesFromDB() on a.Id equals e.IdMon
-                                 join f in _iNguyenLieuService.GetIngredientsFromDB() on e.IdNguyenLieu equals f.Id
-                                 select new ViewMenu()
-                                 {
-                                     details = a,
-                                     recipe = e,
-                                     ingre = f
-                                 }).ToList();
-        }
+
 
         public List<ViewMenu> GetViewMenus()
         {
@@ -247,20 +207,7 @@ namespace _2_BUS.BUSServices
             }
         }
 
-        public bool UpdateIngre(NguyenLieu ingre)
-        {
-            try
-            {
-                _iNguyenLieuService.UpdateNguyenLieu(ingre);
-                _iNguyenLieuService.SaveNguyenLieu();
-                return true;
-            }
-            catch (Exception)
-            {
 
-                return false;
-            }
-        }
 
         public bool UpdateItem(ThucDon food)
         {
@@ -292,20 +239,7 @@ namespace _2_BUS.BUSServices
             }
         }
 
-        public bool UpdateRecipe(CongThuc recipe)
-        {
-            try
-            {
-                _iCongThucService.UpdateCongThuc(recipe);
-                _iCongThucService.SaveCongThuc();
-                return true;
-            }
-            catch (Exception)
-            {
 
-                return false;
-            }
-        }
 
         public bool UpdateUnit(DonVi unit)
         {

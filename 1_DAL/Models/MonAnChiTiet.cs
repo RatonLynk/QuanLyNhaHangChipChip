@@ -9,16 +9,18 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("MonAnChiTiet")]
+    [Index(nameof(Idcategory), Name = "IX_MonAnChiTiet_IDCategory")]
+    [Index(nameof(Idmethod), Name = "IX_MonAnChiTiet_IDMethod")]
+    [Index(nameof(Idunit), Name = "IX_MonAnChiTiet_IDUnit")]
     public partial class MonAnChiTiet
     {
         public MonAnChiTiet()
         {
-            CongThucs = new HashSet<CongThuc>();
             HoaDonChiTiets = new HashSet<HoaDonChiTiet>();
             ThucDons = new HashSet<ThucDon>();
         }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int Id { get; set; }
         [Required]
         [StringLength(50)]
@@ -33,7 +35,7 @@ namespace _1_DAL.Models
         public int Idmethod { get; set; }
         public int? Status { get; set; }
         [StringLength(500)]
-        public string Anh { get; set; }
+        public string GhiChu { get; set; }
 
         [ForeignKey(nameof(Idcategory))]
         [InverseProperty(nameof(DanhMucFood.MonAnChiTiets))]
@@ -44,8 +46,6 @@ namespace _1_DAL.Models
         [ForeignKey(nameof(Idunit))]
         [InverseProperty(nameof(DonVi.MonAnChiTiets))]
         public virtual DonVi IdunitNavigation { get; set; }
-        [InverseProperty(nameof(CongThuc.IdMonNavigation))]
-        public virtual ICollection<CongThuc> CongThucs { get; set; }
         [InverseProperty(nameof(HoaDonChiTiet.IdfoodNavigation))]
         public virtual ICollection<HoaDonChiTiet> HoaDonChiTiets { get; set; }
         [InverseProperty(nameof(ThucDon.IdchiTietNavigation))]

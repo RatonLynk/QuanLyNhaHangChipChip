@@ -60,19 +60,6 @@ namespace _1_DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "NguyenLieu",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    Status = table.Column<bool>(type: "bit", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_NguyenLieu", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
                 {
@@ -96,7 +83,7 @@ namespace _1_DAL.Migrations
                     IDCategory = table.Column<int>(type: "int", nullable: false),
                     IDMethod = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: true),
-                    Anh = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true)
+                    GhiChu = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -149,8 +136,7 @@ namespace _1_DAL.Migrations
                 name: "NhanVien",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ID = table.Column<int>(type: "int", nullable: false),
                     MaNV = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
                     Password = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: false),
@@ -173,40 +159,13 @@ namespace _1_DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CongThuc",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false),
-                    IdMon = table.Column<int>(type: "int", nullable: false),
-                    IdNguyenLieu = table.Column<int>(type: "int", nullable: false),
-                    Status = table.Column<bool>(type: "bit", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CongThuc", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_CongThuc_MonAnChiTiet_IdMon",
-                        column: x => x.IdMon,
-                        principalTable: "MonAnChiTiet",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CongThuc_NguyenLieu_IdNguyenLieu",
-                        column: x => x.IdNguyenLieu,
-                        principalTable: "NguyenLieu",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ThucDon",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false),
                     IDChiTiet = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Price = table.Column<decimal>(type: "money", nullable: false),
-                    Status = table.Column<bool>(type: "bit", nullable: true)
+                    Status = table.Column<decimal>(type: "money", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -227,7 +186,7 @@ namespace _1_DAL.Migrations
                     DateCheckIn = table.Column<DateTime>(type: "date", nullable: false),
                     DateCheckOut = table.Column<DateTime>(type: "date", nullable: false),
                     IDtable = table.Column<int>(type: "int", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Status = table.Column<bool>(type: "bit", maxLength: 50, nullable: false),
                     TotalMoney = table.Column<decimal>(type: "money", nullable: false),
                     IDNhanVien = table.Column<int>(type: "int", nullable: false)
                 },
@@ -282,16 +241,6 @@ namespace _1_DAL.Migrations
                 column: "Floor");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CongThuc_IdMon",
-                table: "CongThuc",
-                column: "IdMon");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CongThuc_IdNguyenLieu",
-                table: "CongThuc",
-                column: "IdNguyenLieu");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_HoaDon_IDNhanVien",
                 table: "HoaDon",
                 column: "IDNhanVien");
@@ -340,16 +289,10 @@ namespace _1_DAL.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CongThuc");
-
-            migrationBuilder.DropTable(
                 name: "HoaDonChiTiet");
 
             migrationBuilder.DropTable(
                 name: "ThucDon");
-
-            migrationBuilder.DropTable(
-                name: "NguyenLieu");
 
             migrationBuilder.DropTable(
                 name: "HoaDon");

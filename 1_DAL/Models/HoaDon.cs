@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("HoaDon")]
+    [Index(nameof(IdnhanVien), Name = "IX_HoaDon_IDNhanVien")]
+    [Index(nameof(Idtable), Name = "IX_HoaDon_IDtable")]
     public partial class HoaDon
     {
         public HoaDon()
@@ -25,9 +27,7 @@ namespace _1_DAL.Models
         public DateTime DateCheckOut { get; set; }
         [Column("IDtable")]
         public int Idtable { get; set; }
-        [Required]
-        [StringLength(50)]
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
         [Column(TypeName = "money")]
         public decimal TotalMoney { get; set; }
         [Column("IDNhanVien")]

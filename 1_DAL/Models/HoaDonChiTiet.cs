@@ -10,9 +10,10 @@ namespace _1_DAL.Models
 {
     [Table("HoaDonChiTiet")]
     [Index(nameof(Idbill), Name = "IX_HoaDonChiTiet_IDBill")]
+    [Index(nameof(Idfood), Name = "IX_HoaDonChiTiet_IDFood")]
     public partial class HoaDonChiTiet
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         [Column("ID")]
         public int Id { get; set; }
         [Column("IDBill")]

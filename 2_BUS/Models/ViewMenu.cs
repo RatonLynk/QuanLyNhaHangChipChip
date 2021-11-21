@@ -13,7 +13,6 @@ namespace _2_BUS.Models
         public DonVi unit { get; set; }
         public CachCheBien method { get; set; }
         public DanhMucFood cat { get; set; }
-        public NguyenLieu ingre { get; set; }
-        public CongThuc recipe { get; set; }
+
     }
 }

@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace _1_DAL.Models
 {
     [Table("BanAn")]
+    [Index(nameof(Floor), Name = "IX_BanAn_Floor")]
     public partial class BanAn
     {
         public BanAn()
@@ -16,7 +17,7 @@ namespace _1_DAL.Models
             HoaDons = new HashSet<HoaDon>();
         }
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         [Column("ID")]
         public int Id { get; set; }
         [Required]

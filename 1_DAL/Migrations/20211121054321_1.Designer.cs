@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _1_DAL.Context;
 
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20211121054321_1")]
+    partial class _1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,7 +54,7 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Floor" }, "IX_BanAn_Floor");
+                    b.HasIndex("Floor");
 
                     b.ToTable("BanAn");
                 });
@@ -151,7 +153,9 @@ namespace _1_DAL.Migrations
                         .HasColumnType("int")
                         .HasColumnName("IDtable");
 
-                    b.Property<bool>("Status")
+                    b.Property<bool?>("Status")
+                        .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("bit");
 
                     b.Property<decimal>("TotalMoney")
@@ -159,9 +163,9 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "IdnhanVien" }, "IX_HoaDon_IDNhanVien");
+                    b.HasIndex("IdnhanVien");
 
-                    b.HasIndex(new[] { "Idtable" }, "IX_HoaDon_IDtable");
+                    b.HasIndex("Idtable");
 
                     b.ToTable("HoaDon");
                 });
@@ -191,9 +195,9 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Idbill" }, "IX_HoaDonChiTiet_IDBill");
+                    b.HasIndex("Idfood");
 
-                    b.HasIndex(new[] { "Idfood" }, "IX_HoaDonChiTiet_IDFood");
+                    b.HasIndex(new[] { "Idbill" }, "IX_HoaDonChiTiet_IDBill");
 
                     b.ToTable("HoaDonChiTiet");
                 });
@@ -233,11 +237,11 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Idcategory" }, "IX_MonAnChiTiet_IDCategory");
+                    b.HasIndex("Idcategory");
 
-                    b.HasIndex(new[] { "Idmethod" }, "IX_MonAnChiTiet_IDMethod");
+                    b.HasIndex("Idmethod");
 
-                    b.HasIndex(new[] { "Idunit" }, "IX_MonAnChiTiet_IDUnit");
+                    b.HasIndex("Idunit");
 
                     b.ToTable("MonAnChiTiet");
                 });
@@ -289,7 +293,7 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "Role" }, "IX_NhanVien_Role");
+                    b.HasIndex("Role");
 
                     b.ToTable("NhanVien");
                 });
@@ -333,7 +337,7 @@ namespace _1_DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "IdchiTiet" }, "IX_ThucDon_IDChiTiet");
+                    b.HasIndex("IdchiTiet");
 
                     b.ToTable("ThucDon");
                 });
