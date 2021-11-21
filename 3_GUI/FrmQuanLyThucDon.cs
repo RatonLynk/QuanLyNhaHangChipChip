@@ -94,6 +94,7 @@ namespace _3_GUI
                     _monCT.Idcategory = _utilities.GetCategoryID(cbx_Cat.SelectedItem.ToString());
                     _monCT.Idmethod = _utilities.GetMethodID(cbx_Meth.SelectedItem.ToString());
                     _monCT.Price = txt_Price.Value;
+                    _monCT.GhiChu = txt_GC.Text;
                     _item.Id = _monCT.Id;
                     _item.Name = _monCT.Name;
                     if (rbtn_HDthucdon.Checked)
@@ -150,6 +151,7 @@ namespace _3_GUI
                     _monCT.Idcategory = _utilities.GetCategoryID(cbx_Cat.Text);
                     _monCT.Idmethod = _utilities.GetMethodID(cbx_Meth.Text);
                     _monCT.Price = txt_Price.Value;
+                    _monCT.GhiChu = txt_GC.Text;
                     _item.Id = _monCT.Id;
                     _item.Name = _monCT.Name;
                     _iQLMenuService.UpdateDetail(_monCT);
@@ -186,6 +188,7 @@ namespace _3_GUI
                 cbx_Unit.Text = _utilities.GetDonViName(_monCT.Idunit);
                 cbx_Cat.Text = _utilities.GetCategoryName(_monCT.Idcategory);
                 cbx_Meth.Text = _utilities.GetMethodName(_monCT.Idmethod);
+                txt_GC.Text = _monCT.GhiChu;
                 txt_Price.Value = 0;
                 if (_monCT.Status == 1)
                 {
@@ -261,7 +264,18 @@ namespace _3_GUI
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void cbx_Unit_DropDown(object sender, EventArgs e)
+        {
+            FrmQuanLyThucDon_Load();
+        }
+
+        private void cbx_Meth_DropDown(object sender, EventArgs e)
+        {
+            FrmQuanLyThucDon_Load();
+        }
+
+        private void cbx_Cat_DropDown(object sender, EventArgs e)
         {
             FrmQuanLyThucDon_Load();
         }
