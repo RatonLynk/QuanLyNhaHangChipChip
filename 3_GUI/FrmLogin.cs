@@ -37,7 +37,7 @@ namespace _3_GUI
       
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            FrmHome.session = 0;
+           
             txtUsername.Text = "User Name";
             txtUsername.ForeColor = Color.Gray;
 
@@ -176,15 +176,12 @@ namespace _3_GUI
             {
                 var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text);
                 MessageBox.Show("Đăng nhập thành công ", "Thông báo");
-                FrmHome.mail = txtUsername.Text;
-                FrmDoiMatKhau.passcu = txtPassWord.Text;
-                FrmHome.session = 1;
-                vaitro = nhanVien.Role;
+                FrmMain.mail = txtUsername.Text;
+                FrmDoiMatKhau.passcu = txtPassWord.Text;      
                 this.Hide();
-                FrmHome frmHome = new FrmHome();
-               
+                FrmMain frmMain = new FrmMain();              
                 /*frmHome.manv(Convert.ToString(nv1.MaNv),nv1.Name);*///truy xuất được mã nv khi đăng nhập
-                frmHome.ShowDialog();
+                frmMain.ShowDialog();
                 this.Close();
 
             } else
