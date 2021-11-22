@@ -43,8 +43,8 @@ namespace _3_GUI
                 else
                 {
 
-                _nv = _qlnv.getlstNhanViens().Where(c => c.Email == FrmHome.mail).FirstOrDefault();
-                _nv = QMK.nhanViens(FrmHome.mail);
+                _nv = _qlnv.getlstNhanViens().Where(c => c.Email == FrmMain.mail).FirstOrDefault();
+                _nv = QMK.nhanViens(FrmMain.mail);
                 _nv.Password = txtNewPass.Text;         
                 MessageBox.Show(QMK.UpdatePass(_nv), "Thông báo", MessageBoxButtons.OK);
                 this.Close();
