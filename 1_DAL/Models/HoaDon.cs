@@ -32,6 +32,10 @@ namespace _1_DAL.Models
         public decimal TotalMoney { get; set; }
         [Column("IDNhanVien")]
         public int IdnhanVien { get; set; }
+        public string? SoDT { get; set; }
+        public string? DiaChi { get; set; }
+        public int? DichVu { get; set; }
+        public string? GhiChu { get; set; }
 
         [ForeignKey(nameof(IdnhanVien))]
         [InverseProperty(nameof(NhanVien.HoaDons))]
