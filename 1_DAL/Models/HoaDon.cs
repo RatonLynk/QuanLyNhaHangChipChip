@@ -21,12 +21,13 @@ namespace _1_DAL.Models
         [Key]
         [Column("ID")]
         public int Id { get; set; }
-        [Column(TypeName = "date")]
+        [Column(TypeName = "datetime")]
         public DateTime DateCheckIn { get; set; }
-        [Column(TypeName = "date")]
+        [Column(TypeName = "datetime")]
         public DateTime DateCheckOut { get; set; }
         [Column("IDtable")]
         public int Idtable { get; set; }
+        //á
         public bool Status { get; set; }
         [Column(TypeName = "money")]
         public decimal TotalMoney { get; set; }

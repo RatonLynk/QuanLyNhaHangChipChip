@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1_DAL.Migrations
 {
-    public partial class abc : Migration
+    public partial class ga : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -183,8 +183,8 @@ namespace _1_DAL.Migrations
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false),
-                    DateCheckIn = table.Column<DateTime>(type: "date", nullable: false),
-                    DateCheckOut = table.Column<DateTime>(type: "date", nullable: false),
+                    DateCheckIn = table.Column<DateTime>(type: "datetime", nullable: false),
+                    DateCheckOut = table.Column<DateTime>(type: "datetime", nullable: false),
                     IDtable = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
                     TotalMoney = table.Column<decimal>(type: "money", nullable: false),
