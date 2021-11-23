@@ -42,12 +42,12 @@ namespace _3_GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.lblChao = new System.Windows.Forms.Label();
             this.bntMinimize = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCloseChillForm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblChao = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
@@ -74,8 +74,8 @@ namespace _3_GUI
             this.btnPhucVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPhucVu.Location = new System.Drawing.Point(0, 121);
             this.btnPhucVu.Name = "btnPhucVu";
-            this.btnPhucVu.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnPhucVu.Size = new System.Drawing.Size(361, 98);
+            this.btnPhucVu.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnPhucVu.Size = new System.Drawing.Size(361, 113);
             this.btnPhucVu.TabIndex = 1;
             this.btnPhucVu.Text = "     Phục vụ khách hàng";
             this.btnPhucVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -91,9 +91,9 @@ namespace _3_GUI
             this.btnQuanLyThucDon.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyThucDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyThucDon.Image")));
             this.btnQuanLyThucDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyThucDon.Location = new System.Drawing.Point(0, 219);
+            this.btnQuanLyThucDon.Location = new System.Drawing.Point(0, 234);
             this.btnQuanLyThucDon.Name = "btnQuanLyThucDon";
-            this.btnQuanLyThucDon.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnQuanLyThucDon.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnQuanLyThucDon.Size = new System.Drawing.Size(361, 122);
             this.btnQuanLyThucDon.TabIndex = 2;
             this.btnQuanLyThucDon.Text = "    Quản lý thực đơn";
@@ -110,9 +110,9 @@ namespace _3_GUI
             this.btnQuanLyHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyHoaDon.Image")));
             this.btnQuanLyHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(0, 341);
+            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(0, 356);
             this.btnQuanLyHoaDon.Name = "btnQuanLyHoaDon";
-            this.btnQuanLyHoaDon.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnQuanLyHoaDon.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnQuanLyHoaDon.Size = new System.Drawing.Size(361, 130);
             this.btnQuanLyHoaDon.TabIndex = 3;
             this.btnQuanLyHoaDon.Text = "    Quản lý hóa đơn";
@@ -129,9 +129,9 @@ namespace _3_GUI
             this.btnQuanLyNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyNhanVien.Image")));
             this.btnQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 471);
+            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 486);
             this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
-            this.btnQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnQuanLyNhanVien.Size = new System.Drawing.Size(361, 122);
             this.btnQuanLyNhanVien.TabIndex = 4;
             this.btnQuanLyNhanVien.Text = "    Quản lý nhân viên";
@@ -148,10 +148,10 @@ namespace _3_GUI
             this.btnTienIch.ForeColor = System.Drawing.Color.White;
             this.btnTienIch.Image = ((System.Drawing.Image)(resources.GetObject("btnTienIch.Image")));
             this.btnTienIch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTienIch.Location = new System.Drawing.Point(0, 593);
+            this.btnTienIch.Location = new System.Drawing.Point(0, 608);
             this.btnTienIch.Name = "btnTienIch";
-            this.btnTienIch.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnTienIch.Size = new System.Drawing.Size(361, 122);
+            this.btnTienIch.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnTienIch.Size = new System.Drawing.Size(361, 116);
             this.btnTienIch.TabIndex = 5;
             this.btnTienIch.Text = "    Tiện ích";
             this.btnTienIch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -160,16 +160,17 @@ namespace _3_GUI
             // 
             // btnThoat
             // 
+            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(0, 688);
+            this.btnThoat.Location = new System.Drawing.Point(0, 724);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnThoat.Size = new System.Drawing.Size(360, 125);
+            this.btnThoat.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnThoat.Size = new System.Drawing.Size(361, 103);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "    Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -189,7 +190,7 @@ namespace _3_GUI
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(361, 816);
+            this.panelMenu.Size = new System.Drawing.Size(361, 836);
             this.panelMenu.TabIndex = 0;
             // 
             // panelLogo
@@ -229,7 +230,6 @@ namespace _3_GUI
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.Teal;
-            this.panelTitleBar.Controls.Add(this.lblChao);
             this.panelTitleBar.Controls.Add(this.bntMinimize);
             this.panelTitleBar.Controls.Add(this.btnMaximize);
             this.panelTitleBar.Controls.Add(this.btnClose);
@@ -241,16 +241,6 @@ namespace _3_GUI
             this.panelTitleBar.Size = new System.Drawing.Size(1154, 121);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
-            // 
-            // lblChao
-            // 
-            this.lblChao.AutoSize = true;
-            this.lblChao.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblChao.Location = new System.Drawing.Point(890, 89);
-            this.lblChao.Name = "lblChao";
-            this.lblChao.Size = new System.Drawing.Size(82, 20);
-            this.lblChao.TabIndex = 7;
-            this.lblChao.Text = "Chào bạn:";
             // 
             // bntMinimize
             // 
@@ -316,15 +306,26 @@ namespace _3_GUI
             this.label1.TabIndex = 0;
             this.label1.Text = "HOME";
             // 
+            // lblChao
+            // 
+            this.lblChao.AutoSize = true;
+            this.lblChao.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblChao.Location = new System.Drawing.Point(876, 8);
+            this.lblChao.Name = "lblChao";
+            this.lblChao.Size = new System.Drawing.Size(82, 20);
+            this.lblChao.TabIndex = 7;
+            this.lblChao.Text = "Chào bạn:";
+            // 
             // panelDesktopPane
             // 
+            this.panelDesktopPane.Controls.Add(this.lblChao);
             this.panelDesktopPane.Controls.Add(this.btnDoiMatKhau);
             this.panelDesktopPane.Controls.Add(this.btnDangXuat);
             this.panelDesktopPane.Controls.Add(this.panel1);
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(361, 121);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1154, 695);
+            this.panelDesktopPane.Size = new System.Drawing.Size(1154, 715);
             this.panelDesktopPane.TabIndex = 2;
             // 
             // btnDoiMatKhau
@@ -337,7 +338,7 @@ namespace _3_GUI
             this.btnDoiMatKhau.ForeColor = System.Drawing.Color.Black;
             this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(988, 66);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(988, 129);
             this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(5);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.Size = new System.Drawing.Size(154, 47);
@@ -357,7 +358,7 @@ namespace _3_GUI
             this.btnDangXuat.ForeColor = System.Drawing.Color.Black;
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(1009, 8);
+            this.btnDangXuat.Location = new System.Drawing.Point(1007, 71);
             this.btnDangXuat.Margin = new System.Windows.Forms.Padding(5);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(133, 48);
@@ -369,7 +370,7 @@ namespace _3_GUI
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Plum;
+            this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labGio);
             this.panel1.Controls.Add(this.label4);
@@ -423,7 +424,7 @@ namespace _3_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1515, 816);
+            this.ClientSize = new System.Drawing.Size(1515, 836);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
@@ -440,6 +441,7 @@ namespace _3_GUI
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelDesktopPane.ResumeLayout(false);
+            this.panelDesktopPane.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
