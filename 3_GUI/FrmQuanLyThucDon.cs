@@ -90,9 +90,9 @@ namespace _3_GUI
                     _item = new ThucDon();
                     _monCT.Id = _iQLMenuService.GetMonAnChiTiets().Count;
                     _monCT.Name = txtTenMonAn.Text;
-                    _monCT.Idunit = _utilities.GetDonViID(cbx_Unit.SelectedItem.ToString());
-                    _monCT.Idcategory = _utilities.GetCategoryID(cbx_Cat.SelectedItem.ToString());
-                    _monCT.Idmethod = _utilities.GetMethodID(cbx_Meth.SelectedItem.ToString());
+                    _monCT.Idunit = _utilities.GetDonViID(cbx_Unit.Text);
+                    _monCT.Idcategory = _utilities.GetCategoryID(cbx_Cat.Text);
+                    _monCT.Idmethod = _utilities.GetMethodID(cbx_Meth.Text);
                     _monCT.Price = txt_Price.Value;
                     _monCT.GhiChu = txt_GC.Text;
                     _item.Id = _monCT.Id;
@@ -189,7 +189,7 @@ namespace _3_GUI
                 cbx_Cat.Text = _utilities.GetCategoryName(_monCT.Idcategory);
                 cbx_Meth.Text = _utilities.GetMethodName(_monCT.Idmethod);
                 txt_GC.Text = _monCT.GhiChu;
-                txt_Price.Value = 0;
+                txt_Price.Value = _monCT.Price;
                 if (_monCT.Status == 1)
                 {
                     rbtn_HDthucdon.Checked = true; 
