@@ -52,39 +52,60 @@ namespace _3_GUI
         }
         private void dgrid_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int rowindex = e.RowIndex;
-            txtMaNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[9].Value.ToString();
-            txt_TenNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[1].Value.ToString();
-            txtEmail.Text = dgrid_NhanVien.Rows[rowindex].Cells[2].Value.ToString();
-            txtMatKhau.Text = _utilities.GetHash(dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString());
-            txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
-            txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[7].Value.ToString();
-            var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == txtMaNV.Text).FirstOrDefault();
-            if (nv.Role == 0)
+            var index = e.RowIndex;
+            if (index == _iQlNhanVienService.getlstNhanViens().Count || index == -1)
             {
-                chk_quanLi.Checked = true;
-            }
-            else
-            {
+                txtMaNV.Text = null;
+                txt_TenNV.Text = null;
+                txtEmail.Text = null;
+                txtMatKhau.Text = null;
+                txt_SDT.Text = null;
+                txt_DiaChiNV.Text = null;
+                chk_quanLi.Checked = false;
                 chk_nhanVien.Checked = false;
-            }
-
-            if (nv.Sex == true)
-            {
-                chk_nam.Checked = true;
-            }
-            else
-            {
+                chk_nam.Checked = false;
                 chk_nu.Checked = false;
-            }
+                rbtnHDnhanvien.Checked = false;
 
-            if (nv.Status == true)
-            {
-                rbtnHDnhanvien.Checked = true;
+                rbtnKHDnhanvien.Checked = false;
+                return;
             }
             else
             {
-                rbtnKHDnhanvien.Checked = true;
+                int rowindex = e.RowIndex;
+                txtMaNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[9].Value.ToString();
+                txt_TenNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[1].Value.ToString();
+                txtEmail.Text = dgrid_NhanVien.Rows[rowindex].Cells[2].Value.ToString();
+                txtMatKhau.Text = _utilities.GetHash(dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString());
+                txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
+                txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[7].Value.ToString();
+                var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == txtMaNV.Text).FirstOrDefault();
+                if (nv.Role == 0)
+                {
+                    chk_quanLi.Checked = true;
+                }
+                else
+                {
+                    chk_nhanVien.Checked = true;
+                }
+
+                if (nv.Sex == true)
+                {
+                    chk_nam.Checked = true;
+                }
+                else
+                {
+                    chk_nu.Checked = true;
+                }
+
+                if (nv.Status == true)
+                {
+                    rbtnHDnhanvien.Checked = true;
+                }
+                else
+                {
+                    rbtnKHDnhanvien.Checked = true;
+                }
             }
         }
 

@@ -51,7 +51,6 @@ namespace _3_GUI
                 dgvMonAn.Rows.Add(x.details.Id,x.details.Name, x.details.Price, x.cat.Name, x.method.Name, x.unit.Name, x.details.Status == 1 ? "Đang bán" : "Dừng bán");
             }
 
-            this.dgvMonAn.ClearSelection();
             LoadCBox();
         }
 

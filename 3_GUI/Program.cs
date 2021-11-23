@@ -18,7 +18,7 @@ namespace _3_GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new FrmQuanLyThucDon());
+            Application.Run(new FrmMain());
 
 
 

@@ -129,7 +129,7 @@
             this.dgvMonAn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonAn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvMonAn.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvMonAn.GridColor = System.Drawing.Color.White;
             this.dgvMonAn.Location = new System.Drawing.Point(433, 44);
             this.dgvMonAn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvMonAn.MultiSelect = false;
@@ -420,7 +420,7 @@
             this.Controls.Add(this.btnXoaMon);
             this.Controls.Add(this.btnSuaMon);
             this.Controls.Add(this.btnThemMon);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmQuanLyThucDon";
