@@ -30,7 +30,6 @@ namespace _3_GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Btn_TrangChu = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Dgid_HoaDon = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -81,16 +80,6 @@ namespace _3_GUI
             this.Tp_Tang2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Btn_TrangChu
-            // 
-            this.Btn_TrangChu.Location = new System.Drawing.Point(21, 911);
-            this.Btn_TrangChu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Btn_TrangChu.Name = "Btn_TrangChu";
-            this.Btn_TrangChu.Size = new System.Drawing.Size(86, 53);
-            this.Btn_TrangChu.TabIndex = 1;
-            this.Btn_TrangChu.Text = "Trang chủ";
-            this.Btn_TrangChu.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -272,7 +261,7 @@ namespace _3_GUI
             // 
             this.Dgid_Meniu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgid_Meniu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgid_Meniu.Location = new System.Drawing.Point(7, 63);
+            this.Dgid_Meniu.Location = new System.Drawing.Point(13, 74);
             this.Dgid_Meniu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Dgid_Meniu.Name = "Dgid_Meniu";
             this.Dgid_Meniu.RowHeadersWidth = 51;
@@ -291,7 +280,7 @@ namespace _3_GUI
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Location = new System.Drawing.Point(696, 636);
+            this.groupBox5.Location = new System.Drawing.Point(689, 31);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -474,18 +463,19 @@ namespace _3_GUI
             // 
             this.groupBox1.Controls.Add(this.Btn_MangVe);
             this.groupBox1.Controls.Add(this.FlPanl_MangVe);
-            this.groupBox1.Location = new System.Drawing.Point(21, 624);
+            this.groupBox1.Controls.Add(this.groupBox5);
+            this.groupBox1.Location = new System.Drawing.Point(21, 617);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(661, 279);
+            this.groupBox1.Size = new System.Drawing.Size(1046, 257);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đơn mang về";
             // 
             // Btn_MangVe
             // 
-            this.Btn_MangVe.Location = new System.Drawing.Point(543, 240);
+            this.Btn_MangVe.Location = new System.Drawing.Point(543, 205);
             this.Btn_MangVe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_MangVe.Name = "Btn_MangVe";
             this.Btn_MangVe.Size = new System.Drawing.Size(111, 31);
@@ -499,12 +489,12 @@ namespace _3_GUI
             this.FlPanl_MangVe.Location = new System.Drawing.Point(8, 31);
             this.FlPanl_MangVe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FlPanl_MangVe.Name = "FlPanl_MangVe";
-            this.FlPanl_MangVe.Size = new System.Drawing.Size(646, 203);
+            this.FlPanl_MangVe.Size = new System.Drawing.Size(646, 166);
             this.FlPanl_MangVe.TabIndex = 0;
             // 
             // Btn_ThanhToan
             // 
-            this.Btn_ThanhToan.Location = new System.Drawing.Point(1319, 877);
+            this.Btn_ThanhToan.Location = new System.Drawing.Point(1299, 655);
             this.Btn_ThanhToan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_ThanhToan.Name = "Btn_ThanhToan";
             this.Btn_ThanhToan.Size = new System.Drawing.Size(136, 87);
@@ -520,13 +510,12 @@ namespace _3_GUI
             this.Controls.Add(this.Btn_ThanhToan);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.Btn_TrangChu);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmQLBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chuyển bàn";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).EndInit();
@@ -546,7 +535,6 @@ namespace _3_GUI
         }
 
         #endregion
-        private System.Windows.Forms.Button Btn_TrangChu;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView Dgid_HoaDon;
         private System.Windows.Forms.GroupBox groupBox3;

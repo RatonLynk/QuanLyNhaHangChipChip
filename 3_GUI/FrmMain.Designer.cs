@@ -156,7 +156,6 @@ namespace _3_GUI
             this.btnTienIch.Text = "    Tiện ích";
             this.btnTienIch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTienIch.UseVisualStyleBackColor = true;
-            //this.btnTienIch.Click += new System.EventHandler(this.btnTienIch_Click);
             // 
             // btnThoat
             // 
@@ -308,15 +307,17 @@ namespace _3_GUI
             // 
             // lblChao
             // 
+            this.lblChao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblChao.AutoSize = true;
             this.lblChao.BackColor = System.Drawing.Color.Teal;
             this.lblChao.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblChao.ForeColor = System.Drawing.Color.White;
-            this.lblChao.Location = new System.Drawing.Point(876, 8);
+            this.lblChao.Location = new System.Drawing.Point(897, 8);
             this.lblChao.Name = "lblChao";
             this.lblChao.Size = new System.Drawing.Size(82, 20);
             this.lblChao.TabIndex = 7;
             this.lblChao.Text = "Chào bạn:";
+            this.lblChao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelDesktopPane
             // 

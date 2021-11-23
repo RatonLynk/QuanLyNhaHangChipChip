@@ -50,7 +50,7 @@ namespace _3_GUI
             // rbtn_KHDCachchebien
             // 
             this.rbtn_KHDCachchebien.AutoSize = true;
-            this.rbtn_KHDCachchebien.Location = new System.Drawing.Point(445, 213);
+            this.rbtn_KHDCachchebien.Location = new System.Drawing.Point(483, 164);
             this.rbtn_KHDCachchebien.Name = "rbtn_KHDCachchebien";
             this.rbtn_KHDCachchebien.Size = new System.Drawing.Size(146, 24);
             this.rbtn_KHDCachchebien.TabIndex = 62;
@@ -61,7 +61,7 @@ namespace _3_GUI
             // rbtn_HDCachchebien
             // 
             this.rbtn_HDCachchebien.AutoSize = true;
-            this.rbtn_HDCachchebien.Location = new System.Drawing.Point(321, 213);
+            this.rbtn_HDCachchebien.Location = new System.Drawing.Point(359, 164);
             this.rbtn_HDCachchebien.Name = "rbtn_HDCachchebien";
             this.rbtn_HDCachchebien.Size = new System.Drawing.Size(102, 24);
             this.rbtn_HDCachchebien.TabIndex = 63;
@@ -75,7 +75,7 @@ namespace _3_GUI
             this.btnXoaCongThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnXoaCongThuc.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaCongThuc.Image")));
             this.btnXoaCongThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaCongThuc.Location = new System.Drawing.Point(484, 274);
+            this.btnXoaCongThuc.Location = new System.Drawing.Point(522, 225);
             this.btnXoaCongThuc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXoaCongThuc.Name = "btnXoaCongThuc";
             this.btnXoaCongThuc.Size = new System.Drawing.Size(125, 49);
@@ -95,7 +95,7 @@ namespace _3_GUI
             this.dgvCachNau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCachNau.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvCachNau.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvCachNau.Location = new System.Drawing.Point(194, 390);
+            this.dgvCachNau.Location = new System.Drawing.Point(232, 341);
             this.dgvCachNau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvCachNau.MultiSelect = false;
             this.dgvCachNau.Name = "dgvCachNau";
@@ -114,7 +114,7 @@ namespace _3_GUI
             this.btnThemCongThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemCongThuc.Image = ((System.Drawing.Image)(resources.GetObject("btnThemCongThuc.Image")));
             this.btnThemCongThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemCongThuc.Location = new System.Drawing.Point(194, 274);
+            this.btnThemCongThuc.Location = new System.Drawing.Point(232, 225);
             this.btnThemCongThuc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThemCongThuc.Name = "btnThemCongThuc";
             this.btnThemCongThuc.Size = new System.Drawing.Size(125, 49);
@@ -128,7 +128,7 @@ namespace _3_GUI
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(187, 212);
+            this.label16.Location = new System.Drawing.Point(225, 163);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(94, 20);
@@ -140,7 +140,7 @@ namespace _3_GUI
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(321, 356);
+            this.label20.Location = new System.Drawing.Point(359, 307);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(87, 20);
@@ -152,7 +152,7 @@ namespace _3_GUI
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(184, 163);
+            this.label13.Location = new System.Drawing.Point(222, 114);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(92, 20);
@@ -164,7 +164,7 @@ namespace _3_GUI
             this.txtTimKiemCongthucCB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTimKiemCongthucCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTimKiemCongthucCB.ForeColor = System.Drawing.Color.Black;
-            this.txtTimKiemCongthucCB.Location = new System.Drawing.Point(416, 353);
+            this.txtTimKiemCongthucCB.Location = new System.Drawing.Point(454, 304);
             this.txtTimKiemCongthucCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimKiemCongthucCB.Name = "txtTimKiemCongthucCB";
             this.txtTimKiemCongthucCB.Size = new System.Drawing.Size(201, 26);
@@ -176,7 +176,7 @@ namespace _3_GUI
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(184, 119);
+            this.label11.Location = new System.Drawing.Point(222, 70);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 20);
@@ -188,7 +188,7 @@ namespace _3_GUI
             this.txt_MethName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_MethName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_MethName.ForeColor = System.Drawing.Color.Black;
-            this.txt_MethName.Location = new System.Drawing.Point(312, 163);
+            this.txt_MethName.Location = new System.Drawing.Point(350, 114);
             this.txt_MethName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_MethName.Name = "txt_MethName";
             this.txt_MethName.Size = new System.Drawing.Size(256, 26);
@@ -199,7 +199,7 @@ namespace _3_GUI
             this.txt_MethID.Cursor = System.Windows.Forms.Cursors.No;
             this.txt_MethID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_MethID.ForeColor = System.Drawing.Color.Black;
-            this.txt_MethID.Location = new System.Drawing.Point(312, 115);
+            this.txt_MethID.Location = new System.Drawing.Point(350, 66);
             this.txt_MethID.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_MethID.Name = "txt_MethID";
             this.txt_MethID.ReadOnly = true;
@@ -214,7 +214,7 @@ namespace _3_GUI
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(345, 274);
+            this.button1.Location = new System.Drawing.Point(383, 225);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 49);
@@ -228,7 +228,7 @@ namespace _3_GUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(184, 62);
+            this.label3.Location = new System.Drawing.Point(222, 13);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 25);
@@ -239,7 +239,7 @@ namespace _3_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 1026);
+            this.ClientSize = new System.Drawing.Size(818, 926);
             this.Controls.Add(this.rbtn_KHDCachchebien);
             this.Controls.Add(this.rbtn_HDCachchebien);
             this.Controls.Add(this.btnXoaCongThuc);
