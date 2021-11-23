@@ -42,12 +42,12 @@ namespace _3_GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.lblChao = new System.Windows.Forms.Label();
             this.bntMinimize = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCloseChillForm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblChao = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
@@ -165,6 +165,7 @@ namespace _3_GUI
             // 
             // btnThoat
             // 
+            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -237,7 +238,6 @@ namespace _3_GUI
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.Teal;
-            this.panelTitleBar.Controls.Add(this.lblChao);
             this.panelTitleBar.Controls.Add(this.bntMinimize);
             this.panelTitleBar.Controls.Add(this.btnMaximize);
             this.panelTitleBar.Controls.Add(this.btnClose);
@@ -329,8 +329,19 @@ namespace _3_GUI
             this.label1.TabIndex = 0;
             this.label1.Text = "HOME";
             // 
+            // lblChao
+            // 
+            this.lblChao.AutoSize = true;
+            this.lblChao.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblChao.Location = new System.Drawing.Point(876, 8);
+            this.lblChao.Name = "lblChao";
+            this.lblChao.Size = new System.Drawing.Size(82, 20);
+            this.lblChao.TabIndex = 7;
+            this.lblChao.Text = "Chào bạn:";
+            // 
             // panelDesktopPane
             // 
+            this.panelDesktopPane.Controls.Add(this.lblChao);
             this.panelDesktopPane.Controls.Add(this.btnDoiMatKhau);
             this.panelDesktopPane.Controls.Add(this.btnDangXuat);
             this.panelDesktopPane.Controls.Add(this.panel1);
@@ -383,7 +394,7 @@ namespace _3_GUI
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Plum;
+            this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labGio);
             this.panel1.Controls.Add(this.label4);
@@ -456,6 +467,7 @@ namespace _3_GUI
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelDesktopPane.ResumeLayout(false);
+            this.panelDesktopPane.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
