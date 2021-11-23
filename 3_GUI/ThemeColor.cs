@@ -17,7 +17,7 @@ namespace _3_GUI
                                                                     "#607D8B",
                                                                     "#FF9800",
                                                                     "#9C27B0",
-                                                                    "#2196F3",
+                                                                    //"#2196F3",
                                                                     //"#EA676C",
                                                                     //"#E41A4A",
                                                                     //"#5978BB",
@@ -36,7 +36,7 @@ namespace _3_GUI
                                                                     //"#0094BC",
                                                                     //"#E4126B",
                                                                     //"#43B76E",
-                                                                    "#7BCFE9",
+                                                                    //"#7BCFE9",
                                                                     "#B71C46"};
         public static Color ChangeColorBrightness(Color color, double correctionFactor)
         {
