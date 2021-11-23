@@ -309,7 +309,9 @@ namespace _3_GUI
             // lblChao
             // 
             this.lblChao.AutoSize = true;
+            this.lblChao.BackColor = System.Drawing.Color.Teal;
             this.lblChao.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblChao.ForeColor = System.Drawing.Color.White;
             this.lblChao.Location = new System.Drawing.Point(876, 8);
             this.lblChao.Name = "lblChao";
             this.lblChao.Size = new System.Drawing.Size(82, 20);
@@ -318,11 +320,14 @@ namespace _3_GUI
             // 
             // panelDesktopPane
             // 
+            this.panelDesktopPane.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDesktopPane.BackgroundImage")));
+            this.panelDesktopPane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelDesktopPane.Controls.Add(this.lblChao);
             this.panelDesktopPane.Controls.Add(this.btnDoiMatKhau);
             this.panelDesktopPane.Controls.Add(this.btnDangXuat);
             this.panelDesktopPane.Controls.Add(this.panel1);
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktopPane.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelDesktopPane.Location = new System.Drawing.Point(361, 121);
             this.panelDesktopPane.Name = "panelDesktopPane";
             this.panelDesktopPane.Size = new System.Drawing.Size(1154, 715);
@@ -331,11 +336,11 @@ namespace _3_GUI
             // btnDoiMatKhau
             // 
             this.btnDoiMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDoiMatKhau.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDoiMatKhau.BackColor = System.Drawing.Color.Teal;
             this.btnDoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.Black;
+            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.White;
             this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDoiMatKhau.Location = new System.Drawing.Point(988, 129);
@@ -351,11 +356,11 @@ namespace _3_GUI
             // btnDangXuat
             // 
             this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDangXuat.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDangXuat.BackColor = System.Drawing.Color.Teal;
             this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangXuat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDangXuat.ForeColor = System.Drawing.Color.Black;
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangXuat.Location = new System.Drawing.Point(1007, 71);
@@ -376,15 +381,16 @@ namespace _3_GUI
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.labNgayGio);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(8, 8);
+            this.panel1.Location = new System.Drawing.Point(19, 8);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(227, 233);
+            this.panel1.Size = new System.Drawing.Size(214, 227);
             this.panel1.TabIndex = 3;
             // 
             // labGio
             // 
             this.labGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labGio.ForeColor = System.Drawing.Color.White;
             this.labGio.Location = new System.Drawing.Point(-1, 39);
             this.labGio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labGio.Name = "labGio";
@@ -397,6 +403,7 @@ namespace _3_GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(103, 195);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
@@ -407,6 +414,7 @@ namespace _3_GUI
             // labNgayGio
             // 
             this.labNgayGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labNgayGio.ForeColor = System.Drawing.Color.White;
             this.labNgayGio.Location = new System.Drawing.Point(-1, 140);
             this.labNgayGio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labNgayGio.Name = "labNgayGio";
