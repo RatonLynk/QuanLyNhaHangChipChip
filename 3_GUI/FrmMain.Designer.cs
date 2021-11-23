@@ -156,7 +156,7 @@ namespace _3_GUI
             this.btnTienIch.Text = "    Tiện ích";
             this.btnTienIch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTienIch.UseVisualStyleBackColor = true;
-            this.btnTienIch.Click += new System.EventHandler(this.btnTienIch_Click);
+            //this.btnTienIch.Click += new System.EventHandler(this.btnTienIch_Click);
             // 
             // btnThoat
             // 
