@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _1_DAL.DALServices;
 using _1_DAL.iDALServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace _2_BUS.BUSServices
 {

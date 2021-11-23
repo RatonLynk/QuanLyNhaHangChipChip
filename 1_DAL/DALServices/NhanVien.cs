@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using _1_DAL.Context;
 using _1_DAL.iDALServices;
 using _1_DAL.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1_DAL.DALServices
 {
@@ -41,7 +42,7 @@ namespace _1_DAL.DALServices
         }
         public List<NhanVien> GetLstNVfromDB()
         {
-            return _lstNV = _dbContext.NhanViens.ToList();
+            return _lstNV = _dbContext.NhanViens.AsNoTracking().ToList();
         }
         public string Save()
         {
