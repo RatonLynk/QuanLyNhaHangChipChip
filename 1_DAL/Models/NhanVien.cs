@@ -20,8 +20,9 @@ namespace _1_DAL.Models
         [Key]
         [Column("ID")]
         public int Id { get; set; }
-        [Column("MaNV")]
-        public string MaNv { get; set; }
+
+        [Column("MaNV")] public string MaNv { get; set; }
+
         [Required]
         [StringLength(100)]
         public string Email { get; set; }

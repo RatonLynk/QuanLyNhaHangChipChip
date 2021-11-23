@@ -195,8 +195,8 @@ namespace _3_GUI
                 return;
             }
         }
-        //clear form các thứ
-        private void Btn_clear_Click(object sender, EventArgs e)
+
+        private void btn_clear_Click_1(object sender, EventArgs e)
         {
             txt_TenNV.ResetText();
             txtEmail.ResetText();
