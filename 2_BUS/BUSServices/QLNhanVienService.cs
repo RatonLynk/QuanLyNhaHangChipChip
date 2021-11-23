@@ -30,10 +30,8 @@ namespace _2_BUS.BUSServices
 
         public string Delete(NhanVien nhanVien)
         {
-            _startSave = false;
-            var index = _getLstNhanViens.FindIndex(c => c == nhanVien);
-            _getLstNhanViens[index] = nhanVien;
-            return _iNhanVienService.EditNV(nhanVien);
+            _iNhanVienService.removeNV(nhanVien);
+            return "ok";
         }
 
         public List<NhanVien> searchNhanViens(string nv)

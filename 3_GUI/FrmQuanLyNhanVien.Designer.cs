@@ -59,6 +59,7 @@ namespace _3_GUI
             this.chk_nam = new System.Windows.Forms.CheckBox();
             this.chk_nu = new System.Windows.Forms.CheckBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.btn_clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_NhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +97,7 @@ namespace _3_GUI
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(224, 22);
             this.txtEmail.TabIndex = 36;
+            this.txtEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
             // 
             // label7
             // 
@@ -239,6 +241,7 @@ namespace _3_GUI
             this.txt_TenNV.Name = "txt_TenNV";
             this.txt_TenNV.Size = new System.Drawing.Size(224, 23);
             this.txt_TenNV.TabIndex = 110;
+            this.txt_TenNV.TextChanged += new System.EventHandler(this.txt_TenNV_TextChanged);
             // 
             // txt_Search
             // 
@@ -270,7 +273,7 @@ namespace _3_GUI
             this.btnXoaNV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnXoaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaNV.Image")));
-            this.btnXoaNV.Location = new System.Drawing.Point(717, 617);
+            this.btnXoaNV.Location = new System.Drawing.Point(390, 617);
             this.btnXoaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Size = new System.Drawing.Size(109, 37);
@@ -287,7 +290,7 @@ namespace _3_GUI
             this.btnSuaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSuaNV.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaNV.Image")));
             this.btnSuaNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaNV.Location = new System.Drawing.Point(348, 617);
+            this.btnSuaNV.Location = new System.Drawing.Point(231, 617);
             this.btnSuaNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaNV.Name = "btnSuaNV";
             this.btnSuaNV.Size = new System.Drawing.Size(109, 37);
@@ -304,7 +307,7 @@ namespace _3_GUI
             this.btnThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnThemNV.Image = ((System.Drawing.Image)(resources.GetObject("btnThemNV.Image")));
             this.btnThemNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemNV.Location = new System.Drawing.Point(174, 617);
+            this.btnThemNV.Location = new System.Drawing.Point(70, 617);
             this.btnThemNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemNV.Name = "btnThemNV";
             this.btnThemNV.Size = new System.Drawing.Size(109, 37);
@@ -342,7 +345,7 @@ namespace _3_GUI
             this.btn_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Luu.Image = ((System.Drawing.Image)(resources.GetObject("btn_Luu.Image")));
             this.btn_Luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Luu.Location = new System.Drawing.Point(536, 617);
+            this.btn_Luu.Location = new System.Drawing.Point(563, 617);
             this.btn_Luu.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Luu.Name = "btn_Luu";
             this.btn_Luu.Size = new System.Drawing.Size(109, 37);
@@ -431,11 +434,29 @@ namespace _3_GUI
             this.txtMaNV.Size = new System.Drawing.Size(224, 23);
             this.txtMaNV.TabIndex = 136;
             // 
+            // btn_clear
+            // 
+            this.btn_clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_clear.Image = ((System.Drawing.Image)(resources.GetObject("btn_clear.Image")));
+            this.btn_clear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_clear.Location = new System.Drawing.Point(722, 617);
+            this.btn_clear.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(109, 37);
+            this.btn_clear.TabIndex = 137;
+            this.btn_clear.Text = "Làm mới";
+            this.btn_clear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.Btn_clear_Click);
+            // 
             // FrmQuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 676);
+            this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.chk_nu);
             this.Controls.Add(this.chk_nam);
@@ -507,5 +528,6 @@ namespace _3_GUI
         private System.Windows.Forms.CheckBox chk_nam;
         private System.Windows.Forms.CheckBox chk_nu;
         private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.Button btn_clear;
     }
 }
