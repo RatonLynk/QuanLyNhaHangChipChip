@@ -33,43 +33,43 @@ namespace _2_BUS.Utilities
 
         public int GetMethodID(string Name)
         {
-            _cachCB = _iCachChebienService.GetMethodsFromDB().Where(c => c.Name == Name).FirstOrDefault();
+            _cachCB = _iCachChebienService.GetMethodsFromDB().Where(c => c.Name == Name && c.Status == true).FirstOrDefault();
             return _cachCB.Id;
         }
         public int GetCategoryID(string Name)
         {
-            _dmFood = _iDMFoodService.GetCategoriesFromDB().Where(c => c.Name == Name).FirstOrDefault();
+            _dmFood = _iDMFoodService.GetCategoriesFromDB().Where(c => c.Name == Name && c.Status == true).FirstOrDefault();
             return _dmFood.Id;
         }
         public int GetDonViID(string Name)
         {
-            _donVi = _iDonViService.GetUnitsFromDB().Where(c => c.Name == Name).FirstOrDefault();
+            _donVi = _iDonViService.GetUnitsFromDB().Where(c => c.Name == Name && c.Status == true).FirstOrDefault();
             return _donVi.Id;
         }
         public int GetMonID(string Name)
         {
-            _item = _iMonAnChiTietService.GetDetailsFromDB().Where(c => c.Name == Name).FirstOrDefault();
+            _item = _iMonAnChiTietService.GetDetailsFromDB().Where(c => c.Name == Name && c.Status == 1).FirstOrDefault();
             return _item.Id;
         }
 
         public string GetMethodName(int Id)
         {
-            _cachCB = _iCachChebienService.GetMethodsFromDB().Where(c => c.Id == Id).FirstOrDefault();
+            _cachCB = _iCachChebienService.GetMethodsFromDB().Where(c => c.Id == Id && c.Status == true).FirstOrDefault();
             return _cachCB.Name;
         }
         public string GetCategoryName(int Id)
         {
-            _dmFood = _iDMFoodService.GetCategoriesFromDB().Where(c => c.Id == Id).FirstOrDefault();
+            _dmFood = _iDMFoodService.GetCategoriesFromDB().Where(c => c.Id == Id && c.Status == true).FirstOrDefault();
             return _dmFood.Name;
         }
         public string GetDonViName(int Id)
         {
-            _donVi = _iDonViService.GetUnitsFromDB().Where(c => c.Id == Id).FirstOrDefault();
+            _donVi = _iDonViService.GetUnitsFromDB().Where(c => c.Id == Id && c.Status == true).FirstOrDefault();
             return _donVi.Name;
         }
         public string GetMonName(int Id)
         {
-            _item = _iMonAnChiTietService.GetDetailsFromDB().Where(c => c.Id == Id).FirstOrDefault();
+            _item = _iMonAnChiTietService.GetDetailsFromDB().Where(c => c.Id == Id && c.Status == 1).FirstOrDefault();
             return _item.Name;
         }
 
