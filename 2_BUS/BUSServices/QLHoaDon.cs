@@ -26,9 +26,9 @@ namespace _2_BUS.BUSServices
              _HD.AddHoaDon(HoaDon);
         }        
 
-        public string AddHoaDonCT(HoaDonChiTiet HoaDon)
+        public void AddHoaDonCT(HoaDonChiTiet HoaDon)
         {
-            return _HDCT.AddHoaDon(HoaDon);
+             _HDCT.AddHoaDonCT(HoaDon);
         }
 
         public void DeleteHoaDon(HoaDon HoaDon)
@@ -36,9 +36,9 @@ namespace _2_BUS.BUSServices
              _HD.DeleteHoaDon(HoaDon);
         }        
 
-        public string DeleteHoaDonCT(HoaDonChiTiet HoaDon)
+        public void DeleteHoaDonCT(HoaDonChiTiet HoaDon)
         {
-            return _HDCT.DeleteHoaDon(HoaDon);
+             _HDCT.DeleteHoaDonCT(HoaDon);
         }
 
         public List<HoaDon> GetBillsFromDB()
@@ -58,7 +58,8 @@ namespace _2_BUS.BUSServices
                                  on a.Id equals b.Idbill
                                  select new ViewHoaDon() 
                                  {
-
+                                     hoaDon=a,
+                                     hoaDonChiTiet=b
                                  }).ToList();
         }
 
@@ -77,9 +78,9 @@ namespace _2_BUS.BUSServices
              _HD.UpdateHoaDon(HoaDon);
         }        
 
-        public string UpdateHoaDonCT(HoaDonChiTiet HoaDon)
+        public void UpdateHoaDonCT(HoaDonChiTiet HoaDon)
         {
-            return _HDCT.UpdateHoaDon(HoaDon);
+             _HDCT.UpdateHoaDonCT(HoaDon);
         }
     }
 }

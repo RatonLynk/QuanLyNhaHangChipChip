@@ -16,9 +16,9 @@ namespace _2_BUS.iBUSServices
         public void DeleteHoaDon(HoaDon HoaDon);
         public string SaveHoaDon();
         public List<HoaDon> GetBillsFromDB();
-        public string AddHoaDonCT(HoaDonChiTiet HoaDon);
-        public string UpdateHoaDonCT(HoaDonChiTiet HoaDon);
-        public string DeleteHoaDonCT(HoaDonChiTiet HoaDon);
+        public void AddHoaDonCT(HoaDonChiTiet HoaDon);
+        public void UpdateHoaDonCT(HoaDonChiTiet HoaDon);
+        public void DeleteHoaDonCT(HoaDonChiTiet HoaDon);
         public string SaveHoaDonChiTiet();
         public List<HoaDonChiTiet> GetHoaDonCTFromDB();
         public List<ViewHoaDon> GetListDSHoaDon();
