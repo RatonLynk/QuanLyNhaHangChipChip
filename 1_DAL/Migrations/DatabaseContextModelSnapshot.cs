@@ -143,6 +143,15 @@ namespace _1_DAL.Migrations
                     b.Property<DateTime>("DateCheckOut")
                         .HasColumnType("date");
 
+                    b.Property<string>("DiaChi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DichVu")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GhiChu")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("IdnhanVien")
                         .HasColumnType("int")
                         .HasColumnName("IDNhanVien");
@@ -150,6 +159,9 @@ namespace _1_DAL.Migrations
                     b.Property<int>("Idtable")
                         .HasColumnType("int")
                         .HasColumnName("IDtable");
+
+                    b.Property<string>("SoDT")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");

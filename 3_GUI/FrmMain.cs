@@ -118,10 +118,6 @@ namespace _3_GUI
             OpenChildForm(new FrmQuanLyNhanVien(), sender);
         }
 
-        private void btnTienIch_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {

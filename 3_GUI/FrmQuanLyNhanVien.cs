@@ -32,7 +32,7 @@ namespace _3_GUI
         void loadData()
         {
             _iQlNhanVienService.getlstNhanViens();
-            dgrid_NhanVien.ColumnCount = 9;
+            dgrid_NhanVien.ColumnCount = 10;
             dgrid_NhanVien.Columns[0].Name = "Id";
             dgrid_NhanVien.Columns[1].Name = "Tên nhân viên";
             dgrid_NhanVien.Columns[2].Name = "Email";
@@ -42,17 +42,7 @@ namespace _3_GUI
             dgrid_NhanVien.Columns[6].Name = "Giới tính";
             dgrid_NhanVien.Columns[7].Name = "Địa chỉ";
             dgrid_NhanVien.Columns[8].Name = "Trạng thái";
-            dgrid_NhanVien.Columns[8].Name = "MANV";
-            //DataGridViewComboBoxColumn dgvCmb = new DataGridViewComboBoxColumn();
-            //dgvCmb.HeaderText = "Chức năng";
-            //dgvCmb.Items.Add("Thêm");
-            //dgvCmb.Items.Add("Sửa");
-            //dgvCmb.Items.Add("Xóa");
-            //DataGridViewButtonColumn DBtn = new DataGridViewButtonColumn();
-            //DBtn.HeaderText = "Xác nhận";
-            //DBtn.Name = "Lưu";
-            //dgrid_NhanVien.Columns.Add(dgvCmb);
-            //dgrid_NhanVien.Columns.Add(DBtn);
+            dgrid_NhanVien.Columns[9].Name = "MANV";
             dgrid_NhanVien.Rows.Clear();
             foreach (var x in _iQlNhanVienService.getlstNhanViens())
             {
@@ -60,43 +50,17 @@ namespace _3_GUI
                     x.PhoneNo, x.Sex == true ? "Nam" : "Nữ", x.Address, x.Status == true ? "Hoạt động" : "Không hoạt động", x.MaNv);
             }
         }
-
-        private void btnThemNV_Click(object sender, EventArgs e)
-        {
-            NhanVien NhanVien = new NhanVien();
-            NhanVien.Id = dgrid_NhanVien.Rows.Cast<DataGridViewRow>()
-                .Max(r => Convert.ToInt32(r.Cells["Id"].Value)) + 1;
-            NhanVien.MaNv = txtMaNV.Text;
-            NhanVien.Name =  txt_TenNV.Text;
-            NhanVien.Email = txtEmail.Text;
-            NhanVien.Role = (byte)(chk_quanLi.Checked ? 1 : 2);
-            NhanVien.Address = txt_DiaChiNV.Text;
-            NhanVien.PhoneNo = txt_SDT.Text;
-            NhanVien.Sex = Convert.ToBoolean(chk_nam.Checked ? true : false);
-            NhanVien.Status = Convert.ToBoolean(rbtnHDnhanvien.Checked ? true : false);
-            NhanVien.Password = _utilities.GetHash("123");
-            NhanVien.Role = chk_quanLi.Checked?1:0;
-            if ((MessageBox.Show("Bạn muốn thêm một nhân viên ?",
-                "Thông báo",
-                MessageBoxButtons.YesNo) == DialogResult.Yes))
-            {
-                _iQlNhanVienService.Add(NhanVien);
-                _iQlNhanVienService.Save();
-                loadData();
-            }
-        }
-
         private void dgrid_NhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowindex = e.RowIndex;
-            txtMaNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[8].Value.ToString();
+            txtMaNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[9].Value.ToString();
             txt_TenNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[1].Value.ToString();
             txtEmail.Text = dgrid_NhanVien.Rows[rowindex].Cells[2].Value.ToString();
             txtMatKhau.Text = _utilities.GetHash(dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString());
             txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
-            txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[6].Value.ToString();
-            var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == txtMaNV.Text ).FirstOrDefault();
-            if (nv.Role == 1)
+            txt_DiaChiNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[7].Value.ToString();
+            var nv = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == txtMaNV.Text).FirstOrDefault();
+            if (nv.Role == 0)
             {
                 chk_quanLi.Checked = true;
             }
@@ -124,11 +88,37 @@ namespace _3_GUI
             }
         }
 
+        private void btnThemNV_Click(object sender, EventArgs e)
+        {
+           
+            NhanVien NhanVien = new NhanVien();
+            NhanVien.Id = dgrid_NhanVien.Rows.Cast<DataGridViewRow>()
+                .Max(r => Convert.ToInt32(r.Cells["Id"].Value)) + 1;
+            NhanVien.MaNv = "NV" + NhanVien.Id;
+            NhanVien.Name =  txt_TenNV.Text;
+            NhanVien.Email = txtEmail.Text;
+            NhanVien.Address = txt_DiaChiNV.Text;
+            NhanVien.PhoneNo = txt_SDT.Text;
+            NhanVien.Sex = Convert.ToBoolean(chk_nam.Checked ? true : false);
+            NhanVien.Status = Convert.ToBoolean(rbtnHDnhanvien.Checked ? true : false);
+            NhanVien.Password = _utilities.GetHash("123");
+            NhanVien.Role = chk_quanLi.Checked?0:1;
+            if ((MessageBox.Show("Bạn muốn thêm một nhân viên ?",
+                "Thông báo",
+                MessageBoxButtons.YesNo) == DialogResult.Yes))
+            {
+                _iQlNhanVienService.Add(NhanVien);
+                loadData();
+            }
+        }
+
+        
+
         private void btnXoaNV_Click(object sender, EventArgs e)
         {
             var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == txtMaNV.Text ).FirstOrDefault();
             rbtnKHDnhanvien.Checked = true;
-            nhanVien.Role = 0;
+            nhanVien.Role = 1;
             if ((MessageBox.Show("Bạn có chắc chắc sẽ dùng chức năng trên?",
                 "Thông báo !!!!!!!!!!!!!!!",
                 MessageBoxButtons.YesNo) == DialogResult.Yes))
@@ -144,7 +134,7 @@ namespace _3_GUI
             nhanVien.Name = txt_TenNV.Text;
             nhanVien.Email = txtEmail.Text;
             nhanVien.Password = _utilities.GetHash(txtMatKhau.Text);
-            nhanVien.Role = (int)(chk_nhanVien.Checked ? 1 : 2);
+            nhanVien.Role = chk_quanLi.Checked ? 0:1;
             nhanVien.Address = txt_DiaChiNV.Text;
             nhanVien.PhoneNo = txt_SDT.Text;
             nhanVien.Sex = chk_nam.Checked ? true : false;
