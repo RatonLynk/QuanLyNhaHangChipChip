@@ -16,16 +16,18 @@ namespace _1_DAL.DALServices
         {
             _dbConText = new DatabaseContext();
         }
-        public string AddHoaDon(HoaDonChiTiet HoaDon)
+        public void AddHoaDonCT(HoaDonChiTiet HoaDon)
         {
             _dbConText.HoaDonChiTiets.Add(HoaDon);
-            return "Thêm thành công";
+            _dbConText.SaveChanges();
+           
         }
 
-        public string DeleteHoaDon(HoaDonChiTiet HoaDon)
+        public void DeleteHoaDonCT(HoaDonChiTiet HoaDon)
         {
             _dbConText.HoaDonChiTiets.Update(HoaDon);
-            return "Xóa thành công";
+            _dbConText.SaveChanges();
+           
         }
 
         public List<HoaDonChiTiet> GetHoaDonCTFromDB()
@@ -39,10 +41,10 @@ namespace _1_DAL.DALServices
             return "Lưu thành công";
         }
 
-        public string UpdateHoaDon(HoaDonChiTiet HoaDon)
+        public void UpdateHoaDonCT(HoaDonChiTiet HoaDon)
         {
             _dbConText.HoaDonChiTiets.Update(HoaDon);
-            return "Sửa thành công";
+            
         }
     }
 }

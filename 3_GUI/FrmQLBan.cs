@@ -11,8 +11,9 @@ using _2_BUS.BUSServices;
 using _2_BUS.iBUSServices;
 using _1_DAL.Models;
 using _2_BUS.Models;
-using System.Drawing.Imaging;
+using System.Drawing;
 using _3_GUI.Properties;
+
 
 namespace _3_GUI
 {
@@ -28,6 +29,7 @@ namespace _3_GUI
         int _tongTien;
         int _IdHoaDon;
         int _idFood;
+        Form _f;
         public FrmQLBan()
         {
             InitializeComponent();
@@ -40,6 +42,7 @@ namespace _3_GUI
             LoadTableT2();
             LoadMeniu();
             LoadMangVe();
+            Lbl_TongTien.Visible = false;
             //Lbl_GioVao.Text = DateTime.Now.ToString();
         }
         void LoadMangVe()
@@ -92,7 +95,8 @@ namespace _3_GUI
             foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
-                //btn.Image = Resources.download;
+                //Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\caiBan.png");                
+                //btn.Image= b;
                 btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
                 btn.Click += Btn_Click;
                 btn.Tag = x;
@@ -118,6 +122,8 @@ namespace _3_GUI
             BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
             LoadHoaDon(id);
             Lbl_ViTriBan.Text = "Tầng 1 - " + banAn.Name;
+            Lbl_TongTien.Visible = true;
+            Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c=>c.Idtable==_IdBan).TotalMoney.ToString();
         }
 
         void LoadTableT2()
@@ -150,6 +156,8 @@ namespace _3_GUI
             LoadHoaDon(id);
             BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
             Lbl_ViTriBan.Text = "Tầng 2 - " + banAn.Name;
+            Lbl_TongTien.Visible = true;
+            Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan).TotalMoney.ToString();
         }
 
         void LoadHoaDon(int bill)
@@ -170,8 +178,9 @@ namespace _3_GUI
             Dgid_HoaDon.Rows.Clear();
             foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == bill && c.hoaDon.Status == true && c.hoaDon.DichVu==1))
             {
-                Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c=>c.Id==x.hoaDonChiTiet.Idfood).Select(c=>c.Name).FirstOrDefault(),x.hoaDonChiTiet.Count,x.hoaDonChiTiet.Price,
-                    x.hoaDonChiTiet.Count*x.hoaDonChiTiet.Price);
+                Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c=>c.Id==x.hoaDonChiTiet.Idfood).Select(c=>c.Name).FirstOrDefault(),x.hoaDonChiTiet.Count,
+                    _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault(),
+                    x.hoaDonChiTiet.Count* _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault());
             }
 
         }
@@ -241,14 +250,16 @@ namespace _3_GUI
             cmb.Items.Add("5");
             cmb.Name = "combobox";
 
-            DataGridViewTextBoxColumn txt = new DataGridViewTextBoxColumn();
-            txt.Name = "Txt";
+            DataGridViewImageColumn img = new DataGridViewImageColumn();
+            img.Name = "nut";
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\caiBan.png");
+            img.Image = b;        
             
 
             Dgid_Meniu.ColumnCount = 2;
             Dgid_Meniu.Columns[0].Name = "Tên món";
             Dgid_Meniu.Columns[1].Name = "Giá tiền";            
-            Dgid_Meniu.Columns.Add(Them);
+            Dgid_Meniu.Columns.Add(img);
             Dgid_Meniu.Rows.Clear();
             foreach (var x in _qlMeniu.GetViewMenus())
             {
@@ -263,36 +274,35 @@ namespace _3_GUI
             var columns = e.ColumnIndex;
             if ((rowIndex == _qlMeniu.GetMonAnChiTiets().Count) || rowIndex == -1) return;
             _idFood = _qlMeniu.GetMonAnChiTiets().Where(c => c.Name == Dgid_Meniu.Rows[rowIndex].Cells[0].Value.ToString()).Select(c => c.Id).FirstOrDefault();
-            if (e.ColumnIndex == Dgid_Meniu.Columns["Them"].Index)
+            if (e.ColumnIndex == Dgid_Meniu.Columns["nut"].Index)
             {
-                Form f = new Form();
+                _f = new Form();
                 TextBox textBox = new TextBox();
                 textBox.Width = 150;
                 Button button = new Button();
                 Label label = new Label();
                 label.Text = "Số Lượng:";
                 button.Text = "Xác Nhận";
-                f.Controls.Add(textBox);
-                f.Controls.Add(button);
-                f.Controls.Add(label);
-                f.Controls[2].Left = 10;
-                f.Controls[2].Top = 13;
-                f.Controls[0].Left = 80;
-                f.Controls[1].Left = 100;
-                f.Controls[0].Top = 10;
-                f.Controls[1].Top = 50;
-                f.Size = new Size(300, 120);                
-                f.ShowDialog();
-                f.Controls[1].Click += FrmQLBan_Click;
-
-                _soLuong = Convert.ToInt32(f.Controls[0].Text);           
-
-
+                _f.Controls.Add(textBox);
+                _f.Controls.Add(button);
+                _f.Controls.Add(label);
+                _f.Controls[2].Left = 10;
+                _f.Controls[2].Top = 13;
+                _f.Controls[0].Left = 80;
+                _f.Controls[1].Left = 100;
+                _f.Controls[0].Top = 10;
+                _f.Controls[1].Top = 50;
+                _f.Size = new Size(300, 120);
+                //f.StartPosition=CenterToScreen();
+                button.Click += Button_Click;                
+                _f.ShowDialog();               
+                             
             }
         }
 
-        private void FrmQLBan_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
+            _soLuong = Convert.ToInt32(_f.Controls[0].Text);
             if (_qlBanAn.GetTablesFromDB().Where(c => c.Id == _IdBan).Select(c => c.TinhTrang).FirstOrDefault() == 1)
             {
                 _hoadon = new HoaDon();
@@ -315,20 +325,25 @@ namespace _3_GUI
             {
                 _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan);
             }
-
+           
             HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet();
             hoaDonChiTiet.Id = (_qlHoaDon.GetHoaDonCTFromDB().Count()) + 1;
-            hoaDonChiTiet.Idbill = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan).Select(c => c.Id).FirstOrDefault();
+            hoaDonChiTiet.Idbill = _hoadon.Id;
             hoaDonChiTiet.Idfood = _idFood;
             hoaDonChiTiet.Count = _soLuong;
             hoaDonChiTiet.Price = _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
             hoaDonChiTiet.Status = true;
             _qlHoaDon.AddHoaDonCT(hoaDonChiTiet);
 
+
             _hoadon.TotalMoney += hoaDonChiTiet.Price;
-            _qlHoaDon.UpdateHoaDon(_hoadon);
+            _qlHoaDon.UpdateHoaDon(_hoadon);            
             LoadHoaDon(_IdBan);
-        }
+            LoadTableT1();
+            LoadTableT2();
+            _f.Close();
+            
+        }      
 
         private void Tp_Tang1_Click(object sender, EventArgs e)
         {

@@ -40,7 +40,7 @@ namespace _1_DAL.DALServices
         }
         public List<MonAnChiTiet> GetDetailsFromDB()
         {
-            return _lstTables = _dbContext.MonAnChiTiets.ToList();
+            return _dbContext.MonAnChiTiets.ToList();
         }
     }
 }
