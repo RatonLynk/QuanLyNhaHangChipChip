@@ -21,9 +21,9 @@ namespace _1_DAL.Models
         [Key]
         [Column("ID")]
         public int Id { get; set; }
-        [Column(TypeName = "date")]
+        [Column(TypeName = "DateTime")]
         public DateTime DateCheckIn { get; set; }
-        [Column(TypeName = "date")]
+        [Column(TypeName = "DateTime")]
         public DateTime DateCheckOut { get; set; }
         [Column("IDtable")]
         public int Idtable { get; set; }
