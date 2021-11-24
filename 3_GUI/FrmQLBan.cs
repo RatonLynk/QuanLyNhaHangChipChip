@@ -48,36 +48,28 @@ namespace _3_GUI
         void LoadMangVe()
         {
             FlPanl_MangVe.Controls.Clear();
-            foreach (HoaDon x in _qlHoaDon.GetBillsFromDB().Where(c=>c.DichVu==2 && c.Status==true))
+            foreach (HoaDon x in _qlHoaDon.GetBillsFromDB().Where(c => c.DichVu == 2 && c.Status == true))
             {
-                Button btn = new Button() { Width = 70, Height = 70 };
-                btn.Text = "Mang Về";
-                btn.Click += Btn_Click1;
-                btn.Tag = x;
-                btn.BackColor = Color.Aqua;
-                FlPanl_MangVe.Controls.Add(btn);
+                Button btn1 = new Button() { Width = 70, Height = 70 };
+                btn1.Text = "Mang Về";
+                btn1.Click += Btn1_Click1;
+                btn1.Tag = x;
+                btn1.BackColor = Color.Aqua;
+                FlPanl_MangVe.Controls.Add(btn1);
             }
 
         }
 
-        private void Btn_Click1(object sender, EventArgs e)
+        private void Btn1_Click1(object sender, EventArgs e)
         {
-            _IdHoaDon = ((sender as Button).Tag as HoaDon).Id;
-            LoadHoaDonMangVe(_IdHoaDon);
+            int id = ((sender as Button).Tag as HoaDon).Id;
+            _IdHoaDon = id;
             Lbl_ViTriBan.Text = "Mang Về";
             Lbl_TongTien.Visible = true;
-            _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c=>c.Id==_IdHoaDon);
-            if (_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon) == null)
-            {
-                Lbl_TongTien.Text = "0";
-                Lbl_GioVao.Text = "00:00:00 00/00/2021";
-            }
-            else
-            {
-                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon).TotalMoney.ToString();
-                Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon).DateCheckIn.ToString();
-            }
-
+            _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+            Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon).TotalMoney.ToString();
+            Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon).DateCheckIn.ToString();
+            LoadHoaDonMangVe(_IdHoaDon);
 
         }
         void LoadHoaDonMangVe(int hoadon)
@@ -139,9 +131,9 @@ namespace _3_GUI
             if (_qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan).TinhTrang == 0)
             {
                 _IdHoaDon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == id).Select(c => c.Id).FirstOrDefault();
-                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+               
             }
-            if (_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan)==null)
+            if (_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan) == null)
             {
                 Lbl_TongTien.Text = "0";
                 Lbl_GioVao.Text = "00:00:00 00/00/2021";
@@ -151,7 +143,7 @@ namespace _3_GUI
                 Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan).TotalMoney.ToString();
                 Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan).DateCheckIn.ToString();
             }
-            
+
         }
 
         void LoadTableT2()
@@ -161,7 +153,7 @@ namespace _3_GUI
             {
                 Button btn1 = new Button() { Width = x.Rong, Height = x.Cao };
                 btn1.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
-                
+
                 btn1.Click += Btn1_Click;
                 btn1.Tag = x;
                 switch (x.TinhTrang)
@@ -182,11 +174,11 @@ namespace _3_GUI
             int id = ((sender as Button).Tag as BanAn).Id;
             _IdBan = id;
             LoadHoaDon(id);
-            if (_qlBanAn.GetTablesFromDB().FirstOrDefault(c=>c.Id==_IdBan).TinhTrang==0)
+            if (_qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan).TinhTrang == 0)
             {
                 _IdHoaDon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == id).Select(c => c.Id).FirstOrDefault();
-                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c=>c.Id==_IdHoaDon);
-            }            
+                
+            }
             BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
             Lbl_ViTriBan.Text = "Tầng 2 - " + banAn.Name;
             Lbl_TongTien.Visible = true;
@@ -215,13 +207,13 @@ namespace _3_GUI
             Dgid_HoaDon.Columns[1].Name = "Số lượng";
             Dgid_HoaDon.Columns[2].Name = "Đơn giá";
             Dgid_HoaDon.Columns[3].Name = "thành tiền";
-            Dgid_HoaDon.Columns.Add(img); 
+            Dgid_HoaDon.Columns.Add(img);
             Dgid_HoaDon.Rows.Clear();
-            foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == bill && c.hoaDon.Status == true && c.hoaDon.DichVu==1))
+            foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == bill && c.hoaDon.Status == true && c.hoaDon.DichVu == 1))
             {
-                Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c=>c.Id==x.hoaDonChiTiet.Idfood).Select(c=>c.Name).FirstOrDefault(),x.hoaDonChiTiet.Count,
+                Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Name).FirstOrDefault(), x.hoaDonChiTiet.Count,
                     _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault(),
-                    x.hoaDonChiTiet.Count* _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault());
+                    x.hoaDonChiTiet.Count * _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault());
             }
 
         }
@@ -294,12 +286,12 @@ namespace _3_GUI
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
             Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\003-signs.png");
-            img.Image = b;        
-            
+            img.Image = b;
+
 
             Dgid_Meniu.ColumnCount = 2;
             Dgid_Meniu.Columns[0].Name = "Tên món";
-            Dgid_Meniu.Columns[1].Name = "Giá tiền";            
+            Dgid_Meniu.Columns[1].Name = "Giá tiền";
             Dgid_Meniu.Columns.Add(img);
             Dgid_Meniu.Rows.Clear();
             foreach (var x in _qlMeniu.GetViewMenus())
@@ -335,15 +327,15 @@ namespace _3_GUI
                 _f.Controls[1].Top = 50;
                 _f.Size = new Size(300, 120);
                 //f.StartPosition=CenterToScreen();
-                button.Click += Button_Click;                
-                _f.ShowDialog();               
-                             
+                button.Click += Button_Click;
+                _f.ShowDialog();
+
             }
         }
 
         private void Button_Click(object sender, EventArgs e)
         {
-            _soLuong = Convert.ToInt32(_f.Controls[0].Text);
+            _soLuong = Convert.ToInt32(_f.Controls[0].Text);            
             if (_qlBanAn.GetTablesFromDB().Where(c => c.Id == _IdBan).Select(c => c.TinhTrang).FirstOrDefault() == 1)
             {
                 _hoadon = new HoaDon();
@@ -366,7 +358,10 @@ namespace _3_GUI
             {
                 _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan);
             }
-           
+            //if (_hoadon == null)
+            //{
+            //    _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+            //}
             HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet();
             hoaDonChiTiet.Id = (_qlHoaDon.GetHoaDonCTFromDB().Count()) + 1;
             hoaDonChiTiet.Idbill = _hoadon.Id;
@@ -376,16 +371,15 @@ namespace _3_GUI
             hoaDonChiTiet.Status = true;
             _qlHoaDon.AddHoaDonCT(hoaDonChiTiet);
 
-            _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c=>c.Id==_IdHoaDon);
+            
             _hoadon.TotalMoney += hoaDonChiTiet.Price;
-            _qlHoaDon.UpdateHoaDon(_hoadon);
-            LoadHoaDonMangVe(_IdHoaDon);
+            _qlHoaDon.UpdateHoaDon(_hoadon);            
             LoadHoaDon(_IdBan);
             LoadTableT1();
             LoadTableT2();
             _f.Close();
-            
-        }      
+
+        }
 
         private void Tp_Tang1_Click(object sender, EventArgs e)
         {
@@ -424,7 +418,7 @@ namespace _3_GUI
             button123.Click += Button123_Click;
             _f.ShowDialog();
 
-            
+
             //CustomControl customControl = new CustomControl();
             //
 
@@ -451,7 +445,7 @@ namespace _3_GUI
 
         private void Btn_HuyBan_Click(object sender, EventArgs e)
         {
-            if (_IdBan!=0 || _IdHoaDon != 0)
+            if (_IdBan != 0 || _IdHoaDon != 0)
             {
                 _f = new Form();
                 TextBox textBox = new TextBox();
@@ -474,17 +468,17 @@ namespace _3_GUI
                 _f.ShowDialog();
             }
             else
-            {                
+            {
                 MessageBox.Show("Chưa bọn bàn nào", "Thông báo");
                 return;
             }
-            
+
         }
 
         private void Button12_Click(object sender, EventArgs e)
         {
-            _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c=>c.Id==_IdHoaDon);
-            if (_hoadon.DichVu==2)
+            _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+            if (_hoadon.DichVu == 2)
             {
                 _hoadon.Status = false;
                 _hoadon.GhiChu = _f.Controls[0].Text;
@@ -492,18 +486,69 @@ namespace _3_GUI
                 LoadMangVe();
                 _f.Close();
             }
-            else if (_hoadon.DichVu==1)
+            else if (_hoadon.DichVu == 1)
             {
                 _hoadon.Status = false;
-                _hoadon.GhiChu= _f.Controls[0].Text;
+                _hoadon.GhiChu = _f.Controls[0].Text;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
 
-                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c=>c.Id==_IdBan);
+                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
                 banAn.TinhTrang = 1;
                 _qlBanAn.UpdateBanAn(banAn);
                 LoadTableT1();
-                LoadTableT2();                
+                LoadTableT2();
                 _f.Close();
+            }
+        }
+
+        private void Btn_ThanhToan_Click(object sender, EventArgs e)
+        {
+            _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+            _f = new Form();
+            Label label1 = new Label();
+            Label label2 = new Label();
+            Label label3 = new Label();
+            Button button = new Button();
+            button.Text = "OK";
+            label2.Text = "Tổng tiền:";
+            _f.Controls.Add(label1);
+            _f.Controls.Add(label2);
+            _f.Controls.Add(label3);
+            _f.Controls.Add(button);
+            _f.Controls[3].Left = 50;
+            _f.Controls[3].Top = 50;
+            _f.Controls[0].Left = 90;
+            _f.Controls[1].Left = 30;
+            _f.Controls[1].Top = 30;
+            _f.Controls[2].Left = 50;
+            _f.Controls[2].Top = 30;
+            _f.Size = new Size(350, 120);
+
+
+            if (_hoadon.DichVu == 2)
+            {
+                _hoadon.Status = false;
+                _qlHoaDon.UpdateHoaDon(_hoadon);
+                label1.Text = "Mang về";
+                label3.Text =  _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney.ToString();
+                LoadMangVe();
+                LoadHoaDonMangVe(_hoadon.Id);
+                _f.ShowDialog();
+
+            }
+            else if (_hoadon.DichVu == 1)
+            {
+                _hoadon.Status = false;
+                _qlHoaDon.UpdateHoaDon(_hoadon);
+                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
+                banAn.TinhTrang = 1;
+                label1.Text = "bàn " + _hoadon.Idtable.ToString();
+                label3.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney.ToString();
+                _qlBanAn.UpdateBanAn(banAn);
+                LoadHoaDon(_hoadon.Idtable);
+                LoadTableT1();
+                LoadTableT2();
+                _f.ShowDialog();
             }
         }
     }
