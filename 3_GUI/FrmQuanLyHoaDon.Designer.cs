@@ -75,7 +75,7 @@ namespace _3_GUI
             // 
             this.btnChon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChon.Location = new System.Drawing.Point(925, 391);
+            this.btnChon.Location = new System.Drawing.Point(925, 397);
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(117, 33);
             this.btnChon.TabIndex = 35;

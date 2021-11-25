@@ -215,5 +215,7 @@ namespace _3_GUI
             ten = Ten;
             return Ten;
         }
+
+      
     }
 }
