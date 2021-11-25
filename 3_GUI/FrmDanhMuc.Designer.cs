@@ -262,7 +262,7 @@ namespace _3_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(898, 946);
+            this.ClientSize = new System.Drawing.Size(898, 859);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rbtn_KHDdanhmuc);
             this.Controls.Add(this.rbtn_HDdanhmuc);
@@ -279,7 +279,9 @@ namespace _3_GUI
             this.Controls.Add(this.btnThemNhom);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmDanhMuc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhMuc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

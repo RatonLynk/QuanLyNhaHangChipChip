@@ -116,6 +116,7 @@ namespace _3_GUI
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.Lbl_GioRa);
             this.groupBox3.Controls.Add(this.Lbl_GioVao);
             this.groupBox3.Controls.Add(this.Lbl_ViTriBan);
@@ -128,19 +129,20 @@ namespace _3_GUI
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(437, 1);
+            this.groupBox3.Location = new System.Drawing.Point(437, 11);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(327, 180);
+            this.groupBox3.Size = new System.Drawing.Size(327, 170);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             // 
             // Lbl_GioRa
             // 
+            this.Lbl_GioRa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lbl_GioRa.AutoSize = true;
             this.Lbl_GioRa.ForeColor = System.Drawing.Color.White;
-            this.Lbl_GioRa.Location = new System.Drawing.Point(100, 81);
+            this.Lbl_GioRa.Location = new System.Drawing.Point(100, 76);
             this.Lbl_GioRa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_GioRa.Name = "Lbl_GioRa";
             this.Lbl_GioRa.Size = new System.Drawing.Size(141, 19);
@@ -149,9 +151,10 @@ namespace _3_GUI
             // 
             // Lbl_GioVao
             // 
+            this.Lbl_GioVao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lbl_GioVao.AutoSize = true;
             this.Lbl_GioVao.ForeColor = System.Drawing.Color.White;
-            this.Lbl_GioVao.Location = new System.Drawing.Point(100, 55);
+            this.Lbl_GioVao.Location = new System.Drawing.Point(100, 50);
             this.Lbl_GioVao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_GioVao.Name = "Lbl_GioVao";
             this.Lbl_GioVao.Size = new System.Drawing.Size(141, 19);
@@ -160,9 +163,10 @@ namespace _3_GUI
             // 
             // Lbl_ViTriBan
             // 
+            this.Lbl_ViTriBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lbl_ViTriBan.AutoSize = true;
             this.Lbl_ViTriBan.ForeColor = System.Drawing.Color.White;
-            this.Lbl_ViTriBan.Location = new System.Drawing.Point(143, 18);
+            this.Lbl_ViTriBan.Location = new System.Drawing.Point(143, 13);
             this.Lbl_ViTriBan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_ViTriBan.Name = "Lbl_ViTriBan";
             this.Lbl_ViTriBan.Size = new System.Drawing.Size(32, 19);
@@ -171,9 +175,10 @@ namespace _3_GUI
             // 
             // button12
             // 
+            this.button12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button12.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.button12.Location = new System.Drawing.Point(254, 77);
+            this.button12.Location = new System.Drawing.Point(254, 72);
             this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(61, 27);
@@ -183,9 +188,10 @@ namespace _3_GUI
             // 
             // Btn_TachBan
             // 
+            this.Btn_TachBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Btn_TachBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_TachBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_TachBan.Location = new System.Drawing.Point(223, 126);
+            this.Btn_TachBan.Location = new System.Drawing.Point(223, 121);
             this.Btn_TachBan.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_TachBan.Name = "Btn_TachBan";
             this.Btn_TachBan.Size = new System.Drawing.Size(92, 35);
@@ -195,9 +201,10 @@ namespace _3_GUI
             // 
             // Btn_GopBan
             // 
+            this.Btn_GopBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Btn_GopBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_GopBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_GopBan.Location = new System.Drawing.Point(131, 126);
+            this.Btn_GopBan.Location = new System.Drawing.Point(131, 121);
             this.Btn_GopBan.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_GopBan.Name = "Btn_GopBan";
             this.Btn_GopBan.Size = new System.Drawing.Size(88, 35);
@@ -207,9 +214,10 @@ namespace _3_GUI
             // 
             // Btn_ChuyenBan
             // 
+            this.Btn_ChuyenBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Btn_ChuyenBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_ChuyenBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_ChuyenBan.Location = new System.Drawing.Point(7, 126);
+            this.Btn_ChuyenBan.Location = new System.Drawing.Point(7, 121);
             this.Btn_ChuyenBan.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_ChuyenBan.Name = "Btn_ChuyenBan";
             this.Btn_ChuyenBan.Size = new System.Drawing.Size(99, 35);
@@ -219,9 +227,10 @@ namespace _3_GUI
             // 
             // Btn_HuyBan
             // 
+            this.Btn_HuyBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Btn_HuyBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_HuyBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_HuyBan.Location = new System.Drawing.Point(254, 24);
+            this.Btn_HuyBan.Location = new System.Drawing.Point(254, 19);
             this.Btn_HuyBan.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HuyBan.Name = "Btn_HuyBan";
             this.Btn_HuyBan.Size = new System.Drawing.Size(61, 28);
@@ -232,9 +241,10 @@ namespace _3_GUI
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(7, 81);
+            this.label3.Location = new System.Drawing.Point(7, 76);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 19);
@@ -243,9 +253,10 @@ namespace _3_GUI
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(7, 55);
+            this.label2.Location = new System.Drawing.Point(7, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 19);
@@ -254,9 +265,10 @@ namespace _3_GUI
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(7, 27);
+            this.label1.Location = new System.Drawing.Point(7, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 19);
