@@ -646,16 +646,15 @@ namespace _3_GUI
 
         private void Btn_XoaMon_Click(object sender, EventArgs e)
         {
-
+            int giatam;
             _soLuong = Convert.ToInt32(_f.Controls[0].Text);            
             HoaDonChiTiet hoaDonChiTiet = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c=>c.Id==_IdHdCt);
+            giatam = (int)(_soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault()));
             hoaDonChiTiet.Count -= _soLuong;
             hoaDonChiTiet.Price = hoaDonChiTiet.Count * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
             _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet);
-            HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == hoaDonChiTiet.Idbill);
-            hoaDon.TotalMoney = 0;
-            _qlHoaDon.UpdateHoaDon(hoaDon);
-            hoaDon.TotalMoney += hoaDonChiTiet.Price;
+            HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == hoaDonChiTiet.Idbill);            
+            hoaDon.TotalMoney -=giatam ;
             _qlHoaDon.UpdateHoaDon(hoaDon);
             LoadHoaDon(_IdBan);
             Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney.ToString();
