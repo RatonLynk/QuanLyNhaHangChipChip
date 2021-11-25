@@ -102,6 +102,7 @@ namespace _3_GUI
             this.Dgid_HoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgid_HoaDon.Size = new System.Drawing.Size(499, 255);
             this.Dgid_HoaDon.TabIndex = 23;
+            this.Dgid_HoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgid_HoaDon_CellClick);
             // 
             // groupBox3
             // 
