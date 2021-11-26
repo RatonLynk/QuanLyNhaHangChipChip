@@ -92,7 +92,7 @@ namespace _3_GUI
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(426, 319);
+            this.groupBox2.Size = new System.Drawing.Size(457, 319);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách món đã gọi";
@@ -110,13 +110,13 @@ namespace _3_GUI
             this.Dgid_HoaDon.RowHeadersWidth = 51;
             this.Dgid_HoaDon.RowTemplate.Height = 25;
             this.Dgid_HoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgid_HoaDon.Size = new System.Drawing.Size(417, 276);
+            this.Dgid_HoaDon.Size = new System.Drawing.Size(448, 276);
             this.Dgid_HoaDon.TabIndex = 23;
             this.Dgid_HoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgid_HoaDon_CellClick);
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox3.Controls.Add(this.Lbl_GioRa);
             this.groupBox3.Controls.Add(this.Lbl_GioVao);
             this.groupBox3.Controls.Add(this.Lbl_ViTriBan);
@@ -129,11 +129,11 @@ namespace _3_GUI
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(437, 11);
+            this.groupBox3.Location = new System.Drawing.Point(418, 11);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(327, 170);
+            this.groupBox3.Size = new System.Drawing.Size(433, 170);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             // 
@@ -142,10 +142,10 @@ namespace _3_GUI
             this.Lbl_GioRa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lbl_GioRa.AutoSize = true;
             this.Lbl_GioRa.ForeColor = System.Drawing.Color.White;
-            this.Lbl_GioRa.Location = new System.Drawing.Point(100, 76);
+            this.Lbl_GioRa.Location = new System.Drawing.Point(153, 76);
             this.Lbl_GioRa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_GioRa.Name = "Lbl_GioRa";
-            this.Lbl_GioRa.Size = new System.Drawing.Size(141, 19);
+            this.Lbl_GioRa.Size = new System.Drawing.Size(108, 13);
             this.Lbl_GioRa.TabIndex = 29;
             this.Lbl_GioRa.Text = "00:00:00 00/00/2021";
             // 
@@ -154,10 +154,10 @@ namespace _3_GUI
             this.Lbl_GioVao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lbl_GioVao.AutoSize = true;
             this.Lbl_GioVao.ForeColor = System.Drawing.Color.White;
-            this.Lbl_GioVao.Location = new System.Drawing.Point(100, 50);
+            this.Lbl_GioVao.Location = new System.Drawing.Point(153, 50);
             this.Lbl_GioVao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_GioVao.Name = "Lbl_GioVao";
-            this.Lbl_GioVao.Size = new System.Drawing.Size(141, 19);
+            this.Lbl_GioVao.Size = new System.Drawing.Size(108, 13);
             this.Lbl_GioVao.TabIndex = 28;
             this.Lbl_GioVao.Text = "00:00:00 00/00/2021";
             // 
@@ -166,10 +166,10 @@ namespace _3_GUI
             this.Lbl_ViTriBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lbl_ViTriBan.AutoSize = true;
             this.Lbl_ViTriBan.ForeColor = System.Drawing.Color.White;
-            this.Lbl_ViTriBan.Location = new System.Drawing.Point(143, 13);
+            this.Lbl_ViTriBan.Location = new System.Drawing.Point(196, 13);
             this.Lbl_ViTriBan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_ViTriBan.Name = "Lbl_ViTriBan";
-            this.Lbl_ViTriBan.Size = new System.Drawing.Size(32, 19);
+            this.Lbl_ViTriBan.Size = new System.Drawing.Size(26, 13);
             this.Lbl_ViTriBan.TabIndex = 27;
             this.Lbl_ViTriBan.Text = "Bàn";
             // 
@@ -178,7 +178,7 @@ namespace _3_GUI
             this.button12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button12.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.button12.Location = new System.Drawing.Point(254, 72);
+            this.button12.Location = new System.Drawing.Point(307, 72);
             this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(61, 27);
@@ -191,7 +191,7 @@ namespace _3_GUI
             this.Btn_TachBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Btn_TachBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_TachBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_TachBan.Location = new System.Drawing.Point(223, 121);
+            this.Btn_TachBan.Location = new System.Drawing.Point(276, 121);
             this.Btn_TachBan.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_TachBan.Name = "Btn_TachBan";
             this.Btn_TachBan.Size = new System.Drawing.Size(92, 35);
@@ -204,7 +204,7 @@ namespace _3_GUI
             this.Btn_GopBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Btn_GopBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_GopBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_GopBan.Location = new System.Drawing.Point(131, 121);
+            this.Btn_GopBan.Location = new System.Drawing.Point(184, 121);
             this.Btn_GopBan.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_GopBan.Name = "Btn_GopBan";
             this.Btn_GopBan.Size = new System.Drawing.Size(88, 35);
@@ -217,7 +217,7 @@ namespace _3_GUI
             this.Btn_ChuyenBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Btn_ChuyenBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_ChuyenBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_ChuyenBan.Location = new System.Drawing.Point(7, 121);
+            this.Btn_ChuyenBan.Location = new System.Drawing.Point(60, 121);
             this.Btn_ChuyenBan.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_ChuyenBan.Name = "Btn_ChuyenBan";
             this.Btn_ChuyenBan.Size = new System.Drawing.Size(99, 35);
@@ -230,7 +230,7 @@ namespace _3_GUI
             this.Btn_HuyBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Btn_HuyBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_HuyBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_HuyBan.Location = new System.Drawing.Point(254, 19);
+            this.Btn_HuyBan.Location = new System.Drawing.Point(307, 19);
             this.Btn_HuyBan.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_HuyBan.Name = "Btn_HuyBan";
             this.Btn_HuyBan.Size = new System.Drawing.Size(61, 28);
@@ -244,10 +244,10 @@ namespace _3_GUI
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(7, 76);
+            this.label3.Location = new System.Drawing.Point(60, 76);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 19);
+            this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Giờ ra:";
             // 
@@ -256,10 +256,10 @@ namespace _3_GUI
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(7, 50);
+            this.label2.Location = new System.Drawing.Point(60, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 19);
+            this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Giờ vào:";
             // 
@@ -268,10 +268,10 @@ namespace _3_GUI
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(7, 22);
+            this.label1.Location = new System.Drawing.Point(60, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 19);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vị trí bàn:";
             // 
@@ -281,34 +281,34 @@ namespace _3_GUI
             this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Controls.Add(this.Dgid_Meniu);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(828, 13);
+            this.groupBox4.Location = new System.Drawing.Point(19, 507);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(360, 486);
+            this.groupBox4.Size = new System.Drawing.Size(805, 224);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Menu";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(235, 15);
+            this.textBox1.Location = new System.Drawing.Point(546, 15);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
+            this.textBox1.Size = new System.Drawing.Size(236, 21);
             this.textBox1.TabIndex = 1;
             // 
             // Dgid_Meniu
             // 
             this.Dgid_Meniu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgid_Meniu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgid_Meniu.Location = new System.Drawing.Point(6, 55);
+            this.Dgid_Meniu.Location = new System.Drawing.Point(11, 40);
             this.Dgid_Meniu.Margin = new System.Windows.Forms.Padding(2);
             this.Dgid_Meniu.Name = "Dgid_Meniu";
             this.Dgid_Meniu.RowHeadersWidth = 51;
             this.Dgid_Meniu.RowTemplate.Height = 25;
             this.Dgid_Meniu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgid_Meniu.Size = new System.Drawing.Size(350, 426);
+            this.Dgid_Meniu.Size = new System.Drawing.Size(790, 168);
             this.Dgid_Meniu.TabIndex = 0;
             this.Dgid_Meniu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgid_Meniu_CellClick);
             // 
@@ -317,14 +317,15 @@ namespace _3_GUI
             this.groupBox5.Controls.Add(this.Btn_XuatBill);
             this.groupBox5.Controls.Add(this.textBox4);
             this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Controls.Add(this.Btn_ThanhToan);
             this.groupBox5.Controls.Add(this.Lbl_TongTien);
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Location = new System.Drawing.Point(603, 24);
+            this.groupBox5.Location = new System.Drawing.Point(835, 507);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(299, 164);
+            this.groupBox5.Size = new System.Drawing.Size(353, 224);
             this.groupBox5.TabIndex = 23;
             this.groupBox5.TabStop = false;
             // 
@@ -347,7 +348,7 @@ namespace _3_GUI
             this.textBox4.Location = new System.Drawing.Point(64, 75);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(229, 25);
+            this.textBox4.Size = new System.Drawing.Size(229, 21);
             this.textBox4.TabIndex = 7;
             // 
             // label6
@@ -357,7 +358,7 @@ namespace _3_GUI
             this.label6.Location = new System.Drawing.Point(7, 79);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 17);
+            this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 6;
             this.label6.Text = "Phụ phí:";
             // 
@@ -368,7 +369,7 @@ namespace _3_GUI
             this.Lbl_TongTien.Location = new System.Drawing.Point(120, 122);
             this.Lbl_TongTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_TongTien.Name = "Lbl_TongTien";
-            this.Lbl_TongTien.Size = new System.Drawing.Size(66, 17);
+            this.Lbl_TongTien.Size = new System.Drawing.Size(60, 13);
             this.Lbl_TongTien.TabIndex = 4;
             this.Lbl_TongTien.Text = "Tổng tiền:";
             // 
@@ -379,7 +380,7 @@ namespace _3_GUI
             this.label4.Location = new System.Drawing.Point(7, 28);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 17);
+            this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Ghi chú:";
             // 
@@ -388,7 +389,7 @@ namespace _3_GUI
             this.textBox2.Location = new System.Drawing.Point(64, 24);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(229, 25);
+            this.textBox2.Size = new System.Drawing.Size(229, 21);
             this.textBox2.TabIndex = 2;
             // 
             // tabControl1
@@ -407,11 +408,11 @@ namespace _3_GUI
             this.Tp_Tang1.Controls.Add(this.FLPenal);
             this.Tp_Tang1.Controls.Add(this.Btn_ThemBanT1);
             this.Tp_Tang1.Controls.Add(this.Btn_XoaBanT1);
-            this.Tp_Tang1.Location = new System.Drawing.Point(4, 26);
+            this.Tp_Tang1.Location = new System.Drawing.Point(4, 21);
             this.Tp_Tang1.Margin = new System.Windows.Forms.Padding(2);
             this.Tp_Tang1.Name = "Tp_Tang1";
             this.Tp_Tang1.Padding = new System.Windows.Forms.Padding(2);
-            this.Tp_Tang1.Size = new System.Drawing.Size(365, 462);
+            this.Tp_Tang1.Size = new System.Drawing.Size(365, 467);
             this.Tp_Tang1.TabIndex = 0;
             this.Tp_Tang1.Text = "Tầng 1";
             this.Tp_Tang1.UseVisualStyleBackColor = true;
@@ -456,11 +457,11 @@ namespace _3_GUI
             this.Tp_Tang2.Controls.Add(this.Btn_ThemBanT2);
             this.Tp_Tang2.Controls.Add(this.FlPanel2);
             this.Tp_Tang2.Controls.Add(this.Btn_XoaBanT2);
-            this.Tp_Tang2.Location = new System.Drawing.Point(4, 26);
+            this.Tp_Tang2.Location = new System.Drawing.Point(4, 21);
             this.Tp_Tang2.Margin = new System.Windows.Forms.Padding(2);
             this.Tp_Tang2.Name = "Tp_Tang2";
             this.Tp_Tang2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Tp_Tang2.Size = new System.Drawing.Size(365, 462);
+            this.Tp_Tang2.Size = new System.Drawing.Size(365, 467);
             this.Tp_Tang2.TabIndex = 1;
             this.Tp_Tang2.Text = "Tầng 2";
             this.Tp_Tang2.UseVisualStyleBackColor = true;
@@ -475,6 +476,7 @@ namespace _3_GUI
             this.Btn_ThemBanT2.TabIndex = 29;
             this.Btn_ThemBanT2.Text = "Thêm bàn";
             this.Btn_ThemBanT2.UseVisualStyleBackColor = false;
+            this.Btn_ThemBanT2.Click += new System.EventHandler(this.Btn_ThemBanT2_Click_1);
             // 
             // FlPanel2
             // 
@@ -507,13 +509,12 @@ namespace _3_GUI
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.Btn_MangVe);
             this.groupBox1.Controls.Add(this.FlPanl_MangVe);
-            this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(19, 519);
+            this.groupBox1.Location = new System.Drawing.Point(859, 7);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(917, 211);
+            this.groupBox1.Size = new System.Drawing.Size(329, 496);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đơn mang về";
@@ -522,7 +523,7 @@ namespace _3_GUI
             // 
             this.Btn_MangVe.BackColor = System.Drawing.Color.LavenderBlush;
             this.Btn_MangVe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_MangVe.Location = new System.Drawing.Point(443, 171);
+            this.Btn_MangVe.Location = new System.Drawing.Point(196, 461);
             this.Btn_MangVe.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_MangVe.Name = "Btn_MangVe";
             this.Btn_MangVe.Size = new System.Drawing.Size(129, 27);
@@ -533,10 +534,10 @@ namespace _3_GUI
             // 
             // FlPanl_MangVe
             // 
-            this.FlPanl_MangVe.Location = new System.Drawing.Point(7, 27);
+            this.FlPanl_MangVe.Location = new System.Drawing.Point(13, 21);
             this.FlPanl_MangVe.Margin = new System.Windows.Forms.Padding(2);
             this.FlPanl_MangVe.Name = "FlPanl_MangVe";
-            this.FlPanl_MangVe.Size = new System.Drawing.Size(565, 140);
+            this.FlPanl_MangVe.Size = new System.Drawing.Size(312, 436);
             this.FlPanl_MangVe.TabIndex = 0;
             // 
             // Btn_ThanhToan
@@ -546,7 +547,7 @@ namespace _3_GUI
             this.Btn_ThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.Btn_ThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ThanhToan.Image")));
             this.Btn_ThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_ThanhToan.Location = new System.Drawing.Point(1025, 574);
+            this.Btn_ThanhToan.Location = new System.Drawing.Point(239, 163);
             this.Btn_ThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_ThanhToan.Name = "Btn_ThanhToan";
             this.Btn_ThanhToan.Size = new System.Drawing.Size(110, 57);
@@ -558,14 +559,14 @@ namespace _3_GUI
             // 
             // FrmQLBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1199, 742);
-            this.Controls.Add(this.Btn_ThanhToan);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
