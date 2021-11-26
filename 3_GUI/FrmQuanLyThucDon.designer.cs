@@ -459,6 +459,7 @@
             this.btnMoAnh.TabIndex = 69;
             this.btnMoAnh.Text = "Mở  ảnh";
             this.btnMoAnh.UseVisualStyleBackColor = true;
+            this.btnMoAnh.Click += new System.EventHandler(this.btnMoAnh_Click);
             // 
             // btnResetAnh
             // 
@@ -469,6 +470,7 @@
             this.btnResetAnh.TabIndex = 69;
             this.btnResetAnh.Text = "Reset ảnh";
             this.btnResetAnh.UseVisualStyleBackColor = true;
+            this.btnResetAnh.Click += new System.EventHandler(this.btnResetAnh_Click);
             // 
             // txtHinhAnh
             // 

@@ -145,7 +145,6 @@ namespace _3_GUI
                 }
                 else
                 {
-                    _monCT.Id = _iQLMenuService.GetMonAnChiTiets().Count;
                     _monCT.Name = txtTenMonAn.Text;
                     _monCT.Idunit = _utilities.GetDonViID(cbx_Unit.Text);
                     _monCT.Idcategory = _utilities.GetCategoryID(cbx_Cat.Text);
@@ -244,15 +243,7 @@ namespace _3_GUI
             FrmQuanLyThucDon_Load();
         }
 
-        private void btnMoAnh_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void btnResetAnh_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void dgvMonAn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -298,7 +289,10 @@ namespace _3_GUI
             }
         }
 
-        private void btnMoAnh_Click_1(object sender, EventArgs e)
+
+
+
+        private void btnMoAnh_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.jiff)|*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.jiff";
@@ -309,7 +303,7 @@ namespace _3_GUI
             }
         }
 
-        private void btnResetAnh_Click_1(object sender, EventArgs e)
+        private void btnResetAnh_Click(object sender, EventArgs e)
         {
             pictureBoxHinhAnh.Image = null;
             txtHinhAnh.Text = null;
