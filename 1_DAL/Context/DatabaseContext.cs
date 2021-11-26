@@ -34,7 +34,7 @@ namespace _1_DAL.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=LAPTOP-86760IDM\\SQLEXPRESS;Initial Catalog=QLNH;Persist Security Info=True;User ID=Phong99;Password=p01248460961"); 
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-QQT9QHE\\SQLEXPRESS;Initial Catalog=ChipChip;Persist Security Info=True;User ID=xagaph13499;Password=123"); 
             }
         }
 
