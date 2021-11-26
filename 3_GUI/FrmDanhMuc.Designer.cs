@@ -278,6 +278,7 @@ namespace _3_GUI
             this.Controls.Add(this.btnSuaNhom);
             this.Controls.Add(this.btnThemNhom);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmDanhMuc";

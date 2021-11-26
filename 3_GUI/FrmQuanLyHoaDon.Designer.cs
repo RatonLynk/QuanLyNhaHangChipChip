@@ -278,6 +278,7 @@ namespace _3_GUI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ltvTenSanPham);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmQuanLyHoaDon";

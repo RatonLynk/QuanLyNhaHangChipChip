@@ -173,6 +173,7 @@ namespace _3_GUI
             this.Controls.Add(this.txtNewPass2);
             this.Controls.Add(this.txtNewPass);
             this.Controls.Add(this.txtPass);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDoiMatKhau";
             this.Text = "Thay đổi mật khẩu";
