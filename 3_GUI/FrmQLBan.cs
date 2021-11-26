@@ -436,9 +436,9 @@ namespace _3_GUI
             hoaDon.Id = (_qlHoaDon.GetBillsFromDB().Count()) + 1;
             hoaDon.Idtable = 1;
             hoaDon.IdnhanVien = 1;
-            hoaDon.SoDT = _f.Controls[4].Text;
+            hoaDon.SoDT = _f.Controls[0].Text;
             hoaDon.Status = true;
-            hoaDon.DiaChi = _f.Controls[2].Text;
+            hoaDon.DiaChi = _f.Controls[3].Text;
             hoaDon.DichVu = 2;
             hoaDon.GhiChu = null;
             hoaDon.TotalMoney = 0;
