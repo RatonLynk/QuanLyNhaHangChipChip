@@ -30,8 +30,8 @@ namespace _2_BUS.BUSServices
 
         public string Delete(NhanVien nhanVien)
         {
-            _iNhanVienService.removeNV(nhanVien);
-            return "ok";
+            _getLstNhanViens.Remove(nhanVien);
+            return _iNhanVienService.removeNV(nhanVien);
         }
 
         public List<NhanVien> searchNhanViens(string nv)

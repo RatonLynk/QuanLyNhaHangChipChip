@@ -48,7 +48,7 @@ namespace _3_GUI
             dgvMonAn.Rows.Clear();
             foreach(var x in _iQLMenuService.GetViewMenus())
             {
-                dgvMonAn.Rows.Add(x.details.Id,x.details.Name, x.details.Price, x.cat.Name, x.method.Name, x.unit.Name, x.details.Status == 1 ? "Đang bán" : "Dừng bán");
+                dgvMonAn.Rows.Add(x.details.Id,x.details.Name, decimal.Truncate(x.details.Price), x.cat.Name, x.method.Name, x.unit.Name, x.details.Status == 1 ? "Đang bán" : "Dừng bán");
             }
 
             LoadCBox();
@@ -197,7 +197,7 @@ namespace _3_GUI
             dgvMonAn.Rows.Clear();
             foreach (var x in _iQLMenuService.TimKiem(txt_TimKiemThucDon.Text))
             {
-                dgvMonAn.Rows.Add(x.details.Id, x.details.Name, x.details.Price, x.cat.Name, x.method.Name, x.unit.Name, x.details.Status == 1 ? "Đang bán" : "Dừng bán");
+                dgvMonAn.Rows.Add(x.details.Id, x.details.Name, decimal.Truncate(x.details.Price), x.cat.Name, x.method.Name, x.unit.Name, x.details.Status == 1 ? "Đang bán" : "Dừng bán");
             }
         }
 

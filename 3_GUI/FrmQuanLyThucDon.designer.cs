@@ -60,6 +60,7 @@
             this.btnResetAnh = new System.Windows.Forms.Button();
             this.txtHinhAnh = new System.Windows.Forms.TextBox();
             this.dgvMonAn = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHinhAnh)).BeginInit();
@@ -412,6 +413,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBoxHinhAnh);
             this.panel1.Controls.Add(this.btnMoAnh);
             this.panel1.Controls.Add(this.btnResetAnh);
@@ -443,7 +445,7 @@
             // 
             // pictureBoxHinhAnh
             // 
-            this.pictureBoxHinhAnh.Location = new System.Drawing.Point(36, 384);
+            this.pictureBoxHinhAnh.Location = new System.Drawing.Point(36, 397);
             this.pictureBoxHinhAnh.Name = "pictureBoxHinhAnh";
             this.pictureBoxHinhAnh.Size = new System.Drawing.Size(384, 228);
             this.pictureBoxHinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -453,7 +455,7 @@
             // btnMoAnh
             // 
             this.btnMoAnh.ForeColor = System.Drawing.Color.Black;
-            this.btnMoAnh.Location = new System.Drawing.Point(89, 618);
+            this.btnMoAnh.Location = new System.Drawing.Point(85, 629);
             this.btnMoAnh.Name = "btnMoAnh";
             this.btnMoAnh.Size = new System.Drawing.Size(94, 27);
             this.btnMoAnh.TabIndex = 69;
@@ -464,7 +466,7 @@
             // btnResetAnh
             // 
             this.btnResetAnh.ForeColor = System.Drawing.Color.Black;
-            this.btnResetAnh.Location = new System.Drawing.Point(274, 618);
+            this.btnResetAnh.Location = new System.Drawing.Point(272, 628);
             this.btnResetAnh.Name = "btnResetAnh";
             this.btnResetAnh.Size = new System.Drawing.Size(94, 27);
             this.btnResetAnh.TabIndex = 69;
@@ -475,7 +477,7 @@
             // txtHinhAnh
             // 
             this.txtHinhAnh.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtHinhAnh.Location = new System.Drawing.Point(121, 651);
+            this.txtHinhAnh.Location = new System.Drawing.Point(119, 661);
             this.txtHinhAnh.Multiline = true;
             this.txtHinhAnh.Name = "txtHinhAnh";
             this.txtHinhAnh.Size = new System.Drawing.Size(205, 29);
@@ -508,6 +510,17 @@
             this.dgvMonAn.TabIndex = 69;
             this.dgvMonAn.TabStop = false;
             this.dgvMonAn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonAn_CellClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(36, 371);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 23);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "Hình Ảnh";
             // 
             // FrmQuanLyThucDon
             // 
@@ -571,5 +584,6 @@
         private System.Windows.Forms.Button btnMoAnh;
         private System.Windows.Forms.Button btnResetAnh;
         private System.Windows.Forms.PictureBox pictureBoxHinhAnh;
+        private System.Windows.Forms.Label label2;
     }
 }

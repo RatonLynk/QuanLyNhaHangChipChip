@@ -176,10 +176,11 @@ namespace _3_GUI
             {
                 var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text);
                 MessageBox.Show("Đăng nhập thành công ", "Thông báo");
-                FrmMain.mail = txtUsername.Text;
-                FrmDoiMatKhau.passcu = txtPassWord.Text;      
+                FrmMain frmMain = new FrmMain();
+
+                frmMain.mail = txtUsername.Text;
+                FrmDoiMatKhau.passcu = txtPassWord.Text;
                 this.Hide();
-                FrmMain frmMain = new FrmMain();              
                 /*frmHome.manv(Convert.ToString(nv1.MaNv),nv1.Name);*///truy xuất được mã nv khi đăng nhập
                 frmMain.ShowDialog();
                 this.Close();
