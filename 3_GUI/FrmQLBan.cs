@@ -356,7 +356,7 @@ namespace _3_GUI
                     Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney.ToString();
 
 
-                }
+                }//ád
                 else if (_hoadonCT != null)
                 {
 
