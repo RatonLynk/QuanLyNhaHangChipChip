@@ -246,19 +246,12 @@ namespace _3_GUI
 
         private void btnMoAnh_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.jiff)|*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.jiff";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                pictureBoxHinhAnh.Image = new Bitmap(open.FileName);
-                txtHinhAnh.Text = open.FileName;
-            }
+            
         }
 
         private void btnResetAnh_Click(object sender, EventArgs e)
         {
-            pictureBoxHinhAnh.Image = null;
-            txtHinhAnh.Text = null;
+            
         }
 
         private void dgvMonAn_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -295,7 +288,7 @@ namespace _3_GUI
                 {
                     rbtn_KHDthucdon.Checked = true;
                 }
-                if (_monCT.Anh.Length < 0)
+                if (_monCT.Anh.Length > 0)
                 {
                     pictureBoxHinhAnh.Image = new Bitmap(_monCT.Anh);
                 } else
@@ -303,6 +296,23 @@ namespace _3_GUI
                     pictureBoxHinhAnh.Image = null;
                 }
             }
+        }
+
+        private void btnMoAnh_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.jiff)|*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.jiff";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxHinhAnh.Image = new Bitmap(open.FileName);
+                txtHinhAnh.Text = open.FileName;
+            }
+        }
+
+        private void btnResetAnh_Click_1(object sender, EventArgs e)
+        {
+            pictureBoxHinhAnh.Image = null;
+            txtHinhAnh.Text = null;
         }
     }
 
