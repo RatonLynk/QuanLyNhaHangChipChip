@@ -59,6 +59,7 @@
             this.btnResetAnh = new System.Windows.Forms.Button();
             this.pictureBoxHinhAnh = new System.Windows.Forms.PictureBox();
             this.txtHinhAnh = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.dgvMonAn = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,12 +72,12 @@
             this.txtTenMonAn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTenMonAn.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenMonAn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTenMonAn.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTenMonAn.ForeColor = System.Drawing.Color.Black;
             this.txtTenMonAn.Location = new System.Drawing.Point(161, 18);
             this.txtTenMonAn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenMonAn.Name = "txtTenMonAn";
-            this.txtTenMonAn.Size = new System.Drawing.Size(205, 26);
+            this.txtTenMonAn.Size = new System.Drawing.Size(205, 25);
             this.txtTenMonAn.TabIndex = 5;
             // 
             // label8
@@ -84,12 +85,12 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(36, 19);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 20);
+            this.label8.Size = new System.Drawing.Size(100, 23);
             this.label8.TabIndex = 11;
             this.label8.Text = "Tên món ăn";
             // 
@@ -98,12 +99,12 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(36, 70);
+            this.label9.Location = new System.Drawing.Point(36, 66);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 20);
+            this.label9.Size = new System.Drawing.Size(69, 23);
             this.label9.TabIndex = 15;
             this.label9.Text = "Giá tiền";
             // 
@@ -112,12 +113,12 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(36, 121);
+            this.label12.Location = new System.Drawing.Point(36, 124);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 20);
+            this.label12.Size = new System.Drawing.Size(94, 23);
             this.label12.TabIndex = 13;
             this.label12.Text = "Đơn vị tính";
             // 
@@ -148,10 +149,11 @@
             // btnXoaMon
             // 
             this.btnXoaMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaMon.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnXoaMon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnXoaMon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoaMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnXoaMon.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaMon.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnXoaMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnXoaMon.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaMon.Image")));
             this.btnXoaMon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoaMon.Location = new System.Drawing.Point(955, 576);
@@ -160,16 +162,17 @@
             this.btnXoaMon.Size = new System.Drawing.Size(125, 49);
             this.btnXoaMon.TabIndex = 10;
             this.btnXoaMon.Text = "Xóa";
-            this.btnXoaMon.UseVisualStyleBackColor = true;
+            this.btnXoaMon.UseVisualStyleBackColor = false;
             this.btnXoaMon.Click += new System.EventHandler(this.btnXoaMon_Click);
             // 
             // btnSuaMon
             // 
             this.btnSuaMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaMon.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnSuaMon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSuaMon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuaMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSuaMon.ForeColor = System.Drawing.Color.Black;
+            this.btnSuaMon.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSuaMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnSuaMon.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaMon.Image")));
             this.btnSuaMon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSuaMon.Location = new System.Drawing.Point(750, 576);
@@ -178,16 +181,17 @@
             this.btnSuaMon.Size = new System.Drawing.Size(125, 49);
             this.btnSuaMon.TabIndex = 9;
             this.btnSuaMon.Text = "Sửa";
-            this.btnSuaMon.UseVisualStyleBackColor = true;
+            this.btnSuaMon.UseVisualStyleBackColor = false;
             this.btnSuaMon.Click += new System.EventHandler(this.btnSuaMon_Click);
             // 
             // btnThemMon
             // 
             this.btnThemMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemMon.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnThemMon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnThemMon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThemMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThemMon.ForeColor = System.Drawing.Color.Black;
+            this.btnThemMon.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnThemMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnThemMon.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMon.Image")));
             this.btnThemMon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemMon.Location = new System.Drawing.Point(529, 576);
@@ -196,7 +200,7 @@
             this.btnThemMon.Size = new System.Drawing.Size(125, 49);
             this.btnThemMon.TabIndex = 8;
             this.btnThemMon.Text = "Thêm";
-            this.btnThemMon.UseVisualStyleBackColor = true;
+            this.btnThemMon.UseVisualStyleBackColor = false;
             this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
             // label15
@@ -204,12 +208,12 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(36, 274);
+            this.label15.Location = new System.Drawing.Point(36, 275);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(80, 20);
+            this.label15.Size = new System.Drawing.Size(82, 23);
             this.label15.TabIndex = 11;
             this.label15.Text = "Cách nấu";
             // 
@@ -218,12 +222,12 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(36, 172);
+            this.label17.Location = new System.Drawing.Point(36, 173);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(89, 20);
+            this.label17.Size = new System.Drawing.Size(92, 23);
             this.label17.TabIndex = 5;
             this.label17.Text = "Trạng thái ";
             // 
@@ -259,12 +263,12 @@
             // 
             this.txt_TimKiemThucDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_TimKiemThucDon.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_TimKiemThucDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_TimKiemThucDon.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_TimKiemThucDon.ForeColor = System.Drawing.Color.Black;
             this.txt_TimKiemThucDon.Location = new System.Drawing.Point(898, 13);
             this.txt_TimKiemThucDon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_TimKiemThucDon.Name = "txt_TimKiemThucDon";
-            this.txt_TimKiemThucDon.Size = new System.Drawing.Size(225, 26);
+            this.txt_TimKiemThucDon.Size = new System.Drawing.Size(225, 25);
             this.txt_TimKiemThucDon.TabIndex = 0;
             this.txt_TimKiemThucDon.TextChanged += new System.EventHandler(this.txt_TimKiemThucDon_TextChanged);
             // 
@@ -285,10 +289,11 @@
             // 
             this.cbx_Meth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbx_Meth.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_Meth.FormattingEnabled = true;
             this.cbx_Meth.Location = new System.Drawing.Point(161, 270);
             this.cbx_Meth.Name = "cbx_Meth";
-            this.cbx_Meth.Size = new System.Drawing.Size(205, 28);
+            this.cbx_Meth.Size = new System.Drawing.Size(205, 25);
             this.cbx_Meth.TabIndex = 36;
             this.cbx_Meth.DropDown += new System.EventHandler(this.cbx_Meth_DropDown);
             // 
@@ -297,12 +302,12 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(36, 223);
+            this.label7.Location = new System.Drawing.Point(36, 221);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 20);
+            this.label7.Size = new System.Drawing.Size(89, 23);
             this.label7.TabIndex = 11;
             this.label7.Text = "Danh mục";
             // 
@@ -310,10 +315,11 @@
             // 
             this.cbx_Cat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbx_Cat.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_Cat.FormattingEnabled = true;
             this.cbx_Cat.Location = new System.Drawing.Point(161, 220);
             this.cbx_Cat.Name = "cbx_Cat";
-            this.cbx_Cat.Size = new System.Drawing.Size(205, 28);
+            this.cbx_Cat.Size = new System.Drawing.Size(205, 25);
             this.cbx_Cat.TabIndex = 36;
             this.cbx_Cat.DropDown += new System.EventHandler(this.cbx_Cat_DropDown);
             // 
@@ -321,10 +327,11 @@
             // 
             this.cbx_Unit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbx_Unit.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_Unit.FormattingEnabled = true;
             this.cbx_Unit.Location = new System.Drawing.Point(161, 118);
             this.cbx_Unit.Name = "cbx_Unit";
-            this.cbx_Unit.Size = new System.Drawing.Size(205, 28);
+            this.cbx_Unit.Size = new System.Drawing.Size(205, 25);
             this.cbx_Unit.TabIndex = 36;
             this.cbx_Unit.DropDown += new System.EventHandler(this.cbx_Unit_DropDown);
             // 
@@ -332,6 +339,7 @@
             // 
             this.txt_Price.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_Price.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Price.Increment = new decimal(new int[] {
             1000,
             0,
@@ -344,7 +352,7 @@
             0,
             0});
             this.txt_Price.Name = "txt_Price";
-            this.txt_Price.Size = new System.Drawing.Size(205, 27);
+            this.txt_Price.Size = new System.Drawing.Size(205, 25);
             this.txt_Price.TabIndex = 37;
             // 
             // btn_ConfigUnit
@@ -385,17 +393,18 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(36, 325);
+            this.label1.Location = new System.Drawing.Point(36, 332);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(55, 23);
             this.label1.TabIndex = 66;
             this.label1.Text = "Mô tả";
             // 
             // txt_GC
             // 
+            this.txt_GC.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_GC.Location = new System.Drawing.Point(161, 326);
             this.txt_GC.Multiline = true;
             this.txt_GC.Name = "txt_GC";
@@ -436,28 +445,26 @@
             // btnMoAnh
             // 
             this.btnMoAnh.ForeColor = System.Drawing.Color.Black;
-            this.btnMoAnh.Location = new System.Drawing.Point(83, 587);
+            this.btnMoAnh.Location = new System.Drawing.Point(112, 424);
             this.btnMoAnh.Name = "btnMoAnh";
             this.btnMoAnh.Size = new System.Drawing.Size(94, 27);
             this.btnMoAnh.TabIndex = 69;
             this.btnMoAnh.Text = "Mở  ảnh";
             this.btnMoAnh.UseVisualStyleBackColor = true;
-            this.btnMoAnh.Click += new System.EventHandler(this.btnMoAnh_Click);
             // 
             // btnResetAnh
             // 
             this.btnResetAnh.ForeColor = System.Drawing.Color.Black;
-            this.btnResetAnh.Location = new System.Drawing.Point(251, 587);
+            this.btnResetAnh.Location = new System.Drawing.Point(274, 424);
             this.btnResetAnh.Name = "btnResetAnh";
             this.btnResetAnh.Size = new System.Drawing.Size(94, 27);
             this.btnResetAnh.TabIndex = 69;
             this.btnResetAnh.Text = "Reset ảnh";
             this.btnResetAnh.UseVisualStyleBackColor = true;
-            this.btnResetAnh.Click += new System.EventHandler(this.btnResetAnh_Click);
             // 
             // pictureBoxHinhAnh
             // 
-            this.pictureBoxHinhAnh.Location = new System.Drawing.Point(36, 378);
+            this.pictureBoxHinhAnh.Location = new System.Drawing.Point(36, 457);
             this.pictureBoxHinhAnh.Name = "pictureBoxHinhAnh";
             this.pictureBoxHinhAnh.Size = new System.Drawing.Size(384, 186);
             this.pictureBoxHinhAnh.TabIndex = 68;
@@ -465,10 +472,26 @@
             // 
             // txtHinhAnh
             // 
-            this.txtHinhAnh.Location = new System.Drawing.Point(117, 627);
+            this.txtHinhAnh.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtHinhAnh.Location = new System.Drawing.Point(161, 377);
+            this.txtHinhAnh.Multiline = true;
             this.txtHinhAnh.Name = "txtHinhAnh";
-            this.txtHinhAnh.Size = new System.Drawing.Size(205, 27);
+            this.txtHinhAnh.Size = new System.Drawing.Size(205, 29);
             this.txtHinhAnh.TabIndex = 67;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(36, 383);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 23);
+            this.label2.TabIndex = 66;
+            this.label2.Text = "Hình Ảnh";
             // 
             // dgvMonAn
             // 

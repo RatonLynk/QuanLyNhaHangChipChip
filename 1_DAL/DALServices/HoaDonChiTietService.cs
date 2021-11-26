@@ -44,6 +44,7 @@ namespace _1_DAL.DALServices
         public void UpdateHoaDonCT(HoaDonChiTiet HoaDon)
         {
             _dbConText.HoaDonChiTiets.Update(HoaDon);
+            _dbConText.SaveChanges();
             
         }
     }
