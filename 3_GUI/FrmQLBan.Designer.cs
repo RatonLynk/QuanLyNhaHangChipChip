@@ -116,7 +116,7 @@ namespace _3_GUI
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox3.Controls.Add(this.Lbl_GioRa);
             this.groupBox3.Controls.Add(this.Lbl_GioVao);
             this.groupBox3.Controls.Add(this.Lbl_ViTriBan);
@@ -285,7 +285,7 @@ namespace _3_GUI
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(360, 486);
+            this.groupBox4.Size = new System.Drawing.Size(367, 486);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Menu";
@@ -302,13 +302,13 @@ namespace _3_GUI
             // 
             this.Dgid_Meniu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgid_Meniu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgid_Meniu.Location = new System.Drawing.Point(6, 55);
+            this.Dgid_Meniu.Location = new System.Drawing.Point(8, 48);
             this.Dgid_Meniu.Margin = new System.Windows.Forms.Padding(2);
             this.Dgid_Meniu.Name = "Dgid_Meniu";
             this.Dgid_Meniu.RowHeadersWidth = 51;
             this.Dgid_Meniu.RowTemplate.Height = 25;
             this.Dgid_Meniu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgid_Meniu.Size = new System.Drawing.Size(350, 426);
+            this.Dgid_Meniu.Size = new System.Drawing.Size(352, 424);
             this.Dgid_Meniu.TabIndex = 0;
             this.Dgid_Meniu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgid_Meniu_CellClick);
             // 
