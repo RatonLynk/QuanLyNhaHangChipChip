@@ -138,10 +138,10 @@ namespace _1_DAL.Migrations
                         .HasColumnName("ID");
 
                     b.Property<DateTime>("DateCheckIn")
-                        .HasColumnType("DateTime");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime>("DateCheckOut")
-                        .HasColumnType("DateTime");
+                        .HasColumnType("date");
 
                     b.Property<string>("DiaChi")
                         .HasColumnType("nvarchar(max)");

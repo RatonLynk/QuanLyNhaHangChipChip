@@ -34,9 +34,9 @@ namespace _1_DAL.DALServices
             return "Sửa thành công";
         }
 
-        public string remoteNV(NhanVien nhanVien)
+        public string removeNV(NhanVien nhanVien)
         {
-            _dbContext.NhanViens.Update(nhanVien);
+            _dbContext.NhanViens.Remove(nhanVien);
 
             return "Xóa thành công";
         }

@@ -11,7 +11,7 @@ namespace _1_DAL.iDALServices
     {
         public string AddNV(NhanVien nhanVien);
         public string EditNV(NhanVien nhanVien);
-        public string remoteNV(NhanVien nhanVien);
+        public string removeNV(NhanVien nhanVien);
         public string Save();
         public List<NhanVien> GetLstNVfromDB();
     }

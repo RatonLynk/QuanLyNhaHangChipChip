@@ -132,7 +132,7 @@ namespace _3_GUI
                 loadData();
             }
         }
-
+       
         private void btnSuaNV_Click(object sender, EventArgs e)
         {
             var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == txtMaNV.Text).FirstOrDefault();
@@ -195,8 +195,8 @@ namespace _3_GUI
                 return;
             }
         }
-        //clear form các thứ
-        private void Btn_clear_Click(object sender, EventArgs e)
+
+        private void btn_clear_Click_1(object sender, EventArgs e)
         {
             txt_TenNV.ResetText();
             txtEmail.ResetText();
