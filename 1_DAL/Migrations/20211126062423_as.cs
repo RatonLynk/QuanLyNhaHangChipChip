@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1_DAL.Migrations
 {
-    public partial class _1 : Migration
+    public partial class @as : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -83,7 +83,8 @@ namespace _1_DAL.Migrations
                     IDCategory = table.Column<int>(type: "int", nullable: false),
                     IDMethod = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: true),
-                    GhiChu = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true)
+                    GhiChu = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: true),
+                    Anh = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true)
                 },
                 constraints: table =>
                 {
