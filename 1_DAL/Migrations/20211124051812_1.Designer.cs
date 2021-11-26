@@ -10,8 +10,8 @@ using _1_DAL.Context;
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211123163818_2")]
-    partial class _2
+    [Migration("20211124051812_1")]
+    partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -140,10 +140,10 @@ namespace _1_DAL.Migrations
                         .HasColumnName("ID");
 
                     b.Property<DateTime>("DateCheckIn")
-                        .HasColumnType("DateTime");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime>("DateCheckOut")
-                        .HasColumnType("DateTime");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("DiaChi")
                         .HasColumnType("nvarchar(max)");

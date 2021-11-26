@@ -94,6 +94,7 @@ namespace _3_GUI
                     _monCT.Idmethod = _utilities.GetMethodID(cbx_Meth.Text);
                     _monCT.Price = txt_Price.Value;
                     _monCT.GhiChu = txt_GC.Text;
+                    _monCT.Anh = txtHinhAnh.Text;
                     _item.Id = _monCT.Id;
                     _item.Name = _monCT.Name;
                     if (rbtn_HDthucdon.Checked)
@@ -151,6 +152,7 @@ namespace _3_GUI
                     _monCT.Idmethod = _utilities.GetMethodID(cbx_Meth.Text);
                     _monCT.Price = txt_Price.Value;
                     _monCT.GhiChu = txt_GC.Text;
+                    _monCT.Anh = txtHinhAnh.Text;
                     _item.Id = _monCT.Id;
                     _item.Name = _monCT.Name;
                     _iQLMenuService.UpdateDetail(_monCT);
@@ -164,43 +166,6 @@ namespace _3_GUI
             }
         }
 
-        private void dgvMonAn_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var index = e.RowIndex;
-            if(index == _iQLMenuService.GetMonAnChiTiets().Count || index == -1)
-            {
-                txtTenMonAn.Text = null;
-                cbx_Unit.Text = null;
-                cbx_Cat.Text = null;
-                cbx_Meth.Text = null;
-                txt_Price.Value = 0;
-                rbtn_HDthucdon.Checked = false;
-                rbtn_KHDthucdon.Checked = false;
-                return;
-            }
-            else
-            {
-                int ID = (int)dgvMonAn.Rows[index].Cells[0].Value;
-                _monCT = _iQLMenuService.GetMonAnChiTiets().Where(c => c.Id == ID).FirstOrDefault();
-                _item = _iQLMenuService.GetThucDons().Where(c => c.Id == _monCT.Id).FirstOrDefault();
-                txtTenMonAn.Text = _monCT.Name;
-                cbx_Unit.Text = _utilities.GetDonViName(_monCT.Idunit);
-                cbx_Cat.Text = _utilities.GetCategoryName(_monCT.Idcategory);
-                cbx_Meth.Text = _utilities.GetMethodName(_monCT.Idmethod);
-                txt_GC.Text = _monCT.GhiChu;
-                txt_Price.Value = _monCT.Price;
-                if (_monCT.Status == 1)
-                {
-                    rbtn_HDthucdon.Checked = true; 
-                }
-                else
-                {
-                    rbtn_KHDthucdon.Checked = true;
-                }
-            }
-            
-
-        }
 
         private void btnXoaMon_Click(object sender, EventArgs e)
         {
@@ -277,6 +242,67 @@ namespace _3_GUI
         private void cbx_Cat_DropDown(object sender, EventArgs e)
         {
             FrmQuanLyThucDon_Load();
+        }
+
+        private void btnMoAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.jiff)|*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.jiff";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxHinhAnh.Image = new Bitmap(open.FileName);
+                txtHinhAnh.Text = open.FileName;
+            }
+        }
+
+        private void btnResetAnh_Click(object sender, EventArgs e)
+        {
+            pictureBoxHinhAnh.Image = null;
+            txtHinhAnh.Text = null;
+        }
+
+        private void dgvMonAn_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var index = e.RowIndex;
+            if (index == _iQLMenuService.GetMonAnChiTiets().Count || index == -1)
+            {
+                txtTenMonAn.Text = null;
+                cbx_Unit.Text = null;
+                cbx_Cat.Text = null;
+                cbx_Meth.Text = null;
+                txt_Price.Value = 0;
+                rbtn_HDthucdon.Checked = false;
+                rbtn_KHDthucdon.Checked = false;
+                pictureBoxHinhAnh.Image = null;
+                return;
+            }
+            else
+            {
+                int ID = (int)dgvMonAn.Rows[index].Cells[0].Value;
+                _monCT = _iQLMenuService.GetMonAnChiTiets().Where(c => c.Id == ID).FirstOrDefault();
+                _item = _iQLMenuService.GetThucDons().Where(c => c.Id == _monCT.Id).FirstOrDefault();
+                txtTenMonAn.Text = _monCT.Name;
+                cbx_Unit.Text = _utilities.GetDonViName(_monCT.Idunit);
+                cbx_Cat.Text = _utilities.GetCategoryName(_monCT.Idcategory);
+                cbx_Meth.Text = _utilities.GetMethodName(_monCT.Idmethod);
+                txt_GC.Text = _monCT.GhiChu;
+                txt_Price.Value = _monCT.Price;
+                if (_monCT.Status == 1)
+                {
+                    rbtn_HDthucdon.Checked = true;
+                }
+                else
+                {
+                    rbtn_KHDthucdon.Checked = true;
+                }
+                if (_monCT.Anh.Length < 0)
+                {
+                    pictureBoxHinhAnh.Image = new Bitmap(_monCT.Anh);
+                } else
+                {
+                    pictureBoxHinhAnh.Image = null;
+                }
+            }
         }
     }
 
