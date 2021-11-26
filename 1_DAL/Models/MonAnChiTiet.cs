@@ -36,6 +36,8 @@ namespace _1_DAL.Models
         public int? Status { get; set; }
         [StringLength(500)]
         public string GhiChu { get; set; }
+        [StringLength(500)]
+        public string Anh { get; set; }
 
         [ForeignKey(nameof(Idcategory))]
         [InverseProperty(nameof(DanhMucFood.MonAnChiTiets))]

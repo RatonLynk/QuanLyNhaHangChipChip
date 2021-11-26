@@ -333,7 +333,7 @@ namespace _3_GUI
             this.panelDesktopPane.Controls.Add(this.btnDoiMatKhau);
             this.panelDesktopPane.Controls.Add(this.btnDangXuat);
             this.panelDesktopPane.Controls.Add(this.panel1);
-            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelDesktopPane.Location = new System.Drawing.Point(361, 121);
             this.panelDesktopPane.Name = "panelDesktopPane";

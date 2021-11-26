@@ -55,11 +55,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_GC = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxHinhAnh = new System.Windows.Forms.PictureBox();
             this.btnMoAnh = new System.Windows.Forms.Button();
             this.btnResetAnh = new System.Windows.Forms.Button();
-            this.pictureBoxHinhAnh = new System.Windows.Forms.PictureBox();
             this.txtHinhAnh = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dgvMonAn = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).BeginInit();
             this.panel1.SuspendLayout();
@@ -236,6 +235,7 @@
             this.rbtn_HDthucdon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.rbtn_HDthucdon.AutoSize = true;
+            this.rbtn_HDthucdon.ForeColor = System.Drawing.Color.White;
             this.rbtn_HDthucdon.Location = new System.Drawing.Point(161, 172);
             this.rbtn_HDthucdon.Name = "rbtn_HDthucdon";
             this.rbtn_HDthucdon.Size = new System.Drawing.Size(102, 24);
@@ -249,6 +249,7 @@
             this.rbtn_KHDthucdon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.rbtn_KHDthucdon.AutoSize = true;
+            this.rbtn_KHDthucdon.ForeColor = System.Drawing.Color.White;
             this.rbtn_KHDthucdon.Location = new System.Drawing.Point(274, 172);
             this.rbtn_KHDthucdon.Name = "rbtn_KHDthucdon";
             this.rbtn_KHDthucdon.Size = new System.Drawing.Size(146, 24);
@@ -411,16 +412,15 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBoxHinhAnh);
             this.panel1.Controls.Add(this.btnMoAnh);
             this.panel1.Controls.Add(this.btnResetAnh);
-            this.panel1.Controls.Add(this.pictureBoxHinhAnh);
             this.panel1.Controls.Add(this.txtTenMonAn);
-            this.panel1.Controls.Add(this.txtHinhAnh);
             this.panel1.Controls.Add(this.txt_GC);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtHinhAnh);
             this.panel1.Controls.Add(this.btn_ConfigCat);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.btn_ConfigMeth);
@@ -441,56 +441,46 @@
             this.panel1.Size = new System.Drawing.Size(446, 668);
             this.panel1.TabIndex = 68;
             // 
+            // pictureBoxHinhAnh
+            // 
+            this.pictureBoxHinhAnh.Location = new System.Drawing.Point(36, 384);
+            this.pictureBoxHinhAnh.Name = "pictureBoxHinhAnh";
+            this.pictureBoxHinhAnh.Size = new System.Drawing.Size(384, 228);
+            this.pictureBoxHinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxHinhAnh.TabIndex = 68;
+            this.pictureBoxHinhAnh.TabStop = false;
+            // 
             // btnMoAnh
             // 
             this.btnMoAnh.ForeColor = System.Drawing.Color.Black;
-            this.btnMoAnh.Location = new System.Drawing.Point(112, 424);
+            this.btnMoAnh.Location = new System.Drawing.Point(89, 618);
             this.btnMoAnh.Name = "btnMoAnh";
             this.btnMoAnh.Size = new System.Drawing.Size(94, 27);
             this.btnMoAnh.TabIndex = 69;
             this.btnMoAnh.Text = "Mở  ảnh";
             this.btnMoAnh.UseVisualStyleBackColor = true;
+            this.btnMoAnh.Click += new System.EventHandler(this.btnMoAnh_Click);
             // 
             // btnResetAnh
             // 
             this.btnResetAnh.ForeColor = System.Drawing.Color.Black;
-            this.btnResetAnh.Location = new System.Drawing.Point(274, 424);
+            this.btnResetAnh.Location = new System.Drawing.Point(274, 618);
             this.btnResetAnh.Name = "btnResetAnh";
             this.btnResetAnh.Size = new System.Drawing.Size(94, 27);
             this.btnResetAnh.TabIndex = 69;
             this.btnResetAnh.Text = "Reset ảnh";
             this.btnResetAnh.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxHinhAnh
-            // 
-            this.pictureBoxHinhAnh.Location = new System.Drawing.Point(36, 457);
-            this.pictureBoxHinhAnh.Name = "pictureBoxHinhAnh";
-            this.pictureBoxHinhAnh.Size = new System.Drawing.Size(384, 186);
-            this.pictureBoxHinhAnh.TabIndex = 68;
-            this.pictureBoxHinhAnh.TabStop = false;
+            this.btnResetAnh.Click += new System.EventHandler(this.btnResetAnh_Click);
             // 
             // txtHinhAnh
             // 
             this.txtHinhAnh.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtHinhAnh.Location = new System.Drawing.Point(161, 377);
+            this.txtHinhAnh.Location = new System.Drawing.Point(121, 651);
             this.txtHinhAnh.Multiline = true;
             this.txtHinhAnh.Name = "txtHinhAnh";
             this.txtHinhAnh.Size = new System.Drawing.Size(205, 29);
             this.txtHinhAnh.TabIndex = 67;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(36, 383);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 23);
-            this.label2.TabIndex = 66;
-            this.label2.Text = "Hình Ảnh";
+            this.txtHinhAnh.Visible = false;
             // 
             // dgvMonAn
             // 
@@ -500,7 +490,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMonAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonAn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvMonAn.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvMonAn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.dgvMonAn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMonAn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -517,6 +507,7 @@
             this.dgvMonAn.Size = new System.Drawing.Size(658, 501);
             this.dgvMonAn.TabIndex = 69;
             this.dgvMonAn.TabStop = false;
+            this.dgvMonAn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonAn_CellClick);
             // 
             // FrmQuanLyThucDon
             // 
@@ -532,7 +523,7 @@
             this.Controls.Add(this.btnXoaMon);
             this.Controls.Add(this.btnSuaMon);
             this.Controls.Add(this.btnThemMon);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmQuanLyThucDon";
@@ -577,7 +568,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvMonAn;
         private System.Windows.Forms.TextBox txtHinhAnh;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnMoAnh;
         private System.Windows.Forms.Button btnResetAnh;
         private System.Windows.Forms.PictureBox pictureBoxHinhAnh;
