@@ -38,8 +38,7 @@ namespace _3_GUI
             this.Lbl_GioVao = new System.Windows.Forms.Label();
             this.Lbl_ViTriBan = new System.Windows.Forms.Label();
             this.button12 = new System.Windows.Forms.Button();
-            this.Btn_TachBan = new System.Windows.Forms.Button();
-            this.Btn_GopBan = new System.Windows.Forms.Button();
+            this.Btn_TachHoaDon = new System.Windows.Forms.Button();
             this.Btn_ChuyenBan = new System.Windows.Forms.Button();
             this.Btn_HuyBan = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@ namespace _3_GUI
             this.Btn_XuatBill = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.Btn_ThanhToan = new System.Windows.Forms.Button();
             this.Lbl_TongTien = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -66,9 +66,9 @@ namespace _3_GUI
             this.Btn_XoaBanT2 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.Btn_MangVe = new System.Windows.Forms.Button();
             this.FlPanl_MangVe = new System.Windows.Forms.FlowLayoutPanel();
-            this.Btn_ThanhToan = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -121,8 +121,7 @@ namespace _3_GUI
             this.groupBox3.Controls.Add(this.Lbl_GioVao);
             this.groupBox3.Controls.Add(this.Lbl_ViTriBan);
             this.groupBox3.Controls.Add(this.button12);
-            this.groupBox3.Controls.Add(this.Btn_TachBan);
-            this.groupBox3.Controls.Add(this.Btn_GopBan);
+            this.groupBox3.Controls.Add(this.Btn_TachHoaDon);
             this.groupBox3.Controls.Add(this.Btn_ChuyenBan);
             this.groupBox3.Controls.Add(this.Btn_HuyBan);
             this.groupBox3.Controls.Add(this.label3);
@@ -186,44 +185,33 @@ namespace _3_GUI
             this.button12.Text = "Kết thúc";
             this.button12.UseVisualStyleBackColor = false;
             // 
-            // Btn_TachBan
+            // Btn_TachHoaDon
             // 
-            this.Btn_TachBan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Btn_TachBan.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btn_TachBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_TachBan.Location = new System.Drawing.Point(276, 121);
-            this.Btn_TachBan.Margin = new System.Windows.Forms.Padding(2);
-            this.Btn_TachBan.Name = "Btn_TachBan";
-            this.Btn_TachBan.Size = new System.Drawing.Size(92, 35);
-            this.Btn_TachBan.TabIndex = 25;
-            this.Btn_TachBan.Text = "Tách bàn";
-            this.Btn_TachBan.UseVisualStyleBackColor = false;
-            // 
-            // Btn_GopBan
-            // 
-            this.Btn_GopBan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Btn_GopBan.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btn_GopBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_GopBan.Location = new System.Drawing.Point(184, 121);
-            this.Btn_GopBan.Margin = new System.Windows.Forms.Padding(2);
-            this.Btn_GopBan.Name = "Btn_GopBan";
-            this.Btn_GopBan.Size = new System.Drawing.Size(88, 35);
-            this.Btn_GopBan.TabIndex = 24;
-            this.Btn_GopBan.Text = "Gộp bàn";
-            this.Btn_GopBan.UseVisualStyleBackColor = false;
+            this.Btn_TachHoaDon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Btn_TachHoaDon.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_TachHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.Btn_TachHoaDon.Location = new System.Drawing.Point(276, 121);
+            this.Btn_TachHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_TachHoaDon.Name = "Btn_TachHoaDon";
+            this.Btn_TachHoaDon.Size = new System.Drawing.Size(92, 35);
+            this.Btn_TachHoaDon.TabIndex = 25;
+            this.Btn_TachHoaDon.Text = "Tách hóa đơn";
+            this.Btn_TachHoaDon.UseVisualStyleBackColor = false;
+            this.Btn_TachHoaDon.Click += new System.EventHandler(this.Btn_TachHoaDon_Click);
             // 
             // Btn_ChuyenBan
             // 
             this.Btn_ChuyenBan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Btn_ChuyenBan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_ChuyenBan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_ChuyenBan.Location = new System.Drawing.Point(60, 121);
+            this.Btn_ChuyenBan.Location = new System.Drawing.Point(137, 121);
             this.Btn_ChuyenBan.Margin = new System.Windows.Forms.Padding(2);
             this.Btn_ChuyenBan.Name = "Btn_ChuyenBan";
             this.Btn_ChuyenBan.Size = new System.Drawing.Size(99, 35);
             this.Btn_ChuyenBan.TabIndex = 23;
             this.Btn_ChuyenBan.Text = "Chuyển bàn";
             this.Btn_ChuyenBan.UseVisualStyleBackColor = false;
+            this.Btn_ChuyenBan.Click += new System.EventHandler(this.Btn_ChuyenBan_Click);
             // 
             // Btn_HuyBan
             // 
@@ -361,6 +349,23 @@ namespace _3_GUI
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 6;
             this.label6.Text = "Phụ phí:";
+            // 
+            // Btn_ThanhToan
+            // 
+            this.Btn_ThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btn_ThanhToan.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Btn_ThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.Btn_ThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ThanhToan.Image")));
+            this.Btn_ThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_ThanhToan.Location = new System.Drawing.Point(239, 163);
+            this.Btn_ThanhToan.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_ThanhToan.Name = "Btn_ThanhToan";
+            this.Btn_ThanhToan.Size = new System.Drawing.Size(110, 57);
+            this.Btn_ThanhToan.TabIndex = 26;
+            this.Btn_ThanhToan.Text = "Thanh Toán";
+            this.Btn_ThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_ThanhToan.UseVisualStyleBackColor = false;
+            this.Btn_ThanhToan.Click += new System.EventHandler(this.Btn_ThanhToan_Click);
             // 
             // Lbl_TongTien
             // 
@@ -507,6 +512,7 @@ namespace _3_GUI
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.Btn_MangVe);
             this.groupBox1.Controls.Add(this.FlPanl_MangVe);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -518,6 +524,16 @@ namespace _3_GUI
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đơn mang về";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(81, 463);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Btn_MangVe
             // 
@@ -539,23 +555,6 @@ namespace _3_GUI
             this.FlPanl_MangVe.Name = "FlPanl_MangVe";
             this.FlPanl_MangVe.Size = new System.Drawing.Size(312, 436);
             this.FlPanl_MangVe.TabIndex = 0;
-            // 
-            // Btn_ThanhToan
-            // 
-            this.Btn_ThanhToan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_ThanhToan.BackColor = System.Drawing.Color.LavenderBlush;
-            this.Btn_ThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.Btn_ThanhToan.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ThanhToan.Image")));
-            this.Btn_ThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_ThanhToan.Location = new System.Drawing.Point(239, 163);
-            this.Btn_ThanhToan.Margin = new System.Windows.Forms.Padding(2);
-            this.Btn_ThanhToan.Name = "Btn_ThanhToan";
-            this.Btn_ThanhToan.Size = new System.Drawing.Size(110, 57);
-            this.Btn_ThanhToan.TabIndex = 26;
-            this.Btn_ThanhToan.Text = "Thanh Toán";
-            this.Btn_ThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Btn_ThanhToan.UseVisualStyleBackColor = false;
-            this.Btn_ThanhToan.Click += new System.EventHandler(this.Btn_ThanhToan_Click);
             // 
             // FrmQLBan
             // 
@@ -596,8 +595,7 @@ namespace _3_GUI
         private System.Windows.Forms.DataGridView Dgid_HoaDon;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button Btn_TachBan;
-        private System.Windows.Forms.Button Btn_GopBan;
+        private System.Windows.Forms.Button Btn_TachHoaDon;
         private System.Windows.Forms.Button Btn_ChuyenBan;
         private System.Windows.Forms.Button Btn_HuyBan;
         private System.Windows.Forms.Label label3;
@@ -630,5 +628,6 @@ namespace _3_GUI
         private System.Windows.Forms.Button Btn_ThemBanT2;
         private System.Windows.Forms.Button Btn_XoaBanT2;
         private System.Windows.Forms.Button Btn_MangVe;
+        private System.Windows.Forms.Button button1;
     }
 }
