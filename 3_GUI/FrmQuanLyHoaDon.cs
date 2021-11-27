@@ -73,6 +73,7 @@ namespace _3_GUI
             if ((rowIndex == _qlHoaDon.GetBillsFromDB().Count) || rowIndex == -1) return;
             _idHoaDon = Convert.ToInt32(Dgid_HoaDon.Rows[rowIndex].Cells[5].Value.ToString());
             LoadHoaDonChiTiet(_idHoaDon);
+            //ádsdsa
         }
     }
 }
