@@ -180,6 +180,7 @@ namespace _3_GUI
 
                 frmMain.mail = txtUsername.Text;
                 FrmDoiMatKhau.passcu = txtPassWord.Text;
+                FrmQLBan.mail= txtUsername.Text;
                 this.Hide();
                 /*frmHome.manv(Convert.ToString(nv1.MaNv),nv1.Name);*///truy xuất được mã nv khi đăng nhập
                 frmMain.ShowDialog();
