@@ -73,6 +73,8 @@ namespace _3_GUI
             int id = ((sender as Button).Tag as HoaDon).Id;
             _IdHoaDon = id;
             _IdBan = 0;
+            FrmTachHoaDon._IdHoaDon = id;
+            FrmTachHoaDon._IdBanTachHD = 0;
             Lbl_ViTriBan.Text = "Mang Về";
             Lbl_TongTien.Visible = true;
             _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
@@ -135,6 +137,8 @@ namespace _3_GUI
             _IdBan = id;
             _IdHoaDon = 0;
             FrmChuyenBan._IdBanCu = id;
+            FrmTachHoaDon._IdHoaDon = 0;
+            FrmTachHoaDon._IdBanTachHD = id;
             BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
             LoadHoaDon(id);
             Lbl_ViTriBan.Text = "Tầng 1 - " + banAn.Name;
@@ -181,6 +185,8 @@ namespace _3_GUI
             _IdBan = id;
             _IdHoaDon = 0;
             FrmChuyenBan._IdBanCu = id;
+            FrmTachHoaDon._IdHoaDon = 0;
+            FrmTachHoaDon._IdBanTachHD = id;
             LoadHoaDon(id);
             BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
             Lbl_ViTriBan.Text = "Tầng 2 - " + banAn.Name;
@@ -256,7 +262,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\Users\phuon\Desktop\DuAn1\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\003-signs.png");
             img.Image = b;
 
 
