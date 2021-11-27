@@ -11,5 +11,7 @@ namespace _2_BUS.Models
     {
         public HoaDon hoaDon { get; set; }
         public HoaDonChiTiet hoaDonChiTiet { get; set; }
+        public BanAn banAn { get; set; }
+        public MonAnChiTiet monAnChiTiet { get; set; }
     }
 }

@@ -10,8 +10,8 @@ using _1_DAL.Context;
 namespace _1_DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20211123164700_ga")]
-    partial class ga
+    [Migration("20211124141127_chi345")]
+    partial class chi345
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

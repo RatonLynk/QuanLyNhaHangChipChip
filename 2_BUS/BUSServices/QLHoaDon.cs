@@ -16,10 +16,14 @@ namespace _2_BUS.BUSServices
         IHoaDonChiTietService _HDCT;
         iHoaDonService _HD;
         List<ViewHoaDon> _lstViewHD;
+        iBanAnService _iBan;
+        iMonAnChiTietService _monCT;
         public QLHoaDon()
         {
             _HD = new HoaDonService();
             _HDCT = new HoaDonChiTietService();
+            _iBan = new BanAnService();
+            _monCT = new MonAnChiTietService();
         }
         public void AddHoaDon(HoaDon HoaDon)
         {
@@ -56,10 +60,16 @@ namespace _2_BUS.BUSServices
             return _lstViewHD = (from a in _HD.GetBillsFromDB()
                                  join b in _HDCT.GetHoaDonCTFromDB()
                                  on a.Id equals b.Idbill
+                                 join c in _iBan.GetTablesFromDB()
+                                 on a.Idtable equals c.Id
+                                 join d in _monCT.GetDetailsFromDB()
+                                 on b.Idfood equals d.Id
                                  select new ViewHoaDon() 
                                  {
                                      hoaDon=a,
-                                     hoaDonChiTiet=b
+                                     hoaDonChiTiet=b,
+                                     banAn= c,
+                                     monAnChiTiet = d
                                  }).ToList();
         }
 
