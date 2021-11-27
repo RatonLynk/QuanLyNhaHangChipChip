@@ -658,24 +658,49 @@ namespace _3_GUI
 
         private void Btn_XoaMon_Click(object sender, EventArgs e)
         {
-            _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).FirstOrDefault();            
-            int giatru;
-            _soLuong = Convert.ToInt32(_f.Controls[0].Text);
-            HoaDonChiTiet hoaDonChiTiet = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Id == _IdHdCt);            
-            hoaDonChiTiet.Count -= _soLuong;
-            hoaDonChiTiet.Price -= _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
-            giatru = (int)(_soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault()));
-            _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet);
-            //List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoadon.Id).ToList();
-            //foreach (var x in lstHDCT)
-            //{
-            //    _hoadon.TotalMoney += x.Price;
-            //}
-            _hoadon.TotalMoney -= giatru;
-            _qlHoaDon.UpdateHoaDon(_hoadon);
-            LoadHoaDon(_IdBan);
-            Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney.ToString();
-            _f.Close();
+            if (_IdBan!=0 && _IdHoaDon==0)
+            {
+                _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).FirstOrDefault();
+                int giatru;
+                _soLuong = Convert.ToInt32(_f.Controls[0].Text);
+                HoaDonChiTiet hoaDonChiTiet = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Id == _IdHdCt);
+                hoaDonChiTiet.Count -= _soLuong;
+                hoaDonChiTiet.Price -= _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
+                giatru = (int)(_soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault()));
+                _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet);
+                //List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoadon.Id).ToList();
+                //foreach (var x in lstHDCT)
+                //{
+                //    _hoadon.TotalMoney += x.Price;
+                //}
+                _hoadon.TotalMoney -= giatru;
+                _qlHoaDon.UpdateHoaDon(_hoadon);
+                LoadHoaDon(_IdBan);
+                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).TotalMoney.ToString();
+                _f.Close();
+            }
+            else if (_IdBan == 0 && _IdHoaDon != 0)
+            {
+                _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Id==_IdHoaDon).FirstOrDefault();
+                int giatru;
+                _soLuong = Convert.ToInt32(_f.Controls[0].Text);
+                HoaDonChiTiet hoaDonChiTiet = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Id == _IdHdCt);
+                hoaDonChiTiet.Count -= _soLuong;
+                hoaDonChiTiet.Price -= _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
+                giatru = (int)(_soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault()));
+                _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet);
+                //List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoadon.Id).ToList();
+                //foreach (var x in lstHDCT)
+                //{
+                //    _hoadon.TotalMoney += x.Price;
+                //}
+                _hoadon.TotalMoney -= giatru;
+                _qlHoaDon.UpdateHoaDon(_hoadon);
+                LoadHoaDonMangVe(_hoadon.Id);
+                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id==_hoadon.Id).TotalMoney.ToString();
+                _f.Close();
+            }                 
+            
         }
 
         private void Btn_ThemBanT2_Click_1(object sender, EventArgs e)

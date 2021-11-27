@@ -29,10 +29,17 @@ namespace _3_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmTachHoaDon
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1025, 450);
+            this.Name = "FrmTachHoaDon";
             this.Text = "FrmTachHoaDon";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
