@@ -57,58 +57,7 @@ namespace _3_GUI
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(730, 407);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 20);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Mã bàn";
-            // 
-            // btnChon
-            // 
-            this.btnChon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChon.Location = new System.Drawing.Point(925, 397);
-            this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(117, 33);
-            this.btnChon.TabIndex = 35;
-            this.btnChon.Text = "Chọn";
-            this.btnChon.UseVisualStyleBackColor = true;
-            // 
-            // cbbMonAnVaBan
-            // 
-            this.cbbMonAnVaBan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbbMonAnVaBan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbMonAnVaBan.FormattingEnabled = true;
-            this.cbbMonAnVaBan.Location = new System.Drawing.Point(798, 400);
-            this.cbbMonAnVaBan.Name = "cbbMonAnVaBan";
-            this.cbbMonAnVaBan.Size = new System.Drawing.Size(121, 28);
-            this.cbbMonAnVaBan.TabIndex = 34;
-            // 
-            // dgvMonAnVaban
-            // 
-            this.dgvMonAnVaban.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMonAnVaban.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvMonAnVaban.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvMonAnVaban.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dgvMonAnVaban.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMonAnVaban.Location = new System.Drawing.Point(640, 66);
-            this.dgvMonAnVaban.Name = "dgvMonAnVaban";
-            this.dgvMonAnVaban.RowHeadersWidth = 51;
-            this.dgvMonAnVaban.Size = new System.Drawing.Size(442, 264);
-            this.dgvMonAnVaban.TabIndex = 33;
-            // 
-            // btnInHoaDon
-            // 
-            this.btnInHoaDon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInHoaDon.Location = new System.Drawing.Point(483, 440);
-            this.btnInHoaDon.Name = "btnInHoaDon";
-            this.btnInHoaDon.Size = new System.Drawing.Size(117, 33);
-            this.btnInHoaDon.TabIndex = 32;
-            this.btnInHoaDon.Text = "In Hóa Đơn";
-            this.btnInHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInHoaDon.UseVisualStyleBackColor = true;
+            
             // 
             // btnXoa
             // 
@@ -175,15 +124,7 @@ namespace _3_GUI
             this.Controls.Add(this.Dgid_HoaDon);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.nudTienTra);
-            this.Controls.Add(this.nudTienMat);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.nudTongTien);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.ltvThanhTien);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.ltvTenSanPham);
-            this.Controls.Add(this.label1);
+            
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmQuanLyHoaDon";
             this.Text = "Quản lý in hóa đơn";
