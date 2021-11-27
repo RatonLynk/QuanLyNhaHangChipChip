@@ -49,6 +49,9 @@ namespace _3_GUI
             this.label1 = new System.Windows.Forms.Label();
             this.lblChao = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -60,6 +63,7 @@ namespace _3_GUI
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             this.panelDesktopPane.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -322,10 +326,10 @@ namespace _3_GUI
             // 
             this.lblChao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblChao.AutoSize = true;
-            this.lblChao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.lblChao.BackColor = System.Drawing.SystemColors.Control;
             this.lblChao.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblChao.ForeColor = System.Drawing.Color.White;
-            this.lblChao.Location = new System.Drawing.Point(785, 6);
+            this.lblChao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.lblChao.Location = new System.Drawing.Point(897, 8);
             this.lblChao.Name = "lblChao";
             this.lblChao.Size = new System.Drawing.Size(67, 17);
             this.lblChao.TabIndex = 7;
@@ -334,8 +338,10 @@ namespace _3_GUI
             // 
             // panelDesktopPane
             // 
-            this.panelDesktopPane.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDesktopPane.BackgroundImage")));
             this.panelDesktopPane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDesktopPane.Controls.Add(this.label6);
+            this.panelDesktopPane.Controls.Add(this.label5);
+            this.panelDesktopPane.Controls.Add(this.pictureBox1);
             this.panelDesktopPane.Controls.Add(this.lblChao);
             this.panelDesktopPane.Controls.Add(this.btnDoiMatKhau);
             this.panelDesktopPane.Controls.Add(this.btnDangXuat);
@@ -348,20 +354,54 @@ namespace _3_GUI
             this.panelDesktopPane.Size = new System.Drawing.Size(1010, 536);
             this.panelDesktopPane.TabIndex = 2;
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Courier New", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.label6.Location = new System.Drawing.Point(431, 48);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(353, 67);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "CHIP CHIP";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.label5.Location = new System.Drawing.Point(490, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(201, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Hệ thống quản lý nhà hàng ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(331, 170);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(516, 533);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnDoiMatKhau
             // 
             this.btnDoiMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDoiMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnDoiMatKhau.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnDoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.White;
+            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDoiMatKhau.Location = new System.Drawing.Point(864, 97);
             this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(135, 35);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(154, 47);
             this.btnDoiMatKhau.TabIndex = 4;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -371,17 +411,17 @@ namespace _3_GUI
             // btnDangXuat
             // 
             this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.btnDangXuat.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangXuat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(881, 53);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangXuat.Location = new System.Drawing.Point(1007, 71);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(5);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(116, 36);
+            this.btnDangXuat.Size = new System.Drawing.Size(133, 48);
             this.btnDangXuat.TabIndex = 5;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -390,24 +430,25 @@ namespace _3_GUI
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labGio);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.labNgayGio);
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(17, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(19, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 171);
             this.panel1.TabIndex = 3;
             // 
             // labGio
             // 
+            this.labGio.BackColor = System.Drawing.SystemColors.Control;
             this.labGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labGio.ForeColor = System.Drawing.Color.White;
-            this.labGio.Location = new System.Drawing.Point(-1, 29);
-            this.labGio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labGio.Location = new System.Drawing.Point(-1, 39);
+            this.labGio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labGio.Name = "labGio";
             this.labGio.Size = new System.Drawing.Size(186, 70);
             this.labGio.TabIndex = 2;
@@ -417,10 +458,11 @@ namespace _3_GUI
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(90, 146);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(103, 195);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 1;
@@ -428,10 +470,11 @@ namespace _3_GUI
             // 
             // labNgayGio
             // 
+            this.labNgayGio.BackColor = System.Drawing.SystemColors.Control;
             this.labNgayGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labNgayGio.ForeColor = System.Drawing.Color.White;
-            this.labNgayGio.Location = new System.Drawing.Point(-1, 105);
-            this.labNgayGio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labNgayGio.Location = new System.Drawing.Point(-1, 140);
+            this.labNgayGio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labNgayGio.Name = "labNgayGio";
             this.labNgayGio.Size = new System.Drawing.Size(186, 20);
             this.labNgayGio.TabIndex = 0;
@@ -452,6 +495,7 @@ namespace _3_GUI
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(833, 385);
@@ -466,6 +510,7 @@ namespace _3_GUI
             this.panelTitleBar.PerformLayout();
             this.panelDesktopPane.ResumeLayout(false);
             this.panelDesktopPane.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -498,5 +543,8 @@ namespace _3_GUI
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Label lblChao;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

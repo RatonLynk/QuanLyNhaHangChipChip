@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _2_BUS.BUSServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,8 @@ namespace _3_GUI
         private Form activeForm;
         string mnv;
         string ten;
-        public static string mail;
+        public string mail;
+        IQLNhanVienService _qLNhanVienService;
         public FrmMain()
         {
             InitializeComponent();
@@ -194,6 +196,7 @@ namespace _3_GUI
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
             FrmDoiMatKhau a = new FrmDoiMatKhau();
+            a.mail = mail;
             a.ShowDialog();
         }
       
@@ -201,7 +204,7 @@ namespace _3_GUI
         private void FrmMain_Load(object sender, EventArgs e)
         {
             labNgayGio.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            lblChao.Text = " Chào: " + FrmMain.mail;
+            lblChao.Text = " Chào: " + mail;
             
         }
 
@@ -215,5 +218,7 @@ namespace _3_GUI
             ten = Ten;
             return Ten;
         }
+
+
     }
 }

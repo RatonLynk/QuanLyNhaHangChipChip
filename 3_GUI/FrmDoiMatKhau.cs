@@ -21,6 +21,7 @@ namespace _3_GUI
         private IQuenMatKhau QMK = new QuenMatKhau();
         private NhanVien _nv;
         public static string passcu;
+        public string mail;
         public FrmDoiMatKhau()
         {
             uti = new Utilities();
@@ -43,9 +44,9 @@ namespace _3_GUI
                 else
                 {
 
-                _nv = _qlnv.getlstNhanViens().Where(c => c.Email == FrmMain.mail).FirstOrDefault();
-                _nv = QMK.nhanViens(FrmMain.mail);
-                _nv.Password = txtNewPass.Text;         
+                _nv = _qlnv.getlstNhanViens().Where(c => c.Email == mail).FirstOrDefault();
+                _nv = QMK.nhanViens(mail);
+                _nv.Password = uti.GetHash(txtNewPass.Text);         
                 MessageBox.Show(QMK.UpdatePass(_nv), "Thông báo", MessageBoxButtons.OK);
                 this.Close();
           
