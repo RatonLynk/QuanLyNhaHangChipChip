@@ -63,34 +63,46 @@ namespace _3_GUI
             // btn_danhsach
             // 
             this.btn_danhsach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_danhsach.BackColor = System.Drawing.Color.LavenderBlush;
             this.btn_danhsach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_danhsach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_danhsach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.btn_danhsach.Image = ((System.Drawing.Image)(resources.GetObject("btn_danhsach.Image")));
+            this.btn_danhsach.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_danhsach.Location = new System.Drawing.Point(855, 13);
             this.btn_danhsach.Name = "btn_danhsach";
             this.btn_danhsach.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_danhsach.Size = new System.Drawing.Size(117, 33);
             this.btn_danhsach.TabIndex = 31;
             this.btn_danhsach.Text = "Danh Sách";
-            this.btn_danhsach.UseVisualStyleBackColor = true;
+            this.btn_danhsach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_danhsach.UseVisualStyleBackColor = false;
             this.btn_danhsach.Click += new System.EventHandler(this.btn_danhsach_Click);
             // 
             // btn_thongKe
             // 
+            this.btn_thongKe.BackColor = System.Drawing.Color.LavenderBlush;
             this.btn_thongKe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_thongKe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_thongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thongKe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.btn_thongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_thongKe.Image")));
+            this.btn_thongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_thongKe.Location = new System.Drawing.Point(521, 13);
             this.btn_thongKe.Name = "btn_thongKe";
             this.btn_thongKe.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_thongKe.Size = new System.Drawing.Size(117, 33);
             this.btn_thongKe.TabIndex = 30;
-            this.btn_thongKe.Text = "Thống Kê";
-            this.btn_thongKe.UseVisualStyleBackColor = true;
+            this.btn_thongKe.Text = "Thống kê";
+            this.btn_thongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thongKe.UseVisualStyleBackColor = false;
             this.btn_thongKe.Click += new System.EventHandler(this.btn_thongKe_Click_1);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.MenuBar;
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.Control;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.AntiqueWhite;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.Control;
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(92, 19);
@@ -102,6 +114,9 @@ namespace _3_GUI
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dateTimePicker2.CalendarTitleForeColor = System.Drawing.Color.AntiqueWhite;
+            this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.Control;
             this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(370, 17);

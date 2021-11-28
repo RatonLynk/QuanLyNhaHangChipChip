@@ -728,7 +728,7 @@ namespace _3_GUI
         {
             FrmChuyenBan frmChuyenBan = new FrmChuyenBan(this);
             frmChuyenBan.reloadBan += FrmChuyenBan_reloadBan;
-            frmChuyenBan.Show();
+            frmChuyenBan.ShowDialog();
         }
 
         private void FrmChuyenBan_reloadBan()
@@ -745,7 +745,7 @@ namespace _3_GUI
         private void Btn_TachHoaDon_Click(object sender, EventArgs e)
         {
             FrmTachHoaDon frmTachHoaDon = new FrmTachHoaDon();
-            frmTachHoaDon.Show();
+            frmTachHoaDon.ShowDialog();
         }
     }
 }

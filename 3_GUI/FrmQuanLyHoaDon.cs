@@ -28,6 +28,7 @@ namespace _3_GUI
         }
         void LoadHoaDon()
         {
+
             Dgid_HoaDon.ColumnCount = 6;
             Dgid_HoaDon.Columns[0].Name = "Tên bàn";
             Dgid_HoaDon.Columns[1].Name = "tổng tiền";
