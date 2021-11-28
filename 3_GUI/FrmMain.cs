@@ -1,4 +1,5 @@
-﻿using _2_BUS.BUSServices;
+﻿using _1_DAL.Models;
+using _2_BUS.BUSServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,9 @@ namespace _3_GUI
         string ten;
         public string mail;
         IQLNhanVienService _qLNhanVienService;
+        private NhanVien _nhanVien = new NhanVien();
+        private int flag = 0;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -31,6 +35,32 @@ namespace _3_GUI
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+       
+        }
+        public void SenderData(NhanVien nVien)
+        {
+            _nhanVien = nVien;
+          
+            checkRoles();
+            if (flag == 1)
+            {
+                btnQuanLyNhanVien.Visible= true;
+            }
+            else
+            {
+                btnQuanLyNhanVien .Visible= false;
+            }
+        }
+        void checkRoles()
+        {
+            if (_nhanVien.Id == 1)
+            {
+                flag = 1;
+            }
+            else
+            {
+                flag = 2;
+            }
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

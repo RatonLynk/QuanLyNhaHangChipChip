@@ -520,7 +520,7 @@ namespace _3_GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgrid_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrid_NhanVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgrid_NhanVien.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgrid_NhanVien.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgrid_NhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgrid_NhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

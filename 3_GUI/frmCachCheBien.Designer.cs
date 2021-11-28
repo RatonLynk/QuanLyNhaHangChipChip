@@ -99,7 +99,7 @@ namespace _3_GUI
             this.dgvCachNau.AllowUserToResizeRows = false;
             this.dgvCachNau.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCachNau.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvCachNau.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvCachNau.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvCachNau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCachNau.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvCachNau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
