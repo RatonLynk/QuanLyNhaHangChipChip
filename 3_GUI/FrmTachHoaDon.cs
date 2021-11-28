@@ -294,7 +294,7 @@ namespace _3_GUI
                     _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault(),
                     _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong, x.IDHDCT);
             }
-        }
+        }//as
 
         private void Dgrid_HDMoi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
