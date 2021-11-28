@@ -76,11 +76,10 @@ namespace _3_GUI
             this.btnPhucVu.ForeColor = System.Drawing.Color.White;
             this.btnPhucVu.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucVu.Image")));
             this.btnPhucVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhucVu.Location = new System.Drawing.Point(0, 91);
-            this.btnPhucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPhucVu.Location = new System.Drawing.Point(0, 121);
             this.btnPhucVu.Name = "btnPhucVu";
-            this.btnPhucVu.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnPhucVu.Size = new System.Drawing.Size(316, 85);
+            this.btnPhucVu.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnPhucVu.Size = new System.Drawing.Size(361, 121);
             this.btnPhucVu.TabIndex = 1;
             this.btnPhucVu.Text = "     Phục vụ khách hàng";
             this.btnPhucVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -96,11 +95,10 @@ namespace _3_GUI
             this.btnQuanLyThucDon.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyThucDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyThucDon.Image")));
             this.btnQuanLyThucDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyThucDon.Location = new System.Drawing.Point(0, 176);
-            this.btnQuanLyThucDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuanLyThucDon.Location = new System.Drawing.Point(0, 242);
             this.btnQuanLyThucDon.Name = "btnQuanLyThucDon";
-            this.btnQuanLyThucDon.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnQuanLyThucDon.Size = new System.Drawing.Size(316, 92);
+            this.btnQuanLyThucDon.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnQuanLyThucDon.Size = new System.Drawing.Size(361, 121);
             this.btnQuanLyThucDon.TabIndex = 2;
             this.btnQuanLyThucDon.Text = "    Quản lý thực đơn";
             this.btnQuanLyThucDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -116,11 +114,10 @@ namespace _3_GUI
             this.btnQuanLyHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyHoaDon.Image")));
             this.btnQuanLyHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(0, 268);
-            this.btnQuanLyHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(0, 363);
             this.btnQuanLyHoaDon.Name = "btnQuanLyHoaDon";
-            this.btnQuanLyHoaDon.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnQuanLyHoaDon.Size = new System.Drawing.Size(316, 98);
+            this.btnQuanLyHoaDon.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnQuanLyHoaDon.Size = new System.Drawing.Size(361, 121);
             this.btnQuanLyHoaDon.TabIndex = 3;
             this.btnQuanLyHoaDon.Text = "    Quản lý hóa đơn";
             this.btnQuanLyHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -136,11 +133,10 @@ namespace _3_GUI
             this.btnQuanLyNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyNhanVien.Image")));
             this.btnQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 366);
-            this.btnQuanLyNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 484);
             this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
-            this.btnQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(316, 92);
+            this.btnQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(361, 121);
             this.btnQuanLyNhanVien.TabIndex = 4;
             this.btnQuanLyNhanVien.Text = "    Quản lý nhân viên";
             this.btnQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -156,11 +152,10 @@ namespace _3_GUI
             this.btnTienIch.ForeColor = System.Drawing.Color.White;
             this.btnTienIch.Image = ((System.Drawing.Image)(resources.GetObject("btnTienIch.Image")));
             this.btnTienIch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTienIch.Location = new System.Drawing.Point(0, 458);
-            this.btnTienIch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTienIch.Location = new System.Drawing.Point(0, 605);
             this.btnTienIch.Name = "btnTienIch";
-            this.btnTienIch.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnTienIch.Size = new System.Drawing.Size(316, 87);
+            this.btnTienIch.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnTienIch.Size = new System.Drawing.Size(361, 121);
             this.btnTienIch.TabIndex = 5;
             this.btnTienIch.Text = "    Tiện ích";
             this.btnTienIch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -175,11 +170,10 @@ namespace _3_GUI
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(0, 545);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThoat.Location = new System.Drawing.Point(0, 726);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnThoat.Size = new System.Drawing.Size(316, 77);
+            this.btnThoat.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
+            this.btnThoat.Size = new System.Drawing.Size(361, 121);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "    Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -198,9 +192,8 @@ namespace _3_GUI
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(316, 627);
+            this.panelMenu.Size = new System.Drawing.Size(361, 836);
             this.panelMenu.TabIndex = 0;
             // 
             // panelLogo
@@ -210,9 +203,8 @@ namespace _3_GUI
             this.panelLogo.Controls.Add(this.label2);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(316, 91);
+            this.panelLogo.Size = new System.Drawing.Size(361, 121);
             this.panelLogo.TabIndex = 0;
             // 
             // label3
@@ -220,9 +212,9 @@ namespace _3_GUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Engravers MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(69, 34);
+            this.label3.Location = new System.Drawing.Point(79, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 19);
+            this.label3.Size = new System.Drawing.Size(204, 24);
             this.label3.TabIndex = 1;
             this.label3.Text = "Restaurant";
             // 
@@ -232,9 +224,9 @@ namespace _3_GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(45, -756);
+            this.label2.Location = new System.Drawing.Point(51, -1008);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 20);
+            this.label2.Size = new System.Drawing.Size(242, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Restaurant Chip Chip";
             // 
@@ -247,10 +239,9 @@ namespace _3_GUI
             this.panelTitleBar.Controls.Add(this.btnCloseChillForm);
             this.panelTitleBar.Controls.Add(this.label1);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(316, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelTitleBar.Location = new System.Drawing.Point(361, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1010, 91);
+            this.panelTitleBar.Size = new System.Drawing.Size(1154, 121);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -260,10 +251,9 @@ namespace _3_GUI
             this.bntMinimize.FlatAppearance.BorderSize = 0;
             this.bntMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntMinimize.Image = ((System.Drawing.Image)(resources.GetObject("bntMinimize.Image")));
-            this.bntMinimize.Location = new System.Drawing.Point(884, 9);
-            this.bntMinimize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bntMinimize.Location = new System.Drawing.Point(1010, 12);
             this.bntMinimize.Name = "bntMinimize";
-            this.bntMinimize.Size = new System.Drawing.Size(35, 22);
+            this.bntMinimize.Size = new System.Drawing.Size(40, 29);
             this.bntMinimize.TabIndex = 2;
             this.bntMinimize.UseVisualStyleBackColor = true;
             this.bntMinimize.Click += new System.EventHandler(this.bntMinimize_Click);
@@ -274,10 +264,9 @@ namespace _3_GUI
             this.btnMaximize.FlatAppearance.BorderSize = 0;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(924, 9);
-            this.btnMaximize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaximize.Location = new System.Drawing.Point(1056, 12);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(35, 22);
+            this.btnMaximize.Size = new System.Drawing.Size(40, 29);
             this.btnMaximize.TabIndex = 2;
             this.btnMaximize.UseVisualStyleBackColor = true;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
@@ -288,10 +277,9 @@ namespace _3_GUI
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(964, 9);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClose.Location = new System.Drawing.Point(1102, 12);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 22);
+            this.btnClose.Size = new System.Drawing.Size(40, 29);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -303,9 +291,8 @@ namespace _3_GUI
             this.btnCloseChillForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseChillForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChillForm.Image")));
             this.btnCloseChillForm.Location = new System.Drawing.Point(0, 0);
-            this.btnCloseChillForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCloseChillForm.Name = "btnCloseChillForm";
-            this.btnCloseChillForm.Size = new System.Drawing.Size(82, 91);
+            this.btnCloseChillForm.Size = new System.Drawing.Size(94, 121);
             this.btnCloseChillForm.TabIndex = 1;
             this.btnCloseChillForm.UseVisualStyleBackColor = true;
             this.btnCloseChillForm.Click += new System.EventHandler(this.btnCloseChillForm_Click);
@@ -316,9 +303,9 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(463, 32);
+            this.label1.Location = new System.Drawing.Point(529, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 28);
+            this.label1.Size = new System.Drawing.Size(100, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "HOME";
             // 
@@ -329,9 +316,9 @@ namespace _3_GUI
             this.lblChao.BackColor = System.Drawing.SystemColors.Control;
             this.lblChao.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblChao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.lblChao.Location = new System.Drawing.Point(897, 8);
+            this.lblChao.Location = new System.Drawing.Point(877, 11);
             this.lblChao.Name = "lblChao";
-            this.lblChao.Size = new System.Drawing.Size(67, 17);
+            this.lblChao.Size = new System.Drawing.Size(82, 20);
             this.lblChao.TabIndex = 7;
             this.lblChao.Text = "Chào bạn:";
             this.lblChao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -347,11 +334,10 @@ namespace _3_GUI
             this.panelDesktopPane.Controls.Add(this.btnDangXuat);
             this.panelDesktopPane.Controls.Add(this.panel1);
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPane.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelDesktopPane.Location = new System.Drawing.Point(316, 91);
-            this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelDesktopPane.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelDesktopPane.Location = new System.Drawing.Point(361, 121);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1010, 536);
+            this.panelDesktopPane.Size = new System.Drawing.Size(1154, 715);
             this.panelDesktopPane.TabIndex = 2;
             // 
             // label6
@@ -360,7 +346,7 @@ namespace _3_GUI
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Courier New", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.label6.Location = new System.Drawing.Point(431, 48);
+            this.label6.Location = new System.Drawing.Point(415, 60);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(353, 67);
             this.label6.TabIndex = 10;
@@ -372,7 +358,7 @@ namespace _3_GUI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.label5.Location = new System.Drawing.Point(490, 8);
+            this.label5.Location = new System.Drawing.Point(492, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 20);
             this.label5.TabIndex = 9;
@@ -382,9 +368,10 @@ namespace _3_GUI
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(331, 170);
+            this.pictureBox1.Location = new System.Drawing.Point(339, 131);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(516, 533);
+            this.pictureBox1.Size = new System.Drawing.Size(526, 544);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -398,10 +385,10 @@ namespace _3_GUI
             this.btnDoiMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(864, 97);
-            this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(981, 80);
+            this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(5);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(154, 47);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(158, 47);
             this.btnDoiMatKhau.TabIndex = 4;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -418,10 +405,10 @@ namespace _3_GUI
             this.btnDangXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(1007, 71);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDangXuat.Location = new System.Drawing.Point(1007, 151);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(133, 48);
+            this.btnDangXuat.Size = new System.Drawing.Size(132, 46);
             this.btnDangXuat.TabIndex = 5;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -435,22 +422,22 @@ namespace _3_GUI
             this.panel1.Controls.Add(this.labGio);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.labNgayGio);
-            this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(19, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5);
+            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panel1.Location = new System.Drawing.Point(22, 11);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 171);
+            this.panel1.Size = new System.Drawing.Size(215, 227);
             this.panel1.TabIndex = 3;
             // 
             // labGio
             // 
             this.labGio.BackColor = System.Drawing.SystemColors.Control;
             this.labGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labGio.ForeColor = System.Drawing.Color.White;
-            this.labGio.Location = new System.Drawing.Point(-1, 39);
-            this.labGio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labGio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.labGio.Location = new System.Drawing.Point(-1, 52);
+            this.labGio.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labGio.Name = "labGio";
-            this.labGio.Size = new System.Drawing.Size(186, 70);
+            this.labGio.Size = new System.Drawing.Size(213, 93);
             this.labGio.TabIndex = 2;
             this.labGio.Text = "Giờ";
             this.labGio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -461,10 +448,10 @@ namespace _3_GUI
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(103, 195);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Location = new System.Drawing.Point(118, 260);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.Size = new System.Drawing.Size(90, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Giờ hệ thống";
             // 
@@ -472,11 +459,11 @@ namespace _3_GUI
             // 
             this.labNgayGio.BackColor = System.Drawing.SystemColors.Control;
             this.labNgayGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labNgayGio.ForeColor = System.Drawing.Color.White;
-            this.labNgayGio.Location = new System.Drawing.Point(-1, 140);
-            this.labNgayGio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labNgayGio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.labNgayGio.Location = new System.Drawing.Point(-1, 187);
+            this.labNgayGio.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labNgayGio.Name = "labNgayGio";
-            this.labNgayGio.Size = new System.Drawing.Size(186, 20);
+            this.labNgayGio.Size = new System.Drawing.Size(213, 27);
             this.labNgayGio.TabIndex = 0;
             this.labNgayGio.Text = "Ngày tháng";
             this.labNgayGio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -488,17 +475,16 @@ namespace _3_GUI
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1326, 627);
+            this.ClientSize = new System.Drawing.Size(1515, 836);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(833, 385);
+            this.MinimumSize = new System.Drawing.Size(952, 513);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMain";
