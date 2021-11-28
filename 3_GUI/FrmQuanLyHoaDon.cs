@@ -106,7 +106,11 @@ namespace _3_GUI
 
             LoadHoaDon(date1, date2);
         }
-         
-}
+
+        private void btn_danhsach_Click(object sender, EventArgs e)
+        {
+            LoadHoaDon();
+        }
+    }
 }
        

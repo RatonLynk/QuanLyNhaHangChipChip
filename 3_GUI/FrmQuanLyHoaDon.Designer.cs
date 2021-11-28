@@ -68,6 +68,7 @@ namespace _3_GUI
             this.btn_danhsach.TabIndex = 31;
             this.btn_danhsach.Text = "Danh Sách";
             this.btn_danhsach.UseVisualStyleBackColor = true;
+            this.btn_danhsach.Click += new System.EventHandler(this.btn_danhsach_Click);
             // 
             // btn_thongKe
             // 
