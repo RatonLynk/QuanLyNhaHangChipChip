@@ -87,7 +87,7 @@ namespace _3_GUI
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\Users\phuon\Desktop\DuAn1\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"C:\Users\phuon\Desktop\DuAn1\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 4;
@@ -728,7 +728,7 @@ namespace _3_GUI
         {
             FrmChuyenBan frmChuyenBan = new FrmChuyenBan(this);
             frmChuyenBan.reloadBan += FrmChuyenBan_reloadBan;
-            frmChuyenBan.Show();
+            frmChuyenBan.ShowDialog();
         }
 
         private void FrmChuyenBan_reloadBan()
@@ -745,7 +745,7 @@ namespace _3_GUI
         private void Btn_TachHoaDon_Click(object sender, EventArgs e)
         {
             FrmTachHoaDon frmTachHoaDon = new FrmTachHoaDon();
-            frmTachHoaDon.Show();
+            frmTachHoaDon.ShowDialog();
         }
     }
 }

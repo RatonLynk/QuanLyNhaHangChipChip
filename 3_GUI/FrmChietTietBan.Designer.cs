@@ -230,9 +230,10 @@ namespace _3_GUI
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmChietTietBan";
-            this.Text = "FrmChietTietBan";
+            this.Text = "Chi tiết bàn";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

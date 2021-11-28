@@ -465,24 +465,26 @@
             // 
             // btnMoAnh
             // 
-            this.btnMoAnh.ForeColor = System.Drawing.Color.Black;
+            this.btnMoAnh.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnMoAnh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnMoAnh.Location = new System.Drawing.Point(85, 629);
             this.btnMoAnh.Name = "btnMoAnh";
             this.btnMoAnh.Size = new System.Drawing.Size(94, 27);
             this.btnMoAnh.TabIndex = 69;
             this.btnMoAnh.Text = "Mở  ảnh";
-            this.btnMoAnh.UseVisualStyleBackColor = true;
+            this.btnMoAnh.UseVisualStyleBackColor = false;
             this.btnMoAnh.Click += new System.EventHandler(this.btnMoAnh_Click);
             // 
             // btnResetAnh
             // 
-            this.btnResetAnh.ForeColor = System.Drawing.Color.Black;
+            this.btnResetAnh.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnResetAnh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnResetAnh.Location = new System.Drawing.Point(272, 628);
             this.btnResetAnh.Name = "btnResetAnh";
             this.btnResetAnh.Size = new System.Drawing.Size(94, 27);
             this.btnResetAnh.TabIndex = 69;
             this.btnResetAnh.Text = "Reset ảnh";
-            this.btnResetAnh.UseVisualStyleBackColor = true;
+            this.btnResetAnh.UseVisualStyleBackColor = false;
             this.btnResetAnh.Click += new System.EventHandler(this.btnResetAnh_Click);
             // 
             // txtHinhAnh
