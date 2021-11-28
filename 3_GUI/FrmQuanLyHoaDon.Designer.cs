@@ -44,8 +44,9 @@ namespace _3_GUI
             // 
             // Dgid_HoaDon
             // 
-            this.Dgid_HoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Dgid_HoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgid_HoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgid_HoaDon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.Dgid_HoaDon.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -61,10 +62,10 @@ namespace _3_GUI
             // 
             // btn_danhsach
             // 
-            this.btn_danhsach.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_danhsach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_danhsach.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_danhsach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_danhsach.Location = new System.Drawing.Point(830, 16);
+            this.btn_danhsach.Location = new System.Drawing.Point(855, 13);
             this.btn_danhsach.Name = "btn_danhsach";
             this.btn_danhsach.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_danhsach.Size = new System.Drawing.Size(117, 33);
@@ -75,8 +76,6 @@ namespace _3_GUI
             // 
             // btn_thongKe
             // 
-            this.btn_thongKe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_thongKe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_thongKe.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_thongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -91,8 +90,6 @@ namespace _3_GUI
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -105,8 +102,6 @@ namespace _3_GUI
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(370, 17);
@@ -118,8 +113,7 @@ namespace _3_GUI
             // 
             // dgrid_hdct
             // 
-            this.dgrid_hdct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgrid_hdct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgrid_hdct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrid_hdct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
@@ -135,8 +129,6 @@ namespace _3_GUI
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(21, 19);
@@ -147,8 +139,6 @@ namespace _3_GUI
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(289, 19);
