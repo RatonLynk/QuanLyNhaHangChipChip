@@ -106,15 +106,7 @@ namespace _3_GUI
 
             LoadHoaDon(date1, date2);
         }
-         //foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => (c.hoaDon.DateCheckIn >= date1 && c.hoaDon.DateCheckIn <= date2) ||
-         //   (c.hoaDon.DateCheckOut >= date1 && c.hoaDon.DateCheckOut <= date2) ||
-         //   (date1 >= c.hoaDon.DateCheckIn && date1 <= c.hoaDon.DateCheckOut) ||
-         //   (date2 >= c.hoaDon.DateCheckIn && date2 <= c.hoaDon.DateCheckOut)))
-         //   {
-         //       Dgid_HoaDon.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == x.banAn.Id).Select(c => c.banAn.Name).FirstOrDefault(), x.hoaDon.TotalMoney,
-         //           x.hoaDon.DateCheckIn, x.hoaDon.DateCheckOut, x.hoaDon.DichVu == 1 ? "đã thanh toán" : "chưa thanh toán", x.hoaDon.Id);
-
-         //   }
+         
 }
 }
        
