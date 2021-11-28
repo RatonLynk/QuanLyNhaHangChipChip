@@ -18,12 +18,14 @@ namespace _2_BUS.BUSServices
         List<ViewHoaDon> _lstViewHD;
         iBanAnService _iBan;
         iMonAnChiTietService _monCT;
+        IQLNhanVienService _NV;
         public QLHoaDon()
         {
             _HD = new HoaDonService();
             _HDCT = new HoaDonChiTietService();
             _iBan = new BanAnService();
             _monCT = new MonAnChiTietService();
+            _NV = new QLNhanVienService();
         }
         public void AddHoaDon(HoaDon HoaDon)
         {
@@ -64,12 +66,15 @@ namespace _2_BUS.BUSServices
                                  on a.Idtable equals c.Id
                                  join d in _monCT.GetDetailsFromDB()
                                  on b.Idfood equals d.Id
+                                 join e in _NV.getlstNhanViens()
+                                 on a.IdnhanVien equals e.Id
                                  select new ViewHoaDon() 
                                  {
                                      hoaDon=a,
                                      hoaDonChiTiet=b,
                                      banAn= c,
-                                     monAnChiTiet = d
+                                     monAnChiTiet = d,
+                                     nhanVien =e
                                  }).ToList();
         }
 
