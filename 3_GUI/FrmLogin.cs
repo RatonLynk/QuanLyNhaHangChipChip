@@ -21,7 +21,6 @@ namespace _3_GUI
     {
         private Utilities uti;
         private IQLNhanVienService _qlnv;
-        public int vaitro { get; set; }
         public NhanVien nhanVien;
         string userName = "";
         string passWord = "";
@@ -169,21 +168,19 @@ namespace _3_GUI
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
-        {
-           
+        {          
 
             if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password== uti.GetHash(txtPassWord.Text) && c.Status==true))
             {
-                var nv1 = _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text);
+               nhanVien= _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text);
                 MessageBox.Show("Đăng nhập thành công ", "Thông báo");
                 FrmMain frmMain = new FrmMain();
-
                 frmMain.mail = txtUsername.Text;
+                frmMain.SenderData(nhanVien);
                 FrmDoiMatKhau.passcu = txtPassWord.Text;
                 FrmQLBan.mail= txtUsername.Text;
                 FrmTachHoaDon._EmailTachHD = txtUsername.Text;
                 this.Hide();
-                /*frmHome.manv(Convert.ToString(nv1.MaNv),nv1.Name);*///truy xuất được mã nv khi đăng nhập
                 frmMain.ShowDialog();
                 this.Close();
 
