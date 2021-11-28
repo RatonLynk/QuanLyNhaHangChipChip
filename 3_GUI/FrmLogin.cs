@@ -114,12 +114,7 @@ namespace _3_GUI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            if (result == DialogResult.OK)
-                Application.Exit();
-        }
+      
 
         private void txtUsername_KeyDown(object sender, KeyEventArgs e)
         {
@@ -200,7 +195,18 @@ namespace _3_GUI
            
            
         }
-       
+
+        private void bntMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            if (result == DialogResult.OK)
+                Application.Exit();
+        }
     }
 
 }
