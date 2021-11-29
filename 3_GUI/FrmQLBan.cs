@@ -50,9 +50,9 @@ namespace _3_GUI
             LoadMangVe();
             Lbl_TongTien.Visible = false;
             //Lbl_GioVao.Text = DateTime.Now.ToString()            
-            _nhanVien = _qlNhanVien.getlstNhanViens().FirstOrDefault(c=>c.Email==mail);
+            _nhanVien = _qlNhanVien.getlstNhanViens().FirstOrDefault(c => c.Email == mail);
         }
-        
+
         void LoadMangVe()
         {
             FlPanl_MangVe.Controls.Clear();
@@ -66,7 +66,7 @@ namespace _3_GUI
                 FlPanl_MangVe.Controls.Add(btn1);
             }
 
-        }        
+        }
 
         private void Btn1_Click1(object sender, EventArgs e)
         {
@@ -87,7 +87,7 @@ namespace _3_GUI
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\Users\phuon\Desktop\DuAn1\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 4;
@@ -234,7 +234,7 @@ namespace _3_GUI
 
         private void Btn_ThemBanT2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Btn_XoaBanT2_Click(object sender, EventArgs e)
@@ -467,41 +467,42 @@ namespace _3_GUI
 
         private void Btn_HuyBan_Click(object sender, EventArgs e)
         {
-            if (_IdBan != 0 || _IdHoaDon != 0)
+            if (_IdBan == 0 && _IdHoaDon == 0)
             {
-                _f = new Form();
-                TextBox textBox = new TextBox();
-                textBox.Width = 250;
-                Button button12 = new Button();
-                Label label = new Label();
-                label.Text = "Lý do:";
-                button12.Text = "Hủy";
-                _f.Controls.Add(textBox);
-                _f.Controls.Add(button12);
-                _f.Controls.Add(label);
-                _f.Controls[2].Left = 10;
-                _f.Controls[2].Top = 13;
-                _f.Controls[0].Left = 80;
-                _f.Controls[1].Left = 150;
-                _f.Controls[0].Top = 10;
-                _f.Controls[1].Top = 50;
-                _f.Size = new Size(400, 120);
-                button12.Click += Button12_Click;
-                _f.ShowDialog();
-            }
-            else
-            {
+
                 MessageBox.Show("Chưa bọn bàn nào", "Thông báo");
                 return;
+
             }
+            _f = new Form();
+            TextBox textBox = new TextBox();
+            textBox.Width = 250;
+            Button button12 = new Button();
+            Label label = new Label();
+            label.Text = "Lý do:";
+            button12.Text = "Hủy";
+            _f.Controls.Add(textBox);
+            _f.Controls.Add(button12);
+            _f.Controls.Add(label);
+            _f.Controls[2].Left = 10;
+            _f.Controls[2].Top = 13;
+            _f.Controls[0].Left = 80;
+            _f.Controls[1].Left = 150;
+            _f.Controls[0].Top = 10;
+            _f.Controls[1].Top = 50;
+            _f.Size = new Size(400, 120);
+            button12.Click += Button12_Click;
+            _f.ShowDialog();
+
 
         }
 
         private void Button12_Click(object sender, EventArgs e)
         {
-            _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable==_IdBan && c.Status==true);
-            if (_IdBan==0 && _IdHoaDon!=0)
+            
+            if (_IdBan == 0 && _IdHoaDon != 0)
             {
+                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id==_IdHoaDon);
                 _hoadon.Status = false;
                 _hoadon.GhiChu = _f.Controls[0].Text;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
@@ -510,6 +511,7 @@ namespace _3_GUI
             }
             else if (_IdBan != 0 && _IdHoaDon == 0)
             {
+                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1);
                 _hoadon.Status = false;
                 _hoadon.GhiChu = _f.Controls[0].Text;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
@@ -664,7 +666,7 @@ namespace _3_GUI
 
         private void Btn_XoaMon_Click(object sender, EventArgs e)
         {
-            if (_IdBan!=0 && _IdHoaDon==0)
+            if (_IdBan != 0 && _IdHoaDon == 0)
             {
                 _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).FirstOrDefault();
                 int giatru;
@@ -682,12 +684,12 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDon(_IdBan);
-                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).TotalMoney.ToString();
+                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney.ToString();
                 _f.Close();
             }
             else if (_IdBan == 0 && _IdHoaDon != 0)
             {
-                _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Id==_IdHoaDon).FirstOrDefault();
+                _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Id == _IdHoaDon).FirstOrDefault();
                 int giatru;
                 _soLuong = Convert.ToInt32(_f.Controls[0].Text);
                 HoaDonChiTiet hoaDonChiTiet = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Id == _IdHdCt);
@@ -703,10 +705,10 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDonMangVe(_hoadon.Id);
-                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id==_hoadon.Id).TotalMoney.ToString();
+                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney.ToString();
                 _f.Close();
-            }                 
-            
+            }
+
         }
 
         private void Btn_ThemBanT2_Click_1(object sender, EventArgs e)
@@ -746,6 +748,11 @@ namespace _3_GUI
         {
             FrmTachHoaDon frmTachHoaDon = new FrmTachHoaDon();
             frmTachHoaDon.ShowDialog();
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
