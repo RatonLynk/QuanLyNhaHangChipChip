@@ -165,9 +165,9 @@ namespace _3_GUI
         private void btnDangNhap_Click(object sender, EventArgs e)
         {          
 
-            if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password== uti.GetHash(txtPassWord.Text) && c.Status==true))
+            if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password== /*uti.GetHash(*/txtPassWord.Text/*)*/ && c.Status==true))
             {
-               nhanVien= _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == txtPassWord.Text);
+               nhanVien= _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == /*uti.GetHash(*/txtPassWord.Text);
                 MessageBox.Show("Đăng nhập thành công ", "Thông báo");
                 FrmMain frmMain = new FrmMain();
                 frmMain.mail = txtUsername.Text;

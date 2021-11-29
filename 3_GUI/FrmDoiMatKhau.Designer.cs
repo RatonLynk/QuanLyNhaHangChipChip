@@ -45,12 +45,12 @@ namespace _3_GUI
             // txtPass
             // 
             this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPass.ForeColor = System.Drawing.Color.Black;
             this.txtPass.Location = new System.Drawing.Point(258, 175);
             this.txtPass.Margin = new System.Windows.Forms.Padding(5);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(255, 27);
+            this.txtPass.Size = new System.Drawing.Size(255, 30);
             this.txtPass.TabIndex = 6;
             // 
             // label1
@@ -68,12 +68,12 @@ namespace _3_GUI
             // txtNewPass
             // 
             this.txtNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNewPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNewPass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNewPass.ForeColor = System.Drawing.Color.Black;
             this.txtNewPass.Location = new System.Drawing.Point(258, 221);
             this.txtNewPass.Margin = new System.Windows.Forms.Padding(5);
             this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.Size = new System.Drawing.Size(255, 27);
+            this.txtNewPass.Size = new System.Drawing.Size(255, 30);
             this.txtNewPass.TabIndex = 6;
             // 
             // label2
@@ -91,12 +91,12 @@ namespace _3_GUI
             // txtNewPass2
             // 
             this.txtNewPass2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNewPass2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNewPass2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNewPass2.ForeColor = System.Drawing.Color.Black;
             this.txtNewPass2.Location = new System.Drawing.Point(258, 267);
             this.txtNewPass2.Margin = new System.Windows.Forms.Padding(5);
             this.txtNewPass2.Name = "txtNewPass2";
-            this.txtNewPass2.Size = new System.Drawing.Size(255, 27);
+            this.txtNewPass2.Size = new System.Drawing.Size(255, 30);
             this.txtNewPass2.TabIndex = 6;
             // 
             // label3

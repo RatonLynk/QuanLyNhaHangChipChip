@@ -49,7 +49,7 @@ namespace _3_GUI
             dgrid_NhanVien.Rows.Clear();
             foreach (var x in _iQlNhanVienService.getlstNhanViens())
             {
-                dgrid_NhanVien.Rows.Add(x.Id, x.Name, x.Email, x.Password, x.Role == 1 ? "Nhân viên" : "Quản lí",
+                dgrid_NhanVien.Rows.Add(x.Id, x.Name, x.Email, x.Password, x.Role == 1 ? "Quản lí" : x.Role == 2 ? "Nhân viên":"",
                     x.PhoneNo, x.Sex == true ? "Nam" : "Nữ", x.Address, x.Status == true ? "Hoạt động" : "Không hoạt động", x.MaNv);
             }
         }
