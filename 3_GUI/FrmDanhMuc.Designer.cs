@@ -80,7 +80,7 @@ namespace _3_GUI
             this.dgvDanhMuc.AllowUserToResizeRows = false;
             this.dgvDanhMuc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhMuc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvDanhMuc.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvDanhMuc.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvDanhMuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDanhMuc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvDanhMuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -278,6 +278,7 @@ namespace _3_GUI
             this.Controls.Add(this.btnSuaNhom);
             this.Controls.Add(this.btnThemNhom);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmDanhMuc";

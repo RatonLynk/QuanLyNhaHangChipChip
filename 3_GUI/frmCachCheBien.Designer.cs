@@ -99,7 +99,7 @@ namespace _3_GUI
             this.dgvCachNau.AllowUserToResizeRows = false;
             this.dgvCachNau.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCachNau.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvCachNau.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvCachNau.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvCachNau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCachNau.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvCachNau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -290,6 +290,7 @@ namespace _3_GUI
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmCachCheBien";

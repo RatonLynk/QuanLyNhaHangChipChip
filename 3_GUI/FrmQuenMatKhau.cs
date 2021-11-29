@@ -32,8 +32,9 @@ namespace _3_GUI
         {
             InitializeComponent();
             Sender = new SendMessage(GetMessage);
-            Txt_XacNhan.Enabled = false;
-            btn_XacNhan.Enabled = false;
+            label2.Visible = false;
+            Txt_XacNhan.Visible = false;
+            btn_XacNhan.Visible = false;
         }
         //Hàm có nhiệm vụ lấy tham số truyền vào
 
@@ -48,12 +49,20 @@ namespace _3_GUI
 
             if (_TimeNow - _Time > 1)
             {
-                MessageBox.Show("Đã quá thời gian 1 phút .\n Mã code đã vô hiệu hóa");
+                MessageBox.Show("Đã quá thời gian 1 phút  mã code đã vô hiệu hóa");
+                MessageBox.Show("Quên mật khẩu thất bại","Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                this.Close();
+                FrmLogin frm_DangNhap = new FrmLogin();
+                frm_DangNhap.ShowDialog();
 
             }
             else if (flag == 3)
             {
-                MessageBox.Show("Đã quá 3 lần xác nhân .\n Mã code đã vô hiệu hóa");
+                MessageBox.Show("Đã quá 3 lần xác nhân mã code đã vô hiệu hóa !");
+                MessageBox.Show("Quên mật khẩu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                FrmLogin frm_DangNhap = new FrmLogin();
+                frm_DangNhap.ShowDialog();
 
             }
             else if (Txt_XacNhan.Text == _code)
@@ -63,14 +72,32 @@ namespace _3_GUI
                 _NhanVien.Password = _pass;
                 nv.Update(_NhanVien);
                 nv.Save();
-                this.Close();
-                FrmLogin frm_DangNhap = new FrmLogin();
-                frm_DangNhap.ShowDialog();
+            
+                DialogResult result = MessageBox.Show("Quên mật khẩu thành công ,bạn có muốn đăng nhập luôn không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes) 
+                {
+                    this.Close();
+                    FrmLogin frm_DangNhap = new FrmLogin();
+                    frm_DangNhap.ShowDialog();
+                }
+                 
+                txt_Email.Enabled = true;
+                txt_Email.Text = string.Empty;               
+                Txt_XacNhan.Visible = false;
+                btn_XacNhan.Visible = false;
+                label2.Visible = false;
+                btn_SendtoEmail.Visible = true;
+                
+             
+            }
+            else if(Txt_XacNhan.Text == "")
+            {
+                MessageBox.Show("Không được để trống");
             }
             else
             {
                 flag += 1;
-                MessageBox.Show("Mã code không hợp lệ", mess);
+                MessageBox.Show("Mã code không hợp lệ, nhập lại", mess);
             }
         }
 
@@ -101,11 +128,12 @@ namespace _3_GUI
                         _code = sendPassCode.code;
 
                     
-                        MessageBox.Show("Mã Code đã được giử vào email", mess);
+                        MessageBox.Show("Mã Code đã được gửi vào email", mess);
                         _Time = DateTime.Now.Minute;
-                        Txt_XacNhan.Enabled = true;
-                        btn_XacNhan.Enabled = true;
-                        btn_SendtoEmail.Enabled = false;
+                        Txt_XacNhan.Visible = true;
+                        btn_XacNhan.Visible = true;
+                        label2.Visible = true;
+                        btn_SendtoEmail.Visible = false;
                     }
                 }
             }
@@ -122,10 +150,12 @@ namespace _3_GUI
                 else if (flag == 3)
                 {
                     MessageBox.Show("Đã quá 3 lần xác nhân .\n Mã code đã vô hiệu hóa");
+            
 
                 }
                 else if (Txt_XacNhan.Text == _code)
                 {
+                    MessageBox.Show("Quên mật khẩu thành công ", "Thông báo");
                     _NhanVien = new NhanVien();
                     _NhanVien = QMK.nhanViens(txt_Email.Text);
                     _NhanVien.Password = _pass;
@@ -148,10 +178,15 @@ namespace _3_GUI
 
         private void btnDong_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmLogin frmLogin = new FrmLogin();
-            frmLogin.ShowDialog();
-            this.Close();
+            DialogResult result = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            if (result == DialogResult.OK)
+            {
+
+                this.Hide();
+                FrmLogin frmLogin = new FrmLogin();
+                frmLogin.ShowDialog();
+                this.Close();
+            }
         }
 
         bool vadidatefrom()

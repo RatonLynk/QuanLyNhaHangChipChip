@@ -39,6 +39,8 @@ namespace _3_GUI
             this.btnThoat = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
@@ -59,12 +61,16 @@ namespace _3_GUI
             this.label4 = new System.Windows.Forms.Label();
             this.labNgayGio = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             this.panelDesktopPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPhucVu
@@ -76,10 +82,10 @@ namespace _3_GUI
             this.btnPhucVu.ForeColor = System.Drawing.Color.White;
             this.btnPhucVu.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucVu.Image")));
             this.btnPhucVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhucVu.Location = new System.Drawing.Point(0, 121);
+            this.btnPhucVu.Location = new System.Drawing.Point(0, 92);
             this.btnPhucVu.Name = "btnPhucVu";
             this.btnPhucVu.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnPhucVu.Size = new System.Drawing.Size(361, 113);
+            this.btnPhucVu.Size = new System.Drawing.Size(361, 121);
             this.btnPhucVu.TabIndex = 1;
             this.btnPhucVu.Text = "     Phục vụ khách hàng";
             this.btnPhucVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -95,10 +101,10 @@ namespace _3_GUI
             this.btnQuanLyThucDon.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyThucDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyThucDon.Image")));
             this.btnQuanLyThucDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyThucDon.Location = new System.Drawing.Point(0, 234);
+            this.btnQuanLyThucDon.Location = new System.Drawing.Point(0, 213);
             this.btnQuanLyThucDon.Name = "btnQuanLyThucDon";
             this.btnQuanLyThucDon.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnQuanLyThucDon.Size = new System.Drawing.Size(361, 122);
+            this.btnQuanLyThucDon.Size = new System.Drawing.Size(361, 121);
             this.btnQuanLyThucDon.TabIndex = 2;
             this.btnQuanLyThucDon.Text = "    Quản lý thực đơn";
             this.btnQuanLyThucDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -114,10 +120,10 @@ namespace _3_GUI
             this.btnQuanLyHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyHoaDon.Image")));
             this.btnQuanLyHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(0, 356);
+            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(0, 334);
             this.btnQuanLyHoaDon.Name = "btnQuanLyHoaDon";
             this.btnQuanLyHoaDon.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnQuanLyHoaDon.Size = new System.Drawing.Size(361, 130);
+            this.btnQuanLyHoaDon.Size = new System.Drawing.Size(361, 121);
             this.btnQuanLyHoaDon.TabIndex = 3;
             this.btnQuanLyHoaDon.Text = "    Quản lý hóa đơn";
             this.btnQuanLyHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -133,10 +139,10 @@ namespace _3_GUI
             this.btnQuanLyNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyNhanVien.Image")));
             this.btnQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 486);
+            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 455);
             this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
             this.btnQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(361, 122);
+            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(361, 121);
             this.btnQuanLyNhanVien.TabIndex = 4;
             this.btnQuanLyNhanVien.Text = "    Quản lý nhân viên";
             this.btnQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -152,10 +158,10 @@ namespace _3_GUI
             this.btnTienIch.ForeColor = System.Drawing.Color.White;
             this.btnTienIch.Image = ((System.Drawing.Image)(resources.GetObject("btnTienIch.Image")));
             this.btnTienIch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTienIch.Location = new System.Drawing.Point(0, 608);
+            this.btnTienIch.Location = new System.Drawing.Point(0, 576);
             this.btnTienIch.Name = "btnTienIch";
             this.btnTienIch.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnTienIch.Size = new System.Drawing.Size(361, 116);
+            this.btnTienIch.Size = new System.Drawing.Size(361, 121);
             this.btnTienIch.TabIndex = 5;
             this.btnTienIch.Text = "    Tiện ích";
             this.btnTienIch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -170,10 +176,10 @@ namespace _3_GUI
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(0, 724);
+            this.btnThoat.Location = new System.Drawing.Point(0, 697);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnThoat.Size = new System.Drawing.Size(361, 103);
+            this.btnThoat.Size = new System.Drawing.Size(361, 121);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "    Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -199,24 +205,44 @@ namespace _3_GUI
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelLogo.Controls.Add(this.pictureBox3);
+            this.panelLogo.Controls.Add(this.pictureBox2);
             this.panelLogo.Controls.Add(this.label3);
             this.panelLogo.Controls.Add(this.label2);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(361, 121);
+            this.panelLogo.Size = new System.Drawing.Size(361, 92);
             this.panelLogo.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(281, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(74, 75);
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(74, 75);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Engravers MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(79, 46);
+            this.label3.Location = new System.Drawing.Point(102, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(204, 24);
+            this.label3.Size = new System.Drawing.Size(152, 27);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Restaurant";
+            this.label3.Text = " CHIP CHIP";
             // 
             // label2
             // 
@@ -224,7 +250,7 @@ namespace _3_GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(51, -1008);
+            this.label2.Location = new System.Drawing.Point(51, -1022);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 26);
             this.label2.TabIndex = 0;
@@ -241,7 +267,7 @@ namespace _3_GUI
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(361, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1154, 121);
+            this.panelTitleBar.Size = new System.Drawing.Size(1154, 92);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -253,7 +279,7 @@ namespace _3_GUI
             this.bntMinimize.Image = ((System.Drawing.Image)(resources.GetObject("bntMinimize.Image")));
             this.bntMinimize.Location = new System.Drawing.Point(1010, 12);
             this.bntMinimize.Name = "bntMinimize";
-            this.bntMinimize.Size = new System.Drawing.Size(40, 30);
+            this.bntMinimize.Size = new System.Drawing.Size(40, 29);
             this.bntMinimize.TabIndex = 2;
             this.bntMinimize.UseVisualStyleBackColor = true;
             this.bntMinimize.Click += new System.EventHandler(this.bntMinimize_Click);
@@ -266,7 +292,7 @@ namespace _3_GUI
             this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
             this.btnMaximize.Location = new System.Drawing.Point(1056, 12);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(40, 30);
+            this.btnMaximize.Size = new System.Drawing.Size(40, 29);
             this.btnMaximize.TabIndex = 2;
             this.btnMaximize.UseVisualStyleBackColor = true;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
@@ -279,7 +305,7 @@ namespace _3_GUI
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.Location = new System.Drawing.Point(1102, 12);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 30);
+            this.btnClose.Size = new System.Drawing.Size(40, 29);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -292,7 +318,7 @@ namespace _3_GUI
             this.btnCloseChillForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChillForm.Image")));
             this.btnCloseChillForm.Location = new System.Drawing.Point(0, 0);
             this.btnCloseChillForm.Name = "btnCloseChillForm";
-            this.btnCloseChillForm.Size = new System.Drawing.Size(94, 121);
+            this.btnCloseChillForm.Size = new System.Drawing.Size(94, 92);
             this.btnCloseChillForm.TabIndex = 1;
             this.btnCloseChillForm.UseVisualStyleBackColor = true;
             this.btnCloseChillForm.Click += new System.EventHandler(this.btnCloseChillForm_Click);
@@ -303,7 +329,7 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(529, 42);
+            this.label1.Location = new System.Drawing.Point(529, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 35);
             this.label1.TabIndex = 0;
@@ -316,7 +342,7 @@ namespace _3_GUI
             this.lblChao.BackColor = System.Drawing.SystemColors.Control;
             this.lblChao.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblChao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.lblChao.Location = new System.Drawing.Point(897, 8);
+            this.lblChao.Location = new System.Drawing.Point(877, 26);
             this.lblChao.Name = "lblChao";
             this.lblChao.Size = new System.Drawing.Size(82, 20);
             this.lblChao.TabIndex = 7;
@@ -334,10 +360,10 @@ namespace _3_GUI
             this.panelDesktopPane.Controls.Add(this.btnDangXuat);
             this.panelDesktopPane.Controls.Add(this.panel1);
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPane.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelDesktopPane.Location = new System.Drawing.Point(361, 121);
+            this.panelDesktopPane.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelDesktopPane.Location = new System.Drawing.Point(361, 92);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1154, 715);
+            this.panelDesktopPane.Size = new System.Drawing.Size(1154, 744);
             this.panelDesktopPane.TabIndex = 2;
             // 
             // label6
@@ -346,7 +372,7 @@ namespace _3_GUI
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Courier New", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.label6.Location = new System.Drawing.Point(431, 48);
+            this.label6.Location = new System.Drawing.Point(415, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(353, 67);
             this.label6.TabIndex = 10;
@@ -358,7 +384,7 @@ namespace _3_GUI
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.label5.Location = new System.Drawing.Point(490, 8);
+            this.label5.Location = new System.Drawing.Point(492, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 20);
             this.label5.TabIndex = 9;
@@ -368,9 +394,10 @@ namespace _3_GUI
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(331, 170);
+            this.pictureBox1.Location = new System.Drawing.Point(339, 146);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(516, 533);
+            this.pictureBox1.Size = new System.Drawing.Size(526, 544);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -379,15 +406,14 @@ namespace _3_GUI
             this.btnDoiMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDoiMatKhau.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnDoiMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDoiMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
             this.btnDoiMatKhau.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(988, 129);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(981, 80);
             this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(5);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(152, 47);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(158, 47);
             this.btnDoiMatKhau.TabIndex = 4;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -399,15 +425,14 @@ namespace _3_GUI
             this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDangXuat.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangXuat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDangXuat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
             this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(1010, 71);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDangXuat.Location = new System.Drawing.Point(1007, 151);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(131, 47);
+            this.btnDangXuat.Size = new System.Drawing.Size(132, 46);
             this.btnDangXuat.TabIndex = 5;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -418,14 +443,15 @@ namespace _3_GUI
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.labGio);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.labNgayGio);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panel1.Location = new System.Drawing.Point(19, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5);
+            this.panel1.Location = new System.Drawing.Point(22, 11);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(214, 227);
+            this.panel1.Size = new System.Drawing.Size(215, 227);
             this.panel1.TabIndex = 3;
             // 
             // labGio
@@ -433,10 +459,10 @@ namespace _3_GUI
             this.labGio.BackColor = System.Drawing.SystemColors.Control;
             this.labGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labGio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.labGio.Location = new System.Drawing.Point(-1, 39);
-            this.labGio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labGio.Location = new System.Drawing.Point(-1, 91);
+            this.labGio.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labGio.Name = "labGio";
-            this.labGio.Size = new System.Drawing.Size(213, 93);
+            this.labGio.Size = new System.Drawing.Size(209, 82);
             this.labGio.TabIndex = 2;
             this.labGio.Text = "Giờ";
             this.labGio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -446,9 +472,9 @@ namespace _3_GUI
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.label4.Location = new System.Drawing.Point(103, 195);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(118, 260);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 17);
             this.label4.TabIndex = 1;
@@ -459,8 +485,8 @@ namespace _3_GUI
             this.labNgayGio.BackColor = System.Drawing.SystemColors.Control;
             this.labNgayGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labNgayGio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.labNgayGio.Location = new System.Drawing.Point(-1, 140);
-            this.labNgayGio.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labNgayGio.Location = new System.Drawing.Point(-1, 182);
+            this.labNgayGio.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labNgayGio.Name = "labNgayGio";
             this.labNgayGio.Size = new System.Drawing.Size(213, 27);
             this.labNgayGio.TabIndex = 0;
@@ -472,6 +498,15 @@ namespace _3_GUI
             this.timer.Enabled = true;
             this.timer.Tick += new System.EventHandler(this.timer_Tick_1);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(65, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(77, 74);
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -481,8 +516,9 @@ namespace _3_GUI
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(950, 500);
+            this.MinimumSize = new System.Drawing.Size(952, 513);
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMain";
@@ -490,6 +526,8 @@ namespace _3_GUI
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
             this.panelTitleBar.PerformLayout();
             this.panelDesktopPane.ResumeLayout(false);
@@ -497,6 +535,7 @@ namespace _3_GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -530,5 +569,8 @@ namespace _3_GUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

@@ -48,7 +48,7 @@ namespace _3_GUI
             this.btn_XacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btn_XacNhan.Image = ((System.Drawing.Image)(resources.GetObject("btn_XacNhan.Image")));
             this.btn_XacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XacNhan.Location = new System.Drawing.Point(272, 326);
+            this.btn_XacNhan.Location = new System.Drawing.Point(167, 332);
             this.btn_XacNhan.Name = "btn_XacNhan";
             this.btn_XacNhan.Size = new System.Drawing.Size(114, 45);
             this.btn_XacNhan.TabIndex = 107;
@@ -64,9 +64,9 @@ namespace _3_GUI
             this.btn_SendtoEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btn_SendtoEmail.Image = ((System.Drawing.Image)(resources.GetObject("btn_SendtoEmail.Image")));
             this.btn_SendtoEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SendtoEmail.Location = new System.Drawing.Point(78, 326);
+            this.btn_SendtoEmail.Location = new System.Drawing.Point(167, 332);
             this.btn_SendtoEmail.Name = "btn_SendtoEmail";
-            this.btn_SendtoEmail.Size = new System.Drawing.Size(114, 45);
+            this.btn_SendtoEmail.Size = new System.Drawing.Size(115, 45);
             this.btn_SendtoEmail.TabIndex = 106;
             this.btn_SendtoEmail.Text = "Gửi";
             this.btn_SendtoEmail.UseVisualStyleBackColor = false;
@@ -77,7 +77,7 @@ namespace _3_GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(54, 268);
+            this.label2.Location = new System.Drawing.Point(5, 269);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 23);
             this.label2.TabIndex = 105;
@@ -88,7 +88,7 @@ namespace _3_GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(96, 189);
+            this.label1.Location = new System.Drawing.Point(47, 190);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 23);
             this.label1.TabIndex = 104;
@@ -96,8 +96,9 @@ namespace _3_GUI
             // 
             // Txt_XacNhan
             // 
+            this.Txt_XacNhan.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Txt_XacNhan.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.Txt_XacNhan.Location = new System.Drawing.Point(191, 265);
+            this.Txt_XacNhan.Location = new System.Drawing.Point(142, 266);
             this.Txt_XacNhan.Name = "Txt_XacNhan";
             this.Txt_XacNhan.Size = new System.Drawing.Size(195, 27);
             this.Txt_XacNhan.TabIndex = 103;
@@ -105,7 +106,7 @@ namespace _3_GUI
             // txt_Email
             // 
             this.txt_Email.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txt_Email.Location = new System.Drawing.Point(190, 182);
+            this.txt_Email.Location = new System.Drawing.Point(141, 183);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(195, 27);
             this.txt_Email.TabIndex = 102;
@@ -113,7 +114,7 @@ namespace _3_GUI
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(156, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(142, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(159, 135);
             this.pictureBox1.TabIndex = 108;
@@ -121,7 +122,7 @@ namespace _3_GUI
             // 
             // btnDong
             // 
-            this.btnDong.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -129,12 +130,11 @@ namespace _3_GUI
             this.btnDong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
             this.btnDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDong.Location = new System.Drawing.Point(342, 437);
+            this.btnDong.Location = new System.Drawing.Point(374, 4);
             this.btnDong.Margin = new System.Windows.Forms.Padding(5);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(80, 41);
+            this.btnDong.Size = new System.Drawing.Size(35, 36);
             this.btnDong.TabIndex = 109;
-            this.btnDong.Text = "Đóng";
             this.btnDong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDong.UseVisualStyleBackColor = false;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
@@ -144,7 +144,7 @@ namespace _3_GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(436, 509);
+            this.ClientSize = new System.Drawing.Size(411, 440);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_XacNhan);
@@ -154,6 +154,7 @@ namespace _3_GUI
             this.Controls.Add(this.Txt_XacNhan);
             this.Controls.Add(this.txt_Email);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmQuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

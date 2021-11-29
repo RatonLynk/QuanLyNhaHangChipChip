@@ -55,12 +55,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_GC = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxHinhAnh = new System.Windows.Forms.PictureBox();
             this.btnMoAnh = new System.Windows.Forms.Button();
             this.btnResetAnh = new System.Windows.Forms.Button();
             this.txtHinhAnh = new System.Windows.Forms.TextBox();
             this.dgvMonAn = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Price)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHinhAnh)).BeginInit();
@@ -443,6 +443,17 @@
             this.panel1.Size = new System.Drawing.Size(446, 668);
             this.panel1.TabIndex = 68;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(36, 371);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 23);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "Hình Ảnh";
+            // 
             // pictureBoxHinhAnh
             // 
             this.pictureBoxHinhAnh.Location = new System.Drawing.Point(36, 397);
@@ -454,24 +465,26 @@
             // 
             // btnMoAnh
             // 
-            this.btnMoAnh.ForeColor = System.Drawing.Color.Black;
+            this.btnMoAnh.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnMoAnh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnMoAnh.Location = new System.Drawing.Point(85, 629);
             this.btnMoAnh.Name = "btnMoAnh";
             this.btnMoAnh.Size = new System.Drawing.Size(94, 27);
             this.btnMoAnh.TabIndex = 69;
             this.btnMoAnh.Text = "Mở  ảnh";
-            this.btnMoAnh.UseVisualStyleBackColor = true;
+            this.btnMoAnh.UseVisualStyleBackColor = false;
             this.btnMoAnh.Click += new System.EventHandler(this.btnMoAnh_Click);
             // 
             // btnResetAnh
             // 
-            this.btnResetAnh.ForeColor = System.Drawing.Color.Black;
+            this.btnResetAnh.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnResetAnh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnResetAnh.Location = new System.Drawing.Point(272, 628);
             this.btnResetAnh.Name = "btnResetAnh";
             this.btnResetAnh.Size = new System.Drawing.Size(94, 27);
             this.btnResetAnh.TabIndex = 69;
             this.btnResetAnh.Text = "Reset ảnh";
-            this.btnResetAnh.UseVisualStyleBackColor = true;
+            this.btnResetAnh.UseVisualStyleBackColor = false;
             this.btnResetAnh.Click += new System.EventHandler(this.btnResetAnh_Click);
             // 
             // txtHinhAnh
@@ -492,7 +505,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMonAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonAn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvMonAn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.dgvMonAn.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvMonAn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMonAn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -511,17 +524,6 @@
             this.dgvMonAn.TabStop = false;
             this.dgvMonAn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonAn_CellClick);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(36, 371);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 23);
-            this.label2.TabIndex = 70;
-            this.label2.Text = "Hình Ảnh";
-            // 
             // FrmQuanLyThucDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -537,6 +539,7 @@
             this.Controls.Add(this.btnSuaMon);
             this.Controls.Add(this.btnThemMon);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmQuanLyThucDon";
