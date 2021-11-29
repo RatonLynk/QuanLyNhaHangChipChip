@@ -95,8 +95,9 @@ namespace _3_GUI
                     _monCT.Price = txt_Price.Value;
                     _monCT.GhiChu = txt_GC.Text;
                     _monCT.Anh = txtHinhAnh.Text;
-                    _item.Id = _monCT.Id;
+                    _item.Id = _iQLMenuService.GetThucDons().Count;
                     _item.Name = _monCT.Name;
+                    _item.IdchiTiet = _monCT.Id;
                     if (rbtn_HDthucdon.Checked)
                     {
                         _monCT.Status = 1;

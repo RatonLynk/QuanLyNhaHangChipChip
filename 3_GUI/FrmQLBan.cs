@@ -35,6 +35,7 @@ namespace _3_GUI
         NhanVien _nhanVien;
         HoaDonChiTiet _hoadonCT;
         Form _f;
+        FrmMain frm;
         public FrmQLBan()
         {
             InitializeComponent();
@@ -87,7 +88,7 @@ namespace _3_GUI
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 4;
@@ -100,18 +101,19 @@ namespace _3_GUI
             foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Id == hoadon && c.hoaDon.Status == true))
             {
                 Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Name).FirstOrDefault(), x.hoaDonChiTiet.Count,
-                    _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault(),
-                    x.hoaDonChiTiet.Count * _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault());
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault()),
+                    decimal.Truncate(x.hoaDonChiTiet.Count * _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault()));
             }
         }
 
         public void LoadTableT1()
         {
+            FLPenal.Invalidate();
             FLPenal.Controls.Clear();
             foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
-                //Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\caiBan.png");                
+                //Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\caiBan.png");                
                 //btn.Image= b;
                 btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
                 btn.Click += Btn_Click;
@@ -262,7 +264,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -273,7 +275,7 @@ namespace _3_GUI
             Dgid_Meniu.Rows.Clear();
             foreach (var x in _qlMeniu.GetViewMenus())
             {
-                Dgid_Meniu.Rows.Add(x.details.Name, x.details.Price);
+                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price));
             }
 
         }
@@ -326,8 +328,8 @@ namespace _3_GUI
                     _hoadon.Idtable = _IdBan;
                     _hoadon.Status = true;
                     _hoadon.TotalMoney = 0;
-                    //_hoadon.IdnhanVien == _nhanVien.Id;
-                    _hoadon.IdnhanVien = 1;
+                    _hoadon.IdnhanVien = _nhanVien.Id;
+                    //_hoadon.IdnhanVien = 1;
                     _hoadon.DichVu = 1;
                     _qlHoaDon.AddHoaDon(_hoadon);
                     BanAn ban = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
@@ -608,7 +610,7 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
-            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
@@ -629,8 +631,8 @@ namespace _3_GUI
             foreach (var x in abc)
             {
                 Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Name).FirstOrDefault(), x.SoLuong,
-                    _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault(),
-                    _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong, x.IDHDCT);
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault()),
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong), x.IDHDCT);
             }
 
         }
@@ -730,6 +732,7 @@ namespace _3_GUI
         {
             FrmChuyenBan frmChuyenBan = new FrmChuyenBan(this);
             frmChuyenBan.reloadBan += FrmChuyenBan_reloadBan;
+            frmChuyenBan.getFrmMain(frm);
             frmChuyenBan.ShowDialog();
         }
 
@@ -737,6 +740,7 @@ namespace _3_GUI
         {
             FLPenal.Controls.Clear();
             LoadTableT1();
+            LoadTableT2();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -749,10 +753,18 @@ namespace _3_GUI
             FrmTachHoaDon frmTachHoaDon = new FrmTachHoaDon();
             frmTachHoaDon.ShowDialog();
         }
-
+        public void getNhanVien(NhanVien nv)
+        {
+            _nhanVien = nv;
+        }
         private void button12_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        public void getFrmMain(FrmMain forme)
+        {
+            frm = forme;
         }
     }
 }

@@ -28,6 +28,7 @@ namespace _3_GUI
         int _IdBan;
         HoaDon _hoaDon;
         BanAn _banAn;
+        FrmMain frm;
         public FrmChuyenBan(FrmQLBan alo)
         {
             InitializeComponent();
@@ -193,6 +194,11 @@ namespace _3_GUI
         {
             _FrmQLBan.LoadTableT1();
             _FrmQLBan.LoadTableT2();
+            _FrmQLBan.Refresh();
+        }
+        public void getFrmMain(FrmMain forme)
+        {
+            frm = forme;
         }
     }
 }

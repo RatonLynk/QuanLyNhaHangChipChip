@@ -130,9 +130,12 @@ namespace _3_GUI
             }
         }
 
-        private void btnPhucVu_Click(object sender, EventArgs e)
+        public void btnPhucVu_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmQLBan(), sender);
+            FrmQLBan frmBan = new FrmQLBan();
+            frmBan.getNhanVien(_nhanVien);
+            frmBan.getFrmMain(this);
+            OpenChildForm(frmBan, sender);
         }
 
         private void btnQuanLyThucDon_Click(object sender, EventArgs e)
