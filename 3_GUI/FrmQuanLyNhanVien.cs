@@ -69,7 +69,7 @@ namespace _3_GUI
             NhanVien.Sex = Convert.ToBoolean(chk_nam.Checked ? true : false);
             NhanVien.Status = Convert.ToBoolean(rbtnHDnhanvien.Checked ? true : false);
             NhanVien.Password = _utilities.GetHash("123");
-            NhanVien.Role = chk_quanLi.Checked ? 0 : 1;
+            NhanVien.Role = chk_quanLi.Checked ? 1 : 2;
             if ((MessageBox.Show("Bạn muốn thêm một nhân viên ?",
                 "Thông báo",
                 MessageBoxButtons.YesNo) == DialogResult.Yes))
@@ -102,7 +102,7 @@ namespace _3_GUI
             nhanVien.Name = txt_TenNV.Text;
             nhanVien.Email = txtEmail.Text;
             nhanVien.Password = _utilities.GetHash(txtMatKhau.Text);
-            nhanVien.Role = chk_quanLi.Checked ? 0 : 1;
+            nhanVien.Role = chk_quanLi.Checked ? 1 : 2;
             nhanVien.Address = txt_DiaChiNV.Text;
             nhanVien.PhoneNo = txt_SDT.Text;
             nhanVien.Sex = chk_nam.Checked ? true : false;
