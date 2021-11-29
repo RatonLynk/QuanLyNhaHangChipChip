@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1_DAL.Migrations
 {
-    public partial class chi234 : Migration
+    public partial class chi11 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

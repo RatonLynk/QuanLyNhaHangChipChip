@@ -85,8 +85,8 @@ namespace _3_GUI
             dgrid_hdct.Rows.Clear();
             foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Id == id))
             {
-                dgrid_hdct.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Id == x.hoaDonChiTiet.Idbill).Select(c => c.monAnChiTiet.Name).FirstOrDefault(), x.hoaDonChiTiet.Count,
-                    x.hoaDonChiTiet.Price, x.hoaDon.TotalMoney,x.hoaDon.DichVu==1?"Tại bàn":"Mang về", x.hoaDonChiTiet.Id);
+                dgrid_hdct.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDonChiTiet.Idfood == x.monAnChiTiet.Id).Select(c => c.monAnChiTiet.Name).FirstOrDefault(), x.hoaDonChiTiet.Count,
+                    x.monAnChiTiet.Price, x.hoaDonChiTiet.Price,x.hoaDon.DichVu==1?"Tại bàn":"Mang về", x.hoaDonChiTiet.Id);
 
             }
 
