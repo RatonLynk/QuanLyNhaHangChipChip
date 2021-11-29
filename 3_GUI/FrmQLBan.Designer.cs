@@ -145,7 +145,7 @@ namespace _3_GUI
             this.Lbl_GioRa.Location = new System.Drawing.Point(124, 98);
             this.Lbl_GioRa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_GioRa.Name = "Lbl_GioRa";
-            this.Lbl_GioRa.Size = new System.Drawing.Size(110, 15);
+            this.Lbl_GioRa.Size = new System.Drawing.Size(143, 20);
             this.Lbl_GioRa.TabIndex = 29;
             this.Lbl_GioRa.Text = "00:00:00 00/00/2021";
             // 
@@ -158,7 +158,7 @@ namespace _3_GUI
             this.Lbl_GioVao.Location = new System.Drawing.Point(124, 72);
             this.Lbl_GioVao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_GioVao.Name = "Lbl_GioVao";
-            this.Lbl_GioVao.Size = new System.Drawing.Size(110, 15);
+            this.Lbl_GioVao.Size = new System.Drawing.Size(143, 20);
             this.Lbl_GioVao.TabIndex = 28;
             this.Lbl_GioVao.Text = "00:00:00 00/00/2021";
             // 
@@ -171,7 +171,7 @@ namespace _3_GUI
             this.Lbl_ViTriBan.Location = new System.Drawing.Point(190, 17);
             this.Lbl_ViTriBan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_ViTriBan.Name = "Lbl_ViTriBan";
-            this.Lbl_ViTriBan.Size = new System.Drawing.Size(27, 15);
+            this.Lbl_ViTriBan.Size = new System.Drawing.Size(34, 20);
             this.Lbl_ViTriBan.TabIndex = 27;
             this.Lbl_ViTriBan.Text = "Bàn";
             // 
@@ -252,7 +252,7 @@ namespace _3_GUI
             this.label3.Location = new System.Drawing.Point(31, 98);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 15);
+            this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Giờ ra:";
             // 
@@ -265,7 +265,7 @@ namespace _3_GUI
             this.label2.Location = new System.Drawing.Point(31, 72);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 15);
+            this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Giờ vào:";
             // 
@@ -278,7 +278,7 @@ namespace _3_GUI
             this.label1.Location = new System.Drawing.Point(31, 44);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.Size = new System.Drawing.Size(72, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vị trí bàn:";
             // 
@@ -288,7 +288,7 @@ namespace _3_GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Controls.Add(this.Dgid_Meniu);
-            this.groupBox4.ForeColor = System.Drawing.Color.White;
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(19, 480);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
@@ -305,7 +305,7 @@ namespace _3_GUI
             this.textBox1.Location = new System.Drawing.Point(515, 15);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 21);
+            this.textBox1.Size = new System.Drawing.Size(148, 25);
             this.textBox1.TabIndex = 1;
             // 
             // Dgid_Meniu
@@ -315,6 +315,7 @@ namespace _3_GUI
             this.Dgid_Meniu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgid_Meniu.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Dgid_Meniu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgid_Meniu.GridColor = System.Drawing.Color.Gray;
             this.Dgid_Meniu.Location = new System.Drawing.Point(11, 40);
             this.Dgid_Meniu.Margin = new System.Windows.Forms.Padding(2);
             this.Dgid_Meniu.Name = "Dgid_Meniu";
@@ -362,7 +363,7 @@ namespace _3_GUI
             this.textBox4.Location = new System.Drawing.Point(96, 73);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(229, 21);
+            this.textBox4.Size = new System.Drawing.Size(229, 25);
             this.textBox4.TabIndex = 7;
             // 
             // label6
@@ -372,7 +373,7 @@ namespace _3_GUI
             this.label6.Location = new System.Drawing.Point(39, 77);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
+            this.label6.Size = new System.Drawing.Size(54, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "Phụ phí:";
             // 
@@ -400,7 +401,7 @@ namespace _3_GUI
             this.Lbl_TongTien.Location = new System.Drawing.Point(152, 120);
             this.Lbl_TongTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_TongTien.Name = "Lbl_TongTien";
-            this.Lbl_TongTien.Size = new System.Drawing.Size(60, 13);
+            this.Lbl_TongTien.Size = new System.Drawing.Size(66, 17);
             this.Lbl_TongTien.TabIndex = 4;
             this.Lbl_TongTien.Text = "Tổng tiền:";
             // 
@@ -411,7 +412,7 @@ namespace _3_GUI
             this.label4.Location = new System.Drawing.Point(39, 26);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.Size = new System.Drawing.Size(54, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Ghi chú:";
             // 
@@ -420,7 +421,7 @@ namespace _3_GUI
             this.textBox2.Location = new System.Drawing.Point(96, 22);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(229, 21);
+            this.textBox2.Size = new System.Drawing.Size(229, 25);
             this.textBox2.TabIndex = 2;
             // 
             // tabControl1
@@ -441,11 +442,11 @@ namespace _3_GUI
             this.Tp_Tang1.Controls.Add(this.FLPenal);
             this.Tp_Tang1.Controls.Add(this.Btn_ThemBanT1);
             this.Tp_Tang1.Controls.Add(this.Btn_XoaBanT1);
-            this.Tp_Tang1.Location = new System.Drawing.Point(4, 21);
+            this.Tp_Tang1.Location = new System.Drawing.Point(4, 26);
             this.Tp_Tang1.Margin = new System.Windows.Forms.Padding(2);
             this.Tp_Tang1.Name = "Tp_Tang1";
             this.Tp_Tang1.Padding = new System.Windows.Forms.Padding(2);
-            this.Tp_Tang1.Size = new System.Drawing.Size(365, 444);
+            this.Tp_Tang1.Size = new System.Drawing.Size(365, 439);
             this.Tp_Tang1.TabIndex = 0;
             this.Tp_Tang1.Text = "Tầng 1";
             this.Tp_Tang1.UseVisualStyleBackColor = true;
@@ -500,11 +501,11 @@ namespace _3_GUI
             this.Tp_Tang2.Controls.Add(this.Btn_ThemBanT2);
             this.Tp_Tang2.Controls.Add(this.FlPanel2);
             this.Tp_Tang2.Controls.Add(this.Btn_XoaBanT2);
-            this.Tp_Tang2.Location = new System.Drawing.Point(4, 21);
+            this.Tp_Tang2.Location = new System.Drawing.Point(4, 26);
             this.Tp_Tang2.Margin = new System.Windows.Forms.Padding(2);
             this.Tp_Tang2.Name = "Tp_Tang2";
             this.Tp_Tang2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Tp_Tang2.Size = new System.Drawing.Size(365, 444);
+            this.Tp_Tang2.Size = new System.Drawing.Size(365, 439);
             this.Tp_Tang2.TabIndex = 1;
             this.Tp_Tang2.Text = "Tầng 2";
             this.Tp_Tang2.UseVisualStyleBackColor = true;
@@ -605,7 +606,7 @@ namespace _3_GUI
             // 
             // FrmQLBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1154, 715);
@@ -616,6 +617,7 @@ namespace _3_GUI
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmQLBan";

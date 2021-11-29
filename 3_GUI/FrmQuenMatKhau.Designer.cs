@@ -97,18 +97,20 @@ namespace _3_GUI
             // Txt_XacNhan
             // 
             this.Txt_XacNhan.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Txt_XacNhan.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Txt_XacNhan.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Txt_XacNhan.Location = new System.Drawing.Point(142, 266);
             this.Txt_XacNhan.Name = "Txt_XacNhan";
-            this.Txt_XacNhan.Size = new System.Drawing.Size(195, 27);
+            this.Txt_XacNhan.Size = new System.Drawing.Size(195, 28);
             this.Txt_XacNhan.TabIndex = 103;
             // 
             // txt_Email
             // 
+            this.txt_Email.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Email.ForeColor = System.Drawing.SystemColors.Desktop;
             this.txt_Email.Location = new System.Drawing.Point(141, 183);
             this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(195, 27);
+            this.txt_Email.Size = new System.Drawing.Size(195, 28);
             this.txt_Email.TabIndex = 102;
             // 
             // pictureBox1

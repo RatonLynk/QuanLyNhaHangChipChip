@@ -174,12 +174,12 @@ namespace _3_GUI
             // txtTimKiemCongthucCB
             // 
             this.txtTimKiemCongthucCB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTimKiemCongthucCB.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTimKiemCongthucCB.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTimKiemCongthucCB.ForeColor = System.Drawing.Color.Black;
             this.txtTimKiemCongthucCB.Location = new System.Drawing.Point(666, 242);
             this.txtTimKiemCongthucCB.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTimKiemCongthucCB.Name = "txtTimKiemCongthucCB";
-            this.txtTimKiemCongthucCB.Size = new System.Drawing.Size(226, 25);
+            this.txtTimKiemCongthucCB.Size = new System.Drawing.Size(226, 30);
             this.txtTimKiemCongthucCB.TabIndex = 36;
             this.txtTimKiemCongthucCB.TextChanged += new System.EventHandler(this.txtTimKiemCongthucCB_TextChanged);
             // 
@@ -198,24 +198,25 @@ namespace _3_GUI
             // txt_MethName
             // 
             this.txt_MethName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_MethName.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_MethName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_MethName.ForeColor = System.Drawing.Color.Black;
             this.txt_MethName.Location = new System.Drawing.Point(351, 143);
             this.txt_MethName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txt_MethName.Name = "txt_MethName";
-            this.txt_MethName.Size = new System.Drawing.Size(288, 25);
+            this.txt_MethName.Size = new System.Drawing.Size(288, 30);
             this.txt_MethName.TabIndex = 37;
             // 
             // txt_MethID
             // 
+            this.txt_MethID.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txt_MethID.Cursor = System.Windows.Forms.Cursors.No;
-            this.txt_MethID.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_MethID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_MethID.ForeColor = System.Drawing.Color.Black;
             this.txt_MethID.Location = new System.Drawing.Point(351, 87);
             this.txt_MethID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txt_MethID.Name = "txt_MethID";
             this.txt_MethID.ReadOnly = true;
-            this.txt_MethID.Size = new System.Drawing.Size(288, 25);
+            this.txt_MethID.Size = new System.Drawing.Size(288, 30);
             this.txt_MethID.TabIndex = 43;
             this.txt_MethID.TabStop = false;
             // 
@@ -289,7 +290,7 @@ namespace _3_GUI
             this.Controls.Add(this.txt_MethID);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

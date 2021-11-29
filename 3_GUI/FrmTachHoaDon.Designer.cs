@@ -49,11 +49,10 @@ namespace _3_GUI
             this.groupBox1.Controls.Add(this.Dgrid_HDCu);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(14, 16);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(499, 509);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.groupBox1.Size = new System.Drawing.Size(570, 679);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hóa Đơn cũ";
@@ -63,23 +62,25 @@ namespace _3_GUI
             this.Dgrid_HDCu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgrid_HDCu.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Dgrid_HDCu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgrid_HDCu.Location = new System.Drawing.Point(6, 22);
+            this.Dgrid_HDCu.Location = new System.Drawing.Point(7, 29);
+            this.Dgrid_HDCu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Dgrid_HDCu.Name = "Dgrid_HDCu";
             this.Dgrid_HDCu.RowHeadersWidth = 51;
             this.Dgrid_HDCu.RowTemplate.Height = 25;
             this.Dgrid_HDCu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgrid_HDCu.Size = new System.Drawing.Size(486, 472);
+            this.Dgrid_HDCu.Size = new System.Drawing.Size(555, 629);
             this.Dgrid_HDCu.TabIndex = 0;
             this.Dgrid_HDCu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgrid_HDCu_CellClick);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.Dgrid_HDMoi);
-            this.groupBox2.Location = new System.Drawing.Point(658, 16);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(752, 21);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(499, 509);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.groupBox2.Size = new System.Drawing.Size(570, 679);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hóa đơn mới";
@@ -89,22 +90,26 @@ namespace _3_GUI
             this.Dgrid_HDMoi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgrid_HDMoi.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Dgrid_HDMoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgrid_HDMoi.Location = new System.Drawing.Point(21, 29);
-            this.Dgrid_HDMoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Dgrid_HDMoi.Location = new System.Drawing.Point(24, 39);
+            this.Dgrid_HDMoi.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Dgrid_HDMoi.Name = "Dgrid_HDMoi";
             this.Dgrid_HDMoi.RowHeadersWidth = 51;
             this.Dgrid_HDMoi.RowTemplate.Height = 25;
             this.Dgrid_HDMoi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dgrid_HDMoi.Size = new System.Drawing.Size(472, 472);
+            this.Dgrid_HDMoi.Size = new System.Drawing.Size(539, 629);
             this.Dgrid_HDMoi.TabIndex = 1;
             this.Dgrid_HDMoi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgrid_HDMoi_CellClick);
             // 
             // Btn_TaoHD
             // 
-            this.Btn_TaoHD.Location = new System.Drawing.Point(539, 219);
-            this.Btn_TaoHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_TaoHD.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Btn_TaoHD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.Btn_TaoHD.Image = ((System.Drawing.Image)(resources.GetObject("Btn_TaoHD.Image")));
+            this.Btn_TaoHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_TaoHD.Location = new System.Drawing.Point(602, 292);
+            this.Btn_TaoHD.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Btn_TaoHD.Name = "Btn_TaoHD";
-            this.Btn_TaoHD.Size = new System.Drawing.Size(102, 51);
+            this.Btn_TaoHD.Size = new System.Drawing.Size(131, 68);
             this.Btn_TaoHD.TabIndex = 2;
             this.Btn_TaoHD.Text = "Tạo Hóa Đơn";
             this.Btn_TaoHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -113,10 +118,14 @@ namespace _3_GUI
             // 
             // Btn_XacNhan
             // 
-            this.Btn_XacNhan.Location = new System.Drawing.Point(1008, 533);
-            this.Btn_XacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_XacNhan.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Btn_XacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.Btn_XacNhan.Image = ((System.Drawing.Image)(resources.GetObject("Btn_XacNhan.Image")));
+            this.Btn_XacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_XacNhan.Location = new System.Drawing.Point(1152, 711);
+            this.Btn_XacNhan.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Btn_XacNhan.Name = "Btn_XacNhan";
-            this.Btn_XacNhan.Size = new System.Drawing.Size(113, 69);
+            this.Btn_XacNhan.Size = new System.Drawing.Size(114, 55);
             this.Btn_XacNhan.TabIndex = 3;
             this.Btn_XacNhan.Text = "Xác nhận";
             this.Btn_XacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -146,14 +155,15 @@ namespace _3_GUI
             // 
             // FrmTachHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 619);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.ClientSize = new System.Drawing.Size(1338, 825);
             this.Controls.Add(this.Btn_XacNhan);
             this.Controls.Add(this.Btn_TaoHD);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "FrmTachHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tách hóa đơn";
@@ -162,7 +172,6 @@ namespace _3_GUI
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgrid_HDMoi)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

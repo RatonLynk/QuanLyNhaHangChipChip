@@ -149,36 +149,37 @@ namespace _3_GUI
             // txtTimkiemDM
             // 
             this.txtTimkiemDM.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTimkiemDM.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTimkiemDM.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTimkiemDM.ForeColor = System.Drawing.Color.Black;
             this.txtTimkiemDM.Location = new System.Drawing.Point(654, 250);
             this.txtTimkiemDM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimkiemDM.Name = "txtTimkiemDM";
-            this.txtTimkiemDM.Size = new System.Drawing.Size(225, 25);
+            this.txtTimkiemDM.Size = new System.Drawing.Size(225, 30);
             this.txtTimkiemDM.TabIndex = 36;
             this.txtTimkiemDM.TextChanged += new System.EventHandler(this.txtTimkiemDM_TextChanged);
             // 
             // txtTenDanhMuc
             // 
             this.txtTenDanhMuc.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenDanhMuc.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTenDanhMuc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTenDanhMuc.ForeColor = System.Drawing.Color.Black;
-            this.txtTenDanhMuc.Location = new System.Drawing.Point(341, 129);
+            this.txtTenDanhMuc.Location = new System.Drawing.Point(339, 126);
             this.txtTenDanhMuc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
-            this.txtTenDanhMuc.Size = new System.Drawing.Size(256, 25);
+            this.txtTenDanhMuc.Size = new System.Drawing.Size(256, 30);
             this.txtTenDanhMuc.TabIndex = 37;
             // 
             // txtMaDanhMuc
             // 
+            this.txtMaDanhMuc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtMaDanhMuc.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtMaDanhMuc.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaDanhMuc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaDanhMuc.ForeColor = System.Drawing.Color.Black;
-            this.txtMaDanhMuc.Location = new System.Drawing.Point(341, 81);
+            this.txtMaDanhMuc.Location = new System.Drawing.Point(339, 82);
             this.txtMaDanhMuc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaDanhMuc.Name = "txtMaDanhMuc";
             this.txtMaDanhMuc.ReadOnly = true;
-            this.txtMaDanhMuc.Size = new System.Drawing.Size(256, 25);
+            this.txtMaDanhMuc.Size = new System.Drawing.Size(256, 30);
             this.txtMaDanhMuc.TabIndex = 46;
             this.txtMaDanhMuc.TabStop = false;
             // 
