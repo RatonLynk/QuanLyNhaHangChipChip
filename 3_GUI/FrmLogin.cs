@@ -167,7 +167,7 @@ namespace _3_GUI
 
             if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password== /*uti.GetHash(*/txtPassWord.Text/*)*/ && c.Status==true))
             {
-               nhanVien= _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == /*uti.GetHash(*/txtPassWord.Text);
+               nhanVien= _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == uti.GetHash(txtPassWord.Text));
                 MessageBox.Show("Đăng nhập thành công ", "Thông báo");
                 FrmMain frmMain = new FrmMain();
                 frmMain.mail = txtUsername.Text;
