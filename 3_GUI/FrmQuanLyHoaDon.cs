@@ -44,7 +44,8 @@ namespace _3_GUI
             foreach (var x in _qlHoaDon.GetListDSHoaDon())
             {
                 Dgid_HoaDon.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == x.banAn.Id).Select(c => c.banAn.Name).FirstOrDefault(), decimal.Truncate(x.hoaDon.TotalMoney),
-                    x.hoaDon.DateCheckIn, x.hoaDon.DateCheckOut, Convert.ToInt32(x.hoaDon.Status) == 0 ? "đã thanh toán" : Convert.ToInt32(x.hoaDon.Status) == 1 ? "chưa thanh toán" : "", _qlHoaDon.GetListDSHoaDon().Where(c => c.nhanVien.Id == x.hoaDon.IdnhanVien).Select(c => c.nhanVien.Name).FirstOrDefault(), x.hoaDon.Id);
+                    x.hoaDon.DateCheckIn, x.hoaDon.DateCheckOut, Convert.ToInt32(x.hoaDon.Status) == 0 ? "đã thanh toán" : Convert.ToInt32(x.hoaDon.Status) == 1 ? "chưa thanh toán" : Convert.ToInt32(x.hoaDon.Status)==0 &&
+                    Convert.ToInt32(x.hoaDon.GhiChu)!=null?"đã hủy":"", _qlHoaDon.GetListDSHoaDon().Where(c => c.nhanVien.Id == x.hoaDon.IdnhanVien).Select(c => c.nhanVien.Name).FirstOrDefault(), x.hoaDon.Id);
 
             }
 
