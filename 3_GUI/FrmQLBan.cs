@@ -102,8 +102,8 @@ namespace _3_GUI
             foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Id == hoadon && c.hoaDon.Status == true))
             {
                 Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Name).FirstOrDefault(), x.hoaDonChiTiet.Count,
-                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault()),
-                    decimal.Truncate(x.hoaDonChiTiet.Count * _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault()));
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault()) + ".000 VND",
+                    decimal.Truncate(x.hoaDonChiTiet.Count * _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault()) + ".000 VND");
             }
         }
 
@@ -153,7 +153,7 @@ namespace _3_GUI
             }
             else
             {
-                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney.ToString();
+                Lbl_TongTien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
                 Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).DateCheckIn.ToString();
             }
 
@@ -201,7 +201,7 @@ namespace _3_GUI
             }
             else
             {
-                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney.ToString();
+                Lbl_TongTien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString()+ ".000 VND";
                 Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).DateCheckIn.ToString();
             }
         }
@@ -276,7 +276,7 @@ namespace _3_GUI
             Dgid_Meniu.Rows.Clear();
             foreach (var x in _qlMeniu.GetViewMenus())
             {
-                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price));
+                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + ".000 VND");
             }
 
         }
@@ -363,7 +363,7 @@ namespace _3_GUI
                     LoadTableT1();
                     LoadTableT2();
                     _f.Close();
-                    Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney.ToString();
+                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString()+".000 VND";
 
 
                 }//ád
@@ -385,10 +385,10 @@ namespace _3_GUI
                         LoadTableT1();
                         LoadTableT2();
                         _f.Close();
-                        Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney.ToString();
+                        Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
                     }
                 }
-
+                Lbl_GioVao.Text = _hoadon.DateCheckIn.ToString();
             }
             else if (_IdHoaDon != 0 && _IdBan == 0)
             {
@@ -406,6 +406,7 @@ namespace _3_GUI
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDonMangVe(_hoadon.Id);
                 _f.Close();
+                Lbl_GioVao.Text = _hoadon.DateCheckIn.ToString();
             }
         }
 
@@ -529,6 +530,14 @@ namespace _3_GUI
         }
         private void CreateReceipt(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            if (_IdBan != 0 && _IdHoaDon == 0)
+            {
+                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1);
+            }
+            else if (_IdBan == 0 && _IdHoaDon != 0)
+            {
+                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+            }
             Graphics graphic = e.Graphics;
             Font font = new Font("Courier New", 12);
             float FontHeight = font.GetHeight();
@@ -543,12 +552,19 @@ namespace _3_GUI
             offset = offset + (int)FontHeight + 5; //make the spacing consistent
 
             int index = 0;
-            foreach (string item in Dgid_HoaDon.Columns)
+            for (int i = 0; i < Dgid_HoaDon.Rows.Count; i++)
             {
-                graphic.DrawString(item, font, new SolidBrush(Color.Black), startX, startY + offset);
-                graphic.DrawString(Dgid_HoaDon.Rows[index++].ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
-                offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+                graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+                graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+                offset = offset + (int)FontHeight + 5; //make the spacing consistent      
             }
+            //foreach (var x in Dgid_HoaDon.Rows)
+            //{
+            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            //    offset = offset + (int)FontHeight + 5; //make the spacing consistent
+            //    index++;
+            //}
 
             offset = offset + 20; //make some room so that the total stands out.
 
@@ -615,7 +631,7 @@ namespace _3_GUI
             _f.Controls[1].Top = 30;
             _f.Controls[2].Left = 130;
             _f.Controls[2].Top = 30;
-            _f.Size = new Size(350, 150);
+            _f.Size = new Size(350, 200);
             button.Click += Button_Click1;
             //_f.ShowDialog();
 
@@ -624,7 +640,7 @@ namespace _3_GUI
             {
                 PrintDialog PrintDialog = new PrintDialog();
                 PrintDocument PrintDocument = new PrintDocument();
-
+                PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
                 PrintDialog.Document = PrintDocument; //add the document to the dialog box
 
                 PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
@@ -644,7 +660,7 @@ namespace _3_GUI
                 LoadMangVe();
                 LoadHoaDonMangVe(_hoadon.Id);
                 _f.ShowDialog();
-                Lbl_TongTien.Text = "0";               
+                Lbl_TongTien.Text = "0 VND";
 
 
             }
@@ -675,7 +691,7 @@ namespace _3_GUI
                 LoadTableT1();
                 LoadTableT2();
                 _f.ShowDialog();
-                Lbl_TongTien.Text = "0";
+                Lbl_TongTien.Text = "0 VND";
             }
         }
 
@@ -722,8 +738,8 @@ namespace _3_GUI
             foreach (var x in abc)
             {
                 Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Name).FirstOrDefault(), x.SoLuong,
-                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault()),
-                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong), x.IDHDCT);
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault()) + ".000 VND",
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong) + ".000 VND", x.IDHDCT);
             }
 
         }
@@ -777,7 +793,7 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDon(_IdBan);
-                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney.ToString();
+                Lbl_TongTien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString();
                 _f.Close();
             }
             else if (_IdBan == 0 && _IdHoaDon != 0)
@@ -798,7 +814,7 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDonMangVe(_hoadon.Id);
-                Lbl_TongTien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney.ToString();
+                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString();
                 _f.Close();
             }
 
