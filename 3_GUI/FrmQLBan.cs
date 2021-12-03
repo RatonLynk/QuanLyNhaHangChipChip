@@ -552,32 +552,32 @@ namespace _3_GUI
             offset = offset + (int)FontHeight + 5; //make the spacing consistent
 
             int index = 0;
-            for (int i = 0; i < Dgid_HoaDon.Rows.Count; i++)
-            {
-                graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
-                graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
-                offset = offset + (int)FontHeight + 5; //make the spacing consistent      
-            }
-            //foreach (var x in Dgid_HoaDon.Rows)
+            //for (int i = 0; i < Dgid_HoaDon.Rows.Count; i++)
             //{
-            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
-            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
-            //    offset = offset + (int)FontHeight + 5; //make the spacing consistent
-            //    index++;
+            //    graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+            //    graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            //    offset = offset + (int)FontHeight + 5; //make the spacing consistent      
             //}
+            foreach (var x in Dgid_HoaDon.SelectedColumns)
+            {
+                graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+                graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+                offset = offset + (int)FontHeight + 5; //make the spacing consistent
+                index++;
+            }
 
             offset = offset + 20; //make some room so that the total stands out.
 
             graphic.DrawString("TỔNG TIỀN TRẢ ", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
-            graphic.DrawString(_hoadon.TotalMoney.ToString(), new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX + 250, startY + offset);
+            graphic.DrawString(decimal.Truncate(_hoadon.TotalMoney).ToString()+".000 VND", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
             graphic.DrawString("TIỀN MẶT ", font, new SolidBrush(Color.Black), startX, startY + offset);
-            graphic.DrawString(Txt_TienKhachDua.Text, font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            graphic.DrawString(Txt_TienKhachDua.Text+".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
             graphic.DrawString("TIỀN TRẢ ", font, new SolidBrush(Color.Black), startX, startY + offset);
-            graphic.DrawString((Convert.ToInt32(Txt_TienKhachDua.Text) - _hoadon.TotalMoney).ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            graphic.DrawString((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_hoadon.TotalMoney)).ToString()+".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
             graphic.DrawString("Xin chân thành cảm ơn quý khách!", font, new SolidBrush(Color.Black), startX + 10, startY + offset);
@@ -592,17 +592,25 @@ namespace _3_GUI
 
         private void Btn_ThanhToan_Click(object sender, EventArgs e)
         {
-            //if (Convert.ToInt32(Txt_TienKhachDua.Text) == 0)
-            //{
-            //    MessageBox.Show("Bạn chua nhập tiền khách đưa", "Thông báo");
-            //    return;
-            //}
-            //if (Convert.ToInt32(Txt_TienKhachDua.Text) < _hoadon.TotalMoney)
-            //{
-            //    MessageBox.Show("Tiền khách đưa chưa đủ", "Thông báo");
-            //    return;
-            //}
-            _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+            if (_IdBan != 0 && _IdHoaDon == 0)
+            {
+                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1);
+            }
+            else if (_IdBan == 0 && _IdHoaDon != 0)
+            {
+                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+            }
+            if (Txt_TienKhachDua.Text == "")
+            {
+                MessageBox.Show("Bạn chua nhập tiền khách đưa", "Thông báo");
+                return;
+            }
+            if (Convert.ToInt32(Txt_TienKhachDua.Text) < _hoadon.TotalMoney)
+            {
+                MessageBox.Show("Tiền khách đưa chưa đủ", "Thông báo");
+                return;
+            }
+
             _f = new Form();
             Label label1 = new Label();
             Label label2 = new Label();
@@ -625,7 +633,7 @@ namespace _3_GUI
             _f.Controls[5].Left = 130;
             _f.Controls[5].Top = 70;
             _f.Controls[3].Left = 130;
-            _f.Controls[3].Top = 90;
+            _f.Controls[3].Top = 110;
             _f.Controls[0].Left = 130;
             _f.Controls[1].Left = 30;
             _f.Controls[1].Top = 30;
@@ -638,6 +646,37 @@ namespace _3_GUI
 
             if (_IdHoaDon != 0 && _IdBan == 0)
             {
+                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+                PrintDialog PrintDialog = new PrintDialog();
+                PrintDocument PrintDocument = new PrintDocument();
+                PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
+                PrintDialog.Document = PrintDocument; //add the document to the dialog box
+
+                PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                DialogResult result = PrintDialog.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    PrintDocument.Print();
+                    
+                }
+
+                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+                _hoadon.Status = false;
+                _hoadon.DateCheckOut = DateTime.Now;
+                _qlHoaDon.UpdateHoaDon(_hoadon);
+                label1.Text = "Mang về";
+                label3.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString()+".000 VND";
+                label15.Text = (Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()+".000 VND";
+                LoadMangVe();
+                LoadHoaDonMangVe(_hoadon.Id);
+                _f.ShowDialog();
+                Lbl_TongTien.Text = "0 VND";
+
+
+            }
+            else if (_IdHoaDon == 0 && _IdBan != 0)
+            {
+                _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).FirstOrDefault();
                 PrintDialog PrintDialog = new PrintDialog();
                 PrintDocument PrintDocument = new PrintDocument();
                 PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
@@ -649,43 +688,15 @@ namespace _3_GUI
                 {
                     PrintDocument.Print();
                 }
-
-                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
-                _hoadon.Status = false;
-                _hoadon.DateCheckOut = DateTime.Now;
-                _qlHoaDon.UpdateHoaDon(_hoadon);
-                label1.Text = "Mang về";
-                label3.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney.ToString();
-                label15.Text = (Convert.ToInt32(Txt_TienKhachDua.Text) - _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString();
-                LoadMangVe();
-                LoadHoaDonMangVe(_hoadon.Id);
-                _f.ShowDialog();
-                Lbl_TongTien.Text = "0 VND";
-
-
-            }
-            else if (_IdHoaDon == 0 && _IdBan != 0)
-            {
-                PrintDialog PrintDialog = new PrintDialog();
-                PrintDocument PrintDocument = new PrintDocument();
-
-                PrintDialog.Document = PrintDocument; //add the document to the dialog box
-
-                PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
-                DialogResult result = PrintDialog.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    PrintDocument.Print();
-                }
-                _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan && c.Status == true).FirstOrDefault();
+                
                 _hoadon.Status = false;
                 _hoadon.DateCheckOut = DateTime.Now;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
                 banAn.TinhTrang = 1;
                 label1.Text = "Bàn " + _hoadon.Idtable.ToString();
-                label3.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney.ToString();
-                label15.Text = (Convert.ToInt32(Txt_TienKhachDua.Text) - _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString();
+                label3.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString()+".000 VND";
+                label15.Text = (Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()+".000 VND";
                 _qlBanAn.UpdateBanAn(banAn);
                 LoadHoaDon(banAn.Id);
                 LoadTableT1();
