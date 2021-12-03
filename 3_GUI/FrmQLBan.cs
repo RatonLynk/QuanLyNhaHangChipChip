@@ -372,20 +372,20 @@ namespace _3_GUI
 
                     if (_idFood == _hoadonCT.Idfood)
                     {
-                        _hoadon.TotalMoney = 0;
-                        _qlHoaDon.UpdateHoaDon(_hoadon);
+                        
+                        
                         HoaDonChiTiet hoaDonChiTiet1 = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Idfood == _idFood && c.Idbill == _hoadon.Id);
                         hoaDonChiTiet1.Count += _soLuong;
                         hoaDonChiTiet1.Price += _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
                         _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet1);
 
-                        _hoadon.TotalMoney += hoaDonChiTiet1.Price;
+                        _hoadon.TotalMoney += _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
                         _qlHoaDon.UpdateHoaDon(_hoadon);
                         LoadHoaDon(_IdBan);
                         LoadTableT1();
                         LoadTableT2();
                         _f.Close();
-                        Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
+                        Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true &&c.DichVu==1).TotalMoney).ToString() + ".000 VND";
                     }
                 }
                 Lbl_GioVao.Text = _hoadon.DateCheckIn.ToString();
@@ -393,20 +393,45 @@ namespace _3_GUI
             else if (_IdHoaDon != 0 && _IdBan == 0)
             {
                 _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
-                HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet();
-                hoaDonChiTiet.Id = (_qlHoaDon.GetHoaDonCTFromDB().Count()) + 1;
-                hoaDonChiTiet.Idbill = _hoadon.Id;
-                hoaDonChiTiet.Idfood = _idFood;
-                hoaDonChiTiet.Count = _soLuong;
-                hoaDonChiTiet.Price = _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
-                hoaDonChiTiet.Status = true;
-                _qlHoaDon.AddHoaDonCT(hoaDonChiTiet);
+                _hoadonCT = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c=>c.Idbill==_hoadon.Id && c.Idfood==_idFood);
+                if (_hoadonCT == null)
+                {
+                    
+                    HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet();
+                    hoaDonChiTiet.Id = (_qlHoaDon.GetHoaDonCTFromDB().Count()) + 1;
+                    hoaDonChiTiet.Idbill = _hoadon.Id;
+                    hoaDonChiTiet.Idfood = _idFood;
+                    hoaDonChiTiet.Count = _soLuong;
+                    hoaDonChiTiet.Price = _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
+                    hoaDonChiTiet.Status = true;
+                    _qlHoaDon.AddHoaDonCT(hoaDonChiTiet);
 
-                _hoadon.TotalMoney += hoaDonChiTiet.Price;
-                _qlHoaDon.UpdateHoaDon(_hoadon);
-                LoadHoaDonMangVe(_hoadon.Id);
-                _f.Close();
-                Lbl_GioVao.Text = _hoadon.DateCheckIn.ToString();
+                    _hoadon.TotalMoney += hoaDonChiTiet.Price;
+                    _qlHoaDon.UpdateHoaDon(_hoadon);
+                    LoadHoaDonMangVe(_hoadon.Id);
+                    _f.Close();
+                    Lbl_GioVao.Text = _hoadon.DateCheckIn.ToString();
+                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id==_IdHoaDon).TotalMoney).ToString() + ".000 VND";
+
+
+                }//ád
+                else if (_hoadonCT != null)
+                {
+
+                    if (_idFood == _hoadonCT.Idfood)
+                    {                        
+                        HoaDonChiTiet hoaDonChiTiet1 = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Idfood == _idFood && c.Idbill == _hoadon.Id);
+                        hoaDonChiTiet1.Count += _soLuong;
+                        hoaDonChiTiet1.Price += _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
+                        _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet1);
+
+                        _hoadon.TotalMoney += _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
+                        _qlHoaDon.UpdateHoaDon(_hoadon);
+                        LoadHoaDonMangVe(_hoadon.Id);                      
+                        _f.Close();
+                        Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
+                    }
+                }
             }
         }
 
@@ -544,47 +569,48 @@ namespace _3_GUI
             int startX = 10;
             int startY = 10;
             int offset = 40;
-            graphic.DrawString("Hóa đơn thanh toán", new Font("Courier New", 17), new SolidBrush(Color.Black), startX + 60, startY);
-            string top = "Tên Sản Phẩm".PadRight(24) + "Thành Tiền";
+            graphic.DrawString("         Hóa đơn thanh toán", new Font("Courier New", 17), new SolidBrush(Color.Black), startX + 60, startY);
+            string top = "Tên Sản Phẩm".PadRight(20)+"Số lương".PadRight(20) + "Thành Tiền";
             graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)FontHeight; //make the spacing consistent
-            graphic.DrawString("----------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("-------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)FontHeight + 5; //make the spacing consistent
 
             int index = 0;
-            //for (int i = 0; i < Dgid_HoaDon.Rows.Count; i++)
-            //{
-            //    graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
-            //    graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
-            //    offset = offset + (int)FontHeight + 5; //make the spacing consistent      
-            //}
-            foreach (var x in Dgid_HoaDon.SelectedColumns)
+            for (int i = 0; i < Dgid_HoaDon.Rows.Count-1; i++)
             {
-                graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
-                graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
-                offset = offset + (int)FontHeight + 5; //make the spacing consistent
-                index++;
+                graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+                graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[1].Value.ToString(), font, new SolidBrush(Color.Black), startX + 230, startY + offset);
+                graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 410, startY + offset);
+                offset = offset + (int)FontHeight + 5; //make the spacing consistent      
             }
+            //foreach (var x in Dgid_HoaDon.Rows.ToString())
+            //{
+            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            //    offset = offset + (int)FontHeight + 5; //make the spacing consistent
+            //    index++;
+            //}
 
             offset = offset + 20; //make some room so that the total stands out.
 
-            graphic.DrawString("TỔNG TIỀN TRẢ ", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("TỔNG TIỀN ", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
             graphic.DrawString(decimal.Truncate(_hoadon.TotalMoney).ToString()+".000 VND", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
-            graphic.DrawString("TIỀN MẶT ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("TIỀN KHÁCH ĐƯA ", font, new SolidBrush(Color.Black), startX, startY + offset);
             graphic.DrawString(Txt_TienKhachDua.Text+".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
-            graphic.DrawString("TIỀN TRẢ ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("TIỀN TRẢ KHÁCH ", font, new SolidBrush(Color.Black), startX, startY + offset);
             graphic.DrawString((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_hoadon.TotalMoney)).ToString()+".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
-            graphic.DrawString("Xin chân thành cảm ơn quý khách!", font, new SolidBrush(Color.Black), startX + 10, startY + offset);
+            graphic.DrawString("              Xin chân thành cảm ơn quý khách!", font, new SolidBrush(Color.Black), startX + 10, startY + offset);
             offset = offset + (int)FontHeight + 5; //make the spacing consistent    
-            graphic.DrawString("----------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString("-------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)FontHeight + 5; //make the spacing consistent
-            graphic.DrawString("HẸN GẶP LẠI!", font, new SolidBrush(Color.Black), startX + 110, startY + offset);
+            graphic.DrawString("                 HẸN GẶP LẠI!", font, new SolidBrush(Color.Black), startX + 110, startY + offset);
             offset = offset + (int)FontHeight + 5; //make the spacing consistent                                
             index = Dgid_HoaDon.RowCount;//dem so dong trong datagrid view
 
