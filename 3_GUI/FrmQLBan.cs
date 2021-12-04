@@ -14,7 +14,8 @@ using _2_BUS.Models;
 using System.Drawing;
 using _3_GUI.Properties;
 using System.Drawing.Printing;
-
+using iTextSharp.text.pdf;
+using PdfSharp.Pdf;
 
 namespace _3_GUI
 {
@@ -153,7 +154,7 @@ namespace _3_GUI
             }
             else
             {
-                Lbl_TongTien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
+                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
                 Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).DateCheckIn.ToString();
             }
 
@@ -201,7 +202,7 @@ namespace _3_GUI
             }
             else
             {
-                Lbl_TongTien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString()+ ".000 VND";
+                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
                 Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).DateCheckIn.ToString();
             }
         }
@@ -363,7 +364,7 @@ namespace _3_GUI
                     LoadTableT1();
                     LoadTableT2();
                     _f.Close();
-                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString()+".000 VND";
+                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
 
 
                 }//ád
@@ -372,8 +373,8 @@ namespace _3_GUI
 
                     if (_idFood == _hoadonCT.Idfood)
                     {
-                        
-                        
+
+
                         HoaDonChiTiet hoaDonChiTiet1 = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Idfood == _idFood && c.Idbill == _hoadon.Id);
                         hoaDonChiTiet1.Count += _soLuong;
                         hoaDonChiTiet1.Price += _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
@@ -385,7 +386,7 @@ namespace _3_GUI
                         LoadTableT1();
                         LoadTableT2();
                         _f.Close();
-                        Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true &&c.DichVu==1).TotalMoney).ToString() + ".000 VND";
+                        Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + ".000 VND";
                     }
                 }
                 Lbl_GioVao.Text = _hoadon.DateCheckIn.ToString();
@@ -393,10 +394,10 @@ namespace _3_GUI
             else if (_IdHoaDon != 0 && _IdBan == 0)
             {
                 _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
-                _hoadonCT = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c=>c.Idbill==_hoadon.Id && c.Idfood==_idFood);
+                _hoadonCT = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Idbill == _hoadon.Id && c.Idfood == _idFood);
                 if (_hoadonCT == null)
                 {
-                    
+
                     HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet();
                     hoaDonChiTiet.Id = (_qlHoaDon.GetHoaDonCTFromDB().Count()) + 1;
                     hoaDonChiTiet.Idbill = _hoadon.Id;
@@ -411,7 +412,7 @@ namespace _3_GUI
                     LoadHoaDonMangVe(_hoadon.Id);
                     _f.Close();
                     Lbl_GioVao.Text = _hoadon.DateCheckIn.ToString();
-                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id==_IdHoaDon).TotalMoney).ToString() + ".000 VND";
+                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon).TotalMoney).ToString() + ".000 VND";
 
 
                 }//ád
@@ -419,7 +420,7 @@ namespace _3_GUI
                 {
 
                     if (_idFood == _hoadonCT.Idfood)
-                    {                        
+                    {
                         HoaDonChiTiet hoaDonChiTiet1 = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Idfood == _idFood && c.Idbill == _hoadon.Id);
                         hoaDonChiTiet1.Count += _soLuong;
                         hoaDonChiTiet1.Price += _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
@@ -427,7 +428,7 @@ namespace _3_GUI
 
                         _hoadon.TotalMoney += _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
                         _qlHoaDon.UpdateHoaDon(_hoadon);
-                        LoadHoaDonMangVe(_hoadon.Id);                      
+                        LoadHoaDonMangVe(_hoadon.Id);
                         _f.Close();
                         Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
                     }
@@ -496,34 +497,34 @@ namespace _3_GUI
 
         private void Btn_HuyBan_Click(object sender, EventArgs e)
         {
-            if (_IdBan == 0 && _IdHoaDon == 0)
+            if (MessageBox.Show("Bạn có chắc chắn hủy", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-
-                MessageBox.Show("Chưa bọn bàn nào", "Thông báo");
-                return;
+                if (_IdBan == 0 && _IdHoaDon == 0)
+                {
+                    MessageBox.Show("Chưa bọn bàn nào", "Thông báo");
+                    return;
+                }
+                _f = new Form();
+                TextBox textBox = new TextBox();
+                textBox.Width = 250;
+                Button button12 = new Button();
+                Label label = new Label();
+                label.Text = "Lý do:";
+                button12.Text = "Hủy";
+                _f.Controls.Add(textBox);
+                _f.Controls.Add(button12);
+                _f.Controls.Add(label);
+                _f.Controls[2].Left = 10;
+                _f.Controls[2].Top = 13;
+                _f.Controls[0].Left = 80;
+                _f.Controls[1].Left = 150;
+                _f.Controls[0].Top = 10;
+                _f.Controls[1].Top = 50;
+                _f.Size = new Size(400, 120);
+                button12.Click += Button12_Click;
+                _f.ShowDialog();
 
             }
-            _f = new Form();
-            TextBox textBox = new TextBox();
-            textBox.Width = 250;
-            Button button12 = new Button();
-            Label label = new Label();
-            label.Text = "Lý do:";
-            button12.Text = "Hủy";
-            _f.Controls.Add(textBox);
-            _f.Controls.Add(button12);
-            _f.Controls.Add(label);
-            _f.Controls[2].Left = 10;
-            _f.Controls[2].Top = 13;
-            _f.Controls[0].Left = 80;
-            _f.Controls[1].Left = 150;
-            _f.Controls[0].Top = 10;
-            _f.Controls[1].Top = 50;
-            _f.Size = new Size(400, 120);
-            button12.Click += Button12_Click;
-            _f.ShowDialog();
-
-
         }
 
         private void Button12_Click(object sender, EventArgs e)
@@ -570,14 +571,14 @@ namespace _3_GUI
             int startY = 10;
             int offset = 40;
             graphic.DrawString("         Hóa đơn thanh toán", new Font("Courier New", 17), new SolidBrush(Color.Black), startX + 60, startY);
-            string top = "Tên Sản Phẩm".PadRight(20)+"Số lương".PadRight(20) + "Thành Tiền";
+            string top = "Tên Sản Phẩm".PadRight(20) + "Số lương".PadRight(20) + "Thành Tiền";
             graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)FontHeight; //make the spacing consistent
             graphic.DrawString("-------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
             offset = offset + (int)FontHeight + 5; //make the spacing consistent
 
             int index = 0;
-            for (int i = 0; i < Dgid_HoaDon.Rows.Count-1; i++)
+            for (int i = 0; i < Dgid_HoaDon.Rows.Count - 1; i++)
             {
                 graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
                 graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[1].Value.ToString(), font, new SolidBrush(Color.Black), startX + 230, startY + offset);
@@ -595,15 +596,15 @@ namespace _3_GUI
             offset = offset + 20; //make some room so that the total stands out.
 
             graphic.DrawString("TỔNG TIỀN ", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
-            graphic.DrawString(decimal.Truncate(_hoadon.TotalMoney).ToString()+".000 VND", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX + 250, startY + offset);
+            graphic.DrawString(decimal.Truncate(_hoadon.TotalMoney).ToString() + ".000 VND", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
             graphic.DrawString("TIỀN KHÁCH ĐƯA ", font, new SolidBrush(Color.Black), startX, startY + offset);
-            graphic.DrawString(Txt_TienKhachDua.Text+".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            graphic.DrawString(Txt_TienKhachDua.Text + ".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
             graphic.DrawString("TIỀN TRẢ KHÁCH ", font, new SolidBrush(Color.Black), startX, startY + offset);
-            graphic.DrawString((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_hoadon.TotalMoney)).ToString()+".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            graphic.DrawString((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_hoadon.TotalMoney)).ToString() + ".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
             graphic.DrawString("              Xin chân thành cảm ơn quý khách!", font, new SolidBrush(Color.Black), startX + 10, startY + offset);
@@ -618,117 +619,121 @@ namespace _3_GUI
 
         private void Btn_ThanhToan_Click(object sender, EventArgs e)
         {
-            if (_IdBan != 0 && _IdHoaDon == 0)
+            if (MessageBox.Show("Bạn có chắc chắn muốn thanh toán", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1);
-            }
-            else if (_IdBan == 0 && _IdHoaDon != 0)
-            {
-                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
-            }
-            if (Txt_TienKhachDua.Text == "")
-            {
-                MessageBox.Show("Bạn chua nhập tiền khách đưa", "Thông báo");
-                return;
-            }
-            if (Convert.ToInt32(Txt_TienKhachDua.Text) < _hoadon.TotalMoney)
-            {
-                MessageBox.Show("Tiền khách đưa chưa đủ", "Thông báo");
-                return;
-            }
-
-            _f = new Form();
-            Label label1 = new Label();
-            Label label2 = new Label();
-            Label label3 = new Label();
-            Label label14 = new Label();
-            Label label15 = new Label();
-            Button button = new Button();
-            button.Text = "OK";
-            label2.Text = "Tổng tiền:";
-            label3.Text = "ăn cứt";
-            label14.Text = "Tiền giả khách:";
-            _f.Controls.Add(label1);
-            _f.Controls.Add(label2);
-            _f.Controls.Add(label3);
-            _f.Controls.Add(button);
-            _f.Controls.Add(label14);
-            _f.Controls.Add(label15);
-            _f.Controls[4].Left = 30;
-            _f.Controls[4].Top = 70;
-            _f.Controls[5].Left = 130;
-            _f.Controls[5].Top = 70;
-            _f.Controls[3].Left = 130;
-            _f.Controls[3].Top = 110;
-            _f.Controls[0].Left = 130;
-            _f.Controls[1].Left = 30;
-            _f.Controls[1].Top = 30;
-            _f.Controls[2].Left = 130;
-            _f.Controls[2].Top = 30;
-            _f.Size = new Size(350, 200);
-            button.Click += Button_Click1;
-            //_f.ShowDialog();
-
-
-            if (_IdHoaDon != 0 && _IdBan == 0)
-            {
-                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
-                PrintDialog PrintDialog = new PrintDialog();
-                PrintDocument PrintDocument = new PrintDocument();
-                PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
-                PrintDialog.Document = PrintDocument; //add the document to the dialog box
-
-                PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
-                DialogResult result = PrintDialog.ShowDialog();
-                if (result == DialogResult.OK)
+                if (_IdBan != 0 && _IdHoaDon == 0)
                 {
-                    PrintDocument.Print();
-                    
+                    _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1);
+                }
+                else if (_IdBan == 0 && _IdHoaDon != 0)
+                {
+                    _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+                }
+                if (Txt_TienKhachDua.Text == "")
+                {
+                    MessageBox.Show("Bạn chua nhập tiền khách đưa", "Thông báo");
+                    return;
+                }
+                if (Convert.ToInt32(Txt_TienKhachDua.Text) < _hoadon.TotalMoney)
+                {
+                    MessageBox.Show("Tiền khách đưa chưa đủ", "Thông báo");
+                    return;
                 }
 
-                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
-                _hoadon.Status = false;
-                _hoadon.DateCheckOut = DateTime.Now;
-                _qlHoaDon.UpdateHoaDon(_hoadon);
-                label1.Text = "Mang về";
-                label3.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString()+".000 VND";
-                label15.Text = (Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()+".000 VND";
-                LoadMangVe();
-                LoadHoaDonMangVe(_hoadon.Id);
-                _f.ShowDialog();
-                Lbl_TongTien.Text = "0 VND";
+                _f = new Form();
+                Label label1 = new Label();
+                Label label2 = new Label();
+                Label label3 = new Label();
+                Label label14 = new Label();
+                Label label15 = new Label();
+                Button button = new Button();
+                button.Text = "OK";
+                label2.Text = "Tổng tiền:";
+                label3.Text = "ăn cứt";
+                label14.Text = "Tiền giả khách:";
+                _f.Controls.Add(label1);
+                _f.Controls.Add(label2);
+                _f.Controls.Add(label3);
+                _f.Controls.Add(button);
+                _f.Controls.Add(label14);
+                _f.Controls.Add(label15);
+                _f.Controls[4].Left = 30;
+                _f.Controls[4].Top = 70;
+                _f.Controls[5].Left = 130;
+                _f.Controls[5].Top = 70;
+                _f.Controls[3].Left = 130;
+                _f.Controls[3].Top = 110;
+                _f.Controls[0].Left = 130;
+                _f.Controls[1].Left = 30;
+                _f.Controls[1].Top = 30;
+                _f.Controls[2].Left = 130;
+                _f.Controls[2].Top = 30;
+                _f.Size = new Size(350, 200);
+                button.Click += Button_Click1;
+                //_f.ShowDialog();
 
 
-            }
-            else if (_IdHoaDon == 0 && _IdBan != 0)
-            {
-                _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).FirstOrDefault();
-                PrintDialog PrintDialog = new PrintDialog();
-                PrintDocument PrintDocument = new PrintDocument();
-                PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
-                PrintDialog.Document = PrintDocument; //add the document to the dialog box
-
-                PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
-                DialogResult result = PrintDialog.ShowDialog();
-                if (result == DialogResult.OK)
+                if (_IdHoaDon != 0 && _IdBan == 0)
                 {
-                    PrintDocument.Print();
+                    _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+                    PrintDialog PrintDialog = new PrintDialog();
+                    PrintDocument PrintDocument = new PrintDocument();
+                    PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
+                    PrintDialog.Document = PrintDocument; //add the document to the dialog box
+
+                    PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                    DialogResult result = PrintDialog.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        PrintDocument.Print();
+
+                    }
+
+                    _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+                    _hoadon.Status = false;
+                    _hoadon.DateCheckOut = DateTime.Now;
+                    _qlHoaDon.UpdateHoaDon(_hoadon);
+                    label1.Text = "Mang về";
+                    label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + ".000 VND";
+                    label15.Text = (Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString() + ".000 VND";
+                    LoadMangVe();
+                    LoadHoaDonMangVe(_hoadon.Id);
+                    _f.ShowDialog();
+                    Lbl_TongTien.Text = "0 VND";
+
+
                 }
-                
-                _hoadon.Status = false;
-                _hoadon.DateCheckOut = DateTime.Now;
-                _qlHoaDon.UpdateHoaDon(_hoadon);
-                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
-                banAn.TinhTrang = 1;
-                label1.Text = "Bàn " + _hoadon.Idtable.ToString();
-                label3.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString()+".000 VND";
-                label15.Text = (Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()+".000 VND";
-                _qlBanAn.UpdateBanAn(banAn);
-                LoadHoaDon(banAn.Id);
-                LoadTableT1();
-                LoadTableT2();
-                _f.ShowDialog();
-                Lbl_TongTien.Text = "0 VND";
+                else if (_IdHoaDon == 0 && _IdBan != 0)
+                {
+                    _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).FirstOrDefault();
+                    PrintDialog PrintDialog = new PrintDialog();
+                    PrintDocument PrintDocument = new PrintDocument();
+                    PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
+                    PrintDialog.Document = PrintDocument; //add the document to the dialog box
+
+                    PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                    DialogResult result = PrintDialog.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        PrintDocument.Print();
+                    }
+
+                    _hoadon.Status = false;
+                    _hoadon.DateCheckOut = DateTime.Now;
+                    _qlHoaDon.UpdateHoaDon(_hoadon);
+                    BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
+                    banAn.TinhTrang = 1;
+                    label1.Text = "Bàn " + _hoadon.Idtable.ToString();
+                    label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + ".000 VND";
+                    label15.Text = (Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString() + ".000 VND";
+                    _qlBanAn.UpdateBanAn(banAn);
+                    LoadHoaDon(banAn.Id);
+                    LoadTableT1();
+                    LoadTableT2();
+                    _f.ShowDialog();
+                    Lbl_TongTien.Text = "0 VND";
+                }
+                Txt_TienKhachDua.Text = "";
             }
         }
 
@@ -830,7 +835,7 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDon(_IdBan);
-                Lbl_TongTien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString();
+                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString();
                 _f.Close();
             }
             else if (_IdBan == 0 && _IdHoaDon != 0)
@@ -882,9 +887,7 @@ namespace _3_GUI
 
         private void FrmChuyenBan_reloadBan()
         {
-            FLPenal.Controls.Clear();
-            LoadTableT1();
-            LoadTableT2();
+            FLPenal.Update();          
         }
 
         private void button1_Click(object sender, EventArgs e)

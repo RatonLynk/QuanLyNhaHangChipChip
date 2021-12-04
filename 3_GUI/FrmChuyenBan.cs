@@ -64,50 +64,53 @@ namespace _3_GUI
 
         private void Btn_Click(object sender, EventArgs e)
         {
-            int id = ((sender as Button).Tag as BanAn).Id;
-            _IdBan = id;
-            _banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBanCu);
-            BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
-            _hoaDon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBanCu && c.Status == true && c.DichVu == 1).FirstOrDefault();
-            if (banAn.TinhTrang == 1)
+            if (MessageBox.Show("Bạn có chắc muốn chuyển đến T2 - bàn "+_IdBan, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (_IdBanCu == id)
+                int id = ((sender as Button).Tag as BanAn).Id;
+                _IdBan = id;
+                _banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBanCu);
+                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
+                _hoaDon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBanCu && c.Status == true && c.DichVu == 1).FirstOrDefault();
+                if (banAn.TinhTrang == 1)
                 {
-                    MessageBox.Show("Vị trí bàn trùng nhau", "Thông báo");
-                    return;
+                    if (_IdBanCu == id)
+                    {
+                        MessageBox.Show("Vị trí bàn trùng nhau", "Thông báo");
+                        return;
+                    }
+                    _hoaDon.Idtable = _IdBan;
+                    _qlHoaDon.UpdateHoaDon(_hoaDon);
+                    _banAn.TinhTrang = 1;
+                    _qlBanAn.UpdateBanAn(_banAn);
+                    banAn.TinhTrang = 0;
+                    _qlBanAn.UpdateBanAn(banAn);
+                    reloadBan();
+                    this.Close();
                 }
-                _hoaDon.Idtable = _IdBan;
-                _qlHoaDon.UpdateHoaDon(_hoaDon);
-                _banAn.TinhTrang = 1;
-                _qlBanAn.UpdateBanAn(_banAn);                
-                banAn.TinhTrang = 0;
-                _qlBanAn.UpdateBanAn(banAn);
-                reloadBan();                              
-                this.Close();                
-            }
-            else if (banAn.TinhTrang == 0)
-            {
-                if (_IdBanCu == id)
+                else if (banAn.TinhTrang == 0)
                 {
-                    MessageBox.Show("Vị trí bàn trùng nhau", "Thông báo");
-                    return;
+                    if (_IdBanCu == id)
+                    {
+                        MessageBox.Show("Vị trí bàn trùng nhau", "Thông báo");
+                        return;
+                    }
+                    HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1);
+                    _hoaDon.TotalMoney = 0;
+                    _hoaDon.Status = false;
+                    _qlHoaDon.UpdateHoaDon(_hoaDon);
+                    List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoaDon.Id).ToList();
+                    foreach (var x in lstHDCT)
+                    {
+                        x.Idbill = hoaDon.Id;
+                        _qlHoaDon.UpdateHoaDonCT(x);
+                        hoaDon.TotalMoney += x.Price;
+                    }
+                    _qlHoaDon.UpdateHoaDon(hoaDon);
+                    _banAn.TinhTrang = 1;
+                    _qlBanAn.UpdateBanAn(_banAn);
+                    reloadBan();
+                    this.Close();
                 }
-                HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1);
-                _hoaDon.TotalMoney = 0;
-                _hoaDon.Status = false;
-                _qlHoaDon.UpdateHoaDon(_hoaDon);
-                List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoaDon.Id).ToList();
-                foreach (var x in lstHDCT)
-                {
-                    x.Idbill = hoaDon.Id;
-                    _qlHoaDon.UpdateHoaDonCT(x);
-                    hoaDon.TotalMoney += x.Price;
-                }
-                _qlHoaDon.UpdateHoaDon(hoaDon);
-                _banAn.TinhTrang = 1;
-                _qlBanAn.UpdateBanAn(_banAn);
-                reloadBan();
-                this.Close();
             }
         }
 
@@ -139,55 +142,59 @@ namespace _3_GUI
 
         private void Btn1_Click(object sender, EventArgs e)
         {
-            int id = ((sender as Button).Tag as BanAn).Id;
-            _IdBan = id;
-            _banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBanCu);
-            BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
-            _hoaDon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBanCu && c.Status == true && c.DichVu == 1).FirstOrDefault();
-            if (banAn.TinhTrang==1)
+            if (MessageBox.Show("Bạn có chắc muốn chuyển đến T1 - bàn " + _IdBan, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (_IdBanCu==id)
+                int id = ((sender as Button).Tag as BanAn).Id;
+                _IdBan = id;
+                _banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBanCu);
+                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
+                _hoaDon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBanCu && c.Status == true && c.DichVu == 1).FirstOrDefault();
+                if (banAn.TinhTrang == 1)
                 {
-                    MessageBox.Show("Vị trí bàn trùng nhau","Thông báo");
-                    return;
-                }                
-                _hoaDon.Idtable = _IdBan;
-                _qlHoaDon.UpdateHoaDon(_hoaDon);
-                _banAn.TinhTrang = 1;
-                _qlBanAn.UpdateBanAn(_banAn);                
-                banAn.TinhTrang = 0;
-                _qlBanAn.UpdateBanAn(banAn);
-                _FrmQLBan.LoadTableT1();
-                reloadBan();
-                this.Close();
-                
+                    if (_IdBanCu == id)
+                    {
+                        MessageBox.Show("Vị trí bàn trùng nhau", "Thông báo");
+                        return;
+                    }
+                    _hoaDon.Idtable = _IdBan;
+                    _qlHoaDon.UpdateHoaDon(_hoaDon);
+                    _banAn.TinhTrang = 1;
+                    _qlBanAn.UpdateBanAn(_banAn);
+                    banAn.TinhTrang = 0;
+                    _qlBanAn.UpdateBanAn(banAn);
+                    _FrmQLBan.LoadTableT1();
+                    reloadBan();
+                    this.Close();
 
-            }
-            else if (banAn.TinhTrang==0)
-            {
-                if (_IdBanCu == id)
-                {
-                    MessageBox.Show("Vị trí bàn trùng nhau", "Thông báo");
-                    return;
+
                 }
-                HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c=>c.Idtable==_IdBan && c.Status==true && c.DichVu==1);
-                _hoaDon.TotalMoney = 0;
-                _hoaDon.Status = false;
-                _qlHoaDon.UpdateHoaDon(_hoaDon);
-                List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c=>c.Idbill==_hoaDon.Id).ToList();
-                foreach (var x in lstHDCT)
+                else if (banAn.TinhTrang == 0)
                 {
-                    x.Idbill = hoaDon.Id;
-                    _qlHoaDon.UpdateHoaDonCT(x);
-                    hoaDon.TotalMoney += x.Price;
+                    if (_IdBanCu == id)
+                    {
+                        MessageBox.Show("Vị trí bàn trùng nhau", "Thông báo");
+                        return;
+                    }
+                    HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1);
+                    _hoaDon.TotalMoney = 0;
+                    _hoaDon.Status = false;
+                    _qlHoaDon.UpdateHoaDon(_hoaDon);
+                    List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoaDon.Id).ToList();
+                    foreach (var x in lstHDCT)
+                    {
+                        x.Idbill = hoaDon.Id;
+                        _qlHoaDon.UpdateHoaDonCT(x);
+                        hoaDon.TotalMoney += x.Price;
+                    }
+                    _qlHoaDon.UpdateHoaDon(hoaDon);
+                    _banAn.TinhTrang = 1;
+                    _qlBanAn.UpdateBanAn(_banAn);
+                    reloadBan();
+                    this.Close();
+
                 }
-                _qlHoaDon.UpdateHoaDon(hoaDon);
-                _banAn.TinhTrang = 1;
-                _qlBanAn.UpdateBanAn(_banAn);
-                reloadBan();
-                this.Close();
-                
             }
+
         }
 
         private void FrmChuyenBan_FormClosed(object sender, FormClosedEventArgs e)
