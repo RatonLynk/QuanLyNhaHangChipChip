@@ -209,7 +209,7 @@ namespace _3_GUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmQuanLyHoaDon";
-            this.Text = "Quản lý in hóa đơn";
+            this.Text = "Thống kê hóa đơn";
             ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_hdct)).EndInit();
             this.ResumeLayout(false);
