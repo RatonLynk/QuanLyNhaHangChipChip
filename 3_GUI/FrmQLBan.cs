@@ -887,6 +887,8 @@ namespace _3_GUI
 
         private void FrmChuyenBan_reloadBan()
         {
+            LoadTableT1();
+            LoadTableT2();
             FLPenal.Update();          
         }
 
