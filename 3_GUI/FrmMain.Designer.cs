@@ -125,7 +125,7 @@ namespace _3_GUI
             this.btnQuanLyHoaDon.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
             this.btnQuanLyHoaDon.Size = new System.Drawing.Size(361, 121);
             this.btnQuanLyHoaDon.TabIndex = 3;
-            this.btnQuanLyHoaDon.Text = "    Quản lý hóa đơn";
+            this.btnQuanLyHoaDon.Text = "    Thống kê hóa đơn";
             this.btnQuanLyHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyHoaDon.UseVisualStyleBackColor = true;
             this.btnQuanLyHoaDon.Click += new System.EventHandler(this.btnQuanLyHoaDon_Click);

@@ -95,7 +95,6 @@ namespace _3_GUI
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(220, 28);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = " ";
             // 
             // dataGridView1
             // 
@@ -218,7 +217,6 @@ namespace _3_GUI
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(220, 27);
             this.textBox2.TabIndex = 1;
-            this.textBox2.Text = " ";
             // 
             // dataGridView3
             // 

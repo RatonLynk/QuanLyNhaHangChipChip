@@ -187,10 +187,10 @@ namespace _3_GUI
 
         private void linkQMK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             FrmQuenMatKhau qmk = new FrmQuenMatKhau();
             qmk.ShowDialog();
-            this.Close();
+            //this.Close();
             
            
            

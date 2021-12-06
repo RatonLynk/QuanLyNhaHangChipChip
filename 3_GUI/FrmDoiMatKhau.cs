@@ -33,25 +33,58 @@ namespace _3_GUI
 
 
         private void btnLuu_Click(object sender, EventArgs e)
-        {       
-                if (txtPass.Text != FrmDoiMatKhau.passcu) 
+        {
+            try
+            {
+
+                if (txtPass.Text != FrmDoiMatKhau.passcu)
                 {
                     MessageBox.Show("Mật khẩu cũ của bạn nhập không chính xác", "Thông báo");
-                }else if (txtNewPass.Text != txtNewPass2.Text)
+                }
+                else if (txtNewPass.Text != txtNewPass2.Text)
                 {
-                MessageBox.Show("Nhập lại mật khẩu không chính xác", "Thông báo");
+                    MessageBox.Show("Nhập lại mật khẩu không chính xác", "Thông báo");
                 }
                 else
                 {
 
-                _nv = _qlnv.getlstNhanViens().Where(c => c.Email == mail).FirstOrDefault();
-                _nv = QMK.nhanViens(mail);
-                _nv.Password = uti.GetHash(txtNewPass.Text);         
-                MessageBox.Show(QMK.UpdatePass(_nv), "Thông báo", MessageBoxButtons.OK);
-                this.Close();
-          
+                    _nv = _qlnv.getlstNhanViens().Where(c => c.Email == mail).FirstOrDefault();
+                    _nv = QMK.nhanViens(mail);
+                    _nv.Password = uti.GetHash(txtNewPass.Text);
+                    MessageBox.Show(QMK.UpdatePass(_nv), "Thông báo", MessageBoxButtons.OK);
+                    this.Close();
+
                 }
+            }
+            catch (Exception a)
+            {
+
+                MessageBox.Show(a.Message);
+            }
             
+        }
+        bool validate()
+        {
+            if (string.IsNullOrEmpty(txtPass.Text))
+            {
+                MessageBox.Show("Không được để trống  ");
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtNewPass.Text))
+            {
+                MessageBox.Show("Không được để trống ");
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtNewPass2.Text))
+            {
+                MessageBox.Show("Không được để trống  ");
+                return false;
+            }
+
+
+
+            return true;
+
         }
 
         private void btnDong_Click(object sender, EventArgs e)

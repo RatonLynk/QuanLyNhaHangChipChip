@@ -52,8 +52,7 @@ namespace _3_GUI
                 MessageBox.Show("Đã quá thời gian 1 phút  mã code đã vô hiệu hóa");
                 MessageBox.Show("Quên mật khẩu thất bại","Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 this.Close();
-                FrmLogin frm_DangNhap = new FrmLogin();
-                frm_DangNhap.ShowDialog();
+                
 
             }
             else if (flag == 3)
@@ -61,8 +60,7 @@ namespace _3_GUI
                 MessageBox.Show("Đã quá 3 lần xác nhân mã code đã vô hiệu hóa !");
                 MessageBox.Show("Quên mật khẩu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
-                FrmLogin frm_DangNhap = new FrmLogin();
-                frm_DangNhap.ShowDialog();
+              
 
             }
             else if (Txt_XacNhan.Text == _code)
@@ -77,8 +75,7 @@ namespace _3_GUI
                 if (result == DialogResult.Yes) 
                 {
                     this.Close();
-                    FrmLogin frm_DangNhap = new FrmLogin();
-                    frm_DangNhap.ShowDialog();
+               
                 }
                  
                 txt_Email.Enabled = true;
@@ -178,13 +175,9 @@ namespace _3_GUI
 
         private void btnDong_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            DialogResult result = MessageBox.Show("Bạn có muốn đóng quên mật khẩu?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             if (result == DialogResult.OK)
             {
-
-                this.Hide();
-                FrmLogin frmLogin = new FrmLogin();
-                frmLogin.ShowDialog();
                 this.Close();
             }
         }

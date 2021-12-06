@@ -362,7 +362,6 @@ namespace _3_GUI
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(229, 21);
             this.textBox4.TabIndex = 7;
-            this.textBox4.Text = " ";
             // 
             // label6
             // 
