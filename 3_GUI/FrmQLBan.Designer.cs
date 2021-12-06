@@ -307,7 +307,6 @@ namespace _3_GUI
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 25);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = " ";
             // 
             // Dgid_Meniu
             // 
@@ -366,7 +365,6 @@ namespace _3_GUI
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(229, 25);
             this.textBox4.TabIndex = 7;
-            this.textBox4.Text = " ";
             // 
             // label6
             // 
@@ -425,7 +423,6 @@ namespace _3_GUI
             this.Txt_TienKhachDua.Name = "Txt_TienKhachDua";
             this.Txt_TienKhachDua.Size = new System.Drawing.Size(229, 25);
             this.Txt_TienKhachDua.TabIndex = 2;
-            this.Txt_TienKhachDua.Text = " ";
             // 
             // tabControl1
             // 

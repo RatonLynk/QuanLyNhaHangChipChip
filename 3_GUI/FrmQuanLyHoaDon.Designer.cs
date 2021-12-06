@@ -38,6 +38,8 @@ namespace _3_GUI
             this.dgrid_hdct = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrid_hdct)).BeginInit();
             this.SuspendLayout();
@@ -53,10 +55,10 @@ namespace _3_GUI
             this.Dgid_HoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgid_HoaDon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.Dgid_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgid_HoaDon.Location = new System.Drawing.Point(21, 63);
+            this.Dgid_HoaDon.Location = new System.Drawing.Point(21, 122);
             this.Dgid_HoaDon.Name = "Dgid_HoaDon";
             this.Dgid_HoaDon.RowHeadersWidth = 51;
-            this.Dgid_HoaDon.Size = new System.Drawing.Size(617, 558);
+            this.Dgid_HoaDon.Size = new System.Drawing.Size(617, 523);
             this.Dgid_HoaDon.TabIndex = 33;
             this.Dgid_HoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgid_HoaDon_CellClick);
             // 
@@ -68,7 +70,7 @@ namespace _3_GUI
             this.btn_danhsach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btn_danhsach.Image = ((System.Drawing.Image)(resources.GetObject("btn_danhsach.Image")));
             this.btn_danhsach.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_danhsach.Location = new System.Drawing.Point(855, 13);
+            this.btn_danhsach.Location = new System.Drawing.Point(521, 73);
             this.btn_danhsach.Name = "btn_danhsach";
             this.btn_danhsach.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_danhsach.Size = new System.Drawing.Size(117, 33);
@@ -136,10 +138,10 @@ namespace _3_GUI
             this.dgrid_hdct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgrid_hdct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgrid_hdct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_hdct.Location = new System.Drawing.Point(682, 63);
+            this.dgrid_hdct.Location = new System.Drawing.Point(682, 122);
             this.dgrid_hdct.Name = "dgrid_hdct";
             this.dgrid_hdct.RowHeadersWidth = 51;
-            this.dgrid_hdct.Size = new System.Drawing.Size(442, 558);
+            this.dgrid_hdct.Size = new System.Drawing.Size(442, 523);
             this.dgrid_hdct.TabIndex = 38;
             // 
             // label1
@@ -162,6 +164,30 @@ namespace _3_GUI
             this.label2.TabIndex = 40;
             this.label2.Text = "Đến ngày:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(21, 83);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 23);
+            this.label3.TabIndex = 132;
+            this.label3.Text = "Hóa đơn :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(682, 83);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(143, 23);
+            this.label4.TabIndex = 132;
+            this.label4.Text = "Chi tiết hóa đơn :";
+            // 
             // FrmQuanLyHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -169,6 +195,8 @@ namespace _3_GUI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1136, 668);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgrid_hdct);
@@ -198,5 +226,7 @@ namespace _3_GUI
         private System.Windows.Forms.DataGridView dgrid_hdct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

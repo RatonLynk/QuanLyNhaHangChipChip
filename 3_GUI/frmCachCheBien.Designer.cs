@@ -181,7 +181,6 @@ namespace _3_GUI
             this.txtTimKiemCongthucCB.Name = "txtTimKiemCongthucCB";
             this.txtTimKiemCongthucCB.Size = new System.Drawing.Size(226, 30);
             this.txtTimKiemCongthucCB.TabIndex = 36;
-            this.txtTimKiemCongthucCB.Text = " ";
             this.txtTimKiemCongthucCB.TextChanged += new System.EventHandler(this.txtTimKiemCongthucCB_TextChanged);
             // 
             // label11
@@ -206,7 +205,6 @@ namespace _3_GUI
             this.txt_MethName.Name = "txt_MethName";
             this.txt_MethName.Size = new System.Drawing.Size(288, 30);
             this.txt_MethName.TabIndex = 37;
-            this.txt_MethName.Text = " ";
             // 
             // txt_MethID
             // 
