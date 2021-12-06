@@ -420,6 +420,7 @@ namespace _3_GUI
             this.Txt_TienKhachDua.Name = "Txt_TienKhachDua";
             this.Txt_TienKhachDua.Size = new System.Drawing.Size(229, 21);
             this.Txt_TienKhachDua.TabIndex = 2;
+            this.Txt_TienKhachDua.TextChanged += new System.EventHandler(this.Txt_TienKhachDua_TextChanged);
             // 
             // tabControl1
             // 

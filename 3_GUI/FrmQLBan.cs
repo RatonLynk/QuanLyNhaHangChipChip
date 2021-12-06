@@ -63,7 +63,7 @@ namespace _3_GUI
             {
                 Button btn1 = new Button() { Width = 70, Height = 70 };
                 btn1.Text = "Mang Về";
-                
+
                 btn1.Click += Btn1_Click1;
                 btn1.Tag = x;
                 btn1.BackColor = Color.Aqua;
@@ -319,12 +319,12 @@ namespace _3_GUI
         {
             if (String.IsNullOrEmpty(_f.Controls[0].Text))
             {
-                MessageBox.Show("không được để trống số lượng","Thông báo");
+                MessageBox.Show("không được để trống số lượng", "Thông báo");
                 return;
             }
-            if (_f.Controls[0].Text.All(char.IsDigit)==false)
+            if (_f.Controls[0].Text.All(char.IsDigit) == false)
             {
-                MessageBox.Show("bạn không thể nhập chữ","Thông báo");
+                MessageBox.Show("bạn không thể nhập chữ", "Thông báo");
                 return;
             }
             _soLuong = Convert.ToInt32(_f.Controls[0].Text);
@@ -493,7 +493,7 @@ namespace _3_GUI
                 MessageBox.Show("Không để số điện thoại trống", "Thông báo");
                 return;
             }
-            if (_f.Controls[3].Text.All(char.IsDigit)==false)
+            if (_f.Controls[3].Text.All(char.IsDigit) == false)
             {
                 MessageBox.Show("Số điện thoại không thể nhập chữ", "Thông báo");
                 return;
@@ -529,7 +529,7 @@ namespace _3_GUI
                 {
                     MessageBox.Show("Chưa bọn bàn nào", "Thông báo");
                     return;
-                }                
+                }
                 if (_IdBan != 0 && _IdHoaDon == 0)
                 {
                     BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
@@ -537,7 +537,7 @@ namespace _3_GUI
                     {
                         MessageBox.Show("Bàn hiện tại đang trống", "Thông báo");
                         return;
-                    }                    
+                    }
                 }
 
                 _f = new Form();
@@ -734,7 +734,7 @@ namespace _3_GUI
                     _qlHoaDon.UpdateHoaDon(_hoadon);
                     label1.Text = "Mang về";
                     label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + ".000 VND";
-                    label15.Text = (Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString() + ".000 VND";
+                    label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()).ToString("#,##0")  + ".000 VND";
                     LoadMangVe();
                     LoadHoaDonMangVe(_hoadon.Id);
                     _f.ShowDialog();
@@ -758,7 +758,7 @@ namespace _3_GUI
                         {
                             PrintDocument.Print();
                         }
-                    }                       
+                    }
 
                     _hoadon.Status = false;
                     _hoadon.DateCheckOut = DateTime.Now;
@@ -767,7 +767,7 @@ namespace _3_GUI
                     banAn.TinhTrang = 1;
                     label1.Text = "Bàn " + _hoadon.Idtable.ToString();
                     label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + ".000 VND";
-                    label15.Text = (Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString() + ".000 VND";
+                    label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()).ToString("#,##0") + ".000 VND";
                     _qlBanAn.UpdateBanAn(banAn);
                     LoadHoaDon(banAn.Id);
                     LoadTableT1();
@@ -931,18 +931,18 @@ namespace _3_GUI
 
         private void Btn_ChuyenBan_Click(object sender, EventArgs e)
         {
-           
-            if (_IdBan==0 && _IdHoaDon!=0)
+
+            if (_IdBan == 0 && _IdHoaDon != 0)
             {
-                MessageBox.Show("bạn đang ở vị trí mang về, không thể chuyển","Thông báo");
+                MessageBox.Show("bạn đang ở vị trí mang về, không thể chuyển", "Thông báo");
                 return;
             }
             else if (_IdBan != 0 && _IdHoaDon == 0)
             {
-                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c=>c.Id==_IdBan);
-                if (banAn.TinhTrang==1)
+                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
+                if (banAn.TinhTrang == 1)
                 {
-                    MessageBox.Show("Bàn hiện tại đang trống","Thông báo");
+                    MessageBox.Show("Bàn hiện tại đang trống", "Thông báo");
                     return;
                 }
                 FrmChuyenBan frmChuyenBan = new FrmChuyenBan(this);
@@ -950,7 +950,7 @@ namespace _3_GUI
                 frmChuyenBan.getFrmMain(frm);
                 frmChuyenBan.ShowDialog();
             }
-           
+
         }
 
         private void FrmChuyenBan_reloadBan()
@@ -1016,7 +1016,7 @@ namespace _3_GUI
             Dgid_Meniu.Columns[1].Name = "Giá tiền";
             Dgid_Meniu.Columns.Add(img);
             Dgid_Meniu.Rows.Clear();
-            foreach (var x in _qlMeniu.GetViewMenus().Where(c=>c.details.Idcategory==id))
+            foreach (var x in _qlMeniu.GetViewMenus().Where(c => c.details.Idcategory == id))
             {
                 Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + ".000 VND");
             }
@@ -1065,6 +1065,16 @@ namespace _3_GUI
         private void Txt_Seach_TextChanged(object sender, EventArgs e)
         {
             LoadMeniu(Txt_Seach.Text);
+        }
+
+        private void Txt_TienKhachDua_TextChanged(object sender, EventArgs e)
+        {
+            //Convert.ToDecimal(Txt_TienKhachDua.Text).ToString("#,##0");            
+            if (Txt_TienKhachDua.Text.All(char.IsDigit)==false)
+            {
+                MessageBox.Show("Không được nhập chữ","Thông báo");
+                return;
+            }
         }
     }
 }
