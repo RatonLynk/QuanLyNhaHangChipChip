@@ -63,6 +63,7 @@ namespace _3_GUI
             {
                 Button btn1 = new Button() { Width = 70, Height = 70 };
                 btn1.Text = "Mang Về";
+                
                 btn1.Click += Btn1_Click1;
                 btn1.Tag = x;
                 btn1.BackColor = Color.Aqua;
@@ -266,7 +267,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\Users\phuon\Desktop\DuAn1\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -316,6 +317,16 @@ namespace _3_GUI
 
         private void Button_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(_f.Controls[0].Text))
+            {
+                MessageBox.Show("không được để trống số lượng","Thông báo");
+                return;
+            }
+            if (_f.Controls[0].Text.All(char.IsDigit)==false)
+            {
+                MessageBox.Show("bạn không thể nhập chữ","Thông báo");
+                return;
+            }
             _soLuong = Convert.ToInt32(_f.Controls[0].Text);
             if (_IdBan != 0 && _IdHoaDon == 0)
             {
@@ -477,6 +488,21 @@ namespace _3_GUI
 
         private void Button123_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(_f.Controls[3].Text))
+            {
+                MessageBox.Show("Không để số điện thoại trống", "Thông báo");
+                return;
+            }
+            if (_f.Controls[3].Text.All(char.IsDigit)==false)
+            {
+                MessageBox.Show("Số điện thoại không thể nhập chữ", "Thông báo");
+                return;
+            }
+            if (String.IsNullOrEmpty(_f.Controls[0].Text))
+            {
+                MessageBox.Show("Không để địa chỉ trống", "Thông báo");
+                return;
+            }
             HoaDon hoaDon = new HoaDon();
             hoaDon.DateCheckIn = DateTime.Now;
             hoaDon.DateCheckOut = DateTime.Now;
@@ -503,7 +529,17 @@ namespace _3_GUI
                 {
                     MessageBox.Show("Chưa bọn bàn nào", "Thông báo");
                     return;
+                }                
+                if (_IdBan != 0 && _IdHoaDon == 0)
+                {
+                    BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
+                    if (banAn.TinhTrang == 1)
+                    {
+                        MessageBox.Show("Bàn hiện tại đang trống", "Thông báo");
+                        return;
+                    }                    
                 }
+
                 _f = new Form();
                 TextBox textBox = new TextBox();
                 textBox.Width = 250;
@@ -629,7 +665,7 @@ namespace _3_GUI
                 {
                     _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
                 }
-                if (Txt_TienKhachDua.Text == "")
+                if (String.IsNullOrEmpty(Txt_TienKhachDua.Text))
                 {
                     MessageBox.Show("Bạn chua nhập tiền khách đưa", "Thông báo");
                     return;
@@ -675,20 +711,23 @@ namespace _3_GUI
 
                 if (_IdHoaDon != 0 && _IdBan == 0)
                 {
+
                     _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
-                    PrintDialog PrintDialog = new PrintDialog();
-                    PrintDocument PrintDocument = new PrintDocument();
-                    PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
-                    PrintDialog.Document = PrintDocument; //add the document to the dialog box
-
-                    PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
-                    DialogResult result = PrintDialog.ShowDialog();
-                    if (result == DialogResult.OK)
+                    if (MessageBox.Show("Bạn có muốn in hóa đơn không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        PrintDocument.Print();
+                        PrintDialog PrintDialog = new PrintDialog();
+                        PrintDocument PrintDocument = new PrintDocument();
+                        PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
+                        PrintDialog.Document = PrintDocument; //add the document to the dialog box
 
+                        PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                        DialogResult result = PrintDialog.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            PrintDocument.Print();
+
+                        }
                     }
-
                     _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
                     _hoadon.Status = false;
                     _hoadon.DateCheckOut = DateTime.Now;
@@ -706,17 +745,20 @@ namespace _3_GUI
                 else if (_IdHoaDon == 0 && _IdBan != 0)
                 {
                     _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).FirstOrDefault();
-                    PrintDialog PrintDialog = new PrintDialog();
-                    PrintDocument PrintDocument = new PrintDocument();
-                    PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
-                    PrintDialog.Document = PrintDocument; //add the document to the dialog box
-
-                    PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
-                    DialogResult result = PrintDialog.ShowDialog();
-                    if (result == DialogResult.OK)
+                    if (MessageBox.Show("Bạn có muốn in hóa đơn không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        PrintDocument.Print();
-                    }
+                        PrintDialog PrintDialog = new PrintDialog();
+                        PrintDocument PrintDocument = new PrintDocument();
+                        PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
+                        PrintDialog.Document = PrintDocument; //add the document to the dialog box
+
+                        PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                        DialogResult result = PrintDialog.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            PrintDocument.Print();
+                        }
+                    }                       
 
                     _hoadon.Status = false;
                     _hoadon.DateCheckOut = DateTime.Now;
@@ -759,7 +801,7 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
-            Bitmap b = new Bitmap(@"C:\Users\phuon\Desktop\DuAn1\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
@@ -817,6 +859,16 @@ namespace _3_GUI
 
         private void Btn_XoaMon_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(_f.Controls[0].Text))
+            {
+                MessageBox.Show("không được để trống số lượng", "Thông báo");
+                return;
+            }
+            if (_f.Controls[0].Text.All(char.IsDigit) == false)
+            {
+                MessageBox.Show("bạn không thể nhập chữ", "Thông báo");
+                return;
+            }
             if (_IdBan != 0 && _IdHoaDon == 0)
             {
                 _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).FirstOrDefault();
@@ -879,17 +931,33 @@ namespace _3_GUI
 
         private void Btn_ChuyenBan_Click(object sender, EventArgs e)
         {
-            FrmChuyenBan frmChuyenBan = new FrmChuyenBan(this);
-            frmChuyenBan.reloadBan += FrmChuyenBan_reloadBan;
-            frmChuyenBan.getFrmMain(frm);
-            frmChuyenBan.ShowDialog();
+           
+            if (_IdBan==0 && _IdHoaDon!=0)
+            {
+                MessageBox.Show("bạn đang ở vị trí mang về, không thể chuyển","Thông báo");
+                return;
+            }
+            else if (_IdBan != 0 && _IdHoaDon == 0)
+            {
+                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c=>c.Id==_IdBan);
+                if (banAn.TinhTrang==1)
+                {
+                    MessageBox.Show("Bàn hiện tại đang trống","Thông báo");
+                    return;
+                }
+                FrmChuyenBan frmChuyenBan = new FrmChuyenBan(this);
+                frmChuyenBan.reloadBan += FrmChuyenBan_reloadBan;
+                frmChuyenBan.getFrmMain(frm);
+                frmChuyenBan.ShowDialog();
+            }
+           
         }
 
         private void FrmChuyenBan_reloadBan()
         {
             LoadTableT1();
             LoadTableT2();
-            FLPenal.Update();          
+            FLPenal.Update();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -914,6 +982,89 @@ namespace _3_GUI
         public void getFrmMain(FrmMain forme)
         {
             frm = forme;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadMeniu(1);
+        }
+        void LoadMeniu(int id)
+        {
+            DataGridViewButtonColumn Them = new DataGridViewButtonColumn();
+            Them.Name = "Them";
+            Them.HeaderText = "Thêm món";
+            Them.UseColumnTextForButtonValue = true;
+            Them.Text = "Thêm";
+
+            DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
+            cmb.HeaderText = "số lượng";
+            cmb.Items.Add("1");
+            cmb.Items.Add("2");
+            cmb.Items.Add("3");
+            cmb.Items.Add("4");
+            cmb.Items.Add("5");
+            cmb.Name = "combobox";
+
+            DataGridViewImageColumn img = new DataGridViewImageColumn();
+            img.Name = "nut";
+            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\003-signs.png");
+            img.Image = b;
+
+
+            Dgid_Meniu.ColumnCount = 2;
+            Dgid_Meniu.Columns[0].Name = "Tên món";
+            Dgid_Meniu.Columns[1].Name = "Giá tiền";
+            Dgid_Meniu.Columns.Add(img);
+            Dgid_Meniu.Rows.Clear();
+            foreach (var x in _qlMeniu.GetViewMenus().Where(c=>c.details.Idcategory==id))
+            {
+                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + ".000 VND");
+            }
+
+        }
+        void LoadMeniu(string name)
+        {
+            DataGridViewButtonColumn Them = new DataGridViewButtonColumn();
+            Them.Name = "Them";
+            Them.HeaderText = "Thêm món";
+            Them.UseColumnTextForButtonValue = true;
+            Them.Text = "Thêm";
+
+            DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
+            cmb.HeaderText = "số lượng";
+            cmb.Items.Add("1");
+            cmb.Items.Add("2");
+            cmb.Items.Add("3");
+            cmb.Items.Add("4");
+            cmb.Items.Add("5");
+            cmb.Name = "combobox";
+
+            DataGridViewImageColumn img = new DataGridViewImageColumn();
+            img.Name = "nut";
+            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\003-signs.png");
+            img.Image = b;
+
+
+            Dgid_Meniu.ColumnCount = 2;
+            Dgid_Meniu.Columns[0].Name = "Tên món";
+            Dgid_Meniu.Columns[1].Name = "Giá tiền";
+            Dgid_Meniu.Columns.Add(img);
+            Dgid_Meniu.Rows.Clear();
+            foreach (var x in _qlMeniu.GetViewMenus().Where(c => c.details.Name.ToLower().StartsWith(name)))
+            {
+                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + ".000 VND");
+            }
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadMeniu(2);
+        }
+
+        private void Txt_Seach_TextChanged(object sender, EventArgs e)
+        {
+            LoadMeniu(Txt_Seach.Text);
         }
     }
 }

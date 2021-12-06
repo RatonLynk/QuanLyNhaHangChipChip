@@ -64,12 +64,14 @@ namespace _3_GUI
 
         private void Btn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn chuyển đến T2 - bàn "+_IdBan, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            int id = ((sender as Button).Tag as BanAn).Id;
+            _IdBan = id;
+            BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
+            if (MessageBox.Show("Bạn có chắc muốn chuyển đến T2 - "+banAn.Name, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int id = ((sender as Button).Tag as BanAn).Id;
-                _IdBan = id;
+                
                 _banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBanCu);
-                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
+                
                 _hoaDon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBanCu && c.Status == true && c.DichVu == 1).FirstOrDefault();
                 if (banAn.TinhTrang == 1)
                 {
@@ -142,11 +144,12 @@ namespace _3_GUI
 
         private void Btn1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc muốn chuyển đến T1 - bàn " + _IdBan, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                int id = ((sender as Button).Tag as BanAn).Id;
+            int id = ((sender as Button).Tag as BanAn).Id;
                 _IdBan = id;
                 _banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBanCu);
+            if (MessageBox.Show("Bạn có chắc muốn chuyển đến T1 - bàn " + _IdBan, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                
                 BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
                 _hoaDon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBanCu && c.Status == true && c.DichVu == 1).FirstOrDefault();
                 if (banAn.TinhTrang == 1)
@@ -156,6 +159,8 @@ namespace _3_GUI
                         MessageBox.Show("Vị trí bàn trùng nhau", "Thông báo");
                         return;
                     }
+                    //FrmQLBan frmQLBan = new FrmQLBan();
+                    //frmQLBan.Hide();
                     _hoaDon.Idtable = _IdBan;
                     _qlHoaDon.UpdateHoaDon(_hoaDon);
                     _banAn.TinhTrang = 1;
@@ -165,7 +170,8 @@ namespace _3_GUI
                     _FrmQLBan.LoadTableT1();
                     reloadBan();
                     this.Close();
-
+                    
+                    //frmQLBan.Show();
 
                 }
                 else if (banAn.TinhTrang == 0)
@@ -186,12 +192,15 @@ namespace _3_GUI
                         _qlHoaDon.UpdateHoaDonCT(x);
                         hoaDon.TotalMoney += x.Price;
                     }
+                   // FrmQLBan frmQLBan = new FrmQLBan();
+                    //frmQLBan.Hide();
                     _qlHoaDon.UpdateHoaDon(hoaDon);
                     _banAn.TinhTrang = 1;
                     _qlBanAn.UpdateBanAn(_banAn);
                     reloadBan();
                     this.Close();
-
+                    
+                   // frmQLBan.Show();
                 }
             }
 
