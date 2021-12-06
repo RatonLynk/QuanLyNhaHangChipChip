@@ -252,6 +252,9 @@ namespace _3_GUI
             return Ten;
         }
 
-
+        private void btnTienIch_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmMain(), sender);
+        }
     }
 }

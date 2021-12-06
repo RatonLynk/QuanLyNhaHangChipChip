@@ -181,6 +181,7 @@ namespace _3_GUI
             this.txtTimKiemCongthucCB.Name = "txtTimKiemCongthucCB";
             this.txtTimKiemCongthucCB.Size = new System.Drawing.Size(226, 30);
             this.txtTimKiemCongthucCB.TabIndex = 36;
+            this.txtTimKiemCongthucCB.Text = " ";
             this.txtTimKiemCongthucCB.TextChanged += new System.EventHandler(this.txtTimKiemCongthucCB_TextChanged);
             // 
             // label11
@@ -205,6 +206,7 @@ namespace _3_GUI
             this.txt_MethName.Name = "txt_MethName";
             this.txt_MethName.Size = new System.Drawing.Size(288, 30);
             this.txt_MethName.TabIndex = 37;
+            this.txt_MethName.Text = " ";
             // 
             // txt_MethID
             // 
@@ -241,14 +243,14 @@ namespace _3_GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(326, 22);
+            this.label3.Location = new System.Drawing.Point(341, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(210, 29);
+            this.label3.Size = new System.Drawing.Size(234, 34);
             this.label3.TabIndex = 39;
-            this.label3.Text = "CÁCH CHẾ BIÊN";
+            this.label3.Text = "CÁCH CHẾ BIẾN";
             // 
             // pictureBox1
             // 

@@ -104,6 +104,7 @@ namespace _3_GUI
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(230, 30);
             this.txtEmail.TabIndex = 36;
+            this.txtEmail.Text = " ";
             // 
             // txtMaNV
             // 
@@ -136,7 +137,7 @@ namespace _3_GUI
             this.rbtnHDnhanvien.AutoSize = true;
             this.rbtnHDnhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rbtnHDnhanvien.ForeColor = System.Drawing.Color.White;
-            this.rbtnHDnhanvien.Location = new System.Drawing.Point(169, 382);
+            this.rbtnHDnhanvien.Location = new System.Drawing.Point(174, 382);
             this.rbtnHDnhanvien.Name = "rbtnHDnhanvien";
             this.rbtnHDnhanvien.Size = new System.Drawing.Size(91, 20);
             this.rbtnHDnhanvien.TabIndex = 42;
@@ -149,7 +150,7 @@ namespace _3_GUI
             this.rbtnKHDnhanvien.AutoSize = true;
             this.rbtnKHDnhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rbtnKHDnhanvien.ForeColor = System.Drawing.Color.White;
-            this.rbtnKHDnhanvien.Location = new System.Drawing.Point(275, 382);
+            this.rbtnKHDnhanvien.Location = new System.Drawing.Point(276, 382);
             this.rbtnKHDnhanvien.Name = "rbtnKHDnhanvien";
             this.rbtnKHDnhanvien.Size = new System.Drawing.Size(129, 20);
             this.rbtnKHDnhanvien.TabIndex = 41;
@@ -215,6 +216,7 @@ namespace _3_GUI
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(231, 23);
             this.txt_SDT.TabIndex = 111;
+            this.txt_SDT.Text = " ";
             // 
             // txt_DiaChiNV
             // 
@@ -226,6 +228,7 @@ namespace _3_GUI
             this.txt_DiaChiNV.Name = "txt_DiaChiNV";
             this.txt_DiaChiNV.Size = new System.Drawing.Size(231, 101);
             this.txt_DiaChiNV.TabIndex = 112;
+            this.txt_DiaChiNV.Text = " ";
             // 
             // txt_TenNV
             // 
@@ -237,6 +240,7 @@ namespace _3_GUI
             this.txt_TenNV.Name = "txt_TenNV";
             this.txt_TenNV.Size = new System.Drawing.Size(231, 30);
             this.txt_TenNV.TabIndex = 110;
+            this.txt_TenNV.Text = " ";
             // 
             // txt_Search
             // 
@@ -385,6 +389,7 @@ namespace _3_GUI
             this.txtMatKhau.ReadOnly = true;
             this.txtMatKhau.Size = new System.Drawing.Size(230, 30);
             this.txtMatKhau.TabIndex = 36;
+            this.txtMatKhau.Text = " ";
             // 
             // label6
             // 
@@ -507,9 +512,10 @@ namespace _3_GUI
             this.btn_clear.Location = new System.Drawing.Point(568, 25);
             this.btn_clear.Margin = new System.Windows.Forms.Padding(5);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(129, 49);
+            this.btn_clear.Size = new System.Drawing.Size(119, 49);
             this.btn_clear.TabIndex = 131;
             this.btn_clear.Text = "Làm mới";
+            this.btn_clear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click_1);
             // 

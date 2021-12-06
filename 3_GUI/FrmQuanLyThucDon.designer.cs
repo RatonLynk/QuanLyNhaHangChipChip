@@ -79,6 +79,7 @@
             this.txtTenMonAn.Name = "txtTenMonAn";
             this.txtTenMonAn.Size = new System.Drawing.Size(205, 30);
             this.txtTenMonAn.TabIndex = 5;
+            this.txtTenMonAn.Text = " ";
             // 
             // label8
             // 
@@ -156,10 +157,10 @@
             this.btnXoaMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnXoaMon.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaMon.Image")));
             this.btnXoaMon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaMon.Location = new System.Drawing.Point(955, 576);
+            this.btnXoaMon.Location = new System.Drawing.Point(954, 605);
             this.btnXoaMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXoaMon.Name = "btnXoaMon";
-            this.btnXoaMon.Size = new System.Drawing.Size(125, 49);
+            this.btnXoaMon.Size = new System.Drawing.Size(119, 49);
             this.btnXoaMon.TabIndex = 10;
             this.btnXoaMon.Text = "Xóa";
             this.btnXoaMon.UseVisualStyleBackColor = false;
@@ -175,10 +176,10 @@
             this.btnSuaMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnSuaMon.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaMon.Image")));
             this.btnSuaMon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaMon.Location = new System.Drawing.Point(750, 576);
+            this.btnSuaMon.Location = new System.Drawing.Point(749, 605);
             this.btnSuaMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSuaMon.Name = "btnSuaMon";
-            this.btnSuaMon.Size = new System.Drawing.Size(125, 49);
+            this.btnSuaMon.Size = new System.Drawing.Size(119, 49);
             this.btnSuaMon.TabIndex = 9;
             this.btnSuaMon.Text = "Sửa";
             this.btnSuaMon.UseVisualStyleBackColor = false;
@@ -194,10 +195,10 @@
             this.btnThemMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnThemMon.Image = ((System.Drawing.Image)(resources.GetObject("btnThemMon.Image")));
             this.btnThemMon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemMon.Location = new System.Drawing.Point(529, 576);
+            this.btnThemMon.Location = new System.Drawing.Point(528, 605);
             this.btnThemMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThemMon.Name = "btnThemMon";
-            this.btnThemMon.Size = new System.Drawing.Size(125, 49);
+            this.btnThemMon.Size = new System.Drawing.Size(119, 49);
             this.btnThemMon.TabIndex = 8;
             this.btnThemMon.Text = "Thêm";
             this.btnThemMon.UseVisualStyleBackColor = false;
@@ -295,6 +296,7 @@
             this.cbx_Meth.Name = "cbx_Meth";
             this.cbx_Meth.Size = new System.Drawing.Size(205, 31);
             this.cbx_Meth.TabIndex = 36;
+            this.cbx_Meth.Text = " ";
             this.cbx_Meth.DropDown += new System.EventHandler(this.cbx_Meth_DropDown);
             // 
             // label7
@@ -321,6 +323,7 @@
             this.cbx_Cat.Name = "cbx_Cat";
             this.cbx_Cat.Size = new System.Drawing.Size(205, 31);
             this.cbx_Cat.TabIndex = 36;
+            this.cbx_Cat.Text = " ";
             this.cbx_Cat.DropDown += new System.EventHandler(this.cbx_Cat_DropDown);
             // 
             // cbx_Unit
@@ -333,6 +336,7 @@
             this.cbx_Unit.Name = "cbx_Unit";
             this.cbx_Unit.Size = new System.Drawing.Size(205, 31);
             this.cbx_Unit.TabIndex = 36;
+            this.cbx_Unit.Text = " ";
             this.cbx_Unit.DropDown += new System.EventHandler(this.cbx_Unit_DropDown);
             // 
             // txt_Price
@@ -359,7 +363,7 @@
             // 
             this.btn_ConfigUnit.BackgroundImage = global::_3_GUI.Properties.Resources._568239;
             this.btn_ConfigUnit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ConfigUnit.Location = new System.Drawing.Point(383, 149);
+            this.btn_ConfigUnit.Location = new System.Drawing.Point(383, 151);
             this.btn_ConfigUnit.Name = "btn_ConfigUnit";
             this.btn_ConfigUnit.Size = new System.Drawing.Size(29, 29);
             this.btn_ConfigUnit.TabIndex = 64;
@@ -370,7 +374,7 @@
             // 
             this.btn_ConfigMeth.BackgroundImage = global::_3_GUI.Properties.Resources._568239;
             this.btn_ConfigMeth.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ConfigMeth.Location = new System.Drawing.Point(383, 296);
+            this.btn_ConfigMeth.Location = new System.Drawing.Point(383, 303);
             this.btn_ConfigMeth.Name = "btn_ConfigMeth";
             this.btn_ConfigMeth.Size = new System.Drawing.Size(29, 29);
             this.btn_ConfigMeth.TabIndex = 64;
@@ -381,7 +385,7 @@
             // 
             this.btn_ConfigCat.BackgroundImage = global::_3_GUI.Properties.Resources._568239;
             this.btn_ConfigCat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ConfigCat.Location = new System.Drawing.Point(383, 251);
+            this.btn_ConfigCat.Location = new System.Drawing.Point(383, 253);
             this.btn_ConfigCat.Name = "btn_ConfigCat";
             this.btn_ConfigCat.Size = new System.Drawing.Size(29, 29);
             this.btn_ConfigCat.TabIndex = 64;
@@ -408,8 +412,9 @@
             this.txt_GC.Location = new System.Drawing.Point(161, 357);
             this.txt_GC.Multiline = true;
             this.txt_GC.Name = "txt_GC";
-            this.txt_GC.Size = new System.Drawing.Size(259, 29);
+            this.txt_GC.Size = new System.Drawing.Size(259, 51);
             this.txt_GC.TabIndex = 67;
+            this.txt_GC.Text = " ";
             // 
             // panel1
             // 
@@ -519,7 +524,7 @@
             this.dgvMonAn.RowHeadersVisible = false;
             this.dgvMonAn.RowHeadersWidth = 51;
             this.dgvMonAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMonAn.Size = new System.Drawing.Size(658, 501);
+            this.dgvMonAn.Size = new System.Drawing.Size(658, 546);
             this.dgvMonAn.TabIndex = 69;
             this.dgvMonAn.TabStop = false;
             this.dgvMonAn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonAn_CellClick);

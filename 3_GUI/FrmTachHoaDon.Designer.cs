@@ -109,7 +109,7 @@ namespace _3_GUI
             this.Btn_TaoHD.Location = new System.Drawing.Point(602, 292);
             this.Btn_TaoHD.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Btn_TaoHD.Name = "Btn_TaoHD";
-            this.Btn_TaoHD.Size = new System.Drawing.Size(131, 68);
+            this.Btn_TaoHD.Size = new System.Drawing.Size(127, 49);
             this.Btn_TaoHD.TabIndex = 2;
             this.Btn_TaoHD.Text = "Tạo Hóa Đơn";
             this.Btn_TaoHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -125,7 +125,7 @@ namespace _3_GUI
             this.Btn_XacNhan.Location = new System.Drawing.Point(1152, 711);
             this.Btn_XacNhan.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Btn_XacNhan.Name = "Btn_XacNhan";
-            this.Btn_XacNhan.Size = new System.Drawing.Size(114, 55);
+            this.Btn_XacNhan.Size = new System.Drawing.Size(119, 49);
             this.Btn_XacNhan.TabIndex = 3;
             this.Btn_XacNhan.Text = "Xác nhận";
             this.Btn_XacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

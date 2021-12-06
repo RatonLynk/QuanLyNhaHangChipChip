@@ -50,7 +50,7 @@ namespace _3_GUI
             this.btn_XacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_XacNhan.Location = new System.Drawing.Point(167, 332);
             this.btn_XacNhan.Name = "btn_XacNhan";
-            this.btn_XacNhan.Size = new System.Drawing.Size(114, 45);
+            this.btn_XacNhan.Size = new System.Drawing.Size(119, 49);
             this.btn_XacNhan.TabIndex = 107;
             this.btn_XacNhan.Text = "Xác Nhận";
             this.btn_XacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -66,7 +66,7 @@ namespace _3_GUI
             this.btn_SendtoEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_SendtoEmail.Location = new System.Drawing.Point(167, 332);
             this.btn_SendtoEmail.Name = "btn_SendtoEmail";
-            this.btn_SendtoEmail.Size = new System.Drawing.Size(115, 45);
+            this.btn_SendtoEmail.Size = new System.Drawing.Size(119, 49);
             this.btn_SendtoEmail.TabIndex = 106;
             this.btn_SendtoEmail.Text = "Gửi";
             this.btn_SendtoEmail.UseVisualStyleBackColor = false;
@@ -101,8 +101,9 @@ namespace _3_GUI
             this.Txt_XacNhan.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Txt_XacNhan.Location = new System.Drawing.Point(142, 266);
             this.Txt_XacNhan.Name = "Txt_XacNhan";
-            this.Txt_XacNhan.Size = new System.Drawing.Size(195, 28);
+            this.Txt_XacNhan.Size = new System.Drawing.Size(248, 28);
             this.Txt_XacNhan.TabIndex = 103;
+            this.Txt_XacNhan.Text = " ";
             // 
             // txt_Email
             // 
@@ -110,8 +111,9 @@ namespace _3_GUI
             this.txt_Email.ForeColor = System.Drawing.SystemColors.Desktop;
             this.txt_Email.Location = new System.Drawing.Point(141, 183);
             this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(195, 28);
+            this.txt_Email.Size = new System.Drawing.Size(249, 28);
             this.txt_Email.TabIndex = 102;
+            this.txt_Email.Text = " ";
             // 
             // pictureBox1
             // 
