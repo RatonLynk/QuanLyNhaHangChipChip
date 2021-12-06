@@ -44,8 +44,8 @@ namespace _3_GUI
             foreach (var x in _qlHoaDon.GetListDSHoaDon())
             {
                 Dgid_HoaDon.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == x.banAn.Id).Select(c => c.banAn.Name).FirstOrDefault(), decimal.Truncate(x.hoaDon.TotalMoney),
-                    x.hoaDon.DateCheckIn, x.hoaDon.DateCheckOut, Convert.ToInt32(x.hoaDon.Status) == 0 ? "đã thanh toán" : Convert.ToInt32(x.hoaDon.Status) == 1 ? "chưa thanh toán" : Convert.ToInt32(x.hoaDon.Status)==0 &&
-                    Convert.ToInt32(x.hoaDon.GhiChu)!=null?"đã hủy":"", _qlHoaDon.GetListDSHoaDon().Where(c => c.nhanVien.Id == x.hoaDon.IdnhanVien).Select(c => c.nhanVien.Name).FirstOrDefault(), x.hoaDon.Id);
+                    x.hoaDon.DateCheckIn, x.hoaDon.DateCheckOut,x.hoaDon.GhiChu != null?"Đã huỷ":Convert.ToInt32(x.hoaDon.Status) == 0 ? "đã thanh toán" : Convert.ToInt32(x.hoaDon.Status) == 1 ? "chưa thanh toán" :"" 
+                   ,x.hoaDon.DichVu==1?"Tại bàn":"Mang về", _qlHoaDon.GetListDSHoaDon().Where(c => c.nhanVien.Id == x.hoaDon.IdnhanVien).Select(c => c.nhanVien.Name).FirstOrDefault(), x.hoaDon.Id);
 
             }
 
@@ -64,11 +64,11 @@ namespace _3_GUI
             Dgid_HoaDon.Columns[7].Visible = false;
 
             Dgid_HoaDon.Rows.Clear();
-            foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => (c.hoaDon.DateCheckIn >= date1.AddDays(-1) && c.hoaDon.DateCheckIn <= date2)))
+            foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => (c.hoaDon.DateCheckIn >= date1 && c.hoaDon.DateCheckIn <= date2)))
             {
-                Dgid_HoaDon.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == x.banAn.Id).Select(c => c.banAn.Name).FirstOrDefault(), x.hoaDon.TotalMoney,
-                    x.hoaDon.DateCheckIn, x.hoaDon.DateCheckOut, x.hoaDon.GhiChu != null ? "Đơn huỷ" : Convert.ToInt32(x.hoaDon.Status) == 0 ? "đã thanh toán" : Convert.ToInt32(x.hoaDon.Status) == 1 ? "chưa thanh toán" : "", x.hoaDon.DichVu == 1 ? "Tại bàn" : "Mang về", _qlHoaDon.GetListDSHoaDon().Where(c => c.nhanVien.Id == x.hoaDon.IdnhanVien).Select(c => c.nhanVien.Name).FirstOrDefault(), x.hoaDon.Id);
-
+                Dgid_HoaDon.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == x.banAn.Id).Select(c => c.banAn.Name).FirstOrDefault(), decimal.Truncate(x.hoaDon.TotalMoney),
+                     x.hoaDon.DateCheckIn, x.hoaDon.DateCheckOut, x.hoaDon.GhiChu != null ? "Đã huỷ" : Convert.ToInt32(x.hoaDon.Status) == 0 ? "đã thanh toán" : Convert.ToInt32(x.hoaDon.Status) == 1 ? "chưa thanh toán" : ""
+                    , x.hoaDon.DichVu == 1 ? "Tại bàn" : "Mang về", _qlHoaDon.GetListDSHoaDon().Where(c => c.nhanVien.Id == x.hoaDon.IdnhanVien).Select(c => c.nhanVien.Name).FirstOrDefault(), x.hoaDon.Id);
             }
 
         }
