@@ -911,7 +911,7 @@ namespace _3_GUI
                 Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString();
                 _f.Close();
             }
-
+            //s
         }
 
         private void Btn_ThemBanT2_Click_1(object sender, EventArgs e)
