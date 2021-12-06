@@ -166,6 +166,7 @@ namespace _3_GUI
             this.btnTienIch.Text = "    Tiện ích";
             this.btnTienIch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTienIch.UseVisualStyleBackColor = true;
+            this.btnTienIch.Click += new System.EventHandler(this.btnTienIch_Click);
             // 
             // btnThoat
             // 
@@ -327,11 +328,11 @@ namespace _3_GUI
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(529, 29);
+            this.label1.Location = new System.Drawing.Point(557, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 35);
+            this.label1.Size = new System.Drawing.Size(96, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "HOME";
             // 

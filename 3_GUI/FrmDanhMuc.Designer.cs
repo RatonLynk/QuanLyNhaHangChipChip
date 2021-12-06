@@ -156,6 +156,7 @@ namespace _3_GUI
             this.txtTimkiemDM.Name = "txtTimkiemDM";
             this.txtTimkiemDM.Size = new System.Drawing.Size(225, 30);
             this.txtTimkiemDM.TabIndex = 36;
+            this.txtTimkiemDM.Text = " ";
             this.txtTimkiemDM.TextChanged += new System.EventHandler(this.txtTimkiemDM_TextChanged);
             // 
             // txtTenDanhMuc
@@ -168,6 +169,7 @@ namespace _3_GUI
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
             this.txtTenDanhMuc.Size = new System.Drawing.Size(256, 30);
             this.txtTenDanhMuc.TabIndex = 37;
+            this.txtTenDanhMuc.Text = " ";
             // 
             // txtMaDanhMuc
             // 
@@ -240,12 +242,12 @@ namespace _3_GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(371, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 29);
+            this.label1.Size = new System.Drawing.Size(166, 34);
             this.label1.TabIndex = 38;
             this.label1.Text = "DANH MỤC";
             // 

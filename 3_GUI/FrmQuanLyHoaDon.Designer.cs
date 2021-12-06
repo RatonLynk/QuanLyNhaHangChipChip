@@ -56,7 +56,7 @@ namespace _3_GUI
             this.Dgid_HoaDon.Location = new System.Drawing.Point(21, 63);
             this.Dgid_HoaDon.Name = "Dgid_HoaDon";
             this.Dgid_HoaDon.RowHeadersWidth = 51;
-            this.Dgid_HoaDon.Size = new System.Drawing.Size(617, 593);
+            this.Dgid_HoaDon.Size = new System.Drawing.Size(617, 558);
             this.Dgid_HoaDon.TabIndex = 33;
             this.Dgid_HoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgid_HoaDon_CellClick);
             // 
@@ -139,7 +139,7 @@ namespace _3_GUI
             this.dgrid_hdct.Location = new System.Drawing.Point(682, 63);
             this.dgrid_hdct.Name = "dgrid_hdct";
             this.dgrid_hdct.RowHeadersWidth = 51;
-            this.dgrid_hdct.Size = new System.Drawing.Size(442, 593);
+            this.dgrid_hdct.Size = new System.Drawing.Size(442, 558);
             this.dgrid_hdct.TabIndex = 38;
             // 
             // label1

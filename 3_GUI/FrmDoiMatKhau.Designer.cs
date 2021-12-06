@@ -52,6 +52,7 @@ namespace _3_GUI
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(255, 30);
             this.txtPass.TabIndex = 6;
+            this.txtPass.Text = " ";
             // 
             // label1
             // 
@@ -75,6 +76,7 @@ namespace _3_GUI
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(255, 30);
             this.txtNewPass.TabIndex = 6;
+            this.txtNewPass.Text = " ";
             // 
             // label2
             // 
@@ -98,6 +100,7 @@ namespace _3_GUI
             this.txtNewPass2.Name = "txtNewPass2";
             this.txtNewPass2.Size = new System.Drawing.Size(255, 30);
             this.txtNewPass2.TabIndex = 6;
+            this.txtNewPass2.Text = " ";
             // 
             // label3
             // 
