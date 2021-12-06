@@ -254,7 +254,7 @@ namespace _3_GUI
 
         private void btnTienIch_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FrmTienIch(), sender);
+            OpenChildForm(new FrmMain(), sender);
         }
     }
 }
