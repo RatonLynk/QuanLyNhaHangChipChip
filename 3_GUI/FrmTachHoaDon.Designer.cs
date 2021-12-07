@@ -179,6 +179,7 @@ namespace _3_GUI
             this.Name = "FrmTachHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tách hóa đơn";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmTachHoaDon_FormClosed);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgrid_HDCu)).EndInit();
             this.groupBox2.ResumeLayout(false);
