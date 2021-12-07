@@ -16,14 +16,40 @@ namespace _3_GUI
     {
         IQLHoaDon _qlHoaDon;
         int _idHoaDon;
+        int _doangthu;
+        int _huy;
+        int _dathanhtoan;
 
         public FrmQuanLyHoaDon()
         {
-
-
             InitializeComponent();
             _qlHoaDon = new QLHoaDon();
-            LoadHoaDon();
+            LoadHoaDon();            
+            Lbl_TongHoaDon.Text = (Dgid_HoaDon.Rows.Count - 1).ToString();
+            for (int i = 0; i < Dgid_HoaDon.Rows.Count-1; i++)
+            {
+                if (Dgid_HoaDon.Rows[i].Cells[4].Value.ToString()== "Đã huỷ")
+                {
+                    _huy += 1;
+                }
+                if (Dgid_HoaDon.Rows[i].Cells[4].Value.ToString()== "đã thanh toán")
+                {
+                    _dathanhtoan += 1;
+                }
+            }
+            foreach (var x in _qlHoaDon.GetBillsFromDB())
+            {
+                for (int i = 0; i < Dgid_HoaDon.Rows.Count-1; i++)
+                {
+                    if (x.Id==Convert.ToInt32(Dgid_HoaDon.Rows[i].Cells[7].Value.ToString()))
+                    {
+                        _doangthu +=Convert.ToInt32(x.TotalMoney);
+                    }
+                }
+            }
+            Lbl_DaHuy.Text = _huy.ToString();
+            Lbl_DaThanhToan.Text = _dathanhtoan.ToString();
+            Lbl_DoanhThu.Text = _doangthu.ToString()+",000 VND";
 
         }
         void LoadHoaDon()

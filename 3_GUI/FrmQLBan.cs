@@ -111,7 +111,7 @@ namespace _3_GUI
 
         public void LoadTableT1()
         {
-            FLPenal.Invalidate();
+            //FLPenal.Invalidate();
             FLPenal.Controls.Clear();
             foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1))
             {

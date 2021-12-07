@@ -87,6 +87,8 @@ namespace _3_GUI
                     banAn.TinhTrang = 0;
                     _qlBanAn.UpdateBanAn(banAn);
                     reloadBan();
+                    _FrmQLBan.LoadTableT1();
+                    _FrmQLBan.LoadTableT2();
                     this.Close();
                 }
                 else if (banAn.TinhTrang == 0)
@@ -111,6 +113,8 @@ namespace _3_GUI
                     _banAn.TinhTrang = 1;
                     _qlBanAn.UpdateBanAn(_banAn);
                     reloadBan();
+                    _FrmQLBan.LoadTableT1();
+                    _FrmQLBan.LoadTableT2();
                     this.Close();
                 }
             }
@@ -169,6 +173,8 @@ namespace _3_GUI
                     _qlBanAn.UpdateBanAn(banAn);
                     _FrmQLBan.LoadTableT1();
                     reloadBan();
+                    _FrmQLBan.LoadTableT1();
+                    _FrmQLBan.LoadTableT2();
                     this.Close();
                     
                     //frmQLBan.Show();
@@ -198,6 +204,8 @@ namespace _3_GUI
                     _banAn.TinhTrang = 1;
                     _qlBanAn.UpdateBanAn(_banAn);
                     reloadBan();
+                    _FrmQLBan.LoadTableT1();
+                    _FrmQLBan.LoadTableT2();
                     this.Close();
                     
                    // frmQLBan.Show();
@@ -211,6 +219,7 @@ namespace _3_GUI
             _FrmQLBan.LoadTableT1();
             _FrmQLBan.LoadTableT2();
             _FrmQLBan.Refresh();
+                        
         }
         public void getFrmMain(FrmMain forme)
         {

@@ -39,6 +39,8 @@ namespace _3_GUI
             this.label1 = new System.Windows.Forms.Label();
             this.Lbl_TongTien = new System.Windows.Forms.Label();
             this.Lbl_Tien = new System.Windows.Forms.Label();
+            this.Txt_Tien = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgrid_HDCu)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -122,7 +124,7 @@ namespace _3_GUI
             this.Btn_XacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.Btn_XacNhan.Image = ((System.Drawing.Image)(resources.GetObject("Btn_XacNhan.Image")));
             this.Btn_XacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_XacNhan.Location = new System.Drawing.Point(1008, 533);
+            this.Btn_XacNhan.Location = new System.Drawing.Point(1055, 533);
             this.Btn_XacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_XacNhan.Name = "Btn_XacNhan";
             this.Btn_XacNhan.Size = new System.Drawing.Size(104, 37);
@@ -158,11 +160,28 @@ namespace _3_GUI
             this.Lbl_Tien.AutoSize = true;
             this.Lbl_Tien.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Lbl_Tien.ForeColor = System.Drawing.Color.White;
-            this.Lbl_Tien.Location = new System.Drawing.Point(849, 542);
+            this.Lbl_Tien.Location = new System.Drawing.Point(912, 537);
             this.Lbl_Tien.Name = "Lbl_Tien";
             this.Lbl_Tien.Size = new System.Drawing.Size(65, 28);
             this.Lbl_Tien.TabIndex = 4;
             this.Lbl_Tien.Text = "label2";
+            // 
+            // Txt_Tien
+            // 
+            this.Txt_Tien.Location = new System.Drawing.Point(738, 545);
+            this.Txt_Tien.Name = "Txt_Tien";
+            this.Txt_Tien.Size = new System.Drawing.Size(143, 23);
+            this.Txt_Tien.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(642, 548);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 15);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Tiền khách đưa:";
             // 
             // FrmTachHoaDon
             // 
@@ -170,6 +189,8 @@ namespace _3_GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1171, 580);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Txt_Tien);
             this.Controls.Add(this.Lbl_Tien);
             this.Controls.Add(this.Btn_XacNhan);
             this.Controls.Add(this.Btn_TaoHD);
@@ -200,5 +221,7 @@ namespace _3_GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Lbl_TongTien;
         private System.Windows.Forms.Label Lbl_Tien;
+        private System.Windows.Forms.TextBox Txt_Tien;
+        private System.Windows.Forms.Label label2;
     }
 }
