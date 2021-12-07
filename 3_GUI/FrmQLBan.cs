@@ -767,7 +767,7 @@ namespace _3_GUI
                     banAn.TinhTrang = 1;
                     label1.Text = "Bàn " + _hoadon.Idtable.ToString();
                     label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + ".000 VND";
-                    label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()).ToString("#,##0") + ".000 VND";
+                    label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney))).ToString("#,##0") + ".000 VND";
                     _qlBanAn.UpdateBanAn(banAn);
                     LoadHoaDon(banAn.Id);
                     LoadTableT1();
@@ -776,6 +776,7 @@ namespace _3_GUI
                     Lbl_TongTien.Text = "0 VND";
                 }
                 Txt_TienKhachDua.Text = "";
+                Lbl_GioVao.Text = "00:00:00 00/00/2021";
             }
         }
 

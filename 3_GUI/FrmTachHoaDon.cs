@@ -136,15 +136,37 @@ namespace _3_GUI
 
         private void Button_Click(object sender, EventArgs e)
         {
+            
             if (_idHD==0)
             {
                 MessageBox.Show("Bạn chưa tạo hóa đơn mới");
                 _f.Close();
                 return;
             }
+            else if (_idHD!=0)
+            {
+                HoaDon hoaDon1 = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
+                if (hoaDon1.Status==false)
+                {
+                    MessageBox.Show("Bạn chưa tạo hóa đơn mới");
+                    _f.Close();
+                    return;
+                }
+            }
+          
             HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
             _HDCT = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Id == _idHDCT);
             HoaDonChiTiet hoaDonChiTiet2 = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c=>c.Idbill==_idHD && c.Idfood==_HDCT.Idfood);
+            if (String.IsNullOrEmpty(_f.Controls[0].Text))
+            {
+                MessageBox.Show("Bạn chưa nhập số lượng","Thông báo");
+                return;
+            }
+            if (_f.Controls[0].Text.All(char.IsDigit)==false)
+            {
+                MessageBox.Show("Số lượng không được nhập chữ","Thông báo");
+                return;
+            }
             _soLuong = Convert.ToInt32(_f.Controls[0].Text);
             if (_soLuong>_HDCT.Count)
             {
@@ -288,11 +310,12 @@ namespace _3_GUI
             Dgrid_HDMoi.Columns[4].Visible = false;
             Dgrid_HDMoi.Columns.Add(img);
             Dgrid_HDMoi.Rows.Clear();
+            //Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()).ToString("#,##0")  + ".000 VND";
             foreach (var x in abc)
             {
                 Dgrid_HDMoi.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Name).FirstOrDefault(), x.SoLuong,
-                    _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault(),
-                    _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong, x.IDHDCT);
+                   decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault())+".000 VND",
+                   Convert.ToDecimal(decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong)).ToString("#.##0")+ ".000 VND", x.IDHDCT);
             }
         }//as
 
