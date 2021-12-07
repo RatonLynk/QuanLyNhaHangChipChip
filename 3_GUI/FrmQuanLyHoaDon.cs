@@ -46,7 +46,7 @@ namespace _3_GUI
                         _doangthu +=Convert.ToInt32(x.TotalMoney);
                     }
                 }
-            }
+            }//s
             Lbl_DaHuy.Text = _huy.ToString();
             Lbl_DaThanhToan.Text = _dathanhtoan.ToString();
             Lbl_DoanhThu.Text = _doangthu.ToString()+",000 VND";
