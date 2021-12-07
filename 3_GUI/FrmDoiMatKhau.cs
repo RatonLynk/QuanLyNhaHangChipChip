@@ -36,7 +36,7 @@ namespace _3_GUI
         {
             try
             {
-
+                validate();
                 if (txtPass.Text != FrmDoiMatKhau.passcu)
                 {
                     MessageBox.Show("Mật khẩu cũ của bạn nhập không chính xác", "Thông báo");
@@ -67,12 +67,17 @@ namespace _3_GUI
         {
             if (string.IsNullOrEmpty(txtPass.Text))
             {
-                MessageBox.Show("Không được để trống  ");
+                MessageBox.Show("Mật khẩu cũ không được để trống  ");
                 return false;
             }
             if (string.IsNullOrEmpty(txtNewPass.Text))
             {
-                MessageBox.Show("Không được để trống ");
+                MessageBox.Show("Mật khẩu mới không được để trống ");
+                return false;
+            }
+            if (txtNewPass.TextLength < 5 && txtNewPass.TextLength <= 20)
+            {
+                MessageBox.Show("Độ dài mật khẩu phải từ 6 đến 20 kí tự");
                 return false;
             }
             if (string.IsNullOrEmpty(txtNewPass2.Text))
@@ -80,9 +85,6 @@ namespace _3_GUI
                 MessageBox.Show("Không được để trống  ");
                 return false;
             }
-
-
-
             return true;
 
         }
