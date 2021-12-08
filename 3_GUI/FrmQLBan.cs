@@ -76,7 +76,10 @@ namespace _3_GUI
             {
                 _lstBanAn = _qlBanAn.GetTablesFromDB();
             }
-            else
+            else if (_qlBanAn.GetTablesFromDB()!=lst)
+            {
+                _lstBanAn = _qlBanAn.GetTablesFromDB();
+            }else
             {
                 _lstBanAn = lst;
             }
