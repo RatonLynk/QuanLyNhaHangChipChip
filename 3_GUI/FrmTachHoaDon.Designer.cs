@@ -41,6 +41,8 @@ namespace _3_GUI
             this.Lbl_Tien = new System.Windows.Forms.Label();
             this.Txt_Tien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Btn_ThanhToan1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgrid_HDCu)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -124,12 +126,12 @@ namespace _3_GUI
             this.Btn_XacNhan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.Btn_XacNhan.Image = ((System.Drawing.Image)(resources.GetObject("Btn_XacNhan.Image")));
             this.Btn_XacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_XacNhan.Location = new System.Drawing.Point(1055, 533);
+            this.Btn_XacNhan.Location = new System.Drawing.Point(1038, 533);
             this.Btn_XacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btn_XacNhan.Name = "Btn_XacNhan";
             this.Btn_XacNhan.Size = new System.Drawing.Size(104, 37);
             this.Btn_XacNhan.TabIndex = 3;
-            this.Btn_XacNhan.Text = "Xác nhận";
+            this.Btn_XacNhan.Text = "Thanh toán";
             this.Btn_XacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btn_XacNhan.UseVisualStyleBackColor = false;
             this.Btn_XacNhan.Click += new System.EventHandler(this.Btn_XacNhan_Click);
@@ -183,12 +185,40 @@ namespace _3_GUI
             this.label2.TabIndex = 6;
             this.label2.Text = "Tiền khách đưa:";
             // 
+            // Btn_ThanhToan1
+            // 
+            this.Btn_ThanhToan1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.Btn_ThanhToan1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
+            this.Btn_ThanhToan1.Image = ((System.Drawing.Image)(resources.GetObject("Btn_ThanhToan1.Image")));
+            this.Btn_ThanhToan1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_ThanhToan1.Location = new System.Drawing.Point(388, 533);
+            this.Btn_ThanhToan1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Btn_ThanhToan1.Name = "Btn_ThanhToan1";
+            this.Btn_ThanhToan1.Size = new System.Drawing.Size(116, 37);
+            this.Btn_ThanhToan1.TabIndex = 7;
+            this.Btn_ThanhToan1.Text = "Thanh toán";
+            this.Btn_ThanhToan1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_ThanhToan1.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(252, 540);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 28);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "label2";
+            // 
             // FrmTachHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1171, 580);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Btn_ThanhToan1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Txt_Tien);
             this.Controls.Add(this.Lbl_Tien);
@@ -223,5 +253,7 @@ namespace _3_GUI
         private System.Windows.Forms.Label Lbl_Tien;
         private System.Windows.Forms.TextBox Txt_Tien;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Btn_ThanhToan1;
+        private System.Windows.Forms.Label label3;
     }
 }
