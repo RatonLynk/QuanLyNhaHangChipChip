@@ -24,33 +24,39 @@ namespace _3_GUI
         {
             InitializeComponent();
             _qlHoaDon = new QLHoaDon();
-            LoadHoaDon();            
+            LoadHoaDon();
+            Hien();
+        }
+        void Hien()
+        {
+            _huy = 0;
+            _doangthu = 0;
+            _dathanhtoan = 0;
             Lbl_TongHoaDon.Text = (Dgid_HoaDon.Rows.Count - 1).ToString();
-            for (int i = 0; i < Dgid_HoaDon.Rows.Count-1; i++)
+            for (int i = 0; i < Dgid_HoaDon.Rows.Count - 1; i++)
             {
-                if (Dgid_HoaDon.Rows[i].Cells[4].Value.ToString()== "Đã huỷ")
+                if (Dgid_HoaDon.Rows[i].Cells[4].Value.ToString() == "Đã huỷ")
                 {
                     _huy += 1;
                 }
-                if (Dgid_HoaDon.Rows[i].Cells[4].Value.ToString()== "đã thanh toán")
+                if (Dgid_HoaDon.Rows[i].Cells[4].Value.ToString() == "đã thanh toán")
                 {
                     _dathanhtoan += 1;
                 }
             }
             foreach (var x in _qlHoaDon.GetBillsFromDB())
             {
-                for (int i = 0; i < Dgid_HoaDon.Rows.Count-1; i++)
+                for (int i = 0; i < Dgid_HoaDon.Rows.Count - 1; i++)
                 {
-                    if (x.Id==Convert.ToInt32(Dgid_HoaDon.Rows[i].Cells[7].Value.ToString()))
+                    if (x.Id == Convert.ToInt32(Dgid_HoaDon.Rows[i].Cells[7].Value.ToString()) && Dgid_HoaDon.Rows[i].Cells[4].Value.ToString() == "đã thanh toán")
                     {
-                        _doangthu +=Convert.ToInt32(x.TotalMoney);
+                        _doangthu += Convert.ToInt32(x.TotalMoney);
                     }
                 }
             }//s
             Lbl_DaHuy.Text = _huy.ToString();
             Lbl_DaThanhToan.Text = _dathanhtoan.ToString();
-            Lbl_DoanhThu.Text = _doangthu.ToString()+",000 VND";
-
+            Lbl_DoanhThu.Text = _doangthu.ToString() + ",000 VND";
         }
         void LoadHoaDon()
         {
@@ -92,7 +98,7 @@ namespace _3_GUI
             Dgid_HoaDon.Rows.Clear();
             foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => (c.hoaDon.DateCheckIn >= date1 && c.hoaDon.DateCheckIn <= date2)))
             {
-                Dgid_HoaDon.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == x.banAn.Id).Select(c => c.banAn.Name).FirstOrDefault(), decimal.Truncate(x.hoaDon.TotalMoney),
+                Dgid_HoaDon.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == x.banAn.Id).Select(c => c.banAn.Name).FirstOrDefault(), decimal.Truncate(x.hoaDon.TotalMoney)+",000 VND",
                      x.hoaDon.DateCheckIn, x.hoaDon.DateCheckOut, x.hoaDon.GhiChu != null ? "Đã huỷ" : Convert.ToInt32(x.hoaDon.Status) == 0 ? "đã thanh toán" : Convert.ToInt32(x.hoaDon.Status) == 1 ? "chưa thanh toán" : ""
                     , x.hoaDon.DichVu == 1 ? "Tại bàn" : "Mang về", _qlHoaDon.GetListDSHoaDon().Where(c => c.nhanVien.Id == x.hoaDon.IdnhanVien).Select(c => c.nhanVien.Name).FirstOrDefault(), x.hoaDon.Id);
             }
@@ -113,7 +119,7 @@ namespace _3_GUI
             foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Id == id))
             {
                 dgrid_hdct.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDonChiTiet.Idfood == x.monAnChiTiet.Id).Select(c => c.monAnChiTiet.Name).FirstOrDefault(), x.hoaDonChiTiet.Count,
-                    x.monAnChiTiet.Price, x.hoaDonChiTiet.Price, x.hoaDonChiTiet.Id);
+                   decimal.Truncate(x.monAnChiTiet.Price)+",000 VND",decimal.Truncate(x.hoaDonChiTiet.Price) +",000 VND", x.hoaDonChiTiet.Id);
 
             }
 
@@ -133,9 +139,8 @@ namespace _3_GUI
         {
             DateTime date1 = dateTimePicker1.Value;
             DateTime date2 = dateTimePicker2.Value;
-
-
             LoadHoaDon(date1, date2);
+            Hien();            
         }
 
         private void btn_danhsach_Click(object sender, EventArgs e)

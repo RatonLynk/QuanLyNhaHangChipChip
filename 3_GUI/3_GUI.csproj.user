@@ -44,8 +44,5 @@
     <Compile Update="FrmTachHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmTienIch.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

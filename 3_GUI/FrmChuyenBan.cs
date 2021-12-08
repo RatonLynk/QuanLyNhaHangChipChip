@@ -219,7 +219,7 @@ namespace _3_GUI
             _FrmQLBan.LoadTableT1();
             _FrmQLBan.LoadTableT2();
             _FrmQLBan.Refresh();
-                        
+            
         }
         public void getFrmMain(FrmMain forme)
         {
