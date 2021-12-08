@@ -22,10 +22,12 @@ namespace _3_GUI
     public partial class FrmQLBan : Form
     {
         public static string mail;
+        
         IQLBanAnService _qlBanAn;
         IQLHoaDon _qlHoaDon;
         iQLMenuService _qlMeniu;
         List<BanAn> _lstBanAn;
+        List<HoaDon> _lstHoaDon;
         IQLNhanVienService _qlNhanVien;
         int _IdBan;
         HoaDon _hoadon;
@@ -41,12 +43,11 @@ namespace _3_GUI
         public FrmQLBan()
         {
             InitializeComponent();
-            _qlBanAn = new QLBanAnService();
-            _lstBanAn = new List<BanAn>();
+            _qlBanAn = new QLBanAnService();           
             _qlHoaDon = new QLHoaDon();
             _qlMeniu = new QLMenuService();
             _qlNhanVien = new QLNhanVienService();
-            _lstBanAn = _qlBanAn.GetTablesFromDB();
+            //_lstBanAn = new List<BanAn>();
             LoadTableT1();
             LoadTableT2();
             LoadMeniu();
@@ -54,6 +55,28 @@ namespace _3_GUI
             Lbl_TongTien.Visible = false;
             //Lbl_GioVao.Text = DateTime.Now.ToString()            
             _nhanVien = _qlNhanVien.getlstNhanViens().FirstOrDefault(c => c.Email == mail);
+        }
+        public void NhanlstHoaDon(List<HoaDon> lstHoaDon)
+        {
+            if (lstHoaDon==null)
+            {
+                _lstHoaDon = _qlHoaDon.GetBillsFromDB();
+            }
+            else
+            {
+                _lstHoaDon = lstHoaDon;
+            }
+        }
+        public void NhanList(List<BanAn> lst)
+        {            
+            if (lst==null)
+            {
+                _lstBanAn = _qlBanAn.GetTablesFromDB();
+            }
+            else
+            {
+                _lstBanAn = lst;
+            }
         }
 
         void LoadMangVe()
@@ -113,7 +136,8 @@ namespace _3_GUI
         {
             //FLPenal.Invalidate();
             FLPenal.Controls.Clear();
-            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1))
+            NhanList(_lstBanAn);
+            foreach (BanAn x in _lstBanAn.Where(c=>c.Floor==1))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
                 //Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\caiBan.png");                
@@ -131,7 +155,6 @@ namespace _3_GUI
                         break;
                 }
                 FLPenal.Controls.Add(btn);
-
             }
             //â
         }
@@ -148,15 +171,15 @@ namespace _3_GUI
             LoadHoaDon(id);
             Lbl_ViTriBan.Text = "Tầng 1 - " + banAn.Name;
             Lbl_TongTien.Visible = true;
-            if (_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1) == null)
+            if (_lstHoaDon.FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1) == null)
             {
                 Lbl_TongTien.Text = "0";
                 Lbl_GioVao.Text = "00:00:00 00/00/2021";
             }
             else
             {
-                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
-                Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).DateCheckIn.ToString();
+                Lbl_TongTien.Text = decimal.Truncate(_lstHoaDon.FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).TotalMoney).ToString() + ".000 VND";
+                Lbl_GioVao.Text = _lstHoaDon.FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).DateCheckIn.ToString();
             }
 
         }
@@ -164,7 +187,8 @@ namespace _3_GUI
         public void LoadTableT2()
         {
             FlPanel2.Controls.Clear();
-            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 2))
+            NhanList(_lstBanAn);
+            foreach (BanAn x in _lstBanAn.Where(c => c.Floor == 2))
             {
                 Button btn1 = new Button() { Width = x.Rong, Height = x.Cao };
                 btn1.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
@@ -196,15 +220,15 @@ namespace _3_GUI
             BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
             Lbl_ViTriBan.Text = "Tầng 2 - " + banAn.Name;
             Lbl_TongTien.Visible = true;
-            if (_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1) == null)
+            if (_lstHoaDon.FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1) == null)
             {
                 Lbl_TongTien.Text = "0";
                 Lbl_GioVao.Text = "00:00:00 00/00/2021";
             }
             else
             {
-                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
-                Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).DateCheckIn.ToString();
+                Lbl_TongTien.Text = decimal.Truncate(_lstHoaDon.FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).TotalMoney).ToString() + ".000 VND";
+                Lbl_GioVao.Text = _lstHoaDon.FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).DateCheckIn.ToString();
             }
         }
 
@@ -786,7 +810,8 @@ namespace _3_GUI
         }
         void LoadHoaDon(int idban)
         {
-            var abc = (from a in _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == idban && c.Status == true && c.DichVu == 1)
+            NhanlstHoaDon(_lstHoaDon);
+            var abc = (from a in _lstHoaDon.Where(c => c.Idtable == idban && c.Status == true && c.DichVu == 1)
                        join c in _qlHoaDon.GetHoaDonCTFromDB()
                        on a.Id equals c.Idbill
                        select new
@@ -940,7 +965,7 @@ namespace _3_GUI
             }
             else if (_IdBan != 0 && _IdHoaDon == 0)
             {
-                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
+                BanAn banAn = _lstBanAn.FirstOrDefault(c => c.Id == _IdBan);
                 if (banAn.TinhTrang == 1)
                 {
                     MessageBox.Show("Bàn hiện tại đang trống", "Thông báo");

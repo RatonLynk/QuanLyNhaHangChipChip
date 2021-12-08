@@ -29,12 +29,15 @@ namespace _3_GUI
         HoaDon _hoaDon;
         BanAn _banAn;
         FrmMain frm;
+        List<BanAn> _lstBan;
+        List<HoaDon> _lstHoaDon;
         public FrmChuyenBan(FrmQLBan alo)
         {
             InitializeComponent();
             _qlBanAn = new QLBanAnService();
             _qlHoaDon = new QLHoaDon();
             _qlMeniu = new QLMenuService();
+            _lstBan = new List<BanAn>();
             _FrmQLBan = alo;
             LoadTableT1();
             LoadTableT2();
@@ -43,7 +46,9 @@ namespace _3_GUI
         void LoadTableT2()
         {
             FlPanel2.Controls.Clear();
-            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 2))
+            _lstBan = new List<BanAn>();
+            _lstBan = _qlBanAn.GetTablesFromDB();
+            foreach (BanAn x in _lstBan.Where(c => c.Floor == 2))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
                 btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
@@ -86,9 +91,13 @@ namespace _3_GUI
                     _qlBanAn.UpdateBanAn(_banAn);
                     banAn.TinhTrang = 0;
                     _qlBanAn.UpdateBanAn(banAn);
-                    reloadBan();
+                    LoadTableT1();
+                    LoadTableT2();
+                    
+                    _FrmQLBan.NhanList(_lstBan);
+                    _lstHoaDon = _qlHoaDon.GetBillsFromDB();
+                    _FrmQLBan.NhanlstHoaDon(_lstHoaDon);
                     _FrmQLBan.LoadTableT1();
-                    _FrmQLBan.LoadTableT2();
                     this.Close();
                 }
                 else if (banAn.TinhTrang == 0)
@@ -112,9 +121,12 @@ namespace _3_GUI
                     _qlHoaDon.UpdateHoaDon(hoaDon);
                     _banAn.TinhTrang = 1;
                     _qlBanAn.UpdateBanAn(_banAn);
-                    reloadBan();
+                    LoadTableT1();
+                    LoadTableT2();
+                    _FrmQLBan.NhanList(_lstBan);
+                    _lstHoaDon = _qlHoaDon.GetBillsFromDB();
+                    _FrmQLBan.NhanlstHoaDon(_lstHoaDon);
                     _FrmQLBan.LoadTableT1();
-                    _FrmQLBan.LoadTableT2();
                     this.Close();
                 }
             }
@@ -123,7 +135,9 @@ namespace _3_GUI
         void LoadTableT1()
         {
             FLPenal.Controls.Clear();
-            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1))
+            _lstBan = new List<BanAn>();
+            _lstBan = _qlBanAn.GetTablesFromDB();
+            foreach (BanAn x in _lstBan.Where(c => c.Floor == 1))
             {
                 Button btn1 = new Button() { Width = x.Rong, Height = x.Cao };
                 //Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\caiBan.png");                
@@ -172,11 +186,14 @@ namespace _3_GUI
                     banAn.TinhTrang = 0;
                     _qlBanAn.UpdateBanAn(banAn);
                     _FrmQLBan.LoadTableT1();
-                    reloadBan();
+                    LoadTableT1();
+                    LoadTableT2();
+                    _FrmQLBan.NhanList(_lstBan);
                     _FrmQLBan.LoadTableT1();
-                    _FrmQLBan.LoadTableT2();
+                    _lstHoaDon = _qlHoaDon.GetBillsFromDB();
+                    _FrmQLBan.NhanlstHoaDon(_lstHoaDon);
                     this.Close();
-                    
+                    //LoadTableT1();
                     //frmQLBan.Show();
 
                 }
@@ -202,10 +219,13 @@ namespace _3_GUI
                     //frmQLBan.Hide();
                     _qlHoaDon.UpdateHoaDon(hoaDon);
                     _banAn.TinhTrang = 1;
-                    _qlBanAn.UpdateBanAn(_banAn);
-                    reloadBan();
+                    _qlBanAn.UpdateBanAn(_banAn);                    
+                    LoadTableT1();
+                    LoadTableT2();
+                    _FrmQLBan.NhanList(_lstBan);
                     _FrmQLBan.LoadTableT1();
-                    _FrmQLBan.LoadTableT2();
+                    _lstHoaDon = _qlHoaDon.GetBillsFromDB();
+                    _FrmQLBan.NhanlstHoaDon(_lstHoaDon);
                     this.Close();
                     
                    // frmQLBan.Show();
