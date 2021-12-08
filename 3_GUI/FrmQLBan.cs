@@ -819,7 +819,7 @@ namespace _3_GUI
         {
             _f.Close();
         }
-        void LoadHoaDon(int idban)
+        public void LoadHoaDon(int idban)
         {
             NhanlstHoaDon(_lstHoaDon);
             var abc = (from a in _lstHoaDon.Where(c => c.Idtable == idban && c.Status == true && c.DichVu == 1)

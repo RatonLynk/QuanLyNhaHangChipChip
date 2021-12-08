@@ -21,6 +21,7 @@ namespace _3_GUI
         public static int _IdBanTachHD;
         public static int _IdHoaDon;
         public static string _EmailTachHD;
+        List<HoaDon> _lstHoaDon;
         IQLBanAnService _qlBanAn;
         IQLHoaDon _qlHoaDon;
         IQLNhanVienService _qlNhanVien;
@@ -31,6 +32,7 @@ namespace _3_GUI
         int _soLuong;
         HoaDon _hoaDon;
         HoaDonChiTiet _HDCT;
+        List<BanAn> _lstBan;
         public FrmTachHoaDon()
         {
             InitializeComponent();
@@ -40,9 +42,13 @@ namespace _3_GUI
             _qlMeniu = new QLMenuService();
             LoadHDCu(_IdBanTachHD);
             Lbl_Tien.Visible = false;
+            HoaDon hoa = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c=>c.Idtable==_IdBanTachHD && c.Status==true && c.DichVu==1);
+            Lbl_TienCu.Text =decimal.Truncate(hoa.TotalMoney).ToString() + ",000 VND";
         }
         void LoadHDCu(int id)
         {
+            _lstHoaDon = new List<HoaDon>();
+            _lstHoaDon = _qlHoaDon.GetBillsFromDB();
             var abc = (from a in _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == id && c.Status == true && c.DichVu == 1 && c.Id!=_idHD)
                        join c in _qlHoaDon.GetHoaDonCTFromDB()
                        on a.Id equals c.Idbill
@@ -236,7 +242,8 @@ namespace _3_GUI
                 
             }
             Lbl_Tien.Visible = true;
-            Lbl_Tien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney.ToString() +",000 VND";
+            Lbl_TienCu.Text = decimal.Truncate(_hoaDon.TotalMoney).ToString() + ",000 VND";
+            Lbl_Tien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney).ToString() +",000 VND";
             LoadHDCu(_IdBanTachHD);
             LoadHDMoi();            
             _f.Close();
@@ -244,47 +251,74 @@ namespace _3_GUI
 
         private void Btn_XacNhan_Click(object sender, EventArgs e)
         {
+            HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
             if (MessageBox.Show("Bạn có chắc chắn muốn thanh toán không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                if (String.IsNullOrEmpty(Txt_Tien.Text))
+                {
+                    MessageBox.Show("Chưa nhập tiền khách đưa","Thông báo");
+                    return;
+                }
+                if (Convert.ToInt32(Txt_Tien.Text) < hoaDon.TotalMoney)
+                {
+                    MessageBox.Show("Tiền khách đưa chưa đủ", "Thông báo");
+                    return;
+                }
                 _hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
                 _f = new Form();
                 Label label1 = new Label();
                 Label label2 = new Label();
                 Label label3 = new Label();
+                Label label14 = new Label();
+                Label label15 = new Label();
                 Button button = new Button();
                 button.Text = "OK";
                 label2.Text = "Tổng tiền:";
                 label3.Text = "ăn cứt";
+                label14.Text = "Tiền giả khách:";
                 _f.Controls.Add(label1);
                 _f.Controls.Add(label2);
                 _f.Controls.Add(label3);
                 _f.Controls.Add(button);
+                _f.Controls.Add(label14);
+                _f.Controls.Add(label15);
+                _f.Controls[4].Left = 30;
+                _f.Controls[4].Top = 70;
+                _f.Controls[5].Left = 130;
+                _f.Controls[5].Top = 70;
                 _f.Controls[3].Left = 130;
-                _f.Controls[3].Top = 70;
+                _f.Controls[3].Top = 110;
                 _f.Controls[0].Left = 130;
                 _f.Controls[1].Left = 30;
                 _f.Controls[1].Top = 30;
                 _f.Controls[2].Left = 130;
                 _f.Controls[2].Top = 30;
-                _f.Size = new Size(350, 150);
-                label1.Text = "Bàn " + _IdBanTachHD;
-                label3.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoaDon.Id).TotalMoney.ToString();
-                _hoaDon.Status = false;
-                _hoaDon.DateCheckOut = DateTime.Now;
-                _qlHoaDon.UpdateHoaDon(_hoaDon);
-                button.Click += Button_Click1;
-                LoadHDMoi();
+                _f.Size = new Size(350, 200);
+                button.Click += Button_Click2;                
+                hoaDon.Status = false;
+                hoaDon.DateCheckOut = DateTime.Now;
+                _qlHoaDon.UpdateHoaDon(hoaDon);
+                label3.Text = hoaDon.TotalMoney.ToString() + ",000 VND";
+                label15.Text = (Convert.ToInt32(Txt_Tien.Text) - hoaDon.TotalMoney).ToString() + ",000 VND";
                 _f.ShowDialog();
             }
             
         }
 
-        private void Button_Click1(object sender, EventArgs e)
+        private void Button_Click2(object sender, EventArgs e)
         {
+            LoadHDMoi();
+            FrmQLBan frmQLBan = new FrmQLBan();
+            frmQLBan.NhanlstHoaDon(_lstHoaDon);
+            frmQLBan.LoadHoaDon(_IdBanTachHD);            
+            Lbl_Tien.Text = "0 VND";
             _f.Close();
-        }
+
+        }               
         void LoadHDMoi()
         {
+            _lstHoaDon = new List<HoaDon>();
+            _lstHoaDon = _qlHoaDon.GetBillsFromDB();
             var abc = (from a in _qlHoaDon.GetBillsFromDB().Where(c => c.Id == _idHD && c.Status == true)
                        join c in _qlHoaDon.GetHoaDonCTFromDB()
                        on a.Id equals c.Idbill
@@ -398,47 +432,97 @@ namespace _3_GUI
         private void FrmTachHoaDon_FormClosed(object sender, FormClosedEventArgs e)
         {
             HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
-            if (hoaDon.Status==true)
+            if (hoaDon!=null)
             {
-                if (MessageBox.Show("Hóa đơn vừa tách chưa thanh toán, bạn có muốn thanh toán không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (hoaDon.Status == true)
                 {
-                    _hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
-                    _f = new Form();
-                    Label label1 = new Label();
-                    Label label2 = new Label();
-                    Label label3 = new Label();
-                    Button button = new Button();
-                    button.Text = "OK";
-                    label2.Text = "Tổng tiền:";
-                    label3.Text = "ăn cứt";
-                    _f.Controls.Add(label1);
-                    _f.Controls.Add(label2);
-                    _f.Controls.Add(label3);
-                    _f.Controls.Add(button);
-                    _f.Controls[3].Left = 130;
-                    _f.Controls[3].Top = 70;
-                    _f.Controls[0].Left = 130;
-                    _f.Controls[1].Left = 30;
-                    _f.Controls[1].Top = 30;
-                    _f.Controls[2].Left = 130;
-                    _f.Controls[2].Top = 30;
-                    _f.Size = new Size(350, 150);
-                    label1.Text = "Bàn " + _IdBanTachHD;
-                    label3.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoaDon.Id).TotalMoney.ToString();
-                    _hoaDon.Status = false;
-                    _hoaDon.DateCheckOut = DateTime.Now;
-                    _qlHoaDon.UpdateHoaDon(_hoaDon);
-                    button.Click += Button_Click2;
-                    LoadHDMoi();
-                    _f.ShowDialog();
+                    MessageBox.Show("Bạn phải thanh toán hóa Đơn này trước khi thoát", "Thông báo");
+                    return;
+                    this.Show();
                 }
             }
+            
            
+        }      
+
+        private void Btn_ThanhToan1_Click(object sender, EventArgs e)
+        {
+            HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBanTachHD && c.Status == true && c.DichVu == 1);
+            if (MessageBox.Show("Bạn có chắc chắn muốn thanh toán không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (String.IsNullOrEmpty(Txt_Tien.Text))
+                {
+                    MessageBox.Show("Chưa nhập tiền khách đưa","Thông báo");
+                    return;
+                }
+                if (Convert.ToInt32(Txt_Tien.Text)<hoaDon.TotalMoney)
+                {
+                    MessageBox.Show("Tiền khách đưa chưa đủ","Thông báo");
+                    return;
+                }
+                _f = new Form();
+                Label label1 = new Label();
+                Label label2 = new Label();
+                Label label3 = new Label();
+                Label label14 = new Label();
+                Label label15 = new Label();
+                Button button = new Button();
+                button.Text = "OK";
+                label2.Text = "Tổng tiền:";
+                label3.Text = "ăn cứt";
+                label14.Text = "Tiền giả khách:";
+                _f.Controls.Add(label1);
+                _f.Controls.Add(label2);
+                _f.Controls.Add(label3);
+                _f.Controls.Add(button);
+                _f.Controls.Add(label14);
+                _f.Controls.Add(label15);
+                _f.Controls[4].Left = 30;
+                _f.Controls[4].Top = 70;
+                _f.Controls[5].Left = 130;
+                _f.Controls[5].Top = 70;
+                _f.Controls[3].Left = 130;
+                _f.Controls[3].Top = 110;
+                _f.Controls[0].Left = 130;
+                _f.Controls[1].Left = 30;
+                _f.Controls[1].Top = 30;
+                _f.Controls[2].Left = 130;
+                _f.Controls[2].Top = 30;
+                _f.Size = new Size(350, 200);
+                button.Click += Button_Click3;                
+                hoaDon.Status = false;
+                hoaDon.DateCheckOut = DateTime.Now;
+                _qlHoaDon.UpdateHoaDon(hoaDon);
+                label3.Text =decimal.Truncate(hoaDon.TotalMoney).ToString() + ",000 VND";
+                label15.Text =decimal.Truncate((Convert.ToInt32(Txt_Tien.Text) - hoaDon.TotalMoney)).ToString() + ",000 VND";
+                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c=>c.Id==_IdBanTachHD);
+                banAn.TinhTrang = 1;
+                _qlBanAn.UpdateBanAn(banAn);
+                _f.ShowDialog();
+            }
         }
 
-        private void Button_Click2(object sender, EventArgs e)
+        private void Button_Click3(object sender, EventArgs e)
         {
+            _lstBan = _qlBanAn.GetTablesFromDB();
+            FrmQLBan frmQLBan = new FrmQLBan();
+            frmQLBan.NhanList(_lstBan);
+            LoadHDCu(_IdBanTachHD);
+            frmQLBan.NhanlstHoaDon(_lstHoaDon);
+            frmQLBan.LoadHoaDon(_IdBanTachHD);
+            frmQLBan.LoadTableT1();
+            frmQLBan.LoadTableT2();
+            Lbl_TienCu.Text = "0 VND";
             _f.Close();
+        }
+
+        private void Txt_Tien_TextChanged(object sender, EventArgs e)
+        {
+            if (Txt_Tien.Text.All(char.IsDigit)==false)
+            {
+                MessageBox.Show("Không được nhập chữ","Thông báo");
+                return;
+            }
         }
     }
 }
