@@ -818,7 +818,7 @@ namespace _3_GUI
         private void Button_Click1(object sender, EventArgs e)
         {
             _f.Close();
-        }
+        }//
         public void LoadHoaDon(int idban)
         {
             NhanlstHoaDon(_lstHoaDon);
