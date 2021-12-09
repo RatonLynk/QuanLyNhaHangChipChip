@@ -154,9 +154,9 @@ namespace _3_GUI
             this.txtTimkiemDM.Location = new System.Drawing.Point(654, 250);
             this.txtTimkiemDM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTimkiemDM.Name = "txtTimkiemDM";
+            this.txtTimkiemDM.PlaceholderText = "Mời bạn nhập tên danh mục";
             this.txtTimkiemDM.Size = new System.Drawing.Size(225, 30);
             this.txtTimkiemDM.TabIndex = 36;
-            this.txtTimkiemDM.Text = " ";
             this.txtTimkiemDM.TextChanged += new System.EventHandler(this.txtTimkiemDM_TextChanged);
             // 
             // txtTenDanhMuc
@@ -169,7 +169,6 @@ namespace _3_GUI
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
             this.txtTenDanhMuc.Size = new System.Drawing.Size(256, 30);
             this.txtTenDanhMuc.TabIndex = 37;
-            this.txtTenDanhMuc.Text = " ";
             // 
             // txtMaDanhMuc
             // 

@@ -35,7 +35,6 @@ namespace _3_GUI
             this.btnQuanLyThucDon = new System.Windows.Forms.Button();
             this.btnQuanLyHoaDon = new System.Windows.Forms.Button();
             this.btnQuanLyNhanVien = new System.Windows.Forms.Button();
-            this.btnTienIch = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -85,7 +84,7 @@ namespace _3_GUI
             this.btnPhucVu.Location = new System.Drawing.Point(0, 92);
             this.btnPhucVu.Name = "btnPhucVu";
             this.btnPhucVu.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnPhucVu.Size = new System.Drawing.Size(361, 121);
+            this.btnPhucVu.Size = new System.Drawing.Size(361, 149);
             this.btnPhucVu.TabIndex = 1;
             this.btnPhucVu.Text = "     Phục vụ khách hàng";
             this.btnPhucVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -101,10 +100,10 @@ namespace _3_GUI
             this.btnQuanLyThucDon.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyThucDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyThucDon.Image")));
             this.btnQuanLyThucDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyThucDon.Location = new System.Drawing.Point(0, 213);
+            this.btnQuanLyThucDon.Location = new System.Drawing.Point(0, 241);
             this.btnQuanLyThucDon.Name = "btnQuanLyThucDon";
             this.btnQuanLyThucDon.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnQuanLyThucDon.Size = new System.Drawing.Size(361, 121);
+            this.btnQuanLyThucDon.Size = new System.Drawing.Size(361, 149);
             this.btnQuanLyThucDon.TabIndex = 2;
             this.btnQuanLyThucDon.Text = "    Quản lý thực đơn";
             this.btnQuanLyThucDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -120,10 +119,10 @@ namespace _3_GUI
             this.btnQuanLyHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyHoaDon.Image")));
             this.btnQuanLyHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(0, 334);
+            this.btnQuanLyHoaDon.Location = new System.Drawing.Point(0, 390);
             this.btnQuanLyHoaDon.Name = "btnQuanLyHoaDon";
             this.btnQuanLyHoaDon.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnQuanLyHoaDon.Size = new System.Drawing.Size(361, 121);
+            this.btnQuanLyHoaDon.Size = new System.Drawing.Size(361, 149);
             this.btnQuanLyHoaDon.TabIndex = 3;
             this.btnQuanLyHoaDon.Text = "    Thống kê hóa đơn";
             this.btnQuanLyHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -139,34 +138,15 @@ namespace _3_GUI
             this.btnQuanLyNhanVien.ForeColor = System.Drawing.Color.White;
             this.btnQuanLyNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyNhanVien.Image")));
             this.btnQuanLyNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 455);
+            this.btnQuanLyNhanVien.Location = new System.Drawing.Point(0, 539);
             this.btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
             this.btnQuanLyNhanVien.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(361, 121);
+            this.btnQuanLyNhanVien.Size = new System.Drawing.Size(361, 149);
             this.btnQuanLyNhanVien.TabIndex = 4;
             this.btnQuanLyNhanVien.Text = "    Quản lý nhân viên";
             this.btnQuanLyNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuanLyNhanVien.UseVisualStyleBackColor = true;
             this.btnQuanLyNhanVien.Click += new System.EventHandler(this.btnQuanLyNhanVien_Click);
-            // 
-            // btnTienIch
-            // 
-            this.btnTienIch.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTienIch.FlatAppearance.BorderSize = 0;
-            this.btnTienIch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTienIch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTienIch.ForeColor = System.Drawing.Color.White;
-            this.btnTienIch.Image = ((System.Drawing.Image)(resources.GetObject("btnTienIch.Image")));
-            this.btnTienIch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTienIch.Location = new System.Drawing.Point(0, 576);
-            this.btnTienIch.Name = "btnTienIch";
-            this.btnTienIch.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnTienIch.Size = new System.Drawing.Size(361, 121);
-            this.btnTienIch.TabIndex = 5;
-            this.btnTienIch.Text = "    Tiện ích";
-            this.btnTienIch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTienIch.UseVisualStyleBackColor = true;
-            this.btnTienIch.Click += new System.EventHandler(this.btnTienIch_Click);
             // 
             // btnThoat
             // 
@@ -177,10 +157,10 @@ namespace _3_GUI
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(0, 697);
+            this.btnThoat.Location = new System.Drawing.Point(0, 688);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Padding = new System.Windows.Forms.Padding(14, 0, 0, 0);
-            this.btnThoat.Size = new System.Drawing.Size(361, 121);
+            this.btnThoat.Size = new System.Drawing.Size(361, 149);
             this.btnThoat.TabIndex = 6;
             this.btnThoat.Text = "    Thoát";
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -191,7 +171,6 @@ namespace _3_GUI
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Controls.Add(this.btnThoat);
-            this.panelMenu.Controls.Add(this.btnTienIch);
             this.panelMenu.Controls.Add(this.btnQuanLyNhanVien);
             this.panelMenu.Controls.Add(this.btnQuanLyHoaDon);
             this.panelMenu.Controls.Add(this.btnQuanLyThucDon);
@@ -546,7 +525,6 @@ namespace _3_GUI
         private System.Windows.Forms.Button btnQuanLyThucDon;
         private System.Windows.Forms.Button btnQuanLyHoaDon;
         private System.Windows.Forms.Button btnQuanLyNhanVien;
-        private System.Windows.Forms.Button btnTienIch;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;

@@ -134,7 +134,7 @@ namespace _3_GUI
         {
             _iQlNhanVienService.Save();
         }
-
+        
         private void txt_TenNV_TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txt_TenNV.Text))
