@@ -386,6 +386,7 @@ namespace _3_GUI
             this.txtMatKhau.ReadOnly = true;
             this.txtMatKhau.Size = new System.Drawing.Size(230, 30);
             this.txtMatKhau.TabIndex = 36;
+           
             // 
             // label6
             // 

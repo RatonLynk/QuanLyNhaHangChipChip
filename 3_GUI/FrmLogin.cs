@@ -163,12 +163,16 @@ namespace _3_GUI
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
-        {          
-
+        {
+           
             if (_qlnv.getlstNhanViens().Any(c=>c.Email==txtUsername.Text&& c.Password== uti.GetHash(txtPassWord.Text) && c.Status==true))
             {
                nhanVien= _qlnv.getlstNhanViens().FirstOrDefault(c => c.Email == txtUsername.Text && c.Password == uti.GetHash(txtPassWord.Text));
                 MessageBox.Show("Đăng nhập thành công ", "Thông báo");
+                if (txtPassWord.Text =="123")
+                {
+                    MessageBox.Show("Bạn đang nhập mật khẩu mặc định ,nhớ đổi mật khẩu","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 FrmMain frmMain = new FrmMain();
                 frmMain.mail = txtUsername.Text;
                 frmMain.SenderData(nhanVien);

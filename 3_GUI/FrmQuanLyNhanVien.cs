@@ -229,5 +229,7 @@ namespace _3_GUI
                 chk_nam.Checked = false;
             }
         }
+
+       
     }
 }
