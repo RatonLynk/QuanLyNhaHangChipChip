@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassWord = new System.Windows.Forms.TextBox();
@@ -41,6 +42,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.bntMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -116,6 +119,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Controls.Add(this.linkQMK);
             this.panel2.Controls.Add(this.txtPassWord);
             this.panel2.Controls.Add(this.txtUsername);
@@ -214,6 +218,19 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(371, 180);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(23, 30);
+            this.linkLabel1.TabIndex = 10;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "?";
+            this.linkLabel1.MouseHover += new System.EventHandler(this.linkLabel1_MouseHover);
+            // 
             // FrmLogin
             // 
             this.AcceptButton = this.btnDangNhap;
@@ -255,5 +272,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button bntMinimize;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

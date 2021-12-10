@@ -167,7 +167,8 @@ namespace _3_GUI
             {
                 if (_cachCB != null)
                 {
-                    _iQLMenuService.DeleteUnit(_cachCB);
+                    _cachCB.Status = false;
+                    _iQLMenuService.UpdateUnit(_cachCB);
                     FrmQuanLyThucDon_Load();
                 }
                 else

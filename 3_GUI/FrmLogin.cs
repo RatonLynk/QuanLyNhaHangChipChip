@@ -207,6 +207,11 @@ namespace _3_GUI
             if (result == DialogResult.OK)
                 Application.Exit();
         }
+
+        private void linkLabel1_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(txtPassWord, "Mật khẩu mặc định là 123");
+        }
     }
 
 }

@@ -153,14 +153,16 @@ namespace _3_GUI
             {
                 if (_dmFood != null)
                 {
-                    _iQLMenuService.DeleteCategory(_dmFood);
+                    _dmFood.Status = false;
+                    _iQLMenuService.UpdateCategory(_dmFood);
+                    FrmQuanLyThucDon_Load();
+
                 }
                 else
                 {
                     MessageBox.Show("Chọn danh mục để xóa");
                 }
             }
-            FrmQuanLyThucDon_Load();
         }
 
         private void txtTimkiemDM_TextChanged(object sender, EventArgs e)

@@ -174,8 +174,10 @@ namespace _3_GUI
             {
                 if (_monCT != null)
                 {
-                    _iQLMenuService.DeleteItem(_item);
-                    _iQLMenuService.DeleteDetail(_monCT);
+                    _item.Status = false;
+                    _iQLMenuService.UpdateItem(_item);
+                    _monCT.Status = 0;
+                    _iQLMenuService.UpdateDetail(_monCT);
                     FrmQuanLyThucDon_Load();
                 }
                 else
