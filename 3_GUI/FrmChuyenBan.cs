@@ -94,9 +94,9 @@ namespace _3_GUI
                     LoadTableT1();
                     LoadTableT2();
                     
-                    _FrmQLBan.NhanList(_lstBan,0);
+                    //_FrmQLBan.NhanList(_lstBan,0);
                     _lstHoaDon = _qlHoaDon.GetBillsFromDB();
-                    _FrmQLBan.NhanlstHoaDon(_lstHoaDon);
+                    //_FrmQLBan.NhanlstHoaDon(_lstHoaDon);
                     _FrmQLBan.LoadTableT1();
                     this.Close();
                 }
@@ -123,9 +123,9 @@ namespace _3_GUI
                     _qlBanAn.UpdateBanAn(_banAn);
                     LoadTableT1();
                     LoadTableT2();
-                    _FrmQLBan.NhanList(_lstBan,0);
+                   // _FrmQLBan.NhanList(_lstBan,0);
                     _lstHoaDon = _qlHoaDon.GetBillsFromDB();
-                    _FrmQLBan.NhanlstHoaDon(_lstHoaDon);
+                    //_FrmQLBan.NhanlstHoaDon(_lstHoaDon);
                     _FrmQLBan.LoadTableT1();
                     this.Close();
                 }
@@ -188,10 +188,10 @@ namespace _3_GUI
                     _FrmQLBan.LoadTableT1();
                     LoadTableT1();
                     LoadTableT2();
-                    _FrmQLBan.NhanList(_lstBan,0);
+                   // _FrmQLBan.NhanList(_lstBan,0);
                     _FrmQLBan.LoadTableT1();
                     _lstHoaDon = _qlHoaDon.GetBillsFromDB();
-                    _FrmQLBan.NhanlstHoaDon(_lstHoaDon);
+                    //_FrmQLBan.NhanlstHoaDon(_lstHoaDon);
                     this.Close();
                     //LoadTableT1();
                     //frmQLBan.Show();
@@ -222,10 +222,10 @@ namespace _3_GUI
                     _qlBanAn.UpdateBanAn(_banAn);                    
                     LoadTableT1();
                     LoadTableT2();
-                    _FrmQLBan.NhanList(_lstBan,0);
+                    //_FrmQLBan.NhanList(_lstBan,0);
                     _FrmQLBan.LoadTableT1();
                     _lstHoaDon = _qlHoaDon.GetBillsFromDB();
-                    _FrmQLBan.NhanlstHoaDon(_lstHoaDon);
+                    //_FrmQLBan.NhanlstHoaDon(_lstHoaDon);
                     this.Close();
                     
                    // frmQLBan.Show();

@@ -22,12 +22,11 @@ namespace _3_GUI
     public partial class FrmQLBan : Form
     {
         public static string mail;
-        
+
         IQLBanAnService _qlBanAn;
         IQLHoaDon _qlHoaDon;
-        iQLMenuService _qlMeniu;
-        List<BanAn> _lstBanAn;
-        List<HoaDon> _lstHoaDon;
+        iQLMenuService _qlMeniu;        
+        
         IQLNhanVienService _qlNhanVien;
         int _IdBan;
         HoaDon _hoadon;
@@ -43,11 +42,11 @@ namespace _3_GUI
         public FrmQLBan(FrmMain frm0)
         {
             InitializeComponent();
-            _qlBanAn = new QLBanAnService();           
+            _qlBanAn = new QLBanAnService();
             _qlHoaDon = new QLHoaDon();
             _qlMeniu = new QLMenuService();
             _qlNhanVien = new QLNhanVienService();
-            //_lstBanAn = new List<BanAn>();
+            //_qlBanAn.GetTablesFromDB() = new List<BanAn>();
             LoadTableT1();
             LoadTableT2();
             LoadMeniu();
@@ -57,28 +56,28 @@ namespace _3_GUI
             _nhanVien = _qlNhanVien.getlstNhanViens().FirstOrDefault(c => c.Email == mail);
             frm = frm0;
         }
-        public void NhanlstHoaDon(List<HoaDon> lstHoaDon)
-        {
-            if (lstHoaDon==null)
-            {
-                _lstHoaDon = _qlHoaDon.GetBillsFromDB();
-            }
-else
-            {
-                _lstHoaDon = lstHoaDon;
-            }
-        }
-        public void NhanList(List<BanAn> lst,int flag)
-        {            
-            if (lst==null)
-            {
-                _lstBanAn = _qlBanAn.GetTablesFromDB();
-            }
-else
-            {
-                _lstBanAn = lst;
-            }
-        }
+        //public void NhanlstHoaDon(List<HoaDon> lstHoaDon)
+        //{
+        //    if (lstHoaDon == null)
+        //    {
+        //        _qlHoaDon.GetBillsFromDB() = _qlHoaDon.GetBillsFromDB();
+        //    }
+        //    else
+        //    {
+        //        _qlHoaDon.GetBillsFromDB() = lstHoaDon;
+        //    }
+        //}
+        //public void NhanList(List<BanAn> lst, int flag)
+        //{
+        //    if (lst == null)
+        //    {
+        //        _qlBanAn.GetTablesFromDB() = _qlBanAn.GetTablesFromDB();
+        //    }
+        //    else
+        //    {
+        //        _qlBanAn.GetTablesFromDB() = lst;
+        //    }
+        //}
 
         void LoadMangVe()
         {
@@ -115,7 +114,7 @@ else
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 4;
@@ -137,12 +136,12 @@ else
         {
             //FLPenal.Invalidate();
             FLPenal.Controls.Clear();
-            NhanList(_lstBanAn,0);
-            NhanlstHoaDon(_lstHoaDon);
-            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c=>c.Floor==1))
+            //NhanList(_qlBanAn.GetTablesFromDB(), 0);
+            //NhanlstHoaDon(_qlHoaDon.GetBillsFromDB());
+            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
-                //Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\caiBan.png");                
+                //Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\caiBan.png");                
                 //btn.Image= b;
                 btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
                 btn.Click += Btn_Click;
@@ -163,14 +162,14 @@ else
 
         private void Btn_Click(object sender, EventArgs e)
         {
-            NhanlstHoaDon(_lstHoaDon);
+            //NhanlstHoaDon(_qlHoaDon.GetBillsFromDB());
             int id = ((sender as Button).Tag as BanAn).Id;
             _IdBan = id;
             _IdHoaDon = 0;
             FrmChuyenBan._IdBanCu = id;
             FrmTachHoaDon._IdHoaDon = 0;
             FrmTachHoaDon._IdBanTachHD = id;
-            BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);            
+            BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
             LoadHoaDon(id);
             Lbl_ViTriBan.Text = "Tầng 1 - " + banAn.Name;
             Lbl_TongTien.Visible = true;
@@ -181,8 +180,8 @@ else
             }
             else
             {
-                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).TotalMoney).ToString() + ".000 VND";
-                Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).DateCheckIn.ToString();
+                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + ".000 VND";
+                Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).DateCheckIn.ToString();
             }
 
         }
@@ -190,8 +189,8 @@ else
         public void LoadTableT2()
         {
             FlPanel2.Controls.Clear();
-            NhanList(_lstBanAn,1);
-            foreach (BanAn x in _lstBanAn.Where(c => c.Floor == 2))
+            //NhanList(_qlBanAn.GetTablesFromDB(), 1);
+            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 2))
             {
                 Button btn1 = new Button() { Width = x.Rong, Height = x.Cao };
                 btn1.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
@@ -223,15 +222,15 @@ else
             BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
             Lbl_ViTriBan.Text = "Tầng 2 - " + banAn.Name;
             Lbl_TongTien.Visible = true;
-            if (_lstHoaDon.FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1) == null)
+            if (_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1) == null)
             {
                 Lbl_TongTien.Text = "0";
                 Lbl_GioVao.Text = "00:00:00 00/00/2021";
             }
             else
             {
-                Lbl_TongTien.Text = decimal.Truncate(_lstHoaDon.FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).TotalMoney).ToString() + ".000 VND";
-                Lbl_GioVao.Text = _lstHoaDon.FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).DateCheckIn.ToString();
+                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + ".000 VND";
+                Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).DateCheckIn.ToString();
             }
         }
 
@@ -262,7 +261,7 @@ else
             ban.Cao = 70;
             MessageBox.Show(_qlBanAn.AddBanAn(ban), "Thông báo");
             LoadTableT1();
-            
+
         }
 
         private void Btn_ThemBanT2_Click(object sender, EventArgs e)
@@ -295,7 +294,7 @@ else
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -345,8 +344,8 @@ else
 
         private void Button_Click(object sender, EventArgs e)
         {
-            NhanList(_lstBanAn,0);
-            NhanlstHoaDon(_lstHoaDon);
+            //NhanList(_qlBanAn.GetTablesFromDB(), 0);
+           // NhanlstHoaDon(_qlHoaDon.GetBillsFromDB());
             if (String.IsNullOrEmpty(_f.Controls[0].Text))
             {
                 MessageBox.Show("không được để trống số lượng", "Thông báo");
@@ -360,7 +359,7 @@ else
             _soLuong = Convert.ToInt32(_f.Controls[0].Text);
             if (_IdBan != 0 && _IdHoaDon == 0)
             {
-                if (_lstBanAn.Where(c => c.Id == _IdBan).Select(c => c.TinhTrang).FirstOrDefault() == 1)
+                if (_qlBanAn.GetTablesFromDB().Where(c => c.Id == _IdBan).Select(c => c.TinhTrang).FirstOrDefault() == 1)
                 {
                     NhanVien nhanVien = new NhanVien();
 
@@ -382,9 +381,9 @@ else
                     _hoadonCT = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Idbill == _hoadon.Id && _idFood == c.Idfood);
 
                 }
-                else if (_lstBanAn.Where(c => c.Id == _IdBan).Select(c => c.TinhTrang).FirstOrDefault() == 0)
+                else if (_qlBanAn.GetTablesFromDB().Where(c => c.Id == _IdBan).Select(c => c.TinhTrang).FirstOrDefault() == 0)
                 {
-                    _hoadon = _lstHoaDon.Where(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).FirstOrDefault();
+                    _hoadon = _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).FirstOrDefault();
                     _hoadonCT = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Idbill == _hoadon.Id && _idFood == c.Idfood);
                 }
 
@@ -405,7 +404,7 @@ else
                     LoadTableT1();
                     LoadTableT2();
                     _f.Close();
-                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu==1).TotalMoney).ToString() + ".000 VND";
+                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + ".000 VND";
 
 
                 }//ád
@@ -764,7 +763,7 @@ else
                     _qlHoaDon.UpdateHoaDon(_hoadon);
                     label1.Text = "Mang về";
                     label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + ".000 VND";
-                    label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()).ToString("#,##0")  + ".000 VND";
+                    label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()).ToString("#,##0") + ".000 VND";
                     LoadMangVe();
                     LoadHoaDonMangVe(_hoadon.Id);
                     _f.ShowDialog();
@@ -816,8 +815,8 @@ else
         }//
         public void LoadHoaDon(int idban)
         {
-            NhanlstHoaDon(_lstHoaDon);
-            var abc = (from a in _lstHoaDon.Where(c => c.Idtable == idban && c.Status == true && c.DichVu == 1)
+           // NhanlstHoaDon(_qlHoaDon.GetBillsFromDB());
+            var abc = (from a in _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == idban && c.Status == true && c.DichVu == 1)
                        join c in _qlHoaDon.GetHoaDonCTFromDB()
                        on a.Id equals c.Idbill
                        select new
@@ -833,7 +832,7 @@ else
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
-            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
@@ -971,7 +970,7 @@ else
             }
             else if (_IdBan != 0 && _IdHoaDon == 0)
             {
-                BanAn banAn = _lstBanAn.FirstOrDefault(c => c.Id == _IdBan);
+                BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
                 if (banAn.TinhTrang == 1)
                 {
                     MessageBox.Show("Bàn hiện tại đang trống", "Thông báo");
@@ -999,7 +998,8 @@ else
 
         private void Btn_TachHoaDon_Click(object sender, EventArgs e)
         {
-            FrmTachHoaDon frmTachHoaDon = new FrmTachHoaDon();
+            FrmTachHoaDon frmTachHoaDon = new FrmTachHoaDon(this);
+            frmTachHoaDon.getformMain(frm);
             frmTachHoaDon.ShowDialog();
         }
         public void getNhanVien(NhanVien nv)
@@ -1039,7 +1039,7 @@ else
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -1073,7 +1073,7 @@ else
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -1102,9 +1102,9 @@ else
         private void Txt_TienKhachDua_TextChanged(object sender, EventArgs e)
         {
             //Convert.ToDecimal(Txt_TienKhachDua.Text).ToString("#,##0");            
-            if (Txt_TienKhachDua.Text.All(char.IsDigit)==false)
+            if (Txt_TienKhachDua.Text.All(char.IsDigit) == false)
             {
-                MessageBox.Show("Không được nhập chữ","Thông báo");
+                MessageBox.Show("Không được nhập chữ", "Thông báo");
                 return;
             }
         }
