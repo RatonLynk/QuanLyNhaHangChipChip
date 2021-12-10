@@ -51,6 +51,8 @@ namespace _3_GUI
             LoadMeniu();
             LoadMangVe();
             Lbl_TongTien.Visible = false;
+            _IdBan = 0;
+            _IdHoaDon = 0;
             //Lbl_GioVao.Text = DateTime.Now.ToString()            
             _nhanVien = _qlNhanVien.getlstNhanViens().FirstOrDefault(c => c.Email == mail);
             frm = frm0;
@@ -113,6 +115,7 @@ namespace _3_GUI
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
+            img.HeaderText = "Xóa món";
             Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\\001-close.png");
             img.Image = b;
 
@@ -293,6 +296,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
+            img.HeaderText="Thêm món";
             Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
@@ -904,6 +908,7 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
+            img.HeaderText = "Xóa món";
             Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
@@ -1083,6 +1088,11 @@ namespace _3_GUI
 
         private void Btn_TachHoaDon_Click(object sender, EventArgs e)
         {
+            if (_IdBan==0 && _IdHoaDon==0)
+            {
+                MessageBox.Show("Bạn chưa chọn bàn nào");
+                return;
+            }
             if (_IdBan!=0 && _IdHoaDon==0)
             {
                 FrmTachHoaDon frmTachHoaDon = new FrmTachHoaDon(this);
@@ -1133,6 +1143,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
+            img.HeaderText = "Thêm món";
             Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
@@ -1201,6 +1212,11 @@ namespace _3_GUI
                 MessageBox.Show("Không được nhập chữ", "Thông báo");
                 return;
             }
+        }
+
+        private void Dgid_HoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
