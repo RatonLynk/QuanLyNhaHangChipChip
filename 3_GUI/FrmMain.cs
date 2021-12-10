@@ -16,6 +16,7 @@ namespace _3_GUI
   
     public partial class FrmMain : Form
     {
+        public int other = 1;
         private Button crreentButton;
         private Random random;
         private int tempIndex;
@@ -98,14 +99,17 @@ namespace _3_GUI
                 }
             }
         }
-        private void OpenChildForm(Form childForm, object btnSender)
+        public void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)
             {
                 activeForm.Close();
             }
-                
-            ActivateButton(btnSender);
+
+            if (other == 1)
+            {
+                ActivateButton(btnSender); 
+            }
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -132,7 +136,8 @@ namespace _3_GUI
 
         public void btnPhucVu_Click(object sender, EventArgs e)
         {
-            FrmQLBan frmBan = new FrmQLBan();
+            other = 1;
+            FrmQLBan frmBan = new FrmQLBan(this);
             frmBan.getNhanVien(_nhanVien);
             frmBan.getFrmMain(this);
             OpenChildForm(frmBan, sender);
@@ -140,16 +145,19 @@ namespace _3_GUI
 
         private void btnQuanLyThucDon_Click(object sender, EventArgs e)
         {
+            other = 1;
             OpenChildForm(new FrmQuanLyThucDon(), sender);
         }
 
         private void btnQuanLyHoaDon_Click(object sender, EventArgs e)
         {
+            other = 1;
             OpenChildForm(new FrmQuanLyHoaDon(), sender);
         }
 
         private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
         {
+            other = 1;
             OpenChildForm(new FrmQuanLyNhanVien(), sender);
         }
 

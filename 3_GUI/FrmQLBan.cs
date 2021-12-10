@@ -40,7 +40,7 @@ namespace _3_GUI
         HoaDonChiTiet _hoadonCT;
         Form _f;
         FrmMain frm;
-        public FrmQLBan()
+        public FrmQLBan(FrmMain frm0)
         {
             InitializeComponent();
             _qlBanAn = new QLBanAnService();           
@@ -55,6 +55,7 @@ namespace _3_GUI
             Lbl_TongTien.Visible = false;
             //Lbl_GioVao.Text = DateTime.Now.ToString()            
             _nhanVien = _qlNhanVien.getlstNhanViens().FirstOrDefault(c => c.Email == mail);
+            frm = frm0;
         }
         public void NhanlstHoaDon(List<HoaDon> lstHoaDon)
         {
@@ -62,24 +63,18 @@ namespace _3_GUI
             {
                 _lstHoaDon = _qlHoaDon.GetBillsFromDB();
             }
-            else if (_qlHoaDon.GetBillsFromDB()!=lstHoaDon)
-            {
-                _lstHoaDon = _qlHoaDon.GetBillsFromDB();
-            }else
+else
             {
                 _lstHoaDon = lstHoaDon;
             }
         }
-        public void NhanList(List<BanAn> lst)
+        public void NhanList(List<BanAn> lst,int flag)
         {            
             if (lst==null)
             {
                 _lstBanAn = _qlBanAn.GetTablesFromDB();
             }
-            else if (_qlBanAn.GetTablesFromDB()!=lst)
-            {
-                _lstBanAn = _qlBanAn.GetTablesFromDB();
-            }else
+else
             {
                 _lstBanAn = lst;
             }
@@ -120,7 +115,7 @@ namespace _3_GUI
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 4;
@@ -142,9 +137,9 @@ namespace _3_GUI
         {
             //FLPenal.Invalidate();
             FLPenal.Controls.Clear();
-            NhanList(_lstBanAn);
+            NhanList(_lstBanAn,0);
             NhanlstHoaDon(_lstHoaDon);
-            foreach (BanAn x in _lstBanAn.Where(c=>c.Floor==1))
+            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c=>c.Floor==1))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
                 //Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\caiBan.png");                
@@ -195,7 +190,7 @@ namespace _3_GUI
         public void LoadTableT2()
         {
             FlPanel2.Controls.Clear();
-            NhanList(_lstBanAn);
+            NhanList(_lstBanAn,1);
             foreach (BanAn x in _lstBanAn.Where(c => c.Floor == 2))
             {
                 Button btn1 = new Button() { Width = x.Rong, Height = x.Cao };
@@ -300,7 +295,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -350,7 +345,7 @@ namespace _3_GUI
 
         private void Button_Click(object sender, EventArgs e)
         {
-            NhanList(_lstBanAn);
+            NhanList(_lstBanAn,0);
             NhanlstHoaDon(_lstHoaDon);
             if (String.IsNullOrEmpty(_f.Controls[0].Text))
             {
@@ -838,7 +833,7 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
@@ -1044,7 +1039,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -1078,7 +1073,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 

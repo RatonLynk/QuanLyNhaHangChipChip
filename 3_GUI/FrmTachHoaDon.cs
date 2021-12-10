@@ -325,12 +325,12 @@ namespace _3_GUI
 
         private void Button_Click2(object sender, EventArgs e)
         {
-            LoadHDMoi();
-            FrmQLBan frmQLBan = new FrmQLBan();
-            frmQLBan.NhanlstHoaDon(_lstHoaDon);
-            frmQLBan.LoadHoaDon(_IdBanTachHD);            
-            Lbl_Tien.Text = "0 VND";
-            _f.Close();
+            //LoadHDMoi();
+            //FrmQLBan frmQLBan = new FrmQLBan();
+            //frmQLBan.NhanlstHoaDon(_lstHoaDon);
+            //frmQLBan.LoadHoaDon(_IdBanTachHD);            
+            //Lbl_Tien.Text = "0 VND";
+            //_f.Close();
 
         }               
         void LoadHDMoi()
@@ -645,16 +645,16 @@ namespace _3_GUI
 
         private void Button_Click3(object sender, EventArgs e)
         {
-            _lstBan = _qlBanAn.GetTablesFromDB();
-            FrmQLBan frmQLBan = new FrmQLBan();
-            frmQLBan.NhanList(_lstBan);
-            LoadHDCu(_IdBanTachHD);
-            frmQLBan.NhanlstHoaDon(_lstHoaDon);
-            frmQLBan.LoadHoaDon(_IdBanTachHD);
-            frmQLBan.LoadTableT1();
-            frmQLBan.LoadTableT2();
-            Lbl_TienCu.Text = "0 VND";
-            _f.Close();
+            //_lstBan = _qlBanAn.GetTablesFromDB();
+            //FrmQLBan frmQLBan = new FrmQLBan();
+            //frmQLBan.NhanList(_lstBan,0);
+            //LoadHDCu(_IdBanTachHD);
+            //frmQLBan.NhanlstHoaDon(_lstHoaDon);
+            //frmQLBan.LoadHoaDon(_IdBanTachHD);
+            //frmQLBan.LoadTableT1();
+            //frmQLBan.LoadTableT2();
+            //Lbl_TienCu.Text = "0 VND";
+            //_f.Close();
         }
 
         private void Txt_Tien_TextChanged(object sender, EventArgs e)
