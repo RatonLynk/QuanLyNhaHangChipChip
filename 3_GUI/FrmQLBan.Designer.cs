@@ -44,6 +44,7 @@ namespace _3_GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.Txt_Seach = new System.Windows.Forms.TextBox();
             this.Dgid_Meniu = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -66,7 +67,6 @@ namespace _3_GUI
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn_MangVe = new System.Windows.Forms.Button();
             this.FlPanl_MangVe = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -279,6 +279,15 @@ namespace _3_GUI
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Menu";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(431, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Tìm kiếm :";
             // 
             // Txt_Seach
             // 
@@ -575,15 +584,6 @@ namespace _3_GUI
             this.FlPanl_MangVe.Name = "FlPanl_MangVe";
             this.FlPanl_MangVe.Size = new System.Drawing.Size(297, 383);
             this.FlPanl_MangVe.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(431, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Tìm kiếm :";
             // 
             // FrmQLBan
             // 

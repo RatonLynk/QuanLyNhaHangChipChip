@@ -41,6 +41,7 @@ namespace _3_GUI
             dgvMonAn.Columns[0].Name = "Mã món ăn";
             dgvMonAn.Columns[1].Name = "Tên món";
             dgvMonAn.Columns[2].Name = "Giá";
+            dgvMonAn.Columns[2].Name = "Giá";
             dgvMonAn.Columns[3].Name = "Danh mục";
             dgvMonAn.Columns[4].Name = "Cách chế biên";
             dgvMonAn.Columns[5].Name = "Đơn vị tính";
