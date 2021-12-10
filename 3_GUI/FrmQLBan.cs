@@ -51,6 +51,8 @@ namespace _3_GUI
             LoadMeniu();
             LoadMangVe();
             Lbl_TongTien.Visible = false;
+            _IdBan = 0;
+            _IdHoaDon = 0;
             //Lbl_GioVao.Text = DateTime.Now.ToString()            
             _nhanVien = _qlNhanVien.getlstNhanViens().FirstOrDefault(c => c.Email == mail);
             frm = frm0;
@@ -85,7 +87,7 @@ namespace _3_GUI
             {
                 Button btn1 = new Button() { Width = 70, Height = 70 };
                 btn1.Text = "Mang Về";
-
+                btn1.ForeColor = Color.Black;
                 btn1.Click += Btn1_Click1;
                 btn1.Tag = x;
                 btn1.BackColor = Color.Aqua;
@@ -113,7 +115,8 @@ namespace _3_GUI
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\\001-close.png");
+            img.HeaderText = "Xóa món";
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 4;
@@ -140,7 +143,7 @@ namespace _3_GUI
             foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
-                //Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\caiBan.png");                
+                //Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\caiBan.png");                
                 //btn.Image= b;
                 btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
                 btn.Click += Btn_Click;
@@ -293,7 +296,8 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            img.HeaderText="Thêm món";
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -685,7 +689,76 @@ namespace _3_GUI
             index = Dgid_HoaDon.RowCount;//dem so dong trong datagrid view
 
         }
+        private void CreateReceipt1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            if (_IdBan != 0 && _IdHoaDon == 0)
+            {
+                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1);
+            }
+            else if (_IdBan == 0 && _IdHoaDon != 0)
+            {
+                _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
+            }
+            Graphics graphic = e.Graphics;
+            Font font = new Font("Courier New", 12);
+            float FontHeight = font.GetHeight();
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+            graphic.DrawString("         Hóa đơn thanh toán", new Font("Courier New", 17), new SolidBrush(Color.Black), startX + 60, startY);
+            string top = "Tên Sản Phẩm".PadRight(20) + "Số lương".PadRight(20) + "Thành Tiền";
+            graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight; //make the spacing consistent
+            graphic.DrawString("-------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent
 
+            int index = 0;
+            for (int i = 0; i < Dgid_HoaDon.Rows.Count - 1; i++)
+            {
+                graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+                graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[1].Value.ToString(), font, new SolidBrush(Color.Black), startX + 230, startY + offset);
+                graphic.DrawString(Dgid_HoaDon.Rows[i].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 410, startY + offset);
+                offset = offset + (int)FontHeight + 5; //make the spacing consistent      
+            }
+            //foreach (var x in Dgid_HoaDon.Rows.ToString())
+            //{
+            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            //    offset = offset + (int)FontHeight + 5; //make the spacing consistent
+            //    index++;
+            //}
+
+            offset = offset + 20; //make some room so that the total stands out.
+
+            graphic.DrawString("TỔNG TIỀN ", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(decimal.Truncate(_hoadon.TotalMoney).ToString() + " VNĐ", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("TIỀN KHÁCH ĐƯA ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(Txt_TienKhachDua.Text + " VNĐ", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("TIỀN TRẢ KHÁCH ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_hoadon.TotalMoney)).ToString() + " VNĐ", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("SỐ ĐIỆN THOẠI ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(_hoadon.SoDT, font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("ĐỊA CHỈ ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(_hoadon.DiaChi, font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("              Xin chân thành cảm ơn quý khách!", font, new SolidBrush(Color.Black), startX + 10, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent    
+            graphic.DrawString("-------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent
+            graphic.DrawString("                 HẸN GẶP LẠI!", font, new SolidBrush(Color.Black), startX + 110, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent                                
+            index = Dgid_HoaDon.RowCount;//dem so dong trong datagrid view
+
+        }
         private void Btn_ThanhToan_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn thanh toán", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -753,7 +826,7 @@ namespace _3_GUI
                         PrintDocument.DocumentName = "HoaDon" + _hoadon.Id;
                         PrintDialog.Document = PrintDocument; //add the document to the dialog box
 
-                        PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                        PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt1); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
                         DialogResult result = PrintDialog.ShowDialog();
                         if (result == DialogResult.OK)
                         {
@@ -835,8 +908,9 @@ namespace _3_GUI
 
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-            img.Name = "Xóa";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            img.Name = "xoa";
+            img.HeaderText = "Xóa món";
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
@@ -872,8 +946,11 @@ namespace _3_GUI
                 int rowIndex = e.RowIndex;
                 var columns = e.ColumnIndex;
                 if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count - 1) || rowIndex == -1) return;
-                _IdHdCt = Convert.ToInt32(Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString());
-                if (e.ColumnIndex == Dgid_HoaDon.Columns["Xóa"].Index)
+                if (Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString()!=null)
+                {
+                    _IdHdCt = Convert.ToInt32(Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString());
+                }                
+                if (e.ColumnIndex == Dgid_HoaDon.Columns["xoa"].Index)
                 {
                     _f = new Form();
                     TextBox textBox31 = new TextBox();
@@ -1013,9 +1090,23 @@ namespace _3_GUI
 
         private void Btn_TachHoaDon_Click(object sender, EventArgs e)
         {
-            FrmTachHoaDon frmTachHoaDon = new FrmTachHoaDon(this);
-            frmTachHoaDon.getformMain(frm);
-            frmTachHoaDon.ShowDialog();
+            if (_IdBan==0 && _IdHoaDon==0)
+            {
+                MessageBox.Show("Bạn chưa chọn bàn nào");
+                return;
+            }
+            if (_IdBan!=0 && _IdHoaDon==0)
+            {
+                FrmTachHoaDon frmTachHoaDon = new FrmTachHoaDon(this);
+                frmTachHoaDon.getformMain(frm);
+                frmTachHoaDon.ShowDialog();
+            }
+            else if (_IdBan == 0 && _IdHoaDon != 0)
+            {
+                MessageBox.Show("Không thể tách hóa đơn mang về");
+                return;
+            }
+           
         }
         public void getNhanVien(NhanVien nv)
         {
@@ -1083,6 +1174,11 @@ namespace _3_GUI
                 MessageBox.Show("Không được nhập chữ", "Thông báo");
                 return;
             }
+        }
+
+        private void Dgid_HoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

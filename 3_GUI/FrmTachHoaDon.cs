@@ -75,7 +75,8 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Xóa";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            img.HeaderText = "Tách";
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgrid_HDCu.ColumnCount = 5;
@@ -359,7 +360,7 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Xóa";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgrid_HDMoi.ColumnCount = 5;
@@ -564,19 +565,7 @@ namespace _3_GUI
         }
         private void FrmTachHoaDon_FormClosed(object sender, FormClosedEventArgs e)
         {
-            HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
-            if (hoaDon!=null)
-            {
-                if (hoaDon.Status == true)
-                {
-                    MessageBox.Show("Bạn phải thanh toán hóa Đơn này trước khi thoát", "Thông báo");
-                    return;
-                    this.Show();
-                }
-            }
-            _FrmQLBan.Close();
-            _FrmMain.other = 0;
-            _FrmMain.OpenChildForm(new FrmQLBan(_FrmMain), sender);
+            
 
         }      
 
@@ -672,6 +661,23 @@ namespace _3_GUI
                 MessageBox.Show("Không được nhập chữ","Thông báo");
                 return;
             }
+        }
+
+        private void FrmTachHoaDon_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
+            if (hoaDon != null)
+            {
+                if (hoaDon.Status == true)
+                {
+                    MessageBox.Show("Bạn phải thanh toán hóa Đơn này trước khi thoát", "Thông báo");                                      
+                    e.Cancel=true;
+                    return;
+                }
+            }
+            _FrmQLBan.Close();
+            _FrmMain.other = 0;
+            _FrmMain.OpenChildForm(new FrmQLBan(_FrmMain), sender);
         }
     }
 }
