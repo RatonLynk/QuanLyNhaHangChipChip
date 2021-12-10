@@ -195,7 +195,7 @@ namespace _3_GUI
                     this.Close();
                     //LoadTableT1();
                     //frmQLBan.Show();
-
+                    //ok
                 }
                 else if (banAn.TinhTrang == 0)
                 {
