@@ -91,15 +91,15 @@ namespace _3_GUI
             if (txt_TenNV.Text.Any(char.IsDigit))
             {
                 MessageBox.Show("Tên không được nhập số","Thông báo");
-                return true;
+                return false;
             } else if (txt_SDT.Text.Any(char.IsLetter))
             {
                 MessageBox.Show("SĐT không để chữ","Thông báo");
-                return true;
+                return false;
             } else if(txt_SDT.Text.Length < 10 || txt_SDT.Text.Length > 11)
             {
                 MessageBox.Show("SĐT không đúng độ dài", "Thông báo");
-                return true;
+                return false;
             } else if (!mat.Success)
             {
                 MessageBox.Show("Email không đúng dạng","Thông báo");

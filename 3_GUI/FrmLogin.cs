@@ -224,13 +224,15 @@ namespace _3_GUI
 
         private void linkLabel1_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(txtPassWord, "Mật khẩu mặc định là 123");
+            toolTip1.SetToolTip(linkLabel1, "Mật khẩu mặc định là 123");
         }
 
         private void chkSaveLogin_CheckedChanged(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 
 }

@@ -74,8 +74,8 @@ namespace _3_GUI
 
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-            img.Name = "xoa";
-            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
+            img.Name = "Xóa";
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgrid_HDCu.ColumnCount = 5;
@@ -125,7 +125,7 @@ namespace _3_GUI
             var columns = e.ColumnIndex;
             if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count) || rowIndex == -1) return;
             _idHDCT =Convert.ToInt32(Dgrid_HDCu.Rows[rowIndex].Cells[4].Value.ToString());
-            if (e.ColumnIndex == Dgrid_HDCu.Columns["xoa"].Index)
+            if (e.ColumnIndex == Dgrid_HDCu.Columns["Xóa"].Index)
             {
                 _f = new Form();
                 TextBox textBox = new TextBox();
@@ -358,8 +358,8 @@ namespace _3_GUI
 
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-            img.Name = "xoa";
-            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
+            img.Name = "Xóa";
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgrid_HDMoi.ColumnCount = 5;
@@ -386,7 +386,7 @@ namespace _3_GUI
             var columns = e.ColumnIndex;
             if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count) || rowIndex == -1) return;
             _idHDCT = Convert.ToInt32(Dgrid_HDCu.Rows[rowIndex].Cells[4].Value.ToString());
-            if (e.ColumnIndex == Dgrid_HDMoi.Columns["xoa"].Index)
+            if (e.ColumnIndex == Dgrid_HDMoi.Columns["Xóa"].Index)
             {
                 _f = new Form();
                 TextBox textBox = new TextBox();

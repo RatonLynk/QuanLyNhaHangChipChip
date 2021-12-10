@@ -35,6 +35,7 @@
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chkSaveLogin = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkQMK = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.bntMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.chkSaveLogin = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -135,6 +135,18 @@
             this.panel2.Size = new System.Drawing.Size(422, 371);
             this.panel2.TabIndex = 10;
             // 
+            // chkSaveLogin
+            // 
+            this.chkSaveLogin.AutoSize = true;
+            this.chkSaveLogin.ForeColor = System.Drawing.Color.White;
+            this.chkSaveLogin.Location = new System.Drawing.Point(70, 233);
+            this.chkSaveLogin.Name = "chkSaveLogin";
+            this.chkSaveLogin.Size = new System.Drawing.Size(134, 24);
+            this.chkSaveLogin.TabIndex = 11;
+            this.chkSaveLogin.Text = "Nhớ Tài Khoản?";
+            this.chkSaveLogin.UseVisualStyleBackColor = true;
+            this.chkSaveLogin.CheckedChanged += new System.EventHandler(this.chkSaveLogin_CheckedChanged);
+            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -146,6 +158,7 @@
             this.linkLabel1.TabIndex = 10;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "?";
+          
             this.linkLabel1.MouseHover += new System.EventHandler(this.linkLabel1_MouseHover);
             // 
             // linkQMK
@@ -232,18 +245,6 @@
             this.btnClose.TabIndex = 13;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // chkSaveLogin
-            // 
-            this.chkSaveLogin.AutoSize = true;
-            this.chkSaveLogin.ForeColor = System.Drawing.Color.White;
-            this.chkSaveLogin.Location = new System.Drawing.Point(70, 233);
-            this.chkSaveLogin.Name = "chkSaveLogin";
-            this.chkSaveLogin.Size = new System.Drawing.Size(134, 24);
-            this.chkSaveLogin.TabIndex = 11;
-            this.chkSaveLogin.Text = "Nhớ Tài Khoản?";
-            this.chkSaveLogin.UseVisualStyleBackColor = true;
-            this.chkSaveLogin.CheckedChanged += new System.EventHandler(this.chkSaveLogin_CheckedChanged);
             // 
             // FrmLogin
             // 

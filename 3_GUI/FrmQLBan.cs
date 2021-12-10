@@ -113,7 +113,7 @@ namespace _3_GUI
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
-            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 4;
@@ -140,7 +140,7 @@ namespace _3_GUI
             foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
-                //Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\caiBan.png");                
+                //Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\caiBan.png");                
                 //btn.Image= b;
                 btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
                 btn.Click += Btn_Click;
@@ -293,7 +293,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
-            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -509,6 +509,7 @@ namespace _3_GUI
             _f.Controls[0].Top = 10;
             _f.Controls[1].Top = 90;
             _f.Size = new Size(400, 180);
+            button123.Size = new Size(50, 50);
             button123.Click += Button123_Click;
             _f.ShowDialog();
 
@@ -570,11 +571,13 @@ namespace _3_GUI
 
                 _f = new Form();
                 TextBox textBox = new TextBox();
-                textBox.Width = 250;
+                textBox.Width = 200;
+                        
                 Button button12 = new Button();
                 Label label = new Label();
                 label.Text = "Lý do:";
                 button12.Text = "Hủy";
+              
                 _f.Controls.Add(textBox);
                 _f.Controls.Add(button12);
                 _f.Controls.Add(label);
@@ -584,7 +587,8 @@ namespace _3_GUI
                 _f.Controls[1].Left = 150;
                 _f.Controls[0].Top = 10;
                 _f.Controls[1].Top = 50;
-                _f.Size = new Size(400, 120);
+                _f.Size = new Size(400, 200);
+                button12.Size = new Size(50,50);
                 button12.Click += Button12_Click;
                 _f.ShowDialog();
 
@@ -831,16 +835,16 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
             Dgid_HoaDon.Columns[0].Name = "Tên món";
             Dgid_HoaDon.Columns[1].Name = "Số lượng";
-            Dgid_HoaDon.Columns[2].Name = "Đơn giá";
-            
+            Dgid_HoaDon.Columns[2].Name = "Đơn giá";         
+            Dgid_HoaDon.Columns[2].DefaultCellStyle.Format = "#,0.# VNÐ";
             Dgid_HoaDon.Columns[3].Name = "thành tiền";
-            
+            Dgid_HoaDon.Columns[3].DefaultCellStyle.Format = "#,0.# VNÐ";
             Dgid_HoaDon.Columns[4].Name = "Id";
             Dgid_HoaDon.Columns[4].Visible = false;
             Dgid_HoaDon.Columns.Add(img);
@@ -857,36 +861,43 @@ namespace _3_GUI
                     decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault()) + " VNĐ",
                     decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong) + " VNĐ", x.IDHDCT);
             }
-            Dgid_HoaDon.Columns[3].DefaultCellStyle.Format = "#,0.# VNÐ";
-            Dgid_HoaDon.Columns[2].DefaultCellStyle.Format = "#,0.# VNÐ";
+            
         }
         private void Dgid_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int rowIndex = e.RowIndex;
-            var columns = e.ColumnIndex;
-            if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count - 1) || rowIndex == -1) return;
-            _IdHdCt = Convert.ToInt32(Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString());
-            if (e.ColumnIndex == Dgid_HoaDon.Columns["Xóa"].Index)
+            try
             {
-                _f = new Form();
-                TextBox textBox31 = new TextBox();
-                textBox31.Width = 150;
-                Button Btn_XoaMon = new Button();
-                Label label = new Label();
-                label.Text = "Số Lượng:";
-                Btn_XoaMon.Text = "Xác Nhận";
-                _f.Controls.Add(textBox31);
-                _f.Controls.Add(Btn_XoaMon);
-                _f.Controls.Add(label);
-                _f.Controls[2].Left = 10;
-                _f.Controls[2].Top = 13;
-                _f.Controls[0].Left = 80;
-                _f.Controls[1].Left = 100;
-                _f.Controls[0].Top = 10;
-                _f.Controls[1].Top = 50;
-                _f.Size = new Size(300, 120);
-                Btn_XoaMon.Click += Btn_XoaMon_Click;
-                _f.ShowDialog();
+                int rowIndex = e.RowIndex;
+                var columns = e.ColumnIndex;
+                if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count - 1) || rowIndex == -1) return;
+                _IdHdCt = Convert.ToInt32(Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString());
+                if (e.ColumnIndex == Dgid_HoaDon.Columns["Xóa"].Index)
+                {
+                    _f = new Form();
+                    TextBox textBox31 = new TextBox();
+                    textBox31.Width = 150;
+                    Button Btn_XoaMon = new Button();
+                    Label label = new Label();
+                    label.Text = "Số Lượng:";
+                    Btn_XoaMon.Text = "Xác Nhận";
+                    _f.Controls.Add(textBox31);
+                    _f.Controls.Add(Btn_XoaMon);
+                    _f.Controls.Add(label);
+                    _f.Controls[2].Left = 10;
+                    _f.Controls[2].Top = 13;
+                    _f.Controls[0].Left = 80;
+                    _f.Controls[1].Left = 100;
+                    _f.Controls[0].Top = 10;
+                    _f.Controls[1].Top = 50;
+                    _f.Size = new Size(300, 120);
+                    Btn_XoaMon.Click += Btn_XoaMon_Click;
+                    _f.ShowDialog();
+                }
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show(a.Message);
+                
             }
         }
 
@@ -1041,7 +1052,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -1075,7 +1086,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
