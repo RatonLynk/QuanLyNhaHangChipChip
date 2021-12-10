@@ -36,6 +36,11 @@ namespace _3_GUI
       
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+
+            if(Properties.Settings.Default.userName != null)
+            {
+                txtUsername.Text = Properties.Settings.Default.userName;
+            }
            
             txtUsername.Text = "User Name";
             txtUsername.ForeColor = Color.Gray;
@@ -179,6 +184,11 @@ namespace _3_GUI
                 FrmDoiMatKhau.passcu = txtPassWord.Text;
                 FrmQLBan.mail= txtUsername.Text;
                 FrmTachHoaDon._EmailTachHD = txtUsername.Text;
+                if (chkSaveLogin.Checked)
+                {
+                    Properties.Settings.Default.userName = txtUsername.Text;
+                    Properties.Settings.Default.Save();
+                }
                 this.Hide();
                 frmMain.ShowDialog();
                 this.Close();
@@ -215,6 +225,11 @@ namespace _3_GUI
         private void linkLabel1_MouseHover(object sender, EventArgs e)
         {
             toolTip1.SetToolTip(txtPassWord, "Mật khẩu mặc định là 123");
+        }
+
+        private void chkSaveLogin_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 
