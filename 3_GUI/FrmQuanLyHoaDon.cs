@@ -56,7 +56,7 @@ namespace _3_GUI
             }//s
             Lbl_DaHuy.Text = _huy.ToString();
             Lbl_DaThanhToan.Text = _dathanhtoan.ToString();
-            Lbl_DoanhThu.Text = _doangthu.ToString() + ",000 VND";
+            Lbl_DoanhThu.Text = _doangthu.ToString() + " VNĐ";
         }
         void LoadHoaDon()
         {
@@ -96,7 +96,7 @@ namespace _3_GUI
             Dgid_HoaDon.Columns[7].Visible = false;
 
             Dgid_HoaDon.Rows.Clear();
-            foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => (c.hoaDon.DateCheckIn >= date1 && c.hoaDon.DateCheckIn <= date2)))
+            foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => (c.hoaDon.DateCheckIn >= date1.AddDays(-1) && c.hoaDon.DateCheckIn <= date2)))
             {
                 Dgid_HoaDon.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Idtable == x.banAn.Id).Select(c => c.banAn.Name).FirstOrDefault(), decimal.Truncate(x.hoaDon.TotalMoney)+",000 VND",
                      x.hoaDon.DateCheckIn, x.hoaDon.DateCheckOut, x.hoaDon.GhiChu != null ? "Đã huỷ" : Convert.ToInt32(x.hoaDon.Status) == 0 ? "đã thanh toán" : Convert.ToInt32(x.hoaDon.Status) == 1 ? "chưa thanh toán" : ""

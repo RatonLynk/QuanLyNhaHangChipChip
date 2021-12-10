@@ -129,12 +129,12 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(376, 101);
+            this.label10.Location = new System.Drawing.Point(373, 101);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 20);
+            this.label10.Size = new System.Drawing.Size(49, 20);
             this.label10.TabIndex = 22;
-            this.label10.Text = "VNĐ";
+            this.label10.Text = " VNĐ";
             // 
             // label14
             // 

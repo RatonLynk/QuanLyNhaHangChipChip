@@ -103,6 +103,7 @@ namespace _3_GUI
             this.Dgid_HoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgid_HoaDon.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Dgid_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgid_HoaDon.GridColor = System.Drawing.Color.Black;
             this.Dgid_HoaDon.Location = new System.Drawing.Point(5, 23);
             this.Dgid_HoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.Dgid_HoaDon.Name = "Dgid_HoaDon";
@@ -283,6 +284,7 @@ namespace _3_GUI
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(431, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 17);
@@ -340,7 +342,7 @@ namespace _3_GUI
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(96, 73);
+            this.textBox4.Location = new System.Drawing.Point(112, 74);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(229, 25);
@@ -398,7 +400,7 @@ namespace _3_GUI
             // 
             // Txt_TienKhachDua
             // 
-            this.Txt_TienKhachDua.Location = new System.Drawing.Point(96, 22);
+            this.Txt_TienKhachDua.Location = new System.Drawing.Point(112, 22);
             this.Txt_TienKhachDua.Margin = new System.Windows.Forms.Padding(2);
             this.Txt_TienKhachDua.Name = "Txt_TienKhachDua";
             this.Txt_TienKhachDua.Size = new System.Drawing.Size(229, 25);
