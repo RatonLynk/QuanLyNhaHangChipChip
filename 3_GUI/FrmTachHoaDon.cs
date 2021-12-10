@@ -11,7 +11,6 @@ using _2_BUS.BUSServices;
 using _2_BUS.iBUSServices;
 using _1_DAL.Models;
 using _2_BUS.Models;
-using System.Drawing;
 using _3_GUI.Properties;
 using System.Drawing.Printing;
 using iTextSharp.text.pdf;
@@ -50,7 +49,7 @@ namespace _3_GUI
             _FrmQLBan = frm;
             Lbl_Tien.Visible = false;
             HoaDon hoa = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c=>c.Idtable==_IdBanTachHD && c.Status==true && c.DichVu==1);
-            Lbl_TienCu.Text =decimal.Truncate(hoa.TotalMoney).ToString() + ",000 VND";
+            Lbl_TienCu.Text =decimal.Truncate(hoa.TotalMoney).ToString() + "VNĐ";
         }
         public void getformMain(FrmMain frm)
         {
@@ -76,7 +75,7 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
-            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgrid_HDCu.ColumnCount = 5;
@@ -253,8 +252,8 @@ namespace _3_GUI
                 
             }
             Lbl_Tien.Visible = true;
-            Lbl_TienCu.Text = decimal.Truncate(_hoaDon.TotalMoney).ToString() + ",000 VND";
-            Lbl_Tien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney).ToString() +",000 VND";
+            Lbl_TienCu.Text = decimal.Truncate(_hoaDon.TotalMoney).ToString() + "VNĐ";
+            Lbl_Tien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney).ToString() +"VNĐ";
             LoadHDCu(_IdBanTachHD);
             LoadHDMoi();            
             _f.Close();
@@ -323,8 +322,8 @@ namespace _3_GUI
                 hoaDon.Status = false;
                 hoaDon.DateCheckOut = DateTime.Now;
                 _qlHoaDon.UpdateHoaDon(hoaDon);
-                label3.Text =decimal.Truncate(hoaDon.TotalMoney).ToString() + ",000 VND";
-                label15.Text =decimal.Truncate((Convert.ToInt32(Txt_Tien.Text) - hoaDon.TotalMoney)).ToString() + ",000 VND";
+                label3.Text =decimal.Truncate(hoaDon.TotalMoney).ToString() + "VNĐ";
+                label15.Text =decimal.Truncate((Convert.ToInt32(Txt_Tien.Text) - hoaDon.TotalMoney)).ToString() + "VNĐ";
                 _f.ShowDialog();
             }
             
@@ -360,7 +359,7 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
-            Bitmap b = new Bitmap(@"C:\Users\XAPE\Desktop\TestGit-master\RestaurantApp\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgrid_HDMoi.ColumnCount = 5;
@@ -451,7 +450,7 @@ namespace _3_GUI
             LoadHDCu(_IdBanTachHD);
             LoadHDMoi();
             Lbl_Tien.Visible = true;
-            Lbl_Tien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney.ToString()+",000 VND";
+            Lbl_Tien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney.ToString()+"VNĐ";
         }
         private void CreateReceipt1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -643,8 +642,8 @@ namespace _3_GUI
                 hoaDon.Status = false;
                 hoaDon.DateCheckOut = DateTime.Now;
                 _qlHoaDon.UpdateHoaDon(hoaDon);
-                label3.Text =decimal.Truncate(hoaDon.TotalMoney).ToString() + ",000 VND";
-                label15.Text =decimal.Truncate((Convert.ToInt32(Txt_Tien.Text) - hoaDon.TotalMoney)).ToString() + ",000 VND";
+                label3.Text =decimal.Truncate(hoaDon.TotalMoney).ToString() + "VNĐ";
+                label15.Text =decimal.Truncate((Convert.ToInt32(Txt_Tien.Text) - hoaDon.TotalMoney)).ToString() + "VNĐ";
                 BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c=>c.Id==_IdBanTachHD);
                 banAn.TinhTrang = 1;
                 _qlBanAn.UpdateBanAn(banAn);

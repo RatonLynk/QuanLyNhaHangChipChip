@@ -11,7 +11,6 @@ using _2_BUS.BUSServices;
 using _2_BUS.iBUSServices;
 using _1_DAL.Models;
 using _2_BUS.Models;
-using System.Drawing;
 using _3_GUI.Properties;
 using System.Drawing.Printing;
 using iTextSharp.text.pdf;
@@ -113,8 +112,8 @@ namespace _3_GUI
         void LoadHoaDonMangVe(int hoadon)
         {
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-            img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            img.Name = "Thêm";
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 4;
@@ -127,8 +126,8 @@ namespace _3_GUI
             foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Id == hoadon && c.hoaDon.Status == true))
             {
                 Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Name).FirstOrDefault(), x.hoaDonChiTiet.Count,
-                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault()) + ".000 VND",
-                    decimal.Truncate(x.hoaDonChiTiet.Count * _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault()) + ".000 VND");
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault()) + " VNĐ",
+                    decimal.Truncate(x.hoaDonChiTiet.Count * _qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault()) + " VNĐ");
             }
         }
 
@@ -141,7 +140,7 @@ namespace _3_GUI
             foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
-                //Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\caiBan.png");                
+                //Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\caiBan.png");                
                 //btn.Image= b;
                 btn.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
                 btn.Click += Btn_Click;
@@ -180,7 +179,7 @@ namespace _3_GUI
             }
             else
             {
-                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + ".000 VND";
+                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + " VNĐ";
                 Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).DateCheckIn.ToString();
             }
 
@@ -229,7 +228,7 @@ namespace _3_GUI
             }
             else
             {
-                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + ".000 VND";
+                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + " VNĐ";
                 Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).DateCheckIn.ToString();
             }
         }
@@ -293,8 +292,8 @@ namespace _3_GUI
             cmb.Name = "combobox";
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-            img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            img.Name = "Thêm";
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -305,9 +304,9 @@ namespace _3_GUI
             Dgid_Meniu.Rows.Clear();
             foreach (var x in _qlMeniu.GetViewMenus())
             {
-                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + ".000 VND");
+                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + " VNĐ");
             }
-
+            Dgid_Meniu.Columns[1].DefaultCellStyle.Format = "#,0.# VNÐ";
         }
 
         private void Dgid_Meniu_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -316,7 +315,7 @@ namespace _3_GUI
             var columns = e.ColumnIndex;
             if ((rowIndex == _qlMeniu.GetMonAnChiTiets().Count) || rowIndex == -1) return;
             _idFood = _qlMeniu.GetMonAnChiTiets().Where(c => c.Name == Dgid_Meniu.Rows[rowIndex].Cells[0].Value.ToString()).Select(c => c.Id).FirstOrDefault();
-            if (e.ColumnIndex == Dgid_Meniu.Columns["nut"].Index)
+            if (e.ColumnIndex == Dgid_Meniu.Columns["Thêm"].Index)
             {
                 _f = new Form();
                 TextBox textBox = new TextBox();
@@ -404,7 +403,7 @@ namespace _3_GUI
                     LoadTableT1();
                     LoadTableT2();
                     _f.Close();
-                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + ".000 VND";
+                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + " VNĐ";
 
 
                 }//ád
@@ -426,7 +425,7 @@ namespace _3_GUI
                         LoadTableT1();
                         LoadTableT2();
                         _f.Close();
-                        Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + ".000 VND";
+                        Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString() + " VNĐ";
                     }
                 }
                 Lbl_GioVao.Text = _hoadon.DateCheckIn.ToString();
@@ -452,7 +451,7 @@ namespace _3_GUI
                     LoadHoaDonMangVe(_hoadon.Id);
                     _f.Close();
                     Lbl_GioVao.Text = _hoadon.DateCheckIn.ToString();
-                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon).TotalMoney).ToString() + ".000 VND";
+                    Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon).TotalMoney).ToString() + " VNĐ";
 
 
                 }//ád
@@ -470,7 +469,7 @@ namespace _3_GUI
                         _qlHoaDon.UpdateHoaDon(_hoadon);
                         LoadHoaDonMangVe(_hoadon.Id);
                         _f.Close();
-                        Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + ".000 VND";
+                        Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true).TotalMoney).ToString() + " VNĐ";
                     }
                 }
             }
@@ -661,15 +660,15 @@ namespace _3_GUI
             offset = offset + 20; //make some room so that the total stands out.
 
             graphic.DrawString("TỔNG TIỀN ", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
-            graphic.DrawString(decimal.Truncate(_hoadon.TotalMoney).ToString() + ".000 VND", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX + 250, startY + offset);
+            graphic.DrawString(decimal.Truncate(_hoadon.TotalMoney).ToString() + " VNĐ", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
             graphic.DrawString("TIỀN KHÁCH ĐƯA ", font, new SolidBrush(Color.Black), startX, startY + offset);
-            graphic.DrawString(Txt_TienKhachDua.Text + ".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            graphic.DrawString(Txt_TienKhachDua.Text + " VNĐ", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
             graphic.DrawString("TIỀN TRẢ KHÁCH ", font, new SolidBrush(Color.Black), startX, startY + offset);
-            graphic.DrawString((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_hoadon.TotalMoney)).ToString() + ".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            graphic.DrawString((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_hoadon.TotalMoney)).ToString() + " VNĐ", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
 
             offset = offset + (int)FontHeight + 5; //make the spacing consistent              
             graphic.DrawString("              Xin chân thành cảm ơn quý khách!", font, new SolidBrush(Color.Black), startX + 10, startY + offset);
@@ -762,8 +761,8 @@ namespace _3_GUI
                     _hoadon.DateCheckOut = DateTime.Now;
                     _qlHoaDon.UpdateHoaDon(_hoadon);
                     label1.Text = "Mang về";
-                    label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + ".000 VND";
-                    label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()).ToString("#,##0") + ".000 VND";
+                    label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + " VNĐ";
+                    label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney)).ToString()).ToString("#,##0") + " VNĐ";
                     LoadMangVe();
                     LoadHoaDonMangVe(_hoadon.Id);
                     _f.ShowDialog();
@@ -795,8 +794,8 @@ namespace _3_GUI
                     BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
                     banAn.TinhTrang = 1;
                     label1.Text = "Bàn " + _hoadon.Idtable.ToString();
-                    label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + ".000 VND";
-                    label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney))).ToString("#,##0") + ".000 VND";
+                    label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + " VNĐ";
+                    label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney))).ToString("#,##0") + " VNĐ";
                     _qlBanAn.UpdateBanAn(banAn);
                     LoadHoaDon(banAn.Id);
                     LoadTableT1();
@@ -831,15 +830,17 @@ namespace _3_GUI
 
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-            img.Name = "xoa";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            img.Name = "Xóa";
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
             Dgid_HoaDon.Columns[0].Name = "Tên món";
             Dgid_HoaDon.Columns[1].Name = "Số lượng";
             Dgid_HoaDon.Columns[2].Name = "Đơn giá";
+            
             Dgid_HoaDon.Columns[3].Name = "thành tiền";
+            
             Dgid_HoaDon.Columns[4].Name = "Id";
             Dgid_HoaDon.Columns[4].Visible = false;
             Dgid_HoaDon.Columns.Add(img);
@@ -853,18 +854,19 @@ namespace _3_GUI
             foreach (var x in abc)
             {
                 Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Name).FirstOrDefault(), x.SoLuong,
-                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault()) + ".000 VND",
-                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong) + ".000 VND", x.IDHDCT);
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault()) + " VNĐ",
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong) + " VNĐ", x.IDHDCT);
             }
-
+            Dgid_HoaDon.Columns[3].DefaultCellStyle.Format = "#,0.# VNÐ";
+            Dgid_HoaDon.Columns[2].DefaultCellStyle.Format = "#,0.# VNÐ";
         }
         private void Dgid_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
             var columns = e.ColumnIndex;
-            if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count) || rowIndex == -1) return;
+            if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count - 1) || rowIndex == -1) return;
             _IdHdCt = Convert.ToInt32(Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString());
-            if (e.ColumnIndex == Dgid_HoaDon.Columns["xoa"].Index)
+            if (e.ColumnIndex == Dgid_HoaDon.Columns["Xóa"].Index)
             {
                 _f = new Form();
                 TextBox textBox31 = new TextBox();
@@ -918,7 +920,7 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDon(_IdBan);
-                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString();
+                Lbl_TongTien.Text = string.Format("{#,0.#}", decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString());
                 _f.Close();
             }
             else if (_IdBan == 0 && _IdHoaDon != 0)
@@ -939,7 +941,7 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDonMangVe(_hoadon.Id);
-                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString();
+                Lbl_TongTien.Text = string.Format("#,0.#",decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString());
                 _f.Close();
             }
             //s
@@ -1038,8 +1040,8 @@ namespace _3_GUI
             cmb.Name = "combobox";
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-            img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            img.Name = "Thêm";
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -1050,7 +1052,7 @@ namespace _3_GUI
             Dgid_Meniu.Rows.Clear();
             foreach (var x in _qlMeniu.GetViewMenus().Where(c => c.details.Idcategory == id))
             {
-                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + ".000 VND");
+                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + " VNĐ");
             }
 
         }
@@ -1072,8 +1074,8 @@ namespace _3_GUI
             cmb.Name = "combobox";
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
-            img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            img.Name = "Thêm";
+            Bitmap b = new Bitmap(@"E:\College\College_ProjNo.1\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -1084,7 +1086,7 @@ namespace _3_GUI
             Dgid_Meniu.Rows.Clear();
             foreach (var x in _qlMeniu.GetViewMenus().Where(c => c.details.Name.ToLower().StartsWith(name)))
             {
-                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + ".000 VND");
+                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + " VNĐ");
             }
 
         }

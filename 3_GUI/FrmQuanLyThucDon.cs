@@ -50,7 +50,7 @@ namespace _3_GUI
             {
                 dgvMonAn.Rows.Add(x.details.Id,x.details.Name, decimal.Truncate(x.details.Price), x.cat.Name, x.method.Name, x.unit.Name, x.details.Status == 1 ? "Đang bán" : "Dừng bán");
             }
-
+            dgvMonAn.Columns[2].DefaultCellStyle.Format = "#,0.# VND";
             LoadCBox();
         }
 

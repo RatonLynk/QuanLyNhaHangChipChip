@@ -44,6 +44,7 @@ namespace _3_GUI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.Txt_Seach = new System.Windows.Forms.TextBox();
             this.Dgid_Meniu = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -66,7 +67,6 @@ namespace _3_GUI
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn_MangVe = new System.Windows.Forms.Button();
             this.FlPanl_MangVe = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -103,6 +103,7 @@ namespace _3_GUI
             this.Dgid_HoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dgid_HoaDon.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.Dgid_HoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgid_HoaDon.GridColor = System.Drawing.Color.Black;
             this.Dgid_HoaDon.Location = new System.Drawing.Point(5, 23);
             this.Dgid_HoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.Dgid_HoaDon.Name = "Dgid_HoaDon";
@@ -280,6 +281,16 @@ namespace _3_GUI
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Menu";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(431, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Tìm kiếm :";
+            // 
             // Txt_Seach
             // 
             this.Txt_Seach.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -331,7 +342,7 @@ namespace _3_GUI
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(96, 73);
+            this.textBox4.Location = new System.Drawing.Point(112, 74);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(229, 25);
@@ -389,7 +400,7 @@ namespace _3_GUI
             // 
             // Txt_TienKhachDua
             // 
-            this.Txt_TienKhachDua.Location = new System.Drawing.Point(96, 22);
+            this.Txt_TienKhachDua.Location = new System.Drawing.Point(112, 22);
             this.Txt_TienKhachDua.Margin = new System.Windows.Forms.Padding(2);
             this.Txt_TienKhachDua.Name = "Txt_TienKhachDua";
             this.Txt_TienKhachDua.Size = new System.Drawing.Size(229, 25);
@@ -575,15 +586,6 @@ namespace _3_GUI
             this.FlPanl_MangVe.Name = "FlPanl_MangVe";
             this.FlPanl_MangVe.Size = new System.Drawing.Size(297, 383);
             this.FlPanl_MangVe.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(431, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Tìm kiếm :";
             // 
             // FrmQLBan
             // 
