@@ -177,6 +177,7 @@ namespace _3_GUI
             this.txtTimKiemCongthucCB.Location = new System.Drawing.Point(731, 261);
             this.txtTimKiemCongthucCB.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTimKiemCongthucCB.Name = "txtTimKiemCongthucCB";
+            this.txtTimKiemCongthucCB.PlaceholderText = "Mời bạn nhập tên đơn vị ";
             this.txtTimKiemCongthucCB.Size = new System.Drawing.Size(226, 30);
             this.txtTimKiemCongthucCB.TabIndex = 50;
             this.txtTimKiemCongthucCB.TextChanged += new System.EventHandler(this.txtTimKiemCongthucCB_TextChanged);

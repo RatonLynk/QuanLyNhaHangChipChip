@@ -104,7 +104,6 @@ namespace _3_GUI
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(230, 30);
             this.txtEmail.TabIndex = 36;
-            this.txtEmail.Text = " ";
             // 
             // txtMaNV
             // 
@@ -216,7 +215,6 @@ namespace _3_GUI
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(231, 23);
             this.txt_SDT.TabIndex = 111;
-            this.txt_SDT.Text = " ";
             // 
             // txt_DiaChiNV
             // 
@@ -228,7 +226,6 @@ namespace _3_GUI
             this.txt_DiaChiNV.Name = "txt_DiaChiNV";
             this.txt_DiaChiNV.Size = new System.Drawing.Size(231, 101);
             this.txt_DiaChiNV.TabIndex = 112;
-            this.txt_DiaChiNV.Text = " ";
             // 
             // txt_TenNV
             // 
@@ -240,7 +237,6 @@ namespace _3_GUI
             this.txt_TenNV.Name = "txt_TenNV";
             this.txt_TenNV.Size = new System.Drawing.Size(231, 30);
             this.txt_TenNV.TabIndex = 110;
-            this.txt_TenNV.Text = " ";
             // 
             // txt_Search
             // 
@@ -380,6 +376,7 @@ namespace _3_GUI
             // 
             // txtMatKhau
             // 
+            this.txtMatKhau.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtMatKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMatKhau.ForeColor = System.Drawing.Color.Black;
@@ -389,7 +386,7 @@ namespace _3_GUI
             this.txtMatKhau.ReadOnly = true;
             this.txtMatKhau.Size = new System.Drawing.Size(230, 30);
             this.txtMatKhau.TabIndex = 36;
-            this.txtMatKhau.Text = " ";
+           
             // 
             // label6
             // 

@@ -79,7 +79,6 @@
             this.txtTenMonAn.Name = "txtTenMonAn";
             this.txtTenMonAn.Size = new System.Drawing.Size(205, 30);
             this.txtTenMonAn.TabIndex = 5;
-            this.txtTenMonAn.Text = " ";
             // 
             // label8
             // 
@@ -269,6 +268,7 @@
             this.txt_TimKiemThucDon.Location = new System.Drawing.Point(898, 13);
             this.txt_TimKiemThucDon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_TimKiemThucDon.Name = "txt_TimKiemThucDon";
+            this.txt_TimKiemThucDon.PlaceholderText = "Mời nhập tên món ăn";
             this.txt_TimKiemThucDon.Size = new System.Drawing.Size(225, 30);
             this.txt_TimKiemThucDon.TabIndex = 0;
             this.txt_TimKiemThucDon.TextChanged += new System.EventHandler(this.txt_TimKiemThucDon_TextChanged);
@@ -296,7 +296,6 @@
             this.cbx_Meth.Name = "cbx_Meth";
             this.cbx_Meth.Size = new System.Drawing.Size(205, 31);
             this.cbx_Meth.TabIndex = 36;
-            this.cbx_Meth.Text = " ";
             this.cbx_Meth.DropDown += new System.EventHandler(this.cbx_Meth_DropDown);
             // 
             // label7
@@ -323,7 +322,6 @@
             this.cbx_Cat.Name = "cbx_Cat";
             this.cbx_Cat.Size = new System.Drawing.Size(205, 31);
             this.cbx_Cat.TabIndex = 36;
-            this.cbx_Cat.Text = " ";
             this.cbx_Cat.DropDown += new System.EventHandler(this.cbx_Cat_DropDown);
             // 
             // cbx_Unit
@@ -336,7 +334,6 @@
             this.cbx_Unit.Name = "cbx_Unit";
             this.cbx_Unit.Size = new System.Drawing.Size(205, 31);
             this.cbx_Unit.TabIndex = 36;
-            this.cbx_Unit.Text = " ";
             this.cbx_Unit.DropDown += new System.EventHandler(this.cbx_Unit_DropDown);
             // 
             // txt_Price
@@ -414,7 +411,6 @@
             this.txt_GC.Name = "txt_GC";
             this.txt_GC.Size = new System.Drawing.Size(259, 51);
             this.txt_GC.TabIndex = 67;
-            this.txt_GC.Text = " ";
             // 
             // panel1
             // 

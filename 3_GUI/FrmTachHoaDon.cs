@@ -13,6 +13,10 @@ using _1_DAL.Models;
 using _2_BUS.Models;
 using System.Drawing;
 using _3_GUI.Properties;
+using System.Drawing.Printing;
+using iTextSharp.text.pdf;
+using PdfSharp.Pdf;
+
 
 namespace _3_GUI
 {
@@ -264,6 +268,20 @@ namespace _3_GUI
                     MessageBox.Show("Tiền khách đưa chưa đủ", "Thông báo");
                     return;
                 }
+                if (MessageBox.Show("Bạn có muốn in hóa đơn không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    PrintDialog PrintDialog = new PrintDialog();
+                    PrintDocument PrintDocument = new PrintDocument();
+                    PrintDialog.Document = PrintDocument; //add the document to the dialog box
+
+                    PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt2); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                    DialogResult result = PrintDialog.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        PrintDocument.Print();
+
+                    }
+                }
                 _hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
                 _f = new Form();
                 Label label1 = new Label();
@@ -428,7 +446,116 @@ namespace _3_GUI
             Lbl_Tien.Visible = true;
             Lbl_Tien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney.ToString()+",000 VND";
         }
+        private void CreateReceipt1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            HoaDon hoa = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c=>c.Idtable==_IdBanTachHD && c.Status==true && c.DichVu==1);
+            Graphics graphic = e.Graphics;
+            Font font = new Font("Courier New", 12);
+            float FontHeight = font.GetHeight();
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+            graphic.DrawString("         Hóa đơn thanh toán", new Font("Courier New", 17), new SolidBrush(Color.Black), startX + 60, startY);
+            string top = "Tên Sản Phẩm".PadRight(20) + "Số lương".PadRight(20) + "Thành Tiền";
+            graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight; //make the spacing consistent
+            graphic.DrawString("-------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent
 
+            int index = 0;
+            for (int i = 0; i < Dgrid_HDCu.Rows.Count - 1; i++)
+            {
+                graphic.DrawString(Dgrid_HDCu.Rows[i].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+                graphic.DrawString(Dgrid_HDCu.Rows[i].Cells[1].Value.ToString(), font, new SolidBrush(Color.Black), startX + 230, startY + offset);
+                graphic.DrawString(Dgrid_HDCu.Rows[i].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 410, startY + offset);
+                offset = offset + (int)FontHeight + 5; //make the spacing consistent      
+            }
+            //foreach (var x in Dgid_HoaDon.Rows.ToString())
+            //{
+            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            //    offset = offset + (int)FontHeight + 5; //make the spacing consistent
+            //    index++;
+            //}
+
+            offset = offset + 20; //make some room so that the total stands out.
+
+            graphic.DrawString("TỔNG TIỀN ", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(decimal.Truncate(hoa.TotalMoney).ToString() + ".000 VND", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("TIỀN KHÁCH ĐƯA ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(Txt_Tien.Text + ".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("TIỀN TRẢ KHÁCH ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString((Convert.ToInt32(Txt_Tien.Text) - decimal.Truncate(hoa.TotalMoney)).ToString() + ".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("              Xin chân thành cảm ơn quý khách!", font, new SolidBrush(Color.Black), startX + 10, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent    
+            graphic.DrawString("-------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent
+            graphic.DrawString("                 HẸN GẶP LẠI!", font, new SolidBrush(Color.Black), startX + 110, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent                                
+            index = Dgrid_HDCu.RowCount;//dem so dong trong datagrid view
+
+        }
+        private void CreateReceipt2(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            HoaDon hoa = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id==_idHD);
+            Graphics graphic = e.Graphics;
+            Font font = new Font("Courier New", 12);
+            float FontHeight = font.GetHeight();
+            int startX = 10;
+            int startY = 10;
+            int offset = 40;
+            graphic.DrawString("         Hóa đơn thanh toán", new Font("Courier New", 17), new SolidBrush(Color.Black), startX + 60, startY);
+            string top = "Tên Sản Phẩm".PadRight(20) + "Số lương".PadRight(20) + "Thành Tiền";
+            graphic.DrawString(top, font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight; //make the spacing consistent
+            graphic.DrawString("-------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent
+
+            int index = 0;
+            for (int i = 0; i < Dgrid_HDMoi.Rows.Count - 1; i++)
+            {
+                graphic.DrawString(Dgrid_HDMoi.Rows[i].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+                graphic.DrawString(Dgrid_HDMoi.Rows[i].Cells[1].Value.ToString(), font, new SolidBrush(Color.Black), startX + 230, startY + offset);
+                graphic.DrawString(Dgrid_HDMoi.Rows[i].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 410, startY + offset);
+                offset = offset + (int)FontHeight + 5; //make the spacing consistent      
+            }
+            //foreach (var x in Dgid_HoaDon.Rows.ToString())
+            //{
+            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[0].Value.ToString(), font, new SolidBrush(Color.Black), startX, startY + offset);
+            //    graphic.DrawString(Dgid_HoaDon.Rows[index].Cells[3].Value.ToString(), font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+            //    offset = offset + (int)FontHeight + 5; //make the spacing consistent
+            //    index++;
+            //}
+
+            offset = offset + 20; //make some room so that the total stands out.
+
+            graphic.DrawString("TỔNG TIỀN ", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(decimal.Truncate(hoa.TotalMoney).ToString() + ".000 VND", new Font("Courier New", 12, FontStyle.Bold), new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("TIỀN KHÁCH ĐƯA ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString(Txt_Tien.Text + ".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("TIỀN TRẢ KHÁCH ", font, new SolidBrush(Color.Black), startX, startY + offset);
+            graphic.DrawString((Convert.ToInt32(Txt_Tien.Text) - decimal.Truncate(hoa.TotalMoney)).ToString() + ".000 VND", font, new SolidBrush(Color.Black), startX + 250, startY + offset);
+
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent              
+            graphic.DrawString("              Xin chân thành cảm ơn quý khách!", font, new SolidBrush(Color.Black), startX + 10, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent    
+            graphic.DrawString("-------------------------------------------------------------", font, new SolidBrush(Color.Black), startX, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent
+            graphic.DrawString("                 HẸN GẶP LẠI!", font, new SolidBrush(Color.Black), startX + 110, startY + offset);
+            offset = offset + (int)FontHeight + 5; //make the spacing consistent                                
+            index = Dgrid_HDMoi.RowCount;//dem so dong trong datagrid view
+
+        }
         private void FrmTachHoaDon_FormClosed(object sender, FormClosedEventArgs e)
         {
             HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
@@ -459,6 +586,20 @@ namespace _3_GUI
                 {
                     MessageBox.Show("Tiền khách đưa chưa đủ","Thông báo");
                     return;
+                }
+                if (MessageBox.Show("Bạn có muốn in hóa đơn không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    PrintDialog PrintDialog = new PrintDialog();
+                    PrintDocument PrintDocument = new PrintDocument();                    
+                    PrintDialog.Document = PrintDocument; //add the document to the dialog box
+
+                    PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt1); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                    DialogResult result = PrintDialog.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        PrintDocument.Print();
+
+                    }
                 }
                 _f = new Form();
                 Label label1 = new Label();
