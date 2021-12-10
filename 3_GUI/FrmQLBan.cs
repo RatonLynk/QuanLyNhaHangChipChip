@@ -948,7 +948,7 @@ namespace _3_GUI
                 {
                     _IdHdCt = Convert.ToInt32(Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString());
                 }                
-                if (e.ColumnIndex == Dgid_HoaDon.Columns["Xóa"].Index)
+                if (e.ColumnIndex == Dgid_HoaDon.Columns["xoa"].Index)
                 {
                     _f = new Form();
                     TextBox textBox31 = new TextBox();
