@@ -37,7 +37,9 @@ namespace _3_GUI
         HoaDon _hoaDon;
         HoaDonChiTiet _HDCT;
         List<BanAn> _lstBan;
-        public FrmTachHoaDon()
+        FrmMain _FrmMain;
+        FrmQLBan _FrmQLBan;
+        public FrmTachHoaDon(FrmQLBan frm)
         {
             InitializeComponent();
             _qlBanAn = new QLBanAnService();
@@ -45,9 +47,14 @@ namespace _3_GUI
             _qlNhanVien = new QLNhanVienService();
             _qlMeniu = new QLMenuService();
             LoadHDCu(_IdBanTachHD);
+            _FrmQLBan = frm;
             Lbl_Tien.Visible = false;
             HoaDon hoa = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c=>c.Idtable==_IdBanTachHD && c.Status==true && c.DichVu==1);
             Lbl_TienCu.Text =decimal.Truncate(hoa.TotalMoney).ToString() + ",000 VND";
+        }
+        public void getformMain(FrmMain frm)
+        {
+            _FrmMain = frm;
         }
         void LoadHDCu(int id)
         {
@@ -316,8 +323,8 @@ namespace _3_GUI
                 hoaDon.Status = false;
                 hoaDon.DateCheckOut = DateTime.Now;
                 _qlHoaDon.UpdateHoaDon(hoaDon);
-                label3.Text = hoaDon.TotalMoney.ToString() + ",000 VND";
-                label15.Text = (Convert.ToInt32(Txt_Tien.Text) - hoaDon.TotalMoney).ToString() + ",000 VND";
+                label3.Text =decimal.Truncate(hoaDon.TotalMoney).ToString() + ",000 VND";
+                label15.Text =decimal.Truncate((Convert.ToInt32(Txt_Tien.Text) - hoaDon.TotalMoney)).ToString() + ",000 VND";
                 _f.ShowDialog();
             }
             
@@ -326,9 +333,9 @@ namespace _3_GUI
         private void Button_Click2(object sender, EventArgs e)
         {
             LoadHDMoi();
-            FrmQLBan frmQLBan = new FrmQLBan();
-            frmQLBan.NhanlstHoaDon(_lstHoaDon);
-            frmQLBan.LoadHoaDon(_IdBanTachHD);            
+            //FrmQLBan frmQLBan = new FrmQLBan();
+            //frmQLBan.NhanlstHoaDon(_lstHoaDon);
+            //frmQLBan.LoadHoaDon(_IdBanTachHD);
             Lbl_Tien.Text = "0 VND";
             _f.Close();
 
@@ -568,8 +575,10 @@ namespace _3_GUI
                     this.Show();
                 }
             }
-            
-           
+            _FrmQLBan.Close();
+            _FrmMain.other = 0;
+            _FrmMain.OpenChildForm(new FrmQLBan(_FrmMain), sender);
+
         }      
 
         private void Btn_ThanhToan1_Click(object sender, EventArgs e)
@@ -645,16 +654,16 @@ namespace _3_GUI
 
         private void Button_Click3(object sender, EventArgs e)
         {
-            _lstBan = _qlBanAn.GetTablesFromDB();
-            FrmQLBan frmQLBan = new FrmQLBan();
-            frmQLBan.NhanList(_lstBan);
-            LoadHDCu(_IdBanTachHD);
-            frmQLBan.NhanlstHoaDon(_lstHoaDon);
-            frmQLBan.LoadHoaDon(_IdBanTachHD);
-            frmQLBan.LoadTableT1();
-            frmQLBan.LoadTableT2();
-            Lbl_TienCu.Text = "0 VND";
-            _f.Close();
+            //_lstBan = _qlBanAn.GetTablesFromDB();
+            //FrmQLBan frmQLBan = new FrmQLBan();
+            //frmQLBan.NhanList(_lstBan,0);
+            //LoadHDCu(_IdBanTachHD);
+            //frmQLBan.NhanlstHoaDon(_lstHoaDon);
+            //frmQLBan.LoadHoaDon(_IdBanTachHD);
+            //frmQLBan.LoadTableT1();
+            //frmQLBan.LoadTableT2();
+            //Lbl_TienCu.Text = "0 VND";
+            //_f.Close();
         }
 
         private void Txt_Tien_TextChanged(object sender, EventArgs e)
