@@ -69,6 +69,7 @@ namespace _3_GUI
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn_MangVe = new System.Windows.Forms.Button();
             this.FlPanl_MangVe = new System.Windows.Forms.FlowLayoutPanel();
+            this.Lbl_TienHien = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgid_HoaDon)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -104,7 +105,7 @@ namespace _3_GUI
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(5, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(192, 23);
+            this.label7.Size = new System.Drawing.Size(154, 19);
             this.label7.TabIndex = 30;
             this.label7.Text = "Danh sách món đã gọi :";
             // 
@@ -158,7 +159,7 @@ namespace _3_GUI
             this.Lbl_GioRa.Location = new System.Drawing.Point(123, 74);
             this.Lbl_GioRa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_GioRa.Name = "Lbl_GioRa";
-            this.Lbl_GioRa.Size = new System.Drawing.Size(163, 23);
+            this.Lbl_GioRa.Size = new System.Drawing.Size(141, 19);
             this.Lbl_GioRa.TabIndex = 29;
             this.Lbl_GioRa.Text = "00:00:00 00/00/2021";
             // 
@@ -171,7 +172,7 @@ namespace _3_GUI
             this.Lbl_GioVao.Location = new System.Drawing.Point(123, 48);
             this.Lbl_GioVao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_GioVao.Name = "Lbl_GioVao";
-            this.Lbl_GioVao.Size = new System.Drawing.Size(163, 23);
+            this.Lbl_GioVao.Size = new System.Drawing.Size(141, 19);
             this.Lbl_GioVao.TabIndex = 28;
             this.Lbl_GioVao.Text = "00:00:00 00/00/2021";
             // 
@@ -184,7 +185,7 @@ namespace _3_GUI
             this.Lbl_ViTriBan.Location = new System.Drawing.Point(195, 20);
             this.Lbl_ViTriBan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_ViTriBan.Name = "Lbl_ViTriBan";
-            this.Lbl_ViTriBan.Size = new System.Drawing.Size(39, 23);
+            this.Lbl_ViTriBan.Size = new System.Drawing.Size(32, 19);
             this.Lbl_ViTriBan.TabIndex = 27;
             this.Lbl_ViTriBan.Text = "Bàn";
             // 
@@ -251,7 +252,7 @@ namespace _3_GUI
             this.label3.Location = new System.Drawing.Point(30, 74);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 23);
+            this.label3.Size = new System.Drawing.Size(49, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "Giờ ra:";
             // 
@@ -264,7 +265,7 @@ namespace _3_GUI
             this.label2.Location = new System.Drawing.Point(30, 48);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 23);
+            this.label2.Size = new System.Drawing.Size(59, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Giờ vào:";
             // 
@@ -277,7 +278,7 @@ namespace _3_GUI
             this.label1.Location = new System.Drawing.Point(30, 20);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 23);
+            this.label1.Size = new System.Drawing.Size(68, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vị trí bàn:";
             // 
@@ -305,7 +306,7 @@ namespace _3_GUI
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(11, 12);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 23);
+            this.label8.Size = new System.Drawing.Size(48, 19);
             this.label8.TabIndex = 30;
             this.label8.Text = "Menu:";
             // 
@@ -316,7 +317,7 @@ namespace _3_GUI
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(422, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 23);
+            this.label5.Size = new System.Drawing.Size(71, 19);
             this.label5.TabIndex = 2;
             this.label5.Text = "Tìm kiếm :";
             // 
@@ -329,7 +330,7 @@ namespace _3_GUI
             this.Txt_Seach.Margin = new System.Windows.Forms.Padding(2);
             this.Txt_Seach.Name = "Txt_Seach";
             this.Txt_Seach.PlaceholderText = "Mời bạn nhập tên món ăn";
-            this.Txt_Seach.Size = new System.Drawing.Size(148, 25);
+            this.Txt_Seach.Size = new System.Drawing.Size(148, 21);
             this.Txt_Seach.TabIndex = 1;
             this.Txt_Seach.Text = " ";
             this.Txt_Seach.TextChanged += new System.EventHandler(this.Txt_Seach_TextChanged);
@@ -355,6 +356,7 @@ namespace _3_GUI
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.Lbl_TienHien);
             this.groupBox5.Controls.Add(this.textBox4);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.Btn_ThanhToan);
@@ -374,7 +376,7 @@ namespace _3_GUI
             this.textBox4.Location = new System.Drawing.Point(137, 75);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(229, 25);
+            this.textBox4.Size = new System.Drawing.Size(229, 21);
             this.textBox4.TabIndex = 7;
             // 
             // label6
@@ -385,7 +387,7 @@ namespace _3_GUI
             this.label6.Location = new System.Drawing.Point(39, 77);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 23);
+            this.label6.Size = new System.Drawing.Size(59, 19);
             this.label6.TabIndex = 6;
             this.label6.Text = "Phụ phí:";
             // 
@@ -412,10 +414,10 @@ namespace _3_GUI
             this.Lbl_TongTien.AutoSize = true;
             this.Lbl_TongTien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Lbl_TongTien.ForeColor = System.Drawing.Color.White;
-            this.Lbl_TongTien.Location = new System.Drawing.Point(137, 123);
+            this.Lbl_TongTien.Location = new System.Drawing.Point(137, 129);
             this.Lbl_TongTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_TongTien.Name = "Lbl_TongTien";
-            this.Lbl_TongTien.Size = new System.Drawing.Size(87, 23);
+            this.Lbl_TongTien.Size = new System.Drawing.Size(70, 19);
             this.Lbl_TongTien.TabIndex = 4;
             this.Lbl_TongTien.Text = "Tổng tiền:";
             // 
@@ -427,7 +429,7 @@ namespace _3_GUI
             this.label4.Location = new System.Drawing.Point(3, 25);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 23);
+            this.label4.Size = new System.Drawing.Size(104, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tiền khách đưa:";
             // 
@@ -436,7 +438,7 @@ namespace _3_GUI
             this.Txt_TienKhachDua.Location = new System.Drawing.Point(137, 22);
             this.Txt_TienKhachDua.Margin = new System.Windows.Forms.Padding(2);
             this.Txt_TienKhachDua.Name = "Txt_TienKhachDua";
-            this.Txt_TienKhachDua.Size = new System.Drawing.Size(229, 25);
+            this.Txt_TienKhachDua.Size = new System.Drawing.Size(229, 21);
             this.Txt_TienKhachDua.TabIndex = 2;
             this.Txt_TienKhachDua.TextChanged += new System.EventHandler(this.Txt_TienKhachDua_TextChanged);
             // 
@@ -458,11 +460,11 @@ namespace _3_GUI
             this.Tp_Tang1.Controls.Add(this.FLPenal);
             this.Tp_Tang1.Controls.Add(this.Btn_ThemBanT1);
             this.Tp_Tang1.Controls.Add(this.Btn_XoaBanT1);
-            this.Tp_Tang1.Location = new System.Drawing.Point(4, 26);
+            this.Tp_Tang1.Location = new System.Drawing.Point(4, 21);
             this.Tp_Tang1.Margin = new System.Windows.Forms.Padding(2);
             this.Tp_Tang1.Name = "Tp_Tang1";
             this.Tp_Tang1.Padding = new System.Windows.Forms.Padding(2);
-            this.Tp_Tang1.Size = new System.Drawing.Size(365, 439);
+            this.Tp_Tang1.Size = new System.Drawing.Size(365, 444);
             this.Tp_Tang1.TabIndex = 0;
             this.Tp_Tang1.Text = "Tầng 1";
             this.Tp_Tang1.UseVisualStyleBackColor = true;
@@ -517,11 +519,11 @@ namespace _3_GUI
             this.Tp_Tang2.Controls.Add(this.Btn_ThemBanT2);
             this.Tp_Tang2.Controls.Add(this.FlPanel2);
             this.Tp_Tang2.Controls.Add(this.Btn_XoaBanT2);
-            this.Tp_Tang2.Location = new System.Drawing.Point(4, 26);
+            this.Tp_Tang2.Location = new System.Drawing.Point(4, 21);
             this.Tp_Tang2.Margin = new System.Windows.Forms.Padding(2);
             this.Tp_Tang2.Name = "Tp_Tang2";
             this.Tp_Tang2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Tp_Tang2.Size = new System.Drawing.Size(365, 439);
+            this.Tp_Tang2.Size = new System.Drawing.Size(365, 444);
             this.Tp_Tang2.TabIndex = 1;
             this.Tp_Tang2.Text = "Tầng 2";
             this.Tp_Tang2.UseVisualStyleBackColor = true;
@@ -621,9 +623,21 @@ namespace _3_GUI
             this.FlPanl_MangVe.Size = new System.Drawing.Size(297, 383);
             this.FlPanl_MangVe.TabIndex = 0;
             // 
+            // Lbl_TienHien
+            // 
+            this.Lbl_TienHien.AutoSize = true;
+            this.Lbl_TienHien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Lbl_TienHien.ForeColor = System.Drawing.Color.White;
+            this.Lbl_TienHien.Location = new System.Drawing.Point(39, 129);
+            this.Lbl_TienHien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Lbl_TienHien.Name = "Lbl_TienHien";
+            this.Lbl_TienHien.Size = new System.Drawing.Size(70, 19);
+            this.Lbl_TienHien.TabIndex = 27;
+            this.Lbl_TienHien.Text = "Tổng tiền:";
+            // 
             // FrmQLBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1154, 715);
@@ -697,5 +711,6 @@ namespace _3_GUI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label Lbl_TienHien;
     }
 }
