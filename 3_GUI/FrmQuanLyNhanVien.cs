@@ -146,7 +146,7 @@ namespace _3_GUI
                     var nhanVien = _iQlNhanVienService.getlstNhanViens().Where(c => c.MaNv == txtMaNV.Text).FirstOrDefault();
                     nhanVien.Name = txt_TenNV.Text;
                     nhanVien.Email = txtEmail.Text;
-                    nhanVien.Password = _utilities.GetHash(txtMatKhau.Text);
+                   
                     nhanVien.Role = chk_quanLi.Checked ? 1 : 2;
                     nhanVien.Address = txt_DiaChiNV.Text;
                     nhanVien.PhoneNo = txt_SDT.Text;
@@ -171,14 +171,14 @@ namespace _3_GUI
 
         private void chk_quanLi_CheckedChanged_1(object sender, EventArgs e)
         {
-            
+            //chk_nhanVien.Checked = !chk_quanLi.Checked;
         }
 
 
 
         private void chk_nhanVien_CheckedChanged(object sender, EventArgs e)
         {
-
+            //chk_quanLi.Checked = !chk_nhanVien.Checked;
         }
 
         private void btn_Luu_Click(object sender, EventArgs e)
@@ -233,8 +233,13 @@ namespace _3_GUI
                 txt_TenNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[1].Value.ToString();
                 txtEmail.Text = dgrid_NhanVien.Rows[rowindex].Cells[2].Value.ToString();
                 txtMatKhau.Text = _utilities.GetHash(dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString());
-                chk_nhanVien.Checked = dgrid_NhanVien.Rows[rowindex].Cells[4].Value.ToString() == "Nhân viên" ? true : false;
-                chk_quanLi.Checked = dgrid_NhanVien.Rows[rowindex].Cells[4].Value.ToString() == "Quản lí" ? true : false;
+                //if(dgrid_NhanVien.Rows[rowindex].Cells[4].Value.ToString() == "Nhân Viên")
+                //{
+                //    chk_quanLi.Checked = false;
+                //} else
+                //{
+                //    chk_nhanVien.Checked = false;
+                //}
                 txt_SDT.Text = dgrid_NhanVien.Rows[rowindex].Cells[5].Value.ToString();
                 chk_nam.Checked = dgrid_NhanVien.Rows[rowindex].Cells[6].Value.ToString() == "Nam" ? true : false;
                 chk_nu.Checked = dgrid_NhanVien.Rows[rowindex].Cells[6].Value.ToString() == "Nữ" ? true : false;
@@ -254,11 +259,11 @@ namespace _3_GUI
                 }
                 if (nv.Role == 1)
                 {
-                    chk_nhanVien.Checked = true;
+                    chk_quanLi.Checked = true;
                 }
                 else
                 {
-                    chk_quanLi.Checked = true;
+                    chk_nhanVien.Checked = true;
                 }
             }
         }

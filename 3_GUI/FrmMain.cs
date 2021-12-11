@@ -54,7 +54,7 @@ namespace _3_GUI
         }
         void checkRoles()
         {
-            if (_nhanVien.Id == 1)
+            if (_nhanVien.Role == 1)
             {
                 flag = 1;
             }
@@ -236,8 +236,7 @@ namespace _3_GUI
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            FrmDoiMatKhau a = new FrmDoiMatKhau();
-            a.mail = mail;
+            FrmDoiMatKhau a = new FrmDoiMatKhau();   
             a.ShowDialog();
         }
       

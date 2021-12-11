@@ -128,7 +128,15 @@ namespace _3_GUI
             int rowIndex = e.RowIndex;
             var columns = e.ColumnIndex;
             if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count) || rowIndex == -1) return;
-            _idHDCT =Convert.ToInt32(Dgrid_HDCu.Rows[rowIndex].Cells[4].Value.ToString());
+            if (Dgrid_HDCu.Rows[rowIndex].Cells[4].Value==null)
+            {
+                return;
+            }
+            else
+            {
+                _idHDCT = Convert.ToInt32(Dgrid_HDCu.Rows[rowIndex].Cells[4].Value.ToString());
+            }
+            
 
             if (e.ColumnIndex == Dgrid_HDCu.Columns["Xóa"].Index)
             {
