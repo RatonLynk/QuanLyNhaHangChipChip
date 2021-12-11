@@ -56,7 +56,8 @@ namespace _3_GUI
             }//s
             Lbl_DaHuy.Text = _huy.ToString();
             Lbl_DaThanhToan.Text = _dathanhtoan.ToString();
-            Lbl_DoanhThu.Text = _doangthu.ToString() + " VNĐ";
+            Lbl_DoanhThu.Text = _doangthu.ToString() +"VNĐ";
+         
         }
         void LoadHoaDon()
         {
@@ -71,6 +72,7 @@ namespace _3_GUI
             Dgid_HoaDon.Columns[6].Name = "Nhân viên tạo";
             Dgid_HoaDon.Columns[7].Name = "id";
             Dgid_HoaDon.Columns[7].Visible = false;
+            
 
             Dgid_HoaDon.Rows.Clear();
             foreach (var x in _qlHoaDon.GetListDSHoaDon())
@@ -80,6 +82,7 @@ namespace _3_GUI
                    ,x.hoaDon.DichVu==1?"Tại bàn":"Mang về", _qlHoaDon.GetListDSHoaDon().Where(c => c.nhanVien.Id == x.hoaDon.IdnhanVien).Select(c => c.nhanVien.Name).FirstOrDefault(), x.hoaDon.Id);
 
             }
+            Dgid_HoaDon.Columns[1].DefaultCellStyle.Format = "#,0.# VND";
 
         }
         void LoadHoaDon(DateTime date1, DateTime date2)
@@ -94,7 +97,7 @@ namespace _3_GUI
             Dgid_HoaDon.Columns[6].Name = "Nhân viên tạo";
             Dgid_HoaDon.Columns[7].Name = "id";
             Dgid_HoaDon.Columns[7].Visible = false;
-
+            Dgid_HoaDon.Columns[1].DefaultCellStyle.Format = "#,0.# VND";
             Dgid_HoaDon.Rows.Clear();
             foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => (c.hoaDon.DateCheckIn >= date1.AddDays(-1) && c.hoaDon.DateCheckIn <= date2)))
             {
@@ -102,7 +105,7 @@ namespace _3_GUI
                      x.hoaDon.DateCheckIn, x.hoaDon.DateCheckOut, x.hoaDon.GhiChu != null ? "Đã huỷ" : Convert.ToInt32(x.hoaDon.Status) == 0 ? "đã thanh toán" : Convert.ToInt32(x.hoaDon.Status) == 1 ? "chưa thanh toán" : ""
                     , x.hoaDon.DichVu == 1 ? "Tại bàn" : "Mang về", _qlHoaDon.GetListDSHoaDon().Where(c => c.nhanVien.Id == x.hoaDon.IdnhanVien).Select(c => c.nhanVien.Name).FirstOrDefault(), x.hoaDon.Id);
             }
-
+            
         }
         void LoadHoaDonChiTiet(int id)
         {
@@ -119,9 +122,11 @@ namespace _3_GUI
             foreach (var x in _qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDon.Id == id))
             {
                 dgrid_hdct.Rows.Add(_qlHoaDon.GetListDSHoaDon().Where(c => c.hoaDonChiTiet.Idfood == x.monAnChiTiet.Id).Select(c => c.monAnChiTiet.Name).FirstOrDefault(), x.hoaDonChiTiet.Count,
-                   decimal.Truncate(x.monAnChiTiet.Price)+",000 VND",decimal.Truncate(x.hoaDonChiTiet.Price) +",000 VND", x.hoaDonChiTiet.Id);
+                   decimal.Truncate(x.monAnChiTiet.Price),decimal.Truncate(x.hoaDonChiTiet.Price), x.hoaDonChiTiet.Id);
 
             }
+            dgrid_hdct.Columns[2].DefaultCellStyle.Format = "#,0.# VND";
+            dgrid_hdct.Columns[3].DefaultCellStyle.Format = "#,0.# VND";
 
         }
 

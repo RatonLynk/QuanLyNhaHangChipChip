@@ -446,6 +446,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -457,6 +459,8 @@
             // 
             // pictureBoxHinhAnh
             // 
+            this.pictureBoxHinhAnh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBoxHinhAnh.Location = new System.Drawing.Point(36, 428);
             this.pictureBoxHinhAnh.Name = "pictureBoxHinhAnh";
             this.pictureBoxHinhAnh.Size = new System.Drawing.Size(384, 195);
@@ -466,6 +470,7 @@
             // 
             // btnMoAnh
             // 
+            this.btnMoAnh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnMoAnh.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnMoAnh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnMoAnh.Location = new System.Drawing.Point(85, 629);
@@ -478,6 +483,7 @@
             // 
             // btnResetAnh
             // 
+            this.btnResetAnh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnResetAnh.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnResetAnh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(75)))));
             this.btnResetAnh.Location = new System.Drawing.Point(272, 628);

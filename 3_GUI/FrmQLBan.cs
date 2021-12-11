@@ -116,7 +116,7 @@ namespace _3_GUI
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
             img.HeaderText = "Xóa món";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\\001-close.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 4;
@@ -297,20 +297,21 @@ namespace _3_GUI
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
             img.HeaderText="Thêm món";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
             Dgid_Meniu.ColumnCount = 2;
             Dgid_Meniu.Columns[0].Name = "Tên món";
             Dgid_Meniu.Columns[1].Name = "Giá tiền";
+            Dgid_Meniu.Columns[1].DefaultCellStyle.Format = "#,0.# VNÐ";
             Dgid_Meniu.Columns.Add(img);
             Dgid_Meniu.Rows.Clear();
             foreach (var x in _qlMeniu.GetViewMenus())
             {
-                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + " VNĐ");
+                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price));
             }
-            Dgid_Meniu.Columns[1].DefaultCellStyle.Format = "#,0.# VNÐ";
+            
         }
 
         private void Dgid_Meniu_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -321,6 +322,11 @@ namespace _3_GUI
             _idFood = _qlMeniu.GetMonAnChiTiets().Where(c => c.Name == Dgid_Meniu.Rows[rowIndex].Cells[0].Value.ToString()).Select(c => c.Id).FirstOrDefault();
             if (e.ColumnIndex == Dgid_Meniu.Columns["Thêm"].Index)
             {
+                if (_IdBan == 0 && _IdHoaDon == 0)
+                {
+                    MessageBox.Show("Phải chọn bàn trước khi thêm món nhé !","Thông báo");
+                    return;
+                }
                 _f = new Form();
                 TextBox textBox = new TextBox();
                 textBox.Width = 150;
@@ -337,8 +343,10 @@ namespace _3_GUI
                 _f.Controls[1].Left = 100;
                 _f.Controls[0].Top = 10;
                 _f.Controls[1].Top = 50;
-                _f.Size = new Size(300, 120);
+                
+                _f.Size = new Size(300, 200);
                 //f.StartPosition=CenterToScreen();
+                button.Size = new Size(100, 50);
                 button.Click += Button_Click;
                 _f.ShowDialog();
 
@@ -512,8 +520,8 @@ namespace _3_GUI
             _f.Controls[1].Left = 150;
             _f.Controls[0].Top = 10;
             _f.Controls[1].Top = 90;
-            _f.Size = new Size(400, 180);
-            button123.Size = new Size(50, 50);
+            _f.Size = new Size(400, 240);
+            button123.Size = new Size(100, 70);
             button123.Click += Button123_Click;
             _f.ShowDialog();
 
@@ -592,7 +600,9 @@ namespace _3_GUI
                 _f.Controls[0].Top = 10;
                 _f.Controls[1].Top = 50;
                 _f.Size = new Size(400, 200);
-                button12.Size = new Size(50,50);
+
+                _f.StartPosition = FormStartPosition.CenterScreen;
+                button12.Size = new Size(100,45);
                 button12.Click += Button12_Click;
                 _f.ShowDialog();
 
@@ -871,7 +881,7 @@ namespace _3_GUI
                     BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _IdBan);
                     banAn.TinhTrang = 1;
                     label1.Text = "Bàn " + _hoadon.Idtable.ToString();
-                    label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString() + " VNĐ";
+                    label3.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString();
                     label15.Text = Convert.ToDecimal((Convert.ToInt32(Txt_TienKhachDua.Text) - decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney))).ToString("#,##0") + " VNĐ";
                     _qlBanAn.UpdateBanAn(banAn);
                     LoadHoaDon(banAn.Id);
@@ -909,16 +919,16 @@ namespace _3_GUI
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
             img.HeaderText = "Xóa món";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
             Dgid_HoaDon.Columns[0].Name = "Tên món";
             Dgid_HoaDon.Columns[1].Name = "Số lượng";
             Dgid_HoaDon.Columns[2].Name = "Đơn giá";         
-            Dgid_HoaDon.Columns[2].DefaultCellStyle.Format = "#,0.# VNÐ";
+       
             Dgid_HoaDon.Columns[3].Name = "thành tiền";
-            Dgid_HoaDon.Columns[3].DefaultCellStyle.Format = "#,0.# VNÐ";
+            
             Dgid_HoaDon.Columns[4].Name = "Id";
             Dgid_HoaDon.Columns[4].Visible = false;
             Dgid_HoaDon.Columns.Add(img);
@@ -932,10 +942,11 @@ namespace _3_GUI
             foreach (var x in abc)
             {
                 Dgid_HoaDon.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Name).FirstOrDefault(), x.SoLuong,
-                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault()) + " VNĐ",
-                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong) + " VNĐ", x.IDHDCT);
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault()),
+                    decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong), x.IDHDCT);
             }
-            
+            Dgid_HoaDon.Columns[3].DefaultCellStyle.Format = "#,0.# VNĐ";
+            Dgid_HoaDon.Columns[2].DefaultCellStyle.Format = "#,0.# VNĐ";
         }
         private void Dgid_HoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1012,7 +1023,7 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDon(_IdBan);
-                Lbl_TongTien.Text = string.Format("{#,0.#}", decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString());
+                Lbl_TongTien.Text = /*string.Format("{#,0.#}",*/ decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString());
                 _f.Close();
             }
             else if (_IdBan == 0 && _IdHoaDon != 0)
@@ -1025,7 +1036,7 @@ namespace _3_GUI
                 hoaDonChiTiet.Price -= _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
                 giatru = (int)(_soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault()));
                 _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet);
-                //List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoadon.Id).ToList();
+                //List<Ho/*aDonChiTiet> lstHDC*/T = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoadon.Id).ToList();
                 //foreach (var x in lstHDCT)
                 //{
                 //    _hoadon.TotalMoney += x.Price;
@@ -1124,45 +1135,8 @@ namespace _3_GUI
             frm = forme;
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            LoadMeniu(1);
-        }
-        void LoadMeniu(int id)
-        {
-            DataGridViewButtonColumn Them = new DataGridViewButtonColumn();
-            Them.Name = "Them";
-            Them.HeaderText = "Thêm món";
-            Them.UseColumnTextForButtonValue = true;
-            Them.Text = "Thêm";
-
-            DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
-            cmb.HeaderText = "số lượng";
-            cmb.Items.Add("1");
-            cmb.Items.Add("2");
-            cmb.Items.Add("3");
-            cmb.Items.Add("4");
-            cmb.Items.Add("5");
-            cmb.Name = "combobox";
-
-            DataGridViewImageColumn img = new DataGridViewImageColumn();
-            img.Name = "nut";
-            img.HeaderText = "Thêm món";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
-            img.Image = b;
-
-
-            Dgid_Meniu.ColumnCount = 2;
-            Dgid_Meniu.Columns[0].Name = "Tên món";
-            Dgid_Meniu.Columns[1].Name = "Giá tiền";
-            Dgid_Meniu.Columns.Add(img);
-            Dgid_Meniu.Rows.Clear();
-            foreach (var x in _qlMeniu.GetViewMenus().Where(c => c.details.Idcategory == id))
-            {
-                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + " VNĐ");
-            }
-
-        }
+        
+       
         void LoadMeniu(string name)
         {
             DataGridViewButtonColumn Them = new DataGridViewButtonColumn();
@@ -1182,7 +1156,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -1193,15 +1167,12 @@ namespace _3_GUI
             Dgid_Meniu.Rows.Clear();
             foreach (var x in _qlMeniu.GetViewMenus().Where(c => c.details.Name.ToLower().StartsWith(name)))
             {
-                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) + ".000 VND");
+                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) );
             }
-
+            Dgid_Meniu.Columns[1].DefaultCellStyle.Format = "#,0.# VND";
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            LoadMeniu(2);
-        }
+        
 
         private void Txt_Seach_TextChanged(object sender, EventArgs e)
         {
