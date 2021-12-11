@@ -1019,7 +1019,7 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDon(_IdBan);
-                Lbl_TongTien.Text = /*string.Format("{#,0.#}",*/ decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString());
+                Lbl_TongTien.Text = /*string.Format("{#,0.#}",*/ decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString();
                 _f.Close();
             }
             else if (_IdBan == 0 && _IdHoaDon != 0)
@@ -1040,7 +1040,7 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDonMangVe(_hoadon.Id);
-                Lbl_TongTien.Text = string.Format("#,0.#",decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString());
+                Lbl_TongTien.Text =/* string.Format("#,0.#"*/decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString();
                 _f.Close();
             }
             //s

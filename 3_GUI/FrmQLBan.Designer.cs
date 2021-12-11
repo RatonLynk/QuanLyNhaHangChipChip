@@ -53,6 +53,7 @@ namespace _3_GUI
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Btn_ThanhToan = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.Lbl_TongTien = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Txt_TienKhachDua = new System.Windows.Forms.TextBox();
@@ -181,7 +182,7 @@ namespace _3_GUI
             this.Lbl_ViTriBan.AutoSize = true;
             this.Lbl_ViTriBan.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Lbl_ViTriBan.ForeColor = System.Drawing.Color.White;
-            this.Lbl_ViTriBan.Location = new System.Drawing.Point(195, 20);
+            this.Lbl_ViTriBan.Location = new System.Drawing.Point(138, 20);
             this.Lbl_ViTriBan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_ViTriBan.Name = "Lbl_ViTriBan";
             this.Lbl_ViTriBan.Size = new System.Drawing.Size(39, 23);
@@ -358,6 +359,7 @@ namespace _3_GUI
             this.groupBox5.Controls.Add(this.textBox4);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Controls.Add(this.Btn_ThanhToan);
+            this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Controls.Add(this.Lbl_TongTien);
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.Txt_TienKhachDua);
@@ -371,7 +373,7 @@ namespace _3_GUI
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(137, 75);
+            this.textBox4.Location = new System.Drawing.Point(150, 75);
             this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(229, 25);
@@ -382,7 +384,7 @@ namespace _3_GUI
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(39, 77);
+            this.label6.Location = new System.Drawing.Point(16, 75);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 23);
@@ -407,12 +409,24 @@ namespace _3_GUI
             this.Btn_ThanhToan.UseVisualStyleBackColor = false;
             this.Btn_ThanhToan.Click += new System.EventHandler(this.Btn_ThanhToan_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(16, 124);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 23);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Tổng tiền:";
+            // 
             // Lbl_TongTien
             // 
             this.Lbl_TongTien.AutoSize = true;
             this.Lbl_TongTien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Lbl_TongTien.ForeColor = System.Drawing.Color.White;
-            this.Lbl_TongTien.Location = new System.Drawing.Point(137, 123);
+            this.Lbl_TongTien.Location = new System.Drawing.Point(150, 124);
             this.Lbl_TongTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_TongTien.Name = "Lbl_TongTien";
             this.Lbl_TongTien.Size = new System.Drawing.Size(87, 23);
@@ -424,7 +438,7 @@ namespace _3_GUI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 25);
+            this.label4.Location = new System.Drawing.Point(16, 24);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 23);
@@ -433,7 +447,7 @@ namespace _3_GUI
             // 
             // Txt_TienKhachDua
             // 
-            this.Txt_TienKhachDua.Location = new System.Drawing.Point(137, 22);
+            this.Txt_TienKhachDua.Location = new System.Drawing.Point(150, 22);
             this.Txt_TienKhachDua.Margin = new System.Windows.Forms.Padding(2);
             this.Txt_TienKhachDua.Name = "Txt_TienKhachDua";
             this.Txt_TienKhachDua.Size = new System.Drawing.Size(229, 25);
@@ -697,5 +711,6 @@ namespace _3_GUI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
