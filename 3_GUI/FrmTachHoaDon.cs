@@ -34,6 +34,7 @@ namespace _3_GUI
         Form _f;
         int _soLuong;
         HoaDon _hoaDon;
+        int _idFood;
         HoaDonChiTiet _HDCT;
         List<BanAn> _lstBan;
         FrmMain _FrmMain;
@@ -60,7 +61,7 @@ namespace _3_GUI
             _lstHoaDon = new List<HoaDon>();
             _lstHoaDon = _qlHoaDon.GetBillsFromDB();
             var abc = (from a in _qlHoaDon.GetBillsFromDB().Where(c => c.Idtable == id && c.Status == true && c.DichVu == 1 && c.Id!=_idHD)
-                       join c in _qlHoaDon.GetHoaDonCTFromDB()
+                       join c in _qlHoaDon.GetHoaDonCTFromDB().Where(c=>c.Count>0)
                        on a.Id equals c.Idbill
                        select new
                        {
@@ -84,6 +85,8 @@ namespace _3_GUI
             Dgrid_HDCu.Columns[1].Name = "Số lượng";
             Dgrid_HDCu.Columns[2].Name = "Đơn giá";
             Dgrid_HDCu.Columns[3].Name = "thành tiền";
+            Dgrid_HDCu.Columns[2].DefaultCellStyle.Format = "#,0.# VNÐ";
+            Dgrid_HDCu.Columns[3].DefaultCellStyle.Format = "#,0.# VNÐ";
             Dgrid_HDCu.Columns[4].Name = "Id";
             Dgrid_HDCu.Columns[4].Visible = false;
             Dgrid_HDCu.Columns.Add(img);
@@ -125,7 +128,16 @@ namespace _3_GUI
             int rowIndex = e.RowIndex;
             var columns = e.ColumnIndex;
             if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count) || rowIndex == -1) return;
-            _idHDCT =Convert.ToInt32(Dgrid_HDCu.Rows[rowIndex].Cells[4].Value.ToString());
+            if (Dgrid_HDCu.Rows[rowIndex].Cells[4].Value==null)
+            {
+                return;
+            }
+            else
+            {
+                _idHDCT = Convert.ToInt32(Dgrid_HDCu.Rows[rowIndex].Cells[4].Value.ToString());
+            }
+            
+
             if (e.ColumnIndex == Dgrid_HDCu.Columns["Xóa"].Index)
             {
                 _f = new Form();
@@ -360,7 +372,8 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Xóa";
-            Bitmap b = new Bitmap(@" D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            //D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgrid_HDMoi.ColumnCount = 5;
@@ -368,6 +381,8 @@ namespace _3_GUI
             Dgrid_HDMoi.Columns[1].Name = "Số lượng";
             Dgrid_HDMoi.Columns[2].Name = "Đơn giá";
             Dgrid_HDMoi.Columns[3].Name = "thành tiền";
+            Dgrid_HDCu.Columns[2].DefaultCellStyle.Format = "#,0.# VNÐ";
+            Dgrid_HDCu.Columns[3].DefaultCellStyle.Format = "#,0.# VNÐ";
             Dgrid_HDMoi.Columns[4].Name = "Id";
             Dgrid_HDMoi.Columns[4].Visible = false;
             Dgrid_HDMoi.Columns.Add(img);
@@ -376,8 +391,8 @@ namespace _3_GUI
             foreach (var x in abc)
             {
                 Dgrid_HDMoi.Rows.Add(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Name).FirstOrDefault(), x.SoLuong,
-                   decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault())+".000 VND",
-                   decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong).ToString()+ ".000 VND", x.IDHDCT);
+                   decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault()),
+                   decimal.Truncate(_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == x.IDFood).Select(c => c.Price).FirstOrDefault() * x.SoLuong).ToString(), x.IDHDCT);
             }
         }//as
 

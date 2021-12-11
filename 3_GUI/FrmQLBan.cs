@@ -24,8 +24,8 @@ namespace _3_GUI
 
         IQLBanAnService _qlBanAn;
         IQLHoaDon _qlHoaDon;
-        iQLMenuService _qlMeniu;        
-        
+        iQLMenuService _qlMeniu;
+
         IQLNhanVienService _qlNhanVien;
         int _IdBan;
         HoaDon _hoadon;
@@ -50,7 +50,7 @@ namespace _3_GUI
             LoadTableT2();
             LoadMeniu();
             LoadMangVe();
-            Lbl_TongTien.Text="0 VND";
+            Lbl_TongTien.Text = "0 VND";
             _IdBan = 0;
             _IdHoaDon = 0;
             //Lbl_GioVao.Text = DateTime.Now.ToString()            
@@ -103,16 +103,16 @@ namespace _3_GUI
             _IdBan = 0;
             FrmTachHoaDon._IdHoaDon = id;
             FrmTachHoaDon._IdBanTachHD = 0;
-            Lbl_ViTriBan.Text = "Mang Về";            
+            Lbl_ViTriBan.Text = "Mang Về";
             _hoadon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon);
-            Lbl_TongTien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon).TotalMoney).ToString() +" VND";
+            Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon).TotalMoney).ToString() + " VND";
             Lbl_GioVao.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _IdHoaDon).DateCheckIn.ToString();
             LoadHoaDonMangVe(_IdHoaDon);
 
         }
         void LoadHoaDonMangVe(int hoadon)
         {
-            var abc = (from a in _qlHoaDon.GetBillsFromDB().Where(c => c.Id==_IdHoaDon)
+            var abc = (from a in _qlHoaDon.GetBillsFromDB().Where(c => c.Id == _IdHoaDon)
                        join c in _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Count > 0)
                        on a.Id equals c.Idbill
                        select new
@@ -129,7 +129,7 @@ namespace _3_GUI
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
             img.HeaderText = "Xóa món";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
@@ -165,7 +165,7 @@ namespace _3_GUI
             FLPenal.Controls.Clear();
             //NhanList(_qlBanAn.GetTablesFromDB(), 0);
             //NhanlstHoaDon(_qlHoaDon.GetBillsFromDB());
-            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1 && (c.TinhTrang==1 || c.TinhTrang==0)))
+            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1 && (c.TinhTrang == 1 || c.TinhTrang == 0)))
             {
                 Button btn = new Button() { Width = x.Rong, Height = x.Cao };
                 //Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\caiBan.png");                
@@ -198,7 +198,7 @@ namespace _3_GUI
             FrmTachHoaDon._IdBanTachHD = id;
             BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
             LoadHoaDon(id);
-            Lbl_ViTriBan.Text = "Tầng 1 - " + banAn.Name;            
+            Lbl_ViTriBan.Text = "Tầng 1 - " + banAn.Name;
             if (_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1) == null)
             {
                 Lbl_TongTien.Text = "0";
@@ -216,7 +216,7 @@ namespace _3_GUI
         {
             FlPanel2.Controls.Clear();
             //NhanList(_qlBanAn.GetTablesFromDB(), 1);
-            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 2 && (c.TinhTrang==1 || c.TinhTrang==0)))
+            foreach (BanAn x in _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 2 && (c.TinhTrang == 1 || c.TinhTrang == 0)))
             {
                 Button btn1 = new Button() { Width = x.Rong, Height = x.Cao };
                 btn1.Text = x.Name + Environment.NewLine + (x.TinhTrang == 1 ? "Trống" : "Có người");
@@ -246,7 +246,7 @@ namespace _3_GUI
             FrmTachHoaDon._IdBanTachHD = id;
             LoadHoaDon(id);
             BanAn banAn = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == id);
-            Lbl_ViTriBan.Text = "Tầng 2 - " + banAn.Name;            
+            Lbl_ViTriBan.Text = "Tầng 2 - " + banAn.Name;
             if (_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1) == null)
             {
                 Lbl_TongTien.Text = "0";
@@ -270,7 +270,7 @@ namespace _3_GUI
         {
             if (MessageBox.Show("Bạn có chắc chắn hủy", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                BanAn ban = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1 && (c.TinhTrang==1 || c.TinhTrang==0)).Select(c => c.Id).Max());
+                BanAn ban = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1 && (c.TinhTrang == 1 || c.TinhTrang == 0)).Select(c => c.Id).Max());
                 if (ban.TinhTrang == 0)
                 {
                     MessageBox.Show("Bàn đang có người không thể xóa", "Thông báo");
@@ -278,7 +278,7 @@ namespace _3_GUI
                 }
                 ban.TinhTrang = 2;
                 _qlBanAn.UpdateBanAn(ban);
-                MessageBox.Show("Xóa thành công","Thông báo");
+                MessageBox.Show("Xóa thành công", "Thông báo");
                 LoadTableT1();
             }
         }
@@ -287,7 +287,7 @@ namespace _3_GUI
         {
             BanAn ban = new BanAn();
             ban.Id = (_qlBanAn.GetTablesFromDB().Count() + 1);
-            ban.Name = "Bàn " + (_qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1 && (c.TinhTrang==1 || c.TinhTrang==0)).Count() + 1);
+            ban.Name = "Bàn " + (_qlBanAn.GetTablesFromDB().Where(c => c.Floor == 1 && (c.TinhTrang == 1 || c.TinhTrang == 0)).Count() + 1);
             ban.Floor = 1;
             ban.Busy = "a";
             ban.Status = true;
@@ -309,7 +309,7 @@ namespace _3_GUI
 
             if (MessageBox.Show("Bạn có chắc chắn xóa", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                BanAn ban = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 2 && (c.TinhTrang==1 || c.TinhTrang==0)).Select(c => c.Id).Max());
+                BanAn ban = _qlBanAn.GetTablesFromDB().FirstOrDefault(c => c.Id == _qlBanAn.GetTablesFromDB().Where(c => c.Floor == 2 && (c.TinhTrang == 1 || c.TinhTrang == 0)).Select(c => c.Id).Max());
                 if (ban.TinhTrang == 0)
                 {
                     MessageBox.Show("Bàn đang có người không thể xóa", "Thông báo");
@@ -340,9 +340,8 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
-            img.HeaderText="Thêm món";
-            //C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            img.HeaderText = "Thêm món";
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -356,7 +355,7 @@ namespace _3_GUI
             {
                 Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price));
             }
-            
+
         }
 
         private void Dgid_Meniu_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -369,7 +368,7 @@ namespace _3_GUI
             {
                 if (_IdBan == 0 && _IdHoaDon == 0)
                 {
-                    MessageBox.Show("Phải chọn bàn trước khi thêm món nhé !","Thông báo");
+                    MessageBox.Show("Phải chọn bàn trước khi thêm món nhé !", "Thông báo");
                     return;
                 }
                 _f = new Form();
@@ -388,8 +387,9 @@ namespace _3_GUI
                 _f.Controls[1].Left = 100;
                 _f.Controls[0].Top = 10;
                 _f.Controls[1].Top = 50;
-                
+
                 _f.Size = new Size(300, 200);
+                _f.StartPosition = FormStartPosition.CenterScreen;
                 //f.StartPosition=CenterToScreen();
                 button.Size = new Size(100, 50);
                 button.Click += Button_Click;
@@ -401,7 +401,7 @@ namespace _3_GUI
         private void Button_Click(object sender, EventArgs e)
         {
             //NhanList(_qlBanAn.GetTablesFromDB(), 0);
-           // NhanlstHoaDon(_qlHoaDon.GetBillsFromDB());
+            // NhanlstHoaDon(_qlHoaDon.GetBillsFromDB());
             if (String.IsNullOrEmpty(_f.Controls[0].Text))
             {
                 MessageBox.Show("không được để trống số lượng", "Thông báo");
@@ -566,6 +566,7 @@ namespace _3_GUI
             _f.Controls[0].Top = 10;
             _f.Controls[1].Top = 90;
             _f.Size = new Size(400, 240);
+            _f.StartPosition = FormStartPosition.CenterScreen;
             button123.Size = new Size(100, 70);
             button123.Click += Button123_Click;
             _f.ShowDialog();
@@ -629,12 +630,12 @@ namespace _3_GUI
                 _f = new Form();
                 TextBox textBox = new TextBox();
                 textBox.Width = 200;
-                        
+
                 Button button12 = new Button();
                 Label label = new Label();
                 label.Text = "Lý do:";
                 button12.Text = "Hủy";
-              
+
                 _f.Controls.Add(textBox);
                 _f.Controls.Add(button12);
                 _f.Controls.Add(label);
@@ -647,7 +648,7 @@ namespace _3_GUI
                 _f.Size = new Size(400, 200);
 
                 _f.StartPosition = FormStartPosition.CenterScreen;
-                button12.Size = new Size(100,45);
+                button12.Size = new Size(100, 45);
                 button12.Click += Button12_Click;
                 _f.ShowDialog();
 
@@ -865,6 +866,7 @@ namespace _3_GUI
                 _f.Controls[2].Left = 130;
                 _f.Controls[2].Top = 30;
                 _f.Size = new Size(350, 200);
+                _f.StartPosition = FormStartPosition.CenterScreen;
                 button.Click += Button_Click1;
                 //_f.ShowDialog();
 
@@ -964,16 +966,16 @@ namespace _3_GUI
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
             img.HeaderText = "Xóa món";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
             Dgid_HoaDon.Columns[0].Name = "Tên món";
             Dgid_HoaDon.Columns[1].Name = "Số lượng";
-            Dgid_HoaDon.Columns[2].Name = "Đơn giá";         
-       
+            Dgid_HoaDon.Columns[2].Name = "Đơn giá";
+
             Dgid_HoaDon.Columns[3].Name = "thành tiền";
-            
+
             Dgid_HoaDon.Columns[4].Name = "Id";
             Dgid_HoaDon.Columns[4].Visible = false;
             Dgid_HoaDon.Columns.Add(img);
@@ -997,44 +999,54 @@ namespace _3_GUI
         {
             //try
             //{
-                int rowIndex = e.RowIndex;
-                var columns = e.ColumnIndex;
-                if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count - 1) || rowIndex == -1) return;
-                if (Dgid_HoaDon.Rows[rowIndex].Cells[4].Value==null)
-                {
-                    return;
-                }
-                else
-                {
-                    _IdHdCt = Convert.ToInt32(Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString());
-                }                
-                if (e.ColumnIndex == Dgid_HoaDon.Columns["xoa"].Index)
-                {
-                    _f = new Form();
-                    TextBox textBox31 = new TextBox();
-                    textBox31.Width = 150;
-                    Button Btn_XoaMon = new Button();
-                    Label label = new Label();
-                    label.Text = "Số Lượng:";
-                    Btn_XoaMon.Text = "Xác Nhận";
-                    _f.Controls.Add(textBox31);
-                    _f.Controls.Add(Btn_XoaMon);
-                    _f.Controls.Add(label);
-                    _f.Controls[2].Left = 10;
-                    _f.Controls[2].Top = 13;
-                    _f.Controls[0].Left = 80;
-                    _f.Controls[1].Left = 100;
-                    _f.Controls[0].Top = 10;
-                    _f.Controls[1].Top = 50;
-                    _f.Size = new Size(300, 120);
-                    Btn_XoaMon.Click += Btn_XoaMon_Click;
-                    _f.ShowDialog();
-                }
+            int rowIndex = e.RowIndex;
+            var columns = e.ColumnIndex;
+            if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count - 1) || rowIndex == -1) return;
+            if (Dgid_HoaDon.Rows[rowIndex].Cells[0].Value==null)
+            {
+                return;
+            }
+            else
+            {
+                _idFood = _qlMeniu.GetMonAnChiTiets().Where(c => c.Name == Dgid_HoaDon.Rows[rowIndex].Cells[0].Value.ToString()).Select(c => c.Id).FirstOrDefault();
+            }            
+            if (Dgid_HoaDon.Rows[rowIndex].Cells[4].Value == null)
+            {
+                return;
+            }
+            else
+            {
+                _IdHdCt = Convert.ToInt32(Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString());
+            }
+            if (e.ColumnIndex == Dgid_HoaDon.Columns["xoa"].Index)
+            {
+                _f = new Form();
+                TextBox textBox31 = new TextBox();
+                textBox31.Width = 150;
+                Button Btn_XoaMon = new Button();
+                Label label = new Label();
+                label.Text = "Số Lượng:";
+                Btn_XoaMon.Text = "Xác Nhận";
+                _f.Controls.Add(textBox31);
+                _f.Controls.Add(Btn_XoaMon);
+                _f.Controls.Add(label);
+                _f.Controls[2].Left = 10;
+                _f.Controls[2].Top = 13;
+                _f.Controls[0].Left = 80;
+                _f.Controls[1].Left = 100;
+                _f.Controls[0].Top = 10;
+                _f.Controls[1].Top = 50;
+                _f.Size = new Size(300, 220);
+                _f.StartPosition = FormStartPosition.CenterScreen;
+                Btn_XoaMon.Size = new Size(100, 60);
+                Btn_XoaMon.Click += Btn_XoaMon_Click;
+                _f.ShowDialog();
+            }
             //}
             //catch (Exception a)
             //{
             //    MessageBox.Show(a.Message);
-                
+
             //}
         }
 
@@ -1057,7 +1069,7 @@ namespace _3_GUI
                 _soLuong = Convert.ToInt32(_f.Controls[0].Text);
                 HoaDonChiTiet hoaDonChiTiet = _qlHoaDon.GetHoaDonCTFromDB().FirstOrDefault(c => c.Id == _IdHdCt);
                 hoaDonChiTiet.Count -= _soLuong;
-                hoaDonChiTiet.Price -= _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());                
+                hoaDonChiTiet.Price -= _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
                 giatru = (int)(_soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault()));
                 _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet);
                 //List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoadon.Id).ToList();
@@ -1068,7 +1080,7 @@ namespace _3_GUI
                 _hoadon.TotalMoney -=Convert.ToDecimal(_soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault()));
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDon(_IdBan);
-                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString()+" VND";
+                Lbl_TongTien.Text = /*string.Format("{#,0.#}",*/ decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString();
                 _f.Close();
             }
             else if (_IdBan == 0 && _IdHoaDon != 0)
@@ -1081,7 +1093,7 @@ namespace _3_GUI
                 hoaDonChiTiet.Price -= _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
                 giatru = (int)(_soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault()));
                 _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet);
-                //List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoadon.Id).ToList();
+                //List<Ho/*aDonChiTiet> lstHDC*/T = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoadon.Id).ToList();
                 //foreach (var x in lstHDCT)
                 //{
                 //    _hoadon.TotalMoney += x.Price;
@@ -1089,17 +1101,16 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDonMangVe(_hoadon.Id);
-                Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString()+" VND";
+                Lbl_TongTien.Text =/* string.Format("#,0.#"*/decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _hoadon.Id).TotalMoney).ToString();
                 _f.Close();
             }
-            //s
         }
 
         private void Btn_ThemBanT2_Click_1(object sender, EventArgs e)
         {
             BanAn ban = new BanAn();
             ban.Id = (_qlBanAn.GetTablesFromDB().Count() + 1);
-            ban.Name = "Bàn " + (_qlBanAn.GetTablesFromDB().Where(c => c.Floor == 2 && (c.TinhTrang==1 || c.TinhTrang==0)).Count() + 1);
+            ban.Name = "Bàn " + (_qlBanAn.GetTablesFromDB().Where(c => c.Floor == 2 && (c.TinhTrang == 1 || c.TinhTrang == 0)).Count() + 1);
             ban.Floor = 2;
             ban.Busy = "a";
             ban.Status = true;
@@ -1148,12 +1159,12 @@ namespace _3_GUI
 
         private void Btn_TachHoaDon_Click(object sender, EventArgs e)
         {
-            if (_IdBan==0 && _IdHoaDon==0)
+            if (_IdBan == 0 && _IdHoaDon == 0)
             {
                 MessageBox.Show("Bạn chưa chọn bàn nào");
                 return;
             }
-            if (_IdBan!=0 && _IdHoaDon==0)
+            if (_IdBan != 0 && _IdHoaDon == 0)
             {
                 FrmTachHoaDon frmTachHoaDon = new FrmTachHoaDon(this);
                 frmTachHoaDon.getformMain(frm);
@@ -1164,7 +1175,7 @@ namespace _3_GUI
                 MessageBox.Show("Không thể tách hóa đơn mang về");
                 return;
             }
-           
+
         }
         public void getNhanVien(NhanVien nv)
         {
@@ -1180,8 +1191,8 @@ namespace _3_GUI
             frm = forme;
         }
 
-        
-       
+
+
         void LoadMeniu(string name)
         {
             DataGridViewButtonColumn Them = new DataGridViewButtonColumn();
@@ -1201,7 +1212,7 @@ namespace _3_GUI
 
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "nut";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -1212,12 +1223,12 @@ namespace _3_GUI
             Dgid_Meniu.Rows.Clear();
             foreach (var x in _qlMeniu.GetViewMenus().Where(c => c.details.Name.ToLower().StartsWith(name)))
             {
-                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price) );
+                Dgid_Meniu.Rows.Add(x.details.Name, decimal.Truncate(x.details.Price));
             }
             Dgid_Meniu.Columns[1].DefaultCellStyle.Format = "#,0.# VND";
         }
 
-        
+
 
         private void Txt_Seach_TextChanged(object sender, EventArgs e)
         {

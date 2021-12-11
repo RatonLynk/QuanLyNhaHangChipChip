@@ -59,7 +59,7 @@ namespace _3_GUI
 
         private void txtUsername_Enter(object sender, EventArgs e)
         {
-            txtUsername.Text = "";
+         
             txtUsername.ForeColor = Color.Black;
         }
 
@@ -176,7 +176,13 @@ namespace _3_GUI
                 MessageBox.Show("Đăng nhập thành công ", "Thông báo");
                 if (txtPassWord.Text =="123")
                 {
-                    MessageBox.Show("Bạn đang nhập mật khẩu mặc định ,nhớ đổi mật khẩu","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    FrmDoiMatKhau.mail = txtUsername.Text;
+                    FrmDoiMatKhau.passcu = txtPassWord.Text;
+                    MessageBox.Show("Bạn đang nhập mật khẩu mặc định ,vui lòng đổi mật khẩu giúp em","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    FrmDoiMatKhau c = new FrmDoiMatKhau();
+
+                    c.ShowDialog();
+                   
                 }
                 FrmMain frmMain = new FrmMain();
                 frmMain.mail = txtUsername.Text;

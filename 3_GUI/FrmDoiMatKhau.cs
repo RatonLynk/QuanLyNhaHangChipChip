@@ -21,7 +21,8 @@ namespace _3_GUI
         private IQuenMatKhau QMK = new QuenMatKhau();
         private NhanVien _nv;
         public static string passcu;
-        public string mail;
+        public static string mail;
+        public static string mailmain;
         public FrmDoiMatKhau()
         {
             uti = new Utilities();
@@ -34,10 +35,11 @@ namespace _3_GUI
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            //_nv = _qlnv.getlstNhanViens().Where(c => c.Email == mail).FirstOrDefault();
             try
             {
                 validate();
-                if (txtPass.Text != FrmDoiMatKhau.passcu)
+                if (txtPass.Text != FrmDoiMatKhau.passcu  /*_nv.Password != uti.GetHash(txtPass.Text) */ )
                 {
                     MessageBox.Show("Mật khẩu cũ của bạn nhập không chính xác", "Thông báo");
                 }
@@ -50,6 +52,8 @@ namespace _3_GUI
 
                     _nv = _qlnv.getlstNhanViens().Where(c => c.Email == mail).FirstOrDefault();
                     _nv = QMK.nhanViens(mail);
+
+
                     _nv.Password = uti.GetHash(txtNewPass.Text);
                     MessageBox.Show(QMK.UpdatePass(_nv), "Thông báo", MessageBoxButtons.OK);
                     this.Close();
