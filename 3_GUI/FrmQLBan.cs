@@ -116,7 +116,7 @@ namespace _3_GUI
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
             img.HeaderText = "Xóa món";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\\001-close.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 4;
@@ -297,7 +297,7 @@ namespace _3_GUI
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Thêm";
             img.HeaderText="Thêm món";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png");
             img.Image = b;
 
 
@@ -322,6 +322,11 @@ namespace _3_GUI
             _idFood = _qlMeniu.GetMonAnChiTiets().Where(c => c.Name == Dgid_Meniu.Rows[rowIndex].Cells[0].Value.ToString()).Select(c => c.Id).FirstOrDefault();
             if (e.ColumnIndex == Dgid_Meniu.Columns["Thêm"].Index)
             {
+                if (_IdBan == 0 && _IdHoaDon == 0)
+                {
+                    MessageBox.Show("Phải chọn bàn trước khi thêm món nhé !","Thông báo");
+                    return;
+                }
                 _f = new Form();
                 TextBox textBox = new TextBox();
                 textBox.Width = 150;
@@ -338,8 +343,10 @@ namespace _3_GUI
                 _f.Controls[1].Left = 100;
                 _f.Controls[0].Top = 10;
                 _f.Controls[1].Top = 50;
-                _f.Size = new Size(300, 120);
+                
+                _f.Size = new Size(300, 200);
                 //f.StartPosition=CenterToScreen();
+                button.Size = new Size(100, 50);
                 button.Click += Button_Click;
                 _f.ShowDialog();
 
@@ -513,7 +520,7 @@ namespace _3_GUI
             _f.Controls[1].Left = 150;
             _f.Controls[0].Top = 10;
             _f.Controls[1].Top = 90;
-            _f.Size = new Size(400, 180);
+            _f.Size = new Size(400, 240);
             button123.Size = new Size(100, 70);
             button123.Click += Button123_Click;
             _f.ShowDialog();
@@ -593,7 +600,9 @@ namespace _3_GUI
                 _f.Controls[0].Top = 10;
                 _f.Controls[1].Top = 50;
                 _f.Size = new Size(400, 200);
-                button12.Size = new Size(100,60);
+
+                _f.StartPosition = FormStartPosition.CenterScreen;
+                button12.Size = new Size(100,45);
                 button12.Click += Button12_Click;
                 _f.ShowDialog();
 
@@ -910,7 +919,7 @@ namespace _3_GUI
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "xoa";
             img.HeaderText = "Xóa món";
-            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgid_HoaDon.ColumnCount = 5;
@@ -1010,7 +1019,7 @@ namespace _3_GUI
                 _hoadon.TotalMoney -= giatru;
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDon(_IdBan);
-                Lbl_TongTien.Text = string.Format("{#,0.#}", decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString());
+                Lbl_TongTien.Text = /*string.Format("{#,0.#}",*/ decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString());
                 _f.Close();
             }
             else if (_IdBan == 0 && _IdHoaDon != 0)
@@ -1023,7 +1032,7 @@ namespace _3_GUI
                 hoaDonChiTiet.Price -= _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault());
                 giatru = (int)(_soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault()));
                 _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet);
-                //List<HoaDonChiTiet> lstHDCT = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoadon.Id).ToList();
+                //List<Ho/*aDonChiTiet> lstHDC*/T = _qlHoaDon.GetHoaDonCTFromDB().Where(c => c.Idbill == _hoadon.Id).ToList();
                 //foreach (var x in lstHDCT)
                 //{
                 //    _hoadon.TotalMoney += x.Price;

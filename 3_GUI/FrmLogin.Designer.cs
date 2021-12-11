@@ -158,7 +158,6 @@
             this.linkLabel1.TabIndex = 10;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "?";
-          
             this.linkLabel1.MouseHover += new System.EventHandler(this.linkLabel1_MouseHover);
             // 
             // linkQMK
