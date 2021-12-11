@@ -944,7 +944,11 @@ namespace _3_GUI
                 int rowIndex = e.RowIndex;
                 var columns = e.ColumnIndex;
                 if ((rowIndex == _qlHoaDon.GetHoaDonCTFromDB().Count - 1) || rowIndex == -1) return;
-                if (Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString()!=null)
+                if (Dgid_HoaDon.Rows[rowIndex].Cells[4].Value==null)
+                {
+                    return;
+                }
+                else
                 {
                     _IdHdCt = Convert.ToInt32(Dgid_HoaDon.Rows[rowIndex].Cells[4].Value.ToString());
                 }                
