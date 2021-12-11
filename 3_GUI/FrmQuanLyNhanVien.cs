@@ -183,7 +183,14 @@ namespace _3_GUI
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            _iQlNhanVienService.Save();
+            if ((MessageBox.Show("Bạn muốn lưu ?",
+               "Thông báo",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
+            {
+                _iQlNhanVienService.Save();
+            }
+            
+            
         }
         
         private void txt_TenNV_TextChanged(object sender, EventArgs e)

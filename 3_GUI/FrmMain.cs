@@ -236,7 +236,10 @@ namespace _3_GUI
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            FrmDoiMatKhau a = new FrmDoiMatKhau();   
+            
+            FrmDoiMatKhau a = new FrmDoiMatKhau();
+
+          
             a.ShowDialog();
         }
       

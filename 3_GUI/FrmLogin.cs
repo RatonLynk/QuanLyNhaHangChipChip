@@ -42,7 +42,7 @@ namespace _3_GUI
                 txtUsername.Text = Properties.Settings.Default.userName;
             }
            
-            txtUsername.Text = "User Name";
+            
             txtUsername.ForeColor = Color.Gray;
 
             txtPassWord.PasswordChar = '\0';
@@ -177,16 +177,19 @@ namespace _3_GUI
                 if (txtPassWord.Text =="123")
                 {
                     FrmDoiMatKhau.mail = txtUsername.Text;
+                    FrmDoiMatKhau.mailmain = txtUsername.Text;
                     FrmDoiMatKhau.passcu = txtPassWord.Text;
                     MessageBox.Show("Bạn đang nhập mật khẩu mặc định ,vui lòng đổi mật khẩu giúp em","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     FrmDoiMatKhau c = new FrmDoiMatKhau();
-
+                    c.SenderDataDMK(nhanVien);
                     c.ShowDialog();
                    
                 }
+                FrmDoiMatKhau.mail = txtUsername.Text;
                 FrmMain frmMain = new FrmMain();
                 frmMain.mail = txtUsername.Text;
                 frmMain.SenderData(nhanVien);
+                FrmDoiMatKhau.mailmain = txtUsername.Text;
                 FrmDoiMatKhau.passcu = txtPassWord.Text;
                 FrmQLBan.mail= txtUsername.Text;
                 FrmTachHoaDon._EmailTachHD = txtUsername.Text;
@@ -230,7 +233,7 @@ namespace _3_GUI
 
         private void linkLabel1_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(linkLabel1, "Mật khẩu mặc định là 123");
+            toolTip1.SetToolTip(linkLabel1,"Mật khẩu mặc định là 123");
         }
 
         private void chkSaveLogin_CheckedChanged(object sender, EventArgs e)
