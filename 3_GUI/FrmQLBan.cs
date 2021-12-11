@@ -1065,7 +1065,7 @@ namespace _3_GUI
                 //{
                 //    _hoadon.TotalMoney += x.Price;
                 //}
-                _hoadon.TotalMoney -= giatru;
+                _hoadon.TotalMoney -=Convert.ToDecimal(_soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == _idFood).Select(c => c.Price).FirstOrDefault()));
                 _qlHoaDon.UpdateHoaDon(_hoadon);
                 LoadHoaDon(_IdBan);
                 Lbl_TongTien.Text = decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBan && c.Status == true && c.DichVu == 1).TotalMoney).ToString()+" VND";
