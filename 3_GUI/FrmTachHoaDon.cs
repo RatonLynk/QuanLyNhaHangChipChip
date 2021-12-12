@@ -102,25 +102,32 @@ namespace _3_GUI
 
         private void Btn_TaoHD_Click(object sender, EventArgs e)
         {
-            HoaDon hoaDon = new HoaDon();
-            NhanVien nhanVien = _qlNhanVien.getlstNhanViens().FirstOrDefault(c => c.Email == _EmailTachHD);
-            hoaDon.DateCheckIn = DateTime.Now;
-            hoaDon.DateCheckOut = DateTime.Now;
-            hoaDon.Id = (_qlHoaDon.GetBillsFromDB().Count()) + 1;
-            hoaDon.Idtable = _IdBanTachHD;
-            //hoaDon.IdnhanVien = nhanVien.Id;
-            hoaDon.IdnhanVien = 1;
-            hoaDon.SoDT = null;
-            hoaDon.Status = true;
-            hoaDon.DiaChi = null;
-            hoaDon.DichVu = 1;
-            hoaDon.GhiChu = null;
-            hoaDon.TotalMoney = 0;
-            _qlHoaDon.AddHoaDon(hoaDon);
-            _idHD = hoaDon.Id;
-            MessageBox.Show("Tạo thành công","Thông báo");
-            LoadHDMoi();
+            try
+            {
+                HoaDon hoaDon = new HoaDon();
+                NhanVien nhanVien = _qlNhanVien.getlstNhanViens().FirstOrDefault(c => c.Email == _EmailTachHD);
+                hoaDon.DateCheckIn = DateTime.Now;
+                hoaDon.DateCheckOut = DateTime.Now;
+                hoaDon.Id = (_qlHoaDon.GetBillsFromDB().Count()) + 1;
+                hoaDon.Idtable = _IdBanTachHD;
+                hoaDon.IdnhanVien = nhanVien.Id;
+                //hoaDon.IdnhanVien = 1;
+                hoaDon.SoDT = null;
+                hoaDon.Status = true;
+                hoaDon.DiaChi = null;
+                hoaDon.DichVu = 1;
+                hoaDon.GhiChu = null;
+                hoaDon.TotalMoney = 0;
+                _qlHoaDon.AddHoaDon(hoaDon);
+                _idHD = hoaDon.Id;
+                MessageBox.Show("Tạo thành công", "Thông báo");
+                LoadHDMoi();
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Chức năng lỗi rồi :(. Liên hệ nhóm để sửa", "Thông báo");
+            }
         }
 
         private void Dgrid_HDCu_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -274,70 +281,77 @@ namespace _3_GUI
 
         private void Btn_XacNhan_Click(object sender, EventArgs e)
         {
-            HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
-            if (MessageBox.Show("Bạn có chắc chắn muốn thanh toán không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                if (String.IsNullOrEmpty(Txt_Tien.Text))
+                HoaDon hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
+                if (MessageBox.Show("Bạn có chắc chắn muốn thanh toán không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Chưa nhập tiền khách đưa","Thông báo");
-                    return;
-                }
-                if (Convert.ToInt32(Txt_Tien.Text) < hoaDon.TotalMoney)
-                {
-                    MessageBox.Show("Tiền khách đưa chưa đủ", "Thông báo");
-                    return;
-                }
-                if (MessageBox.Show("Bạn có muốn in hóa đơn không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    PrintDialog PrintDialog = new PrintDialog();
-                    PrintDocument PrintDocument = new PrintDocument();
-                    PrintDialog.Document = PrintDocument; //add the document to the dialog box
-
-                    PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt2); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
-                    DialogResult result = PrintDialog.ShowDialog();
-                    if (result == DialogResult.OK)
+                    if (String.IsNullOrEmpty(Txt_Tien.Text))
                     {
-                        PrintDocument.Print();
-
+                        MessageBox.Show("Chưa nhập tiền khách đưa", "Thông báo");
+                        return;
                     }
+                    if (Convert.ToInt32(Txt_Tien.Text) < hoaDon.TotalMoney)
+                    {
+                        MessageBox.Show("Tiền khách đưa chưa đủ", "Thông báo");
+                        return;
+                    }
+                    if (MessageBox.Show("Bạn có muốn in hóa đơn không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        PrintDialog PrintDialog = new PrintDialog();
+                        PrintDocument PrintDocument = new PrintDocument();
+                        PrintDialog.Document = PrintDocument; //add the document to the dialog box
+
+                        PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CreateReceipt2); //add an event handler that will do the printing                                                                                                                //on a till you will not want to ask the user where to print but this is fine for the test envoironment.
+                        DialogResult result = PrintDialog.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            PrintDocument.Print();
+
+                        }
+                    }
+                    _hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
+                    _f = new Form();
+                    Label label1 = new Label();
+                    Label label2 = new Label();
+                    Label label3 = new Label();
+                    Label label14 = new Label();
+                    Label label15 = new Label();
+                    Button button = new Button();
+                    button.Text = "OK";
+                    label2.Text = "Tổng tiền:";
+                    label3.Text = "ăn cứt";
+                    label14.Text = "Tiền giả khách:";
+                    _f.Controls.Add(label1);
+                    _f.Controls.Add(label2);
+                    _f.Controls.Add(label3);
+                    _f.Controls.Add(button);
+                    _f.Controls.Add(label14);
+                    _f.Controls.Add(label15);
+                    _f.Controls[4].Left = 30;
+                    _f.Controls[4].Top = 70;
+                    _f.Controls[5].Left = 130;
+                    _f.Controls[5].Top = 70;
+                    _f.Controls[3].Left = 130;
+                    _f.Controls[3].Top = 110;
+                    _f.Controls[0].Left = 130;
+                    _f.Controls[1].Left = 30;
+                    _f.Controls[1].Top = 30;
+                    _f.Controls[2].Left = 130;
+                    _f.Controls[2].Top = 30;
+                    _f.Size = new Size(350, 200);
+                    button.Click += Button_Click2;
+                    hoaDon.Status = false;
+                    hoaDon.DateCheckOut = DateTime.Now;
+                    _qlHoaDon.UpdateHoaDon(hoaDon);
+                    label3.Text = decimal.Truncate(hoaDon.TotalMoney).ToString() + "VNĐ";
+                    label15.Text = decimal.Truncate((Convert.ToInt32(Txt_Tien.Text) - hoaDon.TotalMoney)).ToString() + "VNĐ";
+                    _f.ShowDialog();
                 }
-                _hoaDon = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD);
-                _f = new Form();
-                Label label1 = new Label();
-                Label label2 = new Label();
-                Label label3 = new Label();
-                Label label14 = new Label();
-                Label label15 = new Label();
-                Button button = new Button();
-                button.Text = "OK";
-                label2.Text = "Tổng tiền:";
-                label3.Text = "ăn cứt";
-                label14.Text = "Tiền giả khách:";
-                _f.Controls.Add(label1);
-                _f.Controls.Add(label2);
-                _f.Controls.Add(label3);
-                _f.Controls.Add(button);
-                _f.Controls.Add(label14);
-                _f.Controls.Add(label15);
-                _f.Controls[4].Left = 30;
-                _f.Controls[4].Top = 70;
-                _f.Controls[5].Left = 130;
-                _f.Controls[5].Top = 70;
-                _f.Controls[3].Left = 130;
-                _f.Controls[3].Top = 110;
-                _f.Controls[0].Left = 130;
-                _f.Controls[1].Left = 30;
-                _f.Controls[1].Top = 30;
-                _f.Controls[2].Left = 130;
-                _f.Controls[2].Top = 30;
-                _f.Size = new Size(350, 200);
-                button.Click += Button_Click2;                
-                hoaDon.Status = false;
-                hoaDon.DateCheckOut = DateTime.Now;
-                _qlHoaDon.UpdateHoaDon(hoaDon);
-                label3.Text =decimal.Truncate(hoaDon.TotalMoney).ToString() + "VNĐ";
-                label15.Text =decimal.Truncate((Convert.ToInt32(Txt_Tien.Text) - hoaDon.TotalMoney)).ToString() + "VNĐ";
-                _f.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Chức năng lỗi rồi :(. Liên hệ nhóm để sửa", "Thông báo");
             }
             
         }

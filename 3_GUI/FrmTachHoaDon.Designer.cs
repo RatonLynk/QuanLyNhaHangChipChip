@@ -165,7 +165,7 @@ namespace _3_GUI
             this.Lbl_Tien.AutoSize = true;
             this.Lbl_Tien.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Lbl_Tien.ForeColor = System.Drawing.Color.White;
-            this.Lbl_Tien.Location = new System.Drawing.Point(1053, 724);
+            this.Lbl_Tien.Location = new System.Drawing.Point(953, 727);
             this.Lbl_Tien.Name = "Lbl_Tien";
             this.Lbl_Tien.Size = new System.Drawing.Size(81, 35);
             this.Lbl_Tien.TabIndex = 4;
@@ -173,7 +173,7 @@ namespace _3_GUI
             // 
             // Txt_Tien
             // 
-            this.Txt_Tien.Location = new System.Drawing.Point(840, 725);
+            this.Txt_Tien.Location = new System.Drawing.Point(740, 728);
             this.Txt_Tien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Txt_Tien.Name = "Txt_Tien";
             this.Txt_Tien.Size = new System.Drawing.Size(163, 27);
@@ -185,7 +185,7 @@ namespace _3_GUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(684, 729);
+            this.label2.Location = new System.Drawing.Point(584, 732);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 23);
             this.label2.TabIndex = 6;

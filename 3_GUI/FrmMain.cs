@@ -46,10 +46,14 @@ namespace _3_GUI
             if (flag == 1)
             {
                 btnQuanLyNhanVien.Visible= true;
+                btnQuanLyHoaDon.Visible = true;
+
             }
             else
             {
+
                 btnQuanLyNhanVien .Visible= false;
+                btnQuanLyHoaDon .Visible= false;
             }
         }
         void checkRoles()
