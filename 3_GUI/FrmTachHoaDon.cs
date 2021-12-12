@@ -77,7 +77,7 @@ namespace _3_GUI
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Xóa";
             img.HeaderText = "Tách";
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgrid_HDCu.ColumnCount = 5;
@@ -372,8 +372,8 @@ namespace _3_GUI
                        }).ToList();
             DataGridViewImageColumn img = new DataGridViewImageColumn();
             img.Name = "Xóa";
-            //D:\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png
-            Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+            //C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\003-signs.png
+            Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
             img.Image = b;
 
             Dgrid_HDMoi.ColumnCount = 5;
@@ -454,7 +454,7 @@ namespace _3_GUI
             hoaDonChiTiet.Count -= _soLuong;
             hoaDonChiTiet.Price -= giatru;
             _qlHoaDon.UpdateHoaDonCT(hoaDonChiTiet);
-            hoaDon.TotalMoney -= hoaDonChiTiet.Price;
+            hoaDon.TotalMoney -=giatru;
             _qlHoaDon.UpdateHoaDon(hoaDon);
 
             _HDCT.Count += _soLuong;
@@ -465,8 +465,10 @@ namespace _3_GUI
 
             LoadHDCu(_IdBanTachHD);
             LoadHDMoi();
+            _f.Close();
             Lbl_Tien.Visible = true;
-            Lbl_Tien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney.ToString()+"VNĐ";
+            Lbl_Tien.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney).ToString()+"VNĐ";
+            Lbl_TienCu.Text =decimal.Truncate(_qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Idtable == _IdBanTachHD && c.Status == true && c.DichVu == 1).TotalMoney).ToString()+"VND";
         }
         private void CreateReceipt1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
