@@ -37,6 +37,7 @@ namespace _3_GUI
             dgvCachNau.ColumnCount = 3;
             dgvCachNau.Columns[0].Name = "Mã danh mục";
             dgvCachNau.Columns[0].Width = 100;
+            dgvCachNau.Columns["Mã danh mục"].Visible = false;
             dgvCachNau.Columns[1].Name = "Tên danh mục";
             dgvCachNau.Columns[2].Name = "Trạng thái";
             dgvCachNau.Rows.Clear();

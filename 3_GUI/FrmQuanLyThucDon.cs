@@ -39,6 +39,7 @@ namespace _3_GUI
         {
             dgvMonAn.ColumnCount = 7;
             dgvMonAn.Columns[0].Name = "Mã món ăn";
+            dgvMonAn.Columns["Mã món ăn"].Visible = false;
             dgvMonAn.Columns[1].Name = "Tên món";
             dgvMonAn.Columns[2].Name = "Giá";
             dgvMonAn.Columns[2].Name = "Giá";

@@ -35,6 +35,7 @@ namespace _3_GUI
             
             dgvDanhMuc.ColumnCount = 3;
             dgvDanhMuc.Columns[0].Name = "Mã danh mục";
+            dgvDanhMuc.Columns["Mã danh mục"].Visible = false;
             dgvDanhMuc.Columns[0].Width = 100;
             dgvDanhMuc.Columns[1].Name = "Tên danh mục";
             dgvDanhMuc.Columns[2].Name = "Trạng thái";

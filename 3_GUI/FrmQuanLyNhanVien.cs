@@ -29,8 +29,8 @@ namespace _3_GUI
             _utilities = new Utilities();
             dgrid_NhanVien.Columns["MANV"].Visible = false;
             rbtnHDnhanvien.Checked = true;
-            chk_nhanVien.Checked = true;
-            chk_nam.Checked = true;
+           
+          
 
         }
         void loadData()
@@ -183,7 +183,21 @@ namespace _3_GUI
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            _iQlNhanVienService.Save();
+            try
+            {
+                if ((MessageBox.Show("Bạn muốn lưu ?",
+                       "Thông báo",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes))
+                {
+                    _iQlNhanVienService.Save();
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Chức năng lỗi rồi :(. Liên hệ nhóm để sửa", "Thông báo");
+            }
+            
         }
         
         private void txt_TenNV_TextChanged(object sender, EventArgs e)
@@ -233,10 +247,11 @@ namespace _3_GUI
                 txt_TenNV.Text = dgrid_NhanVien.Rows[rowindex].Cells[1].Value.ToString();
                 txtEmail.Text = dgrid_NhanVien.Rows[rowindex].Cells[2].Value.ToString();
                 txtMatKhau.Text = _utilities.GetHash(dgrid_NhanVien.Rows[rowindex].Cells[3].Value.ToString());
-                //if(dgrid_NhanVien.Rows[rowindex].Cells[4].Value.ToString() == "Nhân Viên")
+                //if (dgrid_NhanVien.Rows[rowindex].Cells[4].Value.ToString() == "Nhân Viên")
                 //{
                 //    chk_quanLi.Checked = false;
-                //} else
+                //}
+                //else
                 //{
                 //    chk_nhanVien.Checked = false;
                 //}
@@ -260,10 +275,12 @@ namespace _3_GUI
                 if (nv.Role == 1)
                 {
                     chk_quanLi.Checked = true;
+                    chk_nhanVien.Checked = false;
                 }
                 else
                 {
                     chk_nhanVien.Checked = true;
+                    chk_quanLi.Checked = false;
                 }
             }
         }

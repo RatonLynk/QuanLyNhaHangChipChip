@@ -61,6 +61,7 @@
             this.txtUsername.Margin = new System.Windows.Forms.Padding(5);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
+            this.txtUsername.PlaceholderText = "User Name";
             this.txtUsername.Size = new System.Drawing.Size(250, 30);
             this.txtUsername.TabIndex = 1;
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);

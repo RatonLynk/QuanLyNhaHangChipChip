@@ -46,10 +46,14 @@ namespace _3_GUI
             if (flag == 1)
             {
                 btnQuanLyNhanVien.Visible= true;
+                btnQuanLyHoaDon.Visible = true;
+
             }
             else
             {
+
                 btnQuanLyNhanVien .Visible= false;
+                btnQuanLyHoaDon .Visible= false;
             }
         }
         void checkRoles()
@@ -236,7 +240,10 @@ namespace _3_GUI
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            FrmDoiMatKhau a = new FrmDoiMatKhau();   
+            
+            FrmDoiMatKhau a = new FrmDoiMatKhau();
+
+          
             a.ShowDialog();
         }
       
