@@ -482,16 +482,16 @@ namespace _3_GUI
             //_qlHoaDon.UpdateHoaDon(hoaDon);
             //LoadHDMoi();
 
-            _HDCT.Count += _soLuong;
-            _HDCT.Price+= _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault());
-            _qlHoaDon.UpdateHoaDonCT(_HDCT);
-            _hoaDon.TotalMoney += _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault());
-            _qlHoaDon.UpdateHoaDon(_hoaDon);
+            //_HDCT.Count += _soLuong;
+            //_HDCT.Price+= _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault());
+            //_qlHoaDon.UpdateHoaDonCT(_HDCT);
+            //_hoaDon.TotalMoney += _soLuong * (_qlMeniu.GetMonAnChiTiets().Where(c => c.Id == hoaDonChiTiet.Idfood).Select(c => c.Price).FirstOrDefault());
+            //_qlHoaDon.UpdateHoaDon(_hoaDon);
 
-            LoadHDCu(_IdBanTachHD);
-            LoadHDMoi();
-            Lbl_Tien.Visible = true;
-            Lbl_Tien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney.ToString()+"VNĐ";
+            //LoadHDCu(_IdBanTachHD);
+            //LoadHDMoi();
+            //Lbl_Tien.Visible = true;
+            //Lbl_Tien.Text = _qlHoaDon.GetBillsFromDB().FirstOrDefault(c => c.Id == _idHD).TotalMoney.ToString()+"VNĐ";
         }
         private void CreateReceipt1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {

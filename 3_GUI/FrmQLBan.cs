@@ -990,7 +990,7 @@ namespace _3_GUI
                 DataGridViewImageColumn img = new DataGridViewImageColumn();
                 img.Name = "xoa";
                 img.HeaderText = "Xóa món";
-                Bitmap b = new Bitmap(@"D:\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
+                Bitmap b = new Bitmap(@"C:\DuAn1\ChipChip\QuanLyNhaHangChipChip\3_GUI\Resources\001-close.png");
                 img.Image = b;
 
                 Dgid_HoaDon.ColumnCount = 5;
